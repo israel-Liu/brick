@@ -7,15 +7,33 @@
     <Filter Include="base">
       <UniqueIdentifier>{affdd9f2-5978-49b6-8709-85a3955eb63f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="base\threads">
+      <UniqueIdentifier>{434b7d6a-f307-43d8-9de4-30f286b83f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\win">
+      <UniqueIdentifier>{8e730954-8bf2-4dc1-874c-9f4708b06545}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\test\main.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\base\threads\mutex.cpp">
+      <Filter>base\threads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\mutex_unittest.cpp">
       <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\base\macros.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\base\threads\mutex.h">
+      <Filter>base\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="..\base\win\windows_types.h">
+      <Filter>base\win</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

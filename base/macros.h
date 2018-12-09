@@ -10,4 +10,4 @@
     class_name(const class_name&&) = delete;              \
     class_name& operator=(class_name&&) = delete;         \
 
-#endif // BRICK_BASE_MACROS_H_
+#endif // !BRICK_BASE_MACROS_H_
