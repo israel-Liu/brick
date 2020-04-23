@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/iat_patch_function.h"
+#include "brick/win/iat_patch_function.h"
 
-#include "base/logging.h"
-#include "base/win/patch_util.h"
-#include "base/win/pe_image.h"
+#include "brick/logging.h"
+#include "brick/win/patch_util.h"
+#include "brick/win/pe_image.h"
 
 namespace base {
 namespace win {

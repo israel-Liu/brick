@@ -4,12 +4,12 @@
 
 #include <utility>
 
-#include "base/memory/platform_shared_memory_region.h"
-#include "base/memory/read_only_shared_memory_region.h"
-#include "base/memory/unsafe_shared_memory_region.h"
-#include "base/memory/writable_shared_memory_region.h"
-#include "base/sys_info.h"
-#include "base/test/test_shared_memory_util.h"
+#include "brick/memory/platform_shared_memory_region.h"
+#include "brick/memory/read_only_shared_memory_region.h"
+#include "brick/memory/unsafe_shared_memory_region.h"
+#include "brick/memory/writable_shared_memory_region.h"
+#include "brick/sys_info.h"
+#include "brick/test/test_shared_memory_util.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

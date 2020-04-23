@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SEQUENCE_CHECKER_H_
-#define BASE_SEQUENCE_CHECKER_H_
+#ifndef BRICK_SEQUENCE_CHECKER_H_
+#define BRICK_SEQUENCE_CHECKER_H_
 
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/sequence_checker_impl.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/sequence_checker_impl.h"
 
 // SequenceChecker is a helper class used to help verify that some methods of a
 // class are called sequentially (for thread-safety).
@@ -85,4 +85,4 @@ class SequenceChecker : public SequenceCheckerDoNothing {
 
 }  // namespace base
 
-#endif  // BASE_SEQUENCE_CHECKER_H_
+#endif  // BRICK_SEQUENCE_CHECKER_H_

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NATIVE_LIBRARY_H_
-#define BASE_NATIVE_LIBRARY_H_
+#ifndef BRICK_NATIVE_LIBRARY_H_
+#define BRICK_NATIVE_LIBRARY_H_
 
 // This file defines a cross-platform "NativeLibrary" type which represents
 // a loadable module.
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/strings/string_piece.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -50,7 +50,7 @@ using NativeLibrary = NativeLibraryStruct*;
 using NativeLibrary = void*;
 #endif  // OS_*
 
-struct BASE_EXPORT NativeLibraryLoadError {
+struct BRICK_EXPORT NativeLibraryLoadError {
 #if defined(OS_WIN)
   NativeLibraryLoadError() : code(0) {}
 #endif  // OS_WIN
@@ -65,7 +65,7 @@ struct BASE_EXPORT NativeLibraryLoadError {
 #endif  // OS_WIN
 };
 
-struct BASE_EXPORT NativeLibraryOptions {
+struct BRICK_EXPORT NativeLibraryOptions {
   NativeLibraryOptions() = default;
   NativeLibraryOptions(const NativeLibraryOptions& options) = default;
 
@@ -80,22 +80,22 @@ struct BASE_EXPORT NativeLibraryOptions {
 // Loads a native library from disk.  Release it with UnloadNativeLibrary when
 // you're done.  Returns NULL on failure.
 // If |error| is not NULL, it may be filled in on load error.
-BASE_EXPORT NativeLibrary LoadNativeLibrary(const FilePath& library_path,
+BRICK_EXPORT NativeLibrary LoadNativeLibrary(const FilePath& library_path,
                                             NativeLibraryLoadError* error);
 
 // Loads a native library from disk.  Release it with UnloadNativeLibrary when
 // you're done.  Returns NULL on failure.
 // If |error| is not NULL, it may be filled in on load error.
-BASE_EXPORT NativeLibrary LoadNativeLibraryWithOptions(
+BRICK_EXPORT NativeLibrary LoadNativeLibraryWithOptions(
     const FilePath& library_path,
     const NativeLibraryOptions& options,
     NativeLibraryLoadError* error);
 
 // Unloads a native library.
-BASE_EXPORT void UnloadNativeLibrary(NativeLibrary library);
+BRICK_EXPORT void UnloadNativeLibrary(NativeLibrary library);
 
 // Gets a function pointer from a native library.
-BASE_EXPORT void* GetFunctionPointerFromNativeLibrary(NativeLibrary library,
+BRICK_EXPORT void* GetFunctionPointerFromNativeLibrary(NativeLibrary library,
                                                       StringPiece name);
 
 // Returns the full platform-specific name for a native library. |name| must be
@@ -105,14 +105,14 @@ BASE_EXPORT void* GetFunctionPointerFromNativeLibrary(NativeLibrary library,
 // - "mylib.dll" on Windows
 // - "libmylib.so" on Linux
 // - "libmylib.dylib" on Mac
-BASE_EXPORT std::string GetNativeLibraryName(StringPiece name);
+BRICK_EXPORT std::string GetNativeLibraryName(StringPiece name);
 
 // Returns the full platform-specific name for a gn |loadable_module| target.
 // See tools/gn/docs/reference.md#loadable_module
 // The returned name is the same as GetNativeLibraryName() on all platforms
 // except for Mac where for "mylib" it returns "mylib.so".
-BASE_EXPORT std::string GetLoadableModuleName(StringPiece name);
+BRICK_EXPORT std::string GetLoadableModuleName(StringPiece name);
 
 }  // namespace base
 
-#endif  // BASE_NATIVE_LIBRARY_H_
+#endif  // BRICK_NATIVE_LIBRARY_H_

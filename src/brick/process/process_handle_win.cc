@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_handle.h"
+#include "brick/process/process_handle.h"
 
 #include <windows.h>
 #include <tlhelp32.h>
 
-#include "base/win/scoped_handle.h"
-#include "base/win/windows_version.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/windows_version.h"
 
 namespace base {
 

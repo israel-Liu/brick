@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/scoped_path_override.h"
+#include "brick/test/scoped_path_override.h"
 
-#include "base/logging.h"
-#include "base/path_service.h"
+#include "brick/logging.h"
+#include "brick/path_service.h"
 
 namespace base {
 

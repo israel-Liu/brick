@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_MEMORY_CLIENT_REGISTRY_H_
-#define BASE_MEMORY_MEMORY_CLIENT_REGISTRY_H_
+#ifndef BRICK_MEMORY_MEMORY_CLIENT_REGISTRY_H_
+#define BRICK_MEMORY_MEMORY_CLIENT_REGISTRY_H_
 
-#include "base/base_export.h"
-#include "base/memory/memory_coordinator_client.h"
-#include "base/memory/singleton.h"
-#include "base/observer_list_threadsafe.h"
+#include "brick/base_export.h"
+#include "brick/memory/memory_coordinator_client.h"
+#include "brick/memory/singleton.h"
+#include "brick/observer_list_threadsafe.h"
 
 namespace base {
 
@@ -21,12 +21,12 @@ namespace base {
 // This class uses ObserverListThreadsafe internally, which means that
 //  * Registering/unregistering callbacks are thread-safe.
 //  * Callbacks are invoked on the same thread on which they are registered.
-// See base/observer_list_threadsafe.h for reference.
+// See brick/observer_list_threadsafe.h for reference.
 //
 // Ownership management:
 // This class doesn't take the ownership of clients. Clients must be
 // unregistered before they are destroyed.
-class BASE_EXPORT MemoryCoordinatorClientRegistry {
+class BRICK_EXPORT MemoryCoordinatorClientRegistry {
  public:
   static MemoryCoordinatorClientRegistry* GetInstance();
 
@@ -53,4 +53,4 @@ class BASE_EXPORT MemoryCoordinatorClientRegistry {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_MEMORY_CLIENT_REGISTRY_H_
+#endif  // BRICK_MEMORY_MEMORY_CLIENT_REGISTRY_H_

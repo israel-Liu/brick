@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MEMORY_DUMP_SCHEDULER_H
-#define BASE_TRACE_EVENT_MEMORY_DUMP_SCHEDULER_H
+#ifndef BRICK_TRACE_EVENT_MEMORY_DUMP_SCHEDULER_H
+#define BRICK_TRACE_EVENT_MEMORY_DUMP_SCHEDULER_H
 
 #include <stdint.h>
 
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/memory/ref_counted.h"
-#include "base/trace_event/memory_dump_request_args.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/trace_event/memory_dump_request_args.h"
 
 namespace base {
 class SequencedTaskRunner;
@@ -22,12 +22,12 @@ namespace trace_event {
 // Schedules global dump requests based on the triggers added. The methods of
 // this class are NOT thread safe and the client has to take care of invoking
 // all the methods of the class safely.
-class BASE_EXPORT MemoryDumpScheduler {
+class BRICK_EXPORT MemoryDumpScheduler {
  public:
   using PeriodicCallback = RepeatingCallback<void(MemoryDumpLevelOfDetail)>;
 
   // Passed to Start().
-  struct BASE_EXPORT Config {
+  struct BRICK_EXPORT Config {
     struct Trigger {
       MemoryDumpLevelOfDetail level_of_detail;
       uint32_t period_ms;
@@ -73,4 +73,4 @@ class BASE_EXPORT MemoryDumpScheduler {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MEMORY_DUMP_SCHEDULER_H
+#endif  // BRICK_TRACE_EVENT_MEMORY_DUMP_SCHEDULER_H

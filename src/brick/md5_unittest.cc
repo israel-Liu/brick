@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/md5.h"
+#include "brick/md5.h"
 
 #include <string.h>
 

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_ALLOCATOR_SHIM_H_
-#define BASE_ALLOCATOR_ALLOCATOR_SHIM_H_
+#ifndef BRICK_ALLOCATOR_ALLOCATOR_SHIM_H_
+#define BRICK_ALLOCATOR_ALLOCATOR_SHIM_H_
 
 #include <stddef.h>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -105,29 +105,29 @@ struct AllocatorDispatch {
 
 // When true makes malloc behave like new, w.r.t calling the new_handler if
 // the allocation fails (see set_new_mode() in Windows).
-BASE_EXPORT void SetCallNewHandlerOnMallocFailure(bool value);
+BRICK_EXPORT void SetCallNewHandlerOnMallocFailure(bool value);
 
 // Allocates |size| bytes or returns nullptr. It does NOT call the new_handler,
 // regardless of SetCallNewHandlerOnMallocFailure().
-BASE_EXPORT void* UncheckedAlloc(size_t size);
+BRICK_EXPORT void* UncheckedAlloc(size_t size);
 
 // Inserts |dispatch| in front of the allocator chain. This method is
 // thread-safe w.r.t concurrent invocations of InsertAllocatorDispatch().
 // The callers have responsibility for inserting a single dispatch no more
 // than once.
-BASE_EXPORT void InsertAllocatorDispatch(AllocatorDispatch* dispatch);
+BRICK_EXPORT void InsertAllocatorDispatch(AllocatorDispatch* dispatch);
 
 // Test-only. Rationale: (1) lack of use cases; (2) dealing safely with a
 // removal of arbitrary elements from a singly linked list would require a lock
 // in malloc(), which we really don't want.
-BASE_EXPORT void RemoveAllocatorDispatchForTesting(AllocatorDispatch* dispatch);
+BRICK_EXPORT void RemoveAllocatorDispatchForTesting(AllocatorDispatch* dispatch);
 
 #if defined(OS_MACOSX)
 // On macOS, the allocator shim needs to be turned on during runtime.
-BASE_EXPORT void InitializeAllocatorShim();
+BRICK_EXPORT void InitializeAllocatorShim();
 #endif  // defined(OS_MACOSX)
 
 }  // namespace allocator
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_ALLOCATOR_SHIM_H_
+#endif  // BRICK_ALLOCATOR_ALLOCATOR_SHIM_H_

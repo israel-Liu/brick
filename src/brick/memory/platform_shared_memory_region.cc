@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/platform_shared_memory_region.h"
+#include "brick/memory/platform_shared_memory_region.h"
 
-#include "base/memory/shared_memory_mapping.h"
+#include "brick/memory/shared_memory_mapping.h"
 
 namespace base {
 namespace subtle {

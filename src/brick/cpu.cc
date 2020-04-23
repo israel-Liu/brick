@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/cpu.h"
+#include "brick/cpu.h"
 
 #include <limits.h>
 #include <stddef.h>
@@ -12,11 +12,11 @@
 #include <algorithm>
 #include <utility>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(ARCH_CPU_ARM_FAMILY) && (defined(OS_ANDROID) || defined(OS_LINUX))
-#include "base/files/file_util.h"
+#include "brick/files/file_util.h"
 #endif
 
 #if defined(ARCH_CPU_X86_FAMILY)

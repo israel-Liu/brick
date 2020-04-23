@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/jni_array.h"
-#include "base/android/jni_string.h"
-#include "base/android/library_loader/library_loader_hooks.h"
-#include "base/file_descriptor_store.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/optional.h"
-#include "base/posix/global_descriptors.h"
+#include "brick/android/jni_array.h"
+#include "brick/android/jni_string.h"
+#include "brick/android/library_loader/library_loader_hooks.h"
+#include "brick/file_descriptor_store.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/optional.h"
+#include "brick/posix/global_descriptors.h"
 #include "jni/ChildProcessService_jni.h"
 
 using base::android::JavaIntArrayToIntVector;

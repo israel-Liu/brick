@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_PERF_TIME_LOGGER_H_
-#define BASE_TEST_PERF_TIME_LOGGER_H_
+#ifndef BRICK_TEST_PERF_TIME_LOGGER_H_
+#define BRICK_TEST_PERF_TIME_LOGGER_H_
 
 #include <string>
 
-#include "base/macros.h"
-#include "base/timer/elapsed_timer.h"
+#include "brick/macros.h"
+#include "brick/timer/elapsed_timer.h"
 
 namespace base {
 
@@ -34,4 +34,4 @@ class PerfTimeLogger {
 
 }  // namespace base
 
-#endif  // BASE_TEST_PERF_TIME_LOGGER_H_
+#endif  // BRICK_TEST_PERF_TIME_LOGGER_H_

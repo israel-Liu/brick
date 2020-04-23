@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_pump_win.h"
+#include "brick/message_loop/message_pump_win.h"
 
 #include <math.h>
 #include <stdint.h>
 
 #include <limits>
 
-#include "base/debug/alias.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/strings/stringprintf.h"
-#include "base/trace_event/trace_event.h"
-#include "base/win/current_module.h"
-#include "base/win/wrapped_window_proc.h"
+#include "brick/debug/alias.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/win/current_module.h"
+#include "brick/win/wrapped_window_proc.h"
 
 namespace base {
 

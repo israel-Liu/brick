@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_WORKER_PARAMS_H_
-#define BASE_TASK_SCHEDULER_SCHEDULER_WORKER_PARAMS_H_
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_PARAMS_H_
+#define BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_PARAMS_H_
 
 namespace base {
 
@@ -21,4 +21,4 @@ enum class SchedulerBackwardCompatibility {
 
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_WORKER_PARAMS_H_
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_PARAMS_H_

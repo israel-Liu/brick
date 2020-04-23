@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/protected_memory.h"
-#include "base/synchronization/lock.h"
+#include "brick/memory/protected_memory.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 

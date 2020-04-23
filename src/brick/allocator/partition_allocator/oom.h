@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_OOM_H
-#define BASE_ALLOCATOR_OOM_H
+#ifndef BRICK_ALLOCATOR_OOM_H
+#define BRICK_ALLOCATOR_OOM_H
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
@@ -34,4 +34,4 @@
   } while (0)
 #endif
 
-#endif  // BASE_ALLOCATOR_OOM_H
+#endif  // BRICK_ALLOCATOR_OOM_H

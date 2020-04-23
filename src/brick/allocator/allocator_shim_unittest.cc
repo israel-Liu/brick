@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/allocator_shim.h"
+#include "brick/allocator/allocator_shim.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -11,13 +11,13 @@
 #include <new>
 #include <vector>
 
-#include "base/allocator/buildflags.h"
-#include "base/allocator/partition_allocator/partition_alloc.h"
-#include "base/atomicops.h"
-#include "base/process/process_metrics.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread_local.h"
+#include "brick/allocator/buildflags.h"
+#include "brick/allocator/partition_allocator/partition_alloc.h"
+#include "brick/atomicops.h"
+#include "brick/process/process_metrics.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread_local.h"
 #include "build/build_config.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
@@ -26,8 +26,8 @@
 #include <windows.h>
 #elif defined(OS_MACOSX)
 #include <malloc/malloc.h>
-#include "base/allocator/allocator_interception_mac.h"
-#include "base/mac/mac_util.h"
+#include "brick/allocator/allocator_interception_mac.h"
+#include "brick/mac/mac_util.h"
 #include "third_party/apple_apsl/malloc.h"
 #else
 #include <malloc.h>

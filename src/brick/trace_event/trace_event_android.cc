@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/trace_event/trace_event_impl.h"
 
 #include <fcntl.h>
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/format_macros.h"
-#include "base/logging.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/thread.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/format_macros.h"
+#include "brick/logging.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/thread.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 namespace trace_event {

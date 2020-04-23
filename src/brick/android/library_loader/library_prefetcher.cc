@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/library_loader/library_prefetcher.h"
+#include "brick/android/library_loader/library_prefetcher.h"
 
 #include <stddef.h>
 #include <sys/mman.h>
@@ -16,16 +16,16 @@
 #include <utility>
 #include <vector>
 
-#include "base/android/library_loader/anchor_functions.h"
-#include "base/bits.h"
-#include "base/files/file.h"
-#include "base/format_macros.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
+#include "brick/android/library_loader/anchor_functions.h"
+#include "brick/bits.h"
+#include "brick/files/file.h"
+#include "brick/format_macros.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
 #include "build/build_config.h"
 
 #if BUILDFLAG(SUPPORTS_CODE_ORDERING)

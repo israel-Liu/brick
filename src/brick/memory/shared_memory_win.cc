@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory.h"
+#include "brick/memory/shared_memory.h"
 
 #include <aclapi.h>
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/allocator/partition_allocator/page_allocator.h"
-#include "base/logging.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/rand_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/unguessable_token.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
+#include "brick/logging.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/rand_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/unguessable_token.h"
 
 namespace base {
 namespace {

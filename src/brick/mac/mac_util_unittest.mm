@@ -6,16 +6,16 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/mac/mac_util.h"
+#include "brick/mac/mac_util.h"
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/mac/foundation_util.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/mac/scoped_nsobject.h"
-#include "base/macros.h"
-#include "base/sys_info.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/mac/scoped_nsobject.h"
+#include "brick/macros.h"
+#include "brick/sys_info.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"
 

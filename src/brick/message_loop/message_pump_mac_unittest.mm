@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_pump_mac.h"
+#include "brick/message_loop/message_pump_mac.h"
 
-#include "base/mac/scoped_cftyperef.h"
-#import "base/mac/scoped_nsobject.h"
-#include "base/macros.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_loop_current.h"
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/mac/scoped_cftyperef.h"
+#import "brick/mac/scoped_nsobject.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_loop_current.h"
+#include "brick/threading/thread_task_runner_handle.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 @interface TestModalAlertCloser : NSObject

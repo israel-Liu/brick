@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_BLOCK_H_
-#define BASE_MAC_SCOPED_BLOCK_H_
+#ifndef BRICK_MAC_SCOPED_BLOCK_H_
+#define BRICK_MAC_SCOPED_BLOCK_H_
 
 #include <Block.h>
 
-#include "base/mac/scoped_typeref.h"
+#include "brick/mac/scoped_typeref.h"
 
 #if defined(__has_feature) && __has_feature(objc_arc)
-#define BASE_MAC_BRIDGE_CAST(TYPE, VALUE) (__bridge TYPE)(VALUE)
+#define BRICK_MAC_BRIDGE_CAST(TYPE, VALUE) (__bridge TYPE)(VALUE)
 #else
-#define BASE_MAC_BRIDGE_CAST(TYPE, VALUE) VALUE
+#define BRICK_MAC_BRIDGE_CAST(TYPE, VALUE) VALUE
 #endif
 
 namespace base {
@@ -24,11 +24,11 @@ template <typename B>
 struct ScopedBlockTraits {
   static B InvalidValue() { return nullptr; }
   static B Retain(B block) {
-    return BASE_MAC_BRIDGE_CAST(
-        B, Block_copy(BASE_MAC_BRIDGE_CAST(const void*, block)));
+    return BRICK_MAC_BRIDGE_CAST(
+        B, Block_copy(BRICK_MAC_BRIDGE_CAST(const void*, block)));
   }
   static void Release(B block) {
-    Block_release(BASE_MAC_BRIDGE_CAST(const void*, block));
+    Block_release(BRICK_MAC_BRIDGE_CAST(const void*, block));
   }
 };
 
@@ -67,6 +67,6 @@ class ScopedBlock : public ScopedTypeRef<B, internal::ScopedBlockTraits<B>> {
 }  // namespace mac
 }  // namespace base
 
-#undef BASE_MAC_BRIDGE_CAST
+#undef BRICK_MAC_BRIDGE_CAST
 
-#endif  // BASE_MAC_SCOPED_BLOCK_H_
+#endif  // BRICK_MAC_SCOPED_BLOCK_H_

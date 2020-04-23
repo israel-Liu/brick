@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/logging.h"
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/test/scoped_feature_list.h"
+#include "brick/logging.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/test/scoped_feature_list.h"
 #include "build/build_config.h"
 
 #include "testing/gmock/include/gmock/gmock.h"
@@ -17,7 +17,7 @@
 #if defined(OS_POSIX)
 #include <signal.h>
 #include <unistd.h>
-#include "base/posix/eintr_wrapper.h"
+#include "brick/posix/eintr_wrapper.h"
 #endif  // OS_POSIX
 
 #if defined(OS_LINUX) || defined(OS_ANDROID)
@@ -35,8 +35,8 @@
 #include <zircon/syscalls/debug.h>
 #include <zircon/syscalls/exception.h>
 #include <zircon/syscalls/port.h>
-#include "base/fuchsia/fuchsia_logging.h"
-#include "base/fuchsia/scoped_zx_handle.h"
+#include "brick/fuchsia/fuchsia_logging.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
 #endif
 
 namespace logging {

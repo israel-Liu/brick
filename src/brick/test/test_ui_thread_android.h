@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_UI_THREAD_ANDROID_
-#define BASE_TEST_TEST_UI_THREAD_ANDROID_
+#ifndef BRICK_TEST_TEST_UI_THREAD_ANDROID_
+#define BRICK_TEST_TEST_UI_THREAD_ANDROID_
 
 #include <jni.h>
 
@@ -17,4 +17,4 @@ void StartTestUiThreadLooper();
 
 }  // namespace base
 
-#endif  //  BASE_TEST_TEST_UI_THREAD_ANDROID_
+#endif  //  BRICK_TEST_TEST_UI_THREAD_ANDROID_

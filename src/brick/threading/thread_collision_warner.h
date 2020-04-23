@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_THREAD_COLLISION_WARNER_H_
-#define BASE_THREADING_THREAD_COLLISION_WARNER_H_
+#ifndef BRICK_THREADING_THREAD_COLLISION_WARNER_H_
+#define BRICK_THREADING_THREAD_COLLISION_WARNER_H_
 
 #include <memory>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
 
 // A helper class alongside macros to be used to verify assumptions about thread
 // safety of a class.
@@ -132,17 +132,17 @@ namespace base {
 // AsserterBase is the interfaces and DCheckAsserter is the default asserter
 // used. During the unit tests is used another class that doesn't "DCHECK"
 // in case of collision (check thread_collision_warner_unittests.cc)
-struct BASE_EXPORT AsserterBase {
+struct BRICK_EXPORT AsserterBase {
   virtual ~AsserterBase() = default;
   virtual void warn() = 0;
 };
 
-struct BASE_EXPORT DCheckAsserter : public AsserterBase {
+struct BRICK_EXPORT DCheckAsserter : public AsserterBase {
   ~DCheckAsserter() override = default;
   void warn() override;
 };
 
-class BASE_EXPORT ThreadCollisionWarner {
+class BRICK_EXPORT ThreadCollisionWarner {
  public:
   // The parameter asserter is there only for test purpose
   explicit ThreadCollisionWarner(AsserterBase* asserter = new DCheckAsserter())
@@ -159,7 +159,7 @@ class BASE_EXPORT ThreadCollisionWarner {
   // it doesn't leave the critical section, as opposed to ScopedCheck,
   // because the critical section being pinned is allowed to be used only
   // from one thread
-  class BASE_EXPORT Check {
+  class BRICK_EXPORT Check {
    public:
     explicit Check(ThreadCollisionWarner* warner)
         : warner_(warner) {
@@ -176,7 +176,7 @@ class BASE_EXPORT ThreadCollisionWarner {
 
   // This class is meant to be used through the macro
   // DFAKE_SCOPED_LOCK
-  class BASE_EXPORT ScopedCheck {
+  class BRICK_EXPORT ScopedCheck {
    public:
     explicit ScopedCheck(ThreadCollisionWarner* warner)
         : warner_(warner) {
@@ -195,7 +195,7 @@ class BASE_EXPORT ThreadCollisionWarner {
 
   // This class is meant to be used through the macro
   // DFAKE_SCOPED_RECURSIVE_LOCK
-  class BASE_EXPORT ScopedRecursiveCheck {
+  class BRICK_EXPORT ScopedRecursiveCheck {
    public:
     explicit ScopedRecursiveCheck(ThreadCollisionWarner* warner)
         : warner_(warner) {
@@ -242,4 +242,4 @@ class BASE_EXPORT ThreadCollisionWarner {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_COLLISION_WARNER_H_
+#endif  // BRICK_THREADING_THREAD_COLLISION_WARNER_H_

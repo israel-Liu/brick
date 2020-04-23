@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/mac_logging.h"
+#include "brick/mac/mac_logging.h"
 
 #import <Foundation/Foundation.h>
 

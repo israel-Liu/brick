@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/partition_allocator/partition_alloc.h"
+#include "brick/allocator/partition_allocator/partition_alloc.h"
 
 #include <string.h>
 #include <type_traits>
 
-#include "base/allocator/partition_allocator/partition_direct_map_extent.h"
-#include "base/allocator/partition_allocator/partition_oom.h"
-#include "base/allocator/partition_allocator/partition_page.h"
-#include "base/allocator/partition_allocator/spin_lock.h"
-#include "base/compiler_specific.h"
-#include "base/lazy_instance.h"
+#include "brick/allocator/partition_allocator/partition_direct_map_extent.h"
+#include "brick/allocator/partition_allocator/partition_oom.h"
+#include "brick/allocator/partition_allocator/partition_page.h"
+#include "brick/allocator/partition_allocator/spin_lock.h"
+#include "brick/compiler_specific.h"
+#include "brick/lazy_instance.h"
 
 // Two partition pages are used as guard / metadata page so make sure the super
 // page size is bigger.

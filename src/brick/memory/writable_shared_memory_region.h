@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_WRITABLE_SHARED_MEMORY_REGION_H_
-#define BASE_MEMORY_WRITABLE_SHARED_MEMORY_REGION_H_
+#ifndef BRICK_MEMORY_WRITABLE_SHARED_MEMORY_REGION_H_
+#define BRICK_MEMORY_WRITABLE_SHARED_MEMORY_REGION_H_
 
-#include "base/macros.h"
-#include "base/memory/platform_shared_memory_region.h"
-#include "base/memory/read_only_shared_memory_region.h"
-#include "base/memory/shared_memory_mapping.h"
+#include "brick/macros.h"
+#include "brick/memory/platform_shared_memory_region.h"
+#include "brick/memory/read_only_shared_memory_region.h"
+#include "brick/memory/shared_memory_mapping.h"
 
 namespace base {
 
@@ -21,7 +21,7 @@ namespace base {
 // ReadOnlySharedMemoryRegion. However, unlike ReadOnlySharedMemoryRegion and
 // UnsafeSharedMemoryRegion, ownership of this region (while writable) is unique
 // and may only be transferred, not duplicated.
-class BASE_EXPORT WritableSharedMemoryRegion {
+class BRICK_EXPORT WritableSharedMemoryRegion {
  public:
   using MappingType = WritableSharedMemoryMapping;
   // Creates a new WritableSharedMemoryRegion instance of a given
@@ -94,4 +94,4 @@ class BASE_EXPORT WritableSharedMemoryRegion {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_WRITABLE_SHARED_MEMORY_REGION_H_
+#endif  // BRICK_MEMORY_WRITABLE_SHARED_MEMORY_REGION_H_

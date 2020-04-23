@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MEMORY_DUMP_PROVIDER_H_
-#define BASE_TRACE_EVENT_MEMORY_DUMP_PROVIDER_H_
+#ifndef BRICK_TRACE_EVENT_MEMORY_DUMP_PROVIDER_H_
+#define BRICK_TRACE_EVENT_MEMORY_DUMP_PROVIDER_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/process/process_handle.h"
-#include "base/trace_event/memory_dump_request_args.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/process/process_handle.h"
+#include "brick/trace_event/memory_dump_request_args.h"
 
 namespace base {
 namespace trace_event {
@@ -16,7 +16,7 @@ namespace trace_event {
 class ProcessMemoryDump;
 
 // The contract interface that memory dump providers must implement.
-class BASE_EXPORT MemoryDumpProvider {
+class BRICK_EXPORT MemoryDumpProvider {
  public:
   // Optional arguments for MemoryDumpManager::RegisterDumpProvider().
   struct Options {
@@ -49,4 +49,4 @@ class BASE_EXPORT MemoryDumpProvider {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MEMORY_DUMP_PROVIDER_H_
+#endif  // BRICK_TRACE_EVENT_MEMORY_DUMP_PROVIDER_H_

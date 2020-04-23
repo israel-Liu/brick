@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SCOPED_GENERIC_H_
-#define BASE_SCOPED_GENERIC_H_
+#ifndef BRICK_SCOPED_GENERIC_H_
+#define BRICK_SCOPED_GENERIC_H_
 
 #include <stdlib.h>
 
 #include <algorithm>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
 
 namespace base {
 
@@ -186,4 +186,4 @@ bool operator!=(const T& value, const ScopedGeneric<T, Traits>& scoped) {
 
 }  // namespace base
 
-#endif  // BASE_SCOPED_GENERIC_H_
+#endif  // BRICK_SCOPED_GENERIC_H_

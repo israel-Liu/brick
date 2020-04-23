@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_WINRT_INITIALIZER_H_
-#define BASE_WIN_SCOPED_WINRT_INITIALIZER_H_
+#ifndef BRICK_WIN_SCOPED_WINRT_INITIALIZER_H_
+#define BRICK_WIN_SCOPED_WINRT_INITIALIZER_H_
 
 #include <objbase.h>
 
-#include "base/base_export.h"
-#include "base/threading/thread_checker.h"
-#include "base/win/scoped_windows_thread_environment.h"
+#include "brick/base_export.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/win/scoped_windows_thread_environment.h"
 
 namespace base {
 namespace win {
@@ -26,7 +26,7 @@ namespace win {
 // similar lifetime as the thread itself. You should not be using this in random
 // utility functions that make Windows Runtime calls -- instead ensure these
 // functions are running on a Windows Runtime supporting thread!
-class BASE_EXPORT ScopedWinrtInitializer
+class BRICK_EXPORT ScopedWinrtInitializer
     : public ScopedWindowsThreadEnvironment {
  public:
   ScopedWinrtInitializer();
@@ -45,4 +45,4 @@ class BASE_EXPORT ScopedWinrtInitializer
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_WINRT_INITIALIZER_H_
+#endif  // BRICK_WIN_SCOPED_WINRT_INITIALIZER_H_

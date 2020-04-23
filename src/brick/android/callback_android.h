@@ -2,35 +2,35 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_CALLBACK_ANDROID_H_
-#define BASE_ANDROID_CALLBACK_ANDROID_H_
+#ifndef BRICK_ANDROID_CALLBACK_ANDROID_H_
+#define BRICK_ANDROID_CALLBACK_ANDROID_H_
 
 #include <jni.h>
 #include <vector>
 
-#include "base/android/scoped_java_ref.h"
-#include "base/base_export.h"
+#include "brick/android/scoped_java_ref.h"
+#include "brick/base_export.h"
 
 // Provides helper utility methods that run the given callback with the
 // specified argument.
 namespace base {
 namespace android {
 
-void BASE_EXPORT RunCallbackAndroid(const JavaRef<jobject>& callback,
+void BRICK_EXPORT RunCallbackAndroid(const JavaRef<jobject>& callback,
                                     const JavaRef<jobject>& arg);
 
-void BASE_EXPORT RunCallbackAndroid(const JavaRef<jobject>& callback,
+void BRICK_EXPORT RunCallbackAndroid(const JavaRef<jobject>& callback,
                                     bool arg);
 
-void BASE_EXPORT RunCallbackAndroid(const JavaRef<jobject>& callback, int arg);
+void BRICK_EXPORT RunCallbackAndroid(const JavaRef<jobject>& callback, int arg);
 
-void BASE_EXPORT RunStringCallbackAndroid(const JavaRef<jobject>& callback,
+void BRICK_EXPORT RunStringCallbackAndroid(const JavaRef<jobject>& callback,
                                           const std::string& arg);
 
-void BASE_EXPORT RunCallbackAndroid(const JavaRef<jobject>& callback,
+void BRICK_EXPORT RunCallbackAndroid(const JavaRef<jobject>& callback,
                                     const std::vector<uint8_t>& arg);
 
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_CALLBACK_ANDROID_H_
+#endif  // BRICK_ANDROID_CALLBACK_ANDROID_H_

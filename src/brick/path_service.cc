@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/path_service.h"
+#include "brick/path_service.h"
 
 #include <unordered_map>
 
@@ -12,10 +12,10 @@
 #include <shlobj.h>
 #endif
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/synchronization/lock.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/synchronization/lock.h"
 #include "build/build_config.h"
 
 namespace base {

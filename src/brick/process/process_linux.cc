@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process.h"
+#include "brick/process/process.h"
 
 #include <errno.h>
 #include <sys/resource.h>
 
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_split.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 // Not defined on AIX by default.

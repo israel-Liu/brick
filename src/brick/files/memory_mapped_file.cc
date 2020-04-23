@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/memory_mapped_file.h"
+#include "brick/files/memory_mapped_file.h"
 
 #include <utility>
 
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/numerics/safe_math.h"
-#include "base/sys_info.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/sys_info.h"
 #include "build/build_config.h"
 
 namespace base {

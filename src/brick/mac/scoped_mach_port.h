@@ -2,33 +2,33 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_MACH_PORT_H_
-#define BASE_MAC_SCOPED_MACH_PORT_H_
+#ifndef BRICK_MAC_SCOPED_MACH_PORT_H_
+#define BRICK_MAC_SCOPED_MACH_PORT_H_
 
 #include <mach/mach.h>
 
-#include "base/base_export.h"
-#include "base/scoped_generic.h"
+#include "brick/base_export.h"
+#include "brick/scoped_generic.h"
 
 namespace base {
 namespace mac {
 
 namespace internal {
 
-struct BASE_EXPORT SendRightTraits {
+struct BRICK_EXPORT SendRightTraits {
   static mach_port_t InvalidValue() {
     return MACH_PORT_NULL;
   }
 
-  BASE_EXPORT static void Free(mach_port_t port);
+  BRICK_EXPORT static void Free(mach_port_t port);
 };
 
-struct BASE_EXPORT ReceiveRightTraits {
+struct BRICK_EXPORT ReceiveRightTraits {
   static mach_port_t InvalidValue() {
     return MACH_PORT_NULL;
   }
 
-  BASE_EXPORT static void Free(mach_port_t port);
+  BRICK_EXPORT static void Free(mach_port_t port);
 };
 
 struct PortSetTraits {
@@ -36,7 +36,7 @@ struct PortSetTraits {
     return MACH_PORT_NULL;
   }
 
-  BASE_EXPORT static void Free(mach_port_t port);
+  BRICK_EXPORT static void Free(mach_port_t port);
 };
 
 }  // namespace internal
@@ -64,4 +64,4 @@ using ScopedMachPortSet = ScopedGeneric<mach_port_t, internal::PortSetTraits>;
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_MACH_PORT_H_
+#endif  // BRICK_MAC_SCOPED_MACH_PORT_H_

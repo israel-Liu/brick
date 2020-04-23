@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/native_library.h"
+#include "brick/native_library.h"
 
 #include <fcntl.h>
 #include <fdio/io.h>
@@ -11,17 +11,17 @@
 #include <zircon/status.h>
 #include <zircon/syscalls.h>
 
-#include "base/base_paths_fuchsia.h"
-#include "base/files/file.h"
-#include "base/files/file_path.h"
-#include "base/fuchsia/fuchsia_logging.h"
-#include "base/fuchsia/scoped_zx_handle.h"
-#include "base/logging.h"
-#include "base/path_service.h"
-#include "base/posix/safe_strerror.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/base_paths_fuchsia.h"
+#include "brick/files/file.h"
+#include "brick/files/file_path.h"
+#include "brick/fuchsia/fuchsia_logging.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
+#include "brick/logging.h"
+#include "brick/path_service.h"
+#include "brick/posix/safe_strerror.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

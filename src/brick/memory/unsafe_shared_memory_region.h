@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_UNSAFE_SHARED_MEMORY_REGION_H_
-#define BASE_MEMORY_UNSAFE_SHARED_MEMORY_REGION_H_
+#ifndef BRICK_MEMORY_UNSAFE_SHARED_MEMORY_REGION_H_
+#define BRICK_MEMORY_UNSAFE_SHARED_MEMORY_REGION_H_
 
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/memory/platform_shared_memory_region.h"
-#include "base/memory/shared_memory_mapping.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/memory/platform_shared_memory_region.h"
+#include "brick/memory/shared_memory_mapping.h"
 
 namespace base {
 
@@ -26,7 +26,7 @@ namespace base {
 // - You need to have several instances of the region simultaneously, possibly
 //   in different processes, that can produce writable mappings.
 
-class BASE_EXPORT UnsafeSharedMemoryRegion {
+class BRICK_EXPORT UnsafeSharedMemoryRegion {
  public:
   using MappingType = WritableSharedMemoryMapping;
   // Creates a new UnsafeSharedMemoryRegion instance of a given size that can be
@@ -109,4 +109,4 @@ class BASE_EXPORT UnsafeSharedMemoryRegion {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_UNSAFE_SHARED_MEMORY_REGION_H_
+#endif  // BRICK_MEMORY_UNSAFE_SHARED_MEMORY_REGION_H_

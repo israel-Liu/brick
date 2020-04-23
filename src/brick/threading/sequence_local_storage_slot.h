@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_SEQUENCE_LOCAL_STORAGE_SLOT_H_
-#define BASE_THREADING_SEQUENCE_LOCAL_STORAGE_SLOT_H_
+#ifndef BRICK_THREADING_SEQUENCE_LOCAL_STORAGE_SLOT_H_
+#define BRICK_THREADING_SEQUENCE_LOCAL_STORAGE_SLOT_H_
 
 #include <memory>
 #include <utility>
 
-#include "base/base_export.h"
-#include "base/threading/sequence_local_storage_map.h"
+#include "brick/base_export.h"
+#include "brick/threading/sequence_local_storage_map.h"
 
 namespace base {
 
 namespace internal {
-BASE_EXPORT int GetNextSequenceLocalStorageSlotNumber();
+BRICK_EXPORT int GetNextSequenceLocalStorageSlotNumber();
 }
 
 // SequenceLocalStorageSlot allows arbitrary values to be stored and retrieved
@@ -102,4 +102,4 @@ class SequenceLocalStorageSlot {
 };
 
 }  // namespace base
-#endif  // BASE_THREADING_SEQUENCE_LOCAL_STORAGE_SLOT_H_
+#endif  // BRICK_THREADING_SEQUENCE_LOCAL_STORAGE_SLOT_H_

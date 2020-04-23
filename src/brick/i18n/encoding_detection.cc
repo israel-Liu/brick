@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/encoding_detection.h"
+#include "brick/i18n/encoding_detection.h"
 
 #include "build/build_config.h"
 #include "third_party/ced/src/compact_enc_det/compact_enc_det.h"

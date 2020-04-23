@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/sample_map.h"
+#include "brick/metrics/sample_map.h"
 
 #include <memory>
 
-#include "base/test/gtest_util.h"
+#include "brick/test/gtest_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

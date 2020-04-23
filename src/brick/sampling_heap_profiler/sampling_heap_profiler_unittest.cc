@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sampling_heap_profiler/sampling_heap_profiler.h"
+#include "brick/sampling_heap_profiler/sampling_heap_profiler.h"
 
 #include <stdlib.h>
 #include <cinttypes>
 
-#include "base/allocator/allocator_shim.h"
-#include "base/debug/alias.h"
-#include "base/threading/simple_thread.h"
+#include "brick/allocator/allocator_shim.h"
+#include "brick/debug/alias.h"
+#include "brick/threading/simple_thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

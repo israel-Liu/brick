@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_info.h"
+#include "brick/process/process_info.h"
 
 #include <stddef.h>
 #include <sys/sysctl.h>
@@ -11,9 +11,9 @@
 
 #include <memory>
 
-#include "base/macros.h"
-#include "base/memory/free_deleter.h"
-#include "base/time/time.h"
+#include "brick/macros.h"
+#include "brick/memory/free_deleter.h"
+#include "brick/time/time.h"
 
 namespace base {
 

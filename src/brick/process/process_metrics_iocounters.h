@@ -5,12 +5,12 @@
 // This is a separate file so that users of process metrics don't need to
 // include windows.h unless they need IoCounters.
 
-#ifndef BASE_PROCESS_PROCESS_METRICS_IOCOUNTERS_H_
-#define BASE_PROCESS_PROCESS_METRICS_IOCOUNTERS_H_
+#ifndef BRICK_PROCESS_PROCESS_METRICS_IOCOUNTERS_H_
+#define BRICK_PROCESS_PROCESS_METRICS_IOCOUNTERS_H_
 
 #include <stdint.h>
 
-#include "base/process/process_metrics.h"
+#include "brick/process/process_metrics.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -34,4 +34,4 @@ struct IoCounters {
 
 }  // namespace base
 
-#endif  // BASE_PROCESS_PROCESS_METRICS_IOCOUNTERS_H_
+#endif  // BRICK_PROCESS_PROCESS_METRICS_IOCOUNTERS_H_

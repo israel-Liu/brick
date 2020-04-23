@@ -7,11 +7,11 @@
 
 #include <string>
 
-#include "base/command_line.h"
-#include "base/test/multiprocess_test.h"
-#include "base/win/scoped_handle.h"
-#include "base/win/scoped_process_information.h"
-#include "base/win/startup_information.h"
+#include "brick/command_line.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/scoped_process_information.h"
+#include "brick/win/startup_information.h"
 #include "testing/multiprocess_func_list.h"
 
 const wchar_t kSectionName[] = L"EventTestSection";

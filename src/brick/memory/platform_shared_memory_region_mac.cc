@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/platform_shared_memory_region.h"
+#include "brick/memory/platform_shared_memory_region.h"
 
 #include <mach/mach_vm.h>
 
-#include "base/mac/mach_logging.h"
-#include "base/mac/scoped_mach_vm.h"
-#include "base/numerics/checked_math.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/mac/scoped_mach_vm.h"
+#include "brick/numerics/checked_math.h"
 #include "build/build_config.h"
 
 #if defined(OS_IOS)

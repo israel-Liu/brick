@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/native_library.h"
+#include "brick/native_library.h"
 
 #include <windows.h>
 
-#include "base/files/file_util.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_util.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

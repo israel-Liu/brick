@@ -7,11 +7,11 @@
 
 #include <utility>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/test/bind_test_util.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/test/bind_test_util.h"
 
 namespace base {
 
@@ -243,7 +243,7 @@ void WontCompile() {
   Closure callback_mismatches_bind_type = Bind(&VoidPolymorphic1<int>);
 }
 
-#elif defined(NCTEST_DISALLOW_CAPTURING_LAMBDA)  // [r"fatal error: implicit instantiation of undefined template 'base::internal::FunctorTraits<\(lambda at (\.\./)+base/bind_unittest.nc:[0-9]+:[0-9]+\), void>'"]
+#elif defined(NCTEST_DISALLOW_CAPTURING_LAMBDA)  // [r"fatal error: implicit instantiation of undefined template 'base::internal::FunctorTraits<\(lambda at (\.\./)+brick/bind_unittest.nc:[0-9]+:[0-9]+\), void>'"]
 
 void WontCompile() {
   int i = 0, j = 0;

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_COM_INIT_CHECK_HOOK_H_
-#define BASE_WIN_COM_INIT_CHECK_HOOK_H_
+#ifndef BRICK_WIN_COM_INIT_CHECK_HOOK_H_
+#define BRICK_WIN_COM_INIT_CHECK_HOOK_H_
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -28,7 +28,7 @@ namespace win {
 // COM to be initialized and only works if COM_INIT_CHECK_HOOK_ENABLED is
 // defined. Care should be taken if this is instantiated with multiple threads
 // running as the hotpatch does not apply atomically.
-class BASE_EXPORT ComInitCheckHook {
+class BRICK_EXPORT ComInitCheckHook {
  public:
   ComInitCheckHook();
   ~ComInitCheckHook();
@@ -40,4 +40,4 @@ class BASE_EXPORT ComInitCheckHook {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_COM_INIT_CHECK_HOOK_H_
+#endif  // BRICK_WIN_COM_INIT_CHECK_HOOK_H_

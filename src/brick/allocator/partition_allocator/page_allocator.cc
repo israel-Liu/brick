@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/partition_allocator/page_allocator.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
 
 #include <limits.h>
 
-#include "base/allocator/partition_allocator/address_space_randomization.h"
-#include "base/allocator/partition_allocator/page_allocator_internal.h"
-#include "base/allocator/partition_allocator/spin_lock.h"
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/numerics/checked_math.h"
+#include "brick/allocator/partition_allocator/address_space_randomization.h"
+#include "brick/allocator/partition_allocator/page_allocator_internal.h"
+#include "brick/allocator/partition_allocator/spin_lock.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/numerics/checked_math.h"
 #include "build/build_config.h"
 
 #include <atomic>
@@ -23,9 +23,9 @@
 #endif
 
 #if defined(OS_WIN)
-#include "base/allocator/partition_allocator/page_allocator_internals_win.h"
+#include "brick/allocator/partition_allocator/page_allocator_internals_win.h"
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
-#include "base/allocator/partition_allocator/page_allocator_internals_posix.h"
+#include "brick/allocator/partition_allocator/page_allocator_internals_posix.h"
 #else
 #error Platform not supported.
 #endif

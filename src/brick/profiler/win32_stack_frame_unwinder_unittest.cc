@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/profiler/win32_stack_frame_unwinder.h"
+#include "brick/profiler/win32_stack_frame_unwinder.h"
 
 #include <memory>
 #include <utility>
 #include <vector>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

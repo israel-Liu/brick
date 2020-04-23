@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/fontconfig_util_linux.h"
+#include "brick/test/fontconfig_util_linux.h"
 
 #include <fontconfig/fontconfig.h>
 
-#include "base/base_paths.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/path_service.h"
-#include "base/strings/string_util.h"
+#include "brick/base_paths.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/path_service.h"
+#include "brick/strings/string_util.h"
 
 namespace base {
 

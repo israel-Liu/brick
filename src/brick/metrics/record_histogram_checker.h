@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_RECORD_HISTOGRAM_CHECKER_H_
-#define BASE_METRICS_RECORD_HISTOGRAM_CHECKER_H_
+#ifndef BRICK_METRICS_RECORD_HISTOGRAM_CHECKER_H_
+#define BRICK_METRICS_RECORD_HISTOGRAM_CHECKER_H_
 
 #include <stdint.h>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 
 // RecordHistogramChecker provides an interface for checking whether
 // the given histogram should be recorded.
-class BASE_EXPORT RecordHistogramChecker {
+class BRICK_EXPORT RecordHistogramChecker {
  public:
   virtual ~RecordHistogramChecker() = default;
 
@@ -24,4 +24,4 @@ class BASE_EXPORT RecordHistogramChecker {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_RECORD_HISTOGRAM_CHECKER_H_
+#endif  // BRICK_METRICS_RECORD_HISTOGRAM_CHECKER_H_

@@ -24,10 +24,10 @@ public class BuildConfig {
     public static MAYBE_FINAL boolean IS_MULTIDEX_ENABLED = false;
 #endif
 
-#if defined(_FIREBASE_APP_ID)
-    public static MAYBE_FINAL String FIREBASE_APP_ID = QUOTE(_FIREBASE_APP_ID);
+#if defined(_FIREBRICK_APP_ID)
+    public static MAYBE_FINAL String FIREBRICK_APP_ID = QUOTE(_FIREBRICK_APP_ID);
 #else
-    public static MAYBE_FINAL String FIREBASE_APP_ID = "";
+    public static MAYBE_FINAL String FIREBRICK_APP_ID = "";
 #endif
 
 #if defined(_DCHECK_IS_ON)

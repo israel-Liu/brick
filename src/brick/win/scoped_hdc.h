@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_HDC_H_
-#define BASE_WIN_SCOPED_HDC_H_
+#ifndef BRICK_WIN_SCOPED_HDC_H_
+#define BRICK_WIN_SCOPED_HDC_H_
 
 #include <windows.h>
 
-#include "base/debug/gdi_debug_util_win.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/win/scoped_handle.h"
+#include "brick/debug/gdi_debug_util_win.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 namespace win {
@@ -75,4 +75,4 @@ typedef GenericScopedHandle<CreateDCTraits, DummyVerifierTraits> ScopedCreateDC;
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_HDC_H_
+#endif  // BRICK_WIN_SCOPED_HDC_H_

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FUCHSIA_SCOPED_ZX_HANDLE_H_
-#define BASE_FUCHSIA_SCOPED_ZX_HANDLE_H_
+#ifndef BRICK_FUCHSIA_SCOPED_ZX_HANDLE_H_
+#define BRICK_FUCHSIA_SCOPED_ZX_HANDLE_H_
 
 #include <zircon/status.h>
 #include <zircon/syscalls.h>
 
-#include "base/base_export.h"
-#include "base/fuchsia/fuchsia_logging.h"
-#include "base/scoped_generic.h"
+#include "brick/base_export.h"
+#include "brick/fuchsia/fuchsia_logging.h"
+#include "brick/scoped_generic.h"
 
 namespace zx {
 class channel;
@@ -30,7 +30,7 @@ struct ScopedZxHandleTraits {
 
 }  // namespace internal
 
-class BASE_EXPORT ScopedZxHandle
+class BRICK_EXPORT ScopedZxHandle
     : public ScopedGeneric<zx_handle_t, internal::ScopedZxHandleTraits> {
  public:
   ScopedZxHandle() = default;
@@ -44,4 +44,4 @@ class BASE_EXPORT ScopedZxHandle
 
 }  // namespace base
 
-#endif  // BASE_FUCHSIA_SCOPED_ZX_HANDLE_H_
+#endif  // BRICK_FUCHSIA_SCOPED_ZX_HANDLE_H_

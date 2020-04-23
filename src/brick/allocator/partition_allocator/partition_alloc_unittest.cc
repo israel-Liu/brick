@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/partition_allocator/partition_alloc.h"
+#include "brick/allocator/partition_allocator/partition_alloc.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -10,10 +10,10 @@
 #include <memory>
 #include <vector>
 
-#include "base/allocator/partition_allocator/address_space_randomization.h"
-#include "base/bit_cast.h"
-#include "base/bits.h"
-#include "base/sys_info.h"
+#include "brick/allocator/partition_allocator/address_space_randomization.h"
+#include "brick/bit_cast.h"
+#include "brick/bits.h"
+#include "brick/sys_info.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

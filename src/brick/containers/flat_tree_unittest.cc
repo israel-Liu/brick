@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/containers/flat_tree.h"
+#include "brick/containers/flat_tree.h"
 
 // Following tests are ported and extended tests from libcpp for std::set.
 // They can be found here:
@@ -35,9 +35,9 @@
 #include <string>
 #include <vector>
 
-#include "base/macros.h"
-#include "base/template_util.h"
-#include "base/test/move_only_int.h"
+#include "brick/macros.h"
+#include "brick/template_util.h"
+#include "brick/test/move_only_int.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

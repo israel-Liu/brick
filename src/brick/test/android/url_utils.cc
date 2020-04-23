@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/android/url_utils.h"
+#include "brick/test/android/url_utils.h"
 
-#include "base/android/jni_string.h"
-#include "base/android/scoped_java_ref.h"
+#include "brick/android/jni_string.h"
+#include "brick/android/scoped_java_ref.h"
 #include "jni/UrlUtils_jni.h"
 
 namespace base {

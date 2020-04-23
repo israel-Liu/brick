@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/string_util.h"
+#include "brick/strings/string_util.h"
 
 #include <math.h>
 #include <stdarg.h>
@@ -11,9 +11,9 @@
 
 #include <algorithm>
 
-#include "base/macros.h"
-#include "base/strings/string16.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

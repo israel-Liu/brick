@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_LIBRARY_LOADER_LIBRARY_PREFETCHER_H_
-#define BASE_ANDROID_LIBRARY_LOADER_LIBRARY_PREFETCHER_H_
+#ifndef BRICK_ANDROID_LIBRARY_LOADER_LIBRARY_PREFETCHER_H_
+#define BRICK_ANDROID_LIBRARY_LOADER_LIBRARY_PREFETCHER_H_
 
 #include <jni.h>
 
 #include <stdint.h>
 
-#include "base/android/library_loader/anchor_functions_buildflags.h"
-#include "base/base_export.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
+#include "brick/android/library_loader/anchor_functions_buildflags.h"
+#include "brick/base_export.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
 
 #if BUILDFLAG(SUPPORTS_CODE_ORDERING)
 
@@ -27,7 +27,7 @@ namespace android {
 //   increase its likelihood to be killed.
 // The forked process has background priority and, since it is not declared to
 // the Android runtime, can be killed at any time, which is not an issue here.
-class BASE_EXPORT NativeLibraryPrefetcher {
+class BRICK_EXPORT NativeLibraryPrefetcher {
  public:
   // Finds the executable code range, forks a low priority process pre-fetching
   // it wait()s for the process to exit or die. If ordered_only is true, only
@@ -63,4 +63,4 @@ class BASE_EXPORT NativeLibraryPrefetcher {
 
 #endif  // BUILDFLAG(SUPPORTS_CODE_ORDERING)
 
-#endif  // BASE_ANDROID_LIBRARY_LOADER_LIBRARY_PREFETCHER_H_
+#endif  // BRICK_ANDROID_LIBRARY_LOADER_LIBRARY_PREFETCHER_H_

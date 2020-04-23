@@ -4,9 +4,9 @@
 
 #include <stdint.h>
 
-#include "base/android/jni_string.h"
-#include "base/time/time.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/android/jni_string.h"
+#include "brick/time/time.h"
+#include "brick/trace_event/trace_event.h"
 #include "jni/EarlyTraceEvent_jni.h"
 
 namespace base {

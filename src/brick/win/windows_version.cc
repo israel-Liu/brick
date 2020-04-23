@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/windows_version.h"
+#include "brick/win/windows_version.h"
 
 #include <windows.h>
 
 #include <memory>
 
-#include "base/file_version_info_win.h"
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/win/registry.h"
+#include "brick/file_version_info_win.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/win/registry.h"
 
 #if !defined(__clang__) && _MSC_FULL_VER < 191125507
 #error VS 2017 Update 3.2 or higher is required

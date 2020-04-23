@@ -4,10 +4,10 @@
 
 #include <string>
 
-#include "base/android/jni_string.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/sys_info.h"
+#include "brick/android/jni_string.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/sys_info.h"
 #include "jni/StatisticsRecorderAndroid_jni.h"
 
 using base::android::JavaParamRef;

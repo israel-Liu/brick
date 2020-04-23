@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SEQUENCED_TASK_RUNNER_H_
-#define BASE_SEQUENCED_TASK_RUNNER_H_
+#ifndef BRICK_SEQUENCED_TASK_RUNNER_H_
+#define BRICK_SEQUENCED_TASK_RUNNER_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/sequenced_task_runner_helpers.h"
-#include "base/task_runner.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/sequenced_task_runner_helpers.h"
+#include "brick/task_runner.h"
 
 namespace base {
 
@@ -96,7 +96,7 @@ namespace base {
 //     has a method Run() that runs each runnable task in FIFO order
 //     that can be called from any thread, but only if another
 //     (non-nested) Run() call isn't already happening.
-class BASE_EXPORT SequencedTaskRunner : public TaskRunner {
+class BRICK_EXPORT SequencedTaskRunner : public TaskRunner {
  public:
   // The two PostNonNestable*Task methods below are like their
   // nestable equivalents in TaskRunner, but they guarantee that the
@@ -154,7 +154,7 @@ class BASE_EXPORT SequencedTaskRunner : public TaskRunner {
 //     new Foo, base::OnTaskRunnerDeleter(my_task_runner));
 //
 // For RefCounted see base::RefCountedDeleteOnSequence.
-struct BASE_EXPORT OnTaskRunnerDeleter {
+struct BRICK_EXPORT OnTaskRunnerDeleter {
   explicit OnTaskRunnerDeleter(scoped_refptr<SequencedTaskRunner> task_runner);
   ~OnTaskRunnerDeleter();
 
@@ -173,4 +173,4 @@ struct BASE_EXPORT OnTaskRunnerDeleter {
 
 }  // namespace base
 
-#endif  // BASE_SEQUENCED_TASK_RUNNER_H_
+#endif  // BRICK_SEQUENCED_TASK_RUNNER_H_

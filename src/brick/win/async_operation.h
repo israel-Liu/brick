@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_ASYNC_OPERATION_H_
-#define BASE_WIN_ASYNC_OPERATION_H_
+#ifndef BRICK_WIN_ASYNC_OPERATION_H_
+#define BRICK_WIN_ASYNC_OPERATION_H_
 
 #include <unknwn.h>
 #include <windows.foundation.h>
@@ -13,12 +13,12 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "base/optional.h"
-#include "base/threading/thread_checker.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/optional.h"
+#include "brick/threading/thread_checker.h"
 
 namespace base {
 namespace win {
@@ -241,4 +241,4 @@ class AsyncOperation<
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_ASYNC_OPERATION_H_
+#endif  // BRICK_WIN_ASYNC_OPERATION_H_

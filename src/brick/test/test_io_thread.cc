@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_io_thread.h"
+#include "brick/test/test_io_thread.h"
 
-#include "base/logging.h"
-#include "base/message_loop/message_loop.h"
+#include "brick/logging.h"
+#include "brick/message_loop/message_loop.h"
 
 namespace base {
 

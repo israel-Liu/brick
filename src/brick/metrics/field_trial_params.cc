@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/field_trial_params.h"
+#include "brick/metrics/field_trial_params.h"
 
-#include "base/feature_list.h"
-#include "base/metrics/field_trial.h"
-#include "base/metrics/field_trial_param_associator.h"
-#include "base/strings/string_number_conversions.h"
+#include "brick/feature_list.h"
+#include "brick/metrics/field_trial.h"
+#include "brick/metrics/field_trial_param_associator.h"
+#include "brick/strings/string_number_conversions.h"
 
 namespace base {
 

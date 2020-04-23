@@ -8,12 +8,12 @@
 
 #include <stddef.h>
 
-#include "base/atomicops.h"
-#include "base/cfi_buildflags.h"
-#include "base/debug/asan_invalid_access.h"
-#include "base/debug/profiler.h"
-#include "base/third_party/dynamic_annotations/dynamic_annotations.h"
-#include "base/threading/thread.h"
+#include "brick/atomicops.h"
+#include "brick/cfi_buildflags.h"
+#include "brick/debug/asan_invalid_access.h"
+#include "brick/debug/profiler.h"
+#include "brick/third_party/dynamic_annotations/dynamic_annotations.h"
+#include "brick/threading/thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
@@ -311,8 +311,8 @@ void DataRace() {
 #if defined(THREAD_SANITIZER)
 // A data race detector should report an error in this test.
 TEST(ToolsSanityTest, DataRace) {
-  // The suppression regexp must match that in base/debug/tsan_suppressions.cc.
-  EXPECT_DEATH(DataRace(), "1 race:base/tools_sanity_unittest.cc");
+  // The suppression regexp must match that in brick/debug/tsan_suppressions.cc.
+  EXPECT_DEATH(DataRace(), "1 race:brick/tools_sanity_unittest.cc");
 }
 #endif
 

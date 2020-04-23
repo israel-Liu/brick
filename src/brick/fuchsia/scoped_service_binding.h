@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FUCHSIA_SCOPED_SERVICE_BINDING_H_
-#define BASE_FUCHSIA_SCOPED_SERVICE_BINDING_H_
+#ifndef BRICK_FUCHSIA_SCOPED_SERVICE_BINDING_H_
+#define BRICK_FUCHSIA_SCOPED_SERVICE_BINDING_H_
 
 #include <lib/fidl/cpp/binding.h>
 
-#include "base/bind.h"
-#include "base/fuchsia/services_directory.h"
+#include "brick/bind.h"
+#include "brick/fuchsia/services_directory.h"
 
 namespace base {
 namespace fuchsia {
@@ -43,4 +43,4 @@ class ScopedServiceBinding {
 }  // namespace fuchsia
 }  // namespace base
 
-#endif  // BASE_FUCHSIA_SCOPED_SERVICE_BINDING_H_
+#endif  // BRICK_FUCHSIA_SCOPED_SERVICE_BINDING_H_

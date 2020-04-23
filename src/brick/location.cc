@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/location.h"
+#include "brick/location.h"
 
 #if defined(COMPILER_MSVC)
 #include <intrin.h>
 #endif
 
-#include "base/compiler_specific.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/stringprintf.h"
+#include "brick/compiler_specific.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/stringprintf.h"
 #include "build/build_config.h"
 
 namespace base {

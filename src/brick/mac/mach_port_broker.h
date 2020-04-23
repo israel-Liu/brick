@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_MACH_PORT_BROKER_H_
-#define BASE_MAC_MACH_PORT_BROKER_H_
+#ifndef BRICK_MAC_MACH_PORT_BROKER_H_
+#define BRICK_MAC_MACH_PORT_BROKER_H_
 
 #include <mach/mach.h>
 
@@ -11,13 +11,13 @@
 #include <memory>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/mac/dispatch_source_mach.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/macros.h"
-#include "base/process/port_provider_mac.h"
-#include "base/process/process_handle.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/mac/dispatch_source_mach.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/macros.h"
+#include "brick/process/port_provider_mac.h"
+#include "brick/process/process_handle.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
@@ -35,7 +35,7 @@ namespace base {
 //
 // Since this data arrives over a separate channel, it is not available
 // immediately after a child process has been started.
-class BASE_EXPORT MachPortBroker : public base::PortProvider {
+class BRICK_EXPORT MachPortBroker : public base::PortProvider {
  public:
   // For use in child processes. This will send the task port of the current
   // process over Mach IPC to the port registered by name (via this class) in
@@ -105,4 +105,4 @@ class BASE_EXPORT MachPortBroker : public base::PortProvider {
 
 }  // namespace base
 
-#endif  // BASE_MAC_MACH_PORT_BROKER_H_
+#endif  // BRICK_MAC_MACH_PORT_BROKER_H_

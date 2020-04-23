@@ -275,7 +275,7 @@ public class RecordHistogram {
 
     private static int clampToInt(long value) {
         if (value > Integer.MAX_VALUE) return Integer.MAX_VALUE;
-        // Note: Clamping to MIN_VALUE rather than 0, to let base/ histograms code
+        // Note: Clamping to MIN_VALUE rather than 0, to let brick/ histograms code
         // do its own handling of negative values in the future.
         if (value < Integer.MIN_VALUE) return Integer.MIN_VALUE;
         return (int) value;

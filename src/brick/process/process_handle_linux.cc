@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_handle.h"
+#include "brick/process/process_handle.h"
 
-#include "base/files/file_util.h"
-#include "base/process/internal_linux.h"
+#include "brick/files/file_util.h"
+#include "brick/process/internal_linux.h"
 #if defined(OS_AIX)
-#include "base/process/internal_aix.h"
+#include "brick/process/internal_aix.h"
 #endif
 
 namespace base {

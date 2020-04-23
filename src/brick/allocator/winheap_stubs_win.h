@@ -6,8 +6,8 @@
 // once the win-specific allocation shim has been removed, and the generic shim
 // has becaome the default.
 
-#ifndef BASE_ALLOCATOR_WINHEAP_STUBS_H_
-#define BASE_ALLOCATOR_WINHEAP_STUBS_H_
+#ifndef BRICK_ALLOCATOR_WINHEAP_STUBS_H_
+#define BRICK_ALLOCATOR_WINHEAP_STUBS_H_
 
 #include <stdint.h>
 
@@ -35,4 +35,4 @@ bool WinCallNewHandler(size_t size);
 }  // namespace allocator
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_WINHEAP_STUBS_H_
+#endif  // BRICK_ALLOCATOR_WINHEAP_STUBS_H_

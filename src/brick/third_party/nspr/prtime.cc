@@ -55,20 +55,20 @@
  * PR_ImplodeTime
  *   Upstream implementation from
  *   http://lxr.mozilla.org/nspr/source/pr/src/misc/prtime.c#221
- * All types and macros are defined in the base/third_party/prtime.h file.
+ * All types and macros are defined in the brick/third_party/prtime.h file.
  * These have been copied from the following nspr files. We have only copied
  * over the types we need.
  * 1. prtime.h
  * 2. prtypes.h
  * 3. prlong.h
  *
- * Unit tests are in base/time/pr_time_unittest.cc.
+ * Unit tests are in brick/time/pr_time_unittest.cc.
  */
 
 #include <limits.h>
 
-#include "base/logging.h"
-#include "base/third_party/nspr/prtime.h"
+#include "brick/logging.h"
+#include "brick/third_party/nspr/prtime.h"
 #include "build/build_config.h"
 
 #include <errno.h>  /* for EINVAL */

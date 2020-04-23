@@ -1,7 +1,7 @@
-diff --git a/base/third_party/dmg_fp/dtoa.cc b/base/third_party/dmg_fp/dtoa.cc
+diff --git a/brick/third_party/dmg_fp/dtoa.cc b/brick/third_party/dmg_fp/dtoa.cc
 index c0a51c2..ab4e056 100644
---- a/base/third_party/dmg_fp/dtoa.cc
-+++ b/base/third_party/dmg_fp/dtoa.cc
+--- a/brick/third_party/dmg_fp/dtoa.cc
++++ b/brick/third_party/dmg_fp/dtoa.cc
 @@ -2674,8 +2674,11 @@ strtod
  			if (c > '0' && c <= '9') {
  				L = c - '0';

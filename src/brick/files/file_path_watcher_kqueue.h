@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_FILE_PATH_WATCHER_KQUEUE_H_
-#define BASE_FILES_FILE_PATH_WATCHER_KQUEUE_H_
+#ifndef BRICK_FILES_FILE_PATH_WATCHER_KQUEUE_H_
+#define BRICK_FILES_FILE_PATH_WATCHER_KQUEUE_H_
 
 #include <sys/event.h>
 
 #include <memory>
 #include <vector>
 
-#include "base/files/file_descriptor_watcher_posix.h"
-#include "base/files/file_path.h"
-#include "base/files/file_path_watcher.h"
-#include "base/macros.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_path_watcher.h"
+#include "brick/macros.h"
 
 namespace base {
 
@@ -122,4 +122,4 @@ class FilePathWatcherKQueue : public FilePathWatcher::PlatformDelegate {
 
 }  // namespace base
 
-#endif  // BASE_FILES_FILE_PATH_WATCHER_KQUEUE_H_
+#endif  // BRICK_FILES_FILE_PATH_WATCHER_KQUEUE_H_

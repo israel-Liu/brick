@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_DIRECT_MAP_EXTENT_H_
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_DIRECT_MAP_EXTENT_H_
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_DIRECT_MAP_EXTENT_H_
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_DIRECT_MAP_EXTENT_H_
 
-#include "base/allocator/partition_allocator/partition_bucket.h"
-#include "base/allocator/partition_allocator/partition_page.h"
+#include "brick/allocator/partition_allocator/partition_bucket.h"
+#include "brick/allocator/partition_allocator/partition_page.h"
 
 namespace base {
 namespace internal {
@@ -30,4 +30,4 @@ ALWAYS_INLINE PartitionDirectMapExtent* PartitionDirectMapExtent::FromPage(
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_DIRECT_MAP_EXTENT_H_
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_DIRECT_MAP_EXTENT_H_

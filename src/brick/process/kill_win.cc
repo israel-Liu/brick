@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/kill.h"
+#include "brick/process/kill.h"
 
 #include <algorithm>
 
@@ -10,10 +10,10 @@
 #include <io.h>
 #include <stdint.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/process/memory.h"
-#include "base/process/process_iterator.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/process/memory.h"
+#include "brick/process/process_iterator.h"
 
 namespace base {
 

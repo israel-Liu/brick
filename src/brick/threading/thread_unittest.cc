@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread.h"
+#include "brick/threading/thread.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -10,19 +10,19 @@
 #include <utility>
 #include <vector>
 
-#include "base/bind.h"
-#include "base/debug/leak_annotations.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_loop_current.h"
-#include "base/run_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/gtest_util.h"
-#include "base/third_party/dynamic_annotations/dynamic_annotations.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_loop_current.h"
+#include "brick/run_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/gtest_util.h"
+#include "brick/third_party/dynamic_annotations/dynamic_annotations.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"
@@ -35,7 +35,7 @@ namespace {
 
 void ToggleValue(bool* value) {
   ANNOTATE_BENIGN_RACE(value, "Test-only data race on boolean "
-                       "in base/thread_unittest");
+                       "in brick/thread_unittest");
   *value = !*value;
 }
 

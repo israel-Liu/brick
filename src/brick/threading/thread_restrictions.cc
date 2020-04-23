@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_restrictions.h"
+#include "brick/threading/thread_restrictions.h"
 
 #if DCHECK_IS_ON()
 
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/threading/thread_local.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 

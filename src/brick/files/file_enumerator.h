@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_FILE_ENUMERATOR_H_
-#define BASE_FILES_FILE_ENUMERATOR_H_
+#ifndef BRICK_FILES_FILE_ENUMERATOR_H_
+#define BRICK_FILES_FILE_ENUMERATOR_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/containers/stack.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/containers/stack.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -37,10 +37,10 @@ namespace base {
 //                             FILE_PATH_LITERAL("*.txt"));
 //   for (base::FilePath name = enum.Next(); !name.empty(); name = enum.Next())
 //     ...
-class BASE_EXPORT FileEnumerator {
+class BRICK_EXPORT FileEnumerator {
  public:
   // Note: copy & assign supported.
-  class BASE_EXPORT FileInfo {
+  class BRICK_EXPORT FileInfo {
    public:
     FileInfo();
     ~FileInfo();
@@ -171,4 +171,4 @@ class BASE_EXPORT FileEnumerator {
 
 }  // namespace base
 
-#endif  // BASE_FILES_FILE_ENUMERATOR_H_
+#endif  // BRICK_FILES_FILE_ENUMERATOR_H_

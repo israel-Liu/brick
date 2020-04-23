@@ -10,7 +10,7 @@
 #undef _GNU_SOURCE
 #endif
 
-#include "base/posix/safe_strerror.h"
+#include "brick/posix/safe_strerror.h"
 
 #include <errno.h>
 #include <stdio.h>

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory_helper.h"
+#include "brick/memory/shared_memory_helper.h"
 
 #if defined(OS_CHROMEOS)
 #include <sys/resource.h>
 #include <sys/time.h>
 
-#include "base/debug/alias.h"
+#include "brick/debug/alias.h"
 #endif  // defined(OS_CHROMEOS)
 
-#include "base/threading/thread_restrictions.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

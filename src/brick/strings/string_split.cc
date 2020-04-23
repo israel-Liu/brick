@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/string_split.h"
+#include "brick/strings/string_split.h"
 
 #include <stddef.h>
 
-#include "base/logging.h"
-#include "base/strings/string_util.h"
-#include "base/third_party/icu/icu_utf.h"
+#include "brick/logging.h"
+#include "brick/strings/string_util.h"
+#include "brick/third_party/icu/icu_utf.h"
 
 namespace base {
 

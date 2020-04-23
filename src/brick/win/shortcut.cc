@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/shortcut.h"
+#include "brick/win/shortcut.h"
 
 #include <objbase.h>
 #include <shellapi.h>
@@ -10,11 +10,11 @@
 #include <propkey.h>
 #include <wrl/client.h>
 
-#include "base/files/file_util.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/win/scoped_propvariant.h"
-#include "base/win/win_util.h"
-#include "base/win/windows_version.h"
+#include "brick/files/file_util.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/win/scoped_propvariant.h"
+#include "brick/win/win_util.h"
+#include "brick/win/windows_version.h"
 
 namespace base {
 namespace win {

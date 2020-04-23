@@ -11,11 +11,11 @@
 
 #include <string>
 
-#include "base/json/json_reader.h"
-#include "base/json/json_writer.h"
-#include "base/json/string_escape.h"
-#include "base/logging.h"
-#include "base/values.h"
+#include "brick/json/json_reader.h"
+#include "brick/json/json_writer.h"
+#include "brick/json/string_escape.h"
+#include "brick/logging.h"
+#include "brick/values.h"
 
 // Entry point for libFuzzer.
 // We will use the last byte of data as parsing options.

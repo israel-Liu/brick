@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_parser.h"
+#include "brick/json/json_parser.h"
 
 #include <stddef.h>
 
 #include <memory>
 
-#include "base/json/json_reader.h"
-#include "base/memory/ptr_util.h"
-#include "base/optional.h"
-#include "base/strings/stringprintf.h"
-#include "base/values.h"
+#include "brick/json/json_reader.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/optional.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/values.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

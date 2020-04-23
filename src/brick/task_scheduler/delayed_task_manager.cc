@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/delayed_task_manager.h"
+#include "brick/task_scheduler/delayed_task_manager.h"
 
 #include <algorithm>
 
-#include "base/bind.h"
-#include "base/logging.h"
-#include "base/task_runner.h"
-#include "base/task_scheduler/task.h"
+#include "brick/bind.h"
+#include "brick/logging.h"
+#include "brick/task_runner.h"
+#include "brick/task_scheduler/task.h"
 
 namespace base {
 namespace internal {

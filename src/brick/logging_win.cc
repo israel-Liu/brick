@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/logging_win.h"
-#include "base/memory/singleton.h"
+#include "brick/logging_win.h"
+#include "brick/memory/singleton.h"
 #include <initguid.h>  // NOLINT
 
 namespace logging {

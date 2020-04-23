@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_metrics.h"
+#include "brick/process/process_metrics.h"
 
 #include <dirent.h>
 #include <fcntl.h>
@@ -14,18 +14,18 @@
 #include <unistd.h>
 #include <utility>
 
-#include "base/files/dir_reader_posix.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/optional.h"
-#include "base/process/internal_linux.h"
-#include "base/process/process_metrics_iocounters.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_tokenizer.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/dir_reader_posix.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/optional.h"
+#include "brick/process/internal_linux.h"
+#include "brick/process/process_metrics_iocounters.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_tokenizer.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 namespace base {

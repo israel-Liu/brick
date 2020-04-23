@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/file_descriptor_store.h"
+#include "brick/file_descriptor_store.h"
 
 #include <utility>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 

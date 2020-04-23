@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_LAUNCHER_UNIT_TEST_LAUNCHER_H_
-#define BASE_TEST_LAUNCHER_UNIT_TEST_LAUNCHER_H_
+#ifndef BRICK_TEST_LAUNCHER_UNIT_TEST_LAUNCHER_H_
+#define BRICK_TEST_LAUNCHER_UNIT_TEST_LAUNCHER_H_
 
 #include <stddef.h>
 
 #include <string>
 #include <vector>
 
-#include "base/callback.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/test/launcher/test_launcher.h"
+#include "brick/callback.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/test/launcher/test_launcher.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -131,4 +131,4 @@ class UnitTestLauncherDelegate : public TestLauncherDelegate {
 
 }   // namespace base
 
-#endif  // BASE_TEST_LAUNCHER_UNIT_TEST_LAUNCHER_H_
+#endif  // BRICK_TEST_LAUNCHER_UNIT_TEST_LAUNCHER_H_

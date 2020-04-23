@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_SCOPED_POLICY_H_
-#define BASE_MEMORY_SCOPED_POLICY_H_
+#ifndef BRICK_MEMORY_SCOPED_POLICY_H_
+#define BRICK_MEMORY_SCOPED_POLICY_H_
 
 namespace base {
 namespace scoped_policy {
@@ -22,4 +22,4 @@ enum OwnershipPolicy {
 }  // namespace scoped_policy
 }  // namespace base
 
-#endif  // BASE_MEMORY_SCOPED_POLICY_H_
+#endif  // BRICK_MEMORY_SCOPED_POLICY_H_

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_READ_ONLY_SHARED_MEMORY_REGION_H_
-#define BASE_MEMORY_READ_ONLY_SHARED_MEMORY_REGION_H_
+#ifndef BRICK_MEMORY_READ_ONLY_SHARED_MEMORY_REGION_H_
+#define BRICK_MEMORY_READ_ONLY_SHARED_MEMORY_REGION_H_
 
 #include <utility>
 
-#include "base/macros.h"
-#include "base/memory/platform_shared_memory_region.h"
-#include "base/memory/shared_memory_mapping.h"
+#include "brick/macros.h"
+#include "brick/memory/platform_shared_memory_region.h"
+#include "brick/memory/shared_memory_mapping.h"
 
 namespace base {
 
@@ -19,7 +19,7 @@ struct MappedReadOnlyRegion;
 // owns the platform handle it wraps. Mappings created by this region are
 // read-only. These mappings remain valid even after the region handle is moved
 // or destroyed.
-class BASE_EXPORT ReadOnlySharedMemoryRegion {
+class BRICK_EXPORT ReadOnlySharedMemoryRegion {
  public:
   using MappingType = ReadOnlySharedMemoryMapping;
   // Creates a new ReadOnlySharedMemoryRegion instance of a given size along
@@ -113,4 +113,4 @@ struct MappedReadOnlyRegion {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_READ_ONLY_SHARED_MEMORY_REGION_H_
+#endif  // BRICK_MEMORY_READ_ONLY_SHARED_MEMORY_REGION_H_

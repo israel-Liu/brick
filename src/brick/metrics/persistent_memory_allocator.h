@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_PERSISTENT_MEMORY_ALLOCATOR_H_
-#define BASE_METRICS_PERSISTENT_MEMORY_ALLOCATOR_H_
+#ifndef BRICK_METRICS_PERSISTENT_MEMORY_ALLOCATOR_H_
+#define BRICK_METRICS_PERSISTENT_MEMORY_ALLOCATOR_H_
 
 #include <stdint.h>
 
@@ -11,12 +11,12 @@
 #include <memory>
 #include <type_traits>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 
@@ -26,8 +26,8 @@ class SharedMemory;
 
 // Simple allocator for pieces of a memory block that may be persistent
 // to some storage or shared across multiple processes. This class resides
-// under base/metrics because it was written for that purpose. It is,
-// however, fully general-purpose and can be freely moved to base/memory
+// under brick/metrics because it was written for that purpose. It is,
+// however, fully general-purpose and can be freely moved to brick/memory
 // if other uses are found.
 //
 // This class provides for thread-secure (i.e. safe against other threads
@@ -92,7 +92,7 @@ class SharedMemory;
 // for different natural word widths, they CANNOT be exchanged between CPUs
 // of different endianess. Attempts to do so will simply see the existing data
 // as corrupt and refuse to access any of it.
-class BASE_EXPORT PersistentMemoryAllocator {
+class BRICK_EXPORT PersistentMemoryAllocator {
  public:
   typedef uint32_t Reference;
 
@@ -133,7 +133,7 @@ class BASE_EXPORT PersistentMemoryAllocator {
   // what it can and stop only when corruption forces it to. Bad corruption
   // could cause the same object to be returned many times but it will
   // eventually quit.
-  class BASE_EXPORT Iterator {
+  class BRICK_EXPORT Iterator {
    public:
     // Constructs an iterator on a given |allocator|, starting at the beginning.
     // The allocator must live beyond the lifetime of the iterator. This class
@@ -690,7 +690,7 @@ class BASE_EXPORT PersistentMemoryAllocator {
 // heap. It is generally used when some kind of "death rattle" handler will
 // save the contents to persistent storage during process shutdown. It is
 // also useful for testing.
-class BASE_EXPORT LocalPersistentMemoryAllocator
+class BRICK_EXPORT LocalPersistentMemoryAllocator
     : public PersistentMemoryAllocator {
  public:
   LocalPersistentMemoryAllocator(size_t size, uint64_t id,
@@ -713,7 +713,7 @@ class BASE_EXPORT LocalPersistentMemoryAllocator
 // This allocator takes a shared-memory object and performs allocation from
 // it. The memory must be previously mapped via Map() or MapAt(). The allocator
 // takes ownership of the memory object.
-class BASE_EXPORT SharedPersistentMemoryAllocator
+class BRICK_EXPORT SharedPersistentMemoryAllocator
     : public PersistentMemoryAllocator {
  public:
   SharedPersistentMemoryAllocator(std::unique_ptr<SharedMemory> memory,
@@ -740,7 +740,7 @@ class BASE_EXPORT SharedPersistentMemoryAllocator
 #if !defined(OS_NACL)  // NACL doesn't support any kind of file access in build.
 // This allocator takes a memory-mapped file object and performs allocation
 // from it. The allocator takes ownership of the file object.
-class BASE_EXPORT FilePersistentMemoryAllocator
+class BRICK_EXPORT FilePersistentMemoryAllocator
     : public PersistentMemoryAllocator {
  public:
   // A |max_size| of zero will use the length of the file as the maximum
@@ -779,7 +779,7 @@ class BASE_EXPORT FilePersistentMemoryAllocator
 // This is a top-level class instead of an inner class of the PMA so that it
 // can be forward-declared in other header files without the need to include
 // the full contents of this file.
-class BASE_EXPORT DelayedPersistentAllocation {
+class BRICK_EXPORT DelayedPersistentAllocation {
  public:
   using Reference = PersistentMemoryAllocator::Reference;
 
@@ -869,4 +869,4 @@ class BASE_EXPORT DelayedPersistentAllocation {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_PERSISTENT_MEMORY_ALLOCATOR_H_
+#endif  // BRICK_METRICS_PERSISTENT_MEMORY_ALLOCATOR_H_

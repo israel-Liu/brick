@@ -18,8 +18,8 @@
 // as a std::string. Similarly for Values that are always Value::DICTIONARY
 // (should be flat_map), Value::LIST (should be std::vector), et cetera.
 
-#ifndef BASE_VALUES_H_
-#define BASE_VALUES_H_
+#ifndef BRICK_VALUES_H_
+#define BRICK_VALUES_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -31,13 +31,13 @@
 #include <utility>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/containers/flat_map.h"
-#include "base/containers/span.h"
-#include "base/macros.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
-#include "base/value_iterators.h"
+#include "brick/base_export.h"
+#include "brick/containers/flat_map.h"
+#include "brick/containers/span.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
+#include "brick/value_iterators.h"
 
 namespace base {
 
@@ -78,7 +78,7 @@ class Value;
 //     dict.SetKey("mykey", base::Value(foo));
 //     return dict;
 //   }
-class BASE_EXPORT Value {
+class BRICK_EXPORT Value {
  public:
   using BlobStorage = std::vector<char>;
   using DictStorage = flat_map<std::string, std::unique_ptr<Value>>;
@@ -338,12 +338,12 @@ class BASE_EXPORT Value {
 
   // Comparison operators so that Values can easily be used with standard
   // library algorithms and associative containers.
-  BASE_EXPORT friend bool operator==(const Value& lhs, const Value& rhs);
-  BASE_EXPORT friend bool operator!=(const Value& lhs, const Value& rhs);
-  BASE_EXPORT friend bool operator<(const Value& lhs, const Value& rhs);
-  BASE_EXPORT friend bool operator>(const Value& lhs, const Value& rhs);
-  BASE_EXPORT friend bool operator<=(const Value& lhs, const Value& rhs);
-  BASE_EXPORT friend bool operator>=(const Value& lhs, const Value& rhs);
+  BRICK_EXPORT friend bool operator==(const Value& lhs, const Value& rhs);
+  BRICK_EXPORT friend bool operator!=(const Value& lhs, const Value& rhs);
+  BRICK_EXPORT friend bool operator<(const Value& lhs, const Value& rhs);
+  BRICK_EXPORT friend bool operator>(const Value& lhs, const Value& rhs);
+  BRICK_EXPORT friend bool operator<=(const Value& lhs, const Value& rhs);
+  BRICK_EXPORT friend bool operator>=(const Value& lhs, const Value& rhs);
 
   // Compares if two Value objects have equal contents.
   // DEPRECATED, use operator==(const Value& lhs, const Value& rhs) instead.
@@ -351,7 +351,7 @@ class BASE_EXPORT Value {
   bool Equals(const Value* other) const;
 
   // Estimates dynamic memory usage.
-  // See base/trace_event/memory_usage_estimator.h for more info.
+  // See brick/trace_event/memory_usage_estimator.h for more info.
   size_t EstimateMemoryUsage() const;
 
  protected:
@@ -379,7 +379,7 @@ class BASE_EXPORT Value {
 // DictionaryValue provides a key-value dictionary with (optional) "path"
 // parsing for recursive access; see the comment at the top of the file. Keys
 // are |std::string|s and should be UTF-8 encoded.
-class BASE_EXPORT DictionaryValue : public Value {
+class BRICK_EXPORT DictionaryValue : public Value {
  public:
   using const_iterator = DictStorage::const_iterator;
   using iterator = DictStorage::iterator;
@@ -554,7 +554,7 @@ class BASE_EXPORT DictionaryValue : public Value {
   // This class provides an iterator over both keys and values in the
   // dictionary.  It can't be used to modify the dictionary.
   // DEPRECATED, use Value::DictItems() instead.
-  class BASE_EXPORT Iterator {
+  class BRICK_EXPORT Iterator {
    public:
     explicit Iterator(const DictionaryValue& target);
     Iterator(const Iterator& other);
@@ -589,7 +589,7 @@ class BASE_EXPORT DictionaryValue : public Value {
 };
 
 // This type of Value represents a list of other Value values.
-class BASE_EXPORT ListValue : public Value {
+class BRICK_EXPORT ListValue : public Value {
  public:
   using const_iterator = ListStorage::const_iterator;
   using iterator = ListStorage::iterator;
@@ -734,7 +734,7 @@ class BASE_EXPORT ListValue : public Value {
 
 // This interface is implemented by classes that know how to serialize
 // Value objects.
-class BASE_EXPORT ValueSerializer {
+class BRICK_EXPORT ValueSerializer {
  public:
   virtual ~ValueSerializer();
 
@@ -743,7 +743,7 @@ class BASE_EXPORT ValueSerializer {
 
 // This interface is implemented by classes that know how to deserialize Value
 // objects.
-class BASE_EXPORT ValueDeserializer {
+class BRICK_EXPORT ValueDeserializer {
  public:
   virtual ~ValueDeserializer();
 
@@ -761,22 +761,22 @@ class BASE_EXPORT ValueDeserializer {
 // gtest uses this operator to print readable output on test failures, we must
 // override each specific type. Otherwise, the default template implementation
 // is preferred over an upcast.
-BASE_EXPORT std::ostream& operator<<(std::ostream& out, const Value& value);
+BRICK_EXPORT std::ostream& operator<<(std::ostream& out, const Value& value);
 
-BASE_EXPORT inline std::ostream& operator<<(std::ostream& out,
+BRICK_EXPORT inline std::ostream& operator<<(std::ostream& out,
                                             const DictionaryValue& value) {
   return out << static_cast<const Value&>(value);
 }
 
-BASE_EXPORT inline std::ostream& operator<<(std::ostream& out,
+BRICK_EXPORT inline std::ostream& operator<<(std::ostream& out,
                                             const ListValue& value) {
   return out << static_cast<const Value&>(value);
 }
 
 // Stream operator so that enum class Types can be used in log statements.
-BASE_EXPORT std::ostream& operator<<(std::ostream& out,
+BRICK_EXPORT std::ostream& operator<<(std::ostream& out,
                                      const Value::Type& type);
 
 }  // namespace base
 
-#endif  // BASE_VALUES_H_
+#endif  // BRICK_VALUES_H_

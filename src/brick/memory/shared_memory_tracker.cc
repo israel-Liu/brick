@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory_tracker.h"
+#include "brick/memory/shared_memory_tracker.h"
 
-#include "base/memory/shared_memory.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/trace_event/memory_allocator_dump_guid.h"
-#include "base/trace_event/memory_dump_manager.h"
-#include "base/trace_event/process_memory_dump.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/trace_event/memory_allocator_dump_guid.h"
+#include "brick/trace_event/memory_dump_manager.h"
+#include "brick/trace_event/process_memory_dump.h"
 
 namespace base {
 

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_THREAD_RESTRICTIONS_H_
-#define BASE_THREADING_THREAD_RESTRICTIONS_H_
+#ifndef BRICK_THREADING_THREAD_RESTRICTIONS_H_
+#define BRICK_THREADING_THREAD_RESTRICTIONS_H_
 
-#include "base/base_export.h"
-#include "base/gtest_prod_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 class BrowserProcessImpl;
 class HistogramSynchronizer;
@@ -154,7 +154,7 @@ class Thread;
 class ThreadTestHelper;
 
 #if DCHECK_IS_ON()
-#define INLINE_IF_DCHECK_IS_OFF BASE_EXPORT
+#define INLINE_IF_DCHECK_IS_OFF BRICK_EXPORT
 #define EMPTY_BODY_IF_DCHECK_IS_OFF
 #else
 #define INLINE_IF_DCHECK_IS_OFF inline
@@ -196,7 +196,7 @@ INLINE_IF_DCHECK_IS_OFF void AssertBlockingAllowed()
 INLINE_IF_DCHECK_IS_OFF void DisallowBlocking() EMPTY_BODY_IF_DCHECK_IS_OFF;
 
 // Disallows blocking calls within its scope.
-class BASE_EXPORT ScopedDisallowBlocking {
+class BRICK_EXPORT ScopedDisallowBlocking {
  public:
   ScopedDisallowBlocking() EMPTY_BODY_IF_DCHECK_IS_OFF;
   ~ScopedDisallowBlocking() EMPTY_BODY_IF_DCHECK_IS_OFF;
@@ -214,7 +214,7 @@ class BASE_EXPORT ScopedDisallowBlocking {
 //
 // Avoid using this. Prefer making blocking calls from tasks posted to
 // base::TaskScheduler with base::MayBlock().
-class BASE_EXPORT ScopedAllowBlocking {
+class BRICK_EXPORT ScopedAllowBlocking {
  private:
   // This can only be instantiated by friends. Use ScopedAllowBlockingForTesting
   // in unit tests to avoid the friend requirement.
@@ -277,7 +277,7 @@ INLINE_IF_DCHECK_IS_OFF void DisallowBaseSyncPrimitives()
 // On Windows, join processes asynchronously using base::win::ObjectWatcher.
 
 // This can only be used in a scope where blocking is allowed.
-class BASE_EXPORT ScopedAllowBaseSyncPrimitives {
+class BRICK_EXPORT ScopedAllowBaseSyncPrimitives {
  private:
   // This can only be instantiated by friends. Use
   // ScopedAllowBaseSyncPrimitivesForTesting in unit tests to avoid the friend
@@ -310,7 +310,7 @@ class BASE_EXPORT ScopedAllowBaseSyncPrimitives {
 };
 
 // This can be used in a scope where blocking is disallowed.
-class BASE_EXPORT ScopedAllowBaseSyncPrimitivesOutsideBlockingScope {
+class BRICK_EXPORT ScopedAllowBaseSyncPrimitivesOutsideBlockingScope {
  private:
   // This can only be instantiated by friends. Use
   // ScopedAllowBaseSyncPrimitivesForTesting in unit tests to avoid the friend
@@ -342,7 +342,7 @@ class BASE_EXPORT ScopedAllowBaseSyncPrimitivesOutsideBlockingScope {
 
 // This can be used in tests without being a friend of
 // ScopedAllowBaseSyncPrimitives(OutsideBlockingScope).
-class BASE_EXPORT ScopedAllowBaseSyncPrimitivesForTesting {
+class BRICK_EXPORT ScopedAllowBaseSyncPrimitivesForTesting {
  public:
   ScopedAllowBaseSyncPrimitivesForTesting() EMPTY_BODY_IF_DCHECK_IS_OFF;
   ~ScopedAllowBaseSyncPrimitivesForTesting() EMPTY_BODY_IF_DCHECK_IS_OFF;
@@ -368,13 +368,13 @@ INLINE_IF_DCHECK_IS_OFF void ResetThreadRestrictionsForTesting()
 
 }  // namespace internal
 
-class BASE_EXPORT ThreadRestrictions {
+class BRICK_EXPORT ThreadRestrictions {
  public:
   // Constructing a ScopedAllowIO temporarily allows IO for the current
   // thread.  Doing this is almost certainly always incorrect.
   //
   // DEPRECATED. Use ScopedAllowBlocking(ForTesting).
-  class BASE_EXPORT ScopedAllowIO {
+  class BRICK_EXPORT ScopedAllowIO {
    public:
     ScopedAllowIO() EMPTY_BODY_IF_DCHECK_IS_OFF;
     ~ScopedAllowIO() EMPTY_BODY_IF_DCHECK_IS_OFF;
@@ -487,7 +487,7 @@ class BASE_EXPORT ThreadRestrictions {
   // another way. Talk to jam or brettw.
   //
   // DEPRECATED. Use ScopedAllowBaseSyncPrimitives.
-  class BASE_EXPORT ScopedAllowWait {
+  class BRICK_EXPORT ScopedAllowWait {
    public:
     ScopedAllowWait() EMPTY_BODY_IF_DCHECK_IS_OFF;
     ~ScopedAllowWait() EMPTY_BODY_IF_DCHECK_IS_OFF;
@@ -505,4 +505,4 @@ class BASE_EXPORT ThreadRestrictions {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_RESTRICTIONS_H_
+#endif  // BRICK_THREADING_THREAD_RESTRICTIONS_H_

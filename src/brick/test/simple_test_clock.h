@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_SIMPLE_TEST_CLOCK_H_
-#define BASE_TEST_SIMPLE_TEST_CLOCK_H_
+#ifndef BRICK_TEST_SIMPLE_TEST_CLOCK_H_
+#define BRICK_TEST_SIMPLE_TEST_CLOCK_H_
 
-#include "base/compiler_specific.h"
-#include "base/synchronization/lock.h"
-#include "base/time/clock.h"
-#include "base/time/time.h"
+#include "brick/compiler_specific.h"
+#include "brick/synchronization/lock.h"
+#include "brick/time/clock.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -38,4 +38,4 @@ class SimpleTestClock : public Clock {
 
 }  // namespace base
 
-#endif  // BASE_TEST_SIMPLE_TEST_CLOCK_H_
+#endif  // BRICK_TEST_SIMPLE_TEST_CLOCK_H_

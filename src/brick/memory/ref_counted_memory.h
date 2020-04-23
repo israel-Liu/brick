@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_REF_COUNTED_MEMORY_H_
-#define BASE_MEMORY_REF_COUNTED_MEMORY_H_
+#ifndef BRICK_MEMORY_REF_COUNTED_MEMORY_H_
+#define BRICK_MEMORY_REF_COUNTED_MEMORY_H_
 
 #include <stddef.h>
 
@@ -11,11 +11,11 @@
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/shared_memory.h"
-#include "base/memory/shared_memory_mapping.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/memory/shared_memory_mapping.h"
 
 namespace base {
 
@@ -24,7 +24,7 @@ class ReadOnlySharedMemoryRegion;
 // A generic interface to memory. This object is reference counted because most
 // of its subclasses own the data they carry, and this interface needs to
 // support heterogeneous containers of these different types of memory.
-class BASE_EXPORT RefCountedMemory
+class BRICK_EXPORT RefCountedMemory
     : public RefCountedThreadSafe<RefCountedMemory> {
  public:
   // Retrieves a pointer to the beginning of the data we point to. If the data
@@ -50,7 +50,7 @@ class BASE_EXPORT RefCountedMemory
 
 // An implementation of RefCountedMemory, where the ref counting does not
 // matter.
-class BASE_EXPORT RefCountedStaticMemory : public RefCountedMemory {
+class BRICK_EXPORT RefCountedStaticMemory : public RefCountedMemory {
  public:
   RefCountedStaticMemory() : data_(nullptr), length_(0) {}
   RefCountedStaticMemory(const void* data, size_t length)
@@ -72,7 +72,7 @@ class BASE_EXPORT RefCountedStaticMemory : public RefCountedMemory {
 
 // An implementation of RefCountedMemory, where the data is stored in a STL
 // vector.
-class BASE_EXPORT RefCountedBytes : public RefCountedMemory {
+class BRICK_EXPORT RefCountedBytes : public RefCountedMemory {
  public:
   RefCountedBytes();
 
@@ -117,7 +117,7 @@ class BASE_EXPORT RefCountedBytes : public RefCountedMemory {
 
 // An implementation of RefCountedMemory, where the bytes are stored in a STL
 // string. Use this if your data naturally arrives in that format.
-class BASE_EXPORT RefCountedString : public RefCountedMemory {
+class BRICK_EXPORT RefCountedString : public RefCountedMemory {
  public:
   RefCountedString();
 
@@ -143,7 +143,7 @@ class BASE_EXPORT RefCountedString : public RefCountedMemory {
 
 // An implementation of RefCountedMemory, where the bytes are stored in
 // SharedMemory.
-class BASE_EXPORT RefCountedSharedMemory : public RefCountedMemory {
+class BRICK_EXPORT RefCountedSharedMemory : public RefCountedMemory {
  public:
   // Constructs a RefCountedMemory object by taking ownership of an already
   // mapped SharedMemory object.
@@ -164,7 +164,7 @@ class BASE_EXPORT RefCountedSharedMemory : public RefCountedMemory {
 
 // An implementation of RefCountedMemory, where the bytes are stored in
 // ReadOnlySharedMemoryMapping.
-class BASE_EXPORT RefCountedSharedMemoryMapping : public RefCountedMemory {
+class BRICK_EXPORT RefCountedSharedMemoryMapping : public RefCountedMemory {
  public:
   // Constructs a RefCountedMemory object by taking ownership of an already
   // mapped ReadOnlySharedMemoryMapping object.
@@ -190,4 +190,4 @@ class BASE_EXPORT RefCountedSharedMemoryMapping : public RefCountedMemory {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_REF_COUNTED_MEMORY_H_
+#endif  // BRICK_MEMORY_REF_COUNTED_MEMORY_H_

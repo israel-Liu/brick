@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/win_util.h"
+#include "brick/win/win_util.h"
 
 #include <aclapi.h>
 #include <cfgmgr32.h>
@@ -34,24 +34,24 @@
 
 #include <memory>
 
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/scoped_native_library.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/win/core_winrt_util.h"
-#include "base/win/registry.h"
-#include "base/win/scoped_co_mem.h"
-#include "base/win/scoped_handle.h"
-#include "base/win/scoped_hstring.h"
-#include "base/win/scoped_propvariant.h"
-#include "base/win/win_client_metrics.h"
-#include "base/win/windows_version.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/scoped_native_library.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/win/core_winrt_util.h"
+#include "brick/win/registry.h"
+#include "brick/win/scoped_co_mem.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/scoped_hstring.h"
+#include "brick/win/scoped_propvariant.h"
+#include "brick/win/win_client_metrics.h"
+#include "brick/win/windows_version.h"
 
 namespace base {
 namespace win {

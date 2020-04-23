@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/heap_profiler_allocation_context_tracker.h"
+#include "brick/trace_event/heap_profiler_allocation_context_tracker.h"
 
 #include <algorithm>
 #include <iterator>
 
-#include "base/atomicops.h"
-#include "base/debug/debugging_buildflags.h"
-#include "base/debug/leak_annotations.h"
-#include "base/debug/stack_trace.h"
-#include "base/no_destructor.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread_local_storage.h"
-#include "base/trace_event/heap_profiler_allocation_context.h"
+#include "brick/atomicops.h"
+#include "brick/debug/debugging_buildflags.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/no_destructor.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread_local_storage.h"
+#include "brick/trace_event/heap_profiler_allocation_context.h"
 #include "build/build_config.h"
 
 #if defined(OS_ANDROID) && BUILDFLAG(CAN_UNWIND_WITH_CFI_TABLE)
-#include "base/trace_event/cfi_backtrace_android.h"
+#include "brick/trace_event/cfi_backtrace_android.h"
 #endif
 
 #if defined(OS_LINUX) || defined(OS_ANDROID)
@@ -218,7 +218,7 @@ bool AllocationContextTracker::GetContextSnapshot(AllocationContext* ctx) {
 // from this point and up until main(). We intentionally request
 // kMaxFrameCount + 1 frames, so that we know if there are more frames
 // than our backtrace capacity.
-#if !defined(OS_NACL)  // We don't build base/debug/stack_trace.cc for NaCl.
+#if !defined(OS_NACL)  // We don't build brick/debug/stack_trace.cc for NaCl.
 #if defined(OS_ANDROID) && BUILDFLAG(CAN_UNWIND_WITH_CFI_TABLE)
         const void* frames[Backtrace::kMaxFrameCount + 1];
         static_assert(arraysize(frames) >= Backtrace::kMaxFrameCount,

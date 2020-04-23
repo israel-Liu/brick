@@ -2,42 +2,42 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/launcher/unit_test_launcher.h"
+#include "brick/test/launcher/unit_test_launcher.h"
 
 #include <map>
 #include <memory>
 #include <utility>
 
-#include "base/base_switches.h"
-#include "base/bind.h"
-#include "base/callback_helpers.h"
-#include "base/command_line.h"
-#include "base/compiler_specific.h"
-#include "base/debug/debugger.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/format_macros.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/message_loop/message_loop.h"
-#include "base/sequence_checker.h"
-#include "base/single_thread_task_runner.h"
-#include "base/stl_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_util.h"
-#include "base/sys_info.h"
-#include "base/test/gtest_xml_util.h"
-#include "base/test/launcher/test_launcher.h"
-#include "base/test/test_switches.h"
-#include "base/test/test_timeouts.h"
-#include "base/third_party/dynamic_annotations/dynamic_annotations.h"
-#include "base/threading/thread_checker.h"
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/base_switches.h"
+#include "brick/bind.h"
+#include "brick/callback_helpers.h"
+#include "brick/command_line.h"
+#include "brick/compiler_specific.h"
+#include "brick/debug/debugger.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/format_macros.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/sequence_checker.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_util.h"
+#include "brick/sys_info.h"
+#include "brick/test/gtest_xml_util.h"
+#include "brick/test/launcher/test_launcher.h"
+#include "brick/test/test_switches.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/third_party/dynamic_annotations/dynamic_annotations.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/threading/thread_task_runner_handle.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_POSIX)
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 #endif
 
 namespace base {

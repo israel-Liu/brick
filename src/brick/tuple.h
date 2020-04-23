@@ -22,8 +22,8 @@
 //   DispatchToMethod(&foo, &Foo::SomeMeth, std::make_tuple(1, 2, 3));
 //   // foo->SomeMeth(1, 2, 3);
 
-#ifndef BASE_TUPLE_H_
-#define BASE_TUPLE_H_
+#ifndef BRICK_TUPLE_H_
+#define BRICK_TUPLE_H_
 
 #include <stddef.h>
 #include <tuple>
@@ -109,4 +109,4 @@ inline void DispatchToMethod(const ObjT& obj,
 
 }  // namespace base
 
-#endif  // BASE_TUPLE_H_
+#endif  // BRICK_TUPLE_H_

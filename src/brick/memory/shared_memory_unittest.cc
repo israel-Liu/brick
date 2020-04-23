@@ -2,36 +2,36 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory.h"
+#include "brick/memory/shared_memory.h"
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <memory>
 
-#include "base/atomicops.h"
-#include "base/base_switches.h"
-#include "base/bind.h"
-#include "base/command_line.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/shared_memory_handle.h"
-#include "base/process/kill.h"
-#include "base/rand_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/sys_info.h"
-#include "base/test/multiprocess_test.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
-#include "base/unguessable_token.h"
+#include "brick/atomicops.h"
+#include "brick/base_switches.h"
+#include "brick/bind.h"
+#include "brick/command_line.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/shared_memory_handle.h"
+#include "brick/process/kill.h"
+#include "brick/rand_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/sys_info.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
+#include "brick/unguessable_token.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"
 
 #if defined(OS_ANDROID)
-#include "base/callback.h"
+#include "brick/callback.h"
 #endif
 
 #if defined(OS_POSIX)
@@ -48,13 +48,13 @@
 #endif
 
 #if defined(OS_WIN)
-#include "base/win/scoped_handle.h"
+#include "brick/win/scoped_handle.h"
 #endif
 
 #if defined(OS_FUCHSIA)
 #include <zircon/process.h>
 #include <zircon/syscalls.h>
-#include "base/fuchsia/scoped_zx_handle.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
 #endif
 
 namespace base {

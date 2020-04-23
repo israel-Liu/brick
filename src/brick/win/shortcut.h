@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SHORTCUT_H_
-#define BASE_WIN_SHORTCUT_H_
+#ifndef BRICK_WIN_SHORTCUT_H_
+#define BRICK_WIN_SHORTCUT_H_
 
 #include <windows.h>
 #include <stdint.h>
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/strings/string16.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/strings/string16.h"
 
 namespace base {
 namespace win {
@@ -31,7 +31,7 @@ enum ShortcutOperation {
 // creation/update, others will be ignored.
 // Callers are encouraged to use the setters provided which take care of
 // setting |options| as desired.
-struct BASE_EXPORT ShortcutProperties {
+struct BRICK_EXPORT ShortcutProperties {
   enum IndividualProperties {
     PROPERTIES_TARGET = 1U << 0,
     PROPERTIES_WORKING_DIR = 1U << 1,
@@ -131,7 +131,7 @@ struct BASE_EXPORT ShortcutProperties {
 // |operation|: a choice from the ShortcutOperation enum.
 // If |operation| is SHORTCUT_REPLACE_EXISTING or SHORTCUT_UPDATE_EXISTING and
 // |shortcut_path| does not exist, this method is a no-op and returns false.
-BASE_EXPORT bool CreateOrUpdateShortcutLink(
+BRICK_EXPORT bool CreateOrUpdateShortcutLink(
     const FilePath& shortcut_path,
     const ShortcutProperties& properties,
     ShortcutOperation operation);
@@ -146,7 +146,7 @@ BASE_EXPORT bool CreateOrUpdateShortcutLink(
 // path so it may not be valid. The function returns true if all requested
 // properties are successfully read. Otherwise some reads have failed and
 // intermediate values written to |properties| should be ignored.
-BASE_EXPORT bool ResolveShortcutProperties(const FilePath& shortcut_path,
+BRICK_EXPORT bool ResolveShortcutProperties(const FilePath& shortcut_path,
                                            uint32_t options,
                                            ShortcutProperties* properties);
 
@@ -157,25 +157,25 @@ BASE_EXPORT bool ResolveShortcutProperties(const FilePath& shortcut_path,
 // non-NULL). The function returns true if all requested fields are found
 // successfully. Callers can safely use the same variable for both
 // |shortcut_path| and |target_path|.
-BASE_EXPORT bool ResolveShortcut(const FilePath& shortcut_path,
+BRICK_EXPORT bool ResolveShortcut(const FilePath& shortcut_path,
                                  FilePath* target_path,
                                  string16* args);
 
 // Pin to taskbar is only supported on Windows 7 and Windows 8. Returns true on
 // those platforms.
-BASE_EXPORT bool CanPinShortcutToTaskbar();
+BRICK_EXPORT bool CanPinShortcutToTaskbar();
 
 // Pins a shortcut to the taskbar on Windows 7 and 8. The |shortcut| file must
 // already exist and be a shortcut that points to an executable. The app id of
 // the shortcut is used to group windows and must be set correctly.
-BASE_EXPORT bool PinShortcutToTaskbar(const FilePath& shortcut);
+BRICK_EXPORT bool PinShortcutToTaskbar(const FilePath& shortcut);
 
 // Unpins a shortcut from the Windows 7+ taskbar. The |shortcut| must exist and
 // already be pinned to the taskbar. The app id of the shortcut is used as the
 // identifier for the taskbar item to remove and must be set correctly.
-BASE_EXPORT bool UnpinShortcutFromTaskbar(const FilePath& shortcut);
+BRICK_EXPORT bool UnpinShortcutFromTaskbar(const FilePath& shortcut);
 
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SHORTCUT_H_
+#endif  // BRICK_WIN_SHORTCUT_H_

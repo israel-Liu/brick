@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PROFILER_WIN32_STACK_FRAME_UNWINDER_H_
-#define BASE_PROFILER_WIN32_STACK_FRAME_UNWINDER_H_
+#ifndef BRICK_PROFILER_WIN32_STACK_FRAME_UNWINDER_H_
+#define BRICK_PROFILER_WIN32_STACK_FRAME_UNWINDER_H_
 
 #include <windows.h>
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/win/scoped_handle.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 
@@ -30,11 +30,11 @@ class ModuleHandleTraits : public win::HandleTraits {
  public:
   using Handle = HMODULE;
 
-  static bool BASE_EXPORT CloseHandle(HMODULE handle);
-  static bool BASE_EXPORT IsHandleValid(HMODULE handle);
-  static HMODULE BASE_EXPORT NullHandle();
+  static bool BRICK_EXPORT CloseHandle(HMODULE handle);
+  static bool BRICK_EXPORT IsHandleValid(HMODULE handle);
+  static HMODULE BRICK_EXPORT NullHandle();
 
-  BASE_EXPORT static const HMODULE kNonNullModuleForTesting;
+  BRICK_EXPORT static const HMODULE kNonNullModuleForTesting;
 
  private:
   DISALLOW_IMPLICIT_CONSTRUCTORS(ModuleHandleTraits);
@@ -48,11 +48,11 @@ using ScopedModuleHandle =
 // Instances of this class are expected to be created and destroyed for each
 // stack unwinding. This class is not used while the target thread is suspended,
 // so may allocate from the default heap.
-class BASE_EXPORT Win32StackFrameUnwinder {
+class BRICK_EXPORT Win32StackFrameUnwinder {
  public:
   // Interface for Win32 unwind-related functionality this class depends
   // on. Provides a seam for testing.
-  class BASE_EXPORT UnwindFunctions {
+  class BRICK_EXPORT UnwindFunctions {
    public:
     virtual ~UnwindFunctions();
 
@@ -99,4 +99,4 @@ class BASE_EXPORT Win32StackFrameUnwinder {
 
 }  // namespace base
 
-#endif  // BASE_PROFILER_WIN32_STACK_FRAME_UNWINDER_H_
+#endif  // BRICK_PROFILER_WIN32_STACK_FRAME_UNWINDER_H_

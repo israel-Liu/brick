@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/persistent_memory_allocator.h"
+#include "brick/metrics/persistent_memory_allocator.h"
 
 #include <assert.h>
 #include <algorithm>
@@ -14,14 +14,14 @@
 #include <sys/mman.h>
 #endif
 
-#include "base/files/memory_mapped_file.h"
-#include "base/logging.h"
-#include "base/memory/shared_memory.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/sparse_histogram.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/sys_info.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/memory_mapped_file.h"
+#include "brick/logging.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/sparse_histogram.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/sys_info.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 namespace {

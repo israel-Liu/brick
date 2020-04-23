@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_SUITE_H_
-#define BASE_TEST_TEST_SUITE_H_
+#ifndef BRICK_TEST_TEST_SUITE_H_
+#define BRICK_TEST_TEST_SUITE_H_
 
 // Defines a basic test suite framework for running gtest based tests.  You can
 // instantiate this class in your main function and call its Run method to run
@@ -12,11 +12,11 @@
 #include <memory>
 #include <string>
 
-#include "base/at_exit.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/test/scoped_feature_list.h"
-#include "base/test/trace_to_file.h"
+#include "brick/at_exit.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/test/scoped_feature_list.h"
+#include "brick/test/trace_to_file.h"
 #include "build/build_config.h"
 
 namespace testing {
@@ -100,4 +100,4 @@ class TestSuite {
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_SUITE_H_
+#endif  // BRICK_TEST_TEST_SUITE_H_

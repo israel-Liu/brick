@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/histogram_samples.h"
+#include "brick/metrics/histogram_samples.h"
 
 #include <limits>
 
-#include "base/compiler_specific.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/numerics/safe_math.h"
-#include "base/pickle.h"
+#include "brick/compiler_specific.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/pickle.h"
 
 namespace base {
 

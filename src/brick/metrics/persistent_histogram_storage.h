@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_PERSISTENT_HISTOGRAM_STORAGE_H_
-#define BASE_METRICS_PERSISTENT_HISTOGRAM_STORAGE_H_
+#ifndef BRICK_METRICS_PERSISTENT_HISTOGRAM_STORAGE_H_
+#define BRICK_METRICS_PERSISTENT_HISTOGRAM_STORAGE_H_
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 
@@ -20,7 +20,7 @@ namespace base {
 // destruction. PersistentHistogramStorage should be instantiated as early as
 // possible in the process lifetime and should never be instantiated again.
 // Persisted histograms will eventually be reported by Chrome.
-class BASE_EXPORT PersistentHistogramStorage {
+class BRICK_EXPORT PersistentHistogramStorage {
  public:
   enum class StorageDirManagement { kCreate, kUseExisting };
 
@@ -65,4 +65,4 @@ class BASE_EXPORT PersistentHistogramStorage {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_PERSISTENT_HISTOGRAM_STORAGE_H_
+#endif  // BRICK_METRICS_PERSISTENT_HISTOGRAM_STORAGE_H_

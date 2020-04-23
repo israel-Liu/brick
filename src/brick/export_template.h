@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_EXPORT_TEMPLATE_H_
-#define BASE_EXPORT_TEMPLATE_H_
+#ifndef BRICK_EXPORT_TEMPLATE_H_
+#define BRICK_EXPORT_TEMPLATE_H_
 
 // Synopsis
 //
@@ -160,4 +160,4 @@ EXPORT_TEMPLATE_TEST(DEFAULT, __declspec(dllimport));
 #undef EXPORT_TEMPLATE_TEST_DEFAULT_DEFAULT
 #undef EXPORT_TEMPLATE_TEST_MSVC_HACK_MSVC_HACK
 
-#endif  // BASE_EXPORT_TEMPLATE_H_
+#endif  // BRICK_EXPORT_TEMPLATE_H_

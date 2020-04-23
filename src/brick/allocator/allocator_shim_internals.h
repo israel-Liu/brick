@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_ALLOCATOR_SHIM_INTERNALS_H_
-#define BASE_ALLOCATOR_ALLOCATOR_SHIM_INTERNALS_H_
+#ifndef BRICK_ALLOCATOR_ALLOCATOR_SHIM_INTERNALS_H_
+#define BRICK_ALLOCATOR_ALLOCATOR_SHIM_INTERNALS_H_
 
 #if defined(__GNUC__)
 
@@ -41,4 +41,4 @@
 
 #endif  // __GNUC__
 
-#endif  // BASE_ALLOCATOR_ALLOCATOR_SHIM_INTERNALS_H_
+#endif  // BRICK_ALLOCATOR_ALLOCATOR_SHIM_INTERNALS_H_

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/histogram_delta_serialization.h"
+#include "brick/metrics/histogram_delta_serialization.h"
 
 #include <vector>
 
-#include "base/metrics/histogram.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/statistics_recorder.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/statistics_recorder.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

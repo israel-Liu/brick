@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/file_version_info_win.h"
+#include "brick/file_version_info_win.h"
 
 #include <windows.h>
 
@@ -10,12 +10,12 @@
 
 #include <memory>
 
-#include "base/file_version_info.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/path_service.h"
-#include "base/scoped_native_library.h"
+#include "brick/file_version_info.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/path_service.h"
+#include "brick/scoped_native_library.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 using base::FilePath;

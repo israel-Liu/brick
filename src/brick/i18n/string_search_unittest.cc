@@ -6,10 +6,10 @@
 
 #include <string>
 
-#include "base/i18n/rtl.h"
-#include "base/i18n/string_search.h"
-#include "base/strings/string16.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/i18n/rtl.h"
+#include "brick/i18n/string_search.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "third_party/icu/source/i18n/unicode/usearch.h"
 

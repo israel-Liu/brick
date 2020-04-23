@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_SPARSE_HISTOGRAM_H_
-#define BASE_METRICS_SPARSE_HISTOGRAM_H_
+#ifndef BRICK_METRICS_SPARSE_HISTOGRAM_H_
+#define BRICK_METRICS_SPARSE_HISTOGRAM_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -12,11 +12,11 @@
 #include <memory>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/histogram_samples.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/histogram_samples.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
@@ -25,7 +25,7 @@ class PersistentHistogramAllocator;
 class Pickle;
 class PickleIterator;
 
-class BASE_EXPORT SparseHistogram : public HistogramBase {
+class BRICK_EXPORT SparseHistogram : public HistogramBase {
  public:
   // If there's one with same name, return the existing one. If not, create a
   // new one.
@@ -70,7 +70,7 @@ class BASE_EXPORT SparseHistogram : public HistogramBase {
                   HistogramSamples::Metadata* meta,
                   HistogramSamples::Metadata* logged_meta);
 
-  friend BASE_EXPORT HistogramBase* DeserializeHistogramInfo(
+  friend BRICK_EXPORT HistogramBase* DeserializeHistogramInfo(
       base::PickleIterator* iter);
   static HistogramBase* DeserializeInfoImpl(base::PickleIterator* iter);
 
@@ -105,4 +105,4 @@ class BASE_EXPORT SparseHistogram : public HistogramBase {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_SPARSE_HISTOGRAM_H_
+#endif  // BRICK_METRICS_SPARSE_HISTOGRAM_H_

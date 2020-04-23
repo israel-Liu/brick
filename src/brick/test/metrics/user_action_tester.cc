@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/metrics/user_action_tester.h"
+#include "brick/test/metrics/user_action_tester.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/test/test_simple_task_runner.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/test/test_simple_task_runner.h"
 
 namespace base {
 

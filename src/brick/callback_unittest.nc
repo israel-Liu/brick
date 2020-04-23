@@ -5,7 +5,7 @@
 // This is a "No Compile Test" suite.
 // http://dev.chromium.org/developers/testing/no-compile-tests
 
-#include "base/callback.h"
+#include "brick/callback.h"
 
 namespace base {
 

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/sequence_local_storage_slot.h"
+#include "brick/threading/sequence_local_storage_slot.h"
 
 #include <utility>
 
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/threading/sequence_local_storage_map.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/threading/sequence_local_storage_map.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/ios/scoped_critical_action.h"
+#include "brick/ios/scoped_critical_action.h"
 
 #import <UIKit/UIKit.h>
 
-#include "base/logging.h"
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/lock.h"
+#include "brick/logging.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 namespace ios {

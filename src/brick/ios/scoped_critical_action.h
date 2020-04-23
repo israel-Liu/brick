@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_IOS_SCOPED_CRITICAL_ACTION_H_
-#define BASE_IOS_SCOPED_CRITICAL_ACTION_H_
+#ifndef BRICK_IOS_SCOPED_CRITICAL_ACTION_H_
+#define BRICK_IOS_SCOPED_CRITICAL_ACTION_H_
 
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/lock.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 namespace ios {
@@ -70,4 +70,4 @@ class ScopedCriticalAction {
 }  // namespace ios
 }  // namespace base
 
-#endif  // BASE_IOS_SCOPED_CRITICAL_ACTION_H_
+#endif  // BRICK_IOS_SCOPED_CRITICAL_ACTION_H_

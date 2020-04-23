@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_CFTYPEREF_H_
-#define BASE_MAC_SCOPED_CFTYPEREF_H_
+#ifndef BRICK_MAC_SCOPED_CFTYPEREF_H_
+#define BRICK_MAC_SCOPED_CFTYPEREF_H_
 
 #include <CoreFoundation/CoreFoundation.h>
 
-#include "base/mac/scoped_typeref.h"
+#include "brick/mac/scoped_typeref.h"
 
 namespace base {
 
@@ -47,4 +47,4 @@ using ScopedCFTypeRef =
 
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_CFTYPEREF_H_
+#endif  // BRICK_MAC_SCOPED_CFTYPEREF_H_

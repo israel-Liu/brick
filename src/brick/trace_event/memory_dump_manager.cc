@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/memory_dump_manager.h"
+#include "brick/trace_event/memory_dump_manager.h"
 
 #include <inttypes.h>
 #include <stdio.h>
@@ -11,35 +11,35 @@
 #include <memory>
 #include <utility>
 
-#include "base/allocator/buildflags.h"
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/debug/alias.h"
-#include "base/debug/stack_trace.h"
-#include "base/debug/thread_heap_usage_tracker.h"
-#include "base/memory/ptr_util.h"
-#include "base/sequenced_task_runner.h"
-#include "base/strings/string_util.h"
-#include "base/third_party/dynamic_annotations/dynamic_annotations.h"
-#include "base/threading/thread.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/trace_event/heap_profiler.h"
-#include "base/trace_event/heap_profiler_allocation_context_tracker.h"
-#include "base/trace_event/heap_profiler_event_filter.h"
-#include "base/trace_event/malloc_dump_provider.h"
-#include "base/trace_event/memory_dump_provider.h"
-#include "base/trace_event/memory_dump_scheduler.h"
-#include "base/trace_event/memory_infra_background_whitelist.h"
-#include "base/trace_event/process_memory_dump.h"
-#include "base/trace_event/trace_event.h"
-#include "base/trace_event/trace_event_argument.h"
+#include "brick/allocator/buildflags.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/debug/alias.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/debug/thread_heap_usage_tracker.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/strings/string_util.h"
+#include "brick/third_party/dynamic_annotations/dynamic_annotations.h"
+#include "brick/threading/thread.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/trace_event/heap_profiler.h"
+#include "brick/trace_event/heap_profiler_allocation_context_tracker.h"
+#include "brick/trace_event/heap_profiler_event_filter.h"
+#include "brick/trace_event/malloc_dump_provider.h"
+#include "brick/trace_event/memory_dump_provider.h"
+#include "brick/trace_event/memory_dump_scheduler.h"
+#include "brick/trace_event/memory_infra_background_whitelist.h"
+#include "brick/trace_event/process_memory_dump.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event_argument.h"
 #include "build/build_config.h"
 
 #if defined(OS_ANDROID)
-#include "base/trace_event/java_heap_dump_provider_android.h"
+#include "brick/trace_event/java_heap_dump_provider_android.h"
 
 #if BUILDFLAG(CAN_UNWIND_WITH_CFI_TABLE)
-#include "base/trace_event/cfi_backtrace_android.h"
+#include "brick/trace_event/cfi_backtrace_android.h"
 #endif
 
 #endif  // defined(OS_ANDROID)

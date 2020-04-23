@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/native_library.h"
-#include "base/path_service.h"
-#include "base/test/native_library_test_utils.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/native_library.h"
+#include "brick/path_service.h"
+#include "brick/test/native_library_test_utils.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

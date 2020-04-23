@@ -4,11 +4,11 @@
 
 #include <stddef.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

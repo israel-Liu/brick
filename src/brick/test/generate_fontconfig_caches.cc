@@ -4,10 +4,10 @@
 
 #include <string>
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/path_service.h"
-#include "base/test/fontconfig_util_linux.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/path_service.h"
+#include "brick/test/fontconfig_util_linux.h"
 
 int main(void) {
   base::SetUpFontconfig();

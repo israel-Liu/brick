@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/rand_util.h"
+#include "brick/rand_util.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -11,8 +11,8 @@
 #include <limits>
 #include <memory>
 
-#include "base/logging.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace {

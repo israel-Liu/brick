@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/gtest_util.h"
+#include "brick/test/gtest_util.h"
 
 #include <stddef.h>
 
 #include <memory>
 
-#include "base/files/file_path.h"
-#include "base/json/json_file_value_serializer.h"
-#include "base/strings/string_util.h"
-#include "base/values.h"
+#include "brick/files/file_path.h"
+#include "brick/json/json_file_value_serializer.h"
+#include "brick/strings/string_util.h"
+#include "brick/values.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

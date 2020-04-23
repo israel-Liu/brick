@@ -2,27 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/scoped_task_environment.h"
+#include "brick/test/scoped_task_environment.h"
 
 #include <memory>
 
-#include "base/atomicops.h"
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/sequence_local_storage_slot.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/time/tick_clock.h"
+#include "brick/atomicops.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/sequence_local_storage_slot.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/time/tick_clock.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_POSIX)
 #include <unistd.h>
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 #endif  // defined(OS_POSIX)
 
 namespace base {

@@ -5,8 +5,8 @@
 // SampleVector implements HistogramSamples interface. It is used by all
 // Histogram based classes to store samples.
 
-#ifndef BASE_METRICS_SAMPLE_VECTOR_H_
-#define BASE_METRICS_SAMPLE_VECTOR_H_
+#ifndef BRICK_METRICS_SAMPLE_VECTOR_H_
+#define BRICK_METRICS_SAMPLE_VECTOR_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -14,20 +14,20 @@
 #include <memory>
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/compiler_specific.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/metrics/bucket_ranges.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/histogram_samples.h"
-#include "base/metrics/persistent_memory_allocator.h"
+#include "brick/atomicops.h"
+#include "brick/compiler_specific.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/metrics/bucket_ranges.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/histogram_samples.h"
+#include "brick/metrics/persistent_memory_allocator.h"
 
 namespace base {
 
 class BucketRanges;
 
-class BASE_EXPORT SampleVectorBase : public HistogramSamples {
+class BRICK_EXPORT SampleVectorBase : public HistogramSamples {
  public:
   SampleVectorBase(uint64_t id,
                    Metadata* meta,
@@ -112,7 +112,7 @@ class BASE_EXPORT SampleVectorBase : public HistogramSamples {
 };
 
 // A sample vector that uses local memory for the counts array.
-class BASE_EXPORT SampleVector : public SampleVectorBase {
+class BRICK_EXPORT SampleVector : public SampleVectorBase {
  public:
   explicit SampleVector(const BucketRanges* bucket_ranges);
   SampleVector(uint64_t id, const BucketRanges* bucket_ranges);
@@ -130,7 +130,7 @@ class BASE_EXPORT SampleVector : public SampleVectorBase {
 };
 
 // A sample vector that uses persistent memory for the counts array.
-class BASE_EXPORT PersistentSampleVector : public SampleVectorBase {
+class BRICK_EXPORT PersistentSampleVector : public SampleVectorBase {
  public:
   PersistentSampleVector(uint64_t id,
                          const BucketRanges* bucket_ranges,
@@ -151,7 +151,7 @@ class BASE_EXPORT PersistentSampleVector : public SampleVectorBase {
 
 // An iterator for sample vectors. This could be defined privately in the .cc
 // file but is here for easy testing.
-class BASE_EXPORT SampleVectorIterator : public SampleCountIterator {
+class BRICK_EXPORT SampleVectorIterator : public SampleCountIterator {
  public:
   SampleVectorIterator(const std::vector<HistogramBase::AtomicCount>* counts,
                        const BucketRanges* bucket_ranges);
@@ -182,4 +182,4 @@ class BASE_EXPORT SampleVectorIterator : public SampleCountIterator {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_SAMPLE_VECTOR_H_
+#endif  // BRICK_METRICS_SAMPLE_VECTOR_H_

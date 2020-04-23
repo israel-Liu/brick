@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_POSIX_UNIX_DOMAIN_SOCKET_H_
-#define BASE_POSIX_UNIX_DOMAIN_SOCKET_H_
+#ifndef BRICK_POSIX_UNIX_DOMAIN_SOCKET_H_
+#define BRICK_POSIX_UNIX_DOMAIN_SOCKET_H_
 
 #include <stddef.h>
 #include <stdint.h>
 #include <sys/types.h>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/files/scoped_file.h"
-#include "base/process/process_handle.h"
+#include "brick/base_export.h"
+#include "brick/files/scoped_file.h"
+#include "brick/process/process_handle.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -23,10 +23,10 @@ class Pickle;
 // Creates a connected pair of UNIX-domain SOCK_SEQPACKET sockets, and passes
 // ownership of the newly allocated file descriptors to |one| and |two|.
 // Returns true on success.
-bool BASE_EXPORT CreateSocketPair(ScopedFD* one, ScopedFD* two);
+bool BRICK_EXPORT CreateSocketPair(ScopedFD* one, ScopedFD* two);
 #endif
 
-class BASE_EXPORT UnixDomainSocket {
+class BRICK_EXPORT UnixDomainSocket {
  public:
   // Maximum number of file descriptors that can be read by RecvMsg().
   static const size_t kMaxFileDescriptors;
@@ -108,4 +108,4 @@ class BASE_EXPORT UnixDomainSocket {
 
 }  // namespace base
 
-#endif  // BASE_POSIX_UNIX_DOMAIN_SOCKET_H_
+#endif  // BRICK_POSIX_UNIX_DOMAIN_SOCKET_H_

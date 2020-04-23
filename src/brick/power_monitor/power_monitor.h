@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_POWER_MONITOR_POWER_MONITOR_H_
-#define BASE_POWER_MONITOR_POWER_MONITOR_H_
+#ifndef BRICK_POWER_MONITOR_POWER_MONITOR_H_
+#define BRICK_POWER_MONITOR_POWER_MONITOR_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/observer_list_threadsafe.h"
-#include "base/power_monitor/power_observer.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/observer_list_threadsafe.h"
+#include "brick/power_monitor/power_observer.h"
 
 namespace base {
 
@@ -17,7 +17,7 @@ class PowerMonitorSource;
 
 // A class used to monitor the power state change and notify the observers about
 // the change event.
-class BASE_EXPORT PowerMonitor {
+class BRICK_EXPORT PowerMonitor {
  public:
   // Takes ownership of |source|.
   explicit PowerMonitor(std::unique_ptr<PowerMonitorSource> source);
@@ -53,4 +53,4 @@ class BASE_EXPORT PowerMonitor {
 
 }  // namespace base
 
-#endif  // BASE_POWER_MONITOR_POWER_MONITOR_H_
+#endif  // BRICK_POWER_MONITOR_POWER_MONITOR_H_

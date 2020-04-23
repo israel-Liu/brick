@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FUCHSIA_COMPONENT_CONTEXT_H_
-#define BASE_FUCHSIA_COMPONENT_CONTEXT_H_
+#ifndef BRICK_FUCHSIA_COMPONENT_CONTEXT_H_
+#define BRICK_FUCHSIA_COMPONENT_CONTEXT_H_
 
-#include "base/base_export.h"
-#include "base/fuchsia/fidl_interface_request.h"
-#include "base/fuchsia/scoped_zx_handle.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/fuchsia/fidl_interface_request.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
 
 namespace fidl {
 
@@ -25,7 +25,7 @@ namespace base {
 namespace fuchsia {
 
 // Provides access to the component's environment.
-class BASE_EXPORT ComponentContext {
+class BRICK_EXPORT ComponentContext {
  public:
   explicit ComponentContext(ScopedZxHandle service_root);
   ~ComponentContext();
@@ -63,4 +63,4 @@ class BASE_EXPORT ComponentContext {
 }  // namespace fuchsia
 }  // namespace base
 
-#endif  // BASE_FUCHSIA_COMPONENT_CONTEXT_H_
+#endif  // BRICK_FUCHSIA_COMPONENT_CONTEXT_H_

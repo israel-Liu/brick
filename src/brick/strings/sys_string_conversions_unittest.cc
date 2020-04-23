@@ -6,11 +6,11 @@
 
 #include <string>
 
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/sys_string_conversions.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/test/scoped_locale.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/sys_string_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/test/scoped_locale.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

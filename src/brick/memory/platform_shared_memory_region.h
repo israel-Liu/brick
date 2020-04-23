@@ -2,29 +2,29 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_PLATFORM_SHARED_MEMORY_REGION_H_
-#define BASE_MEMORY_PLATFORM_SHARED_MEMORY_REGION_H_
+#ifndef BRICK_MEMORY_PLATFORM_SHARED_MEMORY_REGION_H_
+#define BRICK_MEMORY_PLATFORM_SHARED_MEMORY_REGION_H_
 
 #include <utility>
 
-#include "base/compiler_specific.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/unguessable_token.h"
+#include "brick/compiler_specific.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/unguessable_token.h"
 #include "build/build_config.h"
 
 #if defined(OS_MACOSX) && !defined(OS_IOS)
 #include <mach/mach.h>
-#include "base/mac/scoped_mach_port.h"
+#include "brick/mac/scoped_mach_port.h"
 #elif defined(OS_FUCHSIA)
-#include "base/fuchsia/scoped_zx_handle.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
 #elif defined(OS_WIN)
-#include "base/win/scoped_handle.h"
-#include "base/win/windows_types.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/windows_types.h"
 #elif defined(OS_POSIX)
 #include <sys/types.h>
-#include "base/file_descriptor_posix.h"
-#include "base/files/scoped_file.h"
+#include "brick/file_descriptor_posix.h"
+#include "brick/files/scoped_file.h"
 #endif
 
 namespace base {
@@ -34,12 +34,12 @@ namespace subtle {
     !defined(OS_FUCHSIA) && !defined(OS_ANDROID)
 // Helper structs to keep two descriptors on POSIX. It's needed to support
 // ConvertToReadOnly().
-struct BASE_EXPORT FDPair {
+struct BRICK_EXPORT FDPair {
   int fd;
   int readonly_fd;
 };
 
-struct BASE_EXPORT ScopedFDPair {
+struct BRICK_EXPORT ScopedFDPair {
   ScopedFDPair();
   ScopedFDPair(ScopedFD in_fd, ScopedFD in_readonly_fd);
   ScopedFDPair(ScopedFDPair&&);
@@ -70,7 +70,7 @@ struct BASE_EXPORT ScopedFDPair {
 // IMPORTANT NOTE: Users should never use this directly, but
 // ReadOnlySharedMemoryRegion, WritableSharedMemoryRegion or
 // UnsafeSharedMemoryRegion since this is an implementation class.
-class BASE_EXPORT PlatformSharedMemoryRegion {
+class BRICK_EXPORT PlatformSharedMemoryRegion {
  public:
   // Permission mode of the platform handle. Each mode corresponds to one of the
   // typed shared memory classes:
@@ -220,4 +220,4 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
 }  // namespace subtle
 }  // namespace base
 
-#endif  // BASE_MEMORY_PLATFORM_SHARED_MEMORY_REGION_H_
+#endif  // BRICK_MEMORY_PLATFORM_SHARED_MEMORY_REGION_H_

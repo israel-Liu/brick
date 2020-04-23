@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_VARIANT_H_
-#define BASE_WIN_SCOPED_VARIANT_H_
+#ifndef BRICK_WIN_SCOPED_VARIANT_H_
+#define BRICK_WIN_SCOPED_VARIANT_H_
 
 #include <windows.h>
 #include <oleauto.h>
 #include <stdint.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
@@ -21,7 +21,7 @@ namespace win {
 // Instead of inheriting from VARIANT, we take the containment approach
 // in order to have more control over the usage of the variant and guard
 // against memory leaks.
-class BASE_EXPORT ScopedVariant {
+class BRICK_EXPORT ScopedVariant {
  public:
   // Declaration of a global variant variable that's always VT_EMPTY
   static const VARIANT kEmptyVariant;
@@ -163,4 +163,4 @@ class BASE_EXPORT ScopedVariant {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_VARIANT_H_
+#endif  // BRICK_WIN_SCOPED_VARIANT_H_

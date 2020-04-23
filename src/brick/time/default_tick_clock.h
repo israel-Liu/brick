@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TIME_DEFAULT_TICK_CLOCK_H_
-#define BASE_TIME_DEFAULT_TICK_CLOCK_H_
+#ifndef BRICK_TIME_DEFAULT_TICK_CLOCK_H_
+#define BRICK_TIME_DEFAULT_TICK_CLOCK_H_
 
-#include "base/base_export.h"
-#include "base/time/tick_clock.h"
+#include "brick/base_export.h"
+#include "brick/time/tick_clock.h"
 
 namespace base {
 
 // DefaultClock is a Clock implementation that uses TimeTicks::Now().
-class BASE_EXPORT DefaultTickClock : public TickClock {
+class BRICK_EXPORT DefaultTickClock : public TickClock {
  public:
   ~DefaultTickClock() override;
 
@@ -24,4 +24,4 @@ class BASE_EXPORT DefaultTickClock : public TickClock {
 
 }  // namespace base
 
-#endif  // BASE_TIME_DEFAULT_TICK_CLOCK_H_
+#endif  // BRICK_TIME_DEFAULT_TICK_CLOCK_H_

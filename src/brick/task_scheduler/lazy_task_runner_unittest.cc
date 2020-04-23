@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/lazy_task_runner.h"
+#include "brick/task_scheduler/lazy_task_runner.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/sequence_checker_impl.h"
-#include "base/task_scheduler/scoped_set_task_priority_for_current_thread.h"
-#include "base/test/scoped_task_environment.h"
-#include "base/threading/thread_checker_impl.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/sequence_checker_impl.h"
+#include "brick/task_scheduler/scoped_set_task_priority_for_current_thread.h"
+#include "brick/test/scoped_task_environment.h"
+#include "brick/threading/thread_checker_impl.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_WIN)
-#include "base/win/com_init_util.h"
+#include "brick/win/com_init_util.h"
 #endif
 
 namespace base {

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_STRINGS_LATIN1_STRING_CONVERSIONS_H_
-#define BASE_STRINGS_LATIN1_STRING_CONVERSIONS_H_
+#ifndef BRICK_STRINGS_LATIN1_STRING_CONVERSIONS_H_
+#define BRICK_STRINGS_LATIN1_STRING_CONVERSIONS_H_
 
 #include <stddef.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/strings/string16.h"
+#include "brick/base_export.h"
+#include "brick/strings/string16.h"
 
 namespace base {
 
@@ -25,10 +25,10 @@ typedef unsigned char Latin1Char;
 // WebString::operator string16() to convert one or the other character array
 // to string16. This function is defined here rather than in WebString.h to
 // avoid binary bloat in all the callers of the conversion operator.
-BASE_EXPORT string16 Latin1OrUTF16ToUTF16(size_t length,
+BRICK_EXPORT string16 Latin1OrUTF16ToUTF16(size_t length,
                                           const Latin1Char* latin1,
                                           const char16* utf16);
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_LATIN1_STRING_CONVERSIONS_H_
+#endif  // BRICK_STRINGS_LATIN1_STRING_CONVERSIONS_H_

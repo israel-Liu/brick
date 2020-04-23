@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/ios/ios_util.h"
+#include "brick/ios/ios_util.h"
 
 #import <Foundation/Foundation.h>
 #include <stddef.h>
 
-#include "base/macros.h"
-#include "base/sys_info.h"
+#include "brick/macros.h"
+#include "brick/sys_info.h"
 
 namespace {
 

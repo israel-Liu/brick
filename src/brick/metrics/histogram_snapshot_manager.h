@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_HISTOGRAM_SNAPSHOT_MANAGER_H_
-#define BASE_METRICS_HISTOGRAM_SNAPSHOT_MANAGER_H_
+#ifndef BRICK_METRICS_HISTOGRAM_SNAPSHOT_MANAGER_H_
+#define BRICK_METRICS_HISTOGRAM_SNAPSHOT_MANAGER_H_
 
 #include <stdint.h>
 
@@ -12,9 +12,9 @@
 #include <string>
 #include <vector>
 
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_base.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_base.h"
 
 namespace base {
 
@@ -28,7 +28,7 @@ class HistogramFlattener;
 // corruption, this class also validates as much redundancy as it can before
 // calling for the marginal change (a.k.a., delta) in a histogram to be
 // recorded.
-class BASE_EXPORT HistogramSnapshotManager final {
+class BRICK_EXPORT HistogramSnapshotManager final {
  public:
   explicit HistogramSnapshotManager(HistogramFlattener* histogram_flattener);
   ~HistogramSnapshotManager();
@@ -87,4 +87,4 @@ class BASE_EXPORT HistogramSnapshotManager final {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_HISTOGRAM_SNAPSHOT_MANAGER_H_
+#endif  // BRICK_METRICS_HISTOGRAM_SNAPSHOT_MANAGER_H_

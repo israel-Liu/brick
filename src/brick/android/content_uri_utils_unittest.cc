@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/content_uri_utils.h"
-#include "base/files/file_util.h"
-#include "base/path_service.h"
-#include "base/test/test_file_util.h"
+#include "brick/android/content_uri_utils.h"
+#include "brick/files/file_util.h"
+#include "brick/path_service.h"
+#include "brick/test/test_file_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

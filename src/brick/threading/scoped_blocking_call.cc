@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/scoped_blocking_call.h"
+#include "brick/threading/scoped_blocking_call.h"
 
-#include "base/lazy_instance.h"
-#include "base/threading/thread_local.h"
+#include "brick/lazy_instance.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/scoped_mock_time_message_loop_task_runner.h"
+#include "brick/test/scoped_mock_time_message_loop_task_runner.h"
 
-#include "base/bind.h"
-#include "base/logging.h"
-#include "base/message_loop/message_loop_current.h"
-#include "base/run_loop.h"
-#include "base/test/test_pending_task.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/logging.h"
+#include "brick/message_loop/message_loop_current.h"
+#include "brick/run_loop.h"
+#include "brick/test/test_pending_task.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/time/time.h"
 
 namespace base {
 

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILE_DESCRIPTOR_POSIX_H_
-#define BASE_FILE_DESCRIPTOR_POSIX_H_
+#ifndef BRICK_FILE_DESCRIPTOR_POSIX_H_
+#define BRICK_FILE_DESCRIPTOR_POSIX_H_
 
-#include "base/files/file.h"
-#include "base/files/scoped_file.h"
+#include "brick/files/file.h"
+#include "brick/files/scoped_file.h"
 
 namespace base {
 
@@ -56,4 +56,4 @@ struct FileDescriptor {
 
 }  // namespace base
 
-#endif  // BASE_FILE_DESCRIPTOR_POSIX_H_
+#endif  // BRICK_FILE_DESCRIPTOR_POSIX_H_

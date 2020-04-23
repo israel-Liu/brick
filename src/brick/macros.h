@@ -7,8 +7,8 @@
 // that are closely related to things that are commonly used that belong in this
 // file.)
 
-#ifndef BASE_MACROS_H_
-#define BASE_MACROS_H_
+#ifndef BRICK_MACROS_H_
+#define BRICK_MACROS_H_
 
 #include <stddef.h>  // For size_t.
 
@@ -92,4 +92,4 @@ namespace base {
 
 }  // base
 
-#endif  // BASE_MACROS_H_
+#endif  // BRICK_MACROS_H_

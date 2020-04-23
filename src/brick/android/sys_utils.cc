@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/sys_utils.h"
+#include "brick/android/sys_utils.h"
 
 #include <memory>
 
-#include "base/android/build_info.h"
-#include "base/process/process_metrics.h"
-#include "base/sys_info.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/android/build_info.h"
+#include "brick/process/process_metrics.h"
+#include "brick/sys_info.h"
+#include "brick/trace_event/trace_event.h"
 #include "jni/SysUtils_jni.h"
 
 namespace base {

@@ -8,12 +8,12 @@
 // Use the functions defined here rather than using the platform-specific
 // functions directly.
 
-#ifndef BASE_SYS_BYTEORDER_H_
-#define BASE_SYS_BYTEORDER_H_
+#ifndef BRICK_SYS_BYTEORDER_H_
+#define BRICK_SYS_BYTEORDER_H_
 
 #include <stdint.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 #include "build/build_config.h"
 
 #if defined(COMPILER_MSVC)
@@ -136,4 +136,4 @@ inline uint64_t HostToNet64(uint64_t x) {
 
 }  // namespace base
 
-#endif  // BASE_SYS_BYTEORDER_H_
+#endif  // BRICK_SYS_BYTEORDER_H_

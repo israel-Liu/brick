@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/platform_thread.h"
+#include "brick/threading/platform_thread.h"
 
 #include <pthread.h>
 #include <sched.h>
 #include <zircon/syscalls.h>
 
-#include "base/threading/platform_thread_internal_posix.h"
-#include "base/threading/thread_id_name_manager.h"
+#include "brick/threading/platform_thread_internal_posix.h"
+#include "brick/threading/thread_id_name_manager.h"
 
 namespace base {
 

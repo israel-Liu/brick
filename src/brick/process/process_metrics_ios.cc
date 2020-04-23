@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_metrics.h"
+#include "brick/process/process_metrics.h"
 
 #include <limits.h>
 #include <mach/task.h>
 #include <stddef.h>
 
-#include "base/logging.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/memory/ptr_util.h"
-#include "base/numerics/safe_conversions.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/numerics/safe_conversions.h"
 
 namespace base {
 

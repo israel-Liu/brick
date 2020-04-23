@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Java mirror of base/command_line.h.
+ * Java mirror of brick/command_line.h.
  * Android applications don't have command line arguments. Instead, they're "simulated" by reading a
  * file at a specific location early during startup. Applications each define their own files, e.g.,
  * ContentShellApplication.COMMAND_LINE_FILE.

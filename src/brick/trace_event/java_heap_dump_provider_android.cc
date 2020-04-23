@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/java_heap_dump_provider_android.h"
+#include "brick/trace_event/java_heap_dump_provider_android.h"
 
-#include "base/android/java_runtime.h"
-#include "base/trace_event/process_memory_dump.h"
+#include "brick/android/java_runtime.h"
+#include "brick/trace_event/process_memory_dump.h"
 
 namespace base {
 namespace trace_event {

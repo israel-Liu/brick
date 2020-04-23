@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_BASE_PATHS_POSIX_H_
-#define BASE_BASE_PATHS_POSIX_H_
+#ifndef BRICK_BRICK_PATHS_POSIX_H_
+#define BRICK_BRICK_PATHS_POSIX_H_
 
 // This file declares windows-specific path keys for the base module.
 // These can be used with the PathService to access various special
@@ -24,4 +24,4 @@ enum {
 
 }  // namespace base
 
-#endif  // BASE_BASE_PATHS_POSIX_H_
+#endif  // BRICK_BRICK_PATHS_POSIX_H_

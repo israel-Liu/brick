@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/values.h"
+#include "brick/values.h"
 
 #include <string.h>
 
@@ -12,13 +12,13 @@
 #include <ostream>
 #include <utility>
 
-#include "base/json/json_writer.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/stl_util.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/trace_event/memory_usage_estimator.h"
+#include "brick/json/json_writer.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/trace_event/memory_usage_estimator.h"
 
 namespace base {
 

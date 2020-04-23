@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/old_utf_string_conversions.h"
+#include "brick/strings/old_utf_string_conversions.h"
 
 #include <stdint.h>
 
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversion_utils.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversion_utils.h"
 #include "build/build_config.h"
 
 namespace base_old {

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_HISTOGRAM_SAMPLES_H_
-#define BASE_METRICS_HISTOGRAM_SAMPLES_H_
+#ifndef BRICK_METRICS_HISTOGRAM_SAMPLES_H_
+#define BRICK_METRICS_HISTOGRAM_SAMPLES_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -11,9 +11,9 @@
 #include <limits>
 #include <memory>
 
-#include "base/atomicops.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_base.h"
+#include "brick/atomicops.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_base.h"
 
 namespace base {
 
@@ -32,7 +32,7 @@ class SampleCountIterator;
 // sum, redundant-count, etc. could be momentarily out-of-sync with the stored
 // counts but will settle to a consistent "steady state" once all threads have
 // exited this code.
-class BASE_EXPORT HistogramSamples {
+class BRICK_EXPORT HistogramSamples {
  public:
   // A single bucket and count. To fit within a single atomic on 32-bit build
   // architectures, both |bucket| and |count| are limited in size to 16 bits.
@@ -46,7 +46,7 @@ class BASE_EXPORT HistogramSamples {
   // A structure for managing an atomic single sample. Because this is generally
   // used in association with other atomic values, the defined methods use
   // acquire/release operations to guarantee ordering with outside values.
-  union BASE_EXPORT AtomicSingleSample {
+  union BRICK_EXPORT AtomicSingleSample {
     AtomicSingleSample() : as_atomic(0) {}
     AtomicSingleSample(subtle::Atomic32 rhs) : as_atomic(rhs) {}
 
@@ -124,7 +124,7 @@ class BASE_EXPORT HistogramSamples {
   // Because structures held in persistent memory must be POD, there can be no
   // default constructor to clear the fields. This derived class exists just
   // to clear them when being allocated on the heap.
-  struct BASE_EXPORT LocalMetadata : Metadata {
+  struct BRICK_EXPORT LocalMetadata : Metadata {
     LocalMetadata();
   };
 
@@ -210,7 +210,7 @@ class BASE_EXPORT HistogramSamples {
   DISALLOW_COPY_AND_ASSIGN(HistogramSamples);
 };
 
-class BASE_EXPORT SampleCountIterator {
+class BRICK_EXPORT SampleCountIterator {
  public:
   virtual ~SampleCountIterator();
 
@@ -236,7 +236,7 @@ class BASE_EXPORT SampleCountIterator {
   virtual bool GetBucketIndex(size_t* index) const;
 };
 
-class BASE_EXPORT SingleSampleIterator : public SampleCountIterator {
+class BRICK_EXPORT SingleSampleIterator : public SampleCountIterator {
  public:
   SingleSampleIterator(HistogramBase::Sample min,
                        int64_t max,
@@ -267,4 +267,4 @@ class BASE_EXPORT SingleSampleIterator : public SampleCountIterator {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_HISTOGRAM_SAMPLES_H_
+#endif  // BRICK_METRICS_HISTOGRAM_SAMPLES_H_

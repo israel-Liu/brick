@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MALLOC_DUMP_PROVIDER_H_
-#define BASE_TRACE_EVENT_MALLOC_DUMP_PROVIDER_H_
+#ifndef BRICK_TRACE_EVENT_MALLOC_DUMP_PROVIDER_H_
+#define BRICK_TRACE_EVENT_MALLOC_DUMP_PROVIDER_H_
 
-#include "base/macros.h"
-#include "base/memory/singleton.h"
-#include "base/synchronization/lock.h"
-#include "base/trace_event/memory_dump_provider.h"
+#include "brick/macros.h"
+#include "brick/memory/singleton.h"
+#include "brick/synchronization/lock.h"
+#include "brick/trace_event/memory_dump_provider.h"
 #include "build/build_config.h"
 
 #if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_WIN) || \
@@ -20,7 +20,7 @@ namespace base {
 namespace trace_event {
 
 // Dump provider which collects process-wide memory stats.
-class BASE_EXPORT MallocDumpProvider : public MemoryDumpProvider {
+class BRICK_EXPORT MallocDumpProvider : public MemoryDumpProvider {
  public:
   // Name of the allocated_objects dump. Use this to declare suballocator dumps
   // from other dump providers.
@@ -53,4 +53,4 @@ class BASE_EXPORT MallocDumpProvider : public MemoryDumpProvider {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MALLOC_DUMP_PROVIDER_H_
+#endif  // BRICK_TRACE_EVENT_MALLOC_DUMP_PROVIDER_H_

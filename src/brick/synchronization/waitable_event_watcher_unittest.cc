@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/waitable_event_watcher.h"
+#include "brick/synchronization/waitable_event_watcher.h"
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -3,23 +3,23 @@
 // found in the LICENSE file.
 
 // Defines base::PathProviderMac which replaces base::PathProviderPosix for Mac
-// in base/path_service.cc.
+// in brick/path_service.cc.
 
 #include <dlfcn.h>
 #import <Foundation/Foundation.h>
 #include <mach-o/dyld.h>
 #include <stdint.h>
 
-#include "base/base_paths.h"
-#include "base/compiler_specific.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/mac/bundle_locations.h"
-#include "base/mac/foundation_util.h"
-#include "base/path_service.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/base_paths.h"
+#include "brick/compiler_specific.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/mac/bundle_locations.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/path_service.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 namespace {

@@ -18,7 +18,7 @@ if (is_component_build) {
 
 buildflag_header("base_win_buildflags") {
   header = "base_win_buildflags.h"
-  header_dir = "base/win"
+  header_dir = "brick/win"
   flags = [
     "SINGLE_MODULE_MODE_HANDLE_VERIFIER=$single_module_mode_handle_verifier",
   ]

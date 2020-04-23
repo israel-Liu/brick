@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/ref_counted_memory.h"
+#include "brick/memory/ref_counted_memory.h"
 
 #include <stdint.h>
 
 #include <utility>
 
-#include "base/memory/read_only_shared_memory_region.h"
+#include "brick/memory/read_only_shared_memory_region.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

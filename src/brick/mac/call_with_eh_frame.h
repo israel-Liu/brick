@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_CALL_WITH_EH_FRAME_H_
-#define BASE_MAC_CALL_WITH_EH_FRAME_H_
+#ifndef BRICK_MAC_CALL_WITH_EH_FRAME_H_
+#define BRICK_MAC_CALL_WITH_EH_FRAME_H_
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 namespace mac {
@@ -18,9 +18,9 @@ namespace mac {
 // The purpose of this function is to prevent a try/catch statement in system
 // libraries, acting as a global exception handler, from handling exceptions
 // in such a way that disrupts the generation of useful stack traces.
-void BASE_EXPORT CallWithEHFrame(void (^block)(void));
+void BRICK_EXPORT CallWithEHFrame(void (^block)(void));
 
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_CALL_WITH_EH_FRAME_H_
+#endif  // BRICK_MAC_CALL_WITH_EH_FRAME_H_

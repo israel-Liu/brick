@@ -10,16 +10,16 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
-#include "base/location.h"
-#include "base/pickle.h"
-#include "base/posix/unix_domain_socket.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/location.h"
+#include "brick/pickle.h"
+#include "brick/posix/unix_domain_socket.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

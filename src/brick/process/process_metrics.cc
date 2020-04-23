@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_metrics.h"
+#include "brick/process/process_metrics.h"
 
 #include <utility>
 
-#include "base/logging.h"
-#include "base/values.h"
+#include "brick/logging.h"
+#include "brick/values.h"
 #include "build/build_config.h"
 
 #if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX)

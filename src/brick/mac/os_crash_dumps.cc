@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/os_crash_dumps.h"
+#include "brick/mac/os_crash_dumps.h"
 
 #include <signal.h>
 #include <stddef.h>
 #include <unistd.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace mac {

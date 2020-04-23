@@ -5,10 +5,10 @@
 // This file exists for Unix systems which don't have the inotify headers, and
 // thus cannot build file_watcher_inotify.cc
 
-#include "base/files/file_path_watcher.h"
+#include "brick/files/file_path_watcher.h"
 
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
 
 namespace base {
 

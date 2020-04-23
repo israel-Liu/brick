@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/kill.h"
+#include "brick/process/kill.h"
 
 #include <errno.h>
 #include <signal.h>
@@ -10,14 +10,14 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include "base/debug/activity_tracker.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/process/process_iterator.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/threading/platform_thread.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/process/process_iterator.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/threading/platform_thread.h"
 #include "build/build_config.h"
 
 namespace base {

@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_checker.h"
+#include "brick/threading/thread_checker.h"
 
 #include <memory>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequence_token.h"
-#include "base/test/gtest_util.h"
-#include "base/test/test_simple_task_runner.h"
-#include "base/threading/simple_thread.h"
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequence_token.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/test_simple_task_runner.h"
+#include "brick/threading/simple_thread.h"
+#include "brick/threading/thread_task_runner_handle.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

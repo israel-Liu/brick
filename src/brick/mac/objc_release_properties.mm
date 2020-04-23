@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/objc_release_properties.h"
+#include "brick/mac/objc_release_properties.h"
 
 #include <memory>
 
 #include <objc/runtime.h>
 
-#include "base/logging.h"
-#include "base/memory/free_deleter.h"
+#include "brick/logging.h"
+#include "brick/memory/free_deleter.h"
 
 namespace {
 

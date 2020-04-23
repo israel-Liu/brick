@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_LAUNCHER_TEST_RESULTS_TRACKER_H_
-#define BASE_TEST_LAUNCHER_TEST_RESULTS_TRACKER_H_
+#ifndef BRICK_TEST_LAUNCHER_TEST_RESULTS_TRACKER_H_
+#define BRICK_TEST_LAUNCHER_TEST_RESULTS_TRACKER_H_
 
 #include <map>
 #include <set>
 #include <string>
 #include <vector>
 
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/test/launcher/test_result.h"
-#include "base/threading/thread_checker.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/test/launcher/test_result.h"
+#include "brick/threading/thread_checker.h"
 
 namespace base {
 
@@ -146,4 +146,4 @@ class TestResultsTracker {
 
 }  // namespace base
 
-#endif  // BASE_TEST_LAUNCHER_TEST_RESULTS_TRACKER_H_
+#endif  // BRICK_TEST_LAUNCHER_TEST_RESULTS_TRACKER_H_

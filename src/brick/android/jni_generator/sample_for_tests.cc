@@ -4,11 +4,11 @@
 
 #include <iostream>
 
-#include "base/android/jni_generator/sample_for_tests.h"
+#include "brick/android/jni_generator/sample_for_tests.h"
 
-#include "base/android/jni_android.h"
-#include "base/android/jni_string.h"
-#include "base/android/scoped_java_ref.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_string.h"
+#include "brick/android/scoped_java_ref.h"
 // Generated file for JNI bindings from C++ to Java @CalledByNative methods.
 // Only to be included in one .cc file.
 // Name is based on the java file name: *.java -> jni/*_jni.h

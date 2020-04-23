@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/lock.h"
+#include "brick/synchronization/lock.h"
 
 #include <stdlib.h>
 
-#include "base/compiler_specific.h"
-#include "base/debug/activity_tracker.h"
-#include "base/macros.h"
-#include "base/threading/platform_thread.h"
+#include "brick/compiler_specific.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/macros.h"
+#include "brick/threading/platform_thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

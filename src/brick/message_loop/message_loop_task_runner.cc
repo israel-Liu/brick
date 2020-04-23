@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_loop_task_runner.h"
+#include "brick/message_loop/message_loop_task_runner.h"
 
 #include <utility>
 
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/message_loop/incoming_task_queue.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/message_loop/incoming_task_queue.h"
 
 namespace base {
 namespace internal {

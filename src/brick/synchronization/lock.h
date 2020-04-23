@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYNCHRONIZATION_LOCK_H_
-#define BASE_SYNCHRONIZATION_LOCK_H_
+#ifndef BRICK_SYNCHRONIZATION_LOCK_H_
+#define BRICK_SYNCHRONIZATION_LOCK_H_
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/synchronization/lock_impl.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock_impl.h"
+#include "brick/threading/platform_thread.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -17,7 +17,7 @@ namespace base {
 // A convenient wrapper for an OS specific critical section.  The only real
 // intelligence in this class is in debug mode for the support for the
 // AssertAcquired() method.
-class BASE_EXPORT Lock {
+class BRICK_EXPORT Lock {
  public:
 #if !DCHECK_IS_ON()
    // Optimized wrapper implementation
@@ -148,4 +148,4 @@ class AutoUnlock {
 
 }  // namespace base
 
-#endif  // BASE_SYNCHRONIZATION_LOCK_H_
+#endif  // BRICK_SYNCHRONIZATION_LOCK_H_

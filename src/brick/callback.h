@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 //
 // NOTE: Header files that do not require the full definition of Callback or
-// Closure should #include "base/callback_forward.h" instead of this file.
+// Closure should #include "brick/callback_forward.h" instead of this file.
 
-#ifndef BASE_CALLBACK_H_
-#define BASE_CALLBACK_H_
+#ifndef BRICK_CALLBACK_H_
+#define BRICK_CALLBACK_H_
 
-#include "base/callback_forward.h"
-#include "base/callback_internal.h"
+#include "brick/callback_forward.h"
+#include "brick/callback_internal.h"
 
 // -----------------------------------------------------------------------------
 // Usage documentation
@@ -139,4 +139,4 @@ class RepeatingCallback<R(Args...)> : public internal::CallbackBaseCopyable {
 
 }  // namespace base
 
-#endif  // BASE_CALLBACK_H_
+#endif  // BRICK_CALLBACK_H_

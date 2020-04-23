@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_SHARED_MEMORY_TRACKER_H_
-#define BASE_MEMORY_SHARED_MEMORY_TRACKER_H_
+#ifndef BRICK_MEMORY_SHARED_MEMORY_TRACKER_H_
+#define BRICK_MEMORY_SHARED_MEMORY_TRACKER_H_
 
 #include <map>
 #include <string>
 
-#include "base/memory/shared_memory.h"
-#include "base/memory/shared_memory_mapping.h"
-#include "base/synchronization/lock.h"
-#include "base/trace_event/memory_dump_provider.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/memory/shared_memory_mapping.h"
+#include "brick/synchronization/lock.h"
+#include "brick/trace_event/memory_dump_provider.h"
 
 namespace base {
 
@@ -22,7 +22,7 @@ class ProcessMemoryDump;
 }
 
 // SharedMemoryTracker tracks shared memory usage.
-class BASE_EXPORT SharedMemoryTracker : public trace_event::MemoryDumpProvider {
+class BRICK_EXPORT SharedMemoryTracker : public trace_event::MemoryDumpProvider {
  public:
   // Returns a singleton instance.
   static SharedMemoryTracker* GetInstance();
@@ -87,4 +87,4 @@ class BASE_EXPORT SharedMemoryTracker : public trace_event::MemoryDumpProvider {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_SHARED_MEMORY_TRACKER_H_
+#endif  // BRICK_MEMORY_SHARED_MEMORY_TRACKER_H_

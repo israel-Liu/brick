@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_ID_MAP_H_
-#define BASE_CONTAINERS_ID_MAP_H_
+#ifndef BRICK_CONTAINERS_ID_MAP_H_
+#define BRICK_CONTAINERS_ID_MAP_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -14,10 +14,10 @@
 #include <unordered_map>
 #include <utility>
 
-#include "base/containers/flat_set.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/sequence_checker.h"
+#include "brick/containers/flat_set.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/sequence_checker.h"
 
 namespace base {
 
@@ -287,4 +287,4 @@ class IDMap final {
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_ID_MAP_H_
+#endif  // BRICK_CONTAINERS_ID_MAP_H_

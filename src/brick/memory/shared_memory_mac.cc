@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory.h"
+#include "brick/memory/shared_memory.h"
 
 #include <errno.h>
 #include <mach/mach_vm.h>
@@ -11,23 +11,23 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
-#include "base/logging.h"
-#include "base/mac/foundation_util.h"
-#include "base/mac/mac_util.h"
-#include "base/mac/scoped_mach_vm.h"
-#include "base/memory/shared_memory_helper.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/metrics/field_trial.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/posix/safe_strerror.h"
-#include "base/process/process_metrics.h"
-#include "base/scoped_generic.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/unguessable_token.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/logging.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/mac/mac_util.h"
+#include "brick/mac/scoped_mach_vm.h"
+#include "brick/memory/shared_memory_helper.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/metrics/field_trial.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/posix/safe_strerror.h"
+#include "brick/process/process_metrics.h"
+#include "brick/scoped_generic.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/unguessable_token.h"
 #include "build/build_config.h"
 
 #if defined(OS_IOS)

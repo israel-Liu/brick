@@ -7,18 +7,18 @@
 #include <objbase.h>
 #include <initguid.h>
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/process/process_handle.h"
-#include "base/strings/stringprintf.h"
-#include "base/sys_info.h"
-#include "base/win/event_trace_controller.h"
-#include "base/win/event_trace_provider.h"
-#include "base/win/scoped_handle.h"
-#include "base/win/windows_version.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/process/process_handle.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/sys_info.h"
+#include "brick/win/event_trace_controller.h"
+#include "brick/win/event_trace_provider.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/windows_version.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

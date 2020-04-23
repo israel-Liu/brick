@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/posix/global_descriptors.h"
+#include "brick/posix/global_descriptors.h"
 
 #include <vector>
 #include <utility>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 

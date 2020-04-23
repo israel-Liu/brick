@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_STRINGS_STRING_NUMBER_CONVERSIONS_H_
-#define BASE_STRINGS_STRING_NUMBER_CONVERSIONS_H_
+#ifndef BRICK_STRINGS_STRING_NUMBER_CONVERSIONS_H_
+#define BRICK_STRINGS_STRING_NUMBER_CONVERSIONS_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -11,9 +11,9 @@
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
 #include "build/build_config.h"
 
 // ----------------------------------------------------------------------------
@@ -41,20 +41,20 @@ namespace base {
 // Number -> string conversions ------------------------------------------------
 
 // Ignores locale! see warning above.
-BASE_EXPORT std::string NumberToString(int value);
-BASE_EXPORT string16 NumberToString16(int value);
-BASE_EXPORT std::string NumberToString(unsigned int value);
-BASE_EXPORT string16 NumberToString16(unsigned int value);
-BASE_EXPORT std::string NumberToString(long value);
-BASE_EXPORT string16 NumberToString16(long value);
-BASE_EXPORT std::string NumberToString(unsigned long value);
-BASE_EXPORT string16 NumberToString16(unsigned long value);
-BASE_EXPORT std::string NumberToString(long long value);
-BASE_EXPORT string16 NumberToString16(long long value);
-BASE_EXPORT std::string NumberToString(unsigned long long value);
-BASE_EXPORT string16 NumberToString16(unsigned long long value);
-BASE_EXPORT std::string NumberToString(double value);
-BASE_EXPORT string16 NumberToString16(double value);
+BRICK_EXPORT std::string NumberToString(int value);
+BRICK_EXPORT string16 NumberToString16(int value);
+BRICK_EXPORT std::string NumberToString(unsigned int value);
+BRICK_EXPORT string16 NumberToString16(unsigned int value);
+BRICK_EXPORT std::string NumberToString(long value);
+BRICK_EXPORT string16 NumberToString16(long value);
+BRICK_EXPORT std::string NumberToString(unsigned long value);
+BRICK_EXPORT string16 NumberToString16(unsigned long value);
+BRICK_EXPORT std::string NumberToString(long long value);
+BRICK_EXPORT string16 NumberToString16(long long value);
+BRICK_EXPORT std::string NumberToString(unsigned long long value);
+BRICK_EXPORT string16 NumberToString16(unsigned long long value);
+BRICK_EXPORT std::string NumberToString(double value);
+BRICK_EXPORT string16 NumberToString16(double value);
 
 // Type-specific naming for backwards compatibility.
 //
@@ -97,20 +97,20 @@ inline string16 Int64ToString16(int64_t value) {
 //  - Empty string.  |*output| will be set to 0.
 // WARNING: Will write to |output| even when returning false.
 //          Read the comments above carefully.
-BASE_EXPORT bool StringToInt(StringPiece input, int* output);
-BASE_EXPORT bool StringToInt(StringPiece16 input, int* output);
+BRICK_EXPORT bool StringToInt(StringPiece input, int* output);
+BRICK_EXPORT bool StringToInt(StringPiece16 input, int* output);
 
-BASE_EXPORT bool StringToUint(StringPiece input, unsigned* output);
-BASE_EXPORT bool StringToUint(StringPiece16 input, unsigned* output);
+BRICK_EXPORT bool StringToUint(StringPiece input, unsigned* output);
+BRICK_EXPORT bool StringToUint(StringPiece16 input, unsigned* output);
 
-BASE_EXPORT bool StringToInt64(StringPiece input, int64_t* output);
-BASE_EXPORT bool StringToInt64(StringPiece16 input, int64_t* output);
+BRICK_EXPORT bool StringToInt64(StringPiece input, int64_t* output);
+BRICK_EXPORT bool StringToInt64(StringPiece16 input, int64_t* output);
 
-BASE_EXPORT bool StringToUint64(StringPiece input, uint64_t* output);
-BASE_EXPORT bool StringToUint64(StringPiece16 input, uint64_t* output);
+BRICK_EXPORT bool StringToUint64(StringPiece input, uint64_t* output);
+BRICK_EXPORT bool StringToUint64(StringPiece16 input, uint64_t* output);
 
-BASE_EXPORT bool StringToSizeT(StringPiece input, size_t* output);
-BASE_EXPORT bool StringToSizeT(StringPiece16 input, size_t* output);
+BRICK_EXPORT bool StringToSizeT(StringPiece input, size_t* output);
+BRICK_EXPORT bool StringToSizeT(StringPiece16 input, size_t* output);
 
 // For floating-point conversions, only conversions of input strings in decimal
 // form are defined to work.  Behavior with strings representing floating-point
@@ -120,7 +120,7 @@ BASE_EXPORT bool StringToSizeT(StringPiece16 input, size_t* output);
 // If your input is locale specific, use ICU to read the number.
 // WARNING: Will write to |output| even when returning false.
 //          Read the comments here and above StringToInt() carefully.
-BASE_EXPORT bool StringToDouble(const std::string& input, double* output);
+BRICK_EXPORT bool StringToDouble(const std::string& input, double* output);
 
 // Hex encoding ----------------------------------------------------------------
 
@@ -130,37 +130,37 @@ BASE_EXPORT bool StringToDouble(const std::string& input, double* output);
 // you suspect that the data you want to format might be large, the absolute
 // max size for |size| should be is
 //   std::numeric_limits<size_t>::max() / 2
-BASE_EXPORT std::string HexEncode(const void* bytes, size_t size);
+BRICK_EXPORT std::string HexEncode(const void* bytes, size_t size);
 
 // Best effort conversion, see StringToInt above for restrictions.
 // Will only successful parse hex values that will fit into |output|, i.e.
 // -0x80000000 < |input| < 0x7FFFFFFF.
-BASE_EXPORT bool HexStringToInt(StringPiece input, int* output);
+BRICK_EXPORT bool HexStringToInt(StringPiece input, int* output);
 
 // Best effort conversion, see StringToInt above for restrictions.
 // Will only successful parse hex values that will fit into |output|, i.e.
 // 0x00000000 < |input| < 0xFFFFFFFF.
 // The string is not required to start with 0x.
-BASE_EXPORT bool HexStringToUInt(StringPiece input, uint32_t* output);
+BRICK_EXPORT bool HexStringToUInt(StringPiece input, uint32_t* output);
 
 // Best effort conversion, see StringToInt above for restrictions.
 // Will only successful parse hex values that will fit into |output|, i.e.
 // -0x8000000000000000 < |input| < 0x7FFFFFFFFFFFFFFF.
-BASE_EXPORT bool HexStringToInt64(StringPiece input, int64_t* output);
+BRICK_EXPORT bool HexStringToInt64(StringPiece input, int64_t* output);
 
 // Best effort conversion, see StringToInt above for restrictions.
 // Will only successful parse hex values that will fit into |output|, i.e.
 // 0x0000000000000000 < |input| < 0xFFFFFFFFFFFFFFFF.
 // The string is not required to start with 0x.
-BASE_EXPORT bool HexStringToUInt64(StringPiece input, uint64_t* output);
+BRICK_EXPORT bool HexStringToUInt64(StringPiece input, uint64_t* output);
 
 // Similar to the previous functions, except that output is a vector of bytes.
 // |*output| will contain as many bytes as were successfully parsed prior to the
 // error.  There is no overflow, but input.size() must be evenly divisible by 2.
 // Leading 0x or +/- are not allowed.
-BASE_EXPORT bool HexStringToBytes(StringPiece input,
+BRICK_EXPORT bool HexStringToBytes(StringPiece input,
                                   std::vector<uint8_t>* output);
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_STRING_NUMBER_CONVERSIONS_H_
+#endif  // BRICK_STRINGS_STRING_NUMBER_CONVERSIONS_H_

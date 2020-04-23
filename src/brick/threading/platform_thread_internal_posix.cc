@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/platform_thread_internal_posix.h"
+#include "brick/threading/platform_thread_internal_posix.h"
 
-#include "base/containers/adapters.h"
-#include "base/logging.h"
+#include "brick/containers/adapters.h"
+#include "brick/logging.h"
 
 namespace base {
 

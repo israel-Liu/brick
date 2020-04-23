@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_STRINGS_STRCAT_H_
-#define BASE_STRINGS_STRCAT_H_
+#ifndef BRICK_STRINGS_STRCAT_H_
+#define BRICK_STRINGS_STRCAT_H_
 
 #include <initializer_list>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/containers/span.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/containers/span.h"
+#include "brick/strings/string_piece.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
 // To resolve a conflict with Win32 API StrCat macro.
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 #endif
 
 namespace base {
@@ -29,7 +29,7 @@ namespace base {
 //   std::string result = base::StrCat({"foo ", result, "\nfoo ", bar});
 //
 // To join an array of strings with a separator, see base::JoinString in
-// base/strings/string_util.h.
+// brick/strings/string_util.h.
 //
 // MORE INFO
 //
@@ -58,10 +58,10 @@ namespace base {
 // for this call and generate slightly less code. This is something we can
 // explore more in the future.
 
-BASE_EXPORT std::string StrCat(span<const StringPiece> pieces);
-BASE_EXPORT string16 StrCat(span<const StringPiece16> pieces);
-BASE_EXPORT std::string StrCat(span<const std::string> pieces);
-BASE_EXPORT string16 StrCat(span<const string16> pieces);
+BRICK_EXPORT std::string StrCat(span<const StringPiece> pieces);
+BRICK_EXPORT string16 StrCat(span<const StringPiece16> pieces);
+BRICK_EXPORT std::string StrCat(span<const std::string> pieces);
+BRICK_EXPORT string16 StrCat(span<const string16> pieces);
 
 // Initializer list forwards to the array version.
 inline std::string StrCat(std::initializer_list<StringPiece> pieces) {
@@ -79,10 +79,10 @@ inline string16 StrCat(std::initializer_list<StringPiece16> pieces) {
 //   foo += StrCat(...);
 // because it avoids a temporary string allocation and copy.
 
-BASE_EXPORT void StrAppend(std::string* dest, span<const StringPiece> pieces);
-BASE_EXPORT void StrAppend(string16* dest, span<const StringPiece16> pieces);
-BASE_EXPORT void StrAppend(std::string* dest, span<const std::string> pieces);
-BASE_EXPORT void StrAppend(string16* dest, span<const string16> pieces);
+BRICK_EXPORT void StrAppend(std::string* dest, span<const StringPiece> pieces);
+BRICK_EXPORT void StrAppend(string16* dest, span<const StringPiece16> pieces);
+BRICK_EXPORT void StrAppend(std::string* dest, span<const std::string> pieces);
+BRICK_EXPORT void StrAppend(string16* dest, span<const string16> pieces);
 
 // Initializer list forwards to the array version.
 inline void StrAppend(std::string* dest,
@@ -96,4 +96,4 @@ inline void StrAppend(string16* dest,
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_STRCAT_H_
+#endif  // BRICK_STRINGS_STRCAT_H_

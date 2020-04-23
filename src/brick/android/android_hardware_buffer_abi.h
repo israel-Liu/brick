@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_ANDROID_HARDWARE_BUFFER_ABI_H_
-#define BASE_ANDROID_ANDROID_HARDWARE_BUFFER_ABI_H_
+#ifndef BRICK_ANDROID_ANDROID_HARDWARE_BUFFER_ABI_H_
+#define BRICK_ANDROID_ANDROID_HARDWARE_BUFFER_ABI_H_
 
 // Minimal binary interface definitions for AHardwareBuffer based on
 // include/android/hardware_buffer.h from the Android NDK for platform level
@@ -87,4 +87,4 @@ using PFAHardwareBuffer_unlock = int (*)(AHardwareBuffer* buffer,
 
 }  // extern "C"
 
-#endif  // BASE_ANDROID_ANDROID_HARDWARE_BUFFER_ABI_H_
+#endif  // BRICK_ANDROID_ANDROID_HARDWARE_BUFFER_ABI_H_

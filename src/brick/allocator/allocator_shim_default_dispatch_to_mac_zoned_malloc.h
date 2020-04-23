@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_ALLOCATOR_SHIM_DEFAULT_DISPATCH_TO_ZONED_MALLOC_H_
-#define BASE_ALLOCATOR_ALLOCATOR_SHIM_DEFAULT_DISPATCH_TO_ZONED_MALLOC_H_
+#ifndef BRICK_ALLOCATOR_ALLOCATOR_SHIM_DEFAULT_DISPATCH_TO_ZONED_MALLOC_H_
+#define BRICK_ALLOCATOR_ALLOCATOR_SHIM_DEFAULT_DISPATCH_TO_ZONED_MALLOC_H_
 
 namespace base {
 namespace allocator {
@@ -16,4 +16,4 @@ void InitializeDefaultDispatchToMacAllocator();
 }  // namespace allocator
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_ALLOCATOR_SHIM_DEFAULT_DISPATCH_TO_ZONED_MALLOC_H_
+#endif  // BRICK_ALLOCATOR_ALLOCATOR_SHIM_DEFAULT_DISPATCH_TO_ZONED_MALLOC_H_

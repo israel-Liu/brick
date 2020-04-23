@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_FILE_DESCRIPTOR_WATCHER_POSIX_H_
-#define BASE_FILES_FILE_DESCRIPTOR_WATCHER_POSIX_H_
+#ifndef BRICK_FILES_FILE_DESCRIPTOR_WATCHER_POSIX_H_
+#define BRICK_FILES_FILE_DESCRIPTOR_WATCHER_POSIX_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/weak_ptr.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_pump_for_io.h"
-#include "base/sequence_checker.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_pump_for_io.h"
+#include "brick/sequence_checker.h"
 
 namespace base {
 
@@ -31,7 +31,7 @@ class SingleThreadTaskRunner;
 // MessagePumps but involves going through the task queue after being notified
 // by the OS (a desirablable property for non-critical IO that shouldn't preempt
 // the main queue).
-class BASE_EXPORT FileDescriptorWatcher {
+class BRICK_EXPORT FileDescriptorWatcher {
  public:
   // Instantiated and returned by WatchReadable() or WatchWritable(). The
   // constructor registers a callback to be invoked when a file descriptor is
@@ -107,4 +107,4 @@ class BASE_EXPORT FileDescriptorWatcher {
 
 }  // namespace base
 
-#endif  // BASE_FILES_FILE_DESCRIPTOR_WATCHER_POSIX_H_
+#endif  // BRICK_FILES_FILE_DESCRIPTOR_WATCHER_POSIX_H_

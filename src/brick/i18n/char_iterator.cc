@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/char_iterator.h"
+#include "brick/i18n/char_iterator.h"
 
 #include "third_party/icu/source/common/unicode/utf8.h"
 #include "third_party/icu/source/common/unicode/utf16.h"

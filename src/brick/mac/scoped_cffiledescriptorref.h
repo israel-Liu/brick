@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_CFFILEDESCRIPTORREF_H_
-#define BASE_MAC_SCOPED_CFFILEDESCRIPTORREF_H_
+#ifndef BRICK_MAC_SCOPED_CFFILEDESCRIPTORREF_H_
+#define BRICK_MAC_SCOPED_CFFILEDESCRIPTORREF_H_
 
 #include <CoreFoundation/CoreFoundation.h>
 
-#include "base/scoped_generic.h"
+#include "brick/scoped_generic.h"
 
 namespace base {
 namespace mac {
@@ -36,4 +36,4 @@ using ScopedCFFileDescriptorRef =
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_CFFILEDESCRIPTORREF_H_
+#endif  // BRICK_MAC_SCOPED_CFFILEDESCRIPTORREF_H_

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/sample_vector.h"
+#include "brick/metrics/sample_vector.h"
 
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
 
 // This SampleVector makes use of the single-sample embedded in the base
 // HistogramSamples class. If the count is non-zero then there is guaranteed

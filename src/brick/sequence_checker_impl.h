@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SEQUENCE_CHECKER_IMPL_H_
-#define BASE_SEQUENCE_CHECKER_IMPL_H_
+#ifndef BRICK_SEQUENCE_CHECKER_IMPL_H_
+#define BRICK_SEQUENCE_CHECKER_IMPL_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
@@ -20,7 +20,7 @@ namespace base {
 //
 // Note: You should almost always use the SequenceChecker class to get the right
 // version for your build configuration.
-class BASE_EXPORT SequenceCheckerImpl {
+class BRICK_EXPORT SequenceCheckerImpl {
  public:
   SequenceCheckerImpl();
   ~SequenceCheckerImpl();
@@ -45,4 +45,4 @@ class BASE_EXPORT SequenceCheckerImpl {
 
 }  // namespace base
 
-#endif  // BASE_SEQUENCE_CHECKER_IMPL_H_
+#endif  // BRICK_SEQUENCE_CHECKER_IMPL_H_

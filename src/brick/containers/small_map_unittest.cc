@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/containers/small_map.h"
+#include "brick/containers/small_map.h"
 
 #include <stddef.h>
 
@@ -11,7 +11,7 @@
 #include <map>
 #include <unordered_map>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

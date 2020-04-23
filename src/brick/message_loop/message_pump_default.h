@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_DEFAULT_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_DEFAULT_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_DEFAULT_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_DEFAULT_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/message_loop/message_pump.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_pump.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {
 
-class BASE_EXPORT MessagePumpDefault : public MessagePump {
+class BRICK_EXPORT MessagePumpDefault : public MessagePump {
  public:
   MessagePumpDefault();
   ~MessagePumpDefault() override;
@@ -43,4 +43,4 @@ class BASE_EXPORT MessagePumpDefault : public MessagePump {
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_DEFAULT_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_DEFAULT_H_

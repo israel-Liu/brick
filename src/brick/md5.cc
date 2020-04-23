@@ -21,7 +21,7 @@
  * will fill a supplied 16-byte array with the digest.
  */
 
-#include "base/md5.h"
+#include "brick/md5.h"
 
 #include <stddef.h>
 

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/blame_context.h"
+#include "brick/trace_event/blame_context.h"
 
-#include "base/json/json_writer.h"
-#include "base/message_loop/message_loop.h"
-#include "base/test/trace_event_analyzer.h"
-#include "base/trace_event/trace_event_argument.h"
+#include "brick/json/json_writer.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/test/trace_event_analyzer.h"
+#include "brick/trace_event/trace_event_argument.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

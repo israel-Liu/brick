@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_APPLICATION_STATUS_LISTENER_H_
-#define BASE_ANDROID_APPLICATION_STATUS_LISTENER_H_
+#ifndef BRICK_ANDROID_APPLICATION_STATUS_LISTENER_H_
+#define BRICK_ANDROID_APPLICATION_STATUS_LISTENER_H_
 
 #include <jni.h>
 
-#include "base/android/jni_android.h"
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/singleton.h"
-#include "base/observer_list_threadsafe.h"
+#include "brick/android/jni_android.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/singleton.h"
+#include "brick/observer_list_threadsafe.h"
 
 namespace base {
 namespace android {
@@ -60,7 +60,7 @@ enum ApplicationState {
 //    // Stop listening.
 //    delete my_listener
 //
-class BASE_EXPORT ApplicationStatusListener {
+class BRICK_EXPORT ApplicationStatusListener {
  public:
   typedef base::Callback<void(ApplicationState)> ApplicationStateChangeCallback;
 
@@ -85,4 +85,4 @@ class BASE_EXPORT ApplicationStatusListener {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_APPLICATION_STATUS_LISTENER_H_
+#endif  // BRICK_ANDROID_APPLICATION_STATUS_LISTENER_H_

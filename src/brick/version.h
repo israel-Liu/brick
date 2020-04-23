@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_VERSION_H_
-#define BASE_VERSION_H_
+#ifndef BRICK_VERSION_H_
+#define BRICK_VERSION_H_
 
 #include <stdint.h>
 
@@ -11,13 +11,13 @@
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 
 // Version represents a dotted version number, like "1.2.3.4", supporting
 // parsing and comparison.
-class BASE_EXPORT Version {
+class BRICK_EXPORT Version {
  public:
   // The only thing you can legally do to a default constructed
   // Version object is assign to it.
@@ -63,14 +63,14 @@ class BASE_EXPORT Version {
   std::vector<uint32_t> components_;
 };
 
-BASE_EXPORT bool operator==(const Version& v1, const Version& v2);
-BASE_EXPORT bool operator!=(const Version& v1, const Version& v2);
-BASE_EXPORT bool operator<(const Version& v1, const Version& v2);
-BASE_EXPORT bool operator<=(const Version& v1, const Version& v2);
-BASE_EXPORT bool operator>(const Version& v1, const Version& v2);
-BASE_EXPORT bool operator>=(const Version& v1, const Version& v2);
-BASE_EXPORT std::ostream& operator<<(std::ostream& stream, const Version& v);
+BRICK_EXPORT bool operator==(const Version& v1, const Version& v2);
+BRICK_EXPORT bool operator!=(const Version& v1, const Version& v2);
+BRICK_EXPORT bool operator<(const Version& v1, const Version& v2);
+BRICK_EXPORT bool operator<=(const Version& v1, const Version& v2);
+BRICK_EXPORT bool operator>(const Version& v1, const Version& v2);
+BRICK_EXPORT bool operator>=(const Version& v1, const Version& v2);
+BRICK_EXPORT std::ostream& operator<<(std::ostream& stream, const Version& v);
 
 }  // namespace base
 
-#endif  // BASE_VERSION_H_
+#endif  // BRICK_VERSION_H_

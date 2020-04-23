@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/mac/bind_objc_block.h"
+#import "brick/mac/bind_objc_block.h"
 
 #include <string>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/callback_helpers.h"
-#include "base/mac/scoped_nsautorelease_pool.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/callback_helpers.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/gtest_mac.h"
 
 #if defined(OS_IOS)
-#include "base/ios/weak_nsobject.h"
+#include "brick/ios/weak_nsobject.h"
 #endif
 
 namespace {

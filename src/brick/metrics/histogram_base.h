@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_HISTOGRAM_BASE_H_
-#define BASE_METRICS_HISTOGRAM_BASE_H_
+#ifndef BRICK_METRICS_HISTOGRAM_BRICK_H_
+#define BRICK_METRICS_HISTOGRAM_BRICK_H_
 
 #include <limits.h>
 #include <stddef.h>
@@ -13,11 +13,11 @@
 #include <string>
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/time/time.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -89,11 +89,11 @@ enum HistogramReport {
 
 // Create or find existing histogram that matches the pickled info.
 // Returns NULL if the pickled data has problems.
-BASE_EXPORT HistogramBase* DeserializeHistogramInfo(base::PickleIterator* iter);
+BRICK_EXPORT HistogramBase* DeserializeHistogramInfo(base::PickleIterator* iter);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-class BASE_EXPORT HistogramBase {
+class BRICK_EXPORT HistogramBase {
  public:
   typedef int32_t Sample;                // Used for samples.
   typedef subtle::Atomic32 AtomicCount;  // Used to count samples.
@@ -304,4 +304,4 @@ class BASE_EXPORT HistogramBase {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_HISTOGRAM_BASE_H_
+#endif  // BRICK_METRICS_HISTOGRAM_BRICK_H_

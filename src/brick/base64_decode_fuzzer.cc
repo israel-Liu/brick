@@ -4,8 +4,8 @@
 
 #include <string>
 
-#include "base/base64.h"
-#include "base/strings/string_piece.h"
+#include "brick/base64.h"
+#include "brick/strings/string_piece.h"
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   std::string decode_output;

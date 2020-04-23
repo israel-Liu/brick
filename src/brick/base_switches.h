@@ -4,8 +4,8 @@
 
 // Defines all the "base" command-line switches.
 
-#ifndef BASE_BASE_SWITCHES_H_
-#define BASE_BASE_SWITCHES_H_
+#ifndef BRICK_BRICK_SWITCHES_H_
+#define BRICK_BRICK_SWITCHES_H_
 
 #include "build/build_config.h"
 
@@ -50,4 +50,4 @@ extern const char kNativePrefetchOrderedOnly[];
 
 }  // namespace switches
 
-#endif  // BASE_BASE_SWITCHES_H_
+#endif  // BRICK_BRICK_SWITCHES_H_

@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_RUN_LOOP_H_
-#define BASE_RUN_LOOP_H_
+#ifndef BRICK_RUN_LOOP_H_
+#define BRICK_RUN_LOOP_H_
 
 #include <utility>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/containers/stack.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/weak_ptr.h"
-#include "base/observer_list.h"
-#include "base/sequence_checker.h"
-#include "base/threading/thread_checker.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/containers/stack.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/observer_list.h"
+#include "brick/sequence_checker.h"
+#include "brick/threading/thread_checker.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -37,7 +37,7 @@ class SingleThreadTaskRunner;
 // IsRunning/IsNestedOnCurrentThread()). RunLoop::Run can only be called once
 // per RunLoop lifetime. Create a RunLoop on the stack and call Run/Quit to run
 // a nested RunLoop but please do not use nested loops in production code!
-class BASE_EXPORT RunLoop {
+class BRICK_EXPORT RunLoop {
  public:
   // The type of RunLoop: a kDefault RunLoop at the top-level (non-nested) will
   // process system and application tasks assigned to its Delegate. When nested
@@ -129,7 +129,7 @@ class BASE_EXPORT RunLoop {
   static bool IsNestedOnCurrentThread();
 
   // A NestingObserver is notified when a nested RunLoop begins and ends.
-  class BASE_EXPORT NestingObserver {
+  class BRICK_EXPORT NestingObserver {
    public:
     // Notified before a nested loop starts running work on the current thread.
     virtual void OnBeginNestedRunLoop() = 0;
@@ -149,7 +149,7 @@ class BASE_EXPORT RunLoop {
   // One and only one RunLoop::Delegate must be registered on a given thread
   // via RunLoop::RegisterDelegateForCurrentThread() before RunLoop instances
   // and RunLoop static methods can be used on it.
-  class BASE_EXPORT Delegate {
+  class BRICK_EXPORT Delegate {
    public:
     Delegate();
     virtual ~Delegate();
@@ -233,7 +233,7 @@ class BASE_EXPORT RunLoop {
   // RunLoop::Delegate per thread and RunLoop::Run() should only be invoked from
   // it (or it would result in incorrectly driving TaskRunner A while in
   // TaskRunner B's context).
-  class BASE_EXPORT ScopedDisallowRunningForTesting {
+  class BRICK_EXPORT ScopedDisallowRunningForTesting {
    public:
     ScopedDisallowRunningForTesting();
     ~ScopedDisallowRunningForTesting();
@@ -301,4 +301,4 @@ class BASE_EXPORT RunLoop {
 
 }  // namespace base
 
-#endif  // BASE_RUN_LOOP_H_
+#endif  // BRICK_RUN_LOOP_H_

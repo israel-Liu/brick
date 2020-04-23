@@ -42,16 +42,16 @@
 //     ptr->DoDoDo();  // MyClass::DoDoDo
 //   }
 
-#ifndef BASE_LAZY_INSTANCE_H_
-#define BASE_LAZY_INSTANCE_H_
+#ifndef BRICK_LAZY_INSTANCE_H_
+#define BRICK_LAZY_INSTANCE_H_
 
 #include <new>  // For placement new.
 
-#include "base/atomicops.h"
-#include "base/debug/leak_annotations.h"
-#include "base/lazy_instance_helpers.h"
-#include "base/logging.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/atomicops.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/lazy_instance_helpers.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_restrictions.h"
 
 // LazyInstance uses its own struct initializer-list style static
 // initialization, which does not require a constructor.
@@ -207,4 +207,4 @@ class LazyInstance {
 
 }  // namespace base
 
-#endif  // BASE_LAZY_INSTANCE_H_
+#endif  // BRICK_LAZY_INSTANCE_H_

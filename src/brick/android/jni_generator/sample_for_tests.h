@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_JNI_GENERATOR_SAMPLE_FOR_TESTS_H_
-#define BASE_ANDROID_JNI_GENERATOR_SAMPLE_FOR_TESTS_H_
+#ifndef BRICK_ANDROID_JNI_GENERATOR_SAMPLE_FOR_TESTS_H_
+#define BRICK_ANDROID_JNI_GENERATOR_SAMPLE_FOR_TESTS_H_
 
 #include <jni.h>
 #include <map>
 #include <string>
 
-#include "base/android/jni_android.h"
+#include "brick/android/jni_android.h"
 
 namespace base {
 namespace android {
@@ -59,7 +59,7 @@ namespace android {
 //  }
 // The build rules above are generally that that's needed when adding new
 // JNI methods/files. For a full GN example, see
-// base/android/jni_generator/BUILD.gn
+// brick/android/jni_generator/BUILD.gn
 //
 // For C++ methods to be exposed to Java:
 // - The Java class must be part of an android_apk target that depends on
@@ -111,4 +111,4 @@ class CPPClass {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_JNI_GENERATOR_SAMPLE_FOR_TESTS_H_
+#endif  // BRICK_ANDROID_JNI_GENERATOR_SAMPLE_FOR_TESTS_H_

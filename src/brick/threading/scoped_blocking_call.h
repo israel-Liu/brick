@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_SCOPED_BLOCKING_CALL_H
-#define BASE_THREADING_SCOPED_BLOCKING_CALL_H
+#ifndef BRICK_THREADING_SCOPED_BLOCKING_CALL_H
+#define BRICK_THREADING_SCOPED_BLOCKING_CALL_H
 
-#include "base/base_export.h"
-#include "base/logging.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
 
 namespace base {
 
@@ -72,7 +72,7 @@ class BlockingObserver;
 // When a ScopedBlockingCall is instantiated from a TaskScheduler parallel or
 // sequenced task, the thread pool size is incremented to compensate for the
 // blocked thread (more or less aggressively depending on BlockingType).
-class BASE_EXPORT ScopedBlockingCall {
+class BRICK_EXPORT ScopedBlockingCall {
  public:
   ScopedBlockingCall(BlockingType blocking_type);
   ~ScopedBlockingCall();
@@ -94,7 +94,7 @@ namespace internal {
 
 // Interface for an observer to be informed when a thread enters or exits
 // the scope of ScopedBlockingCall objects.
-class BASE_EXPORT BlockingObserver {
+class BRICK_EXPORT BlockingObserver {
  public:
   virtual ~BlockingObserver() = default;
 
@@ -114,15 +114,15 @@ class BASE_EXPORT BlockingObserver {
 
 // Registers |blocking_observer| on the current thread. It is invalid to call
 // this on a thread where there is an active ScopedBlockingCall.
-BASE_EXPORT void SetBlockingObserverForCurrentThread(
+BRICK_EXPORT void SetBlockingObserverForCurrentThread(
     BlockingObserver* blocking_observer);
 
-BASE_EXPORT void ClearBlockingObserverForTesting();
+BRICK_EXPORT void ClearBlockingObserverForTesting();
 
 // Unregisters the |blocking_observer| on the current thread within its scope.
 // Used in TaskScheduler tests to prevent calls to //base sync primitives from
 // affecting the thread pool capacity.
-class BASE_EXPORT ScopedClearBlockingObserverForTesting {
+class BRICK_EXPORT ScopedClearBlockingObserverForTesting {
  public:
   ScopedClearBlockingObserverForTesting();
   ~ScopedClearBlockingObserverForTesting();
@@ -137,4 +137,4 @@ class BASE_EXPORT ScopedClearBlockingObserverForTesting {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_SCOPED_BLOCKING_CALL_H
+#endif  // BRICK_THREADING_SCOPED_BLOCKING_CALL_H

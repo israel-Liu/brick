@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_ANDROID_URL_UTILS_H_
-#define BASE_TEST_ANDROID_URL_UTILS_H_
+#ifndef BRICK_TEST_ANDROID_URL_UTILS_H_
+#define BRICK_TEST_ANDROID_URL_UTILS_H_
 
 #include <jni.h>
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
 
 namespace base {
 namespace android {
 
 // Returns the root of the test data directory. This function will call into
 // Java class UrlUtils through JNI bridge.
-BASE_EXPORT FilePath GetIsolatedTestRoot();
+BRICK_EXPORT FilePath GetIsolatedTestRoot();
 
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_TEST_ANDROID_URL_UTILS_H_
+#endif  // BRICK_TEST_ANDROID_URL_UTILS_H_

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/scoped_mach_port.h"
+#include "brick/mac/scoped_mach_port.h"
 
-#include "base/mac/mach_logging.h"
+#include "brick/mac/mach_logging.h"
 
 namespace base {
 namespace mac {

@@ -6,13 +6,13 @@
 
 #include <memory>
 
-#include "base/bind.h"
-#include "base/lazy_instance.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/thread.h"
-#include "base/trace_event/category_registry.h"
-#include "base/trace_event/trace_category.h"
+#include "brick/bind.h"
+#include "brick/lazy_instance.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/thread.h"
+#include "brick/trace_event/category_registry.h"
+#include "brick/trace_event/trace_category.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

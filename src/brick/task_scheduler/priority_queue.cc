@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/priority_queue.h"
+#include "brick/task_scheduler/priority_queue.h"
 
 #include <utility>
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
 
 namespace base {
 namespace internal {

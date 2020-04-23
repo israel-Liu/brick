@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/base_switches.h"
+#include "brick/base_switches.h"
 #include "build/build_config.h"
 
 namespace switches {
@@ -113,7 +113,7 @@ const char kEnableCrashReporterForTesting[] =
 
 #if defined(OS_ANDROID)
 // Optimizes memory layout of the native library using the orderfile symbols
-// given in base/android/library_loader/anchor_functions.h, via madvise and
+// given in brick/android/library_loader/anchor_functions.h, via madvise and
 // changing the library prefetch behavior.
 const char kOrderfileMemoryOptimization[] = "orderfile-memory-optimization";
 // Force prefetching of the native library even if otherwise disabled, eg by

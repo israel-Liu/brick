@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_DUMMY_HISTOGRAM_H_
-#define BASE_METRICS_DUMMY_HISTOGRAM_H_
+#ifndef BRICK_METRICS_DUMMY_HISTOGRAM_H_
+#define BRICK_METRICS_DUMMY_HISTOGRAM_H_
 
 #include <stdint.h>
 
 #include <memory>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/metrics/histogram_base.h"
-#include "base/no_destructor.h"
+#include "brick/base_export.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/no_destructor.h"
 
 namespace base {
 
 // DummyHistogram is used for mocking histogram objects for histograms that
 // shouldn't be recorded. It doesn't do any actual processing.
-class BASE_EXPORT DummyHistogram : public HistogramBase {
+class BRICK_EXPORT DummyHistogram : public HistogramBase {
  public:
   static DummyHistogram* GetInstance();
 
@@ -58,4 +58,4 @@ class BASE_EXPORT DummyHistogram : public HistogramBase {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_DUMMY_HISTOGRAM_H_
+#endif  // BRICK_METRICS_DUMMY_HISTOGRAM_H_

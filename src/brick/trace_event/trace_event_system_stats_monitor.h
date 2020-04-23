@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_EVENT_SYSTEM_STATS_MONITOR_H_
-#define BASE_TRACE_EVENT_TRACE_EVENT_SYSTEM_STATS_MONITOR_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_EVENT_SYSTEM_STATS_MONITOR_H_
+#define BRICK_TRACE_EVENT_TRACE_EVENT_SYSTEM_STATS_MONITOR_H_
 
-#include "base/base_export.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/weak_ptr.h"
-#include "base/process/process_metrics.h"
-#include "base/timer/timer.h"
-#include "base/trace_event/trace_log.h"
+#include "brick/base_export.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/process/process_metrics.h"
+#include "brick/timer/timer.h"
+#include "brick/trace_event/trace_log.h"
 
 namespace base {
 
@@ -23,7 +23,7 @@ namespace trace_event {
 // Watches for chrome://tracing to be enabled or disabled. When tracing is
 // enabled, also enables system events profiling. This class is the preferred
 // way to turn system tracing on and off.
-class BASE_EXPORT TraceEventSystemStatsMonitor
+class BRICK_EXPORT TraceEventSystemStatsMonitor
     : public TraceLog::EnabledStateObserver {
  public:
   // Length of time interval between stat profiles.
@@ -66,11 +66,11 @@ class BASE_EXPORT TraceEventSystemStatsMonitor
 
 // Converts system memory profiling stats in |input| to
 // trace event compatible JSON and appends to |output|. Visible for testing.
-BASE_EXPORT void AppendSystemProfileAsTraceFormat(const SystemMetrics&
+BRICK_EXPORT void AppendSystemProfileAsTraceFormat(const SystemMetrics&
                                                   system_stats,
                                                   std::string* output);
 
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_EVENT_SYSTEM_STATS_MONITOR_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_EVENT_SYSTEM_STATS_MONITOR_H_

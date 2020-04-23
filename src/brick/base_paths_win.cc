@@ -6,14 +6,14 @@
 #include <KnownFolders.h>
 #include <shlobj.h>
 
-#include "base/base_paths.h"
-#include "base/environment.h"
-#include "base/files/file_path.h"
-#include "base/path_service.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/win/current_module.h"
-#include "base/win/scoped_co_mem.h"
-#include "base/win/windows_version.h"
+#include "brick/base_paths.h"
+#include "brick/environment.h"
+#include "brick/files/file_path.h"
+#include "brick/path_service.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/win/current_module.h"
+#include "brick/win/scoped_co_mem.h"
+#include "brick/win/windows_version.h"
 
 using base::FilePath;
 

@@ -5,8 +5,8 @@
 // This is a "No Compile Test" suite.
 // http://dev.chromium.org/developers/testing/no-compile-tests
 
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/histogram_macros.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/histogram_macros.h"
 
 namespace base {
 

@@ -4,21 +4,21 @@
 
 // File utilities that use the ICU library go in this file.
 
-#include "base/i18n/file_util_icu.h"
+#include "brick/i18n/file_util_icu.h"
 
 #include <stdint.h>
 
 #include <memory>
 
-#include "base/files/file_path.h"
-#include "base/i18n/icu_string_conversions.h"
-#include "base/i18n/string_compare.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/singleton.h"
-#include "base/strings/string_util.h"
-#include "base/strings/sys_string_conversions.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/files/file_path.h"
+#include "brick/i18n/icu_string_conversions.h"
+#include "brick/i18n/string_compare.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/singleton.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/sys_string_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 #include "third_party/icu/source/common/unicode/uniset.h"
 #include "third_party/icu/source/i18n/unicode/coll.h"

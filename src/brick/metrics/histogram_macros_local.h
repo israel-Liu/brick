@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_HISTOGRAM_MACROS_LOCAL_H_
-#define BASE_METRICS_HISTOGRAM_MACROS_LOCAL_H_
+#ifndef BRICK_METRICS_HISTOGRAM_MACROS_LOCAL_H_
+#define BRICK_METRICS_HISTOGRAM_MACROS_LOCAL_H_
 
-#include "base/logging.h"
-#include "base/metrics/histogram.h"
-#include "base/metrics/histogram_macros_internal.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/histogram_macros_internal.h"
+#include "brick/time/time.h"
 
 // TODO(rkaplow): Migrate all LOCAL_* usage within Chromium to include this
 // file instead of the histogram_macros.h file.
@@ -87,4 +87,4 @@
 #define LOCAL_HISTOGRAM_COUNTS(name, sample)                                   \
     LOCAL_HISTOGRAM_CUSTOM_COUNTS(name, sample, 1, 1000000, 50)
 
-#endif  // BASE_METRICS_HISTOGRAM_MACROS_LOCAL_H_
+#endif  // BRICK_METRICS_HISTOGRAM_MACROS_LOCAL_H_

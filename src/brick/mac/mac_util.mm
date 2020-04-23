@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/mac_util.h"
+#include "brick/mac/mac_util.h"
 
 #import <Cocoa/Cocoa.h>
 #import <IOKit/IOKitLib.h>
@@ -12,18 +12,18 @@
 #include <sys/utsname.h>
 #include <sys/xattr.h>
 
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/mac/bundle_locations.h"
-#include "base/mac/foundation_util.h"
-#include "base/mac/mac_logging.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/mac/scoped_ioobject.h"
-#include "base/mac/scoped_nsobject.h"
-#include "base/mac/sdk_forward_declarations.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/sys_string_conversions.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/mac/bundle_locations.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/mac/mac_logging.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/mac/scoped_ioobject.h"
+#include "brick/mac/scoped_nsobject.h"
+#include "brick/mac/sdk_forward_declarations.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/sys_string_conversions.h"
 
 namespace base {
 namespace mac {

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/weak_ptr.h"
+#include "brick/memory/weak_ptr.h"
 
 #include <memory>
 #include <string>
 
-#include "base/bind.h"
-#include "base/debug/leak_annotations.h"
-#include "base/location.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/gtest_util.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/location.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/gtest_util.h"
+#include "brick/threading/thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/test/ios/wait_util.h"
+#import "brick/test/ios/wait_util.h"
 
 #import <Foundation/Foundation.h>
 
-#include "base/logging.h"
-#include "base/mac/scoped_nsobject.h"
-#include "base/run_loop.h"
-#include "base/test/test_timeouts.h"
-#include "base/timer/elapsed_timer.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_nsobject.h"
+#include "brick/run_loop.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/timer/elapsed_timer.h"
 
 namespace base {
 namespace test {

@@ -2,32 +2,32 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_single_thread_task_runner_manager.h"
+#include "brick/task_scheduler/scheduler_single_thread_task_runner_manager.h"
 
 #include <algorithm>
 #include <memory>
 #include <string>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/memory/ptr_util.h"
-#include "base/single_thread_task_runner.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/task_scheduler/delayed_task_manager.h"
-#include "base/task_scheduler/scheduler_worker.h"
-#include "base/task_scheduler/sequence.h"
-#include "base/task_scheduler/task.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/task_scheduler/delayed_task_manager.h"
+#include "brick/task_scheduler/scheduler_worker.h"
+#include "brick/task_scheduler/sequence.h"
+#include "brick/task_scheduler/task.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
 
-#include "base/win/scoped_com_initializer.h"
+#include "brick/win/scoped_com_initializer.h"
 #endif  // defined(OS_WIN)
 
 namespace base {

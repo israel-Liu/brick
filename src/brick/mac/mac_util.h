@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_MAC_UTIL_H_
-#define BASE_MAC_MAC_UTIL_H_
+#ifndef BRICK_MAC_MAC_UTIL_H_
+#define BRICK_MAC_MAC_UTIL_H_
 
 #include <stdint.h>
 #include <string>
 
 #import <CoreGraphics/CoreGraphics.h>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 
@@ -33,21 +33,21 @@ enum FullScreenMode {
 
 // Returns an sRGB color space.  The return value is a static value; do not
 // release it!
-BASE_EXPORT CGColorSpaceRef GetSRGBColorSpace();
+BRICK_EXPORT CGColorSpaceRef GetSRGBColorSpace();
 
 // Returns the generic RGB color space. The return value is a static value; do
 // not release it!
-BASE_EXPORT CGColorSpaceRef GetGenericRGBColorSpace();
+BRICK_EXPORT CGColorSpaceRef GetGenericRGBColorSpace();
 
 // Returns the color space being used by the main display.  The return value
 // is a static value; do not release it!
-BASE_EXPORT CGColorSpaceRef GetSystemColorSpace();
+BRICK_EXPORT CGColorSpaceRef GetSystemColorSpace();
 
 // Add a full screen request for the given |mode|.  Must be paired with a
 // ReleaseFullScreen() call for the same |mode|.  This does not by itself create
 // a fullscreen window; rather, it manages per-application state related to
 // hiding the dock and menubar.  Must be called on the main thread.
-BASE_EXPORT void RequestFullScreen(FullScreenMode mode);
+BRICK_EXPORT void RequestFullScreen(FullScreenMode mode);
 
 // Release a request for full screen mode.  Must be matched with a
 // RequestFullScreen() call for the same |mode|.  As with RequestFullScreen(),
@@ -55,21 +55,21 @@ BASE_EXPORT void RequestFullScreen(FullScreenMode mode);
 // state.  For example, if there are no other outstanding
 // |kFullScreenModeAutoHideAll| requests, this will reshow the menu bar.  Must
 // be called on main thread.
-BASE_EXPORT void ReleaseFullScreen(FullScreenMode mode);
+BRICK_EXPORT void ReleaseFullScreen(FullScreenMode mode);
 
 // Convenience method to switch the current fullscreen mode.  This has the same
 // net effect as a ReleaseFullScreen(from_mode) call followed immediately by a
 // RequestFullScreen(to_mode).  Must be called on the main thread.
-BASE_EXPORT void SwitchFullScreenModes(FullScreenMode from_mode,
+BRICK_EXPORT void SwitchFullScreenModes(FullScreenMode from_mode,
                                        FullScreenMode to_mode);
 
 // Excludes the file given by |file_path| from being backed up by Time Machine.
-BASE_EXPORT bool SetFileBackupExclusion(const FilePath& file_path);
+BRICK_EXPORT bool SetFileBackupExclusion(const FilePath& file_path);
 
 // Checks if the current application is set as a Login Item, so it will launch
 // on Login. If a non-NULL pointer to is_hidden is passed, the Login Item also
 // is queried for the 'hide on launch' flag.
-BASE_EXPORT bool CheckLoginItemStatus(bool* is_hidden);
+BRICK_EXPORT bool CheckLoginItemStatus(bool* is_hidden);
 
 // Adds current application to the set of Login Items with specified "hide"
 // flag. This has the same effect as adding/removing the application in
@@ -77,34 +77,34 @@ BASE_EXPORT bool CheckLoginItemStatus(bool* is_hidden);
 // as "Options->Open on Login".
 // Does nothing if the application is already set up as Login Item with
 // specified hide flag.
-BASE_EXPORT void AddToLoginItems(bool hide_on_startup);
+BRICK_EXPORT void AddToLoginItems(bool hide_on_startup);
 
 // Removes the current application from the list Of Login Items.
-BASE_EXPORT void RemoveFromLoginItems();
+BRICK_EXPORT void RemoveFromLoginItems();
 
 // Returns true if the current process was automatically launched as a
 // 'Login Item' or via Lion's Resume. Used to suppress opening windows.
-BASE_EXPORT bool WasLaunchedAsLoginOrResumeItem();
+BRICK_EXPORT bool WasLaunchedAsLoginOrResumeItem();
 
 // Returns true if the current process was automatically launched as a
 // 'Login Item' or via Resume, and the 'Reopen windows when logging back in'
 // checkbox was selected by the user.  This indicates that the previous
 // session should be restored.
-BASE_EXPORT bool WasLaunchedAsLoginItemRestoreState();
+BRICK_EXPORT bool WasLaunchedAsLoginItemRestoreState();
 
 // Returns true if the current process was automatically launched as a
 // 'Login Item' with 'hide on startup' flag. Used to suppress opening windows.
-BASE_EXPORT bool WasLaunchedAsHiddenLoginItem();
+BRICK_EXPORT bool WasLaunchedAsHiddenLoginItem();
 
 // Remove the quarantine xattr from the given file. Returns false if there was
 // an error, or true otherwise.
-BASE_EXPORT bool RemoveQuarantineAttribute(const FilePath& file_path);
+BRICK_EXPORT bool RemoveQuarantineAttribute(const FilePath& file_path);
 
 namespace internal {
 
 // Returns the system's Mac OS X minor version. This is the |y| value
 // in 10.y or 10.y.z.
-BASE_EXPORT int MacOSXMinorVersion();
+BRICK_EXPORT int MacOSXMinorVersion();
 
 }  // namespace internal
 
@@ -167,11 +167,11 @@ inline bool IsOSLaterThan10_13_DontCallThis() {
 // Retrieve the system's model identifier string from the IOKit registry:
 // for example, "MacPro4,1", "MacBookPro6,1". Returns empty string upon
 // failure.
-BASE_EXPORT std::string GetModelIdentifier();
+BRICK_EXPORT std::string GetModelIdentifier();
 
 // Parse a model identifier string; for example, into ("MacBookPro", 6, 1).
 // If any error occurs, none of the input pointers are touched.
-BASE_EXPORT bool ParseModelIdentifier(const std::string& ident,
+BRICK_EXPORT bool ParseModelIdentifier(const std::string& ident,
                                       std::string* type,
                                       int32_t* major,
                                       int32_t* minor);
@@ -179,4 +179,4 @@ BASE_EXPORT bool ParseModelIdentifier(const std::string& ident,
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_MAC_UTIL_H_
+#endif  // BRICK_MAC_MAC_UTIL_H_

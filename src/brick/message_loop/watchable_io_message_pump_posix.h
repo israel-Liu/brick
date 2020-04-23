@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_WATCHABLE_IO_MESSAGE_PUMP_POSIX_H_
-#define BASE_MESSAGE_LOOP_WATCHABLE_IO_MESSAGE_PUMP_POSIX_H_
+#ifndef BRICK_MESSAGE_LOOP_WATCHABLE_IO_MESSAGE_PUMP_POSIX_H_
+#define BRICK_MESSAGE_LOOP_WATCHABLE_IO_MESSAGE_PUMP_POSIX_H_
 
-#include "base/location.h"
-#include "base/macros.h"
+#include "brick/location.h"
+#include "brick/macros.h"
 
 namespace base {
 
@@ -85,4 +85,4 @@ class WatchableIOMessagePumpPosix {
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_WATCHABLE_IO_MESSAGE_PUMP_POSIX_H_
+#endif  // BRICK_MESSAGE_LOOP_WATCHABLE_IO_MESSAGE_PUMP_POSIX_H_

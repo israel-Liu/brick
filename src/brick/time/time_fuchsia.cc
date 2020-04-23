@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 
 #include <zircon/syscalls.h>
 
-#include "base/compiler_specific.h"
-#include "base/numerics/checked_math.h"
-#include "base/time/time_override.h"
+#include "brick/compiler_specific.h"
+#include "brick/numerics/checked_math.h"
+#include "brick/time/time_override.h"
 
 namespace base {
 

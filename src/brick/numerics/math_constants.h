@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_MATH_CONSTANTS_H_
-#define BASE_NUMERICS_MATH_CONSTANTS_H_
+#ifndef BRICK_NUMERICS_MATH_CONSTANTS_H_
+#define BRICK_NUMERICS_MATH_CONSTANTS_H_
 
 namespace base {
 
@@ -12,4 +12,4 @@ constexpr float kPiFloat = 3.14159265358979323846f;
 
 }  // namespace base
 
-#endif  // BASE_NUMERICS_MATH_CONSTANTS_H_
+#endif  // BRICK_NUMERICS_MATH_CONSTANTS_H_

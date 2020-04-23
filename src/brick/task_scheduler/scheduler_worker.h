@@ -2,27 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_WORKER_H_
-#define BASE_TASK_SCHEDULER_SCHEDULER_WORKER_H_
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_H_
+#define BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_scheduler/can_schedule_sequence_observer.h"
-#include "base/task_scheduler/scheduler_lock.h"
-#include "base/task_scheduler/scheduler_worker_params.h"
-#include "base/task_scheduler/sequence.h"
-#include "base/task_scheduler/tracked_ref.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_scheduler/can_schedule_sequence_observer.h"
+#include "brick/task_scheduler/scheduler_lock.h"
+#include "brick/task_scheduler/scheduler_worker_params.h"
+#include "brick/task_scheduler/sequence.h"
+#include "brick/task_scheduler/tracked_ref.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/com_init_check_hook.h"
+#include "brick/win/com_init_check_hook.h"
 #endif
 
 namespace base {
@@ -43,7 +43,7 @@ class TaskTracker;
 // and exits when it has.
 //
 // This class is thread-safe.
-class BASE_EXPORT SchedulerWorker
+class BRICK_EXPORT SchedulerWorker
     : public RefCountedThreadSafe<SchedulerWorker>,
       public PlatformThread::Delegate {
  public:
@@ -63,7 +63,7 @@ class BASE_EXPORT SchedulerWorker
   // Delegate interface for SchedulerWorker. All methods except
   // OnCanScheduleSequence() (inherited from CanScheduleSequenceObserver) are
   // called from the thread managed by the SchedulerWorker instance.
-  class BASE_EXPORT Delegate : public CanScheduleSequenceObserver {
+  class BRICK_EXPORT Delegate : public CanScheduleSequenceObserver {
    public:
     ~Delegate() override = default;
 
@@ -259,4 +259,4 @@ class BASE_EXPORT SchedulerWorker
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_WORKER_H_
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_H_

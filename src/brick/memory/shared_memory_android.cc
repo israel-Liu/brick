@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory.h"
+#include "brick/memory/shared_memory.h"
 
 #include <stddef.h>
 #include <sys/mman.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 #include "third_party/ashmem/ashmem.h"
 
 namespace base {

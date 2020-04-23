@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_FONTCONFIG_UTIL_LINUX_H_
-#define BASE_TEST_FONTCONFIG_UTIL_LINUX_H_
+#ifndef BRICK_TEST_FONTCONFIG_UTIL_LINUX_H_
+#define BRICK_TEST_FONTCONFIG_UTIL_LINUX_H_
 
 namespace base {
 
@@ -15,4 +15,4 @@ void TearDownFontconfig();
 
 }  // namespace base
 
-#endif  // BASE_TEST_FONTCONFIG_UTIL_LINUX_H_
+#endif  // BRICK_TEST_FONTCONFIG_UTIL_LINUX_H_

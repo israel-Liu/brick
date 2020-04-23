@@ -4,8 +4,8 @@
 
 // This file contains methods to iterate over processes on the system.
 
-#ifndef BASE_PROCESS_PROCESS_ITERATOR_H_
-#define BASE_PROCESS_PROCESS_ITERATOR_H_
+#ifndef BRICK_PROCESS_PROCESS_ITERATOR_H_
+#define BRICK_PROCESS_PROCESS_ITERATOR_H_
 
 #include <stddef.h>
 
@@ -13,10 +13,10 @@
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/process/process.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/process/process.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -39,7 +39,7 @@ struct ProcessEntry : public PROCESSENTRY32 {
   const wchar_t* exe_file() const { return szExeFile; }
 };
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
-struct BASE_EXPORT ProcessEntry {
+struct BRICK_EXPORT ProcessEntry {
   ProcessEntry();
   ProcessEntry(const ProcessEntry& other);
   ~ProcessEntry();
@@ -75,7 +75,7 @@ class ProcessFilter {
 // current machine with a specified filter.
 // To use, create an instance and then call NextProcessEntry() until it returns
 // false.
-class BASE_EXPORT ProcessIterator {
+class BRICK_EXPORT ProcessIterator {
  public:
   typedef std::list<ProcessEntry> ProcessEntries;
 
@@ -125,7 +125,7 @@ class BASE_EXPORT ProcessIterator {
 // on the current machine that were started from the given executable
 // name.  To use, create an instance and then call NextProcessEntry()
 // until it returns false.
-class BASE_EXPORT NamedProcessIterator : public ProcessIterator {
+class BRICK_EXPORT NamedProcessIterator : public ProcessIterator {
  public:
   NamedProcessIterator(const FilePath::StringType& executable_name,
                        const ProcessFilter* filter);
@@ -143,9 +143,9 @@ class BASE_EXPORT NamedProcessIterator : public ProcessIterator {
 // Returns the number of processes on the machine that are running from the
 // given executable name.  If filter is non-null, then only processes selected
 // by the filter will be counted.
-BASE_EXPORT int GetProcessCount(const FilePath::StringType& executable_name,
+BRICK_EXPORT int GetProcessCount(const FilePath::StringType& executable_name,
                                 const ProcessFilter* filter);
 
 }  // namespace base
 
-#endif  // BASE_PROCESS_PROCESS_ITERATOR_H_
+#endif  // BRICK_PROCESS_PROCESS_ITERATOR_H_

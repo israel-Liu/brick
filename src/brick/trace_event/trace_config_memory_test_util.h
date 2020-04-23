@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_CONFIG_MEMORY_TEST_UTIL_H_
-#define BASE_TRACE_EVENT_TRACE_CONFIG_MEMORY_TEST_UTIL_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_CONFIG_MEMORY_TEST_UTIL_H_
+#define BRICK_TRACE_EVENT_TRACE_CONFIG_MEMORY_TEST_UTIL_H_
 
-#include "base/strings/stringprintf.h"
-#include "base/trace_event/memory_dump_manager.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/trace_event/memory_dump_manager.h"
 
 namespace base {
 namespace trace_event {
@@ -149,4 +149,4 @@ class TraceConfigMemoryTestUtil {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_CONFIG_MEMORY_TEST_UTIL_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_CONFIG_MEMORY_TEST_UTIL_H_

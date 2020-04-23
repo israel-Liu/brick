@@ -6,18 +6,18 @@
 // the low-level platform-specific abstraction to the OS's threading interface.
 // You should instead be using a message-loop driven Thread, see thread.h.
 
-#ifndef BASE_THREADING_PLATFORM_THREAD_H_
-#define BASE_THREADING_PLATFORM_THREAD_H_
+#ifndef BRICK_THREADING_PLATFORM_THREAD_H_
+#define BRICK_THREADING_PLATFORM_THREAD_H_
 
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 #elif defined(OS_FUCHSIA)
 #include <zircon/types.h>
 #elif defined(OS_MACOSX)
@@ -117,11 +117,11 @@ enum class ThreadPriority : int {
 };
 
 // A namespace for low-level thread functions.
-class BASE_EXPORT PlatformThread {
+class BRICK_EXPORT PlatformThread {
  public:
   // Implement this interface to run code on a background thread.  Your
   // ThreadMain method will be called on the newly created thread.
-  class BASE_EXPORT Delegate {
+  class BRICK_EXPORT Delegate {
    public:
     virtual void ThreadMain() = 0;
 
@@ -237,4 +237,4 @@ class BASE_EXPORT PlatformThread {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_PLATFORM_THREAD_H_
+#endif  // BRICK_THREADING_PLATFORM_THREAD_H_

@@ -2,27 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 
 #include <stdint.h>
 #include <time.h>
 #include <limits>
 #include <string>
 
-#include "base/build_time.h"
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/strings/stringprintf.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time_override.h"
+#include "brick/build_time.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time_override.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_ANDROID)
-#include "base/android/jni_android.h"
+#include "brick/android/jni_android.h"
 #elif defined(OS_IOS)
-#include "base/ios/ios_util.h"
+#include "brick/ios/ios_util.h"
 #elif defined(OS_WIN)
 #include <windows.h>
 #endif

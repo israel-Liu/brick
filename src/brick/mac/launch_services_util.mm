@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/mac/launch_services_util.h"
+#import "brick/mac/launch_services_util.h"
 
-#include "base/logging.h"
-#include "base/strings/sys_string_conversions.h"
+#include "brick/logging.h"
+#include "brick/strings/sys_string_conversions.h"
 
 namespace base {
 namespace mac {

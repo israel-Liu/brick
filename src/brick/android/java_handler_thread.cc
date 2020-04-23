@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/java_handler_thread.h"
+#include "brick/android/java_handler_thread.h"
 
 #include <jni.h>
 
-#include "base/android/jni_android.h"
-#include "base/android/jni_string.h"
-#include "base/run_loop.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_string.h"
+#include "brick/run_loop.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/thread_restrictions.h"
 #include "jni/JavaHandlerThread_jni.h"
 
 using base::android::AttachCurrentThread;

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FORMAT_MACROS_H_
-#define BASE_FORMAT_MACROS_H_
+#ifndef BRICK_FORMAT_MACROS_H_
+#define BRICK_FORMAT_MACROS_H_
 
 // This file defines the format macros for some integer types.
 
@@ -94,4 +94,4 @@
 #endif
 #endif  // defined(OS_MACOSX)
 
-#endif  // BASE_FORMAT_MACROS_H_
+#endif  // BRICK_FORMAT_MACROS_H_

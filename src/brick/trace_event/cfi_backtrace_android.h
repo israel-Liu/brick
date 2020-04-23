@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_CFI_BACKTRACE_ANDROID_H_
-#define BASE_TRACE_EVENT_CFI_BACKTRACE_ANDROID_H_
+#ifndef BRICK_TRACE_EVENT_CFI_BACKTRACE_ANDROID_H_
+#define BRICK_TRACE_EVENT_CFI_BACKTRACE_ANDROID_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/debug/debugging_buildflags.h"
-#include "base/files/memory_mapped_file.h"
-#include "base/gtest_prod_util.h"
-#include "base/threading/thread_local_storage.h"
+#include "brick/base_export.h"
+#include "brick/debug/debugging_buildflags.h"
+#include "brick/files/memory_mapped_file.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/threading/thread_local_storage.h"
 
 namespace base {
 namespace trace_event {
@@ -29,7 +29,7 @@ namespace trace_event {
 // table is used to unwind stack frames for profiling. This class implements
 // methods to read and parse the unwind table and unwind stack frames using this
 // data.
-class BASE_EXPORT CFIBacktraceAndroid {
+class BRICK_EXPORT CFIBacktraceAndroid {
  public:
   // Creates and initializes by memory mapping the unwind tables from apk assets
   // on first call.
@@ -154,4 +154,4 @@ class BASE_EXPORT CFIBacktraceAndroid {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_CFI_BACKTRACE_ANDROID_H_
+#endif  // BRICK_TRACE_EVENT_CFI_BACKTRACE_ANDROID_H_

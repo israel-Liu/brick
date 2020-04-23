@@ -7,8 +7,8 @@
 // Histograms/BucketRanges to register, and supports a global API for accessing
 // (i.e., dumping, or graphing) the data.
 
-#ifndef BASE_METRICS_STATISTICS_RECORDER_H_
-#define BASE_METRICS_STATISTICS_RECORDER_H_
+#ifndef BRICK_METRICS_STATISTICS_RECORDER_H_
+#define BRICK_METRICS_STATISTICS_RECORDER_H_
 
 #include <stdint.h>
 
@@ -18,16 +18,16 @@
 #include <unordered_set>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/gtest_prod_util.h"
-#include "base/lazy_instance.h"
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/record_histogram_checker.h"
-#include "base/strings/string_piece.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/lazy_instance.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/record_histogram_checker.h"
+#include "brick/strings/string_piece.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
@@ -45,7 +45,7 @@ class HistogramSnapshotManager;
 // CreateTemporaryForTesting(). This temporary recorder becomes the global one
 // until deleted. When this temporary recorder is deleted, it restores the
 // previous global one.
-class BASE_EXPORT StatisticsRecorder {
+class BRICK_EXPORT StatisticsRecorder {
  public:
   // An interface class that allows the StatisticsRecorder to forcibly merge
   // histograms from providers when necessary.
@@ -299,4 +299,4 @@ class BASE_EXPORT StatisticsRecorder {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_STATISTICS_RECORDER_H_
+#endif  // BRICK_METRICS_STATISTICS_RECORDER_H_

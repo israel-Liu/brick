@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_HISTOGRAM_PERSISTENCE_H_
-#define BASE_METRICS_HISTOGRAM_PERSISTENCE_H_
+#ifndef BRICK_METRICS_HISTOGRAM_PERSISTENCE_H_
+#define BRICK_METRICS_HISTOGRAM_PERSISTENCE_H_
 
 #include <map>
 #include <memory>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/feature_list.h"
-#include "base/memory/shared_memory.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/strings/string_piece.h"
-#include "base/synchronization/lock.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/feature_list.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/strings/string_piece.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
@@ -25,7 +25,7 @@ class PersistentSampleMapRecords;
 class PersistentSparseHistogramDataManager;
 
 // Feature definition for enabling histogram persistence.
-BASE_EXPORT extern const Feature kPersistentHistogramsFeature;
+BRICK_EXPORT extern const Feature kPersistentHistogramsFeature;
 
 
 // A data manager for sparse histograms so each instance of such doesn't have
@@ -36,7 +36,7 @@ BASE_EXPORT extern const Feature kPersistentHistogramsFeature;
 // histogram for a given id. Tests that create multiple identical histograms,
 // perhaps to simulate multiple processes, should create a separate manager
 // for each.
-class BASE_EXPORT PersistentSparseHistogramDataManager {
+class BRICK_EXPORT PersistentSparseHistogramDataManager {
  public:
   // Constructs the data manager. The allocator must live longer than any
   // managers that reference it.
@@ -97,7 +97,7 @@ class BASE_EXPORT PersistentSparseHistogramDataManager {
 // top-level class so that it can be forward-declared in other header files
 // rather than include this entire file as would be necessary if it were
 // declared within the PersistentSparseHistogramDataManager class above.
-class BASE_EXPORT PersistentSampleMapRecords {
+class BRICK_EXPORT PersistentSampleMapRecords {
  public:
   // Constructs an instance of this class. The manager object must live longer
   // than all instances of this class that reference it, which is not usually
@@ -169,7 +169,7 @@ class BASE_EXPORT PersistentSampleMapRecords {
 
 
 // This class manages histograms created within a PersistentMemoryAllocator.
-class BASE_EXPORT PersistentHistogramAllocator {
+class BRICK_EXPORT PersistentHistogramAllocator {
  public:
   // A reference to a histogram. While this is implemented as PMA::Reference,
   // it is not conceptually the same thing. Outside callers should always use
@@ -179,7 +179,7 @@ class BASE_EXPORT PersistentHistogramAllocator {
   // Iterator used for fetching persistent histograms from an allocator.
   // It is lock-free and thread-safe.
   // See PersistentMemoryAllocator::Iterator for more information.
-  class BASE_EXPORT Iterator {
+  class BRICK_EXPORT Iterator {
    public:
     // Constructs an iterator on a given |allocator|, starting at the beginning.
     // The allocator must live beyond the lifetime of the iterator.
@@ -332,7 +332,7 @@ class BASE_EXPORT PersistentHistogramAllocator {
 // A special case of the PersistentHistogramAllocator that operates on a
 // global scale, collecting histograms created through standard macros and
 // the FactoryGet() method.
-class BASE_EXPORT GlobalHistogramAllocator
+class BRICK_EXPORT GlobalHistogramAllocator
     : public PersistentHistogramAllocator {
  public:
   ~GlobalHistogramAllocator() override;
@@ -502,4 +502,4 @@ class BASE_EXPORT GlobalHistogramAllocator
 
 }  // namespace base
 
-#endif  // BASE_METRICS_HISTOGRAM_PERSISTENCE_H_
+#endif  // BRICK_METRICS_HISTOGRAM_PERSISTENCE_H_

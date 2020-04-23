@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task/sequence_manager/lazy_now.h"
+#include "brick/task/sequence_manager/lazy_now.h"
 
-#include "base/time/tick_clock.h"
+#include "brick/time/tick_clock.h"
 
 namespace base {
 namespace sequence_manager {

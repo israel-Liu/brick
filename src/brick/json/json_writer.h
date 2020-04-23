@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_JSON_JSON_WRITER_H_
-#define BASE_JSON_JSON_WRITER_H_
+#ifndef BRICK_JSON_JSON_WRITER_H_
+#define BRICK_JSON_JSON_WRITER_H_
 
 #include <stddef.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 
 class Value;
 
-class BASE_EXPORT JSONWriter {
+class BRICK_EXPORT JSONWriter {
  public:
   enum Options {
     // This option instructs the writer that if a Binary value is encountered,
@@ -72,4 +72,4 @@ class BASE_EXPORT JSONWriter {
 
 }  // namespace base
 
-#endif  // BASE_JSON_JSON_WRITER_H_
+#endif  // BRICK_JSON_JSON_WRITER_H_

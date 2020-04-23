@@ -67,17 +67,17 @@
 // the correct thread to enforce that other WeakPtr objects will enforce they
 // are used on the desired thread.
 
-#ifndef BASE_MEMORY_WEAK_PTR_H_
-#define BASE_MEMORY_WEAK_PTR_H_
+#ifndef BRICK_MEMORY_WEAK_PTR_H_
+#define BRICK_MEMORY_WEAK_PTR_H_
 
 #include <cstddef>
 #include <type_traits>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequence_checker.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequence_checker.h"
 
 namespace base {
 
@@ -88,11 +88,11 @@ namespace internal {
 // These classes are part of the WeakPtr implementation.
 // DO NOT USE THESE CLASSES DIRECTLY YOURSELF.
 
-class BASE_EXPORT WeakReference {
+class BRICK_EXPORT WeakReference {
  public:
   // Although Flag is bound to a specific SequencedTaskRunner, it may be
   // deleted from another via base::WeakPtr::~WeakPtr().
-  class BASE_EXPORT Flag : public RefCountedThreadSafe<Flag> {
+  class BRICK_EXPORT Flag : public RefCountedThreadSafe<Flag> {
    public:
     Flag();
 
@@ -123,7 +123,7 @@ class BASE_EXPORT WeakReference {
   scoped_refptr<const Flag> flag_;
 };
 
-class BASE_EXPORT WeakReferenceOwner {
+class BRICK_EXPORT WeakReferenceOwner {
  public:
   WeakReferenceOwner();
   ~WeakReferenceOwner();
@@ -142,7 +142,7 @@ class BASE_EXPORT WeakReferenceOwner {
 // constructor by avoiding the need for a public accessor for ref_.  A
 // WeakPtr<T> cannot access the private members of WeakPtr<U>, so this
 // base class gives us a way to access ref_ in a protected fashion.
-class BASE_EXPORT WeakPtrBase {
+class BRICK_EXPORT WeakPtrBase {
  public:
   WeakPtrBase();
   ~WeakPtrBase();
@@ -284,7 +284,7 @@ bool operator==(std::nullptr_t, const WeakPtr<T>& weak_ptr) {
 }
 
 namespace internal {
-class BASE_EXPORT WeakPtrFactoryBase {
+class BRICK_EXPORT WeakPtrFactoryBase {
  protected:
   WeakPtrFactoryBase(uintptr_t ptr);
   ~WeakPtrFactoryBase();
@@ -374,4 +374,4 @@ WeakPtr<Derived> AsWeakPtr(Derived* t) {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_WEAK_PTR_H_
+#endif  // BRICK_MEMORY_WEAK_PTR_H_

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/trace_to_file.h"
+#include "brick/test/trace_to_file.h"
 
-#include "base/base_switches.h"
-#include "base/bind.h"
-#include "base/command_line.h"
-#include "base/files/file_util.h"
-#include "base/memory/ref_counted_memory.h"
-#include "base/run_loop.h"
-#include "base/trace_event/trace_buffer.h"
-#include "base/trace_event/trace_log.h"
+#include "brick/base_switches.h"
+#include "brick/bind.h"
+#include "brick/command_line.h"
+#include "brick/files/file_util.h"
+#include "brick/memory/ref_counted_memory.h"
+#include "brick/run_loop.h"
+#include "brick/trace_event/trace_buffer.h"
+#include "brick/trace_event/trace_log.h"
 
 namespace base {
 namespace test {

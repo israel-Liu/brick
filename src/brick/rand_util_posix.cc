@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/rand_util.h"
+#include "brick/rand_util.h"
 
 #include <errno.h>
 #include <fcntl.h>
@@ -10,10 +10,10 @@
 #include <stdint.h>
 #include <unistd.h>
 
-#include "base/files/file_util.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/posix/eintr_wrapper.h"
+#include "brick/files/file_util.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/posix/eintr_wrapper.h"
 
 namespace {
 

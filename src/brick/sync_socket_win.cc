@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sync_socket.h"
+#include "brick/sync_socket.h"
 
 #include <limits.h>
 #include <stddef.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/rand_util.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/win/scoped_handle.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/rand_util.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 

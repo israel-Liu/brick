@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 
-#ifndef BASE_TRACE_EVENT_TRACE_EVENT_IMPL_H_
-#define BASE_TRACE_EVENT_TRACE_EVENT_IMPL_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_EVENT_IMPL_H_
+#define BRICK_TRACE_EVENT_TRACE_EVENT_IMPL_H_
 
 #include <stdint.h>
 
@@ -12,18 +12,18 @@
 #include <string>
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/containers/hash_tables.h"
-#include "base/macros.h"
-#include "base/observer_list.h"
-#include "base/single_thread_task_runner.h"
-#include "base/strings/string_util.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/thread_local.h"
-#include "base/trace_event/trace_event_memory_overhead.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/containers/hash_tables.h"
+#include "brick/macros.h"
+#include "brick/observer_list.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/strings/string_util.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/thread_local.h"
+#include "brick/trace_event/trace_event_memory_overhead.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -38,7 +38,7 @@ typedef base::Callback<bool(const char* category_group_name,
 
 // For any argument of type TRACE_VALUE_TYPE_CONVERTABLE the provided
 // class must implement this interface.
-class BASE_EXPORT ConvertableToTraceFormat {
+class BRICK_EXPORT ConvertableToTraceFormat {
  public:
   ConvertableToTraceFormat() = default;
   virtual ~ConvertableToTraceFormat() = default;
@@ -72,7 +72,7 @@ struct TraceEventHandle {
   unsigned event_index : 6;
 };
 
-class BASE_EXPORT TraceEvent {
+class BRICK_EXPORT TraceEvent {
  public:
   union TraceValue {
     bool as_bool;
@@ -188,4 +188,4 @@ class BASE_EXPORT TraceEvent {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_EVENT_IMPL_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_EVENT_IMPL_H_

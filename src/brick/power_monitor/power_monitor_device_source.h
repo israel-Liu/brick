@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_POWER_MONITOR_POWER_MONITOR_DEVICE_SOURCE_H_
-#define BASE_POWER_MONITOR_POWER_MONITOR_DEVICE_SOURCE_H_
+#ifndef BRICK_POWER_MONITOR_POWER_MONITOR_DEVICE_SOURCE_H_
+#define BRICK_POWER_MONITOR_POWER_MONITOR_DEVICE_SOURCE_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/power_monitor/power_monitor_source.h"
-#include "base/power_monitor/power_observer.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/power_monitor/power_monitor_source.h"
+#include "brick/power_monitor/power_observer.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -23,7 +23,7 @@ namespace base {
 
 // A class used to monitor the power state change and notify the observers about
 // the change event.
-class BASE_EXPORT PowerMonitorDeviceSource : public PowerMonitorSource {
+class BRICK_EXPORT PowerMonitorDeviceSource : public PowerMonitorSource {
  public:
   PowerMonitorDeviceSource();
   ~PowerMonitorDeviceSource() override;
@@ -95,4 +95,4 @@ class BASE_EXPORT PowerMonitorDeviceSource : public PowerMonitorSource {
 
 }  // namespace base
 
-#endif  // BASE_POWER_MONITOR_POWER_MONITOR_DEVICE_SOURCE_H_
+#endif  // BRICK_POWER_MONITOR_POWER_MONITOR_DEVICE_SOURCE_H_

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/fuchsia/fidl_interface_request.h"
+#include "brick/fuchsia/fidl_interface_request.h"
 
 namespace base {
 namespace fuchsia {

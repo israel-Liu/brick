@@ -4,18 +4,18 @@
 
 // This module provides a way to monitor a file or directory for changes.
 
-#ifndef BASE_FILES_FILE_PATH_WATCHER_H_
-#define BASE_FILES_FILE_PATH_WATCHER_H_
+#ifndef BRICK_FILES_FILE_PATH_WATCHER_H_
+#define BRICK_FILES_FILE_PATH_WATCHER_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequence_checker.h"
-#include "base/sequenced_task_runner.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequence_checker.h"
+#include "brick/sequenced_task_runner.h"
 
 namespace base {
 
@@ -30,7 +30,7 @@ namespace base {
 // details.
 //
 // Must be destroyed on the sequence that invokes Watch().
-class BASE_EXPORT FilePathWatcher {
+class BRICK_EXPORT FilePathWatcher {
  public:
   // Callback type for Watch(). |path| points to the file that was updated,
   // and |error| is true if the platform specific code detected an error. In
@@ -107,4 +107,4 @@ class BASE_EXPORT FilePathWatcher {
 
 }  // namespace base
 
-#endif  // BASE_FILES_FILE_PATH_WATCHER_H_
+#endif  // BRICK_FILES_FILE_PATH_WATCHER_H_

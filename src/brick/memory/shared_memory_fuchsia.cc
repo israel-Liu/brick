@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory.h"
+#include "brick/memory/shared_memory.h"
 
 #include <limits>
 
@@ -10,11 +10,11 @@
 #include <zircon/rights.h>
 #include <zircon/syscalls.h>
 
-#include "base/bits.h"
-#include "base/fuchsia/scoped_zx_handle.h"
-#include "base/logging.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/process/process_metrics.h"
+#include "brick/bits.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
+#include "brick/logging.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/process/process_metrics.h"
 
 namespace base {
 

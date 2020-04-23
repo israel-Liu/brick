@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_VECTOR_H_
-#define BASE_WIN_VECTOR_H_
+#ifndef BRICK_WIN_VECTOR_H_
+#define BRICK_WIN_VECTOR_H_
 
 #include <ivectorchangedeventargs.h>
 #include <windows.foundation.collections.h>
@@ -14,9 +14,9 @@
 #include <utility>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/containers/flat_map.h"
-#include "base/logging.h"
+#include "brick/base_export.h"
+#include "brick/containers/flat_map.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace win {
@@ -38,7 +38,7 @@ template <typename T>
 using Abi =
     typename ABI::Windows::Foundation::Internal::GetAbiType<Complex<T>>::type;
 
-class BASE_EXPORT VectorChangedEventArgs
+class BRICK_EXPORT VectorChangedEventArgs
     : public Microsoft::WRL::RuntimeClass<
           Microsoft::WRL::RuntimeClassFlags<
               Microsoft::WRL::WinRtClassicComMix |
@@ -312,4 +312,4 @@ class Vector
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_VECTOR_H_
+#endif  // BRICK_WIN_VECTOR_H_

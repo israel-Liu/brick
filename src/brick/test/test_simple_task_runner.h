@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_SIMPLE_TASK_RUNNER_H_
-#define BASE_TEST_TEST_SIMPLE_TASK_RUNNER_H_
+#ifndef BRICK_TEST_TEST_SIMPLE_TASK_RUNNER_H_
+#define BRICK_TEST_TEST_SIMPLE_TASK_RUNNER_H_
 
-#include "base/callback.h"
-#include "base/compiler_specific.h"
-#include "base/containers/circular_deque.h"
-#include "base/macros.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/lock.h"
-#include "base/test/test_pending_task.h"
-#include "base/threading/platform_thread.h"
+#include "brick/callback.h"
+#include "brick/compiler_specific.h"
+#include "brick/containers/circular_deque.h"
+#include "brick/macros.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/lock.h"
+#include "brick/test/test_pending_task.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 
@@ -86,4 +86,4 @@ class TestSimpleTaskRunner : public SingleThreadTaskRunner {
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_SIMPLE_TASK_RUNNER_H_
+#endif  // BRICK_TEST_TEST_SIMPLE_TASK_RUNNER_H_

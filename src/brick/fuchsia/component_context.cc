@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/fuchsia/component_context.h"
+#include "brick/fuchsia/component_context.h"
 
 #include <fdio/util.h>
 
-#include "base/fuchsia/scoped_zx_handle.h"
-#include "base/fuchsia/services_directory.h"
-#include "base/no_destructor.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
+#include "brick/fuchsia/services_directory.h"
+#include "brick/no_destructor.h"
 
 namespace base {
 namespace fuchsia {

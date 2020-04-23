@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_OS_COMPAT_ANDROID_H_
-#define BASE_OS_COMPAT_ANDROID_H_
+#ifndef BRICK_OS_COMPAT_ANDROID_H_
+#define BRICK_OS_COMPAT_ANDROID_H_
 
 #include <fcntl.h>
 #include <sys/types.h>
@@ -18,4 +18,4 @@ extern "C" char* mkdtemp(char* path);
 // Android has no timegm().
 extern "C" time_t timegm(struct tm* const t);
 
-#endif  // BASE_OS_COMPAT_ANDROID_H_
+#endif  // BRICK_OS_COMPAT_ANDROID_H_

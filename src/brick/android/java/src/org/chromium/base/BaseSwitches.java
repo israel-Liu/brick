@@ -5,7 +5,7 @@
 package org.chromium.base;
 
 /**
- * Contains all of the command line switches that are specific to the base/
+ * Contains all of the command line switches that are specific to the brick/
  * portion of Chromium on Android.
  */
 public abstract class BaseSwitches {

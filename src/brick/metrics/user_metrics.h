@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_USER_METRICS_H_
-#define BASE_METRICS_USER_METRICS_H_
+#ifndef BRICK_METRICS_USER_METRICS_H_
+#define BRICK_METRICS_USER_METRICS_H_
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/metrics/user_metrics_action.h"
-#include "base/single_thread_task_runner.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/metrics/user_metrics_action.h"
+#include "brick/single_thread_task_runner.h"
 
 namespace base {
 
@@ -44,7 +44,7 @@ namespace base {
 //
 // For more complicated situations (like when there are many different
 // possible actions), see RecordComputedAction().
-BASE_EXPORT void RecordAction(const UserMetricsAction& action);
+BRICK_EXPORT void RecordAction(const UserMetricsAction& action);
 
 // This function has identical input and behavior to RecordAction(), but is
 // not automatically found by the action-processing scripts.  It can be used
@@ -53,7 +53,7 @@ BASE_EXPORT void RecordAction(const UserMetricsAction& action);
 // tools/metrics/actions/extract_actions.py.
 // This function must be called after the task runner has been set with
 // SetRecordActionTaskRunner().
-BASE_EXPORT void RecordComputedAction(const std::string& action);
+BRICK_EXPORT void RecordComputedAction(const std::string& action);
 
 // Called with the action string.
 typedef Callback<void(const std::string&)> ActionCallback;
@@ -61,13 +61,13 @@ typedef Callback<void(const std::string&)> ActionCallback;
 // Add/remove action callbacks (see above).
 // These functions must be called after the task runner has been set with
 // SetRecordActionTaskRunner().
-BASE_EXPORT void AddActionCallback(const ActionCallback& callback);
-BASE_EXPORT void RemoveActionCallback(const ActionCallback& callback);
+BRICK_EXPORT void AddActionCallback(const ActionCallback& callback);
+BRICK_EXPORT void RemoveActionCallback(const ActionCallback& callback);
 
 // Set the task runner on which to record actions.
-BASE_EXPORT void SetRecordActionTaskRunner(
+BRICK_EXPORT void SetRecordActionTaskRunner(
     scoped_refptr<SingleThreadTaskRunner> task_runner);
 
 }  // namespace base
 
-#endif  // BASE_METRICS_USER_METRICS_H_
+#endif  // BRICK_METRICS_USER_METRICS_H_

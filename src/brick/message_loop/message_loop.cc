@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_loop.h"
+#include "brick/message_loop/message_loop.h"
 
 #include <algorithm>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/message_loop/message_pump_default.h"
-#include "base/message_loop/message_pump_for_io.h"
-#include "base/message_loop/message_pump_for_ui.h"
-#include "base/run_loop.h"
-#include "base/third_party/dynamic_annotations/dynamic_annotations.h"
-#include "base/threading/thread_id_name_manager.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/bind.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/message_loop/message_pump_default.h"
+#include "brick/message_loop/message_pump_for_io.h"
+#include "brick/message_loop/message_pump_for_ui.h"
+#include "brick/run_loop.h"
+#include "brick/third_party/dynamic_annotations/dynamic_annotations.h"
+#include "brick/threading/thread_id_name_manager.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/trace_event/trace_event.h"
 
 #if defined(OS_MACOSX)
-#include "base/message_loop/message_pump_mac.h"
+#include "brick/message_loop/message_pump_mac.h"
 #endif
 
 namespace base {

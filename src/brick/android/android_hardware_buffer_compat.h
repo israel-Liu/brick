@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_ANDROID_HARDWARE_BUFFER_COMPAT_H_
-#define BASE_ANDROID_ANDROID_HARDWARE_BUFFER_COMPAT_H_
+#ifndef BRICK_ANDROID_ANDROID_HARDWARE_BUFFER_COMPAT_H_
+#define BRICK_ANDROID_ANDROID_HARDWARE_BUFFER_COMPAT_H_
 
-#include "base/android/android_hardware_buffer_abi.h"
-#include "base/base_export.h"
-#include "base/lazy_instance.h"
+#include "brick/android/android_hardware_buffer_abi.h"
+#include "brick/base_export.h"
+#include "brick/lazy_instance.h"
 
 namespace base {
 
 // This class provides runtime support for working with AHardwareBuffer objects
 // on Android O systems without requiring building for the Android O NDK level.
 // Don't call GetInstance() unless IsSupportAvailable() returns true.
-class BASE_EXPORT AndroidHardwareBufferCompat {
+class BRICK_EXPORT AndroidHardwareBufferCompat {
  public:
   static bool IsSupportAvailable();
   static AndroidHardwareBufferCompat GetInstance();
@@ -48,4 +48,4 @@ class BASE_EXPORT AndroidHardwareBufferCompat {
 
 }  // namespace base
 
-#endif  // BASE_ANDROID_ANDROID_HARDWARE_BUFFER_COMPAT_H_
+#endif  // BRICK_ANDROID_ANDROID_HARDWARE_BUFFER_COMPAT_H_

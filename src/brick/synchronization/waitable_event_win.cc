@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/waitable_event.h"
+#include "brick/synchronization/waitable_event.h"
 
 #include <windows.h>
 #include <stddef.h>
@@ -10,12 +10,12 @@
 #include <algorithm>
 #include <utility>
 
-#include "base/debug/activity_tracker.h"
-#include "base/logging.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/threading/scoped_blocking_call.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/time/time.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/threading/scoped_blocking_call.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/time/time.h"
 
 namespace base {
 

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/memory_mapped_file.h"
+#include "brick/files/memory_mapped_file.h"
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <utility>
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"
 

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TIMER_MOCK_TIMER_H_
-#define BASE_TIMER_MOCK_TIMER_H_
+#ifndef BRICK_TIMER_MOCK_TIMER_H_
+#define BRICK_TIMER_MOCK_TIMER_H_
 
-#include "base/timer/timer.h"
+#include "brick/timer/timer.h"
 
 namespace base {
 
-class BASE_EXPORT MockTimer : public Timer {
+class BRICK_EXPORT MockTimer : public Timer {
  public:
   MockTimer(bool retain_user_task, bool is_repeating);
   MockTimer(const Location& posted_from,
@@ -38,4 +38,4 @@ class BASE_EXPORT MockTimer : public Timer {
 
 }  // namespace base
 
-#endif  // BASE_TIMER_MOCK_TIMER_H_
+#endif  // BRICK_TIMER_MOCK_TIMER_H_

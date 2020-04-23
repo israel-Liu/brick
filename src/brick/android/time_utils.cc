@@ -4,7 +4,7 @@
 
 #include <stdint.h>
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 #include "jni/TimeUtils_jni.h"
 
 namespace base {

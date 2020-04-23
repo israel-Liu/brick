@@ -4,8 +4,8 @@
 
 #include <stdint.h>
 
-#include "base/i18n/string_search.h"
-#include "base/logging.h"
+#include "brick/i18n/string_search.h"
+#include "brick/logging.h"
 
 #include "third_party/icu/source/i18n/unicode/usearch.h"
 

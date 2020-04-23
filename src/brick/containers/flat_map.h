@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_FLAT_MAP_H_
-#define BASE_CONTAINERS_FLAT_MAP_H_
+#ifndef BRICK_CONTAINERS_FLAT_MAP_H_
+#define BRICK_CONTAINERS_FLAT_MAP_H_
 
 #include <functional>
 #include <tuple>
 #include <utility>
 
-#include "base/containers/flat_tree.h"
-#include "base/logging.h"
-#include "base/template_util.h"
+#include "brick/containers/flat_tree.h"
+#include "brick/logging.h"
+#include "brick/template_util.h"
 
 namespace base {
 
@@ -31,7 +31,7 @@ struct GetKeyFromValuePairFirst {
 // flat_map is a container with a std::map-like interface that stores its
 // contents in a sorted vector.
 //
-// Please see //base/containers/README.md for an overview of which container
+// Please see //brick/containers/README.md for an overview of which container
 // to select.
 //
 // PROS
@@ -359,4 +359,4 @@ void flat_map<Key, Mapped, Compare>::swap(flat_map& other) noexcept {
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_FLAT_MAP_H_
+#endif  // BRICK_CONTAINERS_FLAT_MAP_H_

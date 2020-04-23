@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/process_memory_dump.h"
+#include "brick/trace_event/process_memory_dump.h"
 
 #include <stddef.h>
 
-#include "base/memory/aligned_memory.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/process/process_metrics.h"
-#include "base/trace_event/memory_allocator_dump_guid.h"
-#include "base/trace_event/memory_infra_background_whitelist.h"
-#include "base/trace_event/trace_event_argument.h"
-#include "base/trace_event/trace_log.h"
+#include "brick/memory/aligned_memory.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/process/process_metrics.h"
+#include "brick/trace_event/memory_allocator_dump_guid.h"
+#include "brick/trace_event/memory_infra_background_whitelist.h"
+#include "brick/trace_event/trace_event_argument.h"
+#include "brick/trace_event/trace_log.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
@@ -25,7 +25,7 @@
 #endif
 
 #if defined(OS_IOS)
-#include "base/ios/ios_util.h"
+#include "brick/ios/ios_util.h"
 #endif
 
 namespace base {

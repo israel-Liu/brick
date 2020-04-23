@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_path_watcher_kqueue.h"
+#include "brick/files/file_path_watcher_kqueue.h"
 
 #include <fcntl.h>
 #include <stddef.h>
 #include <sys/param.h>
 
-#include "base/bind.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/strings/stringprintf.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 
 // On some platforms these are not defined.
 #if !defined(EV_RECEIPT)

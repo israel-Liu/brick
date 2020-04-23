@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/template_util.h"
+#include "brick/template_util.h"
 
 #include <string>
 
-#include "base/containers/flat_tree.h"
-#include "base/test/move_only_int.h"
+#include "brick/containers/flat_tree.h"
+#include "brick/test/move_only_int.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

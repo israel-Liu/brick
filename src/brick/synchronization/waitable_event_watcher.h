@@ -2,30 +2,30 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYNCHRONIZATION_WAITABLE_EVENT_WATCHER_H_
-#define BASE_SYNCHRONIZATION_WAITABLE_EVENT_WATCHER_H_
+#ifndef BRICK_SYNCHRONIZATION_WAITABLE_EVENT_WATCHER_H_
+#define BRICK_SYNCHRONIZATION_WAITABLE_EVENT_WATCHER_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/sequenced_task_runner.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/sequenced_task_runner.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/object_watcher.h"
-#include "base/win/scoped_handle.h"
+#include "brick/win/object_watcher.h"
+#include "brick/win/scoped_handle.h"
 #elif defined(OS_MACOSX)
 #include <dispatch/dispatch.h>
 
-#include "base/mac/scoped_dispatch_object.h"
-#include "base/memory/weak_ptr.h"
-#include "base/synchronization/waitable_event.h"
+#include "brick/mac/scoped_dispatch_object.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/synchronization/waitable_event.h"
 #else
-#include "base/sequence_checker.h"
-#include "base/synchronization/waitable_event.h"
+#include "brick/sequence_checker.h"
+#include "brick/synchronization/waitable_event.h"
 #endif
 
 #if !defined(OS_WIN)
-#include "base/callback.h"
+#include "brick/callback.h"
 #endif
 
 namespace base {
@@ -70,7 +70,7 @@ class WaitableEvent;
 // it with a Watcher. But pay attention: if the event was signaled and deleted
 // right after, the callback may be called with deleted WaitableEvent pointer.
 
-class BASE_EXPORT WaitableEventWatcher
+class BRICK_EXPORT WaitableEventWatcher
 #if defined(OS_WIN)
     : public win::ObjectWatcher::Delegate
 #endif
@@ -157,4 +157,4 @@ class BASE_EXPORT WaitableEventWatcher
 
 }  // namespace base
 
-#endif  // BASE_SYNCHRONIZATION_WAITABLE_EVENT_WATCHER_H_
+#endif  // BRICK_SYNCHRONIZATION_WAITABLE_EVENT_WATCHER_H_

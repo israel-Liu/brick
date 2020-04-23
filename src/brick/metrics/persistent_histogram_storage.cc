@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/persistent_histogram_storage.h"
+#include "brick/metrics/persistent_histogram_storage.h"
 
-#include "base/files/file_util.h"
-#include "base/files/important_file_writer.h"
-#include "base/logging.h"
-#include "base/metrics/persistent_histogram_allocator.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/time/time.h"
+#include "brick/files/file_util.h"
+#include "brick/files/important_file_writer.h"
+#include "brick/logging.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace {

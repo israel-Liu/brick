@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SINGLE_THREAD_TASK_RUNNER_H_
-#define BASE_SINGLE_THREAD_TASK_RUNNER_H_
+#ifndef BRICK_SINGLE_THREAD_TASK_RUNNER_H_
+#define BRICK_SINGLE_THREAD_TASK_RUNNER_H_
 
-#include "base/base_export.h"
-#include "base/sequenced_task_runner.h"
+#include "brick/base_export.h"
+#include "brick/sequenced_task_runner.h"
 
 namespace base {
 
@@ -22,7 +22,7 @@ namespace base {
 //   - Add tasks to a FIFO and signal to a non-MessageLoop thread for them to
 //     be processed. This allows TaskRunner-oriented code run on threads
 //     running other kinds of message loop, e.g. Jingle threads.
-class BASE_EXPORT SingleThreadTaskRunner : public SequencedTaskRunner {
+class BRICK_EXPORT SingleThreadTaskRunner : public SequencedTaskRunner {
  public:
   // A more explicit alias to RunsTasksInCurrentSequence().
   bool BelongsToCurrentThread() const { return RunsTasksInCurrentSequence(); }
@@ -33,4 +33,4 @@ class BASE_EXPORT SingleThreadTaskRunner : public SequencedTaskRunner {
 
 }  // namespace base
 
-#endif  // BASE_SINGLE_THREAD_TASK_RUNNER_H_
+#endif  // BRICK_SINGLE_THREAD_TASK_RUNNER_H_

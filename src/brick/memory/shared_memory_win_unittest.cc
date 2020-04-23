@@ -7,17 +7,17 @@
 
 #include <memory>
 
-#include "base/command_line.h"
-#include "base/memory/free_deleter.h"
-#include "base/memory/shared_memory.h"
-#include "base/process/process.h"
-#include "base/rand_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/sys_string_conversions.h"
-#include "base/test/multiprocess_test.h"
-#include "base/test/test_timeouts.h"
-#include "base/win/scoped_handle.h"
-#include "base/win/win_util.h"
+#include "brick/command_line.h"
+#include "brick/memory/free_deleter.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/process/process.h"
+#include "brick/rand_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/sys_string_conversions.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/win_util.h"
 #include "testing/multiprocess_func_list.h"
 
 namespace base {

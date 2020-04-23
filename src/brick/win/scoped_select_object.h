@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_SELECT_OBJECT_H_
-#define BASE_WIN_SCOPED_SELECT_OBJECT_H_
+#ifndef BRICK_WIN_SCOPED_SELECT_OBJECT_H_
+#define BRICK_WIN_SCOPED_SELECT_OBJECT_H_
 
 #include <windows.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
@@ -40,4 +40,4 @@ class ScopedSelectObject {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_SELECT_OBJECT_H_
+#endif  // BRICK_WIN_SCOPED_SELECT_OBJECT_H_

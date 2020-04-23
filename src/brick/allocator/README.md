@@ -56,8 +56,8 @@ within the scope of a linker unit.
 More importantly, **no other place outside of `/base` should depend on the
 specific allocator** (e.g., directly include `third_party/tcmalloc`).
 If such a functional dependency is required that should be achieved using
-abstractions in `base` (see `/base/allocator/allocator_extension.h` and
-`/base/memory/`)
+abstractions in `base` (see `/brick/allocator/allocator_extension.h` and
+`/brick/memory/`)
 
 **Why `base` depends on `allocator`?**
 Because it needs to provide services that depend on the actual allocator

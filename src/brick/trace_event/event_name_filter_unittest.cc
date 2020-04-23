@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/event_name_filter.h"
+#include "brick/trace_event/event_name_filter.h"
 
-#include "base/memory/ptr_util.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/trace_event/trace_event_impl.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

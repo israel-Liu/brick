@@ -8,8 +8,8 @@
 
 #include <stddef.h>
 
-#include "base/win/i18n.h"
-#include "base/win/windows_version.h"
+#include "brick/win/i18n.h"
+#include "brick/win/windows_version.h"
 
 namespace base {
 namespace win {

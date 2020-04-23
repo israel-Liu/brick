@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
 

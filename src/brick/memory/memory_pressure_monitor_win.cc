@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/memory_pressure_monitor_win.h"
+#include "brick/memory/memory_pressure_monitor_win.h"
 
 #include <windows.h>
 
-#include "base/single_thread_task_runner.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/time/time.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/time/time.h"
 
 namespace base {
 namespace win {

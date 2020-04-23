@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_tracing.h"
+#include "brick/files/file_tracing.h"
 
-#include "base/atomicops.h"
-#include "base/files/file.h"
+#include "brick/atomicops.h"
+#include "brick/files/file.h"
 
 using base::subtle::AtomicWord;
 

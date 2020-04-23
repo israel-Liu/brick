@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MEMORY_DUMP_REQUEST_ARGS_H_
-#define BASE_TRACE_EVENT_MEMORY_DUMP_REQUEST_ARGS_H_
+#ifndef BRICK_TRACE_EVENT_MEMORY_DUMP_REQUEST_ARGS_H_
+#define BRICK_TRACE_EVENT_MEMORY_DUMP_REQUEST_ARGS_H_
 
 // This file defines the types and structs used to issue memory dump requests.
 // These are also used in the IPCs for coordinating inter-process memory dumps.
@@ -13,10 +13,10 @@
 #include <memory>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/optional.h"
-#include "base/process/process_handle.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/optional.h"
+#include "brick/process/process_handle.h"
 
 namespace base {
 namespace trace_event {
@@ -60,7 +60,7 @@ enum class MemoryDumpLevelOfDetail : uint32_t {
 
 // Keep this consistent with memory_instrumentation.mojo and
 // memory_instrumentation_struct_traits.{h,cc}
-struct BASE_EXPORT MemoryDumpRequestArgs {
+struct BRICK_EXPORT MemoryDumpRequestArgs {
   // Globally unique identifier. In multi-process dumps, all processes issue a
   // local dump with the same guid. This allows the trace importers to
   // reconstruct the global dump.
@@ -85,17 +85,17 @@ struct MemoryDumpArgs {
 using ProcessMemoryDumpCallback = Callback<
     void(bool success, uint64_t dump_guid, std::unique_ptr<ProcessMemoryDump>)>;
 
-BASE_EXPORT const char* MemoryDumpTypeToString(const MemoryDumpType& dump_type);
+BRICK_EXPORT const char* MemoryDumpTypeToString(const MemoryDumpType& dump_type);
 
-BASE_EXPORT MemoryDumpType StringToMemoryDumpType(const std::string& str);
+BRICK_EXPORT MemoryDumpType StringToMemoryDumpType(const std::string& str);
 
-BASE_EXPORT const char* MemoryDumpLevelOfDetailToString(
+BRICK_EXPORT const char* MemoryDumpLevelOfDetailToString(
     const MemoryDumpLevelOfDetail& level_of_detail);
 
-BASE_EXPORT MemoryDumpLevelOfDetail
+BRICK_EXPORT MemoryDumpLevelOfDetail
 StringToMemoryDumpLevelOfDetail(const std::string& str);
 
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MEMORY_DUMP_REQUEST_ARGS_H_
+#endif  // BRICK_TRACE_EVENT_MEMORY_DUMP_REQUEST_ARGS_H_

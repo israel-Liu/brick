@@ -7,7 +7,7 @@
 // vector of numbers corresponding to each of the aggregating buckets).
 // See header file for details and examples.
 
-#include "base/metrics/histogram.h"
+#include "brick/metrics/histogram.h"
 
 #include <inttypes.h>
 #include <limits.h>
@@ -17,23 +17,23 @@
 #include <string>
 #include <utility>
 
-#include "base/compiler_specific.h"
-#include "base/debug/alias.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/dummy_histogram.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/metrics_hashes.h"
-#include "base/metrics/persistent_histogram_allocator.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/metrics/sample_vector.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/pickle.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/lock.h"
-#include "base/sys_info.h"
-#include "base/values.h"
+#include "brick/compiler_specific.h"
+#include "brick/debug/alias.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/dummy_histogram.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/metrics_hashes.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/metrics/sample_vector.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/pickle.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/lock.h"
+#include "brick/sys_info.h"
+#include "brick/values.h"
 #include "build/build_config.h"
 
 namespace base {

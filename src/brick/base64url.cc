@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/base64url.h"
+#include "brick/base64url.h"
 
 #include <stddef.h>
 
-#include "base/base64.h"
-#include "base/macros.h"
-#include "base/numerics/safe_math.h"
-#include "base/strings/string_util.h"
+#include "brick/base64.h"
+#include "brick/macros.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/strings/string_util.h"
 #include "third_party/modp_b64/modp_b64.h"
 
 namespace base {

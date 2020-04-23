@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/scoped_bstr.h"
+#include "brick/win/scoped_bstr.h"
 
 #include <stdint.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace win {

@@ -9,7 +9,7 @@
 // The main point of this linker is to be able to share the RELRO
 // section of libchrome.so (or equivalent) between renderer processes.
 
-// This source code *cannot* depend on anything from base/ or the C++
+// This source code *cannot* depend on anything from brick/ or the C++
 // STL, to keep the final library small, and avoid ugly dependency issues.
 
 #include "linker_jni.h"
@@ -32,7 +32,7 @@ String::String(JNIEnv* env, jstring str) {
   ptr_ = static_cast<char*>(::malloc(size_ + 1));
 
   // Note: This runs before browser native code is loaded, and so cannot
-  // rely on anything from base/. This means that we must use
+  // rely on anything from brick/. This means that we must use
   // GetStringUTFChars() and not base::android::ConvertJavaStringToUTF8().
   //
   // GetStringUTFChars() suffices because the only strings used here are

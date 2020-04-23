@@ -3,22 +3,22 @@
 // found in the LICENSE file.
 //
 // Unit tests for event trace consumer base class.
-#include "base/win/event_trace_consumer.h"
+#include "brick/win/event_trace_consumer.h"
 
 #include <list>
 
 #include <objbase.h>
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/process/process_handle.h"
-#include "base/strings/stringprintf.h"
-#include "base/win/event_trace_controller.h"
-#include "base/win/event_trace_provider.h"
-#include "base/win/scoped_handle.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/process/process_handle.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/win/event_trace_controller.h"
+#include "brick/win/event_trace_provider.h"
+#include "brick/win/scoped_handle.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #include <initguid.h>  // NOLINT - has to be last

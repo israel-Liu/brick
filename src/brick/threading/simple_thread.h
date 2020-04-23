@@ -37,29 +37,29 @@
 //   // The SimpleThread object is still valid, however you may not call Join
 //   // or Start again.
 
-#ifndef BASE_THREADING_SIMPLE_THREAD_H_
-#define BASE_THREADING_SIMPLE_THREAD_H_
+#ifndef BRICK_THREADING_SIMPLE_THREAD_H_
+#define BRICK_THREADING_SIMPLE_THREAD_H_
 
 #include <stddef.h>
 
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/containers/queue.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/containers/queue.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 
 // This is the base SimpleThread.  You can derive from it and implement the
 // virtual Run method, or you can use the DelegateSimpleThread interface.
-class BASE_EXPORT SimpleThread : public PlatformThread::Delegate {
+class BRICK_EXPORT SimpleThread : public PlatformThread::Delegate {
  public:
-  struct BASE_EXPORT Options {
+  struct BRICK_EXPORT Options {
    public:
     Options() = default;
     explicit Options(ThreadPriority priority_in) : priority(priority_in) {}
@@ -158,9 +158,9 @@ class BASE_EXPORT SimpleThread : public PlatformThread::Delegate {
 // Delegates are also safe to delete after that point from this class' point of
 // view (although implementations must of course make sure that Run() will not
 // use their Delegate's member state after its deletion).
-class BASE_EXPORT DelegateSimpleThread : public SimpleThread {
+class BRICK_EXPORT DelegateSimpleThread : public SimpleThread {
  public:
-  class BASE_EXPORT Delegate {
+  class BRICK_EXPORT Delegate {
    public:
     virtual ~Delegate() = default;
     virtual void Run() = 0;
@@ -190,7 +190,7 @@ class BASE_EXPORT DelegateSimpleThread : public SimpleThread {
 // JoinAll() will make sure that all outstanding work is processed, and wait
 // for everything to finish.  You can reuse a pool, so you can call Start()
 // again after you've called JoinAll().
-class BASE_EXPORT DelegateSimpleThreadPool
+class BRICK_EXPORT DelegateSimpleThreadPool
     : public DelegateSimpleThread::Delegate {
  public:
   typedef DelegateSimpleThread::Delegate Delegate;
@@ -229,4 +229,4 @@ class BASE_EXPORT DelegateSimpleThreadPool
 
 }  // namespace base
 
-#endif  // BASE_THREADING_SIMPLE_THREAD_H_
+#endif  // BRICK_THREADING_SIMPLE_THREAD_H_

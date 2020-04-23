@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_NULL_TASK_RUNNER_H_
-#define BASE_TEST_NULL_TASK_RUNNER_H_
+#ifndef BRICK_TEST_NULL_TASK_RUNNER_H_
+#define BRICK_TEST_NULL_TASK_RUNNER_H_
 
-#include "base/callback.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/single_thread_task_runner.h"
+#include "brick/callback.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/single_thread_task_runner.h"
 
 namespace base {
 
@@ -36,4 +36,4 @@ class NullTaskRunner : public base::SingleThreadTaskRunner {
 
 }  // namespace base
 
-#endif  // BASE_TEST_NULL_TASK_RUNNER_H_
+#endif  // BRICK_TEST_NULL_TASK_RUNNER_H_

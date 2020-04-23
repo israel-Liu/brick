@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/task.h"
+#include "brick/task_scheduler/task.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/location.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/location.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

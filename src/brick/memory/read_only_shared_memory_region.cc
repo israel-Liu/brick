@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/read_only_shared_memory_region.h"
+#include "brick/memory/read_only_shared_memory_region.h"
 
 #include <utility>
 
-#include "base/memory/shared_memory.h"
+#include "brick/memory/shared_memory.h"
 #include "build/build_config.h"
 
 namespace base {

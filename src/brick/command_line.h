@@ -12,24 +12,24 @@
 // There is a singleton read-only CommandLine that represents the command line
 // that the current process was started with.  It must be initialized in main().
 
-#ifndef BASE_COMMAND_LINE_H_
-#define BASE_COMMAND_LINE_H_
+#ifndef BRICK_COMMAND_LINE_H_
+#define BRICK_COMMAND_LINE_H_
 
 #include <stddef.h>
 #include <map>
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
 #include "build/build_config.h"
 
 namespace base {
 
 class FilePath;
 
-class BASE_EXPORT CommandLine {
+class BRICK_EXPORT CommandLine {
  public:
 #if defined(OS_WIN)
   // The native command line string type.
@@ -244,4 +244,4 @@ class BASE_EXPORT CommandLine {
 
 }  // namespace base
 
-#endif  // BASE_COMMAND_LINE_H_
+#endif  // BRICK_COMMAND_LINE_H_

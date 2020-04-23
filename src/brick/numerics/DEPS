@@ -3,5 +3,5 @@
 # file is here to protect against accidentally introducing dependencies.
 include_rules = [
   "-base",
-  "+base/numerics",
+  "+brick/numerics",
 ]

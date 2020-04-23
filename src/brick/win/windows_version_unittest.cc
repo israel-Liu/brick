@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/windows_version.h"
+#include "brick/win/windows_version.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
 

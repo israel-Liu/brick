@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/blame_context.h"
+#include "brick/trace_event/blame_context.h"
 
-#include "base/strings/stringprintf.h"
-#include "base/trace_event/trace_event.h"
-#include "base/trace_event/trace_event_argument.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event_argument.h"
 
 namespace base {
 namespace trace_event {

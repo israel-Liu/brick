@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/containers/stack_container.h"
+#include "brick/containers/stack_container.h"
 
 #include <stddef.h>
 
 #include <algorithm>
 
-#include "base/memory/ref_counted.h"
+#include "brick/memory/ref_counted.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

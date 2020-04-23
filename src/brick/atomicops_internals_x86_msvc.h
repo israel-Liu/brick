@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This file is an internal atomic implementation, use base/atomicops.h instead.
+// This file is an internal atomic implementation, use brick/atomicops.h instead.
 
-#ifndef BASE_ATOMICOPS_INTERNALS_X86_MSVC_H_
-#define BASE_ATOMICOPS_INTERNALS_X86_MSVC_H_
+#ifndef BRICK_ATOMICOPS_INTERNALS_X86_MSVC_H_
+#define BRICK_ATOMICOPS_INTERNALS_X86_MSVC_H_
 
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 
 #include <intrin.h>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(ARCH_CPU_64_BITS)
@@ -195,4 +195,4 @@ inline Atomic64 Release_CompareAndSwap(volatile Atomic64* ptr,
 }  // namespace subtle
 }  // namespace base
 
-#endif  // BASE_ATOMICOPS_INTERNALS_X86_MSVC_H_
+#endif  // BRICK_ATOMICOPS_INTERNALS_X86_MSVC_H_

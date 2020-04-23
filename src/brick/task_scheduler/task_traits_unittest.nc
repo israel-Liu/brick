@@ -5,13 +5,13 @@
 // This is a "No Compile Test" suite.
 // http://dev.chromium.org/developers/testing/no-compile-tests
 
-#include "base/task_scheduler/task_traits.h"
+#include "brick/task_scheduler/task_traits.h"
 
 namespace base {
 
 #if defined(NCTEST_TASK_TRAITS_MULTIPLE_MAY_BLOCK)  // [r"Multiple arguments of the same type were provided to the constructor of TaskTraits."]
 constexpr TaskTraits traits = {MayBlock(), MayBlock()};
-#elif defined(NCTEST_TASK_TRAITS_MULTIPLE_WITH_BASE_SYNC_PRIMITIVES)  // [r"Multiple arguments of the same type were provided to the constructor of TaskTraits."]
+#elif defined(NCTEST_TASK_TRAITS_MULTIPLE_WITH_BRICK_SYNC_PRIMITIVES)  // [r"Multiple arguments of the same type were provided to the constructor of TaskTraits."]
 constexpr TaskTraits traits = {WithBaseSyncPrimitives(),
                                WithBaseSyncPrimitives()};
 #elif defined(NCTEST_TASK_TRAITS_MULTIPLE_TASK_PRIORITY)  // [r"Multiple arguments of the same type were provided to the constructor of TaskTraits."]

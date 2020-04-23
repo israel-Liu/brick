@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  * primitives are used to ensure that overlapping requests from different
  * threads are handled sequentially.
  *
- * See also base/android/library_loader/library_loader_hooks.cc, which contains
+ * See also brick/android/library_loader/library_loader_hooks.cc, which contains
  * the native counterpart to this class.
  */
 @MainDex
@@ -638,7 +638,7 @@ public class LibraryLoader {
     // Only methods needed before or during normal JNI registration are during System.OnLoad.
     // nativeLibraryLoaded is then called to register everything else.  This process is called
     // "initialization".  This method will be mapped (by generated code) to the LibraryLoaded
-    // definition in base/android/library_loader/library_loader_hooks.cc.
+    // definition in brick/android/library_loader/library_loader_hooks.cc.
     //
     // Return true on success and false on failure.
     private native boolean nativeLibraryLoaded(@LibraryProcessType int processType);

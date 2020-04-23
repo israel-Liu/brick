@@ -8,8 +8,8 @@
 // respondsToSelector: before calling these functions (else your code will crash
 // on older OS X versions that chrome still supports).
 
-#ifndef BASE_MAC_SDK_FORWARD_DECLARATIONS_H_
-#define BASE_MAC_SDK_FORWARD_DECLARATIONS_H_
+#ifndef BRICK_MAC_SDK_FORWARD_DECLARATIONS_H_
+#define BRICK_MAC_SDK_FORWARD_DECLARATIONS_H_
 
 #import <AppKit/AppKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
@@ -19,8 +19,8 @@
 #import <QuartzCore/QuartzCore.h>
 #include <stdint.h>
 
-#include "base/base_export.h"
-#include "base/mac/availability.h"
+#include "brick/base_export.h"
+#include "brick/mac/availability.h"
 
 // ----------------------------------------------------------------------------
 // Define typedefs, enums, and protocols not available in the version of the
@@ -77,10 +77,10 @@ typedef NSUInteger NSSpringLoadingHighlight;
 extern "C" {
 #if !defined(MAC_OS_X_VERSION_10_10) || \
     MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_10
-BASE_EXPORT extern NSString* const CIDetectorTypeQRCode;
-BASE_EXPORT extern NSString* const NSUserActivityTypeBrowsingWeb;
-BASE_EXPORT extern NSString* const NSAppearanceNameVibrantDark;
-BASE_EXPORT extern NSString* const NSAppearanceNameVibrantLight;
+BRICK_EXPORT extern NSString* const CIDetectorTypeQRCode;
+BRICK_EXPORT extern NSString* const NSUserActivityTypeBrowsingWeb;
+BRICK_EXPORT extern NSString* const NSAppearanceNameVibrantDark;
+BRICK_EXPORT extern NSString* const NSAppearanceNameVibrantLight;
 #endif  // MAC_OS_X_VERSION_10_10
 }  // extern "C"
 
@@ -170,7 +170,7 @@ BASE_EXPORT extern NSString* const NSAppearanceNameVibrantLight;
 extern "C" {
 #if !defined(MAC_OS_X_VERSION_10_11) || \
     MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_11
-BASE_EXPORT extern NSString* const CIDetectorTypeText;
+BRICK_EXPORT extern NSString* const CIDetectorTypeText;
 #endif  // MAC_OS_X_VERSION_10_11
 }  // extern "C"
 
@@ -329,6 +329,6 @@ typedef NSString* VNImageOption NS_STRING_ENUM;
 // declared in the OSX 10.9+ SDK, so when compiling against an OSX 10.9+ SDK,
 // declare the symbol.
 // ----------------------------------------------------------------------------
-BASE_EXPORT extern "C" NSString* const kCWSSIDDidChangeNotification;
+BRICK_EXPORT extern "C" NSString* const kCWSSIDDidChangeNotification;
 
-#endif  // BASE_MAC_SDK_FORWARD_DECLARATIONS_H_
+#endif  // BRICK_MAC_SDK_FORWARD_DECLARATIONS_H_

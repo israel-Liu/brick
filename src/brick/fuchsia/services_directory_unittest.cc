@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/fuchsia/services_directory.h"
+#include "brick/fuchsia/services_directory.h"
 
 #include <fdio/util.h>
 
-#include "base/bind.h"
-#include "base/fuchsia/component_context.h"
-#include "base/fuchsia/scoped_service_binding.h"
-#include "base/fuchsia/test_fidl/cpp/fidl.h"
-#include "base/message_loop/message_loop.h"
+#include "brick/bind.h"
+#include "brick/fuchsia/component_context.h"
+#include "brick/fuchsia/scoped_service_binding.h"
+#include "brick/fuchsia/test_fidl/cpp/fidl.h"
+#include "brick/message_loop/message_loop.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

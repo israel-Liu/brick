@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/barrier_closure.h"
+#include "brick/barrier_closure.h"
 
 #include <utility>
 
-#include "base/atomic_ref_count.h"
-#include "base/bind.h"
-#include "base/memory/ptr_util.h"
+#include "brick/atomic_ref_count.h"
+#include "brick/bind.h"
+#include "brick/memory/ptr_util.h"
 
 namespace base {
 namespace {

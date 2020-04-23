@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_COMPONENT_EXPORT_H_
-#define BASE_COMPONENT_EXPORT_H_
+#ifndef BRICK_COMPONENT_EXPORT_H_
+#define BRICK_COMPONENT_EXPORT_H_
 
 #include "build/build_config.h"
 
@@ -84,4 +84,4 @@
 // |COMPONENT_MACRO_SELECT_THIRD_ARGUMENT_()|.
 #define COMPONENT_MACRO_EXPAND_(x) x
 
-#endif  // BASE_COMPONENT_EXPORT_H_
+#endif  // BRICK_COMPONENT_EXPORT_H_

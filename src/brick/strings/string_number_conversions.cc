@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/string_number_conversions.h"
+#include "brick/strings/string_number_conversions.h"
 
 #include <ctype.h>
 #include <errno.h>
@@ -12,11 +12,11 @@
 #include <limits>
 #include <type_traits>
 
-#include "base/logging.h"
-#include "base/numerics/safe_math.h"
-#include "base/scoped_clear_errno.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/third_party/dmg_fp/dmg_fp.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/scoped_clear_errno.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/third_party/dmg_fp/dmg_fp.h"
 
 namespace base {
 
@@ -58,7 +58,7 @@ struct IntToStringT {
 };
 
 // Utility to convert a character to a digit in a given base
-template<typename CHAR, int BASE, bool BASE_LTE_10> class BaseCharToDigit {
+template<typename CHAR, int BASE, bool BRICK_LTE_10> class BaseCharToDigit {
 };
 
 // Faster specialization for bases <= 10

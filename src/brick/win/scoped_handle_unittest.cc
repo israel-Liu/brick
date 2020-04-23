@@ -5,13 +5,13 @@
 #include <windows.h>
 #include <winternl.h>
 
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/files/file_path.h"
-#include "base/scoped_native_library.h"
-#include "base/test/multiprocess_test.h"
-#include "base/test/test_timeouts.h"
-#include "base/win/scoped_handle.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/files/file_path.h"
+#include "brick/scoped_native_library.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/win/scoped_handle.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"

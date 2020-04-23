@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_FLAT_TREE_H_
-#define BASE_CONTAINERS_FLAT_TREE_H_
+#ifndef BRICK_CONTAINERS_FLAT_TREE_H_
+#define BRICK_CONTAINERS_FLAT_TREE_H_
 
 #include <algorithm>
 #include <iterator>
 #include <type_traits>
 #include <vector>
 
-#include "base/template_util.h"
+#include "brick/template_util.h"
 
 namespace base {
 
@@ -1001,4 +1001,4 @@ void EraseIf(base::internal::flat_tree<Key, Value, GetKeyFromValue, KeyCompare>&
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_FLAT_TREE_H_
+#endif  // BRICK_CONTAINERS_FLAT_TREE_H_

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/perf_test_suite.h"
+#include "brick/test/perf_test_suite.h"
 
-#include "base/command_line.h"
-#include "base/debug/debugger.h"
-#include "base/files/file_path.h"
-#include "base/path_service.h"
-#include "base/process/launch.h"
-#include "base/strings/string_util.h"
-#include "base/test/perf_log.h"
+#include "brick/command_line.h"
+#include "brick/debug/debugger.h"
+#include "brick/files/file_path.h"
+#include "brick/path_service.h"
+#include "brick/process/launch.h"
+#include "brick/strings/string_util.h"
+#include "brick/test/perf_log.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -4,8 +4,8 @@
 
 #include <stdint.h>
 
-#include "base/at_exit.h"
-#include "base/memory/singleton.h"
+#include "brick/at_exit.h"
+#include "brick/memory/singleton.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

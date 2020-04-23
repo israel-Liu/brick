@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_JAVA_HANDLER_THREAD_FOR_TESTING_H_
-#define BASE_ANDROID_JAVA_HANDLER_THREAD_FOR_TESTING_H_
+#ifndef BRICK_ANDROID_JAVA_HANDLER_THREAD_FOR_TESTING_H_
+#define BRICK_ANDROID_JAVA_HANDLER_THREAD_FOR_TESTING_H_
 
 #include <jni.h>
 
 #include <memory>
 
-#include "base/android/scoped_java_ref.h"
+#include "brick/android/scoped_java_ref.h"
 
 namespace base {
 
@@ -39,4 +39,4 @@ class JavaHandlerThreadHelpers {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_JAVA_HANDLER_THREAD_FOR_TESTING_H_
+#endif  // BRICK_ANDROID_JAVA_HANDLER_THREAD_FOR_TESTING_H_

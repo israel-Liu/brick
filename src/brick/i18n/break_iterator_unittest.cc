@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/break_iterator.h"
+#include "brick/i18n/break_iterator.h"
 
 #include <stddef.h>
 
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

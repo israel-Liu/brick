@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/heap_profiler_event_filter.h"
+#include "brick/trace_event/heap_profiler_event_filter.h"
 
-#include "base/trace_event/category_registry.h"
-#include "base/trace_event/heap_profiler_allocation_context_tracker.h"
-#include "base/trace_event/trace_category.h"
-#include "base/trace_event/trace_event.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/trace_event/category_registry.h"
+#include "brick/trace_event/heap_profiler_allocation_context_tracker.h"
+#include "brick/trace_event/trace_category.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event_impl.h"
 
 namespace base {
 namespace trace_event {

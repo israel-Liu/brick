@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/post_task.h"
+#include "brick/task_scheduler/post_task.h"
 
 #include <utility>
 
-#include "base/logging.h"
-#include "base/task_scheduler/scoped_set_task_priority_for_current_thread.h"
-#include "base/task_scheduler/task_scheduler.h"
-#include "base/threading/post_task_and_reply_impl.h"
+#include "brick/logging.h"
+#include "brick/task_scheduler/scoped_set_task_priority_for_current_thread.h"
+#include "brick/task_scheduler/task_scheduler.h"
+#include "brick/threading/post_task_and_reply_impl.h"
 
 namespace base {
 

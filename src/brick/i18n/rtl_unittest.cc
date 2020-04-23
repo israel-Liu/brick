@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/rtl.h"
+#include "brick/i18n/rtl.h"
 
 #include <stddef.h>
 
 #include <algorithm>
 
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/strings/string_util.h"
-#include "base/strings/sys_string_conversions.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/test/icu_test_util.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/sys_string_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/test/icu_test_util.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"

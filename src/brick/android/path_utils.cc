@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/path_utils.h"
+#include "brick/android/path_utils.h"
 
-#include "base/android/jni_android.h"
-#include "base/android/jni_array.h"
-#include "base/android/jni_string.h"
-#include "base/android/scoped_java_ref.h"
-#include "base/files/file_path.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_array.h"
+#include "brick/android/jni_string.h"
+#include "brick/android/scoped_java_ref.h"
+#include "brick/files/file_path.h"
 
 #include "jni/PathUtils_jni.h"
 

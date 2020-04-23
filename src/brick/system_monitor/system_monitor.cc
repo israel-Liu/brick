@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/system_monitor/system_monitor.h"
+#include "brick/system_monitor/system_monitor.h"
 
 #include <utility>
 
-#include "base/logging.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/time/time.h"
 
 namespace base {
 

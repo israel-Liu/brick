@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_TRACKER_H_
-#define BASE_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_TRACKER_H_
+#ifndef BRICK_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_TRACKER_H_
+#define BRICK_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_TRACKER_H_
 
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/trace_event/heap_profiler_allocation_context.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/trace_event/heap_profiler_allocation_context.h"
 
 namespace base {
 namespace trace_event {
@@ -34,7 +34,7 @@ namespace trace_event {
 // A thread-local instance of the context tracker is initialized lazily when it
 // is first accessed. This might be because a trace event pushed or popped, or
 // because `GetContextSnapshot()` was called when an allocation occurred
-class BASE_EXPORT AllocationContextTracker {
+class BRICK_EXPORT AllocationContextTracker {
  public:
   enum class CaptureMode : int32_t {
     DISABLED,      // Don't capture anything
@@ -45,7 +45,7 @@ class BASE_EXPORT AllocationContextTracker {
   };
 
   // Stack frame constructed from trace events in codebase.
-  struct BASE_EXPORT PseudoStackFrame {
+  struct BRICK_EXPORT PseudoStackFrame {
     const char* trace_event_category;
     const char* trace_event_name;
 
@@ -137,4 +137,4 @@ class BASE_EXPORT AllocationContextTracker {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_TRACKER_H_
+#endif  // BRICK_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_TRACKER_H_

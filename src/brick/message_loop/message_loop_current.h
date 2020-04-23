@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_LOOP_CURRENT_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_LOOP_CURRENT_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_LOOP_CURRENT_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_LOOP_CURRENT_H_
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/memory/scoped_refptr.h"
-#include "base/message_loop/message_pump_for_io.h"
-#include "base/message_loop/message_pump_for_ui.h"
-#include "base/pending_task.h"
-#include "base/single_thread_task_runner.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/memory/scoped_refptr.h"
+#include "brick/message_loop/message_pump_for_io.h"
+#include "brick/message_loop/message_pump_for_ui.h"
+#include "brick/pending_task.h"
+#include "brick/single_thread_task_runner.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -35,7 +35,7 @@ class MessageLoop;
 //
 // As such, many methods below are flagged as deprecated and should be removed
 // (or moved back to MessageLoop) once all static callers have been migrated.
-class BASE_EXPORT MessageLoopCurrent {
+class BRICK_EXPORT MessageLoopCurrent {
  public:
   // MessageLoopCurrent is effectively just a disguised pointer and is fine to
   // copy around.
@@ -72,7 +72,7 @@ class BASE_EXPORT MessageLoopCurrent {
   // Deprecation note: Prefer SequenceLocalStorageSlot<std::unique_ptr<Foo>> to
   // DestructionObserver to bind an object's lifetime to the current
   // thread/sequence.
-  class BASE_EXPORT DestructionObserver {
+  class BRICK_EXPORT DestructionObserver {
    public:
     virtual void WillDestroyCurrentMessageLoop() = 0;
 
@@ -102,7 +102,7 @@ class BASE_EXPORT MessageLoopCurrent {
   // MessageLoop.
   //
   // NOTE: A TaskObserver implementation should be extremely fast!
-  class BASE_EXPORT TaskObserver {
+  class BRICK_EXPORT TaskObserver {
    public:
     // This method is called before processing a task.
     virtual void WillProcessTask(const PendingTask& pending_task) = 0;
@@ -153,7 +153,7 @@ class BASE_EXPORT MessageLoopCurrent {
   // entrancy is caused by a native message loop.
   // TODO(gab): Remove usage of this class alongside RunLoop and rename it to
   // ScopedApplicationTasksAllowedInNativeNestedLoop(?) for remaining use cases.
-  class BASE_EXPORT ScopedNestableTaskAllower {
+  class BRICK_EXPORT ScopedNestableTaskAllower {
    public:
     ScopedNestableTaskAllower();
     ~ScopedNestableTaskAllower();
@@ -193,7 +193,7 @@ class BASE_EXPORT MessageLoopCurrent {
 #if !defined(OS_NACL)
 
 // ForUI extension of MessageLoopCurrent.
-class BASE_EXPORT MessageLoopCurrentForUI : public MessageLoopCurrent {
+class BRICK_EXPORT MessageLoopCurrentForUI : public MessageLoopCurrent {
  public:
   // Returns an interface for the MessageLoopForUI of the current thread.
   // Asserts that IsSet().
@@ -250,7 +250,7 @@ class BASE_EXPORT MessageLoopCurrentForUI : public MessageLoopCurrent {
 #endif  // !defined(OS_NACL)
 
 // ForIO extension of MessageLoopCurrent.
-class BASE_EXPORT MessageLoopCurrentForIO : public MessageLoopCurrent {
+class BRICK_EXPORT MessageLoopCurrentForIO : public MessageLoopCurrent {
  public:
   // Returns an interface for the MessageLoopForIO of the current thread.
   // Asserts that IsSet().
@@ -300,4 +300,4 @@ class BASE_EXPORT MessageLoopCurrentForIO : public MessageLoopCurrent {
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_LOOP_CURRENT_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_LOOP_CURRENT_H_

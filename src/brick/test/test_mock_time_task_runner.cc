@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_mock_time_task_runner.h"
+#include "brick/test/test_mock_time_task_runner.h"
 
 #include <utility>
 
-#include "base/containers/circular_deque.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/ref_counted.h"
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/containers/circular_deque.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/threading/thread_task_runner_handle.h"
 
 namespace base {
 namespace {

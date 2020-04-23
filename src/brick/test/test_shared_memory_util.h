@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_SHARED_MEMORY_UTIL_H_
-#define BASE_TEST_TEST_SHARED_MEMORY_UTIL_H_
+#ifndef BRICK_TEST_TEST_SHARED_MEMORY_UTIL_H_
+#define BRICK_TEST_TEST_SHARED_MEMORY_UTIL_H_
 
-#include "base/memory/platform_shared_memory_region.h"
-#include "base/memory/read_only_shared_memory_region.h"
-#include "base/memory/shared_memory_handle.h"
-#include "base/memory/shared_memory_mapping.h"
+#include "brick/memory/platform_shared_memory_region.h"
+#include "brick/memory/read_only_shared_memory_region.h"
+#include "brick/memory/shared_memory_handle.h"
+#include "brick/memory/shared_memory_mapping.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {
@@ -53,4 +53,4 @@ CreateMappedRegion(size_t size);
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_SHARED_MEMORY_UTIL_H_
+#endif  // BRICK_TEST_TEST_SHARED_MEMORY_UTIL_H_

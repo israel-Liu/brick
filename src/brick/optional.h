@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_OPTIONAL_H_
-#define BASE_OPTIONAL_H_
+#ifndef BRICK_OPTIONAL_H_
+#define BRICK_OPTIONAL_H_
 
 #include <type_traits>
 #include <utility>
 
-#include "base/logging.h"
-#include "base/template_util.h"
+#include "brick/logging.h"
+#include "brick/template_util.h"
 
 namespace base {
 
@@ -919,4 +919,4 @@ struct hash<base::Optional<T>> {
 
 }  // namespace std
 
-#endif  // BASE_OPTIONAL_H_
+#endif  // BRICK_OPTIONAL_H_

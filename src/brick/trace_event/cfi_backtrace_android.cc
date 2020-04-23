@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/cfi_backtrace_android.h"
+#include "brick/trace_event/cfi_backtrace_android.h"
 
 #include <sys/mman.h>
 #include <sys/types.h>
 
-#include "base/android/apk_assets.h"
+#include "brick/android/apk_assets.h"
 
 #if !defined(ARCH_CPU_ARMEL)
 #error This file should not be built for this architecture.

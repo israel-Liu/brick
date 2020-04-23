@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_SINGLE_SAMPLE_METRICS_H_
-#define BASE_METRICS_SINGLE_SAMPLE_METRICS_H_
+#ifndef BRICK_METRICS_SINGLE_SAMPLE_METRICS_H_
+#define BRICK_METRICS_SINGLE_SAMPLE_METRICS_H_
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_base.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_base.h"
 
 namespace base {
 
-// See base/metrics/histograms.h for parameter definitions. Must only be used
+// See brick/metrics/histograms.h for parameter definitions. Must only be used
 // and destroyed from the same thread as construction.
-class BASE_EXPORT SingleSampleMetric {
+class BRICK_EXPORT SingleSampleMetric {
  public:
   virtual ~SingleSampleMetric() = default;
 
@@ -30,9 +30,9 @@ class BASE_EXPORT SingleSampleMetric {
 // returned class must only be used and destroyed from the same thread as
 // construction.
 //
-// See base/metrics/histogram_macros.h for usage recommendations and
-// base/metrics/histogram.h for full parameter definitions.
-class BASE_EXPORT SingleSampleMetricsFactory {
+// See brick/metrics/histogram_macros.h for usage recommendations and
+// brick/metrics/histogram.h for full parameter definitions.
+class BRICK_EXPORT SingleSampleMetricsFactory {
  public:
   virtual ~SingleSampleMetricsFactory() = default;
 
@@ -60,7 +60,7 @@ class BASE_EXPORT SingleSampleMetricsFactory {
 // Default implementation for when no factory has been provided to the process.
 // Samples are only recorded within the current process in this case, so samples
 // will be lost in the event of sudden process termination.
-class BASE_EXPORT DefaultSingleSampleMetricsFactory
+class BRICK_EXPORT DefaultSingleSampleMetricsFactory
     : public SingleSampleMetricsFactory {
  public:
   DefaultSingleSampleMetricsFactory() = default;
@@ -77,7 +77,7 @@ class BASE_EXPORT DefaultSingleSampleMetricsFactory
   DISALLOW_COPY_AND_ASSIGN(DefaultSingleSampleMetricsFactory);
 };
 
-class BASE_EXPORT DefaultSingleSampleMetric : public SingleSampleMetric {
+class BRICK_EXPORT DefaultSingleSampleMetric : public SingleSampleMetric {
  public:
   DefaultSingleSampleMetric(const std::string& histogram_name,
                             HistogramBase::Sample min,
@@ -101,4 +101,4 @@ class BASE_EXPORT DefaultSingleSampleMetric : public SingleSampleMetric {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_SINGLE_SAMPLE_METRICS_H_
+#endif  // BRICK_METRICS_SINGLE_SAMPLE_METRICS_H_

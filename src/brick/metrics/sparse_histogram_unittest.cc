@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/sparse_histogram.h"
+#include "brick/metrics/sparse_histogram.h"
 
 #include <memory>
 #include <string>
 
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/histogram_samples.h"
-#include "base/metrics/metrics_hashes.h"
-#include "base/metrics/persistent_histogram_allocator.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/metrics/sample_map.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/pickle.h"
-#include "base/strings/stringprintf.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/histogram_samples.h"
+#include "brick/metrics/metrics_hashes.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/metrics/sample_map.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/pickle.h"
+#include "brick/strings/stringprintf.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

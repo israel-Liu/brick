@@ -4,9 +4,9 @@
 
 #include <string>
 
-#include "base/android/jni_string.h"
-#include "base/files/important_file_writer.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/android/jni_string.h"
+#include "brick/files/important_file_writer.h"
+#include "brick/threading/thread_restrictions.h"
 #include "jni/ImportantFileWriterAndroid_jni.h"
 
 namespace base {

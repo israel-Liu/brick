@@ -4,8 +4,8 @@
 
 #include <stddef.h>
 
-#include "base/files/file_path.h"
-#include "base/macros.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
 
 namespace base {
 

@@ -4,9 +4,9 @@
 
 #include <mach/mach.h>
 
-#include "base/allocator/allocator_interception_mac.h"
-#include "base/allocator/allocator_shim.h"
-#include "base/allocator/malloc_zone_functions_mac.h"
+#include "brick/allocator/allocator_interception_mac.h"
+#include "brick/allocator/allocator_shim.h"
+#include "brick/allocator/malloc_zone_functions_mac.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

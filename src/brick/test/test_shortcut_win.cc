@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_shortcut_win.h"
+#include "brick/test/test_shortcut_win.h"
 
 #include <windows.h>
 #include <objbase.h>
@@ -10,10 +10,10 @@
 #include <propkey.h>
 #include <wrl/client.h>
 
-#include "base/files/file_path.h"
-#include "base/strings/string16.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/win/scoped_propvariant.h"
+#include "brick/files/file_path.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/win/scoped_propvariant.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

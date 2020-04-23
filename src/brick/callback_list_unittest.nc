@@ -5,14 +5,14 @@
 // This is a "No Compile Test" suite.
 // http://dev.chromium.org/developers/testing/no-compile-tests
 
-#include "base/callback_list.h"
+#include "brick/callback_list.h"
 
 #include <memory>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/macros.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/macros.h"
 
 namespace base {
 

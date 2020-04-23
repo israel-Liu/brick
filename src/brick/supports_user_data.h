@@ -2,33 +2,33 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SUPPORTS_USER_DATA_H_
-#define BASE_SUPPORTS_USER_DATA_H_
+#ifndef BRICK_SUPPORTS_USER_DATA_H_
+#define BRICK_SUPPORTS_USER_DATA_H_
 
 #include <map>
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequence_checker.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequence_checker.h"
 
 // TODO(gab): Removing this include causes IWYU failures in other headers,
 // remove it in a follow- up CL.
-#include "base/threading/thread_checker.h"
+#include "brick/threading/thread_checker.h"
 
 namespace base {
 
 // This is a helper for classes that want to allow users to stash random data by
 // key. At destruction all the objects will be destructed.
-class BASE_EXPORT SupportsUserData {
+class BRICK_EXPORT SupportsUserData {
  public:
   SupportsUserData();
 
   // Derive from this class and add your own data members to associate extra
   // information with this object. Alternatively, add this as a public base
   // class to any class with a virtual destructor.
-  class BASE_EXPORT Data {
+  class BRICK_EXPORT Data {
    public:
     virtual ~Data() = default;
   };
@@ -84,4 +84,4 @@ class UserDataAdapter : public base::SupportsUserData::Data {
 
 }  // namespace base
 
-#endif  // BASE_SUPPORTS_USER_DATA_H_
+#endif  // BRICK_SUPPORTS_USER_DATA_H_

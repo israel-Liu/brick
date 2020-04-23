@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <dlfcn.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <sys/system_properties.h>
 
-#include "base/android/jni_android.h"
-#include "base/android/sys_utils.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/stringprintf.h"
-#include "base/sys_info_internal.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/sys_utils.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/sys_info_internal.h"
 
 #if (__ANDROID_API__ >= 21 /* 5.0 - Lollipop */)
 
@@ -50,7 +50,7 @@ static base::LazyInstance<base::internal::LazySysInfoValue<
 // from Chrome we work around this by defining a weak stub here, which uses
 // dlsym to but ensures that Chrome uses the real system
 // implementatation when loaded.  http://crbug.com/392191.
-BASE_EXPORT int __system_property_get(const char* name, char* value) {
+BRICK_EXPORT int __system_property_get(const char* name, char* value) {
   return g_lazy_real_system_property_get.Get().value()(name, value);
 }
 

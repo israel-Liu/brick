@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/event_log.h"
+#include "brick/android/event_log.h"
 #include "jni/EventLog_jni.h"
 
 namespace base {

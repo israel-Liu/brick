@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/scoped_com_initializer.h"
+#include "brick/win/scoped_com_initializer.h"
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace win {

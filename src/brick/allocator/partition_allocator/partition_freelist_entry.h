@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_FREELIST_ENTRY_H_
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_FREELIST_ENTRY_H_
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_FREELIST_ENTRY_H_
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_FREELIST_ENTRY_H_
 
 #include <stdint.h>
 
-#include "base/allocator/partition_allocator/partition_alloc_constants.h"
-#include "base/compiler_specific.h"
-#include "base/sys_byteorder.h"
+#include "brick/allocator/partition_allocator/partition_alloc_constants.h"
+#include "brick/compiler_specific.h"
+#include "brick/sys_byteorder.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -45,4 +45,4 @@ struct PartitionFreelistEntry {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_FREELIST_ENTRY_H_
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_FREELIST_ENTRY_H_

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/i18n_constants.h"
+#include "brick/i18n/i18n_constants.h"
 
 namespace base {
 

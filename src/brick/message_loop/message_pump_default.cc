@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_pump_default.h"
+#include "brick/message_loop/message_pump_default.h"
 
-#include "base/auto_reset.h"
-#include "base/logging.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/auto_reset.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 #if defined(OS_MACOSX)
 #include <mach/thread_policy.h>
 
-#include "base/mac/mach_logging.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/mac/scoped_nsautorelease_pool.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
 #endif
 
 namespace base {

@@ -4,8 +4,8 @@
 
 #include <stdint.h>
 
-#include "base/logging.h"
-#include "base/process/process_handle.h"
+#include "brick/logging.h"
+#include "brick/process/process_handle.h"
 #include "build/build_config.h"
 
 namespace base {

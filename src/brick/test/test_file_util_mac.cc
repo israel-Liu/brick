@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_file_util.h"
+#include "brick/test/test_file_util.h"
 
 #include <sys/mman.h>
 #include <errno.h>
 #include <stdint.h>
 
-#include "base/files/file_util.h"
-#include "base/files/memory_mapped_file.h"
-#include "base/logging.h"
+#include "brick/files/file_util.h"
+#include "brick/files/memory_mapped_file.h"
+#include "brick/logging.h"
 
 namespace base {
 

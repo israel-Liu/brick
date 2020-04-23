@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/sparse_histogram.h"
+#include "brick/metrics/sparse_histogram.h"
 
 #include <utility>
 
-#include "base/memory/ptr_util.h"
-#include "base/metrics/dummy_histogram.h"
-#include "base/metrics/metrics_hashes.h"
-#include "base/metrics/persistent_histogram_allocator.h"
-#include "base/metrics/persistent_sample_map.h"
-#include "base/metrics/sample_map.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/pickle.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/lock.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/dummy_histogram.h"
+#include "brick/metrics/metrics_hashes.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
+#include "brick/metrics/persistent_sample_map.h"
+#include "brick/metrics/sample_map.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/pickle.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 

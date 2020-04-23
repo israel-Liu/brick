@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_metrics.h"
+#include "brick/process/process_metrics.h"
 
 #include <windows.h>  // Must be in front of other Windows header files.
 
@@ -13,11 +13,11 @@
 
 #include <algorithm>
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/process/memory.h"
-#include "base/process/process_metrics_iocounters.h"
-#include "base/sys_info.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/process/memory.h"
+#include "brick/process/process_metrics_iocounters.h"
+#include "brick/sys_info.h"
 
 namespace base {
 namespace {

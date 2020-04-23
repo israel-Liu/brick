@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_enumerator.h"
+#include "brick/files/file_enumerator.h"
 
 #include <utility>
 #include <vector>
 
-#include "base/containers/circular_deque.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
+#include "brick/containers/circular_deque.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

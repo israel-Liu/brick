@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_REGISTRY_H_
-#define BASE_WIN_REGISTRY_H_
+#ifndef BRICK_WIN_REGISTRY_H_
+#define BRICK_WIN_REGISTRY_H_
 
 #include <stdint.h>
 #include <string>
 #include <vector>
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/win/object_watcher.h"
-#include "base/win/scoped_handle.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/win/object_watcher.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 namespace win {
@@ -27,7 +27,7 @@ namespace win {
 //    is not touched in case of failure.
 //  * Functions returning LONG indicate success as ERROR_SUCCESS or an
 //    error as a (non-zero) win32 error code.
-class BASE_EXPORT RegKey {
+class BRICK_EXPORT RegKey {
  public:
   // Called from the MessageLoop when the key changes.
   typedef base::Callback<void()> ChangeCallback;
@@ -157,7 +157,7 @@ class BASE_EXPORT RegKey {
 };
 
 // Iterates the entries found in a particular folder on the registry.
-class BASE_EXPORT RegistryValueIterator {
+class BRICK_EXPORT RegistryValueIterator {
  public:
   // Constructs a Registry Value Iterator with default WOW64 access.
   RegistryValueIterator(HKEY root_key, const wchar_t* folder_key);
@@ -210,7 +210,7 @@ class BASE_EXPORT RegistryValueIterator {
   DISALLOW_COPY_AND_ASSIGN(RegistryValueIterator);
 };
 
-class BASE_EXPORT RegistryKeyIterator {
+class BRICK_EXPORT RegistryKeyIterator {
  public:
   // Constructs a Registry Key Iterator with default WOW64 access.
   RegistryKeyIterator(HKEY root_key, const wchar_t* folder_key);
@@ -258,4 +258,4 @@ class BASE_EXPORT RegistryKeyIterator {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_REGISTRY_H_
+#endif  // BRICK_WIN_REGISTRY_H_

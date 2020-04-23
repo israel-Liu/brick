@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/timer/timer.h"
+#include "brick/timer/timer.h"
 
 #include <stddef.h>
 
 #include <utility>
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/ref_counted.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/sequenced_task_runner_handle.h"
-#include "base/time/tick_clock.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
+#include "brick/time/tick_clock.h"
 
 namespace base {
 

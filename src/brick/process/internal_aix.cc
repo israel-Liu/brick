@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/internal_aix.h"
+#include "brick/process/internal_aix.h"
 
 #include <sys/procfs.h>
 
@@ -15,13 +15,13 @@
 #include <string>
 #include <vector>
 
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/time/time.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/time/time.h"
 
 // Not defined on AIX by default.
 #define NAME_MAX 255

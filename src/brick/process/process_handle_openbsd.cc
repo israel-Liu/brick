@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/macros.h"
-#include "base/process/process_handle.h"
+#include "brick/macros.h"
+#include "brick/process/process_handle.h"
 
 #include <stddef.h>
 #include <sys/sysctl.h>

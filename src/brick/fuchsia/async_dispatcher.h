@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FUCHSIA_ASYNC_DISPATCHER_H_
-#define BASE_FUCHSIA_ASYNC_DISPATCHER_H_
+#ifndef BRICK_FUCHSIA_ASYNC_DISPATCHER_H_
+#define BRICK_FUCHSIA_ASYNC_DISPATCHER_H_
 
 #include <lib/async/dispatcher.h>
 
-#include "base/containers/linked_list.h"
-#include "base/fuchsia/scoped_zx_handle.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/thread_checker.h"
+#include "brick/containers/linked_list.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/thread_checker.h"
 
 namespace base {
 
 // Implementation of dispatcher for Fuchsia's async library. It's necessary to
 // run Fuchsia's library on chromium threads.
-class BASE_EXPORT AsyncDispatcher : public async_t {
+class BRICK_EXPORT AsyncDispatcher : public async_t {
  public:
   AsyncDispatcher();
   ~AsyncDispatcher();
@@ -82,4 +82,4 @@ class BASE_EXPORT AsyncDispatcher : public async_t {
 
 }  // namespace base
 
-#endif  // BASE_FUCHSIA_ASYNC_DISPATCHER_H_
+#endif  // BRICK_FUCHSIA_ASYNC_DISPATCHER_H_

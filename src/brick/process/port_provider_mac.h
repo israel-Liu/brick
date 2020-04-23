@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PROCESS_PORT_PROVIDER_MAC_H_
-#define BASE_PROCESS_PORT_PROVIDER_MAC_H_
+#ifndef BRICK_PROCESS_PORT_PROVIDER_MAC_H_
+#define BRICK_PROCESS_PORT_PROVIDER_MAC_H_
 
 #include <mach/mach.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/observer_list.h"
-#include "base/process/process_handle.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/observer_list.h"
+#include "brick/process/process_handle.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
 // Abstract base class that provides a mapping from ProcessHandle (pid_t) to the
 // Mach task port. This replicates task_for_pid(), which requires root
 // privileges.
-class BASE_EXPORT PortProvider {
+class BRICK_EXPORT PortProvider {
  public:
   PortProvider();
   virtual ~PortProvider();
@@ -58,4 +58,4 @@ class BASE_EXPORT PortProvider {
 
 }  // namespace base
 
-#endif  // BASE_PROCESS_PORT_PROVIDER_MAC_H_
+#endif  // BRICK_PROCESS_PORT_PROVIDER_MAC_H_

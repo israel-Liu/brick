@@ -4,12 +4,12 @@
 
 // This file contains the implementation for TaskRunner::PostTaskAndReply.
 
-#ifndef BASE_THREADING_POST_TASK_AND_REPLY_IMPL_H_
-#define BASE_THREADING_POST_TASK_AND_REPLY_IMPL_H_
+#ifndef BRICK_THREADING_POST_TASK_AND_REPLY_IMPL_H_
+#define BRICK_THREADING_POST_TASK_AND_REPLY_IMPL_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/location.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/location.h"
 
 namespace base {
 namespace internal {
@@ -18,8 +18,8 @@ namespace internal {
 // custom execution context.
 //
 // If you're looking for a concrete implementation of PostTaskAndReply, you
-// probably want base::TaskRunner or base/task_scheduler/post_task.h
-class BASE_EXPORT PostTaskAndReplyImpl {
+// probably want base::TaskRunner or brick/task_scheduler/post_task.h
+class BRICK_EXPORT PostTaskAndReplyImpl {
  public:
   virtual ~PostTaskAndReplyImpl() = default;
 
@@ -43,4 +43,4 @@ class BASE_EXPORT PostTaskAndReplyImpl {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_THREADING_POST_TASK_AND_REPLY_IMPL_H_
+#endif  // BRICK_THREADING_POST_TASK_AND_REPLY_IMPL_H_

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_HASH_H_
-#define BASE_HASH_H_
+#ifndef BRICK_HASH_H_
+#define BRICK_HASH_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -12,9 +12,9 @@
 #include <string>
 #include <utility>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/strings/string16.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/strings/string16.h"
 
 namespace base {
 
@@ -23,9 +23,9 @@ namespace base {
 // to persist a change on disk or between computers, use PersistentHash().
 //
 // WARNING: This hash function should not be used for any cryptographic purpose.
-BASE_EXPORT uint32_t Hash(const void* data, size_t length);
-BASE_EXPORT uint32_t Hash(const std::string& str);
-BASE_EXPORT uint32_t Hash(const string16& str);
+BRICK_EXPORT uint32_t Hash(const void* data, size_t length);
+BRICK_EXPORT uint32_t Hash(const std::string& str);
+BRICK_EXPORT uint32_t Hash(const string16& str);
 
 // Computes a hash of a memory buffer. This hash function must not change so
 // that code can use the hashed values for persistent storage purposes or
@@ -33,12 +33,12 @@ BASE_EXPORT uint32_t Hash(const string16& str);
 // new version will have to be added in addition.
 //
 // WARNING: This hash function should not be used for any cryptographic purpose.
-BASE_EXPORT uint32_t PersistentHash(const void* data, size_t length);
-BASE_EXPORT uint32_t PersistentHash(const std::string& str);
+BRICK_EXPORT uint32_t PersistentHash(const void* data, size_t length);
+BRICK_EXPORT uint32_t PersistentHash(const std::string& str);
 
 // Hash pairs of 32-bit or 64-bit numbers.
-BASE_EXPORT size_t HashInts32(uint32_t value1, uint32_t value2);
-BASE_EXPORT size_t HashInts64(uint64_t value1, uint64_t value2);
+BRICK_EXPORT size_t HashInts32(uint32_t value1, uint32_t value2);
+BRICK_EXPORT size_t HashInts64(uint64_t value1, uint64_t value2);
 
 template <typename T1, typename T2>
 inline size_t HashInts(T1 value1, T2 value2) {
@@ -66,4 +66,4 @@ struct IntPairHash<std::pair<Type1, Type2>> {
 
 }  // namespace base
 
-#endif  // BASE_HASH_H_
+#endif  // BRICK_HASH_H_

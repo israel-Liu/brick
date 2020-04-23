@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/at_exit.h"
-#include "base/bind.h"
+#include "brick/at_exit.h"
+#include "brick/bind.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
 

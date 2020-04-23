@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/command_line.h"
+#include "brick/command_line.h"
 
 #include <algorithm>
 #include <ostream>
 
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/stl_util.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_tokenizer.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_tokenizer.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)

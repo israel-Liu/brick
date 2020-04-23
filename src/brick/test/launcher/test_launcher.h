@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_LAUNCHER_TEST_LAUNCHER_H_
-#define BASE_TEST_LAUNCHER_TEST_LAUNCHER_H_
+#ifndef BRICK_TEST_LAUNCHER_TEST_LAUNCHER_H_
+#define BRICK_TEST_LAUNCHER_TEST_LAUNCHER_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -13,15 +13,15 @@
 #include <string>
 #include <vector>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/process/launch.h"
-#include "base/test/gtest_util.h"
-#include "base/test/launcher/test_result.h"
-#include "base/test/launcher/test_results_tracker.h"
-#include "base/threading/thread_checker.h"
-#include "base/time/time.h"
-#include "base/timer/timer.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/process/launch.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/launcher/test_result.h"
+#include "brick/test/launcher/test_results_tracker.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/time/time.h"
+#include "brick/timer/timer.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -259,4 +259,4 @@ std::string GetTestOutputSnippet(const TestResult& result,
 
 }  // namespace base
 
-#endif  // BASE_TEST_LAUNCHER_TEST_LAUNCHER_H_
+#endif  // BRICK_TEST_LAUNCHER_TEST_LAUNCHER_H_

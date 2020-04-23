@@ -5,7 +5,7 @@
 // This is the version of the Android-specific Chromium linker that uses
 // the crazy linker to load libraries.
 
-// This source code *cannot* depend on anything from base/ or the C++
+// This source code *cannot* depend on anything from brick/ or the C++
 // STL, to keep the final library small, and avoid ugly dependency issues.
 
 #include "legacy_linker_jni.h"
@@ -425,7 +425,7 @@ bool LegacyLinkerJNIInit(JavaVM* vm, JNIEnv* env) {
   // Register native methods.
   jclass linker_class;
   if (!InitClassReference(env,
-                          "org/chromium/base/library_loader/LegacyLinker",
+                          "org/chromium/brick/library_loader/LegacyLinker",
                           &linker_class))
     return false;
 

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_info.h"
+#include "brick/process/process_info.h"
 
 #include <stdint.h>
 
-#include "base/logging.h"
-#include "base/process/internal_linux.h"
-#include "base/process/process_handle.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/process/internal_linux.h"
+#include "brick/process/process_handle.h"
+#include "brick/time/time.h"
 
 namespace base {
 

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SAMPLING_HEAP_PROFILER_SAMPLING_HEAP_PROFILER_H_
-#define BASE_SAMPLING_HEAP_PROFILER_SAMPLING_HEAP_PROFILER_H_
+#ifndef BRICK_SAMPLING_HEAP_PROFILER_SAMPLING_HEAP_PROFILER_H_
+#define BRICK_SAMPLING_HEAP_PROFILER_SAMPLING_HEAP_PROFILER_H_
 
 #include <memory>
 #include <stack>
 #include <unordered_map>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/thread_local.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 
@@ -25,9 +25,9 @@ class NoDestructor;
 // When started it selects and records allocation samples based on
 // the sampling_interval parameter.
 // The recorded samples can then be retrieved using GetSamples method.
-class BASE_EXPORT SamplingHeapProfiler {
+class BRICK_EXPORT SamplingHeapProfiler {
  public:
-  class BASE_EXPORT Sample {
+  class BRICK_EXPORT Sample {
    public:
     Sample(const Sample&);
     ~Sample();
@@ -114,4 +114,4 @@ class BASE_EXPORT SamplingHeapProfiler {
 
 }  // namespace base
 
-#endif  // BASE_SAMPLING_HEAP_PROFILER_SAMPLING_HEAP_PROFILER_H_
+#endif  // BRICK_SAMPLING_HEAP_PROFILER_SAMPLING_HEAP_PROFILER_H_

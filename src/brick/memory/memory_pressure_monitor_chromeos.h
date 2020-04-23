@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_MEMORY_PRESSURE_MONITOR_CHROMEOS_H_
-#define BASE_MEMORY_MEMORY_PRESSURE_MONITOR_CHROMEOS_H_
+#ifndef BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_CHROMEOS_H_
+#define BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_CHROMEOS_H_
 
-#include "base/base_export.h"
-#include "base/files/scoped_file.h"
-#include "base/macros.h"
-#include "base/memory/memory_pressure_listener.h"
-#include "base/memory/memory_pressure_monitor.h"
-#include "base/memory/weak_ptr.h"
-#include "base/timer/timer.h"
+#include "brick/base_export.h"
+#include "brick/files/scoped_file.h"
+#include "brick/macros.h"
+#include "brick/memory/memory_pressure_listener.h"
+#include "brick/memory/memory_pressure_monitor.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/timer/timer.h"
 
 namespace base {
 namespace chromeos {
@@ -25,7 +25,7 @@ class TestMemoryPressureMonitor;
 // MemoryPressureListener of memory fill level changes, so that it can take
 // action to reduce memory resources accordingly.
 //
-class BASE_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
+class BRICK_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
  public:
   using GetUsedMemoryInPercentCallback = int (*)();
 
@@ -125,4 +125,4 @@ class BASE_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
 }  // namespace chromeos
 }  // namespace base
 
-#endif  // BASE_MEMORY_MEMORY_PRESSURE_MONITOR_CHROMEOS_H_
+#endif  // BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_CHROMEOS_H_

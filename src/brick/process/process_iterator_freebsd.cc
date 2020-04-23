@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_iterator.h"
+#include "brick/process/process_iterator.h"
 
 #include <errno.h>
 #include <sys/types.h>
@@ -10,10 +10,10 @@
 #include <sys/sysctl.h>
 #include <unistd.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
 
 namespace base {
 

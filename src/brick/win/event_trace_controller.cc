@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 //
 // Implementation of a Windows event trace controller class.
-#include "base/win/event_trace_controller.h"
-#include "base/logging.h"
+#include "brick/win/event_trace_controller.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace win {

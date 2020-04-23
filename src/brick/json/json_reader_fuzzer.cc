@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_reader.h"
-#include "base/values.h"
+#include "brick/json/json_reader.h"
+#include "brick/values.h"
 
 int error_code, error_line, error_column;
 std::string error_message;

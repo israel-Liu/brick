@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_JSON_JSON_VALUE_CONVERTER_H_
-#define BASE_JSON_JSON_VALUE_CONVERTER_H_
+#ifndef BRICK_JSON_JSON_VALUE_CONVERTER_H_
+#define BRICK_JSON_JSON_VALUE_CONVERTER_H_
 
 #include <stddef.h>
 
@@ -11,13 +11,13 @@
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
-#include "base/values.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
+#include "brick/values.h"
 
 // JSONValueConverter converts a JSON value into a C++ struct in a
 // lightweight way.
@@ -138,7 +138,7 @@ template <typename FieldType>
 class BasicValueConverter;
 
 template <>
-class BASE_EXPORT BasicValueConverter<int> : public ValueConverter<int> {
+class BRICK_EXPORT BasicValueConverter<int> : public ValueConverter<int> {
  public:
   BasicValueConverter() = default;
 
@@ -149,7 +149,7 @@ class BASE_EXPORT BasicValueConverter<int> : public ValueConverter<int> {
 };
 
 template <>
-class BASE_EXPORT BasicValueConverter<std::string>
+class BRICK_EXPORT BasicValueConverter<std::string>
     : public ValueConverter<std::string> {
  public:
   BasicValueConverter() = default;
@@ -161,7 +161,7 @@ class BASE_EXPORT BasicValueConverter<std::string>
 };
 
 template <>
-class BASE_EXPORT BasicValueConverter<string16>
+class BRICK_EXPORT BasicValueConverter<string16>
     : public ValueConverter<string16> {
  public:
   BasicValueConverter() = default;
@@ -173,7 +173,7 @@ class BASE_EXPORT BasicValueConverter<string16>
 };
 
 template <>
-class BASE_EXPORT BasicValueConverter<double> : public ValueConverter<double> {
+class BRICK_EXPORT BasicValueConverter<double> : public ValueConverter<double> {
  public:
   BasicValueConverter() = default;
 
@@ -184,7 +184,7 @@ class BASE_EXPORT BasicValueConverter<double> : public ValueConverter<double> {
 };
 
 template <>
-class BASE_EXPORT BasicValueConverter<bool> : public ValueConverter<bool> {
+class BRICK_EXPORT BasicValueConverter<bool> : public ValueConverter<bool> {
  public:
   BasicValueConverter() = default;
 
@@ -521,4 +521,4 @@ class JSONValueConverter {
 
 }  // namespace base
 
-#endif  // BASE_JSON_JSON_VALUE_CONVERTER_H_
+#endif  // BRICK_JSON_JSON_VALUE_CONVERTER_H_

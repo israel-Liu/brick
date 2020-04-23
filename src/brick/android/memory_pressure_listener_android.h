@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_MEMORY_PRESSURE_LISTENER_ANDROID_H_
-#define BASE_ANDROID_MEMORY_PRESSURE_LISTENER_ANDROID_H_
+#ifndef BRICK_ANDROID_MEMORY_PRESSURE_LISTENER_ANDROID_H_
+#define BRICK_ANDROID_MEMORY_PRESSURE_LISTENER_ANDROID_H_
 
-#include "base/android/jni_android.h"
-#include "base/macros.h"
+#include "brick/android/jni_android.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace android {
 
 // Implements the C++ counter part of MemoryPressureListener.java
-class BASE_EXPORT MemoryPressureListenerAndroid {
+class BRICK_EXPORT MemoryPressureListenerAndroid {
  public:
   static void Initialize(JNIEnv* env);
 
@@ -26,4 +26,4 @@ class BASE_EXPORT MemoryPressureListenerAndroid {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_MEMORY_PRESSURE_LISTENER_ANDROID_H_
+#endif  // BRICK_ANDROID_MEMORY_PRESSURE_LISTENER_ANDROID_H_

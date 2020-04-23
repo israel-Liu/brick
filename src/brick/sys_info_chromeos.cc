@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/environment.h"
-#include "base/files/file.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/lazy_instance.h"
-#include "base/macros.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_tokenizer.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/environment.h"
+#include "brick/files/file.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/lazy_instance.h"
+#include "brick/macros.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_tokenizer.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

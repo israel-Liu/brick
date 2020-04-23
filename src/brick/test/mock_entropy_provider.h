@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_MOCK_ENTROPY_PROVIDER_H_
-#define BASE_TEST_MOCK_ENTROPY_PROVIDER_H_
+#ifndef BRICK_TEST_MOCK_ENTROPY_PROVIDER_H_
+#define BRICK_TEST_MOCK_ENTROPY_PROVIDER_H_
 
 #include <stdint.h>
 
-#include "base/metrics/field_trial.h"
+#include "brick/metrics/field_trial.h"
 
 namespace base {
 
@@ -29,4 +29,4 @@ class MockEntropyProvider : public base::FieldTrial::EntropyProvider {
 
 }  // namespace base
 
-#endif  // BASE_TEST_MOCK_ENTROPY_PROVIDER_H_
+#endif  // BRICK_TEST_MOCK_ENTROPY_PROVIDER_H_

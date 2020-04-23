@@ -4,8 +4,8 @@
 
 #include <string>
 
-#include "base/memory/linked_ptr.h"
-#include "base/strings/stringprintf.h"
+#include "brick/memory/linked_ptr.h"
+#include "brick/strings/stringprintf.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace {

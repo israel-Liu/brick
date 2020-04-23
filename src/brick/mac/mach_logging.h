@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_MACH_LOGGING_H_
-#define BASE_MAC_MACH_LOGGING_H_
+#ifndef BRICK_MAC_MACH_LOGGING_H_
+#define BRICK_MAC_MACH_LOGGING_H_
 
 #include <mach/mach.h>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 // Use the MACH_LOG family of macros along with a mach_error_t (kern_return_t)
@@ -33,7 +33,7 @@
 
 namespace logging {
 
-class BASE_EXPORT MachLogMessage : public logging::LogMessage {
+class BRICK_EXPORT MachLogMessage : public logging::LogMessage {
  public:
   MachLogMessage(const char* file_path,
                  int line,
@@ -100,7 +100,7 @@ class BASE_EXPORT MachLogMessage : public logging::LogMessage {
 
 namespace logging {
 
-class BASE_EXPORT BootstrapLogMessage : public logging::LogMessage {
+class BRICK_EXPORT BootstrapLogMessage : public logging::LogMessage {
  public:
   BootstrapLogMessage(const char* file_path,
                       int line,
@@ -164,4 +164,4 @@ class BASE_EXPORT BootstrapLogMessage : public logging::LogMessage {
 
 #endif  // !OS_IOS
 
-#endif  // BASE_MAC_MACH_LOGGING_H_
+#endif  // BRICK_MAC_MACH_LOGGING_H_

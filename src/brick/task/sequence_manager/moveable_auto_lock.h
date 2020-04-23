@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SEQUENCE_MANAGER_MOVEABLE_AUTO_LOCK_H_
-#define BASE_TASK_SEQUENCE_MANAGER_MOVEABLE_AUTO_LOCK_H_
+#ifndef BRICK_TASK_SEQUENCE_MANAGER_MOVEABLE_AUTO_LOCK_H_
+#define BRICK_TASK_SEQUENCE_MANAGER_MOVEABLE_AUTO_LOCK_H_
 
-#include "base/synchronization/lock.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 namespace sequence_manager {
@@ -38,4 +38,4 @@ class MoveableAutoLock {
 }  // namespace sequence_manager
 }  // namespace base
 
-#endif  // BASE_TASK_SEQUENCE_MANAGER_MOVEABLE_AUTO_LOCK_H_
+#endif  // BRICK_TASK_SEQUENCE_MANAGER_MOVEABLE_AUTO_LOCK_H_

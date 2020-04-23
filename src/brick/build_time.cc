@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/build_time.h"
+#include "brick/build_time.h"
 
 // Imports the generated build date, i.e. BUILD_DATE.
-#include "base/generated_build_date.h"
+#include "brick/generated_build_date.h"
 
-#include "base/logging.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/time/time.h"
 
 namespace base {
 

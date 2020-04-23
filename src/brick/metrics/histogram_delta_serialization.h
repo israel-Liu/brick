@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_HISTOGRAM_DELTA_SERIALIZATION_H_
-#define BASE_METRICS_HISTOGRAM_DELTA_SERIALIZATION_H_
+#ifndef BRICK_METRICS_HISTOGRAM_DELTA_SERIALIZATION_H_
+#define BRICK_METRICS_HISTOGRAM_DELTA_SERIALIZATION_H_
 
 #include <memory>
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_flattener.h"
-#include "base/metrics/histogram_snapshot_manager.h"
-#include "base/threading/thread_checker.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_flattener.h"
+#include "brick/metrics/histogram_snapshot_manager.h"
+#include "brick/threading/thread_checker.h"
 
 namespace base {
 
 class HistogramBase;
 
 // Serializes and restores histograms deltas.
-class BASE_EXPORT HistogramDeltaSerialization : public HistogramFlattener {
+class BRICK_EXPORT HistogramDeltaSerialization : public HistogramFlattener {
  public:
   // |caller_name| is string used in histograms for counting inconsistencies.
   explicit HistogramDeltaSerialization(const std::string& caller_name);
@@ -58,4 +58,4 @@ class BASE_EXPORT HistogramDeltaSerialization : public HistogramFlattener {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_HISTOGRAM_DELTA_SERIALIZATION_H_
+#endif  // BRICK_METRICS_HISTOGRAM_DELTA_SERIALIZATION_H_

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SCOPED_NATIVE_LIBRARY_H_
-#define BASE_SCOPED_NATIVE_LIBRARY_H_
+#ifndef BRICK_SCOPED_NATIVE_LIBRARY_H_
+#define BRICK_SCOPED_NATIVE_LIBRARY_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/native_library.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/native_library.h"
 
 namespace base {
 
@@ -16,7 +16,7 @@ class FilePath;
 // A class which encapsulates a base::NativeLibrary object available only in a
 // scope.
 // This class automatically unloads the loaded library in its destructor.
-class BASE_EXPORT ScopedNativeLibrary {
+class BRICK_EXPORT ScopedNativeLibrary {
  public:
   // Initializes with a NULL library.
   ScopedNativeLibrary();
@@ -52,4 +52,4 @@ class BASE_EXPORT ScopedNativeLibrary {
 
 }  // namespace base
 
-#endif  // BASE_SCOPED_NATIVE_LIBRARY_H_
+#endif  // BRICK_SCOPED_NATIVE_LIBRARY_H_

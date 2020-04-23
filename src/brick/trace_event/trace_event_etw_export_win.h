@@ -3,17 +3,17 @@
 // found in the LICENSE file.
 
 // This file contains the Windows-specific exporting to ETW.
-#ifndef BASE_TRACE_EVENT_TRACE_EVENT_ETW_EXPORT_WIN_H_
-#define BASE_TRACE_EVENT_TRACE_EVENT_ETW_EXPORT_WIN_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_EVENT_ETW_EXPORT_WIN_H_
+#define BRICK_TRACE_EVENT_TRACE_EVENT_ETW_EXPORT_WIN_H_
 
 #include <stdint.h>
 
 #include <map>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/trace_event/trace_event_impl.h"
 
 namespace base {
 
@@ -22,7 +22,7 @@ struct StaticMemorySingletonTraits;
 
 namespace trace_event {
 
-class BASE_EXPORT TraceEventETWExport {
+class BRICK_EXPORT TraceEventETWExport {
  public:
   ~TraceEventETWExport();
 
@@ -96,4 +96,4 @@ class BASE_EXPORT TraceEventETWExport {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_EVENT_ETW_EXPORT_WIN_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_EVENT_ETW_EXPORT_WIN_H_

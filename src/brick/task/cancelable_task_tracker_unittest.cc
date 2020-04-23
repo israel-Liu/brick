@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task/cancelable_task_tracker.h"
+#include "brick/task/cancelable_task_tracker.h"
 
 #include <cstddef>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/weak_ptr.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/test/gtest_util.h"
-#include "base/test/test_simple_task_runner.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/test_simple_task_runner.h"
+#include "brick/threading/thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

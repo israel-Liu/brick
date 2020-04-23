@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PROFILER_NATIVE_STACK_SAMPLER_H_
-#define BASE_PROFILER_NATIVE_STACK_SAMPLER_H_
+#ifndef BRICK_PROFILER_NATIVE_STACK_SAMPLER_H_
+#define BRICK_PROFILER_NATIVE_STACK_SAMPLER_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/profiler/stack_sampling_profiler.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/profiler/stack_sampling_profiler.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 
@@ -90,7 +90,7 @@ class NativeStackSampler {
 
 // NativeStackSamplerTestDelegate provides seams for test code to execute during
 // stack collection.
-class BASE_EXPORT NativeStackSamplerTestDelegate {
+class BRICK_EXPORT NativeStackSamplerTestDelegate {
  public:
   virtual ~NativeStackSamplerTestDelegate();
 
@@ -107,5 +107,5 @@ class BASE_EXPORT NativeStackSamplerTestDelegate {
 
 }  // namespace base
 
-#endif  // BASE_PROFILER_NATIVE_STACK_SAMPLER_H_
+#endif  // BRICK_PROFILER_NATIVE_STACK_SAMPLER_H_
 

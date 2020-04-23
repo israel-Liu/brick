@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/gtest_xml_util.h"
+#include "brick/test/gtest_xml_util.h"
 
 #include <stdint.h>
 
-#include "base/base64.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/stringprintf.h"
-#include "base/test/gtest_util.h"
-#include "base/test/launcher/test_launcher.h"
+#include "brick/base64.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/launcher/test_launcher.h"
 #include "third_party/libxml/chromium/libxml_utils.h"
 
 namespace base {

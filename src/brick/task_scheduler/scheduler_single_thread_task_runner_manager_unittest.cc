@@ -2,33 +2,33 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_single_thread_task_runner_manager.h"
+#include "brick/task_scheduler/scheduler_single_thread_task_runner_manager.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/memory/ptr_util.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_scheduler/delayed_task_manager.h"
-#include "base/task_scheduler/environment_config.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/task_scheduler/scheduler_worker_pool_params.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/test/gtest_util.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/simple_thread.h"
-#include "base/threading/thread.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_scheduler/delayed_task_manager.h"
+#include "brick/task_scheduler/environment_config.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/task_scheduler/scheduler_worker_pool_params.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/simple_thread.h"
+#include "brick/threading/thread.h"
+#include "brick/threading/thread_restrictions.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
 
-#include "base/win/com_init_util.h"
-#include "base/win/current_module.h"
+#include "brick/win/com_init_util.h"
+#include "brick/win/current_module.h"
 #endif  // defined(OS_WIN)
 
 namespace base {

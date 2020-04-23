@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/memory_pressure_listener_android.h"
+#include "brick/android/memory_pressure_listener_android.h"
 
-#include "base/memory/memory_pressure_listener.h"
+#include "brick/memory/memory_pressure_listener.h"
 #include "jni/MemoryPressureListener_jni.h"
 
 using base::android::JavaParamRef;

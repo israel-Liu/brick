@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_IMPL_H_
-#define BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_IMPL_H_
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_IMPL_H_
+#define BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_IMPL_H_
 
 #include <stddef.h>
 
@@ -11,25 +11,25 @@
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/containers/stack.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/strings/string_piece.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_runner.h"
-#include "base/task_scheduler/priority_queue.h"
-#include "base/task_scheduler/scheduler_lock.h"
-#include "base/task_scheduler/scheduler_worker.h"
-#include "base/task_scheduler/scheduler_worker_pool.h"
-#include "base/task_scheduler/scheduler_worker_stack.h"
-#include "base/task_scheduler/sequence.h"
-#include "base/task_scheduler/task.h"
-#include "base/task_scheduler/tracked_ref.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/containers/stack.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/strings/string_piece.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_runner.h"
+#include "brick/task_scheduler/priority_queue.h"
+#include "brick/task_scheduler/scheduler_lock.h"
+#include "brick/task_scheduler/scheduler_worker.h"
+#include "brick/task_scheduler/scheduler_worker_pool.h"
+#include "brick/task_scheduler/scheduler_worker_stack.h"
+#include "brick/task_scheduler/sequence.h"
+#include "brick/task_scheduler/task.h"
+#include "brick/task_scheduler/tracked_ref.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -49,7 +49,7 @@ class TaskTracker;
 // at any time but will not run until after Start() is called.
 //
 // This class is thread-safe.
-class BASE_EXPORT SchedulerWorkerPoolImpl : public SchedulerWorkerPool {
+class BRICK_EXPORT SchedulerWorkerPoolImpl : public SchedulerWorkerPool {
  public:
   enum class WorkerEnvironment {
     // No special worker environment required.
@@ -354,4 +354,4 @@ class BASE_EXPORT SchedulerWorkerPoolImpl : public SchedulerWorkerPool {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_IMPL_H_
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_IMPL_H_

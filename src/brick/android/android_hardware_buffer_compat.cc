@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/android_hardware_buffer_compat.h"
+#include "brick/android/android_hardware_buffer_compat.h"
 
-#include "base/android/build_info.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
+#include "brick/android/build_info.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
 
 #include <dlfcn.h>
 
@@ -28,7 +28,7 @@ AndroidHardwareBufferCompat::AndroidHardwareBufferCompat() {
   // devices, this is unlikely to happen in the foreseeable future, so just
   // unconditionally use dynamic loading.
 
-  // cf. base/android/linker/modern_linker_jni.cc
+  // cf. brick/android/linker/modern_linker_jni.cc
   void* main_dl_handle = dlopen(nullptr, RTLD_NOW);
 
   *reinterpret_cast<void**>(&allocate_) =

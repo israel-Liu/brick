@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NIX_MIME_UTIL_XDG_H_
-#define BASE_NIX_MIME_UTIL_XDG_H_
+#ifndef BRICK_NIX_MIME_UTIL_XDG_H_
+#define BRICK_NIX_MIME_UTIL_XDG_H_
 
 #include <string>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -28,9 +28,9 @@ namespace nix {
 // threads that disallow IO via base::ThreadRestrictions::SetIOAllowed(false).
 //
 // If the mime type is unknown, this will return application/octet-stream.
-BASE_EXPORT std::string GetFileMimeType(const FilePath& filepath);
+BRICK_EXPORT std::string GetFileMimeType(const FilePath& filepath);
 
 }  // namespace nix
 }  // namespace base
 
-#endif  // BASE_NIX_MIME_UTIL_XDG_H_
+#endif  // BRICK_NIX_MIME_UTIL_XDG_H_

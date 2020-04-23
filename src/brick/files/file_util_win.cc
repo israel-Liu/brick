@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_util.h"
+#include "brick/files/file_util.h"
 
 #include <windows.h>
 #include <io.h>
@@ -18,22 +18,22 @@
 #include <limits>
 #include <string>
 
-#include "base/files/file_enumerator.h"
-#include "base/files/file_path.h"
-#include "base/guid.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/process/process_handle.h"
-#include "base/rand_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/time/time.h"
-#include "base/win/scoped_handle.h"
-#include "base/win/windows_version.h"
+#include "brick/files/file_enumerator.h"
+#include "brick/files/file_path.h"
+#include "brick/guid.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/process/process_handle.h"
+#include "brick/rand_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/time/time.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/windows_version.h"
 
 namespace base {
 

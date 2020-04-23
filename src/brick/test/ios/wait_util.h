@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_IOS_WAIT_UTIL_H_
-#define BASE_TEST_IOS_WAIT_UTIL_H_
+#ifndef BRICK_TEST_IOS_WAIT_UTIL_H_
+#define BRICK_TEST_IOS_WAIT_UTIL_H_
 
-#include "base/ios/block_types.h"
-#include "base/time/time.h"
+#include "brick/ios/block_types.h"
+#include "brick/time/time.h"
 
 namespace base {
 namespace test {
@@ -47,4 +47,4 @@ void SpinRunLoopWithMinDelay(TimeDelta min_delay);
 }  // namespace test
 }  // namespace base
 
-#endif  // BASE_TEST_IOS_WAIT_UTIL_H_
+#endif  // BRICK_TEST_IOS_WAIT_UTIL_H_

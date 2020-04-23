@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_SENDING_EVENT_H_
-#define BASE_MAC_SCOPED_SENDING_EVENT_H_
+#ifndef BRICK_MAC_SCOPED_SENDING_EVENT_H_
+#define BRICK_MAC_SCOPED_SENDING_EVENT_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/message_loop/message_pump_mac.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_pump_mac.h"
 
 // Nested event loops can pump IPC messages, including
 // script-initiated tab closes, which could release objects that the
@@ -28,7 +28,7 @@
 namespace base {
 namespace mac {
 
-class BASE_EXPORT ScopedSendingEvent {
+class BRICK_EXPORT ScopedSendingEvent {
  public:
   ScopedSendingEvent();
   ~ScopedSendingEvent();
@@ -45,4 +45,4 @@ class BASE_EXPORT ScopedSendingEvent {
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_SENDING_EVENT_H_
+#endif  // BRICK_MAC_SCOPED_SENDING_EVENT_H_

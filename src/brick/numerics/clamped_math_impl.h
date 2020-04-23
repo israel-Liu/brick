@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_CLAMPED_MATH_IMPL_H_
-#define BASE_NUMERICS_CLAMPED_MATH_IMPL_H_
+#ifndef BRICK_NUMERICS_CLAMPED_MATH_IMPL_H_
+#define BRICK_NUMERICS_CLAMPED_MATH_IMPL_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -14,9 +14,9 @@
 #include <limits>
 #include <type_traits>
 
-#include "base/numerics/checked_math.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/numerics/safe_math_shared_impl.h"
+#include "brick/numerics/checked_math.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/numerics/safe_math_shared_impl.h"
 
 namespace base {
 namespace internal {
@@ -88,7 +88,7 @@ struct ClampedAddOp<T,
                   "provided types.");
     const V saturated = CommonMaxOrMin<V>(IsValueNegative(y));
     V result = {};
-    return BASE_NUMERICS_LIKELY((CheckedAddOp<T, U>::Do(x, y, &result)))
+    return BRICK_NUMERICS_LIKELY((CheckedAddOp<T, U>::Do(x, y, &result)))
                ? result
                : saturated;
   }
@@ -115,7 +115,7 @@ struct ClampedSubOp<T,
                   "provided types.");
     const V saturated = CommonMaxOrMin<V>(!IsValueNegative(y));
     V result = {};
-    return BASE_NUMERICS_LIKELY((CheckedSubOp<T, U>::Do(x, y, &result)))
+    return BRICK_NUMERICS_LIKELY((CheckedSubOp<T, U>::Do(x, y, &result)))
                ? result
                : saturated;
   }
@@ -139,7 +139,7 @@ struct ClampedMulOp<T,
     V result = {};
     const V saturated =
         CommonMaxOrMin<V>(IsValueNegative(x) ^ IsValueNegative(y));
-    return BASE_NUMERICS_LIKELY((CheckedMulOp<T, U>::Do(x, y, &result)))
+    return BRICK_NUMERICS_LIKELY((CheckedMulOp<T, U>::Do(x, y, &result)))
                ? result
                : saturated;
   }
@@ -157,7 +157,7 @@ struct ClampedDivOp<T,
   template <typename V = result_type>
   static constexpr V Do(T x, U y) {
     V result = {};
-    if (BASE_NUMERICS_LIKELY((CheckedDivOp<T, U>::Do(x, y, &result))))
+    if (BRICK_NUMERICS_LIKELY((CheckedDivOp<T, U>::Do(x, y, &result))))
       return result;
     // Saturation goes to max, min, or NaN (if x is zero).
     return x ? CommonMaxOrMin<V>(IsValueNegative(x) ^ IsValueNegative(y))
@@ -177,7 +177,7 @@ struct ClampedModOp<T,
   template <typename V = result_type>
   static constexpr V Do(T x, U y) {
     V result = {};
-    return BASE_NUMERICS_LIKELY((CheckedModOp<T, U>::Do(x, y, &result)))
+    return BRICK_NUMERICS_LIKELY((CheckedModOp<T, U>::Do(x, y, &result)))
                ? result
                : x;
   }
@@ -197,11 +197,11 @@ struct ClampedLshOp<T,
   template <typename V = result_type>
   static constexpr V Do(T x, U shift) {
     static_assert(!std::is_signed<U>::value, "Shift value must be unsigned.");
-    if (BASE_NUMERICS_LIKELY(shift < std::numeric_limits<T>::digits)) {
+    if (BRICK_NUMERICS_LIKELY(shift < std::numeric_limits<T>::digits)) {
       // Shift as unsigned to avoid undefined behavior.
       V result = static_cast<V>(as_unsigned(x) << shift);
       // If the shift can be reversed, we know it was valid.
-      if (BASE_NUMERICS_LIKELY(result >> shift == x))
+      if (BRICK_NUMERICS_LIKELY(result >> shift == x))
         return result;
     }
     return x ? CommonMaxOrMin<V>(IsValueNegative(x)) : 0;
@@ -223,7 +223,7 @@ struct ClampedRshOp<T,
     static_assert(!std::is_signed<U>::value, "Shift value must be unsigned.");
     // Signed right shift is odd, because it saturates to -1 or 0.
     const V saturated = as_unsigned(V(0)) - IsValueNegative(x);
-    return BASE_NUMERICS_LIKELY(shift < IntegerBitsPlusSign<T>::value)
+    return BRICK_NUMERICS_LIKELY(shift < IntegerBitsPlusSign<T>::value)
                ? saturated_cast<V>(x >> shift)
                : saturated;
   }
@@ -315,7 +315,7 @@ struct ClampedMinOp<
 
 // This is just boilerplate that wraps the standard floating point arithmetic.
 // A macro isn't the nicest solution, but it beats rewriting these repeatedly.
-#define BASE_FLOAT_ARITHMETIC_OPS(NAME, OP)                              \
+#define BRICK_FLOAT_ARITHMETIC_OPS(NAME, OP)                              \
   template <typename T, typename U>                                      \
   struct Clamped##NAME##Op<                                              \
       T, U,                                                              \
@@ -328,14 +328,14 @@ struct ClampedMinOp<
     }                                                                    \
   };
 
-BASE_FLOAT_ARITHMETIC_OPS(Add, +)
-BASE_FLOAT_ARITHMETIC_OPS(Sub, -)
-BASE_FLOAT_ARITHMETIC_OPS(Mul, *)
-BASE_FLOAT_ARITHMETIC_OPS(Div, /)
+BRICK_FLOAT_ARITHMETIC_OPS(Add, +)
+BRICK_FLOAT_ARITHMETIC_OPS(Sub, -)
+BRICK_FLOAT_ARITHMETIC_OPS(Mul, *)
+BRICK_FLOAT_ARITHMETIC_OPS(Div, /)
 
-#undef BASE_FLOAT_ARITHMETIC_OPS
+#undef BRICK_FLOAT_ARITHMETIC_OPS
 
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_NUMERICS_CLAMPED_MATH_IMPL_H_
+#endif  // BRICK_NUMERICS_CLAMPED_MATH_IMPL_H_

@@ -2,31 +2,31 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_worker_pool.h"
+#include "brick/task_scheduler/scheduler_worker_pool.h"
 
 #include <memory>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/location.h"
-#include "base/memory/ref_counted.h"
-#include "base/task_runner.h"
-#include "base/task_scheduler/delayed_task_manager.h"
-#include "base/task_scheduler/scheduler_worker_pool_impl.h"
-#include "base/task_scheduler/scheduler_worker_pool_params.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/task_scheduler/test_task_factory.h"
-#include "base/task_scheduler/test_utils.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/simple_thread.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/location.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/task_runner.h"
+#include "brick/task_scheduler/delayed_task_manager.h"
+#include "brick/task_scheduler/scheduler_worker_pool_impl.h"
+#include "brick/task_scheduler/scheduler_worker_pool_params.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/task_scheduler/test_task_factory.h"
+#include "brick/task_scheduler/test_utils.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/simple_thread.h"
+#include "brick/threading/thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_WIN)
-#include "base/task_scheduler/platform_native_worker_pool_win.h"
+#include "brick/task_scheduler/platform_native_worker_pool_win.h"
 #endif
 
 namespace base {

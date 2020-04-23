@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/build_info.h"
+#include "brick/android/build_info.h"
 
 #include <string>
 
-#include "base/android/jni_android.h"
-#include "base/android/jni_array.h"
-#include "base/android/scoped_java_ref.h"
-#include "base/logging.h"
-#include "base/memory/singleton.h"
-#include "base/strings/string_number_conversions.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_array.h"
+#include "brick/android/scoped_java_ref.h"
+#include "brick/logging.h"
+#include "brick/memory/singleton.h"
+#include "brick/strings/string_number_conversions.h"
 #include "jni/BuildInfo_jni.h"
 
 namespace base {

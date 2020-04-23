@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SEQUENCE_MANAGER_SEQUENCED_TASK_SOURCE_H_
-#define BASE_TASK_SEQUENCE_MANAGER_SEQUENCED_TASK_SOURCE_H_
+#ifndef BRICK_TASK_SEQUENCE_MANAGER_SEQUENCED_TASK_SOURCE_H_
+#define BRICK_TASK_SEQUENCE_MANAGER_SEQUENCED_TASK_SOURCE_H_
 
-#include "base/optional.h"
-#include "base/pending_task.h"
-#include "base/task/sequence_manager/lazy_now.h"
+#include "brick/optional.h"
+#include "brick/pending_task.h"
+#include "brick/task/sequence_manager/lazy_now.h"
 
 namespace base {
 namespace sequence_manager {
@@ -34,4 +34,4 @@ class SequencedTaskSource {
 }  // namespace sequence_manager
 }  // namespace base
 
-#endif  // BASE_TASK_SEQUENCE_MANAGER_SEQUENCED_TASK_SOURCE_H_
+#endif  // BRICK_TASK_SEQUENCE_MANAGER_SEQUENCED_TASK_SOURCE_H_

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_EVENT_H_
-#define BASE_TRACE_EVENT_TRACE_EVENT_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_EVENT_H_
+#define BRICK_TRACE_EVENT_TRACE_EVENT_H_
 
 // This header file defines implementation details of how the trace macros in
 // trace_event_common.h collect and store trace events. Anything not
@@ -14,16 +14,16 @@
 
 #include <string>
 
-#include "base/atomicops.h"
-#include "base/debug/debugging_buildflags.h"
-#include "base/macros.h"
-#include "base/time/time.h"
-#include "base/time/time_override.h"
-#include "base/trace_event/common/trace_event_common.h"
-#include "base/trace_event/heap_profiler.h"
-#include "base/trace_event/trace_category.h"
-#include "base/trace_event/trace_event_system_stats_monitor.h"
-#include "base/trace_event/trace_log.h"
+#include "brick/atomicops.h"
+#include "brick/debug/debugging_buildflags.h"
+#include "brick/macros.h"
+#include "brick/time/time.h"
+#include "brick/time/time_override.h"
+#include "brick/trace_event/common/trace_event_common.h"
+#include "brick/trace_event/heap_profiler.h"
+#include "brick/trace_event/trace_category.h"
+#include "brick/trace_event/trace_event_system_stats_monitor.h"
+#include "brick/trace_event/trace_log.h"
 #include "build/build_config.h"
 
 // By default, const char* argument values are assumed to have long-lived scope
@@ -212,7 +212,7 @@
     base::subtle::NoBarrier_Store(&(var), (value))
 
 // Defines visibility for classes in trace_event.h
-#define TRACE_EVENT_API_CLASS_EXPORT BASE_EXPORT
+#define TRACE_EVENT_API_CLASS_EXPORT BRICK_EXPORT
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -480,7 +480,7 @@ const unsigned long long kNoId = 0;
 // TraceID encapsulates an ID that can either be an integer or pointer. Pointers
 // are by default mangled with the Process ID so that they are unlikely to
 // collide when the same pointer is used on different processes.
-class BASE_EXPORT TraceID {
+class BRICK_EXPORT TraceID {
  public:
   // Can be combined with WithScope.
   class LocalId {
@@ -1188,4 +1188,4 @@ template<typename IDType> class TraceScopedTrackableObject {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_EVENT_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_EVENT_H_

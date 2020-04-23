@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_RING_BUFFER_H_
-#define BASE_CONTAINERS_RING_BUFFER_H_
+#ifndef BRICK_CONTAINERS_RING_BUFFER_H_
+#define BRICK_CONTAINERS_RING_BUFFER_H_
 
 #include <stddef.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 namespace base {
 
@@ -116,4 +116,4 @@ class RingBuffer {
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_RING_BUFFER_H_
+#endif  // BRICK_CONTAINERS_RING_BUFFER_H_

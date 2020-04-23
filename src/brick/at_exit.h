@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_AT_EXIT_H_
-#define BASE_AT_EXIT_H_
+#ifndef BRICK_AT_EXIT_H_
+#define BRICK_AT_EXIT_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/containers/stack.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/containers/stack.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
@@ -27,7 +27,7 @@ namespace base {
 // When the exit_manager object goes out of scope, all the registered
 // callbacks and singleton destructors will be called.
 
-class BASE_EXPORT AtExitManager {
+class BRICK_EXPORT AtExitManager {
  public:
   typedef void (*AtExitCallbackType)(void*);
 
@@ -77,4 +77,4 @@ class ShadowingAtExitManager : public AtExitManager {
 
 }  // namespace base
 
-#endif  // BASE_AT_EXIT_H_
+#endif  // BRICK_AT_EXIT_H_

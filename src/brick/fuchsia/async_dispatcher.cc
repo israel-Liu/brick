@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/fuchsia/async_dispatcher.h"
+#include "brick/fuchsia/async_dispatcher.h"
 
 #include <lib/async/default.h>
 #include <lib/async/task.h>
 #include <lib/async/wait.h>
 #include <zircon/syscalls.h>
 
-#include "base/fuchsia/fuchsia_logging.h"
+#include "brick/fuchsia/fuchsia_logging.h"
 
 namespace base {
 

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/fuchsia/async_dispatcher.h"
+#include "brick/fuchsia/async_dispatcher.h"
 
 #include <lib/async/default.h>
 #include <lib/async/task.h>
 #include <lib/async/wait.h>
 
-#include "base/callback.h"
-#include "base/fuchsia/scoped_zx_handle.h"
-#include "base/test/test_timeouts.h"
-#include "base/time/time.h"
+#include "brick/callback.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 
 #include <cmath>
 #include <ios>
@@ -10,12 +10,12 @@
 #include <ostream>
 #include <sstream>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/no_destructor.h"
-#include "base/strings/stringprintf.h"
-#include "base/third_party/nspr/prtime.h"
-#include "base/time/time_override.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/no_destructor.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/third_party/nspr/prtime.h"
+#include "brick/time/time_override.h"
 #include "build/build_config.h"
 
 namespace base {

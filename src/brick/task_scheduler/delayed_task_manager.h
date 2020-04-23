@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_DELAYED_TASK_MANAGER_H_
-#define BASE_TASK_SCHEDULER_DELAYED_TASK_MANAGER_H_
+#ifndef BRICK_TASK_SCHEDULER_DELAYED_TASK_MANAGER_H_
+#define BRICK_TASK_SCHEDULER_DELAYED_TASK_MANAGER_H_
 
 #include <memory>
 #include <utility>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/task_scheduler/scheduler_lock.h"
-#include "base/time/default_tick_clock.h"
-#include "base/time/tick_clock.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/task_scheduler/scheduler_lock.h"
+#include "brick/time/default_tick_clock.h"
+#include "brick/time/tick_clock.h"
 
 namespace base {
 
@@ -30,7 +30,7 @@ struct Task;
 // The DelayedTaskManager forwards tasks to post task callbacks when they become
 // ripe for execution. Tasks are not forwarded before Start() is called. This
 // class is thread-safe.
-class BASE_EXPORT DelayedTaskManager {
+class BRICK_EXPORT DelayedTaskManager {
  public:
   // Posts |task| for execution immediately.
   using PostTaskNowCallback = OnceCallback<void(Task task)>;
@@ -77,4 +77,4 @@ class BASE_EXPORT DelayedTaskManager {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_DELAYED_TASK_MANAGER_H_
+#endif  // BRICK_TASK_SCHEDULER_DELAYED_TASK_MANAGER_H_

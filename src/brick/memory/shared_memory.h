@@ -2,32 +2,32 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_SHARED_MEMORY_H_
-#define BASE_MEMORY_SHARED_MEMORY_H_
+#ifndef BRICK_MEMORY_SHARED_MEMORY_H_
+#define BRICK_MEMORY_SHARED_MEMORY_H_
 
 #include <stddef.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/hash.h"
-#include "base/macros.h"
-#include "base/memory/shared_memory_handle.h"
-#include "base/process/process_handle.h"
-#include "base/strings/string16.h"
+#include "brick/base_export.h"
+#include "brick/hash.h"
+#include "brick/macros.h"
+#include "brick/memory/shared_memory_handle.h"
+#include "brick/process/process_handle.h"
+#include "brick/strings/string16.h"
 #include "build/build_config.h"
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
 #include <stdio.h>
 #include <sys/types.h>
 #include <semaphore.h>
-#include "base/file_descriptor_posix.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
+#include "brick/file_descriptor_posix.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
 #endif
 
 #if defined(OS_WIN)
-#include "base/win/scoped_handle.h"
+#include "brick/win/scoped_handle.h"
 #endif
 
 namespace base {
@@ -35,7 +35,7 @@ namespace base {
 class FilePath;
 
 // Options for creating a shared memory object.
-struct BASE_EXPORT SharedMemoryCreateOptions {
+struct BRICK_EXPORT SharedMemoryCreateOptions {
 #if defined(OS_MACOSX) && !defined(OS_IOS)
   // The type of OS primitive that should back the SharedMemory object.
   SharedMemoryHandle::Type type = SharedMemoryHandle::MACH;
@@ -68,7 +68,7 @@ struct BASE_EXPORT SharedMemoryCreateOptions {
 // SharedMemory consumes a SharedMemoryHandle [potentially one that it created]
 // to map a shared memory OS resource into the virtual address space of the
 // current process.
-class BASE_EXPORT SharedMemory {
+class BRICK_EXPORT SharedMemory {
  public:
   SharedMemory();
 
@@ -251,4 +251,4 @@ class BASE_EXPORT SharedMemory {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_SHARED_MEMORY_H_
+#endif  // BRICK_MEMORY_SHARED_MEMORY_H_

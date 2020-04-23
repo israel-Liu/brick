@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYNCHRONIZATION_LOCK_IMPL_H_
-#define BASE_SYNCHRONIZATION_LOCK_IMPL_H_
+#ifndef BRICK_SYNCHRONIZATION_LOCK_IMPL_H_
+#define BRICK_SYNCHRONIZATION_LOCK_IMPL_H_
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
 #include <errno.h>
 #include <pthread.h>
@@ -23,7 +23,7 @@ namespace internal {
 // This class implements the underlying platform-specific spin-lock mechanism
 // used for the Lock class.  Most users should not use LockImpl directly, but
 // should instead use Lock.
-class BASE_EXPORT LockImpl {
+class BRICK_EXPORT LockImpl {
  public:
 #if defined(OS_WIN)
   using NativeHandle = CHROME_SRWLOCK;
@@ -75,4 +75,4 @@ void LockImpl::Unlock() {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_SYNCHRONIZATION_LOCK_IMPL_H_
+#endif  // BRICK_SYNCHRONIZATION_LOCK_IMPL_H_

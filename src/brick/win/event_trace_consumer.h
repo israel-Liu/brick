@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 //
 // Declaration of a Windows event trace consumer base class.
-#ifndef BASE_WIN_EVENT_TRACE_CONSUMER_H_
-#define BASE_WIN_EVENT_TRACE_CONSUMER_H_
+#ifndef BRICK_WIN_EVENT_TRACE_CONSUMER_H_
+#define BRICK_WIN_EVENT_TRACE_CONSUMER_H_
 
 #include <windows.h>
 #include <wmistr.h>
@@ -12,7 +12,7 @@
 #include <stddef.h>
 #include <vector>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
@@ -147,4 +147,4 @@ HRESULT EtwTraceConsumerBase<ImplClass>::Close() {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_EVENT_TRACE_CONSUMER_H_
+#endif  // BRICK_WIN_EVENT_TRACE_CONSUMER_H_

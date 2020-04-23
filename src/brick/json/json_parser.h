@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_JSON_JSON_PARSER_H_
-#define BASE_JSON_JSON_PARSER_H_
+#ifndef BRICK_JSON_JSON_PARSER_H_
+#define BRICK_JSON_JSON_PARSER_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -11,13 +11,13 @@
 #include <memory>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/gtest_prod_util.h"
-#include "base/json/json_reader.h"
-#include "base/macros.h"
-#include "base/optional.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/json/json_reader.h"
+#include "brick/macros.h"
+#include "brick/optional.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 
@@ -41,7 +41,7 @@ class JSONParserTest;
 // to the first byte of a valid JSON token. On exit, it is on the first byte
 // after the token that was just consumed, which would likely be the first byte
 // of the next token.
-class BASE_EXPORT JSONParser {
+class BRICK_EXPORT JSONParser {
  public:
   JSONParser(int options, int max_depth = JSONReader::kStackMaxDepth);
   ~JSONParser();
@@ -252,9 +252,9 @@ class BASE_EXPORT JSONParser {
 };
 
 // Used when decoding and an invalid utf-8 sequence is encountered.
-BASE_EXPORT extern const char kUnicodeReplacementString[];
+BRICK_EXPORT extern const char kUnicodeReplacementString[];
 
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_JSON_JSON_PARSER_H_
+#endif  // BRICK_JSON_JSON_PARSER_H_

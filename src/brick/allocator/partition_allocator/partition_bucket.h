@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_BUCKET_H_
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_BUCKET_H_
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_BUCKET_H_
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_BUCKET_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/allocator/partition_allocator/partition_alloc_constants.h"
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
+#include "brick/allocator/partition_allocator/partition_alloc_constants.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
 
 namespace base {
 namespace internal {
@@ -32,7 +32,7 @@ struct PartitionBucket {
   void Init(uint32_t new_slot_size);
 
   // Note the matching Free() functions are in PartitionPage.
-  BASE_EXPORT NOINLINE void* SlowPathAlloc(PartitionRootBase* root,
+  BRICK_EXPORT NOINLINE void* SlowPathAlloc(PartitionRootBase* root,
                                            int flags,
                                            size_t size);
 
@@ -118,4 +118,4 @@ struct PartitionBucket {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_BUCKET_H_
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_BUCKET_H_

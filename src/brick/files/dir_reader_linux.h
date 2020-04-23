@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_DIR_READER_LINUX_H_
-#define BASE_FILES_DIR_READER_LINUX_H_
+#ifndef BRICK_FILES_DIR_READER_LINUX_H_
+#define BRICK_FILES_DIR_READER_LINUX_H_
 
 #include <errno.h>
 #include <fcntl.h>
@@ -12,9 +12,9 @@
 #include <sys/syscall.h>
 #include <unistd.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/posix/eintr_wrapper.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/posix/eintr_wrapper.h"
 
 // See the comments in dir_reader_posix.h about this.
 
@@ -98,4 +98,4 @@ class DirReaderLinux {
 
 }  // namespace base
 
-#endif  // BASE_FILES_DIR_READER_LINUX_H_
+#endif  // BRICK_FILES_DIR_READER_LINUX_H_

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/path_utils.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/strings/string_util.h"
+#include "brick/android/path_utils.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/strings/string_util.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
 

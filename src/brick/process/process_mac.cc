@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process.h"
+#include "brick/process/process.h"
 
 #include <mach/mach.h>
 
-#include "base/feature_list.h"
-#include "base/mac/mach_logging.h"
+#include "brick/feature_list.h"
+#include "brick/mac/mach_logging.h"
 
 namespace base {
 

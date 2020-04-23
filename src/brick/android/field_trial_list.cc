@@ -7,9 +7,9 @@
 #include <map>
 #include <string>
 
-#include "base/android/jni_string.h"
-#include "base/metrics/field_trial.h"
-#include "base/metrics/field_trial_params.h"
+#include "brick/android/jni_string.h"
+#include "brick/metrics/field_trial.h"
+#include "brick/metrics/field_trial_params.h"
 #include "jni/FieldTrialList_jni.h"
 
 using base::android::ConvertJavaStringToUTF8;

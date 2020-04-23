@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_ALLOCATOR_ALLOCATOR_CHECK_H_
-#define BASE_ALLOCATOR_ALLOCATOR_ALLOCATOR_CHECK_H_
+#ifndef BRICK_ALLOCATOR_ALLOCATOR_ALLOCATOR_CHECK_H_
+#define BRICK_ALLOCATOR_ALLOCATOR_ALLOCATOR_CHECK_H_
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 namespace allocator {
 
-BASE_EXPORT bool IsAllocatorInitialized();
+BRICK_EXPORT bool IsAllocatorInitialized();
 
 }  // namespace allocator
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_ALLOCATOR_ALLOCATOR_CHECK_H_
+#endif  // BRICK_ALLOCATOR_ALLOCATOR_ALLOCATOR_CHECK_H_

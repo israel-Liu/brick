@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/message_window.h"
+#include "brick/win/message_window.h"
 
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/win/current_module.h"
-#include "base/win/wrapped_window_proc.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/win/current_module.h"
+#include "brick/win/wrapped_window_proc.h"
 
 const wchar_t kMessageWindowClassName[] = L"Chrome_MessageWindow";
 

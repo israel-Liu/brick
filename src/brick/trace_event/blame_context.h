@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_BLAME_CONTEXT_H_
-#define BASE_TRACE_EVENT_BLAME_CONTEXT_H_
+#ifndef BRICK_TRACE_EVENT_BLAME_CONTEXT_H_
+#define BRICK_TRACE_EVENT_BLAME_CONTEXT_H_
 
 #include <inttypes.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/threading/thread_checker.h"
-#include "base/trace_event/trace_log.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/trace_event/trace_log.h"
 
 namespace base {
 namespace trace_event {
@@ -33,7 +33,7 @@ namespace trace_event {
 // page instead looking at each <iframe> individually. In this case the work
 // should be attributed to a blame context which is the parent of all <iframe>
 // blame contexts.
-class BASE_EXPORT BlameContext
+class BRICK_EXPORT BlameContext
     : public trace_event::TraceLog::AsyncEnabledStateObserver {
  public:
   // Construct a blame context belonging to the blame context tree |name|, using
@@ -135,4 +135,4 @@ class BASE_EXPORT BlameContext
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_BLAME_CONTEXT_H_
+#endif  // BRICK_TRACE_EVENT_BLAME_CONTEXT_H_

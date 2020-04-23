@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_path_watcher.h"
+#include "brick/files/file_path_watcher.h"
 
-#include "base/bind.h"
-#include "base/files/file.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/threading/sequenced_task_runner_handle.h"
-#include "base/time/time.h"
-#include "base/win/object_watcher.h"
+#include "brick/bind.h"
+#include "brick/files/file.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
+#include "brick/time/time.h"
+#include "brick/win/object_watcher.h"
 
 #include <windows.h>
 

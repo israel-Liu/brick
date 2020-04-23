@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_NATIVE_LIBRARY_TEST_UTILS_H_
-#define BASE_TEST_NATIVE_LIBRARY_TEST_UTILS_H_
+#ifndef BRICK_TEST_NATIVE_LIBRARY_TEST_UTILS_H_
+#define BRICK_TEST_NATIVE_LIBRARY_TEST_UTILS_H_
 
 #include "build/build_config.h"
 
@@ -23,4 +23,4 @@ NATIVE_LIBRARY_TEST_ALWAYS_EXPORT int NativeLibraryTestIncrement();
 
 }  // extern "C"
 
-#endif  // BASE_TEST_NATIVE_LIBRARY_TEST_UTILS_H_
+#endif  // BRICK_TEST_NATIVE_LIBRARY_TEST_UTILS_H_

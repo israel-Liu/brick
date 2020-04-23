@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_METRICS_USER_ACTION_TESTER_H_
-#define BASE_TEST_METRICS_USER_ACTION_TESTER_H_
+#ifndef BRICK_TEST_METRICS_USER_ACTION_TESTER_H_
+#define BRICK_TEST_METRICS_USER_ACTION_TESTER_H_
 
 #include <map>
 #include <string>
 
-#include "base/macros.h"
-#include "base/metrics/user_metrics.h"
+#include "brick/macros.h"
+#include "brick/metrics/user_metrics.h"
 
 namespace base {
 
@@ -47,4 +47,4 @@ class UserActionTester {
 
 }  // namespace base
 
-#endif  // BASE_TEST_METRICS_USER_ACTION_TESTER_H_
+#endif  // BRICK_TEST_METRICS_USER_ACTION_TESTER_H_

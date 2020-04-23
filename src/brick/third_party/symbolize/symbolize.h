@@ -47,12 +47,12 @@
 //   stripped), try the same thing with a dynamic symbol table.
 //
 // Note that Symbolize() is originally implemented to be used in
-// FailureSignalHandler() in base/google.cc.  Hence it doesn't use
+// FailureSignalHandler() in brick/google.cc.  Hence it doesn't use
 // malloc() and other unsafe operations.  It should be both
 // thread-safe and async-signal-safe.
 
-#ifndef BASE_SYMBOLIZE_H_
-#define BASE_SYMBOLIZE_H_
+#ifndef BRICK_SYMBOLIZE_H_
+#define BRICK_SYMBOLIZE_H_
 
 #include "utilities.h"
 #include "config.h"
@@ -152,4 +152,4 @@ bool Symbolize(void *pc, char *out, int out_size);
 
 _END_GOOGLE_NAMESPACE_
 
-#endif  // BASE_SYMBOLIZE_H_
+#endif  // BRICK_SYMBOLIZE_H_

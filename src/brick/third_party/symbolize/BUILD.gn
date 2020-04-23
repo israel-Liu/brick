@@ -14,7 +14,7 @@ declare_args() {
 }
 
 static_library("symbolize") {
-  visibility = [ "//base/*" ]
+  visibility = [ "//brick/*" ]
   sources = [
     "config.h",
     "demangle.cc",

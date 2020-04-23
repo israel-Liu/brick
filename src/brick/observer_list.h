@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_OBSERVER_LIST_H_
-#define BASE_OBSERVER_LIST_H_
+#ifndef BRICK_OBSERVER_LIST_H_
+#define BRICK_OBSERVER_LIST_H_
 
 #include <stddef.h>
 
@@ -13,11 +13,11 @@
 #include <utility>
 #include <vector>
 
-#include "base/gtest_prod_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "base/stl_util.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/stl_util.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -304,4 +304,4 @@ using ReentrantObserverList = ObserverList<ObserverType, check_empty, true>;
 
 }  // namespace base
 
-#endif  // BASE_OBSERVER_LIST_H_
+#endif  // BRICK_OBSERVER_LIST_H_

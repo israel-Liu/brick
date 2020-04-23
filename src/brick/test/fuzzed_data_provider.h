@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_FUZZED_DATA_PROVIDER_H_
-#define BASE_TEST_FUZZED_DATA_PROVIDER_H_
+#ifndef BRICK_TEST_FUZZED_DATA_PROVIDER_H_
+#define BRICK_TEST_FUZZED_DATA_PROVIDER_H_
 
 #include <stdint.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 
@@ -77,4 +77,4 @@ class FuzzedDataProvider {
 
 }  // namespace base
 
-#endif  // BASE_TEST_FUZZED_DATA_PROVIDER_H_
+#endif  // BRICK_TEST_FUZZED_DATA_PROVIDER_H_

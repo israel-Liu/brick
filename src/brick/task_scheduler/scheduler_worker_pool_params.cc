@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_worker_pool_params.h"
+#include "brick/task_scheduler/scheduler_worker_pool_params.h"
 
 namespace base {
 

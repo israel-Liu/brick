@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_I18N_CHAR_ITERATOR_H_
-#define BASE_I18N_CHAR_ITERATOR_H_
+#ifndef BRICK_I18N_CHAR_ITERATOR_H_
+#define BRICK_I18N_CHAR_ITERATOR_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <string>
 
-#include "base/i18n/base_i18n_export.h"
-#include "base/macros.h"
-#include "base/strings/string16.h"
+#include "brick/i18n/base_i18n_export.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
 #include "build/build_config.h"
 
 // The CharIterator classes iterate through the characters in UTF8 and
@@ -31,7 +31,7 @@ typedef unsigned char uint8_t;
 namespace base {
 namespace i18n {
 
-class BASE_I18N_EXPORT UTF8CharIterator {
+class BRICK_I18N_EXPORT UTF8CharIterator {
  public:
   // Requires |str| to live as long as the UTF8CharIterator does.
   explicit UTF8CharIterator(const std::string* str);
@@ -77,7 +77,7 @@ class BASE_I18N_EXPORT UTF8CharIterator {
   DISALLOW_COPY_AND_ASSIGN(UTF8CharIterator);
 };
 
-class BASE_I18N_EXPORT UTF16CharIterator {
+class BRICK_I18N_EXPORT UTF16CharIterator {
  public:
   // Requires |str| to live as long as the UTF16CharIterator does.
   explicit UTF16CharIterator(const string16* str);
@@ -131,4 +131,4 @@ class BASE_I18N_EXPORT UTF16CharIterator {
 }  // namespace i18n
 }  // namespace base
 
-#endif  // BASE_I18N_CHAR_ITERATOR_H_
+#endif  // BRICK_I18N_CHAR_ITERATOR_H_

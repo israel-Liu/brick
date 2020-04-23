@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_UNGUESSABLE_TOKEN_H_
-#define BASE_UNGUESSABLE_TOKEN_H_
+#ifndef BRICK_UNGUESSABLE_TOKEN_H_
+#define BRICK_UNGUESSABLE_TOKEN_H_
 
 #include <stdint.h>
 #include <string.h>
 #include <iosfwd>
 #include <tuple>
 
-#include "base/base_export.h"
-#include "base/hash.h"
-#include "base/logging.h"
+#include "brick/base_export.h"
+#include "brick/hash.h"
+#include "brick/logging.h"
 
 namespace base {
 
@@ -37,7 +37,7 @@ struct UnguessableTokenHash;
 // sending/receiving empty tokens should be treated as a security issue.
 // If there is a valid scenario for sending "no token" across processes,
 // base::Optional should be used instead of an empty token.
-class BASE_EXPORT UnguessableToken {
+class BRICK_EXPORT UnguessableToken {
  public:
   // Create a unique UnguessableToken.
   static UnguessableToken Create();
@@ -94,7 +94,7 @@ class BASE_EXPORT UnguessableToken {
   uint64_t low_ = 0;
 };
 
-BASE_EXPORT std::ostream& operator<<(std::ostream& out,
+BRICK_EXPORT std::ostream& operator<<(std::ostream& out,
                                      const UnguessableToken& token);
 
 // For use in std::unordered_map.
@@ -107,4 +107,4 @@ struct UnguessableTokenHash {
 
 }  // namespace base
 
-#endif  // BASE_UNGUESSABLE_TOKEN_H_
+#endif  // BRICK_UNGUESSABLE_TOKEN_H_

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_WORKER_OBSERVER_H_
-#define BASE_TASK_SCHEDULER_SCHEDULER_WORKER_OBSERVER_H_
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_OBSERVER_H_
+#define BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_OBSERVER_H_
 
 namespace base {
 
@@ -24,4 +24,4 @@ class SchedulerWorkerObserver {
 
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_WORKER_OBSERVER_H_
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_OBSERVER_H_

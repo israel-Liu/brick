@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/platform_shared_memory_region.h"
+#include "brick/memory/platform_shared_memory_region.h"
 
 #include <aclapi.h>
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/allocator/partition_allocator/page_allocator.h"
-#include "base/bits.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/numerics/checked_math.h"
-#include "base/process/process_handle.h"
-#include "base/rand_util.h"
-#include "base/strings/stringprintf.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
+#include "brick/bits.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/numerics/checked_math.h"
+#include "brick/process/process_handle.h"
+#include "brick/rand_util.h"
+#include "brick/strings/stringprintf.h"
 
 namespace base {
 namespace subtle {

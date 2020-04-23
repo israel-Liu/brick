@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_H_
-#define BASE_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_H_
+#ifndef BRICK_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_H_
+#define BRICK_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_H_
 
 #include <stdint.h>
 
@@ -11,16 +11,16 @@
 #include <ostream>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/gtest_prod_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/optional.h"
-#include "base/trace_event/memory_allocator_dump_guid.h"
-#include "base/trace_event/memory_dump_request_args.h"
-#include "base/trace_event/trace_event_argument.h"
-#include "base/unguessable_token.h"
-#include "base/values.h"
+#include "brick/base_export.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/optional.h"
+#include "brick/trace_event/memory_allocator_dump_guid.h"
+#include "brick/trace_event/memory_dump_request_args.h"
+#include "brick/trace_event/trace_event_argument.h"
+#include "brick/unguessable_token.h"
+#include "brick/values.h"
 
 namespace base {
 namespace trace_event {
@@ -29,7 +29,7 @@ class ProcessMemoryDump;
 class TracedValue;
 
 // Data model for user-land memory allocator dumps.
-class BASE_EXPORT MemoryAllocatorDump {
+class BRICK_EXPORT MemoryAllocatorDump {
  public:
   enum Flags {
     DEFAULT = 0,
@@ -41,7 +41,7 @@ class BASE_EXPORT MemoryAllocatorDump {
   // In the TraceViewer UI table each MemoryAllocatorDump becomes
   // a row and each Entry generates a column (if it doesn't already
   // exist).
-  struct BASE_EXPORT Entry {
+  struct BRICK_EXPORT Entry {
     enum EntryType {
       kUint64,
       kString,
@@ -145,9 +145,9 @@ class BASE_EXPORT MemoryAllocatorDump {
 };
 
 // This is required by gtest to print a readable output on test failures.
-void BASE_EXPORT PrintTo(const MemoryAllocatorDump::Entry&, std::ostream*);
+void BRICK_EXPORT PrintTo(const MemoryAllocatorDump::Entry&, std::ostream*);
 
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_H_
+#endif  // BRICK_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_H_

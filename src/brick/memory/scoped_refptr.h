@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_SCOPED_REFPTR_H_
-#define BASE_MEMORY_SCOPED_REFPTR_H_
+#ifndef BRICK_MEMORY_SCOPED_REFPTR_H_
+#define BRICK_MEMORY_SCOPED_REFPTR_H_
 
 #include <stddef.h>
 
@@ -11,9 +11,9 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 template <class T>
 class scoped_refptr;
@@ -330,4 +330,4 @@ void swap(scoped_refptr<T>& lhs, scoped_refptr<T>& rhs) noexcept {
   lhs.swap(rhs);
 }
 
-#endif  // BASE_MEMORY_SCOPED_REFPTR_H_
+#endif  // BRICK_MEMORY_SCOPED_REFPTR_H_

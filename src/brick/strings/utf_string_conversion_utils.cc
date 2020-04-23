@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/utf_string_conversion_utils.h"
+#include "brick/strings/utf_string_conversion_utils.h"
 
-#include "base/third_party/icu/icu_utf.h"
+#include "brick/third_party/icu/icu_utf.h"
 #include "build/build_config.h"
 
 namespace base {

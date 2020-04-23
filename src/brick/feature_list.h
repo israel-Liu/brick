@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FEATURE_LIST_H_
-#define BASE_FEATURE_LIST_H_
+#ifndef BRICK_FEATURE_LIST_H_
+#define BRICK_FEATURE_LIST_H_
 
 #include <map>
 #include <memory>
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/strings/string_piece.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/strings/string_piece.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
@@ -32,7 +32,7 @@ enum FeatureState {
 // for a given feature name - generally defined as a constant global variable or
 // file static. It should never be used as a constexpr as it breaks
 // pointer-based identity lookup.
-struct BASE_EXPORT Feature {
+struct BRICK_EXPORT Feature {
   // The name of the feature. This should be unique to each feature and is used
   // for enabling/disabling features via command line flags and experiments.
   // It is strongly recommended to use CamelCase style for feature names, e.g.
@@ -47,7 +47,7 @@ struct BASE_EXPORT Feature {
 // DCHECKs have been built-in, and are configurable at run-time to be fatal, or
 // not, via a DcheckIsFatal feature. We define the Feature here since it is
 // checked in FeatureList::SetInstance(). See https://crbug.com/596231.
-extern BASE_EXPORT const Feature kDCheckIsFatalFeature;
+extern BRICK_EXPORT const Feature kDCheckIsFatalFeature;
 #endif  // DCHECK_IS_CONFIGURABLE
 
 // The FeatureList class is used to determine whether a given feature is on or
@@ -80,16 +80,16 @@ extern BASE_EXPORT const Feature kDCheckIsFatalFeature;
 //
 // To enable/disable features in a test, do NOT append --enable-features or
 // --disable-features to the command-line directly. Instead, use
-// ScopedFeatureList. See base/test/scoped_feature_list.h for details.
+// ScopedFeatureList. See brick/test/scoped_feature_list.h for details.
 //
 // After initialization (which should be done single-threaded), the FeatureList
 // API is thread safe.
 //
-// Note: This class is a singleton, but does not use base/memory/singleton.h in
+// Note: This class is a singleton, but does not use brick/memory/singleton.h in
 // order to have control over its initialization sequence. Specifically, the
 // intended use is to create an instance of this class and fully initialize it,
 // before setting it as the singleton for a process, via SetInstance().
-class BASE_EXPORT FeatureList {
+class BRICK_EXPORT FeatureList {
  public:
   FeatureList();
   ~FeatureList();
@@ -193,7 +193,7 @@ class BASE_EXPORT FeatureList {
   // Registers the given |instance| to be the singleton feature list for this
   // process. This should only be called once and |instance| must not be null.
   // Note: If you are considering using this for the purposes of testing, take
-  // a look at using base/test/scoped_feature_list.h instead.
+  // a look at using brick/test/scoped_feature_list.h instead.
   static void SetInstance(std::unique_ptr<FeatureList> instance);
 
   // Clears the previously-registered singleton instance for tests and returns
@@ -307,4 +307,4 @@ class BASE_EXPORT FeatureList {
 
 }  // namespace base
 
-#endif  // BASE_FEATURE_LIST_H_
+#endif  // BRICK_FEATURE_LIST_H_

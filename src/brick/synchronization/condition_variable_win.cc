@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/condition_variable.h"
+#include "brick/synchronization/condition_variable.h"
 
-#include "base/synchronization/lock.h"
-#include "base/threading/scoped_blocking_call.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/time/time.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/scoped_blocking_call.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/time/time.h"
 
 #include <windows.h>
 

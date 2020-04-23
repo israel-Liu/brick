@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/ios/crb_protocol_observers.h"
+#import "brick/ios/crb_protocol_observers.h"
 
 #include <objc/runtime.h>
 #include <stddef.h>
 #include <algorithm>
 #include <vector>
 
-#include "base/logging.h"
-#include "base/mac/scoped_nsobject.h"
-#include "base/stl_util.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_nsobject.h"
+#include "brick/stl_util.h"
 
 @interface CRBProtocolObservers () {
   base::scoped_nsobject<Protocol> _protocol;

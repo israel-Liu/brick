@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/service_thread.h"
+#include "brick/task_scheduler/service_thread.h"
 
 #include <string>
 
-#include "base/bind.h"
-#include "base/debug/stack_trace.h"
-#include "base/task_scheduler/task_scheduler.h"
-#include "base/task_scheduler/task_scheduler_impl.h"
-#include "base/test/metrics/histogram_tester.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/task_scheduler/task_scheduler.h"
+#include "brick/task_scheduler/task_scheduler_impl.h"
+#include "brick/test/metrics/histogram_tester.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

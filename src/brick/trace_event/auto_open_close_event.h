@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_AUTO_OPEN_CLOSE_EVENT_H_
-#define BASE_AUTO_OPEN_CLOSE_EVENT_H_
+#ifndef BRICK_AUTO_OPEN_CLOSE_EVENT_H_
+#define BRICK_AUTO_OPEN_CLOSE_EVENT_H_
 
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "base/threading/thread_checker.h"
-#include "base/time/time.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/time/time.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 namespace trace_event {
@@ -21,7 +21,7 @@ namespace trace_event {
 // "auto-closing" = if the trace event is started but not ended by the time
 // tracing ends, then the trace event will be automatically closed at the
 // end of tracing.
-class BASE_EXPORT AutoOpenCloseEvent
+class BRICK_EXPORT AutoOpenCloseEvent
     : public TraceLog::AsyncEnabledStateObserver {
  public:
   enum Type {
@@ -54,4 +54,4 @@ class BASE_EXPORT AutoOpenCloseEvent
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_AUTO_OPEN_CLOSE_EVENT_H_
+#endif  // BRICK_AUTO_OPEN_CLOSE_EVENT_H_

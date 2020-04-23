@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sync_socket.h"
+#include "brick/sync_socket.h"
 
 #include <errno.h>
 #include <fcntl.h>
@@ -18,9 +18,9 @@
 #include <sys/filio.h>
 #endif
 
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 namespace base {

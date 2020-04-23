@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_config.h"
+#include "brick/trace_event/trace_config.h"
 
 #include <stddef.h>
 
 #include <utility>
 
-#include "base/json/json_reader.h"
-#include "base/json/json_writer.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/string_split.h"
-#include "base/trace_event/memory_dump_manager.h"
-#include "base/trace_event/memory_dump_request_args.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/json/json_reader.h"
+#include "brick/json/json_writer.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string_split.h"
+#include "brick/trace_event/memory_dump_manager.h"
+#include "brick/trace_event/memory_dump_request_args.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 namespace trace_event {

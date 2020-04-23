@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/values_test_util.h"
+#include "brick/test/values_test_util.h"
 
 #include <memory>
 
-#include "base/json/json_reader.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/values.h"
+#include "brick/json/json_reader.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/values.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

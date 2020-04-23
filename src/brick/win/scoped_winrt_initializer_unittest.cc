@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/scoped_winrt_initializer.h"
+#include "brick/win/scoped_winrt_initializer.h"
 
-#include "base/test/gtest_util.h"
-#include "base/win/com_init_util.h"
-#include "base/win/scoped_com_initializer.h"
-#include "base/win/windows_version.h"
+#include "brick/test/gtest_util.h"
+#include "brick/win/com_init_util.h"
+#include "brick/win/scoped_com_initializer.h"
+#include "brick/win/windows_version.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

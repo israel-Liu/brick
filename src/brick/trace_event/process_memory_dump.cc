@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/process_memory_dump.h"
+#include "brick/trace_event/process_memory_dump.h"
 
 #include <errno.h>
 
 #include <vector>
 
-#include "base/memory/ptr_util.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/stringprintf.h"
-#include "base/trace_event/memory_infra_background_whitelist.h"
-#include "base/trace_event/trace_event_argument.h"
-#include "base/unguessable_token.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/trace_event/memory_infra_background_whitelist.h"
+#include "brick/trace_event/trace_event_argument.h"
+#include "brick/unguessable_token.h"
 #include "build/build_config.h"
 
 #if defined(OS_IOS)

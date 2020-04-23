@@ -198,7 +198,7 @@ fake_freeaddrinfo(struct addrinfo *ai)
 #endif
 
 /* wrapper for setting the base from the http server */
-#define EVHTTP_BASE_SET(x, y) do { \
+#define EVHTTP_BRICK_SET(x, y) do { \
 	if ((x)->base != NULL) event_base_set((x)->base, y);	\
 } while (0) 
 
@@ -357,7 +357,7 @@ evhttp_write_buffer(struct evhttp_connection *evcon,
 		event_del(&evcon->ev);
 
 	event_set(&evcon->ev, evcon->fd, EV_WRITE, evhttp_write, evcon);
-	EVHTTP_BASE_SET(evcon, &evcon->ev);
+	EVHTTP_BRICK_SET(evcon, &evcon->ev);
 	evhttp_add_event(&evcon->ev, evcon->timeout, HTTP_WRITE_TIMEOUT);
 }
 
@@ -915,7 +915,7 @@ evhttp_read_body(struct evhttp_connection *evcon, struct evhttp_request *req)
 	}
 	/* Read more! */
 	event_set(&evcon->ev, evcon->fd, EV_READ, evhttp_read, evcon);
-	EVHTTP_BASE_SET(evcon, &evcon->ev);
+	EVHTTP_BRICK_SET(evcon, &evcon->ev);
 	evhttp_add_event(&evcon->ev, evcon->timeout, HTTP_READ_TIMEOUT);
 }
 
@@ -1131,7 +1131,7 @@ evhttp_connection_start_detectclose(struct evhttp_connection *evcon)
 		event_del(&evcon->close_ev);
 	event_set(&evcon->close_ev, evcon->fd, EV_READ,
 	    evhttp_detect_close_cb, evcon);
-	EVHTTP_BASE_SET(evcon, &evcon->close_ev);
+	EVHTTP_BRICK_SET(evcon, &evcon->close_ev);
 	event_add(&evcon->close_ev, NULL);
 }
 
@@ -1198,7 +1198,7 @@ evhttp_connectioncb(int fd, short what, void *arg)
  cleanup:
 	if (evcon->retry_max < 0 || evcon->retry_cnt < evcon->retry_max) {
 		evtimer_set(&evcon->ev, evhttp_connection_retry, evcon);
-		EVHTTP_BASE_SET(evcon, &evcon->ev);
+		EVHTTP_BRICK_SET(evcon, &evcon->ev);
 		evhttp_add_event(&evcon->ev, MIN(3600, 2 << evcon->retry_cnt),
 		    HTTP_CONNECT_TIMEOUT);
 		evcon->retry_cnt++;
@@ -1805,7 +1805,7 @@ evhttp_connection_connect(struct evhttp_connection *evcon)
 
 	/* Set up a callback for successful connection setup */
 	event_set(&evcon->ev, evcon->fd, EV_WRITE, evhttp_connectioncb, evcon);
-	EVHTTP_BASE_SET(evcon, &evcon->ev);
+	EVHTTP_BRICK_SET(evcon, &evcon->ev);
 	evhttp_add_event(&evcon->ev, evcon->timeout, HTTP_CONNECT_TIMEOUT);
 
 	evcon->state = EVCON_CONNECTING;
@@ -1871,7 +1871,7 @@ evhttp_start_read(struct evhttp_connection *evcon)
 	if (event_initialized(&evcon->ev))
 		event_del(&evcon->ev);
 	event_set(&evcon->ev, evcon->fd, EV_READ, evhttp_read, evcon);
-	EVHTTP_BASE_SET(evcon, &evcon->ev);
+	EVHTTP_BRICK_SET(evcon, &evcon->ev);
 	
 	evhttp_add_event(&evcon->ev, evcon->timeout, HTTP_READ_TIMEOUT);
 	evcon->state = EVCON_READING_FIRSTLINE;
@@ -2339,7 +2339,7 @@ evhttp_accept_socket(struct evhttp *http, int fd)
 
 	/* Schedule the socket for accepting */
 	event_set(ev, fd, EV_READ | EV_PERSIST, accept_socket, http);
-	EVHTTP_BASE_SET(http, ev);
+	EVHTTP_BRICK_SET(http, ev);
 
 	res = event_add(ev, NULL);
 

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PROCESS_PROCESS_HANDLE_H_
-#define BASE_PROCESS_PROCESS_HANDLE_H_
+#ifndef BRICK_PROCESS_PROCESS_HANDLE_H_
+#define BRICK_PROCESS_PROCESS_HANDLE_H_
 
 #include <stdint.h>
 #include <sys/types.h>
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 #endif
 
 #if defined(OS_FUCHSIA)
@@ -56,13 +56,13 @@ const ProcessId kNullProcessId = 0;
 // Returns the id of the current process.
 // Note that on some platforms, this is not guaranteed to be unique across
 // processes (use GetUniqueIdForProcess if uniqueness is required).
-BASE_EXPORT ProcessId GetCurrentProcId();
+BRICK_EXPORT ProcessId GetCurrentProcId();
 
 // Returns a unique ID for the current process. The ID will be unique across all
 // currently running processes within the chrome session, but IDs of terminated
 // processes may be reused. This returns an opaque value that is different from
 // a process's PID.
-BASE_EXPORT uint32_t GetUniqueIdForProcess();
+BRICK_EXPORT uint32_t GetUniqueIdForProcess();
 
 #if defined(OS_LINUX)
 // When a process is started in a different PID namespace from the browser
@@ -71,12 +71,12 @@ BASE_EXPORT uint32_t GetUniqueIdForProcess();
 // WARNING: To avoid inconsistent results from GetUniqueIdForProcess, this
 // should only be called very early after process startup - ideally as soon
 // after process creation as possible.
-BASE_EXPORT void InitUniqueIdForProcessInPidNamespace(
+BRICK_EXPORT void InitUniqueIdForProcessInPidNamespace(
     ProcessId pid_outside_of_namespace);
 #endif
 
 // Returns the ProcessHandle of the current process.
-BASE_EXPORT ProcessHandle GetCurrentProcessHandle();
+BRICK_EXPORT ProcessHandle GetCurrentProcessHandle();
 
 // Returns the process ID for the specified process. This is functionally the
 // same as Windows' GetProcessId(), but works on versions of Windows before Win
@@ -84,20 +84,20 @@ BASE_EXPORT ProcessHandle GetCurrentProcessHandle();
 // DEPRECATED. New code should be using Process::Pid() instead.
 // Note that on some platforms, this is not guaranteed to be unique across
 // processes.
-BASE_EXPORT ProcessId GetProcId(ProcessHandle process);
+BRICK_EXPORT ProcessId GetProcId(ProcessHandle process);
 
 #if !defined(OS_FUCHSIA)
 // Returns the ID for the parent of the given process. Not available on Fuchsia.
 // Returning a negative value indicates an error, such as if the |process| does
 // not exist. Returns 0 when |process| has no parent process.
-BASE_EXPORT ProcessId GetParentProcessId(ProcessHandle process);
+BRICK_EXPORT ProcessId GetParentProcessId(ProcessHandle process);
 #endif  // !defined(OS_FUCHSIA)
 
 #if defined(OS_POSIX)
 // Returns the path to the executable of the given process.
-BASE_EXPORT FilePath GetProcessExecutablePath(ProcessHandle process);
+BRICK_EXPORT FilePath GetProcessExecutablePath(ProcessHandle process);
 #endif
 
 }  // namespace base
 
-#endif  // BASE_PROCESS_PROCESS_HANDLE_H_
+#endif  // BRICK_PROCESS_PROCESS_HANDLE_H_

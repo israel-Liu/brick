@@ -5,9 +5,9 @@
 // Cross platform methods for FilePathWatcher. See the various platform
 // specific implementation files, too.
 
-#include "base/files/file_path_watcher.h"
+#include "brick/files/file_path_watcher.h"
 
-#include "base/logging.h"
+#include "brick/logging.h"
 #include "build/build_config.h"
 
 namespace base {

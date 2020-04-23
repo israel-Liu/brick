@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_reader.h"
+#include "brick/json/json_reader.h"
 
 #include <stddef.h>
 
 #include <memory>
 
-#include "base/base_paths.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/path_service.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/values.h"
+#include "brick/base_paths.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/path_service.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/values.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

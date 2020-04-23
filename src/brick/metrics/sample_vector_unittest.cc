@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/sample_vector.h"
+#include "brick/metrics/sample_vector.h"
 
 #include <limits.h>
 #include <stddef.h>
@@ -11,10 +11,10 @@
 #include <memory>
 #include <vector>
 
-#include "base/metrics/bucket_ranges.h"
-#include "base/metrics/histogram.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/test/gtest_util.h"
+#include "brick/metrics/bucket_ranges.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/test/gtest_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

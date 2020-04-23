@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TIME_TICK_CLOCK_H_
-#define BASE_TIME_TICK_CLOCK_H_
+#ifndef BRICK_TIME_TICK_CLOCK_H_
+#define BRICK_TIME_TICK_CLOCK_H_
 
-#include "base/base_export.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -14,17 +14,17 @@ namespace base {
 // intended to be able to test the behavior of classes with respect to
 // non-decreasing time.
 //
-// See DefaultTickClock (base/time/default_tick_clock.h) for the default
+// See DefaultTickClock (brick/time/default_tick_clock.h) for the default
 // implementation that simply uses TimeTicks::Now().
 //
 // (Other implementations that use TimeTicks::NowFromSystemTime() should
 // be added as needed.)
 //
-// See SimpleTestTickClock (base/test/simple_test_tick_clock.h) for a
+// See SimpleTestTickClock (brick/test/simple_test_tick_clock.h) for a
 // simple test implementation.
 //
-// See Clock (base/time/clock.h) for the equivalent interface for Times.
-class BASE_EXPORT TickClock {
+// See Clock (brick/time/clock.h) for the equivalent interface for Times.
+class BRICK_EXPORT TickClock {
  public:
   virtual ~TickClock();
 
@@ -37,4 +37,4 @@ class BASE_EXPORT TickClock {
 
 }  // namespace base
 
-#endif  // BASE_TIME_TICK_CLOCK_H_
+#endif  // BRICK_TIME_TICK_CLOCK_H_

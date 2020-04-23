@@ -5,7 +5,7 @@
 // This is a "No Compile Test".
 // http://dev.chromium.org/developers/testing/no-compile-tests
 
-#include "base/strings/string16.h"
+#include "brick/strings/string16.h"
 
 #if defined(NCTEST_NO_KOENIG_LOOKUP_FOR_STRING16)  // [r"use of undeclared identifier 'ShouldNotBeFound'"]
 

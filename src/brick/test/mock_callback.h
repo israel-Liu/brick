@@ -22,12 +22,12 @@
 // Can be used with StrictMock and NiceMock. Caller must ensure that it outlives
 // any base::Callback obtained from it.
 
-#ifndef BASE_TEST_MOCK_CALLBACK_H_
-#define BASE_TEST_MOCK_CALLBACK_H_
+#ifndef BRICK_TEST_MOCK_CALLBACK_H_
+#define BRICK_TEST_MOCK_CALLBACK_H_
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/macros.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
 #include "testing/gmock/include/gmock/gmock.h"
 
 namespace base {
@@ -363,4 +363,4 @@ class MockCallback<OnceCallback<R(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10)>> {
 
 }  // namespace base
 
-#endif  // BASE_TEST_MOCK_CALLBACK_H_
+#endif  // BRICK_TEST_MOCK_CALLBACK_H_

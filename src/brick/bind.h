@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_BIND_H_
-#define BASE_BIND_H_
+#ifndef BRICK_BIND_H_
+#define BRICK_BIND_H_
 
 #include <utility>
 
-#include "base/bind_internal.h"
-#include "base/compiler_specific.h"
+#include "brick/bind_internal.h"
+#include "brick/compiler_specific.h"
 #include "build/build_config.h"
 
 #if defined(OS_MACOSX) && !HAS_FEATURE(objc_arc)
-#include "base/mac/scoped_block.h"
+#include "brick/mac/scoped_block.h"
 #endif
 
 // -----------------------------------------------------------------------------
@@ -51,7 +51,7 @@
 // -----------------------------------------------------------------------------
 //
 // If you're reading the implementation, before proceeding further, you should
-// read the top comment of base/bind_internal.h for a definition of common
+// read the top comment of brick/bind_internal.h for a definition of common
 // terms and concepts.
 
 namespace base {
@@ -479,4 +479,4 @@ base::mac::ScopedBlock<R (^)(Args...)> RetainBlock(R (^block)(Args...)) {
 
 }  // namespace base
 
-#endif  // BASE_BIND_H_
+#endif  // BRICK_BIND_H_

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_STRINGS_STRING_TOKENIZER_H_
-#define BASE_STRINGS_STRING_TOKENIZER_H_
+#ifndef BRICK_STRINGS_STRING_TOKENIZER_H_
+#define BRICK_STRINGS_STRING_TOKENIZER_H_
 
 #include <algorithm>
 #include <string>
 
-#include "base/strings/string_piece.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 
@@ -255,4 +255,4 @@ typedef StringTokenizerT<std::string, const char*> CStringTokenizer;
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_STRING_TOKENIZER_H_
+#endif  // BRICK_STRINGS_STRING_TOKENIZER_H_

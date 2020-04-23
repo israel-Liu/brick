@@ -17,7 +17,7 @@
 // linked below) and its ecosystem of libraries. We will follow Abseil with
 // respect to upgrading to more modern annotations.
 //
-// https://github.com/abseil/abseil-cpp/blob/master/absl/base/thread_annotations.h
+// https://github.com/abseil/abseil-cpp/blob/master/absl/brick/thread_annotations.h
 //
 // These annotations are implemented using compiler attributes. Using the macros
 // defined here instead of raw attributes allow for portability and future
@@ -235,4 +235,4 @@ inline T& ts_unchecked_read(T& v) NO_THREAD_SAFETY_ANALYSIS {
 
 }  // namespace thread_safety_analysis
 
-#endif  // _BASE_THREAD_ANNOTATIONS_H_
+#endif  // _BRICK_THREAD_ANNOTATIONS_H_

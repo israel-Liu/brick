@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/field_trial_param_associator.h"
+#include "brick/metrics/field_trial_param_associator.h"
 
-#include "base/metrics/field_trial.h"
+#include "brick/metrics/field_trial.h"
 
 namespace base {
 

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_HANDLE_VERIFIER_H_
-#define BASE_WIN_SCOPED_HANDLE_VERIFIER_H_
+#ifndef BRICK_WIN_SCOPED_HANDLE_VERIFIER_H_
+#define BRICK_WIN_SCOPED_HANDLE_VERIFIER_H_
 
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 
 #include <unordered_map>
 
-#include "base/base_export.h"
-#include "base/debug/stack_trace.h"
-#include "base/hash.h"
-#include "base/synchronization/lock_impl.h"
-#include "base/threading/thread_local.h"
+#include "brick/base_export.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/hash.h"
+#include "brick/synchronization/lock_impl.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 namespace win {
@@ -81,10 +81,10 @@ class [[clang::lto_visibility_public]] ScopedHandleVerifier {
 
 // This testing function returns the module that the ActiveVerifier concrete
 // implementation was instantiated in.
-BASE_EXPORT HMODULE GetHandleVerifierModuleForTesting();
+BRICK_EXPORT HMODULE GetHandleVerifierModuleForTesting();
 
 }  // namespace internal
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_HANDLE_VERIFIER_H_
+#endif  // BRICK_WIN_SCOPED_HANDLE_VERIFIER_H_

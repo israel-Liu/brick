@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_METRICS_HISTOGRAM_ENUM_READER_H_
-#define BASE_TEST_METRICS_HISTOGRAM_ENUM_READER_H_
+#ifndef BRICK_TEST_METRICS_HISTOGRAM_ENUM_READER_H_
+#define BRICK_TEST_METRICS_HISTOGRAM_ENUM_READER_H_
 
 #include <map>
 #include <string>
 
-#include "base/metrics/histogram_base.h"
-#include "base/optional.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/optional.h"
 
 namespace base {
 
@@ -28,4 +28,4 @@ base::Optional<HistogramEnumEntryMap> ReadEnumFromEnumsXml(
 
 }  // namespace base
 
-#endif  // BASE_TEST_METRICS_HISTOGRAM_ENUM_READER_H_
+#endif  // BRICK_TEST_METRICS_HISTOGRAM_ENUM_READER_H_

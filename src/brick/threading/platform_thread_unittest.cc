@@ -4,15 +4,15 @@
 
 #include <stddef.h>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/platform_thread.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/platform_thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_POSIX)
-#include "base/threading/platform_thread_internal_posix.h"
+#include "brick/threading/platform_thread_internal_posix.h"
 #elif defined(OS_WIN)
 #include <windows.h>
 #endif

@@ -31,19 +31,19 @@
 // will only increase the system-wide timer if we're not running on battery
 // power.
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 
 #include <windows.h>
 #include <mmsystem.h>
 #include <stdint.h>
 
-#include "base/atomicops.h"
-#include "base/bit_cast.h"
-#include "base/cpu.h"
-#include "base/logging.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time_override.h"
+#include "brick/atomicops.h"
+#include "brick/bit_cast.h"
+#include "brick/cpu.h"
+#include "brick/logging.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time_override.h"
 
 namespace base {
 

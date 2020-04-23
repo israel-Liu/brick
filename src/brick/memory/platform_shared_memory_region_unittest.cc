@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/platform_shared_memory_region.h"
+#include "brick/memory/platform_shared_memory_region.h"
 
-#include "base/memory/shared_memory_mapping.h"
-#include "base/process/process_metrics.h"
-#include "base/sys_info.h"
-#include "base/test/gtest_util.h"
-#include "base/test/test_shared_memory_util.h"
+#include "brick/memory/shared_memory_mapping.h"
+#include "brick/process/process_metrics.h"
+#include "brick/sys_info.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/test_shared_memory_util.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

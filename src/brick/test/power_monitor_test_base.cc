@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/power_monitor_test_base.h"
+#include "brick/test/power_monitor_test_base.h"
 
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_loop_current.h"
-#include "base/power_monitor/power_monitor.h"
-#include "base/power_monitor/power_monitor_source.h"
-#include "base/run_loop.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_loop_current.h"
+#include "brick/power_monitor/power_monitor.h"
+#include "brick/power_monitor/power_monitor_source.h"
+#include "brick/run_loop.h"
 
 namespace base {
 

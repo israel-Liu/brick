@@ -2,28 +2,28 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TASK_TRACKER_H_
-#define BASE_TASK_SCHEDULER_TASK_TRACKER_H_
+#ifndef BRICK_TASK_SCHEDULER_TASK_TRACKER_H_
+#define BRICK_TASK_SCHEDULER_TASK_TRACKER_H_
 
 #include <functional>
 #include <memory>
 #include <queue>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/callback_forward.h"
-#include "base/debug/task_annotator.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_base.h"
-#include "base/strings/string_piece.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_scheduler/can_schedule_sequence_observer.h"
-#include "base/task_scheduler/scheduler_lock.h"
-#include "base/task_scheduler/sequence.h"
-#include "base/task_scheduler/task.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/task_scheduler/tracked_ref.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/callback_forward.h"
+#include "brick/debug/task_annotator.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/strings/string_piece.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_scheduler/can_schedule_sequence_observer.h"
+#include "brick/task_scheduler/scheduler_lock.h"
+#include "brick/task_scheduler/sequence.h"
+#include "brick/task_scheduler/task.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/task_scheduler/tracked_ref.h"
 
 namespace base {
 
@@ -90,7 +90,7 @@ namespace internal {
 // scope (e.g. during startup or page load), but we don't need a dynamic maximum
 // number of background tasks. The code could probably be simplified if it
 // didn't support that. https://crbug.com/831835
-class BASE_EXPORT TaskTracker {
+class BRICK_EXPORT TaskTracker {
  public:
   // |histogram_label| is used as a suffix for histograms, it must not be empty.
   // The first constructor sets the maximum number of TaskPriority::BACKGROUND
@@ -361,4 +361,4 @@ class BASE_EXPORT TaskTracker {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TASK_TRACKER_H_
+#endif  // BRICK_TASK_SCHEDULER_TASK_TRACKER_H_

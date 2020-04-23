@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/multiprocess_test.h"
+#include "brick/test/multiprocess_test.h"
 
 #include <string.h>
 #include <vector>
 
-#include "base/android/jni_android.h"
-#include "base/android/jni_array.h"
-#include "base/android/scoped_java_ref.h"
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/logging.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_array.h"
+#include "brick/android/scoped_java_ref.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/logging.h"
 #include "jni/MainReturnCodeResult_jni.h"
 #include "jni/MultiprocessTestClientLauncher_jni.h"
 

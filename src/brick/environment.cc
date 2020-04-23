@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/environment.h"
+#include "brick/environment.h"
 
 #include <stddef.h>
 
 #include <vector>
 
-#include "base/memory/ptr_util.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)

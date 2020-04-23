@@ -17,8 +17,8 @@
 //
 // A trace consumer consumes events from zero or one realtime session,
 // as well as potentially from multiple binary trace files.
-#ifndef BASE_WIN_EVENT_TRACE_CONTROLLER_H_
-#define BASE_WIN_EVENT_TRACE_CONTROLLER_H_
+#ifndef BRICK_WIN_EVENT_TRACE_CONTROLLER_H_
+#define BRICK_WIN_EVENT_TRACE_CONTROLLER_H_
 
 #include <windows.h>
 #include <wmistr.h>
@@ -26,8 +26,8 @@
 #include <stddef.h>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
@@ -35,7 +35,7 @@ namespace win {
 // Utility class to make it easier to work with EVENT_TRACE_PROPERTIES.
 // The EVENT_TRACE_PROPERTIES structure contains information about an
 // event tracing session.
-class BASE_EXPORT EtwTraceProperties {
+class BRICK_EXPORT EtwTraceProperties {
  public:
   EtwTraceProperties();
 
@@ -85,7 +85,7 @@ class BASE_EXPORT EtwTraceProperties {
 // This class implements an ETW controller, which knows how to start and
 // stop event tracing sessions, as well as controlling ETW provider
 // log levels and enable bit masks under the session.
-class BASE_EXPORT EtwTraceController {
+class BRICK_EXPORT EtwTraceController {
  public:
   EtwTraceController();
   ~EtwTraceController();
@@ -149,4 +149,4 @@ class BASE_EXPORT EtwTraceController {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_EVENT_TRACE_CONTROLLER_H_
+#endif  // BRICK_WIN_EVENT_TRACE_CONTROLLER_H_

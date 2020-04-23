@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_SAFE_CONVERSIONS_IMPL_H_
-#define BASE_NUMERICS_SAFE_CONVERSIONS_IMPL_H_
+#ifndef BRICK_NUMERICS_SAFE_CONVERSIONS_IMPL_H_
+#define BRICK_NUMERICS_SAFE_CONVERSIONS_IMPL_H_
 
 #include <stdint.h>
 
@@ -11,11 +11,11 @@
 #include <type_traits>
 
 #if defined(__GNUC__) || defined(__clang__)
-#define BASE_NUMERICS_LIKELY(x) __builtin_expect(!!(x), 1)
-#define BASE_NUMERICS_UNLIKELY(x) __builtin_expect(!!(x), 0)
+#define BRICK_NUMERICS_LIKELY(x) __builtin_expect(!!(x), 1)
+#define BRICK_NUMERICS_UNLIKELY(x) __builtin_expect(!!(x), 0)
 #else
-#define BASE_NUMERICS_LIKELY(x) (x)
-#define BASE_NUMERICS_UNLIKELY(x) (x)
+#define BRICK_NUMERICS_LIKELY(x) (x)
+#define BRICK_NUMERICS_UNLIKELY(x) (x)
 #endif
 
 namespace base {
@@ -847,4 +847,4 @@ constexpr Dst CommonMaxOrMin(bool is_min) {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_NUMERICS_SAFE_CONVERSIONS_IMPL_H_
+#endif  // BRICK_NUMERICS_SAFE_CONVERSIONS_IMPL_H_

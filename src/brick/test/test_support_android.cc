@@ -5,16 +5,16 @@
 #include <stdarg.h>
 #include <string.h>
 
-#include "base/android/path_utils.h"
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/singleton.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_pump_android.h"
-#include "base/path_service.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/multiprocess_test.h"
+#include "brick/android/path_utils.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/singleton.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_pump_android.h"
+#include "brick/path_service.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/multiprocess_test.h"
 
 namespace {
 

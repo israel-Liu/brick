@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_path_watcher_fsevents.h"
+#include "brick/files/file_path_watcher_fsevents.h"
 
 #include <dispatch/dispatch.h>
 
 #include <list>
 
-#include "base/bind.h"
-#include "base/files/file_util.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/strings/stringprintf.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/files/file_util.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 
 namespace base {
 

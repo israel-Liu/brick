@@ -6,10 +6,10 @@
 
 #include <vector>
 
-#include "base/win/base_win_buildflags.h"
-#include "base/win/current_module.h"
-#include "base/win/scoped_handle.h"
-#include "base/win/scoped_handle_verifier.h"
+#include "brick/win/base_win_buildflags.h"
+#include "brick/win/current_module.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/scoped_handle_verifier.h"
 
 namespace base {
 namespace win {

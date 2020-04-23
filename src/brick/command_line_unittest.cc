@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/command_line.h"
+#include "brick/command_line.h"
 
 #include <memory>
 #include <string>
 #include <vector>
 
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

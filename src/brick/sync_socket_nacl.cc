@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sync_socket.h"
+#include "brick/sync_socket.h"
 
 #include <errno.h>
 #include <limits.h>
@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 

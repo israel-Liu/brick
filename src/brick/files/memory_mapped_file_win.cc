@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/memory_mapped_file.h"
+#include "brick/files/memory_mapped_file.h"
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <limits>
 
-#include "base/files/file_path.h"
-#include "base/strings/string16.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_path.h"
+#include "brick/strings/string16.h"
+#include "brick/threading/thread_restrictions.h"
 
 #include <windows.h>
 

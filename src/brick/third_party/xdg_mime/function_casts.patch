@@ -1,7 +1,7 @@
-diff --git a/base/third_party/xdg_mime/xdgmime.c b/base/third_party/xdg_mime/xdgmime.c
+diff --git a/brick/third_party/xdg_mime/xdgmime.c b/brick/third_party/xdg_mime/xdgmime.c
 index 6dc58c253fa2..f340fcefabb4 100644
---- a/base/third_party/xdg_mime/xdgmime.c
-+++ b/base/third_party/xdg_mime/xdgmime.c
+--- a/brick/third_party/xdg_mime/xdgmime.c
++++ b/brick/third_party/xdg_mime/xdgmime.c
 @@ -136,7 +136,7 @@ xdg_dir_time_list_free (XdgDirTimeList *list)
  }
  

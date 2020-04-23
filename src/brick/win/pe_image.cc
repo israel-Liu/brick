@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-#include "base/win/pe_image.h"
+#include "brick/win/pe_image.h"
 
 namespace base {
 namespace win {
@@ -340,16 +340,16 @@ bool PEImage::EnumExports(EnumExportsFunction callback, PVOID cookie) const {
 bool PEImage::EnumRelocs(EnumRelocsFunction callback, PVOID cookie) const {
   PVOID directory = GetImageDirectoryEntryAddr(IMAGE_DIRECTORY_ENTRY_BASERELOC);
   DWORD size = GetImageDirectoryEntrySize(IMAGE_DIRECTORY_ENTRY_BASERELOC);
-  PIMAGE_BASE_RELOCATION base = reinterpret_cast<PIMAGE_BASE_RELOCATION>(
+  PIMAGE_BRICK_RELOCATION base = reinterpret_cast<PIMAGE_BRICK_RELOCATION>(
       directory);
 
   if (!directory)
     return true;
 
-  while (size >= sizeof(IMAGE_BASE_RELOCATION) && base->SizeOfBlock &&
+  while (size >= sizeof(IMAGE_BRICK_RELOCATION) && base->SizeOfBlock &&
          size >= base->SizeOfBlock) {
     PWORD reloc = reinterpret_cast<PWORD>(base + 1);
-    UINT num_relocs = (base->SizeOfBlock - sizeof(IMAGE_BASE_RELOCATION)) /
+    UINT num_relocs = (base->SizeOfBlock - sizeof(IMAGE_BRICK_RELOCATION)) /
         sizeof(WORD);
 
     for (UINT i = 0; i < num_relocs; i++, reloc++) {
@@ -361,7 +361,7 @@ bool PEImage::EnumRelocs(EnumRelocsFunction callback, PVOID cookie) const {
     }
 
     size -= base->SizeOfBlock;
-    base = reinterpret_cast<PIMAGE_BASE_RELOCATION>(
+    base = reinterpret_cast<PIMAGE_BRICK_RELOCATION>(
                reinterpret_cast<char*>(base) + base->SizeOfBlock);
   }
 

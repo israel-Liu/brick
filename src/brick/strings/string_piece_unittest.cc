@@ -6,9 +6,9 @@
 
 #include <string>
 
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

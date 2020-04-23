@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_PAGE_ALLOCATOR_H
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_PAGE_ALLOCATOR_H
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PAGE_ALLOCATOR_H
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PAGE_ALLOCATOR_H
 
 #include <stdint.h>
 
 #include <cstddef>
 
-#include "base/allocator/partition_allocator/page_allocator_constants.h"
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
+#include "brick/allocator/partition_allocator/page_allocator_constants.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -48,7 +48,7 @@ enum class PageTag {
 // |page_accessibility| controls the permission of the allocated pages.
 //
 // This call will return null if the allocation cannot be satisfied.
-BASE_EXPORT void* AllocPages(void* address,
+BRICK_EXPORT void* AllocPages(void* address,
                              size_t length,
                              size_t align,
                              PageAccessibilityConfiguration page_accessibility,
@@ -61,14 +61,14 @@ BASE_EXPORT void* AllocPages(void* address,
 // |address| and |length| must match a previous call to |AllocPages|. Therefore,
 // |address| must be aligned to |kPageAllocationGranularity| bytes, and |length|
 // must be a multiple of |kPageAllocationGranularity|.
-BASE_EXPORT void FreePages(void* address, size_t length);
+BRICK_EXPORT void FreePages(void* address, size_t length);
 
 // Mark one or more system pages, starting at |address| with the given
 // |page_accessibility|. |length| must be a multiple of |kSystemPageSize| bytes.
 //
 // Returns true if the permission change succeeded. In most cases you must
 // |CHECK| the result.
-BASE_EXPORT WARN_UNUSED_RESULT bool SetSystemPagesAccess(
+BRICK_EXPORT WARN_UNUSED_RESULT bool SetSystemPagesAccess(
     void* address,
     size_t length,
     PageAccessibilityConfiguration page_accessibility);
@@ -94,7 +94,7 @@ BASE_EXPORT WARN_UNUSED_RESULT bool SetSystemPagesAccess(
 //
 // TODO(ajwong): This currently does not change page protections on POSIX
 // systems due to a perf regression. Tracked at http://crbug.com/766882.
-BASE_EXPORT void DecommitSystemPages(void* address, size_t length);
+BRICK_EXPORT void DecommitSystemPages(void* address, size_t length);
 
 // Recommit one or more system pages, starting at |address| and continuing for
 // |length| bytes with the given |page_accessibility|. |length| must be a
@@ -105,7 +105,7 @@ BASE_EXPORT void DecommitSystemPages(void* address, size_t length);
 //
 // Returns true if the recommit change succeeded. In most cases you must |CHECK|
 // the result.
-BASE_EXPORT WARN_UNUSED_RESULT bool RecommitSystemPages(
+BRICK_EXPORT WARN_UNUSED_RESULT bool RecommitSystemPages(
     void* address,
     size_t length,
     PageAccessibilityConfiguration page_accessibility);
@@ -131,7 +131,7 @@ BASE_EXPORT WARN_UNUSED_RESULT bool RecommitSystemPages(
 // that the page is required again. Once written to, the content of the page is
 // guaranteed stable once more. After being written to, the page content may be
 // based on the original page content, or a page of zeroes.
-BASE_EXPORT void DiscardSystemPages(void* address, size_t length);
+BRICK_EXPORT void DiscardSystemPages(void* address, size_t length);
 
 // Rounds up |address| to the next multiple of |kSystemPageSize|. Returns
 // 0 for an |address| of 0.
@@ -164,16 +164,16 @@ RoundDownToPageAllocationGranularity(uintptr_t address) {
 // |kPageAllocationGranularity|. This can be called early on to make it more
 // likely that large allocations will succeed. Returns true if the reservation
 // succeeded, false if the reservation failed or a reservation was already made.
-BASE_EXPORT bool ReserveAddressSpace(size_t size);
+BRICK_EXPORT bool ReserveAddressSpace(size_t size);
 
 // Releases any reserved address space. |AllocPages| calls this automatically on
 // an allocation failure. External allocators may also call this on failure.
-BASE_EXPORT void ReleaseReservation();
+BRICK_EXPORT void ReleaseReservation();
 
 // Returns |errno| (POSIX) or the result of |GetLastError| (Windows) when |mmap|
 // (POSIX) or |VirtualAlloc| (Windows) fails.
-BASE_EXPORT uint32_t GetAllocPageErrorCode();
+BRICK_EXPORT uint32_t GetAllocPageErrorCode();
 
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_PAGE_ALLOCATOR_H
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PAGE_ALLOCATOR_H

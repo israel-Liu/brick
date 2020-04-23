@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/wait_chain.h"
+#include "brick/win/wait_chain.h"
 
 #include <memory>
 #include <string>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/command_line.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_piece.h"
-#include "base/test/multiprocess_test.h"
-#include "base/threading/simple_thread.h"
-#include "base/win/win_util.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/command_line.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/threading/simple_thread.h"
+#include "brick/win/win_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"
 

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_buffer.h"
+#include "brick/trace_event/trace_buffer.h"
 
 #include <memory>
 #include <utility>
 #include <vector>
 
-#include "base/macros.h"
-#include "base/trace_event/heap_profiler.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/macros.h"
+#include "brick/trace_event/heap_profiler.h"
+#include "brick/trace_event/trace_event_impl.h"
 
 namespace base {
 namespace trace_event {

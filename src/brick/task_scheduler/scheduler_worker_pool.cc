@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_worker_pool.h"
+#include "brick/task_scheduler/scheduler_worker_pool.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/lazy_instance.h"
-#include "base/task_scheduler/delayed_task_manager.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/threading/thread_local.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/lazy_instance.h"
+#include "brick/task_scheduler/delayed_task_manager.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 namespace internal {

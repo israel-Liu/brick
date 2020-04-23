@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/rtl.h"
+#include "brick/i18n/rtl.h"
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <algorithm>
 
-#include "base/command_line.h"
-#include "base/files/file_path.h"
-#include "base/i18n/base_i18n_switches.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
-#include "base/strings/sys_string_conversions.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/command_line.h"
+#include "brick/files/file_path.h"
+#include "brick/i18n/base_i18n_switches.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/sys_string_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 #include "third_party/icu/source/common/unicode/locid.h"
 #include "third_party/icu/source/common/unicode/uchar.h"
@@ -25,8 +25,8 @@
 #include "third_party/icu/source/i18n/unicode/coll.h"
 
 #if defined(OS_IOS)
-#include "base/debug/crash_logging.h"
-#include "base/ios/ios_util.h"
+#include "brick/debug/crash_logging.h"
+#include "brick/ios/ios_util.h"
 #endif
 
 namespace {

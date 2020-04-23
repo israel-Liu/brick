@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/incoming_task_queue.h"
+#include "brick/message_loop/incoming_task_queue.h"
 
 #include <limits>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/callback_helpers.h"
-#include "base/location.h"
-#include "base/message_loop/message_loop.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/callback_helpers.h"
+#include "brick/location.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {

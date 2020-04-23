@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/case_conversion.h"
+#include "brick/i18n/case_conversion.h"
 
 #include <stdint.h>
 
-#include "base/numerics/safe_conversions.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_util.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_util.h"
 #include "third_party/icu/source/common/unicode/uchar.h"
 #include "third_party/icu/source/common/unicode/unistr.h"
 #include "third_party/icu/source/common/unicode/ustring.h"

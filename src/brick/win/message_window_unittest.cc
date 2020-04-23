@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/bind.h"
-#include "base/guid.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/win/message_window.h"
+#include "brick/bind.h"
+#include "brick/guid.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/win/message_window.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

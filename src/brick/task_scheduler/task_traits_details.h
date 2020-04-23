@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TASK_TRAITS_DETAILS_H_
-#define BASE_TASK_SCHEDULER_TASK_TRAITS_DETAILS_H_
+#ifndef BRICK_TASK_SCHEDULER_TASK_TRAITS_DETAILS_H_
+#define BRICK_TASK_SCHEDULER_TASK_TRAITS_DETAILS_H_
 
 #include <type_traits>
 #include <utility>
@@ -125,4 +125,4 @@ struct InitTypes {};
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TASK_TRAITS_DETAILS_H_
+#endif  // BRICK_TASK_SCHEDULER_TASK_TRAITS_DETAILS_H_

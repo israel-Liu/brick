@@ -51,22 +51,22 @@
 //       MyTaskRunner, TaskRunnerAffinityTest, MyTaskRunnerTestDelegate);
 
 
-#ifndef BASE_TEST_TASK_RUNNER_TEST_TEMPLATE_H_
-#define BASE_TEST_TASK_RUNNER_TEST_TEMPLATE_H_
+#ifndef BRICK_TEST_TASK_RUNNER_TEST_TEMPLATE_H_
+#define BRICK_TEST_TASK_RUNNER_TEST_TEMPLATE_H_
 
 #include <cstddef>
 #include <map>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/task_runner.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/task_runner.h"
+#include "brick/threading/thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {
@@ -227,4 +227,4 @@ REGISTER_TYPED_TEST_CASE_P(TaskRunnerAffinityTest, RunsTasksInCurrentSequence);
 
 }  // namespace base
 
-#endif  // BASE_TEST_TASK_RUNNER_TEST_TEMPLATE_H_
+#endif  // BRICK_TEST_TASK_RUNNER_TEST_TEMPLATE_H_

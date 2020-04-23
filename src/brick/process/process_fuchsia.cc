@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process.h"
+#include "brick/process/process.h"
 
 #include <zircon/process.h>
 #include <zircon/syscalls.h>
 
-#include "base/debug/activity_tracker.h"
-#include "base/fuchsia/default_job.h"
-#include "base/strings/stringprintf.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/fuchsia/default_job.h"
+#include "brick/strings/stringprintf.h"
 
 namespace base {
 

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_HISTOGRAM_MACROS_H_
-#define BASE_METRICS_HISTOGRAM_MACROS_H_
+#ifndef BRICK_METRICS_HISTOGRAM_MACROS_H_
+#define BRICK_METRICS_HISTOGRAM_MACROS_H_
 
-#include "base/macros.h"
-#include "base/metrics/histogram.h"
-#include "base/metrics/histogram_macros_internal.h"
-#include "base/metrics/histogram_macros_local.h"
-#include "base/time/time.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/histogram_macros_internal.h"
+#include "brick/metrics/histogram_macros_local.h"
+#include "brick/time/time.h"
 
 
 // Macros for efficient use of histograms.
@@ -85,7 +85,7 @@
 // As above but "scaled" count to avoid overflows caused by increments of
 // large amounts. See UMA_HISTOGRAM_SCALED_EXACT_LINEAR for more information.
 // Only the new format utilizing an internal kMaxValue is supported.
-// It'll be necessary to #include "base/lazy_instance.h" to use this macro.
+// It'll be necessary to #include "brick/lazy_instance.h" to use this macro.
 #define UMA_HISTOGRAM_SCALED_ENUMERATION(name, sample, count, scale) \
   INTERNAL_HISTOGRAM_SCALED_ENUMERATION_WITH_FLAG(                   \
       name, sample, count, scale,                                    \
@@ -129,7 +129,7 @@
 // These take |count| and |scale| parameters to allow cumulative reporting of
 // large numbers. Only the scaled count is reported but the reminder is kept so
 // multiple calls will accumulate correctly.  Only "exact linear" is supported.
-// It'll be necessary to #include "base/lazy_instance.h" to use this macro.
+// It'll be necessary to #include "brick/lazy_instance.h" to use this macro.
 
 #define UMA_HISTOGRAM_SCALED_EXACT_LINEAR(name, sample, count, value_max, \
                                           scale)                          \
@@ -379,4 +379,4 @@
         base::CustomHistogram::FactoryGet(name, custom_ranges,                 \
             base::HistogramBase::kUmaTargetedHistogramFlag))
 
-#endif  // BASE_METRICS_HISTOGRAM_MACROS_H_
+#endif  // BRICK_METRICS_HISTOGRAM_MACROS_H_

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_EVENT_MEMORY_OVERHEAD_H_
-#define BASE_TRACE_EVENT_TRACE_EVENT_MEMORY_OVERHEAD_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_EVENT_MEMORY_OVERHEAD_H_
+#define BRICK_TRACE_EVENT_TRACE_EVENT_MEMORY_OVERHEAD_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <unordered_map>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 
@@ -23,7 +23,7 @@ namespace trace_event {
 class ProcessMemoryDump;
 
 // Used to estimate the memory overhead of the tracing infrastructure.
-class BASE_EXPORT TraceEventMemoryOverhead {
+class BRICK_EXPORT TraceEventMemoryOverhead {
  public:
   enum ObjectType : uint32_t {
     kOther = 0,
@@ -92,4 +92,4 @@ class BASE_EXPORT TraceEventMemoryOverhead {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_EVENT_MEMORY_OVERHEAD_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_EVENT_MEMORY_OVERHEAD_H_

@@ -34,7 +34,7 @@ import("//testing/test.gni")
 
 declare_args() {
   # Override this value to give a specific build date.
-  # See //base/build_time.cc and //build/write_build_date_header.py for more
+  # See //brick/build_time.cc and //build/write_build_date_header.py for more
   # details and the expected format.
   override_build_date = "N/A"
 
@@ -75,7 +75,7 @@ config("base_flags") {
   if (is_clang) {
     cflags = [
       # Don't die on dtoa code that uses a char as an array index.
-      # This is required solely for base/third_party/dmg_fp/dtoa_wrapper.cc.
+      # This is required solely for brick/third_party/dmg_fp/dtoa_wrapper.cc.
       "-Wno-char-subscripts",
 
       # Ideally all product code (but no test code) in chrome would have these
@@ -89,7 +89,7 @@ config("base_flags") {
 }
 
 config("base_implementation") {
-  defines = [ "BASE_IMPLEMENTATION" ]
+  defines = [ "BRICK_IMPLEMENTATION" ]
   configs = [ "//build/config/compiler:wexit_time_destructors" ]
 }
 
@@ -128,7 +128,7 @@ if (is_android) {
 # still leaves a lot of code behind that isn't always used. For example, this
 # saves more than 40K for a smaller target like chrome_elf.
 #
-# Use static libraries for the helper stuff as well like //base/debug since
+# Use static libraries for the helper stuff as well like //brick/debug since
 # those things refer back to base code, which will force base compilation units
 # to be linked in where they wouldn't have otherwise. This does not include
 # test code (test support and anything in the test directory) which should use
@@ -1189,9 +1189,9 @@ jumbo_component("base") {
   ]
 
   deps = [
-    "//base/allocator",
-    "//base/allocator:buildflags",
-    "//base/third_party/dynamic_annotations",
+    "//brick/allocator",
+    "//brick/allocator:buildflags",
+    "//brick/third_party/dynamic_annotations",
     "//third_party/modp_b64",
   ]
 
@@ -1204,7 +1204,7 @@ jumbo_component("base") {
     ":partition_alloc_buildflags",
     ":protected_memory_buildflags",
     ":synchronization_buildflags",
-    "//base/numerics:base_numerics",
+    "//brick/numerics:base_numerics",
   ]
 
   # Needed for <atomic> if using newer C++ library than sysroot, except if
@@ -1235,7 +1235,7 @@ jumbo_component("base") {
         "allocator/allocator_shim_default_dispatch_to_tcmalloc.cc",
         "allocator/allocator_shim_override_glibc_weak_symbols.h",
       ]
-      deps += [ "//base/allocator:tcmalloc" ]
+      deps += [ "//brick/allocator:tcmalloc" ]
     } else if (is_linux && use_allocator == "none") {
       sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
     } else if (is_android && use_allocator == "none") {
@@ -1243,7 +1243,7 @@ jumbo_component("base") {
         "allocator/allocator_shim_default_dispatch_to_linker_wrapped_symbols.cc",
         "allocator/allocator_shim_override_linker_wrapped_symbols.h",
       ]
-      all_dependent_configs += [ "//base/allocator:wrap_malloc_symbols" ]
+      all_dependent_configs += [ "//brick/allocator:wrap_malloc_symbols" ]
     } else if (is_mac) {
       sources += [
         "allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.cc",
@@ -1556,8 +1556,8 @@ jumbo_component("base") {
     ]
 
     deps += [
-      "//base/trace_event/etw_manifest:chrome_events_win",
-      "//base/win:base_win_buildflags",
+      "//brick/trace_event/etw_manifest:chrome_events_win",
+      "//brick/win:base_win_buildflags",
     ]
 
     data_deps += [ "//build/win:runtime_libs" ]
@@ -1642,9 +1642,9 @@ jumbo_component("base") {
     # These dependencies are not required on Android, and in the case
     # of xdg_mime must be excluded due to licensing restrictions.
     deps += [
-      "//base/third_party/symbolize",
-      "//base/third_party/xdg_mime",
-      "//base/third_party/xdg_user_dirs",
+      "//brick/third_party/symbolize",
+      "//brick/third_party/xdg_mime",
+      "//brick/third_party/xdg_user_dirs",
     ]
   } else {
     # Non-Linux.
@@ -1737,7 +1737,7 @@ jumbo_component("base") {
   }
 
   if (dep_libevent) {
-    deps += [ "//base/third_party/libevent" ]
+    deps += [ "//brick/third_party/libevent" ]
   }
 
   if (use_libevent) {
@@ -1815,7 +1815,7 @@ buildflag_header("cfi_buildflags") {
 
 buildflag_header("debugging_buildflags") {
   header = "debugging_buildflags.h"
-  header_dir = "base/debug"
+  header_dir = "brick/debug"
 
   # buildflag entries added to this header must also must be manually added to
   # tools/gn/bootstrap/bootstrap.py
@@ -1832,7 +1832,7 @@ buildflag_header("debugging_buildflags") {
 # TODO(vtsyrklevich): Remove once support for gold on Android/CrOs is dropped
 buildflag_header("protected_memory_buildflags") {
   header = "protected_memory_buildflags.h"
-  header_dir = "base/memory"
+  header_dir = "brick/memory"
 
   # buildflag entries added to this header must also must be manually added to
   # tools/gn/bootstrap/bootstrap.py
@@ -1841,7 +1841,7 @@ buildflag_header("protected_memory_buildflags") {
 
 buildflag_header("synchronization_buildflags") {
   header = "synchronization_buildflags.h"
-  header_dir = "base/synchronization"
+  header_dir = "brick/synchronization"
 
   flags =
       [ "ENABLE_MUTEX_PRIORITY_INHERITANCE=$enable_mutex_priority_inheritance" ]
@@ -1849,7 +1849,7 @@ buildflag_header("synchronization_buildflags") {
 
 buildflag_header("anchor_functions_buildflags") {
   header = "anchor_functions_buildflags.h"
-  header_dir = "base/android/library_loader"
+  header_dir = "brick/android/library_loader"
   _supports_code_ordering = current_cpu == "arm"
 
   # buildflag entries added to this header must also must be manually added to
@@ -1878,7 +1878,7 @@ static_library("base_static") {
 
   if (is_win) {
     public_deps = [
-      "//base/win:pe_image",
+      "//brick/win:pe_image",
     ]
 
     # Disable sanitizer coverage in win/pe_image.cc. It is called by the sandbox
@@ -1940,7 +1940,7 @@ component("i18n") {
     "i18n/utf8_validator_tables.cc",
     "i18n/utf8_validator_tables.h",
   ]
-  defines = [ "BASE_I18N_IMPLEMENTATION" ]
+  defines = [ "BRICK_I18N_IMPLEMENTATION" ]
   configs += [ "//build/config/compiler:wexit_time_destructors" ]
   public_deps = [
     "//third_party/ced",
@@ -1948,7 +1948,7 @@ component("i18n") {
   ]
   deps = [
     ":base",
-    "//base/third_party/dynamic_annotations",
+    "//brick/third_party/dynamic_annotations",
   ]
 
   if (!is_debug) {
@@ -1976,8 +1976,8 @@ test("base_perftests") {
   ]
   deps = [
     ":base",
-    "//base/test:test_support",
-    "//base/test:test_support_perf",
+    "//brick/test:test_support",
+    "//brick/test:test_support_perf",
     "//testing/gtest",
     "//testing/perf",
   ]
@@ -1994,8 +1994,8 @@ test("base_i18n_perftests") {
   deps = [
     ":base",
     ":i18n",
-    "//base/test:test_support",
-    "//base/test:test_support_perf",
+    "//brick/test:test_support",
+    "//brick/test:test_support_perf",
     "//testing/gtest",
   ]
 }
@@ -2025,7 +2025,7 @@ if (!is_ios) {
 
 if (is_win) {
   # Target to manually rebuild pe_image_test.dll which is checked into
-  # base/test/data/pe_image.
+  # brick/test/data/pe_image.
   shared_library("pe_image_test") {
     sources = [
       "win/pe_image_test.cc",
@@ -2047,7 +2047,7 @@ if (is_win) {
     ]
     deps = [
       ":base",
-      "//base/win:base_win_buildflags",
+      "//brick/win:base_win_buildflags",
     ]
   }
 }
@@ -2115,7 +2115,7 @@ if (is_ios || is_mac) {
 if (is_fuchsia) {
   fidl_library("test_fidl") {
     namespace = "base.fuchsia"
-    namespace_path = "base/fuchsia"
+    namespace_path = "brick/fuchsia"
 
     sources = [
       "fuchsia/test.fidl",
@@ -2453,19 +2453,19 @@ test("base_unittests") {
   deps = [
     ":base",
     ":i18n",
-    "//base/allocator:buildflags",
-    "//base/test:native_library_test_utils",
-    "//base/test:run_all_base_unittests",
-    "//base/test:test_support",
-    "//base/third_party/dynamic_annotations",
+    "//brick/allocator:buildflags",
+    "//brick/test:native_library_test_utils",
+    "//brick/test:run_all_base_unittests",
+    "//brick/test:test_support",
+    "//brick/third_party/dynamic_annotations",
     "//testing/gmock",
     "//testing/gtest",
     "//third_party/icu",
   ]
 
   data_deps = [
-    "//base/test:test_child_process",
-    "//base/test:test_shared_library",
+    "//brick/test:test_child_process",
+    "//brick/test:test_shared_library",
   ]
 
   if (is_ios || is_mac) {
@@ -2520,7 +2520,7 @@ test("base_unittests") {
     deps += [
       ":base_java",
       ":base_java_unittest_support",
-      "//base/test:test_support_java",
+      "//brick/test:test_support_java",
     ]
   }
 
@@ -2575,7 +2575,7 @@ test("base_unittests") {
       sources += [ "nix/xdg_util_unittest.cc" ]
     }
 
-    deps += [ "//base/test:malloc_wrapper" ]
+    deps += [ "//brick/test:malloc_wrapper" ]
     defines += [
       # This library is used by ElfReaderTest to test reading elf files.
       "MALLOC_WRAPPER_LIB=\"${shlib_prefix}malloc_wrapper${shlib_extension}\"",
@@ -2593,7 +2593,7 @@ test("base_unittests") {
 
   if (use_libevent) {
     sources += [ "message_loop/message_pump_libevent_unittest.cc" ]
-    deps += [ "//base/third_party/libevent" ]
+    deps += [ "//brick/third_party/libevent" ]
   }
 
   if (is_fuchsia) {
@@ -2703,7 +2703,7 @@ if (enable_nocompile_tests) {
 
     deps = [
       ":base",
-      "//base/test:run_all_unittests",
+      "//brick/test:run_all_unittests",
       "//testing/gtest",
     ]
   }
@@ -2712,39 +2712,39 @@ if (enable_nocompile_tests) {
 if (is_android) {
   generate_jni("base_jni_headers") {
     sources = [
-      "android/java/src/org/chromium/base/AnimationFrameTimeHistogram.java",
-      "android/java/src/org/chromium/base/ApkAssets.java",
-      "android/java/src/org/chromium/base/ApplicationStatus.java",
-      "android/java/src/org/chromium/base/BuildInfo.java",
-      "android/java/src/org/chromium/base/Callback.java",
-      "android/java/src/org/chromium/base/CommandLine.java",
-      "android/java/src/org/chromium/base/ContentUriUtils.java",
-      "android/java/src/org/chromium/base/CpuFeatures.java",
-      "android/java/src/org/chromium/base/EarlyTraceEvent.java",
-      "android/java/src/org/chromium/base/EventLog.java",
-      "android/java/src/org/chromium/base/FieldTrialList.java",
-      "android/java/src/org/chromium/base/ImportantFileWriterAndroid.java",
-      "android/java/src/org/chromium/base/JNIUtils.java",
-      "android/java/src/org/chromium/base/JavaExceptionReporter.java",
-      "android/java/src/org/chromium/base/JavaHandlerThread.java",
-      "android/java/src/org/chromium/base/LocaleUtils.java",
-      "android/java/src/org/chromium/base/MemoryPressureListener.java",
-      "android/java/src/org/chromium/base/PathService.java",
-      "android/java/src/org/chromium/base/PathUtils.java",
-      "android/java/src/org/chromium/base/PowerMonitor.java",
-      "android/java/src/org/chromium/base/SysUtils.java",
-      "android/java/src/org/chromium/base/SystemMessageHandler.java",
-      "android/java/src/org/chromium/base/ThreadUtils.java",
-      "android/java/src/org/chromium/base/ThrowUncaughtException.java",
-      "android/java/src/org/chromium/base/TimeUtils.java",
-      "android/java/src/org/chromium/base/TimezoneUtils.java",
-      "android/java/src/org/chromium/base/TraceEvent.java",
-      "android/java/src/org/chromium/base/UnguessableToken.java",
-      "android/java/src/org/chromium/base/library_loader/LibraryLoader.java",
-      "android/java/src/org/chromium/base/metrics/RecordHistogram.java",
-      "android/java/src/org/chromium/base/metrics/RecordUserAction.java",
-      "android/java/src/org/chromium/base/metrics/StatisticsRecorderAndroid.java",
-      "android/java/src/org/chromium/base/process_launcher/ChildProcessService.java",
+      "android/java/src/org/chromium/brick/AnimationFrameTimeHistogram.java",
+      "android/java/src/org/chromium/brick/ApkAssets.java",
+      "android/java/src/org/chromium/brick/ApplicationStatus.java",
+      "android/java/src/org/chromium/brick/BuildInfo.java",
+      "android/java/src/org/chromium/brick/Callback.java",
+      "android/java/src/org/chromium/brick/CommandLine.java",
+      "android/java/src/org/chromium/brick/ContentUriUtils.java",
+      "android/java/src/org/chromium/brick/CpuFeatures.java",
+      "android/java/src/org/chromium/brick/EarlyTraceEvent.java",
+      "android/java/src/org/chromium/brick/EventLog.java",
+      "android/java/src/org/chromium/brick/FieldTrialList.java",
+      "android/java/src/org/chromium/brick/ImportantFileWriterAndroid.java",
+      "android/java/src/org/chromium/brick/JNIUtils.java",
+      "android/java/src/org/chromium/brick/JavaExceptionReporter.java",
+      "android/java/src/org/chromium/brick/JavaHandlerThread.java",
+      "android/java/src/org/chromium/brick/LocaleUtils.java",
+      "android/java/src/org/chromium/brick/MemoryPressureListener.java",
+      "android/java/src/org/chromium/brick/PathService.java",
+      "android/java/src/org/chromium/brick/PathUtils.java",
+      "android/java/src/org/chromium/brick/PowerMonitor.java",
+      "android/java/src/org/chromium/brick/SysUtils.java",
+      "android/java/src/org/chromium/brick/SystemMessageHandler.java",
+      "android/java/src/org/chromium/brick/ThreadUtils.java",
+      "android/java/src/org/chromium/brick/ThrowUncaughtException.java",
+      "android/java/src/org/chromium/brick/TimeUtils.java",
+      "android/java/src/org/chromium/brick/TimezoneUtils.java",
+      "android/java/src/org/chromium/brick/TraceEvent.java",
+      "android/java/src/org/chromium/brick/UnguessableToken.java",
+      "android/java/src/org/chromium/brick/library_loader/LibraryLoader.java",
+      "android/java/src/org/chromium/brick/metrics/RecordHistogram.java",
+      "android/java/src/org/chromium/brick/metrics/RecordUserAction.java",
+      "android/java/src/org/chromium/brick/metrics/StatisticsRecorderAndroid.java",
+      "android/java/src/org/chromium/brick/process_launcher/ChildProcessService.java",
     ]
 
     public_deps = [
@@ -2775,84 +2775,84 @@ if (is_android) {
     ]
 
     java_files = [
-      "android/java/src/org/chromium/base/ActivityState.java",
-      "android/java/src/org/chromium/base/AnimationFrameTimeHistogram.java",
-      "android/java/src/org/chromium/base/ApiCompatibilityUtils.java",
-      "android/java/src/org/chromium/base/ApkAssets.java",
-      "android/java/src/org/chromium/base/ApplicationStatus.java",
-      "android/java/src/org/chromium/base/BaseSwitches.java",
-      "android/java/src/org/chromium/base/BuildInfo.java",
-      "android/java/src/org/chromium/base/Callback.java",
-      "android/java/src/org/chromium/base/CollectionUtil.java",
-      "android/java/src/org/chromium/base/CommandLine.java",
-      "android/java/src/org/chromium/base/CommandLineInitUtil.java",
-      "android/java/src/org/chromium/base/ContentUriUtils.java",
-      "android/java/src/org/chromium/base/ContextUtils.java",
-      "android/java/src/org/chromium/base/CpuFeatures.java",
-      "android/java/src/org/chromium/base/DiscardableReferencePool.java",
-      "android/java/src/org/chromium/base/EarlyTraceEvent.java",
-      "android/java/src/org/chromium/base/EventLog.java",
-      "android/java/src/org/chromium/base/FieldTrialList.java",
-      "android/java/src/org/chromium/base/FileUtils.java",
-      "android/java/src/org/chromium/base/ImportantFileWriterAndroid.java",
-      "android/java/src/org/chromium/base/JNIUtils.java",
-      "android/java/src/org/chromium/base/JavaExceptionReporter.java",
-      "android/java/src/org/chromium/base/JavaHandlerThread.java",
-      "android/java/src/org/chromium/base/LocaleUtils.java",
-      "android/java/src/org/chromium/base/Log.java",
-      "android/java/src/org/chromium/base/MemoryPressureListener.java",
-      "android/java/src/org/chromium/base/NonThreadSafe.java",
-      "android/java/src/org/chromium/base/ObserverList.java",
-      "android/java/src/org/chromium/base/PackageUtils.java",
-      "android/java/src/org/chromium/base/PathService.java",
-      "android/java/src/org/chromium/base/PathUtils.java",
-      "android/java/src/org/chromium/base/PowerMonitor.java",
-      "android/java/src/org/chromium/base/Promise.java",
-      "android/java/src/org/chromium/base/ResourceExtractor.java",
-      "android/java/src/org/chromium/base/SecureRandomInitializer.java",
-      "android/java/src/org/chromium/base/StreamUtil.java",
-      "android/java/src/org/chromium/base/StrictModeContext.java",
-      "android/java/src/org/chromium/base/Supplier.java",
-      "android/java/src/org/chromium/base/SysUtils.java",
-      "android/java/src/org/chromium/base/SystemMessageHandler.java",
-      "android/java/src/org/chromium/base/ThreadUtils.java",
-      "android/java/src/org/chromium/base/ThrowUncaughtException.java",
-      "android/java/src/org/chromium/base/TimeUtils.java",
-      "android/java/src/org/chromium/base/TimezoneUtils.java",
-      "android/java/src/org/chromium/base/TraceEvent.java",
-      "android/java/src/org/chromium/base/UnguessableToken.java",
-      "android/java/src/org/chromium/base/VisibleForTesting.java",
-      "android/java/src/org/chromium/base/annotations/AccessedByNative.java",
-      "android/java/src/org/chromium/base/annotations/CalledByNative.java",
-      "android/java/src/org/chromium/base/annotations/CalledByNativeUnchecked.java",
-      "android/java/src/org/chromium/base/annotations/JNIAdditionalImport.java",
-      "android/java/src/org/chromium/base/annotations/JNINamespace.java",
-      "android/java/src/org/chromium/base/annotations/MainDex.java",
-      "android/java/src/org/chromium/base/annotations/NativeCall.java",
-      "android/java/src/org/chromium/base/annotations/NativeClassQualifiedName.java",
-      "android/java/src/org/chromium/base/annotations/RemovableInRelease.java",
-      "android/java/src/org/chromium/base/annotations/UsedByReflection.java",
-      "android/java/src/org/chromium/base/library_loader/LegacyLinker.java",
-      "android/java/src/org/chromium/base/library_loader/LibraryLoader.java",
-      "android/java/src/org/chromium/base/library_loader/Linker.java",
-      "android/java/src/org/chromium/base/library_loader/LoaderErrors.java",
-      "android/java/src/org/chromium/base/library_loader/NativeLibraryPreloader.java",
-      "android/java/src/org/chromium/base/library_loader/ProcessInitException.java",
-      "android/java/src/org/chromium/base/metrics/CachedMetrics.java",
-      "android/java/src/org/chromium/base/metrics/RecordHistogram.java",
-      "android/java/src/org/chromium/base/metrics/RecordUserAction.java",
-      "android/java/src/org/chromium/base/metrics/StatisticsRecorderAndroid.java",
-      "android/java/src/org/chromium/base/multidex/ChromiumMultiDexInstaller.java",
-      "android/java/src/org/chromium/base/process_launcher/ChildConnectionAllocator.java",
-      "android/java/src/org/chromium/base/process_launcher/ChildProcessConnection.java",
-      "android/java/src/org/chromium/base/process_launcher/ChildProcessConstants.java",
-      "android/java/src/org/chromium/base/process_launcher/ChildProcessLauncher.java",
-      "android/java/src/org/chromium/base/process_launcher/ChildProcessService.java",
-      "android/java/src/org/chromium/base/process_launcher/ChildProcessServiceDelegate.java",
-      "android/java/src/org/chromium/base/process_launcher/FileDescriptorInfo.java",
-      "android/java/src/org/chromium/base/memory/MemoryPressureMonitor.java",
-      "android/java/src/org/chromium/base/memory/MemoryPressureCallback.java",
-      "android/java/src/org/chromium/base/memory/MemoryPressureUma.java",
+      "android/java/src/org/chromium/brick/ActivityState.java",
+      "android/java/src/org/chromium/brick/AnimationFrameTimeHistogram.java",
+      "android/java/src/org/chromium/brick/ApiCompatibilityUtils.java",
+      "android/java/src/org/chromium/brick/ApkAssets.java",
+      "android/java/src/org/chromium/brick/ApplicationStatus.java",
+      "android/java/src/org/chromium/brick/BaseSwitches.java",
+      "android/java/src/org/chromium/brick/BuildInfo.java",
+      "android/java/src/org/chromium/brick/Callback.java",
+      "android/java/src/org/chromium/brick/CollectionUtil.java",
+      "android/java/src/org/chromium/brick/CommandLine.java",
+      "android/java/src/org/chromium/brick/CommandLineInitUtil.java",
+      "android/java/src/org/chromium/brick/ContentUriUtils.java",
+      "android/java/src/org/chromium/brick/ContextUtils.java",
+      "android/java/src/org/chromium/brick/CpuFeatures.java",
+      "android/java/src/org/chromium/brick/DiscardableReferencePool.java",
+      "android/java/src/org/chromium/brick/EarlyTraceEvent.java",
+      "android/java/src/org/chromium/brick/EventLog.java",
+      "android/java/src/org/chromium/brick/FieldTrialList.java",
+      "android/java/src/org/chromium/brick/FileUtils.java",
+      "android/java/src/org/chromium/brick/ImportantFileWriterAndroid.java",
+      "android/java/src/org/chromium/brick/JNIUtils.java",
+      "android/java/src/org/chromium/brick/JavaExceptionReporter.java",
+      "android/java/src/org/chromium/brick/JavaHandlerThread.java",
+      "android/java/src/org/chromium/brick/LocaleUtils.java",
+      "android/java/src/org/chromium/brick/Log.java",
+      "android/java/src/org/chromium/brick/MemoryPressureListener.java",
+      "android/java/src/org/chromium/brick/NonThreadSafe.java",
+      "android/java/src/org/chromium/brick/ObserverList.java",
+      "android/java/src/org/chromium/brick/PackageUtils.java",
+      "android/java/src/org/chromium/brick/PathService.java",
+      "android/java/src/org/chromium/brick/PathUtils.java",
+      "android/java/src/org/chromium/brick/PowerMonitor.java",
+      "android/java/src/org/chromium/brick/Promise.java",
+      "android/java/src/org/chromium/brick/ResourceExtractor.java",
+      "android/java/src/org/chromium/brick/SecureRandomInitializer.java",
+      "android/java/src/org/chromium/brick/StreamUtil.java",
+      "android/java/src/org/chromium/brick/StrictModeContext.java",
+      "android/java/src/org/chromium/brick/Supplier.java",
+      "android/java/src/org/chromium/brick/SysUtils.java",
+      "android/java/src/org/chromium/brick/SystemMessageHandler.java",
+      "android/java/src/org/chromium/brick/ThreadUtils.java",
+      "android/java/src/org/chromium/brick/ThrowUncaughtException.java",
+      "android/java/src/org/chromium/brick/TimeUtils.java",
+      "android/java/src/org/chromium/brick/TimezoneUtils.java",
+      "android/java/src/org/chromium/brick/TraceEvent.java",
+      "android/java/src/org/chromium/brick/UnguessableToken.java",
+      "android/java/src/org/chromium/brick/VisibleForTesting.java",
+      "android/java/src/org/chromium/brick/annotations/AccessedByNative.java",
+      "android/java/src/org/chromium/brick/annotations/CalledByNative.java",
+      "android/java/src/org/chromium/brick/annotations/CalledByNativeUnchecked.java",
+      "android/java/src/org/chromium/brick/annotations/JNIAdditionalImport.java",
+      "android/java/src/org/chromium/brick/annotations/JNINamespace.java",
+      "android/java/src/org/chromium/brick/annotations/MainDex.java",
+      "android/java/src/org/chromium/brick/annotations/NativeCall.java",
+      "android/java/src/org/chromium/brick/annotations/NativeClassQualifiedName.java",
+      "android/java/src/org/chromium/brick/annotations/RemovableInRelease.java",
+      "android/java/src/org/chromium/brick/annotations/UsedByReflection.java",
+      "android/java/src/org/chromium/brick/library_loader/LegacyLinker.java",
+      "android/java/src/org/chromium/brick/library_loader/LibraryLoader.java",
+      "android/java/src/org/chromium/brick/library_loader/Linker.java",
+      "android/java/src/org/chromium/brick/library_loader/LoaderErrors.java",
+      "android/java/src/org/chromium/brick/library_loader/NativeLibraryPreloader.java",
+      "android/java/src/org/chromium/brick/library_loader/ProcessInitException.java",
+      "android/java/src/org/chromium/brick/metrics/CachedMetrics.java",
+      "android/java/src/org/chromium/brick/metrics/RecordHistogram.java",
+      "android/java/src/org/chromium/brick/metrics/RecordUserAction.java",
+      "android/java/src/org/chromium/brick/metrics/StatisticsRecorderAndroid.java",
+      "android/java/src/org/chromium/brick/multidex/ChromiumMultiDexInstaller.java",
+      "android/java/src/org/chromium/brick/process_launcher/ChildConnectionAllocator.java",
+      "android/java/src/org/chromium/brick/process_launcher/ChildProcessConnection.java",
+      "android/java/src/org/chromium/brick/process_launcher/ChildProcessConstants.java",
+      "android/java/src/org/chromium/brick/process_launcher/ChildProcessLauncher.java",
+      "android/java/src/org/chromium/brick/process_launcher/ChildProcessService.java",
+      "android/java/src/org/chromium/brick/process_launcher/ChildProcessServiceDelegate.java",
+      "android/java/src/org/chromium/brick/process_launcher/FileDescriptorInfo.java",
+      "android/java/src/org/chromium/brick/memory/MemoryPressureMonitor.java",
+      "android/java/src/org/chromium/brick/memory/MemoryPressureCallback.java",
+      "android/java/src/org/chromium/brick/memory/MemoryPressureUma.java",
     ]
 
     # New versions of BuildConfig.java and NativeLibraries.java
@@ -2867,8 +2867,8 @@ if (is_android) {
   android_aidl("base_java_aidl") {
     import_include = [ "android/java/src" ]
     sources = [
-      "android/java/src/org/chromium/base/process_launcher/ICallbackInt.aidl",
-      "android/java/src/org/chromium/base/process_launcher/IChildProcessService.aidl",
+      "android/java/src/org/chromium/brick/process_launcher/ICallbackInt.aidl",
+      "android/java/src/org/chromium/brick/process_launcher/IChildProcessService.aidl",
     ]
   }
 
@@ -2881,17 +2881,17 @@ if (is_android) {
       "//third_party/junit:junit",
     ]
     java_files = [
-      "android/javatests/src/org/chromium/base/AdvancedMockContextTest.java",
-      "android/javatests/src/org/chromium/base/ApiCompatibilityUtilsTest.java",
-      "android/javatests/src/org/chromium/base/CommandLineInitUtilTest.java",
-      "android/javatests/src/org/chromium/base/CommandLineTest.java",
-      "android/javatests/src/org/chromium/base/EarlyTraceEventTest.java",
+      "android/javatests/src/org/chromium/brick/AdvancedMockContextTest.java",
+      "android/javatests/src/org/chromium/brick/ApiCompatibilityUtilsTest.java",
+      "android/javatests/src/org/chromium/brick/CommandLineInitUtilTest.java",
+      "android/javatests/src/org/chromium/brick/CommandLineTest.java",
+      "android/javatests/src/org/chromium/brick/EarlyTraceEventTest.java",
 
       # TODO(nona): move to Junit once that is built for Android N.
-      "android/javatests/src/org/chromium/base/LocaleUtilsTest.java",
-      "android/javatests/src/org/chromium/base/ObserverListTest.java",
-      "android/javatests/src/org/chromium/base/StrictModeContextTest.java",
-      "android/javatests/src/org/chromium/base/metrics/RecordHistogramTest.java",
+      "android/javatests/src/org/chromium/brick/LocaleUtilsTest.java",
+      "android/javatests/src/org/chromium/brick/ObserverListTest.java",
+      "android/javatests/src/org/chromium/brick/StrictModeContextTest.java",
+      "android/javatests/src/org/chromium/brick/metrics/RecordHistogramTest.java",
     ]
   }
 
@@ -2914,58 +2914,58 @@ if (is_android) {
     deps += android_extra_test_deps
 
     java_files = [
-      "test/android/javatests/src/org/chromium/base/test/BaseJUnit4ClassRunner.java",
-      "test/android/javatests/src/org/chromium/base/test/BaseChromiumAndroidJUnitRunner.java",
-      "test/android/javatests/src/org/chromium/base/test/BaseChromiumRunnerCommon.java",
-      "test/android/javatests/src/org/chromium/base/test/BaseTestResult.java",
-      "test/android/javatests/src/org/chromium/base/test/ScreenshotOnFailureStatement.java",
-      "test/android/javatests/src/org/chromium/base/test/SetUpTestRule.java",
-      "test/android/javatests/src/org/chromium/base/test/SetUpStatement.java",
-      "test/android/javatests/src/org/chromium/base/test/TestListInstrumentationRunListener.java",
-      "test/android/javatests/src/org/chromium/base/test/TestTraceEvent.java",
-      "test/android/javatests/src/org/chromium/base/test/params/ParameterizedRunner.java",
-      "test/android/javatests/src/org/chromium/base/test/params/BlockJUnit4RunnerDelegate.java",
-      "test/android/javatests/src/org/chromium/base/test/params/BaseJUnit4RunnerDelegate.java",
-      "test/android/javatests/src/org/chromium/base/test/params/MethodParamAnnotationRule.java",
-      "test/android/javatests/src/org/chromium/base/test/params/MethodParamRule.java",
-      "test/android/javatests/src/org/chromium/base/test/params/ParameterAnnotations.java",
-      "test/android/javatests/src/org/chromium/base/test/params/ParameterizedFrameworkMethod.java",
-      "test/android/javatests/src/org/chromium/base/test/params/ParameterizedRunnerDelegate.java",
-      "test/android/javatests/src/org/chromium/base/test/params/ParameterizedRunnerDelegateCommon.java",
-      "test/android/javatests/src/org/chromium/base/test/params/ParameterizedRunnerDelegateFactory.java",
-      "test/android/javatests/src/org/chromium/base/test/params/ParameterProvider.java",
-      "test/android/javatests/src/org/chromium/base/test/params/ParameterSet.java",
-      "test/android/javatests/src/org/chromium/base/test/util/AdvancedMockContext.java",
-      "test/android/javatests/src/org/chromium/base/test/util/AnnotationRule.java",
-      "test/android/javatests/src/org/chromium/base/test/util/CallbackHelper.java",
-      "test/android/javatests/src/org/chromium/base/test/util/CommandLineFlags.java",
-      "test/android/javatests/src/org/chromium/base/test/util/DisableIf.java",
-      "test/android/javatests/src/org/chromium/base/test/util/DisableIfSkipCheck.java",
-      "test/android/javatests/src/org/chromium/base/test/util/AnnotationProcessingUtils.java",
-      "test/android/javatests/src/org/chromium/base/test/util/DisabledTest.java",
-      "test/android/javatests/src/org/chromium/base/test/util/EnormousTest.java",
-      "test/android/javatests/src/org/chromium/base/test/util/Feature.java",
-      "test/android/javatests/src/org/chromium/base/test/util/FlakyTest.java",
-      "test/android/javatests/src/org/chromium/base/test/util/InMemorySharedPreferences.java",
-      "test/android/javatests/src/org/chromium/base/test/util/InstrumentationUtils.java",
-      "test/android/javatests/src/org/chromium/base/test/util/IntegrationTest.java",
-      "test/android/javatests/src/org/chromium/base/test/util/Manual.java",
-      "test/android/javatests/src/org/chromium/base/test/util/Matchers.java",
-      "test/android/javatests/src/org/chromium/base/test/util/MetricsUtils.java",
-      "test/android/javatests/src/org/chromium/base/test/util/MinAndroidSdkLevel.java",
-      "test/android/javatests/src/org/chromium/base/test/util/MinAndroidSdkLevelSkipCheck.java",
-      "test/android/javatests/src/org/chromium/base/test/util/Restriction.java",
-      "test/android/javatests/src/org/chromium/base/test/util/RestrictionSkipCheck.java",
-      "test/android/javatests/src/org/chromium/base/test/util/RetryOnFailure.java",
-      "test/android/javatests/src/org/chromium/base/test/util/ScalableTimeout.java",
-      "test/android/javatests/src/org/chromium/base/test/util/SkipCheck.java",
-      "test/android/javatests/src/org/chromium/base/test/util/TestFileUtil.java",
-      "test/android/javatests/src/org/chromium/base/test/util/TestThread.java",
-      "test/android/javatests/src/org/chromium/base/test/util/TimeoutScale.java",
-      "test/android/javatests/src/org/chromium/base/test/util/UserActionTester.java",
-      "test/android/javatests/src/org/chromium/base/test/util/UrlUtils.java",
-      "test/android/javatests/src/org/chromium/base/test/util/parameter/CommandLineParameter.java",
-      "test/android/javatests/src/org/chromium/base/test/util/parameter/SkipCommandLineParameterization.java",
+      "test/android/javatests/src/org/chromium/brick/test/BaseJUnit4ClassRunner.java",
+      "test/android/javatests/src/org/chromium/brick/test/BaseChromiumAndroidJUnitRunner.java",
+      "test/android/javatests/src/org/chromium/brick/test/BaseChromiumRunnerCommon.java",
+      "test/android/javatests/src/org/chromium/brick/test/BaseTestResult.java",
+      "test/android/javatests/src/org/chromium/brick/test/ScreenshotOnFailureStatement.java",
+      "test/android/javatests/src/org/chromium/brick/test/SetUpTestRule.java",
+      "test/android/javatests/src/org/chromium/brick/test/SetUpStatement.java",
+      "test/android/javatests/src/org/chromium/brick/test/TestListInstrumentationRunListener.java",
+      "test/android/javatests/src/org/chromium/brick/test/TestTraceEvent.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/ParameterizedRunner.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/BlockJUnit4RunnerDelegate.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/BaseJUnit4RunnerDelegate.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/MethodParamAnnotationRule.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/MethodParamRule.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/ParameterAnnotations.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/ParameterizedFrameworkMethod.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/ParameterizedRunnerDelegate.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/ParameterizedRunnerDelegateCommon.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/ParameterizedRunnerDelegateFactory.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/ParameterProvider.java",
+      "test/android/javatests/src/org/chromium/brick/test/params/ParameterSet.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/AdvancedMockContext.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/AnnotationRule.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/CallbackHelper.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/CommandLineFlags.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/DisableIf.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/DisableIfSkipCheck.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/AnnotationProcessingUtils.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/DisabledTest.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/EnormousTest.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/Feature.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/FlakyTest.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/InMemorySharedPreferences.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/InstrumentationUtils.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/IntegrationTest.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/Manual.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/Matchers.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/MetricsUtils.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/MinAndroidSdkLevel.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/MinAndroidSdkLevelSkipCheck.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/Restriction.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/RestrictionSkipCheck.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/RetryOnFailure.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/ScalableTimeout.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/SkipCheck.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/TestFileUtil.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/TestThread.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/TimeoutScale.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/UserActionTester.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/UrlUtils.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/parameter/CommandLineParameter.java",
+      "test/android/javatests/src/org/chromium/brick/test/util/parameter/SkipCommandLineParameterization.java",
     ]
   }
 
@@ -2975,7 +2975,7 @@ if (is_android) {
       ":base_java",
       ":base_java_test_support",
     ]
-    java_files = [ "test/android/javatests/src/org/chromium/base/test/TestChildProcessConnection.java" ]
+    java_files = [ "test/android/javatests/src/org/chromium/brick/test/TestChildProcessConnection.java" ]
   }
 
   android_library("base_junit_test_support") {
@@ -2983,9 +2983,9 @@ if (is_android) {
     bypass_platform_checks = true
     testonly = true
     java_files = [
-      "android/junit/src/org/chromium/base/metrics/test/ShadowRecordHistogram.java",
-      "test/android/junit/src/org/chromium/base/test/BaseRobolectricTestRunner.java",
-      "test/android/junit/src/org/chromium/base/test/util/TestRunnerTestRule.java",
+      "android/junit/src/org/chromium/brick/metrics/test/ShadowRecordHistogram.java",
+      "test/android/junit/src/org/chromium/brick/test/BaseRobolectricTestRunner.java",
+      "test/android/junit/src/org/chromium/brick/test/util/TestRunnerTestRule.java",
     ]
     deps = [
       ":base_java",
@@ -2997,26 +2997,26 @@ if (is_android) {
 
   junit_binary("base_junit_tests") {
     java_files = [
-      "android/junit/src/org/chromium/base/ApplicationStatusTest.java",
-      "android/junit/src/org/chromium/base/DiscardableReferencePoolTest.java",
-      "android/junit/src/org/chromium/base/LogTest.java",
-      "android/junit/src/org/chromium/base/NonThreadSafeTest.java",
-      "android/junit/src/org/chromium/base/PromiseTest.java",
-      "android/junit/src/org/chromium/base/memory/MemoryPressureMonitorTest.java",
-      "android/junit/src/org/chromium/base/process_launcher/ChildConnectionAllocatorTest.java",
-      "android/junit/src/org/chromium/base/process_launcher/ChildProcessConnectionTest.java",
-      "test/android/junit/src/org/chromium/base/test/SetUpStatementTest.java",
-      "test/android/junit/src/org/chromium/base/test/TestListInstrumentationRunListenerTest.java",
-      "test/android/junit/src/org/chromium/base/test/util/AnnotationProcessingUtilsTest.java",
-      "test/android/junit/src/org/chromium/base/test/util/DisableIfTest.java",
-      "test/android/junit/src/org/chromium/base/test/util/MinAndroidSdkLevelSkipCheckTest.java",
-      "test/android/junit/src/org/chromium/base/test/util/RestrictionSkipCheckTest.java",
-      "test/android/junit/src/org/chromium/base/test/util/SkipCheckTest.java",
-      "test/android/junit/src/org/chromium/base/test/params/ExampleParameterizedTest.java",
-      "test/android/junit/src/org/chromium/base/test/params/ParameterizedRunnerTest.java",
-      "test/android/junit/src/org/chromium/base/test/params/ParameterizedRunnerDelegateCommonTest.java",
-      "test/android/junit/src/org/chromium/base/test/params/ParameterizedRunnerDelegateFactoryTest.java",
-      "test/android/junit/src/org/chromium/base/test/params/ParameterizedTestNameTest.java",
+      "android/junit/src/org/chromium/brick/ApplicationStatusTest.java",
+      "android/junit/src/org/chromium/brick/DiscardableReferencePoolTest.java",
+      "android/junit/src/org/chromium/brick/LogTest.java",
+      "android/junit/src/org/chromium/brick/NonThreadSafeTest.java",
+      "android/junit/src/org/chromium/brick/PromiseTest.java",
+      "android/junit/src/org/chromium/brick/memory/MemoryPressureMonitorTest.java",
+      "android/junit/src/org/chromium/brick/process_launcher/ChildConnectionAllocatorTest.java",
+      "android/junit/src/org/chromium/brick/process_launcher/ChildProcessConnectionTest.java",
+      "test/android/junit/src/org/chromium/brick/test/SetUpStatementTest.java",
+      "test/android/junit/src/org/chromium/brick/test/TestListInstrumentationRunListenerTest.java",
+      "test/android/junit/src/org/chromium/brick/test/util/AnnotationProcessingUtilsTest.java",
+      "test/android/junit/src/org/chromium/brick/test/util/DisableIfTest.java",
+      "test/android/junit/src/org/chromium/brick/test/util/MinAndroidSdkLevelSkipCheckTest.java",
+      "test/android/junit/src/org/chromium/brick/test/util/RestrictionSkipCheckTest.java",
+      "test/android/junit/src/org/chromium/brick/test/util/SkipCheckTest.java",
+      "test/android/junit/src/org/chromium/brick/test/params/ExampleParameterizedTest.java",
+      "test/android/junit/src/org/chromium/brick/test/params/ParameterizedRunnerTest.java",
+      "test/android/junit/src/org/chromium/brick/test/params/ParameterizedRunnerDelegateCommonTest.java",
+      "test/android/junit/src/org/chromium/brick/test/params/ParameterizedRunnerDelegateFactoryTest.java",
+      "test/android/junit/src/org/chromium/brick/test/params/ParameterizedTestNameTest.java",
     ]
     deps = [
       ":base_java",
@@ -3046,7 +3046,7 @@ if (is_android) {
     sources = [
       "android/java/templates/NativeLibraries.template",
     ]
-    package_path = "org/chromium/base/library_loader"
+    package_path = "org/chromium/brick/library_loader"
   }
 
   android_library("base_java_unittest_support") {
@@ -3055,8 +3055,8 @@ if (is_android) {
       ":base_java",
     ]
     java_files = [
-      "test/android/java/src/org/chromium/base/ContentUriTestUtils.java",
-      "test/android/java/src/org/chromium/base/JavaHandlerThreadHelpers.java",
+      "test/android/java/src/org/chromium/brick/ContentUriTestUtils.java",
+      "test/android/java/src/org/chromium/brick/JavaHandlerThreadHelpers.java",
     ]
   }
 }

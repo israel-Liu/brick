@@ -4,8 +4,8 @@
 
 // This file contains functions for launching subprocesses.
 
-#ifndef BASE_PROCESS_LAUNCH_H_
-#define BASE_PROCESS_LAUNCH_H_
+#ifndef BRICK_PROCESS_LAUNCH_H_
+#define BRICK_PROCESS_LAUNCH_H_
 
 #include <stddef.h>
 
@@ -13,12 +13,12 @@
 #include <utility>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/environment.h"
-#include "base/macros.h"
-#include "base/process/process.h"
-#include "base/process/process_handle.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/environment.h"
+#include "brick/macros.h"
+#include "brick/process/process.h"
+#include "brick/process/process_handle.h"
+#include "brick/strings/string_piece.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -29,7 +29,7 @@
 #endif
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
-#include "base/posix/file_descriptor_shuffle.h"
+#include "brick/posix/file_descriptor_shuffle.h"
 #endif
 
 namespace base {
@@ -51,11 +51,11 @@ typedef std::vector<std::pair<int, int>> FileHandleMappingVector;
 
 // Options for launching a subprocess that are passed to LaunchProcess().
 // The default constructor constructs the object with default options.
-struct BASE_EXPORT LaunchOptions {
+struct BRICK_EXPORT LaunchOptions {
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
   // Delegate to be run in between fork and exec in the subprocess (see
   // pre_exec_delegate below)
-  class BASE_EXPORT PreExecDelegate {
+  class BRICK_EXPORT PreExecDelegate {
    public:
     PreExecDelegate() = default;
     virtual ~PreExecDelegate() = default;
@@ -252,7 +252,7 @@ struct BASE_EXPORT LaunchOptions {
 //   parent's stdout and stderr.
 // - If the first argument on the command line does not contain a slash,
 //   PATH will be searched.  (See man execvp.)
-BASE_EXPORT Process LaunchProcess(const CommandLine& cmdline,
+BRICK_EXPORT Process LaunchProcess(const CommandLine& cmdline,
                                   const LaunchOptions& options);
 
 #if defined(OS_WIN)
@@ -266,7 +266,7 @@ BASE_EXPORT Process LaunchProcess(const CommandLine& cmdline,
 //
 // Example (including literal quotes)
 //  cmdline = "c:\windows\explorer.exe" -foo "c:\bar\"
-BASE_EXPORT Process LaunchProcess(const string16& cmdline,
+BRICK_EXPORT Process LaunchProcess(const string16& cmdline,
                                   const LaunchOptions& options);
 
 // Launches a process with elevated privileges.  This does not behave exactly
@@ -274,7 +274,7 @@ BASE_EXPORT Process LaunchProcess(const string16& cmdline,
 // create the process.  This means the process will have elevated privileges
 // and thus some common operations like OpenProcess will fail. Currently the
 // only supported LaunchOptions are |start_hidden| and |wait|.
-BASE_EXPORT Process LaunchElevatedProcess(const CommandLine& cmdline,
+BRICK_EXPORT Process LaunchElevatedProcess(const CommandLine& cmdline,
                                           const LaunchOptions& options);
 
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
@@ -282,63 +282,63 @@ BASE_EXPORT Process LaunchElevatedProcess(const CommandLine& cmdline,
 // instead of a CommandLine.  Useful for situations where you need to
 // control the command line arguments directly, but prefer the
 // CommandLine version if launching Chrome itself.
-BASE_EXPORT Process LaunchProcess(const std::vector<std::string>& argv,
+BRICK_EXPORT Process LaunchProcess(const std::vector<std::string>& argv,
                                   const LaunchOptions& options);
 
 // Close all file descriptors, except those which are a destination in the
 // given multimap. Only call this function in a child process where you know
 // that there aren't any other threads.
-BASE_EXPORT void CloseSuperfluousFds(const InjectiveMultimap& saved_map);
+BRICK_EXPORT void CloseSuperfluousFds(const InjectiveMultimap& saved_map);
 #endif  // defined(OS_WIN)
 
 #if defined(OS_WIN)
 // Set |job_object|'s JOBOBJECT_EXTENDED_LIMIT_INFORMATION
 // BasicLimitInformation.LimitFlags to |limit_flags|.
-BASE_EXPORT bool SetJobObjectLimitFlags(HANDLE job_object, DWORD limit_flags);
+BRICK_EXPORT bool SetJobObjectLimitFlags(HANDLE job_object, DWORD limit_flags);
 
 // Output multi-process printf, cout, cerr, etc to the cmd.exe console that ran
 // chrome. This is not thread-safe: only call from main thread.
-BASE_EXPORT void RouteStdioToConsole(bool create_console_if_not_found);
+BRICK_EXPORT void RouteStdioToConsole(bool create_console_if_not_found);
 #endif  // defined(OS_WIN)
 
 // Executes the application specified by |cl| and wait for it to exit. Stores
 // the output (stdout) in |output|. Redirects stderr to /dev/null. Returns true
 // on success (application launched and exited cleanly, with exit code
 // indicating success).
-BASE_EXPORT bool GetAppOutput(const CommandLine& cl, std::string* output);
+BRICK_EXPORT bool GetAppOutput(const CommandLine& cl, std::string* output);
 
 // Like GetAppOutput, but also includes stderr.
-BASE_EXPORT bool GetAppOutputAndError(const CommandLine& cl,
+BRICK_EXPORT bool GetAppOutputAndError(const CommandLine& cl,
                                       std::string* output);
 
 // A version of |GetAppOutput()| which also returns the exit code of the
 // executed command. Returns true if the application runs and exits cleanly. If
 // this is the case the exit code of the application is available in
 // |*exit_code|.
-BASE_EXPORT bool GetAppOutputWithExitCode(const CommandLine& cl,
+BRICK_EXPORT bool GetAppOutputWithExitCode(const CommandLine& cl,
                                           std::string* output, int* exit_code);
 
 #if defined(OS_WIN)
 // A Windows-specific version of GetAppOutput that takes a command line string
 // instead of a CommandLine object. Useful for situations where you need to
 // control the command line arguments directly.
-BASE_EXPORT bool GetAppOutput(const StringPiece16& cl, std::string* output);
+BRICK_EXPORT bool GetAppOutput(const StringPiece16& cl, std::string* output);
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
 // A POSIX-specific version of GetAppOutput that takes an argv array
 // instead of a CommandLine.  Useful for situations where you need to
 // control the command line arguments directly.
-BASE_EXPORT bool GetAppOutput(const std::vector<std::string>& argv,
+BRICK_EXPORT bool GetAppOutput(const std::vector<std::string>& argv,
                               std::string* output);
 
 // Like the above POSIX-specific version of GetAppOutput, but also includes
 // stderr.
-BASE_EXPORT bool GetAppOutputAndError(const std::vector<std::string>& argv,
+BRICK_EXPORT bool GetAppOutputAndError(const std::vector<std::string>& argv,
                                       std::string* output);
 #endif  // defined(OS_WIN)
 
 // If supported on the platform, and the user has sufficent rights, increase
 // the current process's scheduling priority to a high priority.
-BASE_EXPORT void RaiseProcessToHighPriority();
+BRICK_EXPORT void RaiseProcessToHighPriority();
 
 #if defined(OS_MACOSX)
 // An implementation of LaunchProcess() that uses posix_spawn() instead of
@@ -359,7 +359,7 @@ void RestoreDefaultExceptionHandler();
 
 // Creates a LaunchOptions object suitable for launching processes in a test
 // binary. This should not be called in production/released code.
-BASE_EXPORT LaunchOptions LaunchOptionsForTest();
+BRICK_EXPORT LaunchOptions LaunchOptionsForTest();
 
 #if defined(OS_LINUX) || defined(OS_NACL_NONSFI)
 // A wrapper for clone with fork-like behavior, meaning that it returns the
@@ -378,9 +378,9 @@ BASE_EXPORT LaunchOptions LaunchOptionsForTest();
 //
 // It is unsafe to use any pthread APIs after ForkWithFlags().
 // However, performing an exec() will lift this restriction.
-BASE_EXPORT pid_t ForkWithFlags(unsigned long flags, pid_t* ptid, pid_t* ctid);
+BRICK_EXPORT pid_t ForkWithFlags(unsigned long flags, pid_t* ptid, pid_t* ctid);
 #endif
 
 }  // namespace base
 
-#endif  // BASE_PROCESS_LAUNCH_H_
+#endif  // BRICK_PROCESS_LAUNCH_H_

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_OS_CRASH_DUMPS_H_
-#define BASE_MAC_OS_CRASH_DUMPS_H_
+#ifndef BRICK_MAC_OS_CRASH_DUMPS_H_
+#define BRICK_MAC_OS_CRASH_DUMPS_H_
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 namespace mac {
@@ -14,9 +14,9 @@ namespace mac {
 // process a Chrome crash when debugging symbols are available.  This
 // translates into a long wait until the process actually dies.  This call
 // disables Apple Crash Reporter entirely.
-BASE_EXPORT void DisableOSCrashDumps();
+BRICK_EXPORT void DisableOSCrashDumps();
 
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_OS_CRASH_DUMPS_H_
+#endif  // BRICK_MAC_OS_CRASH_DUMPS_H_

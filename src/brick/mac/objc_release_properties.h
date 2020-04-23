@@ -6,12 +6,12 @@
 #error "ARC manages properties, so base::mac::ReleaseProperties isn't needed."
 #endif
 
-#ifndef BASE_MAC_OBJC_RELEASE_PROPERTIES_H_
-#define BASE_MAC_OBJC_RELEASE_PROPERTIES_H_
+#ifndef BRICK_MAC_OBJC_RELEASE_PROPERTIES_H_
+#define BRICK_MAC_OBJC_RELEASE_PROPERTIES_H_
 
 #import <Foundation/Foundation.h>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 // base::mac::ReleaseProperties(self) can be used in a class's -dealloc method
 // to release all properties marked "retain" or "copy" and backed by instance
@@ -50,7 +50,7 @@ namespace mac {
 
 namespace details {
 
-BASE_EXPORT void ReleaseProperties(id, Class);
+BRICK_EXPORT void ReleaseProperties(id, Class);
 
 }  // namespace details
 
@@ -62,4 +62,4 @@ void ReleaseProperties(Self* self) {
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_OBJC_RELEASE_PROPERTIES_H_
+#endif  // BRICK_MAC_OBJC_RELEASE_PROPERTIES_H_

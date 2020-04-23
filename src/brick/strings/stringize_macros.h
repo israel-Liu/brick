@@ -6,8 +6,8 @@
 // symbols (or their output) and manipulating preprocessor symbols
 // that define strings.
 
-#ifndef BASE_STRINGS_STRINGIZE_MACROS_H_
-#define BASE_STRINGS_STRINGIZE_MACROS_H_
+#ifndef BRICK_STRINGS_STRINGIZE_MACROS_H_
+#define BRICK_STRINGS_STRINGIZE_MACROS_H_
 
 #include "build/build_config.h"
 
@@ -28,4 +28,4 @@
 //   STRINGIZE(B(y)) produces "myobj->FunctionCall(y)"
 #define STRINGIZE(x) STRINGIZE_NO_EXPANSION(x)
 
-#endif  // BASE_STRINGS_STRINGIZE_MACROS_H_
+#endif  // BRICK_STRINGS_STRINGIZE_MACROS_H_

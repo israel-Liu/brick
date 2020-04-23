@@ -50,14 +50,14 @@
 //    return *fnPtr;
 //  }
 
-#ifndef BASE_MEMORY_PROTECTED_MEMORY_H_
-#define BASE_MEMORY_PROTECTED_MEMORY_H_
+#ifndef BRICK_MEMORY_PROTECTED_MEMORY_H_
+#define BRICK_MEMORY_PROTECTED_MEMORY_H_
 
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/protected_memory_buildflags.h"
-#include "base/synchronization/lock.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/protected_memory_buildflags.h"
+#include "brick/synchronization/lock.h"
 #include "build/build_config.h"
 
 #define PROTECTED_MEMORY_ENABLED 1
@@ -146,7 +146,7 @@ class ProtectedMemory {
 };
 
 // DCHECK that the byte at |ptr| is read-only.
-BASE_EXPORT void AssertMemoryIsReadOnly(const void* ptr);
+BRICK_EXPORT void AssertMemoryIsReadOnly(const void* ptr);
 
 // Abstract out platform-specific methods to get the beginning and end of the
 // PROTECTED_MEMORY_SECTION. ProtectedMemoryEnd returns a pointer to the byte
@@ -196,12 +196,12 @@ class AutoWritableMemory {
   // Synchronizes access to the writers variable and the simultaneous actions
   // that need to happen alongside writers changes, e.g. setting the protected
   // memory region readable when writers is decremented to 0.
-  static BASE_EXPORT base::LazyInstance<Lock>::Leaky writers_lock;
+  static BRICK_EXPORT base::LazyInstance<Lock>::Leaky writers_lock;
 
   // Abstract out platform-specific memory APIs. |end| points to the byte past
   // the end of the region of memory having its memory protections changed.
-  BASE_EXPORT bool SetMemoryReadWrite(void* start, void* end);
-  BASE_EXPORT bool SetMemoryReadOnly(void* start, void* end);
+  BRICK_EXPORT bool SetMemoryReadWrite(void* start, void* end);
+  BRICK_EXPORT bool SetMemoryReadOnly(void* start, void* end);
 
   // If this is the first writer (e.g. writers == 0) set the writers variable
   // read-write. Next, increment writers and set the requested memory writable.
@@ -273,4 +273,4 @@ ProtectedMemory<T>::Initializer::Initializer(ProtectedMemory<T>* PM,
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_PROTECTED_MEMORY_H_
+#endif  // BRICK_MEMORY_PROTECTED_MEMORY_H_

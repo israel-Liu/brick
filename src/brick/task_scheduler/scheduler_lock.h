@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_LOCK_H
-#define BASE_TASK_SCHEDULER_SCHEDULER_LOCK_H
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_LOCK_H
+#define BRICK_TASK_SCHEDULER_SCHEDULER_LOCK_H
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/task_scheduler/scheduler_lock_impl.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/task_scheduler/scheduler_lock_impl.h"
 
 namespace base {
 namespace internal {
@@ -85,4 +85,4 @@ class AutoSchedulerLock {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_LOCK_H
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_LOCK_H

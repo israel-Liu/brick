@@ -5,12 +5,12 @@
 // Implementation based on sample code from
 // http://developer.apple.com/library/mac/#qa/qa1340/_index.html.
 
-#include "base/power_monitor/power_monitor_device_source.h"
+#include "brick/power_monitor/power_monitor_device_source.h"
 
-#include "base/mac/foundation_util.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/power_monitor/power_monitor.h"
-#include "base/power_monitor/power_monitor_source.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/power_monitor/power_monitor.h"
+#include "brick/power_monitor/power_monitor_source.h"
 
 #include <IOKit/IOMessage.h>
 #include <IOKit/ps/IOPSKeys.h>

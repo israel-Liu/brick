@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/launcher/test_launcher_tracer.h"
+#include "brick/test/launcher/test_launcher_tracer.h"
 
-#include "base/json/json_file_value_serializer.h"
-#include "base/strings/stringprintf.h"
-#include "base/values.h"
+#include "brick/json/json_file_value_serializer.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/values.h"
 
 namespace base {
 

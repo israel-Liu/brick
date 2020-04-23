@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_POWER_MONITOR_POWER_MONITOR_SOURCE_H_
-#define BASE_POWER_MONITOR_POWER_MONITOR_SOURCE_H_
+#ifndef BRICK_POWER_MONITOR_POWER_MONITOR_SOURCE_H_
+#define BRICK_POWER_MONITOR_POWER_MONITOR_SOURCE_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/observer_list_threadsafe.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/observer_list_threadsafe.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
 class PowerMonitor;
 
 // Communicates power state changes to the power monitor.
-class BASE_EXPORT PowerMonitorSource {
+class BRICK_EXPORT PowerMonitorSource {
  public:
   PowerMonitorSource();
   virtual ~PowerMonitorSource();
@@ -67,4 +67,4 @@ class BASE_EXPORT PowerMonitorSource {
 
 }  // namespace base
 
-#endif  // BASE_POWER_MONITOR_POWER_MONITOR_SOURCE_H_
+#endif  // BRICK_POWER_MONITOR_POWER_MONITOR_SOURCE_H_

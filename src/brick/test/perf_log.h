@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_PERF_LOG_H_
-#define BASE_TEST_PERF_LOG_H_
+#ifndef BRICK_TEST_PERF_LOG_H_
+#define BRICK_TEST_PERF_LOG_H_
 
 namespace base {
 
@@ -21,4 +21,4 @@ void LogPerfResult(const char* test_name, double value, const char* units);
 
 }  // namespace base
 
-#endif  // BASE_TEST_PERF_LOG_H_
+#endif  // BRICK_TEST_PERF_LOG_H_

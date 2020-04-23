@@ -5,24 +5,24 @@
 // SampleMap implements HistogramSamples interface. It is used by the
 // SparseHistogram class to store samples.
 
-#ifndef BASE_METRICS_SAMPLE_MAP_H_
-#define BASE_METRICS_SAMPLE_MAP_H_
+#ifndef BRICK_METRICS_SAMPLE_MAP_H_
+#define BRICK_METRICS_SAMPLE_MAP_H_
 
 #include <stdint.h>
 
 #include <map>
 #include <memory>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/histogram_samples.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/histogram_samples.h"
 
 namespace base {
 
 // The logic here is similar to that of PersistentSampleMap but with different
 // data structures. Changes here likely need to be duplicated there.
-class BASE_EXPORT SampleMap : public HistogramSamples {
+class BRICK_EXPORT SampleMap : public HistogramSamples {
  public:
   SampleMap();
   explicit SampleMap(uint64_t id);
@@ -47,4 +47,4 @@ class BASE_EXPORT SampleMap : public HistogramSamples {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_SAMPLE_MAP_H_
+#endif  // BRICK_METRICS_SAMPLE_MAP_H_

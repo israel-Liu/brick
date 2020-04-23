@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_STACK_CONTAINER_H_
-#define BASE_CONTAINERS_STACK_CONTAINER_H_
+#ifndef BRICK_CONTAINERS_STACK_CONTAINER_H_
+#define BRICK_CONTAINERS_STACK_CONTAINER_H_
 
 #include <stddef.h>
 
 #include <vector>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -226,4 +226,4 @@ class StackVector : public StackContainer<
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_STACK_CONTAINER_H_
+#endif  // BRICK_CONTAINERS_STACK_CONTAINER_H_

@@ -5,17 +5,17 @@
 #include <memory>
 #include <string>
 
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/json/json_file_value_serializer.h"
-#include "base/json/json_reader.h"
-#include "base/json/json_string_value_serializer.h"
-#include "base/json/json_writer.h"
-#include "base/path_service.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/values.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/json/json_file_value_serializer.h"
+#include "brick/json/json_reader.h"
+#include "brick/json/json_string_value_serializer.h"
+#include "brick/json/json_writer.h"
+#include "brick/path_service.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/values.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

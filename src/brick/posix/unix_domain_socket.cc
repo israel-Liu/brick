@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/posix/unix_domain_socket.h"
+#include "brick/posix/unix_domain_socket.h"
 
 #include <errno.h>
 #include <sys/socket.h>
@@ -13,11 +13,11 @@
 
 #include <vector>
 
-#include "base/files/scoped_file.h"
-#include "base/logging.h"
-#include "base/pickle.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/stl_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/logging.h"
+#include "brick/pickle.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/stl_util.h"
 #include "build/build_config.h"
 
 #if !defined(OS_NACL_NONSFI)

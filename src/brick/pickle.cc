@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/pickle.h"
+#include "brick/pickle.h"
 
 #include <stdlib.h>
 
 #include <algorithm>  // for max()
 #include <limits>
 
-#include "base/bits.h"
-#include "base/macros.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/numerics/safe_math.h"
+#include "brick/bits.h"
+#include "brick/macros.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/numerics/safe_math.h"
 #include "build/build_config.h"
 
 namespace base {

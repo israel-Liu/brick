@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_id_name_manager.h"
+#include "brick/threading/thread_id_name_manager.h"
 
 #include <stdlib.h>
 #include <string.h>
 
-#include "base/logging.h"
-#include "base/memory/singleton.h"
-#include "base/no_destructor.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_local.h"
-#include "base/trace_event/heap_profiler_allocation_context_tracker.h"
+#include "brick/logging.h"
+#include "brick/memory/singleton.h"
+#include "brick/no_destructor.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_local.h"
+#include "brick/trace_event/heap_profiler_allocation_context_tracker.h"
 
 namespace base {
 namespace {

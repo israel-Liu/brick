@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file.h"
+#include "brick/files/file.h"
 
 #include <io.h>
 #include <stdint.h>
 
-#include "base/logging.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/threading/thread_restrictions.h"
 
 #include <windows.h>
 

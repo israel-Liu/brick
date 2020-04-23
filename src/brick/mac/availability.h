@@ -6,8 +6,8 @@
 // contain it yet.
 // TODO(thakis): Remove this file once we're on the 10.12 SDK.
 
-#ifndef BASE_MAC_AVAILABILITY_H_
-#define BASE_MAC_AVAILABILITY_H_
+#ifndef BRICK_MAC_AVAILABILITY_H_
+#define BRICK_MAC_AVAILABILITY_H_
 
 #include <AvailabilityMacros.h>
 
@@ -32,4 +32,4 @@
 #import <os/availability.h>
 #endif  // MAC_OS_X_VERSION_10_12
 
-#endif  // BASE_MAC_AVAILABILITY_H_
+#endif  // BRICK_MAC_AVAILABILITY_H_

@@ -4,13 +4,13 @@
 
 #import <UIKit/UIKit.h>
 
-#include "base/debug/debugger.h"
-#include "base/logging.h"
-#include "base/mac/scoped_nsautorelease_pool.h"
-#include "base/mac/scoped_nsobject.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_pump_default.h"
-#include "base/test/test_suite.h"
+#include "brick/debug/debugger.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
+#include "brick/mac/scoped_nsobject.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_pump_default.h"
+#include "brick/test/test_suite.h"
 #include "testing/coverage_util_ios.h"
 
 // Springboard will kill any iOS app that fails to check in after launch within

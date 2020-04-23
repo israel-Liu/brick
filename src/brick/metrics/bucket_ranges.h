@@ -14,8 +14,8 @@
 // TODO(kaiwang): Currently we keep all negative values in 0~1 bucket. Consider
 // changing 0 to INT_MIN.
 
-#ifndef BASE_METRICS_BUCKET_RANGES_H_
-#define BASE_METRICS_BUCKET_RANGES_H_
+#ifndef BRICK_METRICS_BUCKET_RANGES_H_
+#define BRICK_METRICS_BUCKET_RANGES_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -24,14 +24,14 @@
 
 #include <limits.h>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_base.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_base.h"
 
 namespace base {
 
-class BASE_EXPORT BucketRanges {
+class BRICK_EXPORT BucketRanges {
  public:
   typedef std::vector<HistogramBase::Sample> Ranges;
 
@@ -98,8 +98,8 @@ class BASE_EXPORT BucketRanges {
 
 //////////////////////////////////////////////////////////////////////////////
 // Expose only for test.
-BASE_EXPORT extern const uint32_t kCrcTable[256];
+BRICK_EXPORT extern const uint32_t kCrcTable[256];
 
 }  // namespace base
 
-#endif  // BASE_METRICS_BUCKET_RANGES_H_
+#endif  // BRICK_METRICS_BUCKET_RANGES_H_

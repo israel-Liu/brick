@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_mock_time_task_runner.h"
+#include "brick/test/test_mock_time_task_runner.h"
 
-#include "base/cancelable_callback.h"
-#include "base/memory/ref_counted.h"
-#include "base/run_loop.h"
-#include "base/test/gtest_util.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/sequenced_task_runner_handle.h"
-#include "base/threading/thread.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/time/time.h"
+#include "brick/cancelable_callback.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/run_loop.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
+#include "brick/threading/thread.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

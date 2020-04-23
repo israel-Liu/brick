@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/bind.h"
-#include "base/ios/weak_nsobject.h"
-#include "base/mac/scoped_nsobject.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/ios/weak_nsobject.h"
+#include "brick/mac/scoped_nsobject.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/threading/thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

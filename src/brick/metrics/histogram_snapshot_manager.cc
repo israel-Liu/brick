@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/histogram_snapshot_manager.h"
+#include "brick/metrics/histogram_snapshot_manager.h"
 
 #include <memory>
 
-#include "base/debug/alias.h"
-#include "base/metrics/histogram_flattener.h"
-#include "base/metrics/histogram_samples.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/stl_util.h"
+#include "brick/debug/alias.h"
+#include "brick/metrics/histogram_flattener.h"
+#include "brick/metrics/histogram_samples.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/stl_util.h"
 
 namespace base {
 

@@ -7,21 +7,21 @@
 // See task_runner_test_template.h for a description of how to use the
 // constructs in this file; these work the same.
 
-#ifndef BASE_TEST_SEQUENCED_TASK_RUNNER_TEST_TEMPLATE_H_
-#define BASE_TEST_SEQUENCED_TASK_RUNNER_TEST_TEMPLATE_H_
+#ifndef BRICK_TEST_SEQUENCED_TASK_RUNNER_TEST_TEMPLATE_H_
+#define BRICK_TEST_SEQUENCED_TASK_RUNNER_TEST_TEMPLATE_H_
 
 #include <cstddef>
 #include <iosfwd>
 #include <vector>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequenced_task_runner.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {
@@ -347,4 +347,4 @@ REGISTER_TYPED_TEST_CASE_P(SequencedTaskRunnerDelayedTest, DelayedTaskBasic);
 
 }  // namespace base
 
-#endif  // BASE_TEST_SEQUENCED_TASK_RUNNER_TEST_TEMPLATE_H_
+#endif  // BRICK_TEST_SEQUENCED_TASK_RUNNER_TEST_TEMPLATE_H_

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_FILE_PROXY_H_
-#define BASE_FILES_FILE_PROXY_H_
+#ifndef BRICK_FILES_FILE_PROXY_H_
+#define BRICK_FILES_FILE_PROXY_H_
 
 #include <stdint.h>
 
-#include "base/base_export.h"
-#include "base/callback_forward.h"
-#include "base/files/file.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/weak_ptr.h"
+#include "brick/base_export.h"
+#include "brick/callback_forward.h"
+#include "brick/files/file.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/weak_ptr.h"
 
 namespace base {
 
@@ -35,7 +35,7 @@ class Time;
 //   proxy.Write(...);
 //
 // means the second Write will always fail.
-class BASE_EXPORT FileProxy : public SupportsWeakPtr<FileProxy> {
+class BRICK_EXPORT FileProxy : public SupportsWeakPtr<FileProxy> {
  public:
   // This callback is used by methods that report only an error code. It is
   // valid to pass a null callback to some functions that takes a
@@ -139,4 +139,4 @@ class BASE_EXPORT FileProxy : public SupportsWeakPtr<FileProxy> {
 
 }  // namespace base
 
-#endif  // BASE_FILES_FILE_PROXY_H_
+#endif  // BRICK_FILES_FILE_PROXY_H_

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/winrt_storage_util.h"
+#include "brick/win/winrt_storage_util.h"
 
 #include <string.h>
 #include <wrl/client.h>
 
-#include "base/strings/string_util.h"
-#include "base/win/core_winrt_util.h"
-#include "base/win/scoped_com_initializer.h"
-#include "base/win/scoped_hstring.h"
+#include "brick/strings/string_util.h"
+#include "brick/win/core_winrt_util.h"
+#include "brick/win/scoped_com_initializer.h"
+#include "brick/win/scoped_hstring.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

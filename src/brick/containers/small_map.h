@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_SMALL_MAP_H_
-#define BASE_CONTAINERS_SMALL_MAP_H_
+#ifndef BRICK_CONTAINERS_SMALL_MAP_H_
+#define BRICK_CONTAINERS_SMALL_MAP_H_
 
 #include <stddef.h>
 
@@ -12,8 +12,8 @@
 #include <string>
 #include <utility>
 
-#include "base/containers/hash_tables.h"
-#include "base/logging.h"
+#include "brick/containers/hash_tables.h"
+#include "brick/logging.h"
 
 namespace base {
 
@@ -21,7 +21,7 @@ namespace base {
 // backed by a unsorted array but switches to some other container type if it
 // grows beyond this fixed size.
 //
-// Please see //base/containers/README.md for an overview of which container
+// Please see //brick/containers/README.md for an overview of which container
 // to select.
 //
 // PROS
@@ -657,4 +657,4 @@ operator!=(const const_iterator& other) const {
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_SMALL_MAP_H_
+#endif  // BRICK_CONTAINERS_SMALL_MAP_H_

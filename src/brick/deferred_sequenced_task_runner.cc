@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/deferred_sequenced_task_runner.h"
+#include "brick/deferred_sequenced_task_runner.h"
 
 #include <utility>
 
-#include "base/bind.h"
-#include "base/logging.h"
+#include "brick/bind.h"
+#include "brick/logging.h"
 
 namespace base {
 

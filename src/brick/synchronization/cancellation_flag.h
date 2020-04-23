@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYNCHRONIZATION_CANCELLATION_FLAG_H_
-#define BASE_SYNCHRONIZATION_CANCELLATION_FLAG_H_
+#ifndef BRICK_SYNCHRONIZATION_CANCELLATION_FLAG_H_
+#define BRICK_SYNCHRONIZATION_CANCELLATION_FLAG_H_
 
-#include "base/synchronization/atomic_flag.h"
+#include "brick/synchronization/atomic_flag.h"
 
 namespace base {
 
@@ -17,4 +17,4 @@ class CancellationFlag : public AtomicFlag {};
 
 }  // namespace base
 
-#endif  // BASE_SYNCHRONIZATION_CANCELLATION_FLAG_H_
+#endif  // BRICK_SYNCHRONIZATION_CANCELLATION_FLAG_H_

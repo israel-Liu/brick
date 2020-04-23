@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_reg_util_win.h"
+#include "brick/test/test_reg_util_win.h"
 
 #include <memory>
 
-#include "base/compiler_specific.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/time/time.h"
+#include "brick/compiler_specific.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace registry_util {

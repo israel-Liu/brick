@@ -7,7 +7,7 @@
 
 #include <type_traits>
 
-#include "base/optional.h"
+#include "brick/optional.h"
 
 namespace base {
 

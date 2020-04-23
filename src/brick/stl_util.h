@@ -4,8 +4,8 @@
 
 // Derived from google3/util/gtl/stl_util.h
 
-#ifndef BASE_STL_UTIL_H_
-#define BASE_STL_UTIL_H_
+#ifndef BRICK_STL_UTIL_H_
+#define BRICK_STL_UTIL_H_
 
 #include <algorithm>
 #include <deque>
@@ -21,8 +21,8 @@
 #include <unordered_set>
 #include <vector>
 
-#include "base/logging.h"
-#include "base/optional.h"
+#include "brick/logging.h"
+#include "brick/optional.h"
 
 namespace base {
 
@@ -407,4 +407,4 @@ const T* OptionalOrNullptr(const base::Optional<T>& optional) {
 
 }  // namespace base
 
-#endif  // BASE_STL_UTIL_H_
+#endif  // BRICK_STL_UTIL_H_

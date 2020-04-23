@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_LINKED_LIST_H_
-#define BASE_CONTAINERS_LINKED_LIST_H_
+#ifndef BRICK_CONTAINERS_LINKED_LIST_H_
+#define BRICK_CONTAINERS_LINKED_LIST_H_
 
-#include "base/macros.h"
+#include "brick/macros.h"
 
 // Simple LinkedList type. (See the Q&A section to understand how this
 // differs from std::list).
@@ -187,4 +187,4 @@ class LinkedList {
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_LINKED_LIST_H_
+#endif  // BRICK_CONTAINERS_LINKED_LIST_H_

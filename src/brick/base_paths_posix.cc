@@ -6,7 +6,7 @@
 // don't have their own base_paths_OS.cc implementation (i.e. all but Mac and
 // Android).
 
-#include "base/base_paths.h"
+#include "brick/base_paths.h"
 
 #include <limits.h>
 #include <stddef.h>
@@ -15,13 +15,13 @@
 #include <ostream>
 #include <string>
 
-#include "base/environment.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/nix/xdg_util.h"
-#include "base/path_service.h"
-#include "base/process/process_metrics.h"
+#include "brick/environment.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/nix/xdg_util.h"
+#include "brick/path_service.h"
+#include "brick/process/process_metrics.h"
 #include "build/build_config.h"
 
 #if defined(OS_FREEBSD)

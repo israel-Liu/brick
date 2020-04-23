@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/platform_shared_memory_region.h"
+#include "brick/memory/platform_shared_memory_region.h"
 
 #include <zircon/process.h>
 #include <zircon/rights.h>
 #include <zircon/syscalls.h>
 
-#include "base/bits.h"
-#include "base/fuchsia/fuchsia_logging.h"
-#include "base/numerics/checked_math.h"
-#include "base/process/process_metrics.h"
+#include "brick/bits.h"
+#include "brick/fuchsia/fuchsia_logging.h"
+#include "brick/numerics/checked_math.h"
+#include "brick/process/process_metrics.h"
 
 namespace base {
 namespace subtle {

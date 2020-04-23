@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/deferred_sequenced_task_runner.h"
+#include "brick/deferred_sequenced_task_runner.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/callback_forward.h"
-#include "base/location.h"
-#include "base/memory/ref_counted.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/callback_forward.h"
+#include "brick/location.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/threading/thread.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

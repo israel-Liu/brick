@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_THREAD_CHECKER_H_
-#define BASE_THREADING_THREAD_CHECKER_H_
+#ifndef BRICK_THREADING_THREAD_CHECKER_H_
+#define BRICK_THREADING_THREAD_CHECKER_H_
 
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/threading/thread_checker_impl.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_checker_impl.h"
 
 // ThreadChecker is a helper class used to help verify that some methods of a
 // class are called from the same thread (for thread-affinity).
@@ -100,4 +100,4 @@ class ThreadChecker : public ThreadCheckerDoNothing {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_CHECKER_H_
+#endif  // BRICK_THREADING_THREAD_CHECKER_H_

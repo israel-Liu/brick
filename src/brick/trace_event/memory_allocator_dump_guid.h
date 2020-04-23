@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_GUID_H_
-#define BASE_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_GUID_H_
+#ifndef BRICK_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_GUID_H_
+#define BRICK_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_GUID_H_
 
 #include <stdint.h>
 
 #include <string>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 namespace trace_event {
 
-class BASE_EXPORT MemoryAllocatorDumpGuid {
+class BRICK_EXPORT MemoryAllocatorDumpGuid {
  public:
   MemoryAllocatorDumpGuid();
   explicit MemoryAllocatorDumpGuid(uint64_t guid);
@@ -52,4 +52,4 @@ class BASE_EXPORT MemoryAllocatorDumpGuid {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_GUID_H_
+#endif  // BRICK_TRACE_EVENT_MEMORY_ALLOCATOR_DUMP_GUID_H_

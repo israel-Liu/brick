@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_local_storage.h"
+#include "brick/threading/thread_local_storage.h"
 
-#include "base/atomicops.h"
-#include "base/logging.h"
-#include "base/synchronization/lock.h"
+#include "brick/atomicops.h"
+#include "brick/logging.h"
+#include "brick/synchronization/lock.h"
 #include "build/build_config.h"
 
 using base::internal::PlatformThreadLocalStorage;

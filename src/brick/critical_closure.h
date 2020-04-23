@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CRITICAL_CLOSURE_H_
-#define BASE_CRITICAL_CLOSURE_H_
+#ifndef BRICK_CRITICAL_CLOSURE_H_
+#define BRICK_CRITICAL_CLOSURE_H_
 
 #include <utility>
 
-#include "base/callback.h"
-#include "base/macros.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(OS_IOS)
-#include "base/bind.h"
-#include "base/ios/scoped_critical_action.h"
+#include "brick/bind.h"
+#include "brick/ios/scoped_critical_action.h"
 #endif
 
 namespace base {
@@ -73,4 +73,4 @@ inline OnceClosure MakeCriticalClosure(OnceClosure closure) {
 
 }  // namespace base
 
-#endif  // BASE_CRITICAL_CLOSURE_H_
+#endif  // BRICK_CRITICAL_CLOSURE_H_

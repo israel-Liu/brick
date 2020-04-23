@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <windows.h>
 #include <stddef.h>
@@ -10,12 +10,12 @@
 
 #include <limits>
 
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/stringprintf.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/win/windows_version.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/win/windows_version.h"
 
 namespace {
 

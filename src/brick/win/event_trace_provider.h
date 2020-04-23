@@ -4,8 +4,8 @@
 //
 // Declaration of a Windows event trace provider class, to allow using
 // Windows Event Tracing for logging transport and control.
-#ifndef BASE_WIN_EVENT_TRACE_PROVIDER_H_
-#define BASE_WIN_EVENT_TRACE_PROVIDER_H_
+#ifndef BRICK_WIN_EVENT_TRACE_PROVIDER_H_
+#define BRICK_WIN_EVENT_TRACE_PROVIDER_H_
 
 #include <windows.h>
 #include <wmistr.h>
@@ -15,8 +15,8 @@
 
 #include <limits>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
@@ -90,7 +90,7 @@ template <size_t N> class EtwMofEvent: public EtwMofEventBase<N> {
 // a particular trace level, and whether particular enable flags are set,
 // before other resources are consumed to generate and issue the log
 // messages themselves.
-class BASE_EXPORT EtwTraceProvider {
+class BRICK_EXPORT EtwTraceProvider {
  public:
   // Creates an event trace provider identified by provider_name, which
   // will be the name registered with Event Tracing for Windows (ETW).
@@ -181,4 +181,4 @@ class BASE_EXPORT EtwTraceProvider {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_EVENT_TRACE_PROVIDER_H_
+#endif  // BRICK_WIN_EVENT_TRACE_PROVIDER_H_

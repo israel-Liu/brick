@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_CO_MEM_H_
-#define BASE_WIN_SCOPED_CO_MEM_H_
+#ifndef BRICK_WIN_SCOPED_CO_MEM_H_
+#define BRICK_WIN_SCOPED_CO_MEM_H_
 
 #include <objbase.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
@@ -65,4 +65,4 @@ class ScopedCoMem {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_CO_MEM_H_
+#endif  // BRICK_WIN_SCOPED_CO_MEM_H_

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This file is an internal atomic implementation, use base/atomicops.h instead.
+// This file is an internal atomic implementation, use brick/atomicops.h instead.
 
-#ifndef BASE_ATOMICOPS_INTERNALS_ATOMICWORD_COMPAT_H_
-#define BASE_ATOMICOPS_INTERNALS_ATOMICWORD_COMPAT_H_
+#ifndef BRICK_ATOMICOPS_INTERNALS_ATOMICWORD_COMPAT_H_
+#define BRICK_ATOMICOPS_INTERNALS_ATOMICWORD_COMPAT_H_
 
 #include <stdint.h>
 
@@ -101,4 +101,4 @@ inline AtomicWord Release_Load(volatile const AtomicWord* ptr) {
 
 #endif  // !defined(ARCH_CPU_64_BITS)
 
-#endif  // BASE_ATOMICOPS_INTERNALS_ATOMICWORD_COMPAT_H_
+#endif  // BRICK_ATOMICOPS_INTERNALS_ATOMICWORD_COMPAT_H_

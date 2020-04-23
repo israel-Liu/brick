@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SEQUENCE_H_
-#define BASE_TASK_SCHEDULER_SEQUENCE_H_
+#ifndef BRICK_TASK_SCHEDULER_SEQUENCE_H_
+#define BRICK_TASK_SCHEDULER_SEQUENCE_H_
 
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/containers/queue.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/optional.h"
-#include "base/sequence_token.h"
-#include "base/task_scheduler/scheduler_lock.h"
-#include "base/task_scheduler/sequence_sort_key.h"
-#include "base/task_scheduler/task.h"
-#include "base/threading/sequence_local_storage_map.h"
+#include "brick/base_export.h"
+#include "brick/containers/queue.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/optional.h"
+#include "brick/sequence_token.h"
+#include "brick/task_scheduler/scheduler_lock.h"
+#include "brick/task_scheduler/sequence_sort_key.h"
+#include "brick/task_scheduler/task.h"
+#include "brick/threading/sequence_local_storage_map.h"
 
 namespace base {
 namespace internal {
@@ -39,7 +39,7 @@ namespace internal {
 // the caller that the Sequence should be re-enqueued for execution).
 //
 // This class is thread-safe.
-class BASE_EXPORT Sequence : public RefCountedThreadSafe<Sequence> {
+class BRICK_EXPORT Sequence : public RefCountedThreadSafe<Sequence> {
  public:
   Sequence();
 
@@ -99,4 +99,4 @@ class BASE_EXPORT Sequence : public RefCountedThreadSafe<Sequence> {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SEQUENCE_H_
+#endif  // BRICK_TASK_SCHEDULER_SEQUENCE_H_

@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 
-#include "base/bit_cast.h"
+#include "brick/bit_cast.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_CLAMPED_MATH_H_
-#define BASE_NUMERICS_CLAMPED_MATH_H_
+#ifndef BRICK_NUMERICS_CLAMPED_MATH_H_
+#define BRICK_NUMERICS_CLAMPED_MATH_H_
 
 #include <stddef.h>
 
 #include <limits>
 #include <type_traits>
 
-#include "base/numerics/clamped_math_impl.h"
+#include "brick/numerics/clamped_math_impl.h"
 
 namespace base {
 namespace internal {
@@ -221,24 +221,24 @@ ClampMathOp(const L lhs, const R rhs, const Args... args) {
   return ClampMathOp<M>(ClampMathOp<M>(lhs, rhs), args...);
 }
 
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Add, +, +=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Sub, -, -=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Mul, *, *=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Div, /, /=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Mod, %, %=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Lsh, <<, <<=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Rsh, >>, >>=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, And, &, &=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Or, |, |=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Xor, ^, ^=)
-BASE_NUMERIC_ARITHMETIC_VARIADIC(Clamped, Clamp, Max)
-BASE_NUMERIC_ARITHMETIC_VARIADIC(Clamped, Clamp, Min)
-BASE_NUMERIC_COMPARISON_OPERATORS(Clamped, IsLess, <);
-BASE_NUMERIC_COMPARISON_OPERATORS(Clamped, IsLessOrEqual, <=);
-BASE_NUMERIC_COMPARISON_OPERATORS(Clamped, IsGreater, >);
-BASE_NUMERIC_COMPARISON_OPERATORS(Clamped, IsGreaterOrEqual, >=);
-BASE_NUMERIC_COMPARISON_OPERATORS(Clamped, IsEqual, ==);
-BASE_NUMERIC_COMPARISON_OPERATORS(Clamped, IsNotEqual, !=);
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Add, +, +=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Sub, -, -=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Mul, *, *=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Div, /, /=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Mod, %, %=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Lsh, <<, <<=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Rsh, >>, >>=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, And, &, &=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Or, |, |=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Clamped, Clamp, Xor, ^, ^=)
+BRICK_NUMERIC_ARITHMETIC_VARIADIC(Clamped, Clamp, Max)
+BRICK_NUMERIC_ARITHMETIC_VARIADIC(Clamped, Clamp, Min)
+BRICK_NUMERIC_COMPARISON_OPERATORS(Clamped, IsLess, <);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Clamped, IsLessOrEqual, <=);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Clamped, IsGreater, >);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Clamped, IsGreaterOrEqual, >=);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Clamped, IsEqual, ==);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Clamped, IsNotEqual, !=);
 
 }  // namespace internal
 
@@ -259,4 +259,4 @@ using internal::ClampXor;
 
 }  // namespace base
 
-#endif  // BASE_NUMERICS_CLAMPED_MATH_H_
+#endif  // BRICK_NUMERICS_CLAMPED_MATH_H_

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MEMORY_USAGE_ESTIMATOR_H_
-#define BASE_TRACE_EVENT_MEMORY_USAGE_ESTIMATOR_H_
+#ifndef BRICK_TRACE_EVENT_MEMORY_USAGE_ESTIMATOR_H_
+#define BRICK_TRACE_EVENT_MEMORY_USAGE_ESTIMATOR_H_
 
 #include <stdint.h>
 
@@ -21,16 +21,16 @@
 #include <unordered_set>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/containers/circular_deque.h"
-#include "base/containers/flat_map.h"
-#include "base/containers/flat_set.h"
-#include "base/containers/linked_list.h"
-#include "base/containers/mru_cache.h"
-#include "base/containers/queue.h"
-#include "base/stl_util.h"
-#include "base/strings/string16.h"
-#include "base/template_util.h"
+#include "brick/base_export.h"
+#include "brick/containers/circular_deque.h"
+#include "brick/containers/flat_map.h"
+#include "brick/containers/flat_set.h"
+#include "brick/containers/linked_list.h"
+#include "brick/containers/mru_cache.h"
+#include "brick/containers/queue.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string16.h"
+#include "brick/template_util.h"
 
 // Composable memory usage estimators.
 //
@@ -337,8 +337,8 @@ size_t EstimateMemoryUsage(const std::basic_string<C, T, A>& string) {
 }
 
 // Use explicit instantiations from the .cc file (reduces bloat).
-extern template BASE_EXPORT size_t EstimateMemoryUsage(const std::string&);
-extern template BASE_EXPORT size_t EstimateMemoryUsage(const string16&);
+extern template BRICK_EXPORT size_t EstimateMemoryUsage(const std::string&);
+extern template BRICK_EXPORT size_t EstimateMemoryUsage(const string16&);
 
 // Arrays
 
@@ -651,4 +651,4 @@ size_t EstimateMemoryUsage(
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MEMORY_USAGE_ESTIMATOR_H_
+#endif  // BRICK_TRACE_EVENT_MEMORY_USAGE_ESTIMATOR_H_

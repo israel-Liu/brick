@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SEQUENCE_MANAGER_THREAD_CONTROLLER_H_
-#define BASE_TASK_SEQUENCE_MANAGER_THREAD_CONTROLLER_H_
+#ifndef BRICK_TASK_SEQUENCE_MANAGER_THREAD_CONTROLLER_H_
+#define BRICK_TASK_SEQUENCE_MANAGER_THREAD_CONTROLLER_H_
 
-#include "base/run_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/task/sequence_manager/lazy_now.h"
-#include "base/time/time.h"
+#include "brick/run_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/task/sequence_manager/lazy_now.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -79,4 +79,4 @@ class ThreadController {
 }  // namespace sequence_manager
 }  // namespace base
 
-#endif  // BASE_TASK_SEQUENCE_MANAGER_THREAD_CONTROLLER_H_
+#endif  // BRICK_TASK_SEQUENCE_MANAGER_THREAD_CONTROLLER_H_

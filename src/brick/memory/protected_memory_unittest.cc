@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/protected_memory.h"
-#include "base/cfi_buildflags.h"
-#include "base/memory/protected_memory_cfi.h"
-#include "base/synchronization/lock.h"
-#include "base/test/gtest_util.h"
+#include "brick/memory/protected_memory.h"
+#include "brick/cfi_buildflags.h"
+#include "brick/memory/protected_memory_cfi.h"
+#include "brick/synchronization/lock.h"
+#include "brick/test/gtest_util.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

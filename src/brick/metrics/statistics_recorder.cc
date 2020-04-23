@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/statistics_recorder.h"
+#include "brick/metrics/statistics_recorder.h"
 
 #include <memory>
 
-#include "base/at_exit.h"
-#include "base/debug/leak_annotations.h"
-#include "base/json/string_escape.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/histogram.h"
-#include "base/metrics/histogram_snapshot_manager.h"
-#include "base/metrics/metrics_hashes.h"
-#include "base/metrics/persistent_histogram_allocator.h"
-#include "base/metrics/record_histogram_checker.h"
-#include "base/stl_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/values.h"
+#include "brick/at_exit.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/json/string_escape.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/histogram_snapshot_manager.h"
+#include "brick/metrics/metrics_hashes.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
+#include "brick/metrics/record_histogram_checker.h"
+#include "brick/stl_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/values.h"
 
 namespace base {
 namespace {

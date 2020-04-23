@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/priority_queue.h"
+#include "brick/task_scheduler/priority_queue.h"
 
 #include <memory>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_scheduler/sequence.h"
-#include "base/task_scheduler/task.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/test/gtest_util.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/simple_thread.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_scheduler/sequence.h"
+#include "brick/task_scheduler/task.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/test/gtest_util.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/simple_thread.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

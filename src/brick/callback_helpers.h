@@ -7,17 +7,17 @@
 // methods to Callback<> itself is unattractive (lots of extra code gets
 // generated).  Instead, consider adding methods here.
 
-#ifndef BASE_CALLBACK_HELPERS_H_
-#define BASE_CALLBACK_HELPERS_H_
+#ifndef BRICK_CALLBACK_HELPERS_H_
+#define BRICK_CALLBACK_HELPERS_H_
 
 #include <utility>
 
-#include "base/atomicops.h"
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
+#include "brick/atomicops.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
 
 namespace base {
 
@@ -72,7 +72,7 @@ RepeatingCallback<void(Args...)> AdaptCallbackForRepeating(
 
 // ScopedClosureRunner is akin to std::unique_ptr<> for Closures. It ensures
 // that the Closure is executed no matter how the current scope exits.
-class BASE_EXPORT ScopedClosureRunner {
+class BRICK_EXPORT ScopedClosureRunner {
  public:
   ScopedClosureRunner();
   explicit ScopedClosureRunner(OnceClosure closure);
@@ -101,4 +101,4 @@ class BASE_EXPORT ScopedClosureRunner {
 
 }  // namespace base
 
-#endif  // BASE_CALLBACK_HELPERS_H_
+#endif  // BRICK_CALLBACK_HELPERS_H_

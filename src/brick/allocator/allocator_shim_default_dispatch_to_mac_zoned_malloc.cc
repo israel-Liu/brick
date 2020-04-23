@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.h"
+#include "brick/allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.h"
 
 #include <utility>
 
-#include "base/allocator/allocator_interception_mac.h"
-#include "base/allocator/allocator_shim.h"
-#include "base/allocator/malloc_zone_functions_mac.h"
+#include "brick/allocator/allocator_interception_mac.h"
+#include "brick/allocator/allocator_shim.h"
+#include "brick/allocator/malloc_zone_functions_mac.h"
 
 namespace base {
 namespace allocator {

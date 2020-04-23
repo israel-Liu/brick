@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_I18N_UTF8_VALIDATOR_TABLES_H_
-#define BASE_I18N_UTF8_VALIDATOR_TABLES_H_
+#ifndef BRICK_I18N_UTF8_VALIDATOR_TABLES_H_
+#define BRICK_I18N_UTF8_VALIDATOR_TABLES_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace internal {
@@ -29,4 +29,4 @@ enum {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_I18N_UTF8_VALIDATOR_TABLES_H_
+#endif  // BRICK_I18N_UTF8_VALIDATOR_TABLES_H_

@@ -5,24 +5,24 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/format_macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/message_loop/message_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/thread.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/format_macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/thread.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/perf/perf_test.h"
 
 #if defined(OS_ANDROID)
-#include "base/android/java_handler_thread.h"
+#include "brick/android/java_handler_thread.h"
 #endif
 
 namespace base {

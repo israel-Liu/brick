@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ROOT_BASE_H_
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ROOT_BASE_H_
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ROOT_BRICK_H_
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ROOT_BRICK_H_
 
-#include "base/allocator/partition_allocator/page_allocator.h"
-#include "base/allocator/partition_allocator/partition_alloc_constants.h"
-#include "base/allocator/partition_allocator/partition_bucket.h"
-#include "base/allocator/partition_allocator/partition_direct_map_extent.h"
-#include "base/allocator/partition_allocator/partition_page.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
+#include "brick/allocator/partition_allocator/partition_alloc_constants.h"
+#include "brick/allocator/partition_allocator/partition_bucket.h"
+#include "brick/allocator/partition_allocator/partition_direct_map_extent.h"
+#include "brick/allocator/partition_allocator/partition_page.h"
 
 namespace base {
 namespace internal {
@@ -30,7 +30,7 @@ static_assert(
     sizeof(PartitionSuperPageExtentEntry) <= kPageMetadataSize,
     "PartitionSuperPageExtentEntry must be able to fit in a metadata slot");
 
-struct BASE_EXPORT PartitionRootBase {
+struct BRICK_EXPORT PartitionRootBase {
   PartitionRootBase();
   virtual ~PartitionRootBase();
   size_t total_size_of_committed_pages = 0;
@@ -174,4 +174,4 @@ ALWAYS_INLINE void PartitionRootBase::RecommitSystemPages(void* address,
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ROOT_BASE_H_
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ROOT_BRICK_H_

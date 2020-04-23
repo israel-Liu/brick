@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/guid.h"
+#include "brick/guid.h"
 
 #include <stdint.h>
 
 #include <limits>
 
-#include "base/strings/string_util.h"
+#include "brick/strings/string_util.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_RUNNER_UTIL_H_
-#define BASE_TASK_RUNNER_UTIL_H_
+#ifndef BRICK_TASK_RUNNER_UTIL_H_
+#define BRICK_TASK_RUNNER_UTIL_H_
 
 #include <utility>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/callback.h"
-#include "base/logging.h"
-#include "base/post_task_and_reply_with_result_internal.h"
-#include "base/task_runner.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/callback.h"
+#include "brick/logging.h"
+#include "brick/post_task_and_reply_with_result_internal.h"
+#include "brick/task_runner.h"
 
 namespace base {
 
@@ -64,4 +64,4 @@ bool PostTaskAndReplyWithResult(TaskRunner* task_runner,
 
 }  // namespace base
 
-#endif  // BASE_TASK_RUNNER_UTIL_H_
+#endif  // BRICK_TASK_RUNNER_UTIL_H_

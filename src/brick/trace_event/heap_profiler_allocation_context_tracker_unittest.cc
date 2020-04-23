@@ -6,13 +6,13 @@
 
 #include <iterator>
 
-#include "base/memory/ref_counted.h"
-#include "base/pending_task.h"
-#include "base/trace_event/heap_profiler.h"
-#include "base/trace_event/heap_profiler_allocation_context.h"
-#include "base/trace_event/heap_profiler_allocation_context_tracker.h"
-#include "base/trace_event/memory_dump_manager.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/pending_task.h"
+#include "brick/trace_event/heap_profiler.h"
+#include "brick/trace_event/heap_profiler_allocation_context.h"
+#include "brick/trace_event/heap_profiler_allocation_context_tracker.h"
+#include "brick/trace_event/memory_dump_manager.h"
+#include "brick/trace_event/trace_event.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

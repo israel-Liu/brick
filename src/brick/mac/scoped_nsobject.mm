@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/mac/scoped_nsobject.h"
+#import "brick/mac/scoped_nsobject.h"
 
 namespace base {
 namespace internal {

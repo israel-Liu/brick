@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_GLIB_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_GLIB_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_GLIB_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_GLIB_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/message_loop/message_pump.h"
-#include "base/observer_list.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_pump.h"
+#include "brick/observer_list.h"
+#include "brick/time/time.h"
 
 typedef struct _GMainContext GMainContext;
 typedef struct _GPollFD GPollFD;
@@ -21,7 +21,7 @@ namespace base {
 
 // This class implements a base MessagePump needed for TYPE_UI MessageLoops on
 // platforms using GLib.
-class BASE_EXPORT MessagePumpGlib : public MessagePump {
+class BRICK_EXPORT MessagePumpGlib : public MessagePump {
  public:
   MessagePumpGlib();
   ~MessagePumpGlib() override;
@@ -77,4 +77,4 @@ class BASE_EXPORT MessagePumpGlib : public MessagePump {
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_GLIB_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_GLIB_H_

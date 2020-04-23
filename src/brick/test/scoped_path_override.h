@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_SCOPED_PATH_OVERRIDE_H_
-#define BASE_TEST_SCOPED_PATH_OVERRIDE_H_
+#ifndef BRICK_TEST_SCOPED_PATH_OVERRIDE_H_
+#define BRICK_TEST_SCOPED_PATH_OVERRIDE_H_
 
-#include "base/files/scoped_temp_dir.h"
-#include "base/macros.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/macros.h"
 
 namespace base {
 
@@ -40,4 +40,4 @@ class ScopedPathOverride {
 
 }  // namespace base
 
-#endif  // BASE_TEST_SCOPED_PATH_OVERRIDE_H_
+#endif  // BRICK_TEST_SCOPED_PATH_OVERRIDE_H_

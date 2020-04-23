@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_STRINGS_STRING_UTIL_POSIX_H_
-#define BASE_STRINGS_STRING_UTIL_POSIX_H_
+#ifndef BRICK_STRINGS_STRING_UTIL_POSIX_H_
+#define BRICK_STRINGS_STRING_UTIL_POSIX_H_
 
 #include <stdarg.h>
 #include <stddef.h>
@@ -11,7 +11,7 @@
 #include <string.h>
 #include <wchar.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 
@@ -34,4 +34,4 @@ inline int vswprintf(wchar_t* buffer, size_t size,
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_STRING_UTIL_POSIX_H_
+#endif  // BRICK_STRINGS_STRING_UTIL_POSIX_H_

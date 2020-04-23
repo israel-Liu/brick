@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/partition_allocator/address_space_randomization.h"
+#include "brick/allocator/partition_allocator/address_space_randomization.h"
 
-#include "base/allocator/partition_allocator/page_allocator.h"
-#include "base/bit_cast.h"
-#include "base/bits.h"
-#include "base/sys_info.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
+#include "brick/bit_cast.h"
+#include "brick/bits.h"
+#include "brick/sys_info.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
-#include "base/win/windows_version.h"
+#include "brick/win/windows_version.h"
 // VersionHelpers.h must be included after windows.h.
 #include <VersionHelpers.h>
 #endif

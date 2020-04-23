@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_metrics.h"
+#include "brick/process/process_metrics.h"
 
 #include <mach/mach.h>
 #include <mach/mach_vm.h>
@@ -11,15 +11,15 @@
 #include <stdint.h>
 #include <sys/sysctl.h>
 
-#include "base/containers/hash_tables.h"
-#include "base/logging.h"
-#include "base/mac/mac_util.h"
-#include "base/mac/mach_logging.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/memory/ptr_util.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/numerics/safe_math.h"
-#include "base/process/process_metrics_iocounters.h"
+#include "brick/containers/hash_tables.h"
+#include "brick/logging.h"
+#include "brick/mac/mac_util.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/process/process_metrics_iocounters.h"
 
 namespace base {
 

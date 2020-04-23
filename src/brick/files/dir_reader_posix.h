@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_DIR_READER_POSIX_H_
-#define BASE_FILES_DIR_READER_POSIX_H_
+#ifndef BRICK_FILES_DIR_READER_POSIX_H_
+#define BRICK_FILES_DIR_READER_POSIX_H_
 
 #include "build/build_config.h"
 
@@ -18,9 +18,9 @@
 // probably never implement this on the Mac.
 
 #if defined(OS_LINUX) || defined(OS_ANDROID)
-#include "base/files/dir_reader_linux.h"
+#include "brick/files/dir_reader_linux.h"
 #else
-#include "base/files/dir_reader_fallback.h"
+#include "brick/files/dir_reader_fallback.h"
 #endif
 
 namespace base {
@@ -33,4 +33,4 @@ typedef DirReaderFallback DirReaderPosix;
 
 }  // namespace base
 
-#endif  // BASE_FILES_DIR_READER_POSIX_H_
+#endif  // BRICK_FILES_DIR_READER_POSIX_H_

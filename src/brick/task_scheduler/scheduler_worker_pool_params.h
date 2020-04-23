@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_PARAMS_H_
-#define BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_PARAMS_H_
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_PARAMS_H_
+#define BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_PARAMS_H_
 
-#include "base/task_scheduler/scheduler_worker_params.h"
-#include "base/time/time.h"
+#include "brick/task_scheduler/scheduler_worker_params.h"
+#include "brick/time/time.h"
 
 namespace base {
 
-class BASE_EXPORT SchedulerWorkerPoolParams final {
+class BRICK_EXPORT SchedulerWorkerPoolParams final {
  public:
   // Constructs a set of params used to initialize a pool. The pool will run
   // concurrently at most |max_tasks| that aren't blocked (ScopedBlockingCall).
@@ -41,4 +41,4 @@ class BASE_EXPORT SchedulerWorkerPoolParams final {
 
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_PARAMS_H_
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_PARAMS_H_

@@ -4,12 +4,12 @@
 
 #include <stddef.h>
 
-#include "base/json/json_reader.h"
-#include "base/json/json_writer.h"
-#include "base/macros.h"
-#include "base/trace_event/memory_dump_manager.h"
-#include "base/trace_event/trace_config.h"
-#include "base/trace_event/trace_config_memory_test_util.h"
+#include "brick/json/json_reader.h"
+#include "brick/json/json_writer.h"
+#include "brick/macros.h"
+#include "brick/trace_event/memory_dump_manager.h"
+#include "brick/trace_event/trace_config.h"
+#include "brick/trace_event/trace_config_memory_test_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

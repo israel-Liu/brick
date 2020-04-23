@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_IOS_WEAK_NSOBJECT_H_
-#define BASE_IOS_WEAK_NSOBJECT_H_
+#ifndef BRICK_IOS_WEAK_NSOBJECT_H_
+#define BRICK_IOS_WEAK_NSOBJECT_H_
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/memory/ref_counted.h"
-#include "base/threading/thread_checker.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/threading/thread_checker.h"
 
 // WeakNSObject<> is patterned after scoped_nsobject<>, but instead of
 // maintaining ownership of an NSObject subclass object, it will nil itself out
@@ -184,4 +184,4 @@ class WeakNSObject<id> : public WeakNSProtocol<id> {
 
 }  // namespace base
 
-#endif  // BASE_IOS_WEAK_NSOBJECT_H_
+#endif  // BRICK_IOS_WEAK_NSOBJECT_H_

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/ref_counted.h"
+#include "brick/memory/ref_counted.h"
 
 #include <type_traits>
 #include <utility>
 
-#include "base/test/gtest_util.h"
+#include "brick/test/gtest_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace {

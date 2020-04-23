@@ -7,13 +7,13 @@
 // dependent, but it is possible that the OS just ignores the exception and
 // continues execution, which leads to unpredictable behavior for Chrome.
 
-#ifndef BASE_WIN_WRAPPED_WINDOW_PROC_H_
-#define BASE_WIN_WRAPPED_WINDOW_PROC_H_
+#ifndef BRICK_WIN_WRAPPED_WINDOW_PROC_H_
+#define BRICK_WIN_WRAPPED_WINDOW_PROC_H_
 
 #include <windows.h>
 
-#include "base/base_export.h"
-#include "base/strings/string16.h"
+#include "brick/base_export.h"
+#include "brick/strings/string16.h"
 
 namespace base {
 namespace win {
@@ -28,16 +28,16 @@ typedef int (__cdecl *WinProcExceptionFilter)(EXCEPTION_POINTERS* info);
 // Sets the filter to deal with exceptions inside a WindowProc. Returns the old
 // exception filter, if any.
 // This function should be called before any window is created.
-BASE_EXPORT WinProcExceptionFilter SetWinProcExceptionFilter(
+BRICK_EXPORT WinProcExceptionFilter SetWinProcExceptionFilter(
     WinProcExceptionFilter filter);
 
 // Calls the registered exception filter.
-BASE_EXPORT int CallExceptionFilter(EXCEPTION_POINTERS* info);
+BRICK_EXPORT int CallExceptionFilter(EXCEPTION_POINTERS* info);
 
 // Initializes the WNDCLASSEX structure |*class_out| to be passed to
 // RegisterClassEx() making sure that it is associated with the module
 // containing the window procedure.
-BASE_EXPORT void InitializeWindowClass(
+BRICK_EXPORT void InitializeWindowClass(
     const char16* class_name,
     WNDPROC window_proc,
     UINT style,
@@ -82,4 +82,4 @@ WrappedWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam) {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_WRAPPED_WINDOW_PROC_H_
+#endif  // BRICK_WIN_WRAPPED_WINDOW_PROC_H_

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/timer/hi_res_timer_manager.h"
+#include "brick/timer/hi_res_timer_manager.h"
 
 #include <algorithm>
 
-#include "base/atomicops.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/power_monitor/power_monitor.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/time/time.h"
+#include "brick/atomicops.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/power_monitor/power_monitor.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/time/time.h"
 
 namespace base {
 

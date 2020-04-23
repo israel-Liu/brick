@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/time/time_to_iso8601.h"
+#include "brick/time/time_to_iso8601.h"
 
-#include "base/strings/stringprintf.h"
-#include "base/time/time.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/time/time.h"
 
 namespace base {
 

@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_LOCATION_H_
-#define BASE_LOCATION_H_
+#ifndef BRICK_LOCATION_H_
+#define BRICK_LOCATION_H_
 
 #include <stddef.h>
 
 #include <cassert>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/debug/debugging_buildflags.h"
-#include "base/hash.h"
+#include "brick/base_export.h"
+#include "brick/debug/debugging_buildflags.h"
+#include "brick/hash.h"
 
 namespace base {
 
 // Location provides basic info where of an object was constructed, or was
 // significantly brought to life.
-class BASE_EXPORT Location {
+class BRICK_EXPORT Location {
  public:
   Location();
   Location(const Location& other);
@@ -80,7 +80,7 @@ class BASE_EXPORT Location {
   const void* program_counter_ = nullptr;
 };
 
-BASE_EXPORT const void* GetProgramCounter();
+BRICK_EXPORT const void* GetProgramCounter();
 
 // The macros defined here will expand to the current function.
 #if BUILDFLAG(ENABLE_LOCATION_SOURCE)
@@ -114,4 +114,4 @@ struct hash<::base::Location> {
 
 }  // namespace std
 
-#endif  // BASE_LOCATION_H_
+#endif  // BRICK_LOCATION_H_

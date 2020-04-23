@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_collision_warner.h"
+#include "brick/threading/thread_collision_warner.h"
 
-#include "base/logging.h"
-#include "base/threading/platform_thread.h"
+#include "brick/logging.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 

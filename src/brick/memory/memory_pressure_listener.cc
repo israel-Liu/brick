@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/memory_pressure_listener.h"
+#include "brick/memory/memory_pressure_listener.h"
 
-#include "base/observer_list_threadsafe.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/observer_list_threadsafe.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 

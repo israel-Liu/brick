@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/lock_impl.h"
+#include "brick/synchronization/lock_impl.h"
 
-#include "base/debug/activity_tracker.h"
+#include "brick/debug/activity_tracker.h"
 
 #include <windows.h>
 

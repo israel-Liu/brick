@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_IOS_CRB_PROTOCOL_OBSERVERS_H_
-#define BASE_IOS_CRB_PROTOCOL_OBSERVERS_H_
+#ifndef BRICK_IOS_CRB_PROTOCOL_OBSERVERS_H_
+#define BRICK_IOS_CRB_PROTOCOL_OBSERVERS_H_
 
 #import <Foundation/Foundation.h>
 
@@ -40,4 +40,4 @@ typedef void (^ExecutionWithObserverBlock)(id);
 
 @end
 
-#endif  // BASE_IOS_CRB_PROTOCOL_OBSERVERS_H_
+#endif  // BRICK_IOS_CRB_PROTOCOL_OBSERVERS_H_

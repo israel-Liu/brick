@@ -14,29 +14,29 @@
 #include <utility>
 #include <vector>
 
-#include "base/base_paths.h"
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/callback_helpers.h"
-#include "base/command_line.h"
-#include "base/environment.h"
-#include "base/files/file.h"
-#include "base/files/file_enumerator.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/guid.h"
-#include "base/macros.h"
-#include "base/path_service.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/test/multiprocess_test.h"
-#include "base/test/scoped_environment_variable_override.h"
-#include "base/test/test_file_util.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread.h"
+#include "brick/base_paths.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/callback_helpers.h"
+#include "brick/command_line.h"
+#include "brick/environment.h"
+#include "brick/files/file.h"
+#include "brick/files/file_enumerator.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/guid.h"
+#include "brick/macros.h"
+#include "brick/path_service.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/test/scoped_environment_variable_override.h"
+#include "brick/test/test_file_util.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"
@@ -48,9 +48,9 @@
 #include <tchar.h>
 #include <windows.h>
 #include <winioctl.h>
-#include "base/strings/string_number_conversions.h"
-#include "base/win/scoped_handle.h"
-#include "base/win/win_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/win_util.h"
 #endif
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
@@ -67,7 +67,7 @@
 #endif
 
 #if defined(OS_ANDROID)
-#include "base/android/content_uri_utils.h"
+#include "brick/android/content_uri_utils.h"
 #endif
 
 // This macro helps avoid wrapped lines in the test structs.

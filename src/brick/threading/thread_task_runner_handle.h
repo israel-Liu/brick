@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_THREAD_TASK_RUNNER_HANDLE_H_
-#define BASE_THREADING_THREAD_TASK_RUNNER_HANDLE_H_
+#ifndef BRICK_THREADING_THREAD_TASK_RUNNER_HANDLE_H_
+#define BRICK_THREADING_THREAD_TASK_RUNNER_HANDLE_H_
 
-#include "base/base_export.h"
-#include "base/callback_helpers.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/single_thread_task_runner.h"
+#include "brick/base_export.h"
+#include "brick/callback_helpers.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/single_thread_task_runner.h"
 
 namespace base {
 
@@ -19,7 +19,7 @@ namespace base {
 // for the current thread by calling ThreadTaskRunnerHandle::Get().
 // At most one TaskRunner may be bound to each thread at a time.
 // Prefer SequencedTaskRunnerHandle to this unless thread affinity is required.
-class BASE_EXPORT ThreadTaskRunnerHandle {
+class BRICK_EXPORT ThreadTaskRunnerHandle {
  public:
   // Gets the SingleThreadTaskRunner for the current thread.
   static scoped_refptr<SingleThreadTaskRunner> Get();
@@ -54,4 +54,4 @@ class BASE_EXPORT ThreadTaskRunnerHandle {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_TASK_RUNNER_HANDLE_H_
+#endif  // BRICK_THREADING_THREAD_TASK_RUNNER_HANDLE_H_

@@ -5,7 +5,7 @@
 // This is a "No Compile Test" suite.
 // http://dev.chromium.org/developers/testing/no-compile-tests
 
-#include "base/memory/weak_ptr.h"
+#include "brick/memory/weak_ptr.h"
 
 namespace base {
 

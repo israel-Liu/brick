@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/callback_helpers.h"
+#include "brick/callback_helpers.h"
 
-#include "base/bind.h"
-#include "base/callback.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace {

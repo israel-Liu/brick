@@ -4,7 +4,7 @@
 
 #include <cpu-features.h>
 
-#include "base/android/jni_android.h"
+#include "brick/android/jni_android.h"
 #include "jni/CpuFeatures_jni.h"
 
 namespace base {

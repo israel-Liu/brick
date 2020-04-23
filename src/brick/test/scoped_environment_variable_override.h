@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_SCOPED_ENVIRONMENT_VARIABLE_OVERRIDE_H_
-#define BASE_TEST_SCOPED_ENVIRONMENT_VARIABLE_OVERRIDE_H_
+#ifndef BRICK_TEST_SCOPED_ENVIRONMENT_VARIABLE_OVERRIDE_H_
+#define BRICK_TEST_SCOPED_ENVIRONMENT_VARIABLE_OVERRIDE_H_
 
 #include <memory>
 #include <string>
@@ -37,4 +37,4 @@ class ScopedEnvironmentVariableOverride final {
 }  // namespace test
 }  // namespace base
 
-#endif  // BASE_TEST_SCOPED_ENVIRONMENT_VARIABLE_OVERRIDE_H_
+#endif  // BRICK_TEST_SCOPED_ENVIRONMENT_VARIABLE_OVERRIDE_H_

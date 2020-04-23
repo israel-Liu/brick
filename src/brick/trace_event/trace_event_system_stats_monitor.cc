@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_event_system_stats_monitor.h"
+#include "brick/trace_event/trace_event_system_stats_monitor.h"
 
 #include <memory>
 
-#include "base/debug/leak_annotations.h"
-#include "base/json/json_writer.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_local_storage.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/json/json_writer.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_local_storage.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 namespace trace_event {

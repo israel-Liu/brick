@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_util.h"
+#include "brick/files/file_util.h"
 
 #include <dirent.h>
 #include <errno.h>
@@ -21,37 +21,37 @@
 #include <time.h>
 #include <unistd.h>
 
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/containers/stack.h"
-#include "base/environment.h"
-#include "base/files/file_enumerator.h"
-#include "base/files/file_path.h"
-#include "base/files/scoped_file.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/singleton.h"
-#include "base/path_service.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/stl_util.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/sys_string_conversions.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/sys_info.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/time/time.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/containers/stack.h"
+#include "brick/environment.h"
+#include "brick/files/file_enumerator.h"
+#include "brick/files/file_path.h"
+#include "brick/files/scoped_file.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/singleton.h"
+#include "brick/path_service.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/sys_string_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/sys_info.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if defined(OS_MACOSX)
 #include <AvailabilityMacros.h>
-#include "base/mac/foundation_util.h"
+#include "brick/mac/foundation_util.h"
 #endif
 
 #if defined(OS_ANDROID)
-#include "base/android/content_uri_utils.h"
-#include "base/os_compat_android.h"
+#include "brick/android/content_uri_utils.h"
+#include "brick/os_compat_android.h"
 #endif
 
 #if !defined(OS_IOS)

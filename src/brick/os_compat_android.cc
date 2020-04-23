@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/os_compat_android.h"
+#include "brick/os_compat_android.h"
 
 #include <asm/unistd.h>
 #include <errno.h>
@@ -16,9 +16,9 @@
 #include <time64.h>
 #endif
 
-#include "base/rand_util.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/stringprintf.h"
+#include "brick/rand_util.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/stringprintf.h"
 
 extern "C" {
 // There is no futimes() avaiable in Bionic, so we provide our own

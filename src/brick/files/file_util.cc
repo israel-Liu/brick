@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_util.h"
+#include "brick/files/file_util.h"
 
 #if defined(OS_WIN)
 #include <io.h>
@@ -12,13 +12,13 @@
 #include <fstream>
 #include <limits>
 
-#include "base/files/file_enumerator.h"
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/files/file_enumerator.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 
 namespace base {

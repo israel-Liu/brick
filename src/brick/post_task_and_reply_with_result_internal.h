@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_POST_TASK_AND_REPLY_WITH_RESULT_INTERNAL_H_
-#define BASE_POST_TASK_AND_REPLY_WITH_RESULT_INTERNAL_H_
+#ifndef BRICK_POST_TASK_AND_REPLY_WITH_RESULT_INTERNAL_H_
+#define BRICK_POST_TASK_AND_REPLY_WITH_RESULT_INTERNAL_H_
 
 #include <utility>
 
-#include "base/callback.h"
+#include "brick/callback.h"
 
 namespace base {
 
@@ -31,4 +31,4 @@ void ReplyAdapter(OnceCallback<void(ReplyArgType)> callback,
 
 }  // namespace base
 
-#endif  // BASE_POST_TASK_AND_REPLY_WITH_RESULT_INTERNAL_H_
+#endif  // BRICK_POST_TASK_AND_REPLY_WITH_RESULT_INTERNAL_H_

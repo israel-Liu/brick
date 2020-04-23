@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/trace_event_analyzer.h"
+#include "brick/test/trace_event_analyzer.h"
 
 #include <math.h>
 
 #include <algorithm>
 #include <set>
 
-#include "base/json/json_reader.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/ref_counted_memory.h"
-#include "base/run_loop.h"
-#include "base/strings/pattern.h"
-#include "base/trace_event/trace_buffer.h"
-#include "base/trace_event/trace_config.h"
-#include "base/trace_event/trace_log.h"
-#include "base/values.h"
+#include "brick/json/json_reader.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/ref_counted_memory.h"
+#include "brick/run_loop.h"
+#include "brick/strings/pattern.h"
+#include "brick/trace_event/trace_buffer.h"
+#include "brick/trace_event/trace_config.h"
+#include "brick/trace_event/trace_log.h"
+#include "brick/values.h"
 
 namespace {
 void OnTraceDataCollected(base::OnceClosure quit_closure,

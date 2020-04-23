@@ -6,10 +6,10 @@
 #include <algorithm>
 #include <vector>
 
-#include "base/files/file_path.h"
-#include "base/path_service.h"
-#include "base/scoped_native_library.h"
-#include "base/win/pe_image.h"
+#include "brick/files/file_path.h"
+#include "brick/path_service.h"
+#include "brick/scoped_native_library.h"
+#include "brick/win/pe_image.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_INCOMING_TASK_QUEUE_H_
-#define BASE_MESSAGE_LOOP_INCOMING_TASK_QUEUE_H_
+#ifndef BRICK_MESSAGE_LOOP_INCOMING_TASK_QUEUE_H_
+#define BRICK_MESSAGE_LOOP_INCOMING_TASK_QUEUE_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/debug/task_annotator.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/pending_task.h"
-#include "base/sequence_checker.h"
-#include "base/synchronization/lock.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/debug/task_annotator.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/pending_task.h"
+#include "brick/sequence_checker.h"
+#include "brick/synchronization/lock.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -25,7 +25,7 @@ namespace internal {
 // Implements a queue of tasks posted to the message loop running on the current
 // thread. This class takes care of synchronizing posting tasks from different
 // threads and together with MessageLoop ensures clean shutdown.
-class BASE_EXPORT IncomingTaskQueue
+class BRICK_EXPORT IncomingTaskQueue
     : public RefCountedThreadSafe<IncomingTaskQueue> {
  public:
   // Provides a read and remove only view into a task queue.
@@ -268,4 +268,4 @@ class BASE_EXPORT IncomingTaskQueue
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_INCOMING_TASK_QUEUE_H_
+#endif  // BRICK_MESSAGE_LOOP_INCOMING_TASK_QUEUE_H_

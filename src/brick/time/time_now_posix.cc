@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 
 #include <stdint.h>
 #include <sys/time.h>
@@ -12,9 +12,9 @@
 #endif
 #include <unistd.h>
 
-#include "base/logging.h"
-#include "base/numerics/safe_math.h"
-#include "base/time/time_override.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/time/time_override.h"
 #include "build/build_config.h"
 
 // Ensure the Fuchsia and Mac builds do not include this module. Instead,

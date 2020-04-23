@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/memory_pressure_monitor_mac.h"
+#include "brick/memory/memory_pressure_monitor_mac.h"
 
 #include <CoreFoundation/CoreFoundation.h>
 
@@ -12,9 +12,9 @@
 
 #include <cmath>
 
-#include "base/bind.h"
-#include "base/logging.h"
-#include "base/mac/mac_util.h"
+#include "brick/bind.h"
+#include "brick/logging.h"
+#include "brick/mac/mac_util.h"
 
 // Redeclare for partial 10.9 availability.
 DISPATCH_EXPORT const struct dispatch_source_type_s

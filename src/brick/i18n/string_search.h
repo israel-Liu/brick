@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_I18N_STRING_SEARCH_H_
-#define BASE_I18N_STRING_SEARCH_H_
+#ifndef BRICK_I18N_STRING_SEARCH_H_
+#define BRICK_I18N_STRING_SEARCH_H_
 
 #include <stddef.h>
 
-#include "base/i18n/base_i18n_export.h"
-#include "base/strings/string16.h"
+#include "brick/i18n/base_i18n_export.h"
+#include "brick/strings/string16.h"
 
 struct UStringSearch;
 
@@ -22,7 +22,7 @@ namespace i18n {
 // Only differences between base letters are taken into consideration. Case and
 // accent differences are ignored. Please refer to 'primary level' in
 // http://userguide.icu-project.org/collation/concepts for additional details.
-BASE_I18N_EXPORT
+BRICK_I18N_EXPORT
     bool StringSearchIgnoringCaseAndAccents(const string16& find_this,
                                             const string16& in_this,
                                             size_t* match_index,
@@ -31,7 +31,7 @@ BASE_I18N_EXPORT
 // This class is for speeding up multiple StringSearchIgnoringCaseAndAccents()
 // with the same |find_this| argument. |find_this| is passed as the constructor
 // argument, and precomputation for searching is done only at that timing.
-class BASE_I18N_EXPORT FixedPatternStringSearchIgnoringCaseAndAccents {
+class BRICK_I18N_EXPORT FixedPatternStringSearchIgnoringCaseAndAccents {
  public:
   explicit FixedPatternStringSearchIgnoringCaseAndAccents(
       const string16& find_this);
@@ -52,4 +52,4 @@ class BASE_I18N_EXPORT FixedPatternStringSearchIgnoringCaseAndAccents {
 }  // namespace i18n
 }  // namespace base
 
-#endif  // BASE_I18N_STRING_SEARCH_H_
+#endif  // BRICK_I18N_STRING_SEARCH_H_

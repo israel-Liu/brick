@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/sequence.h"
+#include "brick/task_scheduler/sequence.h"
 
 #include <utility>
 
-#include "base/logging.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/time/time.h"
 
 namespace base {
 namespace internal {

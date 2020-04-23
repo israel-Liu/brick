@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_event_system_stats_monitor.h"
+#include "brick/trace_event/trace_event_system_stats_monitor.h"
 
 #include <sstream>
 #include <string>
 
-#include "base/macros.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/trace_event/trace_event_impl.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

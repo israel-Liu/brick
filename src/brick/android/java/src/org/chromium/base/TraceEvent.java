@@ -14,7 +14,7 @@ import org.chromium.base.annotations.CalledByNative;
 import org.chromium.base.annotations.JNINamespace;
 import org.chromium.base.annotations.MainDex;
 /**
- * Java mirror of Chrome trace event API. See base/trace_event/trace_event.h.
+ * Java mirror of Chrome trace event API. See brick/trace_event/trace_event.h.
  *
  * To get scoped trace events, use the "try with resource" construct, for instance:
  * <pre>{@code

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_APK_ASSETS_H_
-#define BASE_ANDROID_APK_ASSETS_H_
+#ifndef BRICK_ANDROID_APK_ASSETS_H_
+#define BRICK_ANDROID_APK_ASSETS_H_
 
 #include <string>
 
-#include "base/android/jni_android.h"
-#include "base/files/file_path.h"
-#include "base/files/memory_mapped_file.h"
+#include "brick/android/jni_android.h"
+#include "brick/files/file_path.h"
+#include "brick/files/memory_mapped_file.h"
 
 namespace base {
 namespace android {
@@ -22,18 +22,18 @@ namespace android {
 // - |file_path|: Path to file within .apk. e.g.: assets/foo.pak
 // Output arguments:
 // - |region|: size & offset (in bytes) within the .apk of the asset.
-BASE_EXPORT int OpenApkAsset(
+BRICK_EXPORT int OpenApkAsset(
     const std::string& file_path,
     base::MemoryMappedFile::Region* region);
 
 // Registers an uncompressed asset from within the apk in the
 // FileDescriptorStore.
 // Returns: true in case of success, false otherwise.
-BASE_EXPORT bool RegisterApkAssetWithFileDescriptorStore(
+BRICK_EXPORT bool RegisterApkAssetWithFileDescriptorStore(
     const std::string& key,
     const base::FilePath& file_path);
 
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_APK_ASSETS_H_
+#endif  // BRICK_ANDROID_APK_ASSETS_H_

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TASK_TRACKER_POSIX_H_
-#define BASE_TASK_SCHEDULER_TASK_TRACKER_POSIX_H_
+#ifndef BRICK_TASK_SCHEDULER_TASK_TRACKER_POSIX_H_
+#define BRICK_TASK_SCHEDULER_TASK_TRACKER_POSIX_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 
@@ -25,7 +25,7 @@ struct Task;
 // a task runs. Used on all POSIX platforms except NaCl SFI.
 // set_watch_file_descriptor_message_loop() must be called before the
 // TaskTracker can run tasks.
-class BASE_EXPORT TaskTrackerPosix : public TaskTracker {
+class BRICK_EXPORT TaskTrackerPosix : public TaskTracker {
  public:
   TaskTrackerPosix(StringPiece name);
   ~TaskTrackerPosix() override;
@@ -71,4 +71,4 @@ class BASE_EXPORT TaskTrackerPosix : public TaskTracker {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TASK_TRACKER_POSIX_H_
+#endif  // BRICK_TASK_SCHEDULER_TASK_TRACKER_POSIX_H_

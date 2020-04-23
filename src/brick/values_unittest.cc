@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/values.h"
+#include "brick/values.h"
 
 #include <stddef.h>
 
@@ -14,11 +14,11 @@
 #include <utility>
 #include <vector>
 
-#include "base/containers/adapters.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/containers/adapters.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

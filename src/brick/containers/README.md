@@ -1,4 +1,4 @@
-# base/containers library
+# brick/containers library
 
 ## What goes here
 
@@ -245,7 +245,7 @@ not stable across mutations.
 container. The default container is `std::deque` so everything from the deque
 section applies.
 
-Chromium provides `base/containers/stack.h` which defines `base::stack` that
+Chromium provides `brick/containers/stack.h` which defines `base::stack` that
 should be used in preference to std::stack. This changes the underlying
 container to `base::circular_deque`. The result will be very similar to
 manually specifying a `std::vector` for the underlying implementation except

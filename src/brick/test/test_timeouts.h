@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_TIMEOUTS_H_
-#define BASE_TEST_TEST_TIMEOUTS_H_
+#ifndef BRICK_TEST_TEST_TIMEOUTS_H_
+#define BRICK_TEST_TEST_TIMEOUTS_H_
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/time/time.h"
 
 // Returns common timeouts to use in tests. Makes it possible to adjust
 // the timeouts for different environments (like TSan).
@@ -58,4 +58,4 @@ class TestTimeouts {
   DISALLOW_IMPLICIT_CONSTRUCTORS(TestTimeouts);
 };
 
-#endif  // BASE_TEST_TEST_TIMEOUTS_H_
+#endif  // BRICK_TEST_TEST_TIMEOUTS_H_

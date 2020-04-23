@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/scoped_mock_time_message_loop_task_runner.h"
+#include "brick/test/scoped_mock_time_message_loop_task_runner.h"
 
 #include <memory>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/callback_forward.h"
-#include "base/containers/circular_deque.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/ref_counted.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_loop_current.h"
-#include "base/test/test_mock_time_task_runner.h"
-#include "base/test/test_pending_task.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/callback_forward.h"
+#include "brick/containers/circular_deque.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_loop_current.h"
+#include "brick/test/test_mock_time_task_runner.h"
+#include "brick/test/test_pending_task.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

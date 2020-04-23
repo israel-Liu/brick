@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_I18N_BREAK_ITERATOR_H_
-#define BASE_I18N_BREAK_ITERATOR_H_
+#ifndef BRICK_I18N_BREAK_ITERATOR_H_
+#define BRICK_I18N_BREAK_ITERATOR_H_
 
 #include <stddef.h>
 
-#include "base/i18n/base_i18n_export.h"
-#include "base/macros.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
+#include "brick/i18n/base_i18n_export.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
 
 // The BreakIterator class iterates through the words, word breaks, and
 // line breaks in a UTF-16 string.
@@ -58,7 +58,7 @@
 namespace base {
 namespace i18n {
 
-class BASE_I18N_EXPORT BreakIterator {
+class BRICK_I18N_EXPORT BreakIterator {
  public:
   enum BreakType {
     BREAK_WORD,
@@ -179,4 +179,4 @@ class BASE_I18N_EXPORT BreakIterator {
 }  // namespace i18n
 }  // namespace base
 
-#endif  // BASE_I18N_BREAK_ITERATOR_H_
+#endif  // BRICK_I18N_BREAK_ITERATOR_H_

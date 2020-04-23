@@ -25,8 +25,8 @@
 // to use these.
 //
 
-#ifndef BASE_ATOMICOPS_H_
-#define BASE_ATOMICOPS_H_
+#ifndef BRICK_ATOMICOPS_H_
+#define BRICK_ATOMICOPS_H_
 
 #include <stdint.h>
 
@@ -36,7 +36,7 @@
 // - libstdc++: captures bits/c++config.h for __GLIBCXX__
 #include <cstddef>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN) && defined(ARCH_CPU_64_BITS)
@@ -145,17 +145,17 @@ Atomic64 Release_Load(volatile const Atomic64* ptr);
 }  // namespace base
 
 #if defined(OS_WIN)
-// TODO(jfb): Try to use base/atomicops_internals_portable.h everywhere.
+// TODO(jfb): Try to use brick/atomicops_internals_portable.h everywhere.
 // https://crbug.com/559247.
-#  include "base/atomicops_internals_x86_msvc.h"
+#  include "brick/atomicops_internals_x86_msvc.h"
 #else
-#  include "base/atomicops_internals_portable.h"
+#  include "brick/atomicops_internals_portable.h"
 #endif
 
 // On some platforms we need additional declarations to make
 // AtomicWord compatible with our other Atomic* types.
 #if defined(OS_MACOSX) || defined(OS_OPENBSD)
-#include "base/atomicops_internals_atomicword_compat.h"
+#include "brick/atomicops_internals_atomicword_compat.h"
 #endif
 
-#endif  // BASE_ATOMICOPS_H_
+#endif  // BRICK_ATOMICOPS_H_

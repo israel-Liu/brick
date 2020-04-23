@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/ios/ns_error_util.h"
+#import "brick/ios/ns_error_util.h"
 
 #import <Foundation/Foundation.h>
 
-#include "base/logging.h"
-#include "base/mac/scoped_nsobject.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_nsobject.h"
 
 namespace base {
 namespace ios {

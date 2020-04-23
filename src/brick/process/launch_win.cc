@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/launch.h"
+#include "brick/process/launch.h"
 
 #include <fcntl.h>
 #include <io.h>
@@ -14,20 +14,20 @@
 #include <ios>
 #include <limits>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/command_line.h"
-#include "base/debug/activity_tracker.h"
-#include "base/debug/stack_trace.h"
-#include "base/logging.h"
-#include "base/metrics/histogram.h"
-#include "base/process/kill.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/sys_info.h"
-#include "base/win/scoped_handle.h"
-#include "base/win/scoped_process_information.h"
-#include "base/win/startup_information.h"
-#include "base/win/windows_version.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/command_line.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram.h"
+#include "brick/process/kill.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/sys_info.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/scoped_process_information.h"
+#include "brick/win/startup_information.h"
+#include "brick/win/windows_version.h"
 
 namespace base {
 

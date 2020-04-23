@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_JAVA_HANDLER_THREAD_H_
-#define BASE_ANDROID_JAVA_HANDLER_THREAD_H_
+#ifndef BRICK_ANDROID_JAVA_HANDLER_THREAD_H_
+#define BRICK_ANDROID_JAVA_HANDLER_THREAD_H_
 
 #include <jni.h>
 
 #include <memory>
 
-#include "base/android/scoped_java_ref.h"
-#include "base/message_loop/message_loop.h"
-#include "base/single_thread_task_runner.h"
+#include "brick/android/scoped_java_ref.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/single_thread_task_runner.h"
 
 namespace base {
 
@@ -24,7 +24,7 @@ namespace android {
 // on the thread.
 // This is useful for callbacks where the receiver expects a thread
 // with a prepared Looper.
-class BASE_EXPORT JavaHandlerThread {
+class BRICK_EXPORT JavaHandlerThread {
  public:
   // Create new thread.
   explicit JavaHandlerThread(const char* name);
@@ -81,4 +81,4 @@ class BASE_EXPORT JavaHandlerThread {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_JAVA_HANDLER_THREAD_H_
+#endif  // BRICK_ANDROID_JAVA_HANDLER_THREAD_H_

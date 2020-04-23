@@ -3,18 +3,18 @@
 // found in the LICENSE file.
 
 // Defines base::PathProviderAndroid which replaces base::PathProviderPosix for
-// Android in base/path_service.cc.
+// Android in brick/path_service.cc.
 
 #include <limits.h>
 #include <unistd.h>
 
-#include "base/android/jni_android.h"
-#include "base/android/path_utils.h"
-#include "base/base_paths.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/process/process_metrics.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/path_utils.h"
+#include "brick/base_paths.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/process/process_metrics.h"
 
 namespace base {
 
@@ -37,7 +37,7 @@ bool PathProviderAndroid(int key, FilePath* result) {
       return base::android::GetNativeLibraryDirectory(result);
     case base::DIR_SOURCE_ROOT:
       // Used only by tests.
-      // In that context, hooked up via base/test/test_support_android.cc.
+      // In that context, hooked up via brick/test/test_support_android.cc.
       NOTIMPLEMENTED();
       return false;
     case base::DIR_USER_DESKTOP:

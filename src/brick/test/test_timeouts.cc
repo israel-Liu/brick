@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_timeouts.h"
+#include "brick/test/test_timeouts.h"
 
 #include <algorithm>
 
-#include "base/command_line.h"
-#include "base/debug/debugger.h"
-#include "base/logging.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/test/test_switches.h"
+#include "brick/command_line.h"
+#include "brick/debug/debugger.h"
+#include "brick/logging.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/test/test_switches.h"
 #include "build/build_config.h"
 
 namespace {

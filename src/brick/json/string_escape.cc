@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/string_escape.h"
+#include "brick/json/string_escape.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -10,11 +10,11 @@
 #include <limits>
 #include <string>
 
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversion_utils.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/third_party/icu/icu_utf.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversion_utils.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/third_party/icu/icu_utf.h"
 
 namespace base {
 

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_GTEST_UTIL_H_
-#define BASE_TEST_GTEST_UTIL_H_
+#ifndef BRICK_TEST_GTEST_UTIL_H_
+#define BRICK_TEST_GTEST_UTIL_H_
 
 #include <string>
 #include <utility>
 #include <vector>
 
-#include "base/compiler_specific.h"
-#include "base/logging.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
@@ -81,4 +81,4 @@ bool ReadTestNamesFromFile(
 
 }  // namespace base
 
-#endif  // BASE_TEST_GTEST_UTIL_H_
+#endif  // BRICK_TEST_GTEST_UTIL_H_

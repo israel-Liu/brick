@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/scoped_feature_list.h"
+#include "brick/test/scoped_feature_list.h"
 
 #include <algorithm>
 #include <utility>
 #include <vector>
 
-#include "base/memory/ptr_util.h"
-#include "base/metrics/field_trial_param_associator.h"
-#include "base/stl_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/field_trial_param_associator.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
 
 namespace base {
 namespace test {

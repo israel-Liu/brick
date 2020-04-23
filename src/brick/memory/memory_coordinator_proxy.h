@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_MEMORY_COORDINATOR_PROXY_H_
-#define BASE_MEMORY_MEMORY_COORDINATOR_PROXY_H_
+#ifndef BRICK_MEMORY_MEMORY_COORDINATOR_PROXY_H_
+#define BRICK_MEMORY_MEMORY_COORDINATOR_PROXY_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/memory/memory_coordinator_client.h"
-#include "base/memory/singleton.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/memory/memory_coordinator_client.h"
+#include "brick/memory/singleton.h"
 
 namespace base {
 
 // The MemoryCoordinator interface. See comments in MemoryCoordinatorProxy for
 // method descriptions.
-class BASE_EXPORT MemoryCoordinator {
+class BRICK_EXPORT MemoryCoordinator {
  public:
   virtual ~MemoryCoordinator() = default;
 
@@ -23,7 +23,7 @@ class BASE_EXPORT MemoryCoordinator {
 
 // The proxy of MemoryCoordinator to be accessed from components that are not
 // in content/browser e.g. net.
-class BASE_EXPORT MemoryCoordinatorProxy {
+class BRICK_EXPORT MemoryCoordinatorProxy {
  public:
   static MemoryCoordinatorProxy* GetInstance();
 
@@ -46,4 +46,4 @@ class BASE_EXPORT MemoryCoordinatorProxy {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_MEMORY_COORDINATOR_PROXY_H_
+#endif  // BRICK_MEMORY_MEMORY_COORDINATOR_PROXY_H_

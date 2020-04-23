@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/allocator_check.h"
+#include "brick/allocator/allocator_check.h"
 
-#include "base/allocator/buildflags.h"
+#include "brick/allocator/buildflags.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/allocator/winheap_stubs_win.h"
+#include "brick/allocator/winheap_stubs_win.h"
 #endif
 
 #if defined(OS_LINUX)
@@ -16,7 +16,7 @@
 #endif
 
 #if defined(OS_MACOSX)
-#include "base/allocator/allocator_interception_mac.h"
+#include "brick/allocator/allocator_interception_mac.h"
 #endif
 
 namespace base {

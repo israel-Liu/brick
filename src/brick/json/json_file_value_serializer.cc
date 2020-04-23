@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_file_value_serializer.h"
+#include "brick/json/json_file_value_serializer.h"
 
-#include "base/files/file_util.h"
-#include "base/json/json_string_value_serializer.h"
-#include "base/logging.h"
+#include "brick/files/file_util.h"
+#include "brick/json/json_string_value_serializer.h"
+#include "brick/logging.h"
 #include "build/build_config.h"
 
 using base::FilePath;

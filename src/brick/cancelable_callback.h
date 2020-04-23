@@ -41,19 +41,19 @@
 // timeout.Cancel();  // Hopefully this is hit before the timeout callback runs.
 //
 
-#ifndef BASE_CANCELABLE_CALLBACK_H_
-#define BASE_CANCELABLE_CALLBACK_H_
+#ifndef BRICK_CANCELABLE_CALLBACK_H_
+#define BRICK_CANCELABLE_CALLBACK_H_
 
 #include <utility>
 
-#include "base/base_export.h"
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/callback_internal.h"
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
+#include "brick/base_export.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/callback_internal.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
 
 namespace base {
 namespace internal {
@@ -153,4 +153,4 @@ using CancelableClosure = CancelableCallback<void()>;
 
 }  // namespace base
 
-#endif  // BASE_CANCELABLE_CALLBACK_H_
+#endif  // BRICK_CANCELABLE_CALLBACK_H_

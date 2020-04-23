@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_BUILD_INFO_H_
-#define BASE_ANDROID_BUILD_INFO_H_
+#ifndef BRICK_ANDROID_BUILD_INFO_H_
+#define BRICK_ANDROID_BUILD_INFO_H_
 
 #include <jni.h>
 
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/singleton.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/singleton.h"
 
 namespace base {
 namespace android {
@@ -39,7 +39,7 @@ enum SdkVersion {
 
 // It is also used to store the last java exception seen during JNI.
 // TODO(nileshagrawal): Find a better place to store this info.
-class BASE_EXPORT BuildInfo {
+class BRICK_EXPORT BuildInfo {
  public:
 
   ~BuildInfo() {}
@@ -175,4 +175,4 @@ class BASE_EXPORT BuildInfo {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_BUILD_INFO_H_
+#endif  // BRICK_ANDROID_BUILD_INFO_H_

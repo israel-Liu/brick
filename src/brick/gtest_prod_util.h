@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_GTEST_PROD_UTIL_H_
-#define BASE_GTEST_PROD_UTIL_H_
+#ifndef BRICK_GTEST_PROD_UTIL_H_
+#define BRICK_GTEST_PROD_UTIL_H_
 
 #include "testing/gtest/include/gtest/gtest_prod.h"  // nogncheck
 
@@ -63,4 +63,4 @@
   class test_case_name##_##DISABLED_##test_name##_Test; \
   class test_case_name##_##FLAKY_##test_name##_Test
 
-#endif  // BASE_GTEST_PROD_UTIL_H_
+#endif  // BRICK_GTEST_PROD_UTIL_H_

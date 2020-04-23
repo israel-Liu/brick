@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/allocator_shim.h"
+#include "brick/allocator/allocator_shim.h"
 
-#include "base/allocator/winheap_stubs_win.h"
-#include "base/logging.h"
+#include "brick/allocator/winheap_stubs_win.h"
+#include "brick/logging.h"
 
 namespace {
 

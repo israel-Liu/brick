@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <stddef.h>
 #include <stdint.h>
 #include <sys/sysctl.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 

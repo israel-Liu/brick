@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_UNGUESSABLE_TOKEN_ANDROID_H_
-#define BASE_ANDROID_UNGUESSABLE_TOKEN_ANDROID_H_
+#ifndef BRICK_ANDROID_UNGUESSABLE_TOKEN_ANDROID_H_
+#define BRICK_ANDROID_UNGUESSABLE_TOKEN_ANDROID_H_
 
 #include <jni.h>
 
-#include "base/android/scoped_java_ref.h"
-#include "base/base_export.h"
-#include "base/unguessable_token.h"
+#include "brick/android/scoped_java_ref.h"
+#include "brick/base_export.h"
+#include "brick/unguessable_token.h"
 
 namespace base {
 namespace android {
 
-class BASE_EXPORT UnguessableTokenAndroid {
+class BRICK_EXPORT UnguessableTokenAndroid {
  public:
   // Create a Java UnguessableToken with the same value as |token|.
   static ScopedJavaLocalRef<jobject> Create(
@@ -40,4 +40,4 @@ class BASE_EXPORT UnguessableTokenAndroid {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_UNGUESSABLE_TOKEN_ANDROID_H_
+#endif  // BRICK_ANDROID_UNGUESSABLE_TOKEN_ANDROID_H_

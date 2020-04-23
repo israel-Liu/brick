@@ -6,7 +6,7 @@
 // is functionally a wrapper around the LockImpl class, so the only
 // real intelligence in the class is in the debugging logic.
 
-#include "base/synchronization/lock.h"
+#include "brick/synchronization/lock.h"
 
 #if DCHECK_IS_ON()
 

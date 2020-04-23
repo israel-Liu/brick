@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_FILE_H_
-#define BASE_FILES_FILE_H_
+#ifndef BRICK_FILES_FILE_H_
+#define BRICK_FILES_FILE_H_
 
 #include <stdint.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/files/file_tracing.h"
-#include "base/files/platform_file.h"
-#include "base/files/scoped_file.h"
-#include "base/macros.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_tracing.h"
+#include "brick/files/platform_file.h"
+#include "brick/files/scoped_file.h"
+#include "brick/macros.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
@@ -41,7 +41,7 @@ typedef struct stat64 stat_wrapper_t;
 // obvious non-modifying way are marked as const. Any method that forward calls
 // to the OS is not considered const, even if there is no apparent change to
 // member variables.
-class BASE_EXPORT File {
+class BRICK_EXPORT File {
  public:
   // FLAG_(OPEN|CREATE).* are mutually exclusive. You should specify exactly one
   // of the five (possibly combining with other flags) when opening or creating
@@ -119,7 +119,7 @@ class BASE_EXPORT File {
   // make sure to update all functions that use it in file_util_{win|posix}.cc,
   // too, and the ParamTraits<base::File::Info> implementation in
   // ipc/ipc_message_utils.cc.
-  struct BASE_EXPORT Info {
+  struct BRICK_EXPORT Info {
     Info();
     ~Info();
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
@@ -371,5 +371,5 @@ class BASE_EXPORT File {
 
 }  // namespace base
 
-#endif  // BASE_FILES_FILE_H_
+#endif  // BRICK_FILES_FILE_H_
 

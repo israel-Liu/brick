@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/kill.h"
+#include "brick/process/kill.h"
 
 #include <errno.h>
 #include <signal.h>
@@ -10,10 +10,10 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
-#include "base/logging.h"
-#include "base/posix/eintr_wrapper.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/logging.h"
+#include "brick/posix/eintr_wrapper.h"
 
 namespace base {
 

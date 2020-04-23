@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/mach_port_broker.h"
+#include "brick/mac/mach_port_broker.h"
 
 #include <bsm/libbsm.h>
 #include <servers/bootstrap.h>
 
-#include "base/logging.h"
-#include "base/mac/foundation_util.h"
-#include "base/mac/mach_logging.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
+#include "brick/logging.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
 
 namespace base {
 

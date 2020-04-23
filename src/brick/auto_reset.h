@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_AUTO_RESET_H_
-#define BASE_AUTO_RESET_H_
+#ifndef BRICK_AUTO_RESET_H_
+#define BRICK_AUTO_RESET_H_
 
 #include <utility>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 
 // base::AutoReset<> is useful for setting a variable to a new value only within
 // a particular scope. An base::AutoReset<> object resets a variable to its
@@ -40,4 +40,4 @@ class AutoReset {
 
 }  // namespace base
 
-#endif  // BASE_AUTO_RESET_H_
+#endif  // BRICK_AUTO_RESET_H_

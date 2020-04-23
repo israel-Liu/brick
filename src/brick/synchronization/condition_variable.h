@@ -62,28 +62,28 @@
 // For a discussion of the many very subtle implementation details, see the FAQ
 // at the end of condition_variable_win.cc.
 
-#ifndef BASE_SYNCHRONIZATION_CONDITION_VARIABLE_H_
-#define BASE_SYNCHRONIZATION_CONDITION_VARIABLE_H_
+#ifndef BRICK_SYNCHRONIZATION_CONDITION_VARIABLE_H_
+#define BRICK_SYNCHRONIZATION_CONDITION_VARIABLE_H_
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
 #include <pthread.h>
 #endif
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 #endif
 
 namespace base {
 
 class TimeDelta;
 
-class BASE_EXPORT ConditionVariable {
+class BRICK_EXPORT ConditionVariable {
  public:
   // Construct a cv for use with ONLY one user lock.
   explicit ConditionVariable(Lock* user_lock);
@@ -121,4 +121,4 @@ class BASE_EXPORT ConditionVariable {
 
 }  // namespace base
 
-#endif  // BASE_SYNCHRONIZATION_CONDITION_VARIABLE_H_
+#endif  // BRICK_SYNCHRONIZATION_CONDITION_VARIABLE_H_

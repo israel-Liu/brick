@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/platform_shared_memory_region.h"
+#include "brick/memory/platform_shared_memory_region.h"
 
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
 
-#include "base/files/file_util.h"
-#include "base/numerics/checked_math.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_util.h"
+#include "brick/numerics/checked_math.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 namespace base {

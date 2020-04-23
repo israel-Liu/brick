@@ -4,14 +4,14 @@
 
 // This file defines some bit utilities.
 
-#ifndef BASE_BITS_H_
-#define BASE_BITS_H_
+#ifndef BRICK_BITS_H_
+#define BRICK_BITS_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/compiler_specific.h"
-#include "base/logging.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
 #include "build/build_config.h"
 
 #if defined(COMPILER_MSVC)
@@ -181,4 +181,4 @@ inline int Log2Ceiling(uint32_t n) {
 }  // namespace bits
 }  // namespace base
 
-#endif  // BASE_BITS_H_
+#endif  // BRICK_BITS_H_

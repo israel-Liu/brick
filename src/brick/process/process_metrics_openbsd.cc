@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_metrics.h"
+#include "brick/process/process_metrics.h"
 
 #include <stddef.h>
 #include <stdint.h>
 #include <sys/param.h>
 #include <sys/sysctl.h>
 
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/process/process_metrics_iocounters.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/process/process_metrics_iocounters.h"
 
 namespace base {
 

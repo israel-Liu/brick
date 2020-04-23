@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 //
 // A JSON parser.  Converts strings of JSON into a Value object (see
-// base/values.h).
+// brick/values.h).
 // http://www.ietf.org/rfc/rfc4627.txt?number=4627
 //
 // Known limitations/deviations from the RFC:
@@ -25,14 +25,14 @@
 //   double quotes
 // TODO(tc): Add an option to disable comment stripping
 
-#ifndef BASE_JSON_JSON_READER_H_
-#define BASE_JSON_JSON_READER_H_
+#ifndef BRICK_JSON_JSON_READER_H_
+#define BRICK_JSON_JSON_READER_H_
 
 #include <memory>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 
@@ -56,7 +56,7 @@ enum JSONParserOptions {
   JSON_REPLACE_INVALID_CHARACTERS = 1 << 1,
 };
 
-class BASE_EXPORT JSONReader {
+class BRICK_EXPORT JSONReader {
  public:
   static const int kStackMaxDepth;
 
@@ -132,4 +132,4 @@ class BASE_EXPORT JSONReader {
 
 }  // namespace base
 
-#endif  // BASE_JSON_JSON_READER_H_
+#endif  // BRICK_JSON_JSON_READER_H_

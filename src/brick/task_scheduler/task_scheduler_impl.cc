@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/task_scheduler_impl.h"
+#include "brick/task_scheduler/task_scheduler_impl.h"
 
 #include <algorithm>
 #include <string>
 #include <utility>
 
-#include "base/compiler_specific.h"
-#include "base/message_loop/message_loop.h"
-#include "base/metrics/field_trial_params.h"
-#include "base/stl_util.h"
-#include "base/strings/string_util.h"
-#include "base/task_scheduler/delayed_task_manager.h"
-#include "base/task_scheduler/environment_config.h"
-#include "base/task_scheduler/scheduler_worker_pool_params.h"
-#include "base/task_scheduler/sequence.h"
-#include "base/task_scheduler/sequence_sort_key.h"
-#include "base/task_scheduler/service_thread.h"
-#include "base/task_scheduler/task.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/time/time.h"
+#include "brick/compiler_specific.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/metrics/field_trial_params.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string_util.h"
+#include "brick/task_scheduler/delayed_task_manager.h"
+#include "brick/task_scheduler/environment_config.h"
+#include "brick/task_scheduler/scheduler_worker_pool_params.h"
+#include "brick/task_scheduler/sequence.h"
+#include "brick/task_scheduler/sequence_sort_key.h"
+#include "brick/task_scheduler/service_thread.h"
+#include "brick/task_scheduler/task.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/time/time.h"
 
 namespace base {
 namespace internal {

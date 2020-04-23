@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_WORKER_STACK_H_
-#define BASE_TASK_SCHEDULER_SCHEDULER_WORKER_STACK_H_
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_STACK_H_
+#define BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_STACK_H_
 
 #include <stddef.h>
 
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace internal {
@@ -24,7 +24,7 @@ class SchedulerWorker;
 // SchedulerWorkers are not owned by the stack. Push() is amortized O(1). Pop(),
 // Peek(), Size() and Empty() are O(1). Contains() and Remove() are O(n). This
 // class is NOT thread-safe.
-class BASE_EXPORT SchedulerWorkerStack {
+class BRICK_EXPORT SchedulerWorkerStack {
  public:
   SchedulerWorkerStack();
   ~SchedulerWorkerStack();
@@ -64,4 +64,4 @@ class BASE_EXPORT SchedulerWorkerStack {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_WORKER_STACK_H_
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_STACK_H_

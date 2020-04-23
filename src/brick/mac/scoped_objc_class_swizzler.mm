@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/mac/scoped_objc_class_swizzler.h"
+#import "brick/mac/scoped_objc_class_swizzler.h"
 
 #include <string.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace mac {

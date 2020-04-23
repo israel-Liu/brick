@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/thread_test_helper.h"
+#include "brick/test/thread_test_helper.h"
 
 #include <utility>
 
-#include "base/bind.h"
-#include "base/location.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/bind.h"
+#include "brick/location.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

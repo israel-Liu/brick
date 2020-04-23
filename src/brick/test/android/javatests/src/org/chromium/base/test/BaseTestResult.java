@@ -123,7 +123,7 @@ public class BaseTestResult extends TestResult {
         Context targetContext = mInstrumentation.getTargetContext();
         try {
             long startTime = SystemClock.uptimeMillis();
-            // TODO(jbudorick): Convert this to CriteriaHelper once that moves to base/.
+            // TODO(jbudorick): Convert this to CriteriaHelper once that moves to brick/.
             while (targetContext == null
                     && SystemClock.uptimeMillis() - startTime < WAIT_DURATION_MS) {
                 Thread.sleep(SLEEP_INTERVAL_MS);

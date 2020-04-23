@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_H_
-#define BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_H_
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_H_
+#define BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_H_
 
-#include "base/base_export.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequenced_task_runner.h"
-#include "base/task_runner.h"
-#include "base/task_scheduler/can_schedule_sequence_observer.h"
-#include "base/task_scheduler/sequence.h"
-#include "base/task_scheduler/task.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/task_scheduler/tracked_ref.h"
+#include "brick/base_export.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/task_runner.h"
+#include "brick/task_scheduler/can_schedule_sequence_observer.h"
+#include "brick/task_scheduler/sequence.h"
+#include "brick/task_scheduler/task.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/task_scheduler/tracked_ref.h"
 
 namespace base {
 namespace internal {
@@ -22,7 +22,7 @@ class DelayedTaskManager;
 class TaskTracker;
 
 // Interface for a worker pool.
-class BASE_EXPORT SchedulerWorkerPool : public CanScheduleSequenceObserver {
+class BRICK_EXPORT SchedulerWorkerPool : public CanScheduleSequenceObserver {
  public:
   ~SchedulerWorkerPool() override;
 
@@ -76,4 +76,4 @@ class BASE_EXPORT SchedulerWorkerPool : public CanScheduleSequenceObserver {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_H_
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_WORKER_POOL_H_

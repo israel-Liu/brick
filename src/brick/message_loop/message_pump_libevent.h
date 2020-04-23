@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_LIBEVENT_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_LIBEVENT_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_LIBEVENT_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_LIBEVENT_H_
 
 #include <memory>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/message_loop/message_pump.h"
-#include "base/message_loop/watchable_io_message_pump_posix.h"
-#include "base/threading/thread_checker.h"
-#include "base/time/time.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_pump.h"
+#include "brick/message_loop/watchable_io_message_pump_posix.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/time/time.h"
 
 // Declare structs we need from libevent.h rather than including it
 struct event_base;
@@ -22,7 +22,7 @@ namespace base {
 
 // Class to monitor sockets and issue callbacks when sockets are ready for I/O
 // TODO(dkegel): add support for background file IO somehow
-class BASE_EXPORT MessagePumpLibevent : public MessagePump,
+class BRICK_EXPORT MessagePumpLibevent : public MessagePump,
                                         public WatchableIOMessagePumpPosix {
  public:
   class FdWatchController : public FdWatchControllerInterface {
@@ -120,4 +120,4 @@ class BASE_EXPORT MessagePumpLibevent : public MessagePump,
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_LIBEVENT_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_LIBEVENT_H_

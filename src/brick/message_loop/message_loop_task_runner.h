@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_LOOP_TASK_RUNNER_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_LOOP_TASK_RUNNER_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_LOOP_TASK_RUNNER_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_LOOP_TASK_RUNNER_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/pending_task.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/pending_task.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 namespace internal {
@@ -22,7 +22,7 @@ class IncomingTaskQueue;
 // A stock implementation of SingleThreadTaskRunner that is created and managed
 // by a MessageLoop. For now a MessageLoopTaskRunner can only be created as
 // part of a MessageLoop.
-class BASE_EXPORT MessageLoopTaskRunner : public SingleThreadTaskRunner {
+class BRICK_EXPORT MessageLoopTaskRunner : public SingleThreadTaskRunner {
  public:
   explicit MessageLoopTaskRunner(
       scoped_refptr<IncomingTaskQueue> incoming_queue);
@@ -57,4 +57,4 @@ class BASE_EXPORT MessageLoopTaskRunner : public SingleThreadTaskRunner {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_LOOP_TASK_RUNNER_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_LOOP_TASK_RUNNER_H_

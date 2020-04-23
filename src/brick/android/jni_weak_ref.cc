@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/jni_weak_ref.h"
+#include "brick/android/jni_weak_ref.h"
 
 #include <utility>
 
-#include "base/android/jni_android.h"
-#include "base/logging.h"
+#include "brick/android/jni_android.h"
+#include "brick/logging.h"
 
 using base::android::AttachCurrentThread;
 

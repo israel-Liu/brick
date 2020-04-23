@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_IOOBJECT_H_
-#define BASE_MAC_SCOPED_IOOBJECT_H_
+#ifndef BRICK_MAC_SCOPED_IOOBJECT_H_
+#define BRICK_MAC_SCOPED_IOOBJECT_H_
 
 #include <IOKit/IOKitLib.h>
 
-#include "base/mac/scoped_typeref.h"
+#include "brick/mac/scoped_typeref.h"
 
 namespace base {
 namespace mac {
@@ -33,4 +33,4 @@ using ScopedIOObject = ScopedTypeRef<IOT, internal::ScopedIOObjectTraits<IOT>>;
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_IOOBJECT_H_
+#endif  // BRICK_MAC_SCOPED_IOOBJECT_H_

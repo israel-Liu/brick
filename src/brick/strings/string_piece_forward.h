@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Forward declaration of StringPiece types from base/strings/string_piece.h
+// Forward declaration of StringPiece types from brick/strings/string_piece.h
 
-#ifndef BASE_STRINGS_STRING_PIECE_FORWARD_H_
-#define BASE_STRINGS_STRING_PIECE_FORWARD_H_
+#ifndef BRICK_STRINGS_STRING_PIECE_FORWARD_H_
+#define BRICK_STRINGS_STRING_PIECE_FORWARD_H_
 
 #include <string>
 
-#include "base/strings/string16.h"
+#include "brick/strings/string16.h"
 
 namespace base {
 
@@ -21,4 +21,4 @@ typedef BasicStringPiece<std::wstring> WStringPiece;
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_STRING_PIECE_FORWARD_H_
+#endif  // BRICK_STRINGS_STRING_PIECE_FORWARD_H_

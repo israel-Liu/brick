@@ -2,27 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/profiler/stack_sampling_profiler.h"
+#include "brick/profiler/stack_sampling_profiler.h"
 
 #include <algorithm>
 #include <map>
 #include <utility>
 
-#include "base/atomic_sequence_num.h"
-#include "base/atomicops.h"
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/callback.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/singleton.h"
-#include "base/profiler/native_stack_sampler.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/thread.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/timer/elapsed_timer.h"
+#include "brick/atomic_sequence_num.h"
+#include "brick/atomicops.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/callback.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/singleton.h"
+#include "brick/profiler/native_stack_sampler.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/thread.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/timer/elapsed_timer.h"
 
 namespace base {
 

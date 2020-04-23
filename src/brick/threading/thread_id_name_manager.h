@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_THREAD_ID_NAME_MANAGER_H_
-#define BASE_THREADING_THREAD_ID_NAME_MANAGER_H_
+#ifndef BRICK_THREADING_THREAD_ID_NAME_MANAGER_H_
+#define BRICK_THREADING_THREAD_ID_NAME_MANAGER_H_
 
 #include <map>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 
 template <typename T>
 struct DefaultSingletonTraits;
 
-class BASE_EXPORT ThreadIdNameManager {
+class BRICK_EXPORT ThreadIdNameManager {
  public:
   static ThreadIdNameManager* GetInstance();
 
@@ -77,4 +77,4 @@ class BASE_EXPORT ThreadIdNameManager {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_ID_NAME_MANAGER_H_
+#endif  // BRICK_THREADING_THREAD_ID_NAME_MANAGER_H_

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_SCOPED_FILE_H_
-#define BASE_FILES_SCOPED_FILE_H_
+#ifndef BRICK_FILES_SCOPED_FILE_H_
+#define BRICK_FILES_SCOPED_FILE_H_
 
 #include <stdio.h>
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/scoped_generic.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/scoped_generic.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -19,7 +19,7 @@ namespace base {
 namespace internal {
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
-struct BASE_EXPORT ScopedFDCloseTraits {
+struct BRICK_EXPORT ScopedFDCloseTraits {
   static int InvalidValue() {
     return -1;
   }
@@ -44,7 +44,7 @@ struct ScopedFILECloser {
 // platform-specific code, especially that does non-file-like things with the
 // FD (like sockets).
 //
-// If you're writing low-level Windows code, see base/win/scoped_handle.h
+// If you're writing low-level Windows code, see brick/win/scoped_handle.h
 // which provides some additional functionality.
 //
 // If you're writing cross-platform code that deals with actual files, you
@@ -59,4 +59,4 @@ typedef std::unique_ptr<FILE, internal::ScopedFILECloser> ScopedFILE;
 
 }  // namespace base
 
-#endif  // BASE_FILES_SCOPED_FILE_H_
+#endif  // BRICK_FILES_SCOPED_FILE_H_

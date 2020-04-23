@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_I18N_UNICODESTRING_H_
-#define BASE_I18N_UNICODESTRING_H_
+#ifndef BRICK_I18N_UNICODESTRING_H_
+#define BRICK_I18N_UNICODESTRING_H_
 
-#include "base/strings/string16.h"
+#include "brick/strings/string16.h"
 #include "third_party/icu/source/common/unicode/unistr.h"
 #include "third_party/icu/source/common/unicode/uvernum.h"
 
@@ -29,4 +29,4 @@ inline string16 UnicodeStringToString16(const icu::UnicodeString& unistr) {
 }  // namespace i18n
 }  // namespace base
 
-#endif  // BASE_UNICODESTRING_H_
+#endif  // BRICK_UNICODESTRING_H_

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PATH_SERVICE_H_
-#define BASE_PATH_SERVICE_H_
+#ifndef BRICK_PATH_SERVICE_H_
+#define BRICK_PATH_SERVICE_H_
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/base_paths.h"
-#include "base/gtest_prod_util.h"
+#include "brick/base_export.h"
+#include "brick/base_paths.h"
+#include "brick/gtest_prod_util.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -20,7 +20,7 @@ class ScopedPathOverride;
 // The path service is a global table mapping keys to file system paths.  It is
 // OK to use this service from multiple threads.
 //
-class BASE_EXPORT PathService {
+class BRICK_EXPORT PathService {
  public:
   // Retrieves a path to a special directory or file and places it into the
   // string pointed to by 'path'. If you ask for a directory it is guaranteed
@@ -91,4 +91,4 @@ class BASE_EXPORT PathService {
 
 }  // namespace base
 
-#endif  // BASE_PATH_SERVICE_H_
+#endif  // BRICK_PATH_SERVICE_H_

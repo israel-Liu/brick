@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/base_paths.h"
+#include "brick/base_paths.h"
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/path_service.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/path_service.h"
 
 namespace base {
 

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/latin1_string_conversions.h"
+#include "brick/strings/latin1_string_conversions.h"
 
 namespace base {
 

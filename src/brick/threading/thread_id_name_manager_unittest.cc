@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_id_name_manager.h"
+#include "brick/threading/thread_id_name_manager.h"
 
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"
 

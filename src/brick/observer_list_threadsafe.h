@@ -2,31 +2,31 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_OBSERVER_LIST_THREADSAFE_H_
-#define BASE_OBSERVER_LIST_THREADSAFE_H_
+#ifndef BRICK_OBSERVER_LIST_THREADSAFE_H_
+#define BRICK_OBSERVER_LIST_THREADSAFE_H_
 
 #include <unordered_map>
 
-#include "base/base_export.h"
-#include "base/bind.h"
-#include "base/lazy_instance.h"
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/observer_list.h"
-#include "base/sequenced_task_runner.h"
-#include "base/stl_util.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/sequenced_task_runner_handle.h"
-#include "base/threading/thread_local.h"
+#include "brick/base_export.h"
+#include "brick/bind.h"
+#include "brick/lazy_instance.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/observer_list.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/stl_util.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
+#include "brick/threading/thread_local.h"
 #include "build/build_config.h"
 
 // TODO(fdoray): Removing these includes causes IWYU failures in other headers,
 // remove them in a follow- up CL.
-#include "base/memory/ptr_util.h"
-#include "base/single_thread_task_runner.h"
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/threading/thread_task_runner_handle.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -56,7 +56,7 @@
 namespace base {
 namespace internal {
 
-class BASE_EXPORT ObserverListThreadSafeBase
+class BRICK_EXPORT ObserverListThreadSafeBase
     : public RefCountedThreadSafe<ObserverListThreadSafeBase> {
  public:
   ObserverListThreadSafeBase() = default;
@@ -234,4 +234,4 @@ class ObserverListThreadSafe : public internal::ObserverListThreadSafeBase {
 
 }  // namespace base
 
-#endif  // BASE_OBSERVER_LIST_THREADSAFE_H_
+#endif  // BRICK_OBSERVER_LIST_THREADSAFE_H_

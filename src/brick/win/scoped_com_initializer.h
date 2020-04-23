@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_COM_INITIALIZER_H_
-#define BASE_WIN_SCOPED_COM_INITIALIZER_H_
+#ifndef BRICK_WIN_SCOPED_COM_INITIALIZER_H_
+#define BRICK_WIN_SCOPED_COM_INITIALIZER_H_
 
 #include <objbase.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/threading/thread_checker.h"
-#include "base/win/scoped_windows_thread_environment.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/win/scoped_windows_thread_environment.h"
 
 namespace base {
 namespace win {
@@ -22,7 +22,7 @@ namespace win {
 // similar lifetime as the thread itself.  You should not be using this in
 // random utility functions that make COM calls -- instead ensure these
 // functions are running on a COM-supporting thread!
-class BASE_EXPORT ScopedCOMInitializer : public ScopedWindowsThreadEnvironment {
+class BRICK_EXPORT ScopedCOMInitializer : public ScopedWindowsThreadEnvironment {
  public:
   // Enum value provided to initialize the thread as an MTA instead of STA.
   enum SelectMTA { kMTA };
@@ -50,4 +50,4 @@ class BASE_EXPORT ScopedCOMInitializer : public ScopedWindowsThreadEnvironment {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_COM_INITIALIZER_H_
+#endif  // BRICK_WIN_SCOPED_COM_INITIALIZER_H_

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_H_
-#define BASE_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_H_
+#ifndef BRICK_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_H_
+#define BRICK_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <functional>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 namespace trace_event {
@@ -41,7 +41,7 @@ namespace trace_event {
 // Conceptually stack frame is identified by its value, and type is used
 // mostly to properly format the value. Value is expected to be a valid
 // pointer from process' address space.
-struct BASE_EXPORT StackFrame {
+struct BRICK_EXPORT StackFrame {
   enum class Type {
     TRACE_EVENT_NAME,   // const char* string
     THREAD_NAME,        // const char* thread name
@@ -62,11 +62,11 @@ struct BASE_EXPORT StackFrame {
   const void* value;
 };
 
-bool BASE_EXPORT operator < (const StackFrame& lhs, const StackFrame& rhs);
-bool BASE_EXPORT operator == (const StackFrame& lhs, const StackFrame& rhs);
-bool BASE_EXPORT operator != (const StackFrame& lhs, const StackFrame& rhs);
+bool BRICK_EXPORT operator < (const StackFrame& lhs, const StackFrame& rhs);
+bool BRICK_EXPORT operator == (const StackFrame& lhs, const StackFrame& rhs);
+bool BRICK_EXPORT operator != (const StackFrame& lhs, const StackFrame& rhs);
 
-struct BASE_EXPORT Backtrace {
+struct BRICK_EXPORT Backtrace {
   Backtrace();
 
   // If the stack is higher than what can be stored here, the top frames
@@ -77,13 +77,13 @@ struct BASE_EXPORT Backtrace {
   size_t frame_count = 0;
 };
 
-bool BASE_EXPORT operator==(const Backtrace& lhs, const Backtrace& rhs);
-bool BASE_EXPORT operator!=(const Backtrace& lhs, const Backtrace& rhs);
+bool BRICK_EXPORT operator==(const Backtrace& lhs, const Backtrace& rhs);
+bool BRICK_EXPORT operator!=(const Backtrace& lhs, const Backtrace& rhs);
 
 // The |AllocationContext| is context metadata that is kept for every allocation
 // when heap profiling is enabled. To simplify memory management for book-
 // keeping, this struct has a fixed size.
-struct BASE_EXPORT AllocationContext {
+struct BRICK_EXPORT AllocationContext {
   AllocationContext();
   AllocationContext(const Backtrace& backtrace, const char* type_name);
 
@@ -96,9 +96,9 @@ struct BASE_EXPORT AllocationContext {
   const char* type_name;
 };
 
-bool BASE_EXPORT operator==(const AllocationContext& lhs,
+bool BRICK_EXPORT operator==(const AllocationContext& lhs,
                             const AllocationContext& rhs);
-bool BASE_EXPORT operator!=(const AllocationContext& lhs,
+bool BRICK_EXPORT operator!=(const AllocationContext& lhs,
                             const AllocationContext& rhs);
 
 // Struct to store the size and count of the allocations.
@@ -113,20 +113,20 @@ struct AllocationMetrics {
 namespace std {
 
 template <>
-struct BASE_EXPORT hash<base::trace_event::StackFrame> {
+struct BRICK_EXPORT hash<base::trace_event::StackFrame> {
   size_t operator()(const base::trace_event::StackFrame& frame) const;
 };
 
 template <>
-struct BASE_EXPORT hash<base::trace_event::Backtrace> {
+struct BRICK_EXPORT hash<base::trace_event::Backtrace> {
   size_t operator()(const base::trace_event::Backtrace& backtrace) const;
 };
 
 template <>
-struct BASE_EXPORT hash<base::trace_event::AllocationContext> {
+struct BRICK_EXPORT hash<base::trace_event::AllocationContext> {
   size_t operator()(const base::trace_event::AllocationContext& context) const;
 };
 
 }  // namespace std
 
-#endif  // BASE_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_H_
+#endif  // BRICK_TRACE_EVENT_HEAP_PROFILER_ALLOCATION_CONTEXT_H_

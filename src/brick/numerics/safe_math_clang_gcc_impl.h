@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_SAFE_MATH_CLANG_GCC_IMPL_H_
-#define BASE_NUMERICS_SAFE_MATH_CLANG_GCC_IMPL_H_
+#ifndef BRICK_NUMERICS_SAFE_MATH_CLANG_GCC_IMPL_H_
+#define BRICK_NUMERICS_SAFE_MATH_CLANG_GCC_IMPL_H_
 
 #include <cassert>
 #include <limits>
 #include <type_traits>
 
-#include "base/numerics/safe_conversions.h"
+#include "brick/numerics/safe_conversions.h"
 
 #if !defined(__native_client__) && (defined(__ARMEL__) || defined(__arch64__))
-#include "base/numerics/safe_math_arm_impl.h"
-#define BASE_HAS_ASSEMBLER_SAFE_MATH (1)
+#include "brick/numerics/safe_math_arm_impl.h"
+#define BRICK_HAS_ASSEMBLER_SAFE_MATH (1)
 #else
-#define BASE_HAS_ASSEMBLER_SAFE_MATH (0)
+#define BRICK_HAS_ASSEMBLER_SAFE_MATH (0)
 #endif
 
 namespace base {
@@ -23,7 +23,7 @@ namespace internal {
 
 // These are the non-functioning boilerplate implementations of the optimized
 // safe math routines.
-#if !BASE_HAS_ASSEMBLER_SAFE_MATH
+#if !BRICK_HAS_ASSEMBLER_SAFE_MATH
 template <typename T, typename U>
 struct CheckedMulFastAsmOp {
   static const bool is_supported = false;
@@ -63,8 +63,8 @@ struct ClampedMulFastAsmOp {
     return CheckOnFailure::template HandleFailure<V>();
   }
 };
-#endif  // BASE_HAS_ASSEMBLER_SAFE_MATH
-#undef BASE_HAS_ASSEMBLER_SAFE_MATH
+#endif  // BRICK_HAS_ASSEMBLER_SAFE_MATH
+#undef BRICK_HAS_ASSEMBLER_SAFE_MATH
 
 template <typename T, typename U>
 struct CheckedAddFastOp {
@@ -154,4 +154,4 @@ struct ClampedNegFastOp {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_NUMERICS_SAFE_MATH_CLANG_GCC_IMPL_H_
+#endif  // BRICK_NUMERICS_SAFE_MATH_CLANG_GCC_IMPL_H_

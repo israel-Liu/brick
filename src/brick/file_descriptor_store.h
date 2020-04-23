@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILE_DESCRIPTOR_STORE_H_
-#define BASE_FILE_DESCRIPTOR_STORE_H_
+#ifndef BRICK_FILE_DESCRIPTOR_STORE_H_
+#define BRICK_FILE_DESCRIPTOR_STORE_H_
 
 #include <map>
 #include <string>
 
-#include "base/files/memory_mapped_file.h"
-#include "base/files/scoped_file.h"
-#include "base/macros.h"
+#include "brick/files/memory_mapped_file.h"
+#include "brick/files/scoped_file.h"
+#include "brick/macros.h"
 
 namespace base {
 
 // The file descriptor store is used to associate file descriptors with keys
 // that must be unique.
 // It is used to share file descriptors from a process to its child.
-class BASE_EXPORT FileDescriptorStore {
+class BRICK_EXPORT FileDescriptorStore {
  public:
   struct Descriptor {
     Descriptor(const std::string& key, base::ScopedFD fd);
@@ -70,4 +70,4 @@ class BASE_EXPORT FileDescriptorStore {
 
 }  // namespace base
 
-#endif  // BASE_FILE_DESCRIPTOR_STORE_H_
+#endif  // BRICK_FILE_DESCRIPTOR_STORE_H_

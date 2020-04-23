@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scoped_set_task_priority_for_current_thread.h"
+#include "brick/task_scheduler/scoped_set_task_priority_for_current_thread.h"
 
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/threading/thread_local.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 namespace internal {

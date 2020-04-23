@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_MEMORY_PRESSURE_MONITOR_WIN_H_
-#define BASE_MEMORY_MEMORY_PRESSURE_MONITOR_WIN_H_
+#ifndef BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_WIN_H_
+#define BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_WIN_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/memory_pressure_listener.h"
-#include "base/memory/memory_pressure_monitor.h"
-#include "base/memory/weak_ptr.h"
-#include "base/threading/thread_checker.h"
-#include "base/timer/timer.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/memory_pressure_listener.h"
+#include "brick/memory/memory_pressure_monitor.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/timer/timer.h"
 
 // To not pull in windows.h.
 typedef struct _MEMORYSTATUSEX MEMORYSTATUSEX;
@@ -21,7 +21,7 @@ namespace win {
 
 // Windows memory pressure monitor. Because there is no OS provided signal this
 // polls at a low frequency (once per second), and applies internal hysteresis.
-class BASE_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
+class BRICK_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
  public:
   // Constants governing the polling and hysteresis behaviour of the observer.
 
@@ -145,4 +145,4 @@ class BASE_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_MEMORY_MEMORY_PRESSURE_MONITOR_WIN_H_
+#endif  // BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_WIN_H_

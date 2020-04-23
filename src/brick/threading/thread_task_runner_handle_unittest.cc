@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/threading/thread_task_runner_handle.h"
 
-#include "base/memory/ref_counted.h"
-#include "base/test/gtest_util.h"
-#include "base/test/test_simple_task_runner.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/test_simple_task_runner.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

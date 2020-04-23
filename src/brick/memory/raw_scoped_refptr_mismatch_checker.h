@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_RAW_SCOPED_REFPTR_MISMATCH_CHECKER_H_
-#define BASE_MEMORY_RAW_SCOPED_REFPTR_MISMATCH_CHECKER_H_
+#ifndef BRICK_MEMORY_RAW_SCOPED_REFPTR_MISMATCH_CHECKER_H_
+#define BRICK_MEMORY_RAW_SCOPED_REFPTR_MISMATCH_CHECKER_H_
 
 #include <type_traits>
 
-#include "base/template_util.h"
+#include "brick/template_util.h"
 
 // It is dangerous to post a task with a T* argument where T is a subtype of
 // RefCounted(Base|ThreadSafeBase), since by the time the parameter is used, the
@@ -49,4 +49,4 @@ struct NeedsScopedRefptrButGetsRawPtr {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_RAW_SCOPED_REFPTR_MISMATCH_CHECKER_H_
+#endif  // BRICK_MEMORY_RAW_SCOPED_REFPTR_MISMATCH_CHECKER_H_

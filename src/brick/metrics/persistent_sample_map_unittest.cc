@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/persistent_sample_map.h"
+#include "brick/metrics/persistent_sample_map.h"
 
 #include <memory>
 
-#include "base/memory/ptr_util.h"
-#include "base/metrics/persistent_histogram_allocator.h"
-#include "base/test/gtest_util.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
+#include "brick/test/gtest_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

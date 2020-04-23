@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/object_watcher.h"
+#include "brick/win/object_watcher.h"
 
-#include "base/bind.h"
-#include "base/logging.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/logging.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 
 #include <windows.h>
 

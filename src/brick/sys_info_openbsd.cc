@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -10,8 +10,8 @@
 #include <sys/shm.h>
 #include <sys/sysctl.h>
 
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 namespace {
 

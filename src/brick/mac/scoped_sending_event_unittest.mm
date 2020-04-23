@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/mac/scoped_sending_event.h"
+#import "brick/mac/scoped_sending_event.h"
 
 #import <Foundation/Foundation.h>
 
-#include "base/mac/scoped_nsobject.h"
+#include "brick/mac/scoped_nsobject.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 @interface ScopedSendingEventTestCrApp : NSApplication <CrAppControlProtocol> {

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/initialization_util.h"
+#include "brick/task_scheduler/initialization_util.h"
 
 #include <algorithm>
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 namespace base {
 

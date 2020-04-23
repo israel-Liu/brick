@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/trace_event_analyzer.h"
+#include "brick/test/trace_event_analyzer.h"
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/bind.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/ref_counted_memory.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/platform_thread.h"
-#include "base/trace_event/trace_buffer.h"
-#include "base/trace_event/trace_event_argument.h"
+#include "brick/bind.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/ref_counted_memory.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/trace_event/trace_buffer.h"
+#include "brick/trace_event/trace_event_argument.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

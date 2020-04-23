@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_POWER_MONITOR_TEST_BASE_H_
-#define BASE_TEST_POWER_MONITOR_TEST_BASE_H_
+#ifndef BRICK_TEST_POWER_MONITOR_TEST_BRICK_H_
+#define BRICK_TEST_POWER_MONITOR_TEST_BRICK_H_
 
-#include "base/power_monitor/power_monitor.h"
-#include "base/power_monitor/power_monitor_source.h"
+#include "brick/power_monitor/power_monitor.h"
+#include "brick/power_monitor/power_monitor_source.h"
 
 namespace base {
 
@@ -50,4 +50,4 @@ class PowerMonitorTestObserver : public PowerObserver {
 
 }  // namespace base
 
-#endif  // BASE_TEST_POWER_MONITOR_TEST_BASE_H_
+#endif  // BRICK_TEST_POWER_MONITOR_TEST_BRICK_H_

@@ -14,10 +14,10 @@
 #include <limits>
 #include <memory>
 
-#include "base/allocator/buildflags.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/memory/free_deleter.h"
+#include "brick/allocator/buildflags.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/memory/free_deleter.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

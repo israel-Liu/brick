@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/mock_chrome_application_mac.h"
+#include "brick/test/mock_chrome_application_mac.h"
 
-#include "base/auto_reset.h"
-#include "base/logging.h"
+#include "brick/auto_reset.h"
+#include "brick/logging.h"
 
 @implementation MockCrApp
 

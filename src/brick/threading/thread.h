@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_THREAD_H_
-#define BASE_THREADING_THREAD_H_
+#ifndef BRICK_THREADING_THREAD_H_
+#define BRICK_THREADING_THREAD_H_
 
 #include <stddef.h>
 
 #include <memory>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/timer_slack.h"
-#include "base/sequence_checker.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/timer_slack.h"
+#include "brick/sequence_checker.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/platform_thread.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -56,9 +56,9 @@ class RunLoop;
 // ownership. The caller is then responsible to ensure a happens-after
 // relationship between the DetachFromSequence() call and the next use of that
 // Thread object (including ~Thread()).
-class BASE_EXPORT Thread : PlatformThread::Delegate {
+class BRICK_EXPORT Thread : PlatformThread::Delegate {
  public:
-  struct BASE_EXPORT Options {
+  struct BRICK_EXPORT Options {
     typedef Callback<std::unique_ptr<MessagePump>()> MessagePumpFactory;
 
     Options();
@@ -353,4 +353,4 @@ class BASE_EXPORT Thread : PlatformThread::Delegate {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_H_
+#endif  // BRICK_THREADING_THREAD_H_

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_VALUES_TEST_UTIL_H_
-#define BASE_TEST_VALUES_TEST_UTIL_H_
+#ifndef BRICK_TEST_VALUES_TEST_UTIL_H_
+#define BRICK_TEST_VALUES_TEST_UTIL_H_
 
 #include <memory>
 #include <string>
 
-#include "base/strings/string_piece.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 class DictionaryValue;
@@ -50,4 +50,4 @@ std::unique_ptr<Value> ParseJson(base::StringPiece json);
 }  // namespace test
 }  // namespace base
 
-#endif  // BASE_TEST_VALUES_TEST_UTIL_H_
+#endif  // BRICK_TEST_VALUES_TEST_UTIL_H_

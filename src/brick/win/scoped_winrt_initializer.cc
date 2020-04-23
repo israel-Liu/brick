@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/scoped_winrt_initializer.h"
+#include "brick/win/scoped_winrt_initializer.h"
 
-#include "base/logging.h"
-#include "base/win/com_init_util.h"
-#include "base/win/core_winrt_util.h"
-#include "base/win/windows_version.h"
+#include "brick/logging.h"
+#include "brick/win/com_init_util.h"
+#include "brick/win/core_winrt_util.h"
+#include "brick/win/windows_version.h"
 
 namespace base {
 namespace win {

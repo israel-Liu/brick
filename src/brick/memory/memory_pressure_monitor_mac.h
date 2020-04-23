@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_MEMORY_PRESSURE_MONITOR_MAC_H_
-#define BASE_MEMORY_MEMORY_PRESSURE_MONITOR_MAC_H_
+#ifndef BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_MAC_H_
+#define BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_MAC_H_
 
 #include <CoreFoundation/CFDate.h>
 #include <dispatch/dispatch.h>
 
-#include "base/base_export.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/mac/scoped_dispatch_object.h"
-#include "base/macros.h"
-#include "base/memory/memory_pressure_listener.h"
-#include "base/memory/memory_pressure_monitor.h"
-#include "base/message_loop/message_pump_mac.h"
+#include "brick/base_export.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/mac/scoped_dispatch_object.h"
+#include "brick/macros.h"
+#include "brick/memory/memory_pressure_listener.h"
+#include "brick/memory/memory_pressure_monitor.h"
+#include "brick/message_loop/message_pump_mac.h"
 
 namespace base {
 namespace mac {
@@ -23,7 +23,7 @@ class TestMemoryPressureMonitor;
 
 // Declares the interface for the Mac MemoryPressureMonitor, which reports
 // memory pressure events and status.
-class BASE_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
+class BRICK_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
  public:
   MemoryPressureMonitor();
   ~MemoryPressureMonitor() override;
@@ -88,4 +88,4 @@ class BASE_EXPORT MemoryPressureMonitor : public base::MemoryPressureMonitor {
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MEMORY_MEMORY_PRESSURE_MONITOR_MAC_H_
+#endif  // BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_MAC_H_

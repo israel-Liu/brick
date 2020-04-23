@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_REG_UTIL_WIN_H_
-#define BASE_TEST_TEST_REG_UTIL_WIN_H_
+#ifndef BRICK_TEST_TEST_REG_UTIL_WIN_H_
+#define BRICK_TEST_TEST_REG_UTIL_WIN_H_
 
 // Registry utility functions used only by tests.
 #include <memory>
 #include <vector>
 
-#include "base/macros.h"
-#include "base/strings/string16.h"
-#include "base/time/time.h"
-#include "base/win/registry.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
+#include "brick/time/time.h"
+#include "brick/win/registry.h"
 
 namespace registry_util {
 
@@ -79,4 +79,4 @@ base::string16 GenerateTempKeyPath();
 
 }  // namespace registry_util
 
-#endif  // BASE_TEST_TEST_REG_UTIL_WIN_H_
+#endif  // BRICK_TEST_TEST_REG_UTIL_WIN_H_

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_event_etw_export_win.h"
+#include "brick/trace_event/trace_event_etw_export_win.h"
 
 #include <stddef.h>
 
-#include "base/command_line.h"
-#include "base/logging.h"
-#include "base/memory/singleton.h"
-#include "base/strings/string_tokenizer.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/platform_thread.h"
-#include "base/trace_event/trace_event.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/command_line.h"
+#include "brick/logging.h"
+#include "brick/memory/singleton.h"
+#include "brick/strings/string_tokenizer.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event_impl.h"
 
 #include <windows.h>
 
@@ -29,7 +29,7 @@
 // file. Note that this includes evntprov.h which requires a Vista+ Windows SDK.
 //
 // In SHARED_INTERMEDIATE_DIR.
-#include "base/trace_event/etw_manifest/chrome_events_win.h"  // NOLINT
+#include "brick/trace_event/etw_manifest/chrome_events_win.h"  // NOLINT
 
 namespace {
 // |kFilteredEventGroupNames| contains the event categories that can be

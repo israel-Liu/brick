@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/jni_string.h"
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/metrics/user_metrics.h"
+#include "brick/android/jni_string.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/metrics/user_metrics.h"
 #include "jni/RecordUserAction_jni.h"
 
 namespace {

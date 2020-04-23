@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_GTEST_XML_UNITTEST_RESULT_PRINTER_H_
-#define BASE_TEST_GTEST_XML_UNITTEST_RESULT_PRINTER_H_
+#ifndef BRICK_TEST_GTEST_XML_UNITTEST_RESULT_PRINTER_H_
+#define BRICK_TEST_GTEST_XML_UNITTEST_RESULT_PRINTER_H_
 
 #include <stdio.h>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {
@@ -52,4 +52,4 @@ class XmlUnitTestResultPrinter : public testing::EmptyTestEventListener {
 
 }  // namespace base
 
-#endif  // BASE_TEST_GTEST_XML_UNITTEST_RESULT_PRINTER_H_
+#endif  // BRICK_TEST_GTEST_XML_UNITTEST_RESULT_PRINTER_H_

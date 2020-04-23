@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/launch.h"
+#include "brick/process/launch.h"
 
 #include <crt_externs.h>
 #include <mach/mach.h>
@@ -10,9 +10,9 @@
 #include <string.h>
 #include <sys/wait.h>
 
-#include "base/logging.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/logging.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

@@ -30,10 +30,10 @@
 //  - is thread safe for copying and deletion
 //  - supports weak_ptrs
 
-#ifndef BASE_MEMORY_LINKED_PTR_H_
-#define BASE_MEMORY_LINKED_PTR_H_
+#ifndef BRICK_MEMORY_LINKED_PTR_H_
+#define BRICK_MEMORY_LINKED_PTR_H_
 
-#include "base/logging.h"  // for CHECK macros
+#include "brick/logging.h"  // for CHECK macros
 
 // This is used internally by all instances of linked_ptr<>.  It needs to be
 // a non-template class because different types of linked_ptr<> can refer to
@@ -176,4 +176,4 @@ linked_ptr<T> make_linked_ptr(T* ptr) {
   return linked_ptr<T>(ptr);
 }
 
-#endif  // BASE_MEMORY_LINKED_PTR_H_
+#endif  // BRICK_MEMORY_LINKED_PTR_H_

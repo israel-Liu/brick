@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_file_util.h"
+#include "brick/test/test_file_util.h"
 
-#include "base/android/jni_android.h"
-#include "base/android/jni_string.h"
-#include "base/files/file_path.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_string.h"
+#include "brick/files/file_path.h"
 #include "jni/ContentUriTestUtils_jni.h"
 
 using base::android::ScopedJavaLocalRef;

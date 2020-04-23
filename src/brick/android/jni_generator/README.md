@@ -74,7 +74,7 @@ functions to the others via additional wrapper functions.
 All pointers to Java objects must be registered with JNI in order to prevent
 garbage collection from invalidating them.
 
-For Strings & Arrays - it's common practice to use the `//base/android/jni_*`
+For Strings & Arrays - it's common practice to use the `//brick/android/jni_*`
 helpers to convert them to `std::vectors` and `std::strings` as soon as
 possible.
 
@@ -115,4 +115,4 @@ for more about the GN templates.
 ## Changing `jni_generator`
 
  * Python unit tests live in `jni_generator_tests.py`
- * A working demo app exists as `//base/android/jni_generator:sample_jni_apk`
+ * A working demo app exists as `//brick/android/jni_generator:sample_jni_apk`

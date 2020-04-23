@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_MOCK_LOG_H_
-#define BASE_TEST_MOCK_LOG_H_
+#ifndef BRICK_TEST_MOCK_LOG_H_
+#define BRICK_TEST_MOCK_LOG_H_
 
 #include <stddef.h>
 
 #include <string>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
 #include "testing/gmock/include/gmock/gmock.h"
 
 namespace base {
@@ -36,7 +36,7 @@ namespace test {
 //     Foo();  // Exercises the code under test.
 //   }
 //
-// CAVEAT: base/logging does not allow a thread to call LOG() again when it's
+// CAVEAT: brick/logging does not allow a thread to call LOG() again when it's
 // already inside a LOG() call.  Doing so will cause a deadlock.  Therefore,
 // it's the user's responsibility to not call LOG() in an action triggered by
 // MockLog::Log().  You may call RAW_LOG() instead.
@@ -97,4 +97,4 @@ class MockLog {
 }  // namespace test
 }  // namespace base
 
-#endif  // BASE_TEST_MOCK_LOG_H_
+#endif  // BRICK_TEST_MOCK_LOG_H_

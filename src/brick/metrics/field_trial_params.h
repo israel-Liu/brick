@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_FIELD_TRIAL_PARAMS_H_
-#define BASE_METRICS_FIELD_TRIAL_PARAMS_H_
+#ifndef BRICK_METRICS_FIELD_TRIAL_PARAMS_H_
+#define BRICK_METRICS_FIELD_TRIAL_PARAMS_H_
 
 #include <map>
 #include <string>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 
@@ -18,7 +18,7 @@ struct Feature;
 // specified by |trial_name| and |group_name|. Fails and returns false if the
 // specified field trial already has params associated with it or the trial
 // is already active (group() has been called on it). Thread safe.
-BASE_EXPORT bool AssociateFieldTrialParams(
+BRICK_EXPORT bool AssociateFieldTrialParams(
     const std::string& trial_name,
     const std::string& group_name,
     const std::map<std::string, std::string>& params);
@@ -29,18 +29,18 @@ BASE_EXPORT bool AssociateFieldTrialParams(
 // does not modify |params|. Calling this function will result in the field
 // trial being marked as active if found (i.e. group() will be called on it),
 // if it wasn't already. Thread safe.
-BASE_EXPORT bool GetFieldTrialParams(
+BRICK_EXPORT bool GetFieldTrialParams(
     const std::string& trial_name,
     std::map<std::string, std::string>* params);
 
 // Retrieves the set of key-value |params| for the field trial associated with
 // the specified |feature|. A feature is associated with at most one field
-// trial and selected group. See  base/feature_list.h for more information on
+// trial and selected group. See  brick/feature_list.h for more information on
 // features. If the feature is not enabled, or if there's no associated params,
 // returns false and does not modify |params|. Calling this function will
 // result in the associated field trial being marked as active if found (i.e.
 // group() will be called on it), if it wasn't already. Thread safe.
-BASE_EXPORT bool GetFieldTrialParamsByFeature(
+BRICK_EXPORT bool GetFieldTrialParamsByFeature(
     const base::Feature& feature,
     std::map<std::string, std::string>* params);
 
@@ -50,17 +50,17 @@ BASE_EXPORT bool GetFieldTrialParamsByFeature(
 // string. Calling this function will result in the field trial being marked as
 // active if found (i.e. group() will be called on it), if it wasn't already.
 // Thread safe.
-BASE_EXPORT std::string GetFieldTrialParamValue(const std::string& trial_name,
+BRICK_EXPORT std::string GetFieldTrialParamValue(const std::string& trial_name,
                                                 const std::string& param_name);
 
 // Retrieves a specific parameter value corresponding to |param_name| for the
 // field trial associated with the specified |feature|. A feature is associated
-// with at most one field trial and selected group. See base/feature_list.h for
+// with at most one field trial and selected group. See brick/feature_list.h for
 // more information on features. If the feature is not enabled, or the
 // specified parameter does not exist, returns an empty string. Calling this
 // function will result in the associated field trial being marked as active if
 // found (i.e. group() will be called on it), if it wasn't already. Thread safe.
-BASE_EXPORT std::string GetFieldTrialParamValueByFeature(
+BRICK_EXPORT std::string GetFieldTrialParamValueByFeature(
     const base::Feature& feature,
     const std::string& param_name);
 
@@ -68,7 +68,7 @@ BASE_EXPORT std::string GetFieldTrialParamValueByFeature(
 // string value into an int using base::StringToInt() and returns it, if
 // successful. Otherwise, it returns |default_value|. If the string value is not
 // empty and the conversion does not succeed, it produces a warning to LOG.
-BASE_EXPORT int GetFieldTrialParamByFeatureAsInt(const base::Feature& feature,
+BRICK_EXPORT int GetFieldTrialParamByFeatureAsInt(const base::Feature& feature,
                                                  const std::string& param_name,
                                                  int default_value);
 
@@ -76,7 +76,7 @@ BASE_EXPORT int GetFieldTrialParamByFeatureAsInt(const base::Feature& feature,
 // string value into a double using base::StringToDouble() and returns it, if
 // successful. Otherwise, it returns |default_value|. If the string value is not
 // empty and the conversion does not succeed, it produces a warning to LOG.
-BASE_EXPORT double GetFieldTrialParamByFeatureAsDouble(
+BRICK_EXPORT double GetFieldTrialParamByFeatureAsDouble(
     const base::Feature& feature,
     const std::string& param_name,
     double default_value);
@@ -86,7 +86,7 @@ BASE_EXPORT double GetFieldTrialParamByFeatureAsDouble(
 // returns |default_value|. The only string representations accepted here are
 // "true" and "false". If the string value is not empty and the conversion does
 // not succeed, it produces a warning to LOG.
-BASE_EXPORT bool GetFieldTrialParamByFeatureAsBool(
+BRICK_EXPORT bool GetFieldTrialParamByFeatureAsBool(
     const base::Feature& feature,
     const std::string& param_name,
     bool default_value);
@@ -124,7 +124,7 @@ struct FeatureParam<std::string> {
                          const char* default_value)
       : feature(feature), name(name), default_value(default_value) {}
 
-  BASE_EXPORT std::string Get() const;
+  BRICK_EXPORT std::string Get() const;
 
   const Feature* const feature;
   const char* const name;
@@ -145,7 +145,7 @@ struct FeatureParam<double> {
                          double default_value)
       : feature(feature), name(name), default_value(default_value) {}
 
-  BASE_EXPORT double Get() const;
+  BRICK_EXPORT double Get() const;
 
   const Feature* const feature;
   const char* const name;
@@ -166,7 +166,7 @@ struct FeatureParam<int> {
                          int default_value)
       : feature(feature), name(name), default_value(default_value) {}
 
-  BASE_EXPORT int Get() const;
+  BRICK_EXPORT int Get() const;
 
   const Feature* const feature;
   const char* const name;
@@ -187,14 +187,14 @@ struct FeatureParam<bool> {
                          bool default_value)
       : feature(feature), name(name), default_value(default_value) {}
 
-  BASE_EXPORT bool Get() const;
+  BRICK_EXPORT bool Get() const;
 
   const Feature* const feature;
   const char* const name;
   const bool default_value;
 };
 
-BASE_EXPORT void LogInvalidEnumValue(const Feature& feature,
+BRICK_EXPORT void LogInvalidEnumValue(const Feature& feature,
                                      const std::string& param_name,
                                      const std::string& value_as_string,
                                      int default_value_as_int);
@@ -255,4 +255,4 @@ struct FeatureParam<Enum, true> {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_FIELD_TRIAL_PARAMS_H_
+#endif  // BRICK_METRICS_FIELD_TRIAL_PARAMS_H_

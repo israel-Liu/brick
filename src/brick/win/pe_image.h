@@ -8,8 +8,8 @@
 // Win32 Portable Executable File Format" by Matt Pietrek:
 // http://msdn.microsoft.com/msdnmag/issues/02/02/PE/default.aspx
 
-#ifndef BASE_WIN_PE_IMAGE_H_
-#define BASE_WIN_PE_IMAGE_H_
+#ifndef BRICK_WIN_PE_IMAGE_H_
+#define BRICK_WIN_PE_IMAGE_H_
 
 #include <windows.h>
 
@@ -264,4 +264,4 @@ inline PIMAGE_EXPORT_DIRECTORY PEImage::GetExportDirectory() const {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_PE_IMAGE_H_
+#endif  // BRICK_WIN_PE_IMAGE_H_

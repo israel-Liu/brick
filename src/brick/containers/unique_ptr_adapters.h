@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_UNIQUE_PTR_ADAPTERS_H_
-#define BASE_CONTAINERS_UNIQUE_PTR_ADAPTERS_H_
+#ifndef BRICK_CONTAINERS_UNIQUE_PTR_ADAPTERS_H_
+#define BRICK_CONTAINERS_UNIQUE_PTR_ADAPTERS_H_
 
 #include <memory>
 
@@ -75,4 +75,4 @@ UniquePtrMatcher<T, Deleter> MatchesUniquePtr(T* t) {
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_UNIQUE_PTR_ADAPTERS_H_
+#endif  // BRICK_CONTAINERS_UNIQUE_PTR_ADAPTERS_H_

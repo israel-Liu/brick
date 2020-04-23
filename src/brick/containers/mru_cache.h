@@ -13,8 +13,8 @@
 // legibility rather than optimality. If future profiling identifies this as
 // a bottleneck, there is room for smaller values of 1 in the O(1). :]
 
-#ifndef BASE_CONTAINERS_MRU_CACHE_H_
-#define BASE_CONTAINERS_MRU_CACHE_H_
+#ifndef BRICK_CONTAINERS_MRU_CACHE_H_
+#define BRICK_CONTAINERS_MRU_CACHE_H_
 
 #include <stddef.h>
 
@@ -25,8 +25,8 @@
 #include <unordered_map>
 #include <utility>
 
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace trace_event {
@@ -265,4 +265,4 @@ class HashingMRUCache
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_MRU_CACHE_H_
+#endif  // BRICK_CONTAINERS_MRU_CACHE_H_

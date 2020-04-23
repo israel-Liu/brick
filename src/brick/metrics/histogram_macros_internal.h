@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_HISTOGRAM_MACROS_INTERNAL_H_
-#define BASE_METRICS_HISTOGRAM_MACROS_INTERNAL_H_
+#ifndef BRICK_METRICS_HISTOGRAM_MACROS_INTERNAL_H_
+#define BRICK_METRICS_HISTOGRAM_MACROS_INTERNAL_H_
 
 #include <stdint.h>
 
 #include <limits>
 #include <type_traits>
 
-#include "base/atomicops.h"
-#include "base/logging.h"
-#include "base/metrics/histogram.h"
-#include "base/metrics/sparse_histogram.h"
-#include "base/time/time.h"
+#include "brick/atomicops.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/sparse_histogram.h"
+#include "brick/time/time.h"
 
-// This is for macros and helpers internal to base/metrics. They should not be
+// This is for macros and helpers internal to brick/metrics. They should not be
 // used outside of this directory. For writing to UMA histograms, see
 // histogram_macros.h.
 
@@ -265,4 +265,4 @@ struct EnumSizeTraits<
     base::TimeTicks constructed_;                                              \
   } scoped_histogram_timer_##key
 
-#endif  // BASE_METRICS_HISTOGRAM_MACROS_INTERNAL_H_
+#endif  // BRICK_METRICS_HISTOGRAM_MACROS_INTERNAL_H_

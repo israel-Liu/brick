@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CALLBACK_LIST_H_
-#define BASE_CALLBACK_LIST_H_
+#ifndef BRICK_CALLBACK_LIST_H_
+#define BRICK_CALLBACK_LIST_H_
 
 #include <list>
 #include <memory>
 
-#include "base/callback.h"
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/callback.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 // OVERVIEW:
 //
@@ -223,4 +223,4 @@ class CallbackList<void(Args...)>
 
 }  // namespace base
 
-#endif  // BASE_CALLBACK_LIST_H_
+#endif  // BRICK_CALLBACK_LIST_H_

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/safe_sprintf.h"
+#include "brick/strings/safe_sprintf.h"
 
 #include <errno.h>
 #include <string.h>
 
 #include <limits>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if !defined(NDEBUG)
@@ -34,7 +34,7 @@
 //        errno = 13 (Access denied)
 //      In most of the anticipated use cases, that's probably the preferred
 //      behavior.
-#include "base/logging.h"
+#include "brick/logging.h"
 #define DEBUG_CHECK RAW_CHECK
 #else
 #define DEBUG_CHECK(x) do { if (x) { } } while (0)

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_IOS_DEVICE_UTIL_H_
-#define BASE_IOS_DEVICE_UTIL_H_
+#ifndef BRICK_IOS_DEVICE_UTIL_H_
+#define BRICK_IOS_DEVICE_UTIL_H_
 
 #include <stdint.h>
 
@@ -83,4 +83,4 @@ std::string GetSaltedString(const std::string& in_string,
 }  // namespace device_util
 }  // namespace ios
 
-#endif  // BASE_IOS_DEVICE_UTIL_H_
+#endif  // BRICK_IOS_DEVICE_UTIL_H_

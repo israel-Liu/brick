@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_file_util.h"
+#include "brick/test/test_file_util.h"
 
 #include <aclapi.h>
 #include <shlwapi.h>
@@ -13,13 +13,13 @@
 #include <memory>
 #include <vector>
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/string_split.h"
-#include "base/threading/platform_thread.h"
-#include "base/win/scoped_handle.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string_split.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 

@@ -10,18 +10,18 @@
 // result in a connection failure, so is unlikely to become a source of
 // performance issues.
 
-#include "base/i18n/streaming_utf8_validator.h"
+#include "brick/i18n/streaming_utf8_validator.h"
 
 #include <stddef.h>
 
 #include <string>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/test/perf_time_logger.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/test/perf_time_logger.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

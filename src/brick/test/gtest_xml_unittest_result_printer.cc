@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/gtest_xml_unittest_result_printer.h"
+#include "brick/test/gtest_xml_unittest_result_printer.h"
 
-#include "base/base64.h"
-#include "base/command_line.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/test/test_switches.h"
-#include "base/time/time.h"
+#include "brick/base64.h"
+#include "brick/command_line.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/test/test_switches.h"
+#include "brick/time/time.h"
 
 namespace base {
 

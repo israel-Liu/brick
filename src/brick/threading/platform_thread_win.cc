@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/platform_thread.h"
+#include "brick/threading/platform_thread.h"
 
 #include <stddef.h>
 
-#include "base/debug/activity_tracker.h"
-#include "base/debug/alias.h"
-#include "base/debug/profiler.h"
-#include "base/logging.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/thread_id_name_manager.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/win/scoped_handle.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/debug/alias.h"
+#include "brick/debug/profiler.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/thread_id_name_manager.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/win/scoped_handle.h"
 
 #include <windows.h>
 

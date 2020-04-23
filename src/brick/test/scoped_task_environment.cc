@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/scoped_task_environment.h"
+#include "brick/test/scoped_task_environment.h"
 
-#include "base/bind_helpers.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/task_scheduler/task_scheduler.h"
-#include "base/task_scheduler/task_scheduler_impl.h"
-#include "base/test/test_mock_time_task_runner.h"
-#include "base/threading/sequence_local_storage_map.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/time/time.h"
+#include "brick/bind_helpers.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/task_scheduler/task_scheduler.h"
+#include "brick/task_scheduler/task_scheduler_impl.h"
+#include "brick/test/test_mock_time_task_runner.h"
+#include "brick/threading/sequence_local_storage_map.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/time/time.h"
 
 #if defined(OS_POSIX)
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 #endif
 
 namespace base {

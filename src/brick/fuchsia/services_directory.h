@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FUCHSIA_SERVICES_DIRECTORY_H_
-#define BASE_FUCHSIA_SERVICES_DIRECTORY_H_
+#ifndef BRICK_FUCHSIA_SERVICES_DIRECTORY_H_
+#define BRICK_FUCHSIA_SERVICES_DIRECTORY_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/containers/flat_map.h"
-#include "base/fuchsia/scoped_zx_handle.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/threading/thread_checker.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/containers/flat_map.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/threading/thread_checker.h"
 
 typedef struct svc_dir svc_dir_t;
 
@@ -28,7 +28,7 @@ namespace fuchsia {
 //
 // Not thread-safe. All methods must be called on the thread that created the
 // object.
-class BASE_EXPORT ServicesDirectory {
+class BRICK_EXPORT ServicesDirectory {
  public:
   // Callback called to connect incoming requests.
   using ConnectServiceCallback =
@@ -64,4 +64,4 @@ class BASE_EXPORT ServicesDirectory {
 }  // namespace fuchsia
 }  // namespace base
 
-#endif  // BASE_FUCHSIA_SERVICES_DIRECTORY_H_
+#endif  // BRICK_FUCHSIA_SERVICES_DIRECTORY_H_

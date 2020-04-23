@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/protected_memory.h"
+#include "brick/memory/protected_memory.h"
 
 #include <stdint.h>
 #include <sys/mman.h>
@@ -17,9 +17,9 @@
 #include <mach/mach_vm.h>
 #endif  // defined(OS_MACOSX) && !defined(OS_IOS)
 
-#include "base/posix/eintr_wrapper.h"
-#include "base/process/process_metrics.h"
-#include "base/synchronization/lock.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/process/process_metrics.h"
+#include "brick/synchronization/lock.h"
 #include "build/build_config.h"
 
 namespace base {

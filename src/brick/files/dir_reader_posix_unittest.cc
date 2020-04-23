@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/dir_reader_posix.h"
+#include "brick/files/dir_reader_posix.h"
 
 #include <fcntl.h>
 #include <limits.h>
@@ -11,13 +11,13 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "base/files/scoped_temp_dir.h"
-#include "base/logging.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/logging.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_ANDROID)
-#include "base/os_compat_android.h"
+#include "brick/os_compat_android.h"
 #endif
 
 namespace base {

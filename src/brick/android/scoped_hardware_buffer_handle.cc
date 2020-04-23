@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/scoped_hardware_buffer_handle.h"
+#include "brick/android/scoped_hardware_buffer_handle.h"
 
-#include "base/android/android_hardware_buffer_compat.h"
-#include "base/logging.h"
-#include "base/posix/unix_domain_socket.h"
+#include "brick/android/android_hardware_buffer_compat.h"
+#include "brick/logging.h"
+#include "brick/posix/unix_domain_socket.h"
 
 namespace base {
 namespace android {

@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_DISCARDABLE_MEMORY_ALLOCATOR_H_
-#define BASE_MEMORY_DISCARDABLE_MEMORY_ALLOCATOR_H_
+#ifndef BRICK_MEMORY_DISCARDABLE_MEMORY_ALLOCATOR_H_
+#define BRICK_MEMORY_DISCARDABLE_MEMORY_ALLOCATOR_H_
 
 #include <stddef.h>
 
 #include <memory>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 class DiscardableMemory;
 
-class BASE_EXPORT DiscardableMemoryAllocator {
+class BRICK_EXPORT DiscardableMemoryAllocator {
  public:
   // Returns the allocator instance.
   static DiscardableMemoryAllocator* GetInstance();
@@ -35,4 +35,4 @@ class BASE_EXPORT DiscardableMemoryAllocator {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_DISCARDABLE_MEMORY_ALLOCATOR_H_
+#endif  // BRICK_MEMORY_DISCARDABLE_MEMORY_ALLOCATOR_H_

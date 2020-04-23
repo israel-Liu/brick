@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_MEMORY_MAPPED_FILE_H_
-#define BASE_FILES_MEMORY_MAPPED_FILE_H_
+#ifndef BRICK_FILES_MEMORY_MAPPED_FILE_H_
+#define BRICK_FILES_MEMORY_MAPPED_FILE_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/base_export.h"
-#include "base/files/file.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/files/file.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -21,7 +21,7 @@ namespace base {
 
 class FilePath;
 
-class BASE_EXPORT MemoryMappedFile {
+class BRICK_EXPORT MemoryMappedFile {
  public:
   enum Access {
     // Mapping a file into memory effectively allows for file I/O on any thread.
@@ -51,7 +51,7 @@ class BASE_EXPORT MemoryMappedFile {
   ~MemoryMappedFile();
 
   // Used to hold information about a region [offset + size] of a file.
-  struct BASE_EXPORT Region {
+  struct BRICK_EXPORT Region {
     static const Region kWholeFile;
 
     bool operator==(const Region& other) const;
@@ -133,4 +133,4 @@ class BASE_EXPORT MemoryMappedFile {
 
 }  // namespace base
 
-#endif  // BASE_FILES_MEMORY_MAPPED_FILE_H_
+#endif  // BRICK_FILES_MEMORY_MAPPED_FILE_H_

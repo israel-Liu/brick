@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/nix/xdg_util.h"
+#include "brick/nix/xdg_util.h"
 
 #include <string>
 
-#include "base/base_paths.h"
-#include "base/environment.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/path_service.h"
-#include "base/strings/string_util.h"
-#include "base/third_party/xdg_user_dirs/xdg_user_dir_lookup.h"
+#include "brick/base_paths.h"
+#include "brick/environment.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/path_service.h"
+#include "brick/strings/string_util.h"
+#include "brick/third_party/xdg_user_dirs/xdg_user_dir_lookup.h"
 
 namespace {
 

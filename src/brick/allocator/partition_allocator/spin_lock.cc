@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/partition_allocator/spin_lock.h"
+#include "brick/allocator/partition_allocator/spin_lock.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -11,7 +11,7 @@
 #include <sched.h>
 #endif
 
-#include "base/threading/platform_thread.h"
+#include "brick/threading/platform_thread.h"
 
 // The YIELD_PROCESSOR macro wraps an architecture specific-instruction that
 // informs the processor we're in a busy wait, so it can handle the branch more

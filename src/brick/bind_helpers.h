@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_BIND_HELPERS_H_
-#define BASE_BIND_HELPERS_H_
+#ifndef BRICK_BIND_HELPERS_H_
+#define BRICK_BIND_HELPERS_H_
 
 #include <stddef.h>
 
 #include <type_traits>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/memory/weak_ptr.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/memory/weak_ptr.h"
 #include "build/build_config.h"
 
 // This defines a set of simple functions and utilities that people want when
@@ -21,7 +21,7 @@
 namespace base {
 
 // Creates a null callback.
-class BASE_EXPORT NullCallback {
+class BRICK_EXPORT NullCallback {
  public:
   template <typename R, typename... Args>
   operator RepeatingCallback<R(Args...)>() const {
@@ -34,7 +34,7 @@ class BASE_EXPORT NullCallback {
 };
 
 // Creates a callback that does nothing when called.
-class BASE_EXPORT DoNothing {
+class BRICK_EXPORT DoNothing {
  public:
   template <typename... Args>
   operator RepeatingCallback<void(Args...)>() const {
@@ -66,4 +66,4 @@ void DeletePointer(T* obj) {
 
 }  // namespace base
 
-#endif  // BASE_BIND_HELPERS_H_
+#endif  // BRICK_BIND_HELPERS_H_

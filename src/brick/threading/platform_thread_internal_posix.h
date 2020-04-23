@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_PLATFORM_THREAD_INTERNAL_POSIX_H_
-#define BASE_THREADING_PLATFORM_THREAD_INTERNAL_POSIX_H_
+#ifndef BRICK_THREADING_PLATFORM_THREAD_INTERNAL_POSIX_H_
+#define BRICK_THREADING_PLATFORM_THREAD_INTERNAL_POSIX_H_
 
-#include "base/base_export.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 
@@ -19,7 +19,7 @@ struct ThreadPriorityToNiceValuePair {
 // The elements must be listed in the order of increasing priority (lowest
 // priority first), that is, in the order of decreasing nice values (highest
 // nice value first).
-BASE_EXPORT extern
+BRICK_EXPORT extern
 const ThreadPriorityToNiceValuePair kThreadPriorityToNiceValueMap[4];
 
 // Returns the nice value matching |priority| based on the platform-specific
@@ -28,7 +28,7 @@ int ThreadPriorityToNiceValue(ThreadPriority priority);
 
 // Returns the ThreadPrioirty matching |nice_value| based on the platform-
 // specific implementation of kThreadPriorityToNiceValueMap.
-BASE_EXPORT ThreadPriority NiceValueToThreadPriority(int nice_value);
+BRICK_EXPORT ThreadPriority NiceValueToThreadPriority(int nice_value);
 
 // Allows platform specific tweaks to the generic POSIX solution for
 // SetCurrentThreadPriority. Returns true if the platform-specific
@@ -45,4 +45,4 @@ bool GetCurrentThreadPriorityForPlatform(ThreadPriority* priority);
 
 }  // namespace base
 
-#endif  // BASE_THREADING_PLATFORM_THREAD_INTERNAL_POSIX_H_
+#endif  // BRICK_THREADING_PLATFORM_THREAD_INTERNAL_POSIX_H_

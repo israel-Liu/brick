@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_SHARED_MEMORY_HELPER_H_
-#define BASE_MEMORY_SHARED_MEMORY_HELPER_H_
+#ifndef BRICK_MEMORY_SHARED_MEMORY_HELPER_H_
+#define BRICK_MEMORY_SHARED_MEMORY_HELPER_H_
 
-#include "base/memory/shared_memory.h"
+#include "brick/memory/shared_memory.h"
 #include "build/build_config.h"
 
 #include <fcntl.h>
@@ -33,4 +33,4 @@ bool PrepareMapFile(ScopedFD fd,
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_SHARED_MEMORY_HELPER_H_
+#endif  // BRICK_MEMORY_SHARED_MEMORY_HELPER_H_

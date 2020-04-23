@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/process_startup_helper.h"
+#include "brick/win/process_startup_helper.h"
 
 #include <crtdbg.h>
 #include <new.h>
 
-#include "base/base_switches.h"
-#include "base/command_line.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
 
 namespace {
 

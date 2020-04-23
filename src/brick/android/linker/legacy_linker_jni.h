@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_LINKER_LEGACY_LINKER_JNI_H_
-#define BASE_ANDROID_LINKER_LEGACY_LINKER_JNI_H_
+#ifndef BRICK_ANDROID_LINKER_LEGACY_LINKER_JNI_H_
+#define BRICK_ANDROID_LINKER_LEGACY_LINKER_JNI_H_
 
 #include <jni.h>
 
@@ -18,4 +18,4 @@ extern bool LegacyLinkerJNIInit(JavaVM* vm, JNIEnv* env);
 
 }  // namespace chromium_android_linker
 
-#endif  // BASE_ANDROID_LINKER_LEGACY_LINKER_JNI_H_
+#endif  // BRICK_ANDROID_LINKER_LEGACY_LINKER_JNI_H_

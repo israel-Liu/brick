@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_event_memory_overhead.h"
+#include "brick/trace_event/trace_event_memory_overhead.h"
 
 #include <algorithm>
 
-#include "base/bits.h"
-#include "base/memory/ref_counted_memory.h"
-#include "base/strings/stringprintf.h"
-#include "base/trace_event/memory_allocator_dump.h"
-#include "base/trace_event/memory_usage_estimator.h"
-#include "base/trace_event/process_memory_dump.h"
-#include "base/values.h"
+#include "brick/bits.h"
+#include "brick/memory/ref_counted_memory.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/trace_event/memory_allocator_dump.h"
+#include "brick/trace_event/memory_usage_estimator.h"
+#include "brick/trace_event/process_memory_dump.h"
+#include "brick/values.h"
 
 namespace base {
 namespace trace_event {

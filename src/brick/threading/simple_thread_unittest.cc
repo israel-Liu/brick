@@ -4,12 +4,12 @@
 
 #include <memory>
 
-#include "base/atomic_sequence_num.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/gtest_util.h"
-#include "base/threading/simple_thread.h"
+#include "brick/atomic_sequence_num.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/gtest_util.h"
+#include "brick/threading/simple_thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sampling_heap_profiler/sampling_heap_profiler.h"
+#include "brick/sampling_heap_profiler/sampling_heap_profiler.h"
 
 #include <algorithm>
 #include <cmath>
 #include <utility>
 
-#include "base/allocator/allocator_shim.h"
-#include "base/allocator/buildflags.h"
-#include "base/allocator/partition_allocator/partition_alloc.h"
-#include "base/atomicops.h"
-#include "base/debug/stack_trace.h"
-#include "base/macros.h"
-#include "base/no_destructor.h"
-#include "base/partition_alloc_buildflags.h"
-#include "base/rand_util.h"
-#include "base/threading/thread_local_storage.h"
+#include "brick/allocator/allocator_shim.h"
+#include "brick/allocator/buildflags.h"
+#include "brick/allocator/partition_allocator/partition_alloc.h"
+#include "brick/atomicops.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/macros.h"
+#include "brick/no_destructor.h"
+#include "brick/partition_alloc_buildflags.h"
+#include "brick/rand_util.h"
+#include "brick/threading/thread_local_storage.h"
 #include "build/build_config.h"
 
 namespace base {

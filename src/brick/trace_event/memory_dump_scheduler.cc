@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/memory_dump_scheduler.h"
+#include "brick/trace_event/memory_dump_scheduler.h"
 
 #include <algorithm>
 #include <limits>
 
-#include "base/bind.h"
-#include "base/logging.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/logging.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 
 namespace base {
 namespace trace_event {

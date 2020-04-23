@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_VLOG_H_
-#define BASE_VLOG_H_
+#ifndef BRICK_VLOG_H_
+#define BRICK_VLOG_H_
 
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
 
 namespace logging {
 
 // A helper class containing all the settings for vlogging.
-class BASE_EXPORT VlogInfo {
+class BRICK_EXPORT VlogInfo {
  public:
   static const int kDefaultVlogLevel;
 
@@ -69,9 +69,9 @@ class BASE_EXPORT VlogInfo {
 //   "kh*n" matches "khn", "khan", or even "khaaaaan"
 //   "/foo\bar" matches "/foo/bar", "\foo\bar", or "/foo\bar"
 //     (disregarding C escaping rules)
-BASE_EXPORT bool MatchVlogPattern(const base::StringPiece& string,
+BRICK_EXPORT bool MatchVlogPattern(const base::StringPiece& string,
                                   const base::StringPiece& vlog_pattern);
 
 }  // namespace logging
 
-#endif  // BASE_VLOG_H_
+#endif  // BRICK_VLOG_H_

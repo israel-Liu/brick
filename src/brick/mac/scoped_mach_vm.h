@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_MACH_VM_H_
-#define BASE_MAC_SCOPED_MACH_VM_H_
+#ifndef BRICK_MAC_SCOPED_MACH_VM_H_
+#define BRICK_MAC_SCOPED_MACH_VM_H_
 
 #include <mach/mach.h>
 #include <stddef.h>
 
 #include <algorithm>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 // Use ScopedMachVM to supervise ownership of pages in the current process
 // through the Mach VM subsystem. Pages allocated with vm_allocate can be
@@ -46,7 +46,7 @@
 namespace base {
 namespace mac {
 
-class BASE_EXPORT ScopedMachVM {
+class BRICK_EXPORT ScopedMachVM {
  public:
   explicit ScopedMachVM(vm_address_t address = 0, vm_size_t size = 0)
       : address_(address), size_(size) {
@@ -90,4 +90,4 @@ class BASE_EXPORT ScopedMachVM {
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_MACH_VM_H_
+#endif  // BRICK_MAC_SCOPED_MACH_VM_H_

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/java_runtime.h"
+#include "brick/android/java_runtime.h"
 
 #include "jni/Runtime_jni.h"
 

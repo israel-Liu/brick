@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_PENDING_TASK_H_
-#define BASE_TEST_TEST_PENDING_TASK_H_
+#ifndef BRICK_TEST_TEST_PENDING_TASK_H_
+#define BRICK_TEST_TEST_PENDING_TASK_H_
 
 #include <string>
 
-#include "base/callback.h"
-#include "base/location.h"
-#include "base/time/time.h"
-#include "base/trace_event/trace_event_argument.h"
+#include "brick/callback.h"
+#include "brick/location.h"
+#include "brick/time/time.h"
+#include "brick/trace_event/trace_event_argument.h"
 
 namespace base {
 
@@ -75,4 +75,4 @@ void PrintTo(const TestPendingTask& task, std::ostream* os);
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_PENDING_TASK_H_
+#endif  // BRICK_TEST_TEST_PENDING_TASK_H_

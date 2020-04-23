@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/timer/hi_res_timer_manager.h"
+#include "brick/timer/hi_res_timer_manager.h"
 
 // On POSIX we don't need to do anything special with the system timer.
 

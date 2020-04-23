@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/unguessable_token.h"
+#include "brick/unguessable_token.h"
 
-#include "base/format_macros.h"
-#include "base/rand_util.h"
-#include "base/strings/stringprintf.h"
+#include "brick/format_macros.h"
+#include "brick/rand_util.h"
+#include "brick/strings/stringprintf.h"
 
 namespace base {
 
@@ -21,7 +21,7 @@ std::string UnguessableToken::ToString() const {
 UnguessableToken UnguessableToken::Create() {
   UnguessableToken token;
   // Use base::RandBytes instead of crypto::RandBytes, because crypto calls the
-  // base version directly, and to prevent the dependency from base/ to crypto/.
+  // base version directly, and to prevent the dependency from brick/ to crypto/.
   base::RandBytes(&token, sizeof(token));
   return token;
 }

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <ApplicationServices/ApplicationServices.h>
 #include <CoreServices/CoreServices.h>
@@ -14,13 +14,13 @@
 #include <sys/sysctl.h>
 #include <sys/types.h>
 
-#include "base/logging.h"
-#include "base/mac/mac_util.h"
-#include "base/mac/scoped_mach_port.h"
-#import "base/mac/sdk_forward_declarations.h"
-#include "base/macros.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/stringprintf.h"
+#include "brick/logging.h"
+#include "brick/mac/mac_util.h"
+#include "brick/mac/scoped_mach_port.h"
+#import "brick/mac/sdk_forward_declarations.h"
+#include "brick/macros.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/stringprintf.h"
 
 namespace base {
 

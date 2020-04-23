@@ -2,30 +2,30 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_LOOP_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_LOOP_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_LOOP_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_LOOP_H_
 
 #include <memory>
 #include <queue>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/callback_forward.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/memory/scoped_refptr.h"
-#include "base/message_loop/incoming_task_queue.h"
-#include "base/message_loop/message_loop_current.h"
-#include "base/message_loop/message_loop_task_runner.h"
-#include "base/message_loop/message_pump.h"
-#include "base/message_loop/timer_slack.h"
-#include "base/observer_list.h"
-#include "base/pending_task.h"
-#include "base/run_loop.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/sequence_local_storage_map.h"
-#include "base/threading/thread_checker.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/callback_forward.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/memory/scoped_refptr.h"
+#include "brick/message_loop/incoming_task_queue.h"
+#include "brick/message_loop/message_loop_current.h"
+#include "brick/message_loop/message_loop_task_runner.h"
+#include "brick/message_loop/message_pump.h"
+#include "brick/message_loop/timer_slack.h"
+#include "brick/observer_list.h"
+#include "brick/pending_task.h"
+#include "brick/run_loop.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/sequence_local_storage_map.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -78,7 +78,7 @@ class ThreadTaskRunnerHandle;
 // TODO(gab): MessageLoop doesn't need to be a MessageLoopCurrent once callers
 // that store MessageLoop::current() in a MessageLoop* variable have been
 // updated to use a MessageLoopCurrent variable.
-class BASE_EXPORT MessageLoop : public MessagePump::Delegate,
+class BRICK_EXPORT MessageLoop : public MessagePump::Delegate,
                                 public RunLoop::Delegate,
                                 public MessageLoopCurrent {
  public:
@@ -335,7 +335,7 @@ class BASE_EXPORT MessageLoop : public MessagePump::Delegate,
 // MessageLoopCurrentForUI is exposed statically on its thread via
 // MessageLoopCurrentForUI::Get() to provide additional functionality.
 //
-class BASE_EXPORT MessageLoopForUI : public MessageLoop {
+class BRICK_EXPORT MessageLoopForUI : public MessageLoop {
  public:
   MessageLoopForUI() : MessageLoop(TYPE_UI) {
   }
@@ -383,7 +383,7 @@ static_assert(sizeof(MessageLoop) == sizeof(MessageLoopForUI),
 // MessageLoopCurrentForIO is exposed statically on its thread via
 // MessageLoopCurrentForIO::Get() to provide additional functionality.
 //
-class BASE_EXPORT MessageLoopForIO : public MessageLoop {
+class BRICK_EXPORT MessageLoopForIO : public MessageLoop {
  public:
   MessageLoopForIO() : MessageLoop(TYPE_IO) {}
 
@@ -400,4 +400,4 @@ static_assert(sizeof(MessageLoop) == sizeof(MessageLoopForIO),
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_LOOP_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_LOOP_H_

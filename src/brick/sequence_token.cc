@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sequence_token.h"
+#include "brick/sequence_token.h"
 
-#include "base/atomic_sequence_num.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/threading/thread_local.h"
+#include "brick/atomic_sequence_num.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 

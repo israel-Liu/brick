@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYNC_SOCKET_H_
-#define BASE_SYNC_SOCKET_H_
+#ifndef BRICK_SYNC_SOCKET_H_
+#define BRICK_SYNC_SOCKET_H_
 
 // A socket abstraction used for sending and receiving plain
 // data.  Because the receiving is blocking, they can be used to perform
@@ -11,12 +11,12 @@
 
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/process/process_handle.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/process/process_handle.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -25,12 +25,12 @@
 #include <sys/types.h>
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
-#include "base/file_descriptor_posix.h"
+#include "brick/file_descriptor_posix.h"
 #endif
 
 namespace base {
 
-class BASE_EXPORT SyncSocket {
+class BRICK_EXPORT SyncSocket {
  public:
 #if defined(OS_WIN)
   typedef HANDLE Handle;
@@ -106,7 +106,7 @@ class BASE_EXPORT SyncSocket {
 // Derives from SyncSocket and adds support for shutting down the socket from
 // another thread while a blocking Receive or Send is being done from the
 // thread that owns the socket.
-class BASE_EXPORT CancelableSyncSocket : public SyncSocket {
+class BRICK_EXPORT CancelableSyncSocket : public SyncSocket {
  public:
   CancelableSyncSocket();
   explicit CancelableSyncSocket(Handle handle);
@@ -158,4 +158,4 @@ __declspec(selectany)
 
 }  // namespace base
 
-#endif  // BASE_SYNC_SOCKET_H_
+#endif  // BRICK_SYNC_SOCKET_H_

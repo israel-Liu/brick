@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/bind.h"
-#include "base/test/launcher/unit_test_launcher.h"
-#include "base/test/test_suite.h"
+#include "brick/bind.h"
+#include "brick/test/launcher/unit_test_launcher.h"
+#include "brick/test/test_suite.h"
 #include "build/build_config.h"
 
 int main(int argc, char** argv) {

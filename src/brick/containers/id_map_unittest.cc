@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/containers/id_map.h"
+#include "brick/containers/id_map.h"
 
 #include <stdint.h>
 
 #include <memory>
 
-#include "base/test/gtest_util.h"
+#include "brick/test/gtest_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

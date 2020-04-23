@@ -53,8 +53,8 @@
 // Timer was *started on*, but this can be changed *prior* to Start() via
 // SetTaskRunner().
 
-#ifndef BASE_TIMER_TIMER_H_
-#define BASE_TIMER_TIMER_H_
+#ifndef BRICK_TIMER_TIMER_H_
+#define BRICK_TIMER_TIMER_H_
 
 // IMPORTANT: If you change timer code, make sure that all tests (including
 // disabled ones) from timer_unittests.cc pass locally. Some are disabled
@@ -63,15 +63,15 @@
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/callback.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/sequence_checker_impl.h"
-#include "base/sequenced_task_runner.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/callback.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/sequence_checker_impl.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -82,7 +82,7 @@ class TickClock;
 // This class wraps TaskRunner::PostDelayedTask to manage delayed and repeating
 // tasks. See meta comment above for thread-safety requirements.
 //
-class BASE_EXPORT Timer {
+class BRICK_EXPORT Timer {
  public:
   // Construct a timer in repeating or one-shot mode. Start must be called later
   // to set task info. |retain_user_task| determines whether the user_task is
@@ -292,4 +292,4 @@ class DelayTimer : protected Timer {
 
 }  // namespace base
 
-#endif  // BASE_TIMER_TIMER_H_
+#endif  // BRICK_TIMER_TIMER_H_

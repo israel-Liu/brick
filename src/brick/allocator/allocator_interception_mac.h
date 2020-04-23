@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_ALLOCATOR_INTERCEPTION_MAC_H_
-#define BASE_ALLOCATOR_ALLOCATOR_INTERCEPTION_MAC_H_
+#ifndef BRICK_ALLOCATOR_ALLOCATOR_INTERCEPTION_MAC_H_
+#define BRICK_ALLOCATOR_ALLOCATOR_INTERCEPTION_MAC_H_
 
 #include <stddef.h>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 #include "third_party/apple_apsl/malloc.h"
 
 namespace base {
@@ -35,22 +35,22 @@ bool UncheckedCallocMac(size_t num_items, size_t size, void** result);
 // Foundation and Objective-C allocations.
 // Has no effect on the default malloc zone if the allocator shim already
 // performs that interception.
-BASE_EXPORT void InterceptAllocationsMac();
+BRICK_EXPORT void InterceptAllocationsMac();
 
 // Updates all malloc zones to use their original functions.
 // Also calls ClearAllMallocZonesForTesting.
-BASE_EXPORT void UninterceptMallocZonesForTesting();
+BRICK_EXPORT void UninterceptMallocZonesForTesting();
 
 // Periodically checks for, and shims new malloc zones. Stops checking after 1
 // minute.
-BASE_EXPORT void PeriodicallyShimNewMallocZones();
+BRICK_EXPORT void PeriodicallyShimNewMallocZones();
 
 // Exposed for testing.
-BASE_EXPORT void ShimNewMallocZones();
-BASE_EXPORT void ReplaceZoneFunctions(ChromeMallocZone* zone,
+BRICK_EXPORT void ShimNewMallocZones();
+BRICK_EXPORT void ReplaceZoneFunctions(ChromeMallocZone* zone,
                                       const MallocZoneFunctions* functions);
 
 }  // namespace allocator
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_ALLOCATOR_INTERCEPTION_MAC_H_
+#endif  // BRICK_ALLOCATOR_ALLOCATOR_INTERCEPTION_MAC_H_

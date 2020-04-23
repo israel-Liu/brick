@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/fuchsia/scoped_zx_handle.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
 
 #include <lib/zx/channel.h>
 

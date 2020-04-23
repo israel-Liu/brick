@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // This is a low level implementation of atomic semantics for reference
-// counting.  Please use base/memory/ref_counted.h directly instead.
+// counting.  Please use brick/memory/ref_counted.h directly instead.
 
-#ifndef BASE_ATOMIC_REF_COUNT_H_
-#define BASE_ATOMIC_REF_COUNT_H_
+#ifndef BRICK_ATOMIC_REF_COUNT_H_
+#define BRICK_ATOMIC_REF_COUNT_H_
 
 #include <atomic>
 
@@ -64,4 +64,4 @@ class AtomicRefCount {
 
 }  // namespace base
 
-#endif  // BASE_ATOMIC_REF_COUNT_H_
+#endif  // BRICK_ATOMIC_REF_COUNT_H_

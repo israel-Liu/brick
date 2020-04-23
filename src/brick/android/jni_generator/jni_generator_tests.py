@@ -25,9 +25,9 @@ from jni_generator import NativeMethod
 from jni_generator import Param
 
 
-SCRIPT_NAME = 'base/android/jni_generator/jni_generator.py'
+SCRIPT_NAME = 'brick/android/jni_generator/jni_generator.py'
 INCLUDES = (
-    'base/android/jni_generator/jni_generator_helper.h'
+    'brick/android/jni_generator/jni_generator_helper.h'
 )
 
 # Set this environment variable in order to regenerate the golden text

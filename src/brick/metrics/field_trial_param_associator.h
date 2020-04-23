@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_FIELD_TRIAL_PARAM_ASSOCIATOR_H_
-#define BASE_METRICS_FIELD_TRIAL_PARAM_ASSOCIATOR_H_
+#ifndef BRICK_METRICS_FIELD_TRIAL_PARAM_ASSOCIATOR_H_
+#define BRICK_METRICS_FIELD_TRIAL_PARAM_ASSOCIATOR_H_
 
 #include <map>
 #include <string>
 #include <utility>
 
-#include "base/base_export.h"
-#include "base/memory/singleton.h"
-#include "base/metrics/field_trial.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/memory/singleton.h"
+#include "brick/metrics/field_trial.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
 // Keeps track of the parameters of all field trials and ensures access to them
 // is thread-safe.
-class BASE_EXPORT FieldTrialParamAssociator {
+class BRICK_EXPORT FieldTrialParamAssociator {
  public:
   FieldTrialParamAssociator();
   ~FieldTrialParamAssociator();
@@ -73,4 +73,4 @@ class BASE_EXPORT FieldTrialParamAssociator {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_FIELD_TRIAL_PARAM_ASSOCIATOR_H_
+#endif  // BRICK_METRICS_FIELD_TRIAL_PARAM_ASSOCIATOR_H_

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/platform_native_worker_pool_win.h"
+#include "brick/task_scheduler/platform_native_worker_pool_win.h"
 
-#include "base/task_scheduler/task_tracker.h"
+#include "brick/task_scheduler/task_tracker.h"
 
 namespace base {
 namespace internal {

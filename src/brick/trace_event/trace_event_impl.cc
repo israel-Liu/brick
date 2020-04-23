@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/trace_event/trace_event_impl.h"
 
 #include <stddef.h>
 
-#include "base/format_macros.h"
-#include "base/json/string_escape.h"
-#include "base/memory/ptr_util.h"
-#include "base/process/process_handle.h"
-#include "base/stl_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/trace_event/trace_event.h"
-#include "base/trace_event/trace_event_argument.h"
-#include "base/trace_event/trace_log.h"
+#include "brick/format_macros.h"
+#include "brick/json/string_escape.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/process/process_handle.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event_argument.h"
+#include "brick/trace_event/trace_log.h"
 
 namespace base {
 namespace trace_event {
@@ -223,7 +223,7 @@ void TraceEvent::AppendValueAsJSON(unsigned char type,
       StringAppendF(out, "%" PRId64, static_cast<int64_t>(value.as_int));
       break;
     case TRACE_VALUE_TYPE_DOUBLE: {
-      // FIXME: base/json/json_writer.cc is using the same code,
+      // FIXME: brick/json/json_writer.cc is using the same code,
       //        should be made into a common method.
       std::string real;
       double val = value.as_double;

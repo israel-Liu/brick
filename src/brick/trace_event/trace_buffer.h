@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_BUFFER_H_
-#define BASE_TRACE_EVENT_TRACE_BUFFER_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_BUFFER_H_
+#define BRICK_TRACE_EVENT_TRACE_BUFFER_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/base_export.h"
-#include "base/trace_event/trace_event.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/base_export.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event_impl.h"
 
 namespace base {
 
 namespace trace_event {
 
 // TraceBufferChunk is the basic unit of TraceBuffer.
-class BASE_EXPORT TraceBufferChunk {
+class BRICK_EXPORT TraceBufferChunk {
  public:
   explicit TraceBufferChunk(uint32_t seq);
   ~TraceBufferChunk();
@@ -55,7 +55,7 @@ class BASE_EXPORT TraceBufferChunk {
 };
 
 // TraceBuffer holds the events as they are collected.
-class BASE_EXPORT TraceBuffer {
+class BRICK_EXPORT TraceBuffer {
  public:
   virtual ~TraceBuffer() = default;
 
@@ -83,14 +83,14 @@ class BASE_EXPORT TraceBuffer {
 
 // TraceResultBuffer collects and converts trace fragments returned by TraceLog
 // to JSON output.
-class BASE_EXPORT TraceResultBuffer {
+class BRICK_EXPORT TraceResultBuffer {
  public:
   typedef base::Callback<void(const std::string&)> OutputCallback;
 
   // If you don't need to stream JSON chunks out efficiently, and just want to
   // get a complete JSON string after calling Finish, use this struct to collect
   // JSON trace output.
-  struct BASE_EXPORT SimpleOutput {
+  struct BRICK_EXPORT SimpleOutput {
     OutputCallback GetCallback();
     void Append(const std::string& json_string);
 
@@ -127,4 +127,4 @@ class BASE_EXPORT TraceResultBuffer {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_BUFFER_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_BUFFER_H_

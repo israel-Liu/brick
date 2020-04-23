@@ -11,9 +11,9 @@
 #include <limits>
 #include <vector>
 
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
-#include "base/win/registry.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
+#include "brick/win/registry.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

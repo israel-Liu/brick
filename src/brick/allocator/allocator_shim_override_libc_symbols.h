@@ -5,14 +5,14 @@
 // Its purpose is to preempt the Libc symbols for malloc/new so they call the
 // shim layer entry points.
 
-#ifdef BASE_ALLOCATOR_ALLOCATOR_SHIM_OVERRIDE_LIBC_SYMBOLS_H_
+#ifdef BRICK_ALLOCATOR_ALLOCATOR_SHIM_OVERRIDE_LIBC_SYMBOLS_H_
 #error This header is meant to be included only once by allocator_shim.cc
 #endif
-#define BASE_ALLOCATOR_ALLOCATOR_SHIM_OVERRIDE_LIBC_SYMBOLS_H_
+#define BRICK_ALLOCATOR_ALLOCATOR_SHIM_OVERRIDE_LIBC_SYMBOLS_H_
 
 #include <malloc.h>
 
-#include "base/allocator/allocator_shim_internals.h"
+#include "brick/allocator/allocator_shim_internals.h"
 
 extern "C" {
 

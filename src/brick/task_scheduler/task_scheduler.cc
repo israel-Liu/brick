@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/task_scheduler.h"
+#include "brick/task_scheduler/task_scheduler.h"
 
 #include <algorithm>
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/sys_info.h"
-#include "base/task_scheduler/scheduler_worker_pool_params.h"
-#include "base/task_scheduler/task_scheduler_impl.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/sys_info.h"
+#include "brick/task_scheduler/scheduler_worker_pool_params.h"
+#include "brick/task_scheduler/task_scheduler_impl.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 
 namespace base {
 

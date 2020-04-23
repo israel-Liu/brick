@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_path_watcher.h"
+#include "brick/files/file_path_watcher.h"
 
 #include <errno.h>
 #include <stddef.h>
@@ -20,23 +20,23 @@
 #include <utility>
 #include <vector>
 
-#include "base/bind.h"
-#include "base/files/file_enumerator.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/lazy_instance.h"
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/weak_ptr.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/single_thread_task_runner.h"
-#include "base/stl_util.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/sequenced_task_runner_handle.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/bind.h"
+#include "brick/files/file_enumerator.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/lazy_instance.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/stl_util.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory.h"
+#include "brick/memory/shared_memory.h"
 
 #include <errno.h>
 #include <fcntl.h>
@@ -11,24 +11,24 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/shared_memory_helper.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/posix/safe_strerror.h"
-#include "base/process/process_metrics.h"
-#include "base/scoped_generic.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/trace_event/trace_event.h"
-#include "base/unguessable_token.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/shared_memory_helper.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/posix/safe_strerror.h"
+#include "brick/process/process_metrics.h"
+#include "brick/scoped_generic.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/unguessable_token.h"
 #include "build/build_config.h"
 
 #if defined(OS_ANDROID)
-#include "base/os_compat_android.h"
+#include "brick/os_compat_android.h"
 #include "third_party/ashmem/ashmem.h"
 #endif
 

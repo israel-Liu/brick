@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_RUNNER_H_
-#define BASE_TASK_RUNNER_H_
+#ifndef BRICK_TASK_RUNNER_H_
+#define BRICK_TASK_RUNNER_H_
 
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/location.h"
-#include "base/memory/ref_counted.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/location.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -53,7 +53,7 @@ struct TaskRunnerTraits;
 //
 //   - A TaskRunner that stores the list of posted tasks and has a
 //     method Run() that runs each runnable task in random order.
-class BASE_EXPORT TaskRunner
+class BRICK_EXPORT TaskRunner
     : public RefCountedThreadSafe<TaskRunner, TaskRunnerTraits> {
  public:
   // Posts the given task to be run.  Returns true if the task may be
@@ -149,10 +149,10 @@ class BASE_EXPORT TaskRunner
   virtual void OnDestruct() const;
 };
 
-struct BASE_EXPORT TaskRunnerTraits {
+struct BRICK_EXPORT TaskRunnerTraits {
   static void Destruct(const TaskRunner* task_runner);
 };
 
 }  // namespace base
 
-#endif  // BASE_TASK_RUNNER_H_
+#endif  // BRICK_TASK_RUNNER_H_

@@ -73,7 +73,7 @@ public class ChildProcessLauncher {
         public void onConnectionLost(ChildProcessConnection connection) {}
     }
 
-    // Represents an invalid process handle; same as base/process/process.h kNullProcessHandle.
+    // Represents an invalid process handle; same as brick/process/process.h kNullProcessHandle.
     private static final int NULL_PROCESS_HANDLE = 0;
 
     // The handle for the thread we were created on and on which all methods should be called.

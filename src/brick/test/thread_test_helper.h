@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_THREAD_TEST_HELPER_H_
-#define BASE_TEST_THREAD_TEST_HELPER_H_
+#ifndef BRICK_TEST_THREAD_TEST_HELPER_H_
+#define BRICK_TEST_THREAD_TEST_HELPER_H_
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequenced_task_runner.h"
-#include "base/synchronization/waitable_event.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/synchronization/waitable_event.h"
 
 namespace base {
 
@@ -47,4 +47,4 @@ class ThreadTestHelper : public RefCountedThreadSafe<ThreadTestHelper> {
 
 }  // namespace base
 
-#endif  // BASE_TEST_THREAD_TEST_HELPER_H_
+#endif  // BRICK_TEST_THREAD_TEST_HELPER_H_

@@ -8,19 +8,19 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/command_line.h"
-#include "base/mac/mac_util.h"
-#include "base/mac/mach_logging.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/macros.h"
-#include "base/memory/shared_memory.h"
-#include "base/process/process_handle.h"
-#include "base/rand_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/sys_info.h"
-#include "base/test/multiprocess_test.h"
-#include "base/test/test_timeouts.h"
-#include "base/unguessable_token.h"
+#include "brick/command_line.h"
+#include "brick/mac/mac_util.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/macros.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/process/process_handle.h"
+#include "brick/rand_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/sys_info.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/unguessable_token.h"
 #include "testing/multiprocess_func_list.h"
 
 namespace base {

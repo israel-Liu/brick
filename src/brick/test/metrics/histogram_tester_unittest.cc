@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/metrics/histogram_tester.h"
+#include "brick/test/metrics/histogram_tester.h"
 
 #include <memory>
 
-#include "base/metrics/histogram_macros.h"
-#include "base/metrics/histogram_samples.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/metrics/histogram_samples.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

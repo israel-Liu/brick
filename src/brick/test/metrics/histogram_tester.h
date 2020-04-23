@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_METRICS_HISTOGRAM_TESTER_H_
-#define BASE_TEST_METRICS_HISTOGRAM_TESTER_H_
+#ifndef BRICK_TEST_METRICS_HISTOGRAM_TESTER_H_
+#define BRICK_TEST_METRICS_HISTOGRAM_TESTER_H_
 
 #include <map>
 #include <memory>
@@ -12,10 +12,10 @@
 #include <utility>
 #include <vector>
 
-#include "base/macros.h"
-#include "base/metrics/histogram.h"
-#include "base/metrics/histogram_base.h"
-#include "base/time/time.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -171,4 +171,4 @@ void PrintTo(const Bucket& value, std::ostream* os);
 
 }  // namespace base
 
-#endif  // BASE_TEST_METRICS_HISTOGRAM_TESTER_H_
+#endif  // BRICK_TEST_METRICS_HISTOGRAM_TESTER_H_

@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/foundation_util.h"
+#include "brick/mac/foundation_util.h"
 
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/mac/bundle_locations.h"
-#include "base/mac/mac_logging.h"
-#include "base/macros.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/strings/sys_string_conversions.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/mac/bundle_locations.h"
+#include "brick/mac/mac_logging.h"
+#include "brick/macros.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/strings/sys_string_conversions.h"
 #include "build/build_config.h"
 
 #if !defined(OS_IOS)
@@ -80,7 +80,7 @@ void SetOverrideAmIBundled(bool value) {
   g_override_am_i_bundled_value = value;
 }
 
-BASE_EXPORT void ClearAmIBundledCache() {
+BRICK_EXPORT void ClearAmIBundledCache() {
   g_cached_am_i_bundled_called = false;
 }
 

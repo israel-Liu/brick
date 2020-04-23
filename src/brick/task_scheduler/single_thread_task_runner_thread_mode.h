@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_THREAD_MODE_H_
-#define BASE_TASK_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_THREAD_MODE_H_
+#ifndef BRICK_TASK_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_THREAD_MODE_H_
+#define BRICK_TASK_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_THREAD_MODE_H_
 
 namespace base {
 
@@ -22,4 +22,4 @@ enum class SingleThreadTaskRunnerThreadMode {
 
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_THREAD_MODE_H_
+#endif  // BRICK_TASK_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_THREAD_MODE_H_

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file.h"
-#include "base/files/file_path.h"
-#include "base/files/file_tracing.h"
-#include "base/metrics/histogram.h"
-#include "base/timer/elapsed_timer.h"
+#include "brick/files/file.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_tracing.h"
+#include "brick/metrics/histogram.h"
+#include "brick/timer/elapsed_timer.h"
 #include "build/build_config.h"
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_BASE_PATHS_FUCHSIA_H_
-#define BASE_BASE_PATHS_FUCHSIA_H_
+#ifndef BRICK_BRICK_PATHS_FUCHSIA_H_
+#define BRICK_BRICK_PATHS_FUCHSIA_H_
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
 
 namespace base {
 
@@ -27,8 +27,8 @@ enum {
 // If running inside a package, returns a FilePath of the root path
 // of the currently deployed package.
 // Otherwise returns an empty FilePath.
-BASE_EXPORT base::FilePath GetPackageRoot();
+BRICK_EXPORT base::FilePath GetPackageRoot();
 
 }  // namespace base
 
-#endif  // BASE_BASE_PATHS_FUCHSIA_H_
+#endif  // BRICK_BRICK_PATHS_FUCHSIA_H_

@@ -11,12 +11,12 @@
 // provided for static linking.
 
 // This code is deliberately written to match the style of calls seen in
-// base/threading/thread_local_storage_win.cc.  Please keep the two in sync if
+// brick/threading/thread_local_storage_win.cc.  Please keep the two in sync if
 // coding conventions are changed.
 
 // WARNING: Do *NOT* try to include this in the construction of the base
 // library, even though it potentially drives code in
-// base/threading/thread_local_storage_win.cc.  If you do, some users will end
+// brick/threading/thread_local_storage_win.cc.  If you do, some users will end
 // up getting duplicate definition of DllMain() in some of their later links.
 
 // Force a reference to _tls_used to make the linker create the TLS directory
@@ -26,8 +26,8 @@
 
 #include <windows.h>
 
-#include "base/compiler_specific.h"
-#include "base/win/win_util.h"
+#include "brick/compiler_specific.h"
+#include "brick/win/win_util.h"
 
 // Indicate if another service is scanning the callbacks.  When this becomes
 // set to true, then DllMain() will stop supporting the callback service. This

@@ -2,28 +2,28 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/observer_list.h"
-#include "base/observer_list_threadsafe.h"
+#include "brick/observer_list.h"
+#include "brick/observer_list_threadsafe.h"
 
 #include <memory>
 #include <utility>
 #include <vector>
 
-#include "base/bind.h"
-#include "base/compiler_specific.h"
-#include "base/location.h"
-#include "base/memory/weak_ptr.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/sequenced_task_runner.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/task_scheduler/task_scheduler.h"
-#include "base/test/gtest_util.h"
-#include "base/test/scoped_task_environment.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/bind.h"
+#include "brick/compiler_specific.h"
+#include "brick/location.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/task_scheduler/task_scheduler.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/scoped_task_environment.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread_restrictions.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

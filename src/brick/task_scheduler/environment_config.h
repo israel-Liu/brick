@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_ENVIRONMENT_CONFIG_H_
-#define BASE_TASK_SCHEDULER_ENVIRONMENT_CONFIG_H_
+#ifndef BRICK_TASK_SCHEDULER_ENVIRONMENT_CONFIG_H_
+#define BRICK_TASK_SCHEDULER_ENVIRONMENT_CONFIG_H_
 
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/threading/thread.h"
+#include "brick/base_export.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/threading/thread.h"
 
 namespace base {
 namespace internal {
@@ -41,13 +41,13 @@ constexpr struct {
     {"BackgroundBlocking", base::ThreadPriority::BACKGROUND},
 };
 
-size_t BASE_EXPORT GetEnvironmentIndexForTraits(const TaskTraits& traits);
+size_t BRICK_EXPORT GetEnvironmentIndexForTraits(const TaskTraits& traits);
 
 // Returns true if this platform supports having SchedulerWorkers running with a
 // background priority.
-bool BASE_EXPORT CanUseBackgroundPriorityForSchedulerWorker();
+bool BRICK_EXPORT CanUseBackgroundPriorityForSchedulerWorker();
 
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_ENVIRONMENT_CONFIG_H_
+#endif  // BRICK_TASK_SCHEDULER_ENVIRONMENT_CONFIG_H_

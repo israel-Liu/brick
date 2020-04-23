@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_STRINGS_CHAR_TRAITS_H_
-#define BASE_STRINGS_CHAR_TRAITS_H_
+#ifndef BRICK_STRINGS_CHAR_TRAITS_H_
+#define BRICK_STRINGS_CHAR_TRAITS_H_
 
 #include <stddef.h>
 
-#include "base/compiler_specific.h"
+#include "brick/compiler_specific.h"
 
 namespace base {
 
@@ -89,4 +89,4 @@ constexpr size_t CharTraits<char>::length(const char* s) noexcept {
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_CHAR_TRAITS_H_
+#endif  // BRICK_STRINGS_CHAR_TRAITS_H_

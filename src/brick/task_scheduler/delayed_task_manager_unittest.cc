@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/delayed_task_manager.h"
+#include "brick/task_scheduler/delayed_task_manager.h"
 
 #include <memory>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/memory/ptr_util.h"
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_scheduler/task.h"
-#include "base/test/bind_test_util.h"
-#include "base/test/test_mock_time_task_runner.h"
-#include "base/threading/thread.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_scheduler/task.h"
+#include "brick/test/bind_test_util.h"
+#include "brick/test/test_mock_time_task_runner.h"
+#include "brick/threading/thread.h"
+#include "brick/time/time.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

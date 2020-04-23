@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/launcher/test_launcher.h"
+#include "brick/test/launcher/test_launcher.h"
 
 #include <stdio.h>
 
@@ -10,66 +10,66 @@
 #include <map>
 #include <utility>
 
-#include "base/at_exit.h"
-#include "base/bind.h"
-#include "base/command_line.h"
-#include "base/environment.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
-#include "base/format_macros.h"
-#include "base/hash.h"
-#include "base/lazy_instance.h"
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/process/kill.h"
-#include "base/process/launch.h"
-#include "base/run_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/strings/pattern.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringize_macros.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/sys_info.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/task_scheduler/task_scheduler.h"
-#include "base/test/gtest_util.h"
-#include "base/test/launcher/test_launcher_tracer.h"
-#include "base/test/launcher/test_results_tracker.h"
-#include "base/test/test_switches.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/time/time.h"
+#include "brick/at_exit.h"
+#include "brick/bind.h"
+#include "brick/command_line.h"
+#include "brick/environment.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/format_macros.h"
+#include "brick/hash.h"
+#include "brick/lazy_instance.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/process/kill.h"
+#include "brick/process/launch.h"
+#include "brick/run_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/strings/pattern.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringize_macros.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/sys_info.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/task_scheduler/task_scheduler.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/launcher/test_launcher_tracer.h"
+#include "brick/test/launcher/test_results_tracker.h"
+#include "brick/test/test_switches.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_POSIX)
 #include <fcntl.h>
 
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 #endif
 
 #if defined(OS_MACOSX)
-#include "base/mac/scoped_nsautorelease_pool.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
 #endif
 
 #if defined(OS_WIN)
-#include "base/win/windows_version.h"
+#include "brick/win/windows_version.h"
 #endif
 
 #if defined(OS_FUCHSIA)
 // TODO(scottmg): For temporary code in OnOutputTimeout().
 #include <zircon/syscalls.h>
 #include <zircon/syscalls/object.h>
-#include "base/fuchsia/default_job.h"
+#include "brick/fuchsia/default_job.h"
 #endif
 
 namespace base {

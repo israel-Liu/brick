@@ -6,11 +6,11 @@
 
 #include <string>
 
-#include "base/command_line.h"
-#include "base/process/kill.h"
-#include "base/process/process.h"
-#include "base/test/multiprocess_test.h"
-#include "base/win/scoped_process_information.h"
+#include "brick/command_line.h"
+#include "brick/process/kill.h"
+#include "brick/process/process.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/win/scoped_process_information.h"
 #include "testing/multiprocess_func_list.h"
 
 namespace {

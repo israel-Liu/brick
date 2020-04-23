@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_runner_util.h"
+#include "brick/task_runner_util.h"
 
 #include <utility>
 
-#include "base/bind.h"
-#include "base/location.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
+#include "brick/bind.h"
+#include "brick/location.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

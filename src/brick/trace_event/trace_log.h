@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_LOG_H_
-#define BASE_TRACE_EVENT_TRACE_LOG_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_LOG_H_
+#define BRICK_TRACE_EVENT_TRACE_LOG_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -13,14 +13,14 @@
 #include <unordered_map>
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/containers/stack.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/time/time_override.h"
-#include "base/trace_event/memory_dump_provider.h"
-#include "base/trace_event/trace_config.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/atomicops.h"
+#include "brick/containers/stack.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/time/time_override.h"
+#include "brick/trace_event/memory_dump_provider.h"
+#include "brick/trace_event/trace_config.h"
+#include "brick/trace_event/trace_event_impl.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -40,14 +40,14 @@ class TraceEvent;
 class TraceEventFilter;
 class TraceEventMemoryOverhead;
 
-struct BASE_EXPORT TraceLogStatus {
+struct BRICK_EXPORT TraceLogStatus {
   TraceLogStatus();
   ~TraceLogStatus();
   uint32_t event_capacity;
   uint32_t event_count;
 };
 
-class BASE_EXPORT TraceLog : public MemoryDumpProvider {
+class BRICK_EXPORT TraceLog : public MemoryDumpProvider {
  public:
   // Argument passed to TraceLog::SetEnabled.
   enum Mode : uint8_t {
@@ -113,7 +113,7 @@ class BASE_EXPORT TraceLog : public MemoryDumpProvider {
   // Enabled state listeners give a callback when tracing is enabled or
   // disabled. This can be used to tie into other library's tracing systems
   // on-demand.
-  class BASE_EXPORT EnabledStateObserver {
+  class BRICK_EXPORT EnabledStateObserver {
    public:
     virtual ~EnabledStateObserver() = default;
 
@@ -134,7 +134,7 @@ class BASE_EXPORT TraceLog : public MemoryDumpProvider {
   // to the thread from which AddAsyncEnabledStateObserver() was called. This
   // allows the observer to be safely destroyed, provided that it happens on the
   // same thread that invoked AddAsyncEnabledStateObserver().
-  class BASE_EXPORT AsyncEnabledStateObserver {
+  class BRICK_EXPORT AsyncEnabledStateObserver {
    public:
     virtual ~AsyncEnabledStateObserver() = default;
 
@@ -525,4 +525,4 @@ class BASE_EXPORT TraceLog : public MemoryDumpProvider {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_LOG_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_LOG_H_

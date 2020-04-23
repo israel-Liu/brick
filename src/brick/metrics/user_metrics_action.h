@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_METRICS_USER_METRICS_ACTION_H_
-#define BASE_METRICS_USER_METRICS_ACTION_H_
+#ifndef BRICK_METRICS_USER_METRICS_ACTION_H_
+#define BRICK_METRICS_USER_METRICS_ACTION_H_
 
 namespace base {
 
@@ -24,4 +24,4 @@ struct UserMetricsAction {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_USER_METRICS_ACTION_H_
+#endif  // BRICK_METRICS_USER_METRICS_ACTION_H_

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/nix/xdg_util.h"
+#include "brick/nix/xdg_util.h"
 
-#include "base/environment.h"
+#include "brick/environment.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

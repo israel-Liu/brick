@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/memory_allocator_dump.h"
+#include "brick/trace_event/memory_allocator_dump.h"
 
 #include <string.h>
 
-#include "base/format_macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/trace_event/memory_dump_manager.h"
-#include "base/trace_event/memory_dump_provider.h"
-#include "base/trace_event/process_memory_dump.h"
-#include "base/trace_event/trace_event_argument.h"
-#include "base/values.h"
+#include "brick/format_macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/trace_event/memory_dump_manager.h"
+#include "brick/trace_event/memory_dump_provider.h"
+#include "brick/trace_event/process_memory_dump.h"
+#include "brick/trace_event/trace_event_argument.h"
+#include "brick/values.h"
 
 namespace base {
 namespace trace_event {

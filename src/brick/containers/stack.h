@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_STACK_H_
-#define BASE_CONTAINERS_STACK_H_
+#ifndef BRICK_CONTAINERS_STACK_H_
+#define BRICK_CONTAINERS_STACK_H_
 
 #include <stack>
 
-#include "base/containers/circular_deque.h"
+#include "brick/containers/circular_deque.h"
 
 namespace base {
 
@@ -20,4 +20,4 @@ using stack = std::stack<T, Container>;
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_STACK_H_
+#endif  // BRICK_CONTAINERS_STACK_H_

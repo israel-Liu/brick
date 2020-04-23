@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/supports_user_data.h"
+#include "brick/supports_user_data.h"
 
 #include <vector>
 
-#include "base/memory/ptr_util.h"
+#include "brick/memory/ptr_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

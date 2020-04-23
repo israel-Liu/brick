@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_writer.h"
+#include "brick/json/json_writer.h"
 
 #include <stdint.h>
 
 #include <cmath>
 #include <limits>
 
-#include "base/json/string_escape.h"
-#include "base/logging.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/values.h"
+#include "brick/json/string_escape.h"
+#include "brick/logging.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/values.h"
 #include "build/build_config.h"
 
 namespace base {

@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_JSON_JSON_FILE_VALUE_SERIALIZER_H_
-#define BASE_JSON_JSON_FILE_VALUE_SERIALIZER_H_
+#ifndef BRICK_JSON_JSON_FILE_VALUE_SERIALIZER_H_
+#define BRICK_JSON_JSON_FILE_VALUE_SERIALIZER_H_
 
 #include <stddef.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/values.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/values.h"
 
-class BASE_EXPORT JSONFileValueSerializer : public base::ValueSerializer {
+class BRICK_EXPORT JSONFileValueSerializer : public base::ValueSerializer {
  public:
   // |json_file_path_| is the path of a file that will be destination of the
   // serialization. The serializer will attempt to create the file at the
@@ -45,7 +45,7 @@ class BASE_EXPORT JSONFileValueSerializer : public base::ValueSerializer {
   DISALLOW_IMPLICIT_CONSTRUCTORS(JSONFileValueSerializer);
 };
 
-class BASE_EXPORT JSONFileValueDeserializer : public base::ValueDeserializer {
+class BRICK_EXPORT JSONFileValueDeserializer : public base::ValueDeserializer {
  public:
   // |json_file_path_| is the path of a file that will be source of the
   // deserialization. |options| is a bitmask of JSONParserOptions.
@@ -99,5 +99,5 @@ class BASE_EXPORT JSONFileValueDeserializer : public base::ValueDeserializer {
   DISALLOW_IMPLICIT_CONSTRUCTORS(JSONFileValueDeserializer);
 };
 
-#endif  // BASE_JSON_JSON_FILE_VALUE_SERIALIZER_H_
+#endif  // BRICK_JSON_JSON_FILE_VALUE_SERIALIZER_H_
 

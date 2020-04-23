@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_FILE_UTIL_H_
-#define BASE_TEST_TEST_FILE_UTIL_H_
+#ifndef BRICK_TEST_TEST_FILE_UTIL_H_
+#define BRICK_TEST_TEST_FILE_UTIL_H_
 
 // File utility functions used only by tests.
 
@@ -11,9 +11,9 @@
 
 #include <string>
 
-#include "base/compiler_specific.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
+#include "brick/compiler_specific.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(OS_ANDROID)
@@ -79,4 +79,4 @@ FilePath InsertImageIntoMediaStore(const FilePath& path);
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_FILE_UTIL_H_
+#endif  // BRICK_TEST_TEST_FILE_UTIL_H_

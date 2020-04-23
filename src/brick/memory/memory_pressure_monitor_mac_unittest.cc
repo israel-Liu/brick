@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/memory_pressure_monitor_mac.h"
+#include "brick/memory/memory_pressure_monitor_mac.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/macros.h"
-#include "base/test/metrics/histogram_tester.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/macros.h"
+#include "brick/test/metrics/histogram_tester.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

@@ -5,10 +5,10 @@
 // Holds functions for generating OOM errors from PartitionAlloc. This is
 // distinct from oom.h in that it is meant only for use in PartitionAlloc.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_OOM_H_
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_OOM_H_
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_OOM_H_
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_OOM_H_
 
-#include "base/compiler_specific.h"
+#include "brick/compiler_specific.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -23,4 +23,4 @@ NOINLINE void PartitionOutOfMemoryWithLotsOfUncommitedPages();
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_OOM_H_
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_OOM_H_

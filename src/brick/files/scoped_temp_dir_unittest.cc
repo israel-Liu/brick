@@ -4,9 +4,9 @@
 
 #include <string>
 
-#include "base/files/file.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
+#include "brick/files/file.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

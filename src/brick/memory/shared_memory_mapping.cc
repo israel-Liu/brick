@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory_mapping.h"
+#include "brick/memory/shared_memory_mapping.h"
 
 #include <utility>
 
-#include "base/logging.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/unguessable_token.h"
+#include "brick/logging.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/unguessable_token.h"
 #include "build/build_config.h"
 
 #if defined(OS_POSIX)
@@ -21,7 +21,7 @@
 
 #if defined(OS_MACOSX) && !defined(OS_IOS)
 #include <mach/mach_vm.h>
-#include "base/mac/mach_logging.h"
+#include "brick/mac/mach_logging.h"
 #endif
 
 #if defined(OS_FUCHSIA)

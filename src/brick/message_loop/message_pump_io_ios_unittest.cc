@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_pump_io_ios.h"
+#include "brick/message_loop/message_pump_io_ios.h"
 
 #include <unistd.h>
 
-#include "base/macros.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/test/gtest_util.h"
-#include "base/threading/thread.h"
+#include "brick/macros.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/test/gtest_util.h"
+#include "brick/threading/thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

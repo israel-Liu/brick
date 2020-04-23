@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_BIND_OBJC_BLOCK_H_
-#define BASE_MAC_BIND_OBJC_BLOCK_H_
+#ifndef BRICK_MAC_BIND_OBJC_BLOCK_H_
+#define BRICK_MAC_BIND_OBJC_BLOCK_H_
 
 #include <Block.h>
 
-#include "base/bind.h"
-#include "base/callback_forward.h"
-#include "base/compiler_specific.h"
-#include "base/mac/scoped_block.h"
+#include "brick/bind.h"
+#include "brick/callback_forward.h"
+#include "brick/compiler_specific.h"
+#include "brick/mac/scoped_block.h"
 
 namespace base {
 
@@ -67,4 +67,4 @@ BindBlockArc(R (^block)(Args...), BoundArgs&&... args) {
 
 }  // namespace base
 
-#endif  // BASE_MAC_BIND_OBJC_BLOCK_H_
+#endif  // BRICK_MAC_BIND_OBJC_BLOCK_H_

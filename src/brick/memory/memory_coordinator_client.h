@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_MEMORY_COORDINATOR_CLIENT_H_
-#define BASE_MEMORY_MEMORY_COORDINATOR_CLIENT_H_
+#ifndef BRICK_MEMORY_MEMORY_COORDINATOR_CLIENT_H_
+#define BRICK_MEMORY_MEMORY_COORDINATOR_CLIENT_H_
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 
@@ -48,12 +48,12 @@ enum class MemoryState : int {
 const int kMemoryStateMax = static_cast<int>(MemoryState::SUSPENDED) + 1;
 
 // Returns a string representation of MemoryState.
-BASE_EXPORT const char* MemoryStateToString(MemoryState state);
+BRICK_EXPORT const char* MemoryStateToString(MemoryState state);
 
 // This is an interface for components which can respond to memory status
 // changes. An initial state is NORMAL. See MemoryCoordinatorClientRegistry for
 // threading guarantees and ownership management.
-class BASE_EXPORT MemoryCoordinatorClient {
+class BRICK_EXPORT MemoryCoordinatorClient {
  public:
   // Called when memory state has changed. Any transition can occur except for
   // UNKNOWN. General guidelines are:
@@ -76,4 +76,4 @@ class BASE_EXPORT MemoryCoordinatorClient {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_MEMORY_COORDINATOR_CLIENT_H_
+#endif  // BRICK_MEMORY_MEMORY_COORDINATOR_CLIENT_H_

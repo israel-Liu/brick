@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_WINDOWS_THREAD_ENVIRONMENT_H_
-#define BASE_WIN_SCOPED_WINDOWS_THREAD_ENVIRONMENT_H_
+#ifndef BRICK_WIN_SCOPED_WINDOWS_THREAD_ENVIRONMENT_H_
+#define BRICK_WIN_SCOPED_WINDOWS_THREAD_ENVIRONMENT_H_
 
-#include "base/macros.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
@@ -25,4 +25,4 @@ class ScopedWindowsThreadEnvironment {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_WINDOWS_THREAD_ENVIRONMENT_H_
+#endif  // BRICK_WIN_SCOPED_WINDOWS_THREAD_ENVIRONMENT_H_

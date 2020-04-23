@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/scoped_handle_verifier.h"
+#include "brick/win/scoped_handle_verifier.h"
 
 #include <stddef.h>
 #include <windows.h>
 
 #include <unordered_map>
 
-#include "base/debug/alias.h"
-#include "base/debug/stack_trace.h"
-#include "base/synchronization/lock_impl.h"
-#include "base/win/base_win_buildflags.h"
-#include "base/win/current_module.h"
+#include "brick/debug/alias.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/synchronization/lock_impl.h"
+#include "brick/win/base_win_buildflags.h"
+#include "brick/win/current_module.h"
 
 extern "C" {
 __declspec(dllexport) void* GetHandleVerifier();

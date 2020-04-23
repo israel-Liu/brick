@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_POSIX_FILE_DESCRIPTOR_SHUFFLE_H_
-#define BASE_POSIX_FILE_DESCRIPTOR_SHUFFLE_H_
+#ifndef BRICK_POSIX_FILE_DESCRIPTOR_SHUFFLE_H_
+#define BRICK_POSIX_FILE_DESCRIPTOR_SHUFFLE_H_
 
 // This code exists to shuffle file descriptors, which is commonly needed when
 // forking subprocesses. The naive approach (just call dup2 to set up the
@@ -23,8 +23,8 @@
 
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
 
 namespace base {
 
@@ -47,7 +47,7 @@ class InjectionDelegate {
 
 // An implementation of the InjectionDelegate interface using the file
 // descriptor table of the current process as the domain.
-class BASE_EXPORT FileDescriptorTableInjection : public InjectionDelegate {
+class BRICK_EXPORT FileDescriptorTableInjection : public InjectionDelegate {
   bool Duplicate(int* result, int fd) override;
   bool Move(int src, int dest) override;
   void Close(int fd) override;
@@ -69,10 +69,10 @@ struct InjectionArc {
 
 typedef std::vector<InjectionArc> InjectiveMultimap;
 
-BASE_EXPORT bool PerformInjectiveMultimap(const InjectiveMultimap& map,
+BRICK_EXPORT bool PerformInjectiveMultimap(const InjectiveMultimap& map,
                                           InjectionDelegate* delegate);
 
-BASE_EXPORT bool PerformInjectiveMultimapDestructive(
+BRICK_EXPORT bool PerformInjectiveMultimapDestructive(
     InjectiveMultimap* map,
     InjectionDelegate* delegate);
 
@@ -84,4 +84,4 @@ static inline bool ShuffleFileDescriptors(InjectiveMultimap* map) {
 
 }  // namespace base
 
-#endif  // BASE_POSIX_FILE_DESCRIPTOR_SHUFFLE_H_
+#endif  // BRICK_POSIX_FILE_DESCRIPTOR_SHUFFLE_H_

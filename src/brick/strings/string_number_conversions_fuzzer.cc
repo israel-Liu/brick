@@ -8,7 +8,7 @@
 #include <string>
 #include <vector>
 
-#include "base/strings/string_number_conversions.h"
+#include "brick/strings/string_number_conversions.h"
 
 // Entry point for LibFuzzer.
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {

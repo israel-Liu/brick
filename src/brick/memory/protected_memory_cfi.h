@@ -8,15 +8,15 @@
 // CFI-icall. These routines allow those symbols to be called without CFI-icall
 // checking safely by ensuring that they are placed in protected memory.
 
-#ifndef BASE_MEMORY_PROTECTED_MEMORY_CFI_H_
-#define BASE_MEMORY_PROTECTED_MEMORY_CFI_H_
+#ifndef BRICK_MEMORY_PROTECTED_MEMORY_CFI_H_
+#define BRICK_MEMORY_PROTECTED_MEMORY_CFI_H_
 
 #include <utility>
 
-#include "base/cfi_buildflags.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/memory/protected_memory.h"
+#include "brick/cfi_buildflags.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/memory/protected_memory.h"
 #include "build/build_config.h"
 
 #if BUILDFLAG(CFI_ICALL_CHECK) && !PROTECTED_MEMORY_ENABLED
@@ -83,4 +83,4 @@ auto UnsanitizedCfiCall(const ProtectedMemory<T>& PM, Member member) {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_PROTECTED_MEMORY_CFI_H_
+#endif  // BRICK_MEMORY_PROTECTED_MEMORY_CFI_H_

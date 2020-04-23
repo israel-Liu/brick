@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_string_value_serializer.h"
+#include "brick/json/json_string_value_serializer.h"
 
-#include "base/json/json_reader.h"
-#include "base/json/json_writer.h"
-#include "base/logging.h"
+#include "brick/json/json_reader.h"
+#include "brick/json/json_writer.h"
+#include "brick/logging.h"
 
 using base::Value;
 

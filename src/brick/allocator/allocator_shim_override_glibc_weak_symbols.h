@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifdef BASE_ALLOCATOR_ALLOCATOR_SHIM_OVERRIDE_GLIBC_WEAK_SYMBOLS_H_
+#ifdef BRICK_ALLOCATOR_ALLOCATOR_SHIM_OVERRIDE_GLIBC_WEAK_SYMBOLS_H_
 #error This header is meant to be included only once by allocator_shim.cc
 #endif
-#define BASE_ALLOCATOR_ALLOCATOR_SHIM_OVERRIDE_GLIBC_WEAK_SYMBOLS_H_
+#define BRICK_ALLOCATOR_ALLOCATOR_SHIM_OVERRIDE_GLIBC_WEAK_SYMBOLS_H_
 
 // Alias the internal Glibc symbols to the shim entry points.
 // This file is strongly inspired by tcmalloc's libc_override_glibc.h.
@@ -24,7 +24,7 @@
 
 #include <new>
 
-#include "base/allocator/allocator_shim_internals.h"
+#include "brick/allocator/allocator_shim_internals.h"
 
 // __MALLOC_HOOK_VOLATILE not defined in all Glibc headers.
 #if !defined(__MALLOC_HOOK_VOLATILE)

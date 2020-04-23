@@ -2,33 +2,33 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYNCHRONIZATION_WAITABLE_EVENT_H_
-#define BASE_SYNCHRONIZATION_WAITABLE_EVENT_H_
+#ifndef BRICK_SYNCHRONIZATION_WAITABLE_EVENT_H_
+#define BRICK_SYNCHRONIZATION_WAITABLE_EVENT_H_
 
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/scoped_handle.h"
+#include "brick/win/scoped_handle.h"
 #elif defined(OS_MACOSX)
 #include <mach/mach.h>
 
 #include <list>
 #include <memory>
 
-#include "base/callback_forward.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/lock.h"
+#include "brick/callback_forward.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/lock.h"
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
 #include <list>
 #include <utility>
 
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/lock.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/lock.h"
 #endif
 
 namespace base {
@@ -51,7 +51,7 @@ class TimeTicks;
 // by a Windows event object.  This is intentional.  If you are writing Windows
 // specific code and you need other features of a Windows event, then you might
 // be better off just using an Windows event directly.
-class BASE_EXPORT WaitableEvent {
+class BRICK_EXPORT WaitableEvent {
  public:
   // Indicates whether a WaitableEvent should automatically reset the event
   // state after a single waiting thread has been released or remain signaled
@@ -281,4 +281,4 @@ class BASE_EXPORT WaitableEvent {
 
 }  // namespace base
 
-#endif  // BASE_SYNCHRONIZATION_WAITABLE_EVENT_H_
+#endif  // BRICK_SYNCHRONIZATION_WAITABLE_EVENT_H_

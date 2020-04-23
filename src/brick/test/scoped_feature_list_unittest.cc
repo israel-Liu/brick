@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/scoped_feature_list.h"
+#include "brick/test/scoped_feature_list.h"
 
 #include <map>
 #include <string>
 #include <utility>
 
-#include "base/metrics/field_trial.h"
-#include "base/metrics/field_trial_params.h"
+#include "brick/metrics/field_trial.h"
+#include "brick/metrics/field_trial_params.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

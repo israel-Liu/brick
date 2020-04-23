@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/jni_array.h"
+#include "brick/android/jni_array.h"
 
-#include "base/android/jni_android.h"
-#include "base/android/jni_string.h"
-#include "base/logging.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_string.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace android {
@@ -92,14 +92,14 @@ ScopedJavaLocalRef<jlongArray> ToJavaLongArray(JNIEnv* env,
 }
 
 // Returns a new Java long array converted from the given int64_t array.
-BASE_EXPORT ScopedJavaLocalRef<jlongArray> ToJavaLongArray(
+BRICK_EXPORT ScopedJavaLocalRef<jlongArray> ToJavaLongArray(
     JNIEnv* env,
     const std::vector<int64_t>& longs) {
   return ToJavaLongArray(env, longs.data(), longs.size());
 }
 
 // Returns a new Java float array converted from the given C++ float array.
-BASE_EXPORT ScopedJavaLocalRef<jfloatArray> ToJavaFloatArray(
+BRICK_EXPORT ScopedJavaLocalRef<jfloatArray> ToJavaFloatArray(
     JNIEnv* env, const float* floats, size_t len) {
   jfloatArray float_array = env->NewFloatArray(len);
   CheckException(env);
@@ -112,7 +112,7 @@ BASE_EXPORT ScopedJavaLocalRef<jfloatArray> ToJavaFloatArray(
   return ScopedJavaLocalRef<jfloatArray>(env, float_array);
 }
 
-BASE_EXPORT ScopedJavaLocalRef<jfloatArray> ToJavaFloatArray(
+BRICK_EXPORT ScopedJavaLocalRef<jfloatArray> ToJavaFloatArray(
     JNIEnv* env,
     const std::vector<float>& floats) {
   return ToJavaFloatArray(env, floats.data(), floats.size());

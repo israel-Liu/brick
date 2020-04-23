@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/partition_allocator/address_space_randomization.h"
+#include "brick/allocator/partition_allocator/address_space_randomization.h"
 
-#include "base/allocator/partition_allocator/page_allocator.h"
-#include "base/allocator/partition_allocator/spin_lock.h"
-#include "base/lazy_instance.h"
-#include "base/rand_util.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
+#include "brick/allocator/partition_allocator/spin_lock.h"
+#include "brick/lazy_instance.h"
+#include "brick/rand_util.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)

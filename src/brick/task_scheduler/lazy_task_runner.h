@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_LAZY_TASK_RUNNER_H_
-#define BASE_TASK_SCHEDULER_LAZY_TASK_RUNNER_H_
+#ifndef BRICK_TASK_SCHEDULER_LAZY_TASK_RUNNER_H_
+#define BRICK_TASK_SCHEDULER_LAZY_TASK_RUNNER_H_
 
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/callback.h"
-#include "base/compiler_specific.h"
-#include "base/lazy_instance_helpers.h"
-#include "base/sequenced_task_runner.h"
-#include "base/single_thread_task_runner.h"
-#include "base/task_scheduler/scheduler_lock.h"
-#include "base/task_scheduler/single_thread_task_runner_thread_mode.h"
-#include "base/task_scheduler/task_traits.h"
+#include "brick/atomicops.h"
+#include "brick/callback.h"
+#include "brick/compiler_specific.h"
+#include "brick/lazy_instance_helpers.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/task_scheduler/scheduler_lock.h"
+#include "brick/task_scheduler/single_thread_task_runner_thread_mode.h"
+#include "brick/task_scheduler/task_traits.h"
 #include "build/build_config.h"
 
 // Lazy(Sequenced|SingleThread|COMSTA)TaskRunner lazily creates a TaskRunner.
@@ -66,7 +66,7 @@ namespace base {
 
 namespace internal {
 template <typename TaskRunnerType, bool com_sta>
-class BASE_EXPORT LazyTaskRunner;
+class BRICK_EXPORT LazyTaskRunner;
 }  // namespace internal
 
 // Lazy SequencedTaskRunner.
@@ -127,7 +127,7 @@ using LazyCOMSTATaskRunner =
 namespace internal {
 
 template <typename TaskRunnerType, bool com_sta>
-class BASE_EXPORT LazyTaskRunner {
+class BRICK_EXPORT LazyTaskRunner {
  public:
   // Use the macros above rather than a direct call to this.
   //
@@ -187,7 +187,7 @@ class BASE_EXPORT LazyTaskRunner {
 // the ScopedLazyTaskRunnerListForTesting is destroyed. In a test process, a
 // ScopedLazyTaskRunnerListForTesting must be instantiated before any
 // LazyTaskRunner becomes active.
-class BASE_EXPORT ScopedLazyTaskRunnerListForTesting {
+class BRICK_EXPORT ScopedLazyTaskRunnerListForTesting {
  public:
   ScopedLazyTaskRunnerListForTesting();
   ~ScopedLazyTaskRunnerListForTesting();
@@ -215,4 +215,4 @@ class BASE_EXPORT ScopedLazyTaskRunnerListForTesting {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_LAZY_TASK_RUNNER_H_
+#endif  // BRICK_TASK_SCHEDULER_LAZY_TASK_RUNNER_H_

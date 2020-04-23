@@ -2,37 +2,37 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_worker_pool_impl.h"
+#include "brick/task_scheduler/scheduler_worker_pool_impl.h"
 
 #include <stddef.h>
 
 #include <algorithm>
 #include <utility>
 
-#include "base/atomicops.h"
-#include "base/auto_reset.h"
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/compiler_specific.h"
-#include "base/location.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/histogram.h"
-#include "base/sequence_token.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/task_scheduler/scheduler_worker_pool_params.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/scoped_blocking_call.h"
-#include "base/threading/thread_checker.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/atomicops.h"
+#include "brick/auto_reset.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/compiler_specific.h"
+#include "brick/location.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/histogram.h"
+#include "brick/sequence_token.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/task_scheduler/scheduler_worker_pool_params.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/scoped_blocking_call.h"
+#include "brick/threading/thread_checker.h"
+#include "brick/threading/thread_restrictions.h"
 
 #if defined(OS_WIN)
-#include "base/win/scoped_com_initializer.h"
-#include "base/win/scoped_windows_thread_environment.h"
-#include "base/win/scoped_winrt_initializer.h"
-#include "base/win/windows_version.h"
+#include "brick/win/scoped_com_initializer.h"
+#include "brick/win/scoped_windows_thread_environment.h"
+#include "brick/win/scoped_winrt_initializer.h"
+#include "brick/win/windows_version.h"
 #endif  // defined(OS_WIN)
 
 namespace base {

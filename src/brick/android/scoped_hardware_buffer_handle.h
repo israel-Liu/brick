@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_SCOPED_HARDWARE_BUFFER_HANDLE_H_
-#define BASE_ANDROID_SCOPED_HARDWARE_BUFFER_HANDLE_H_
+#ifndef BRICK_ANDROID_SCOPED_HARDWARE_BUFFER_HANDLE_H_
+#define BRICK_ANDROID_SCOPED_HARDWARE_BUFFER_HANDLE_H_
 
-#include "base/base_export.h"
-#include "base/files/scoped_file.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/files/scoped_file.h"
+#include "brick/macros.h"
 
 extern "C" typedef struct AHardwareBuffer AHardwareBuffer;
 
@@ -15,7 +15,7 @@ namespace base {
 namespace android {
 
 // Owns a single reference to an AHardwareBuffer object.
-class BASE_EXPORT ScopedHardwareBufferHandle {
+class BRICK_EXPORT ScopedHardwareBufferHandle {
  public:
   ScopedHardwareBufferHandle();
 
@@ -84,4 +84,4 @@ class BASE_EXPORT ScopedHardwareBufferHandle {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_SCOPED_HARDWARE_BUFFER_HANDLE_H_
+#endif  // BRICK_ANDROID_SCOPED_HARDWARE_BUFFER_HANDLE_H_

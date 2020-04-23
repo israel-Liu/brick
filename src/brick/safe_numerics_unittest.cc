@@ -8,9 +8,9 @@
 #include <limits>
 #include <type_traits>
 
-#include "base/compiler_specific.h"
+#include "brick/compiler_specific.h"
 
-// WARNING: This block must come before the base/numerics headers are included.
+// WARNING: This block must come before the brick/numerics headers are included.
 // These tests deliberately cause arithmetic boundary errors. If the compiler is
 // aggressive enough, it can const detect these errors, so we disable warnings.
 #if defined(OS_WIN)
@@ -18,17 +18,17 @@
 #pragma warning(disable : 4293)  // Invalid shift.
 #endif
 
-// This may not need to come before the base/numerics headers, but let's keep
+// This may not need to come before the brick/numerics headers, but let's keep
 // it close to the MSVC equivalent.
 #if defined(__clang__)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winteger-overflow"
 #endif
 
-#include "base/logging.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/numerics/safe_math.h"
-#include "base/test/gtest_util.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/test/gtest_util.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

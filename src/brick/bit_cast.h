@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_BIT_CAST_H_
-#define BASE_BIT_CAST_H_
+#ifndef BRICK_BIT_CAST_H_
+#define BRICK_BIT_CAST_H_
 
 #include <string.h>
 #include <type_traits>
 
-#include "base/compiler_specific.h"
-#include "base/template_util.h"
+#include "brick/compiler_specific.h"
+#include "brick/template_util.h"
 #include "build/build_config.h"
 
 // bit_cast<Dest,Source> is a template function that implements the equivalent
@@ -74,4 +74,4 @@ inline Dest bit_cast(const Source& source) {
   return dest;
 }
 
-#endif  // BASE_BIT_CAST_H_
+#endif  // BRICK_BIT_CAST_H_

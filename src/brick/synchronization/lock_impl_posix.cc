@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/lock_impl.h"
+#include "brick/synchronization/lock_impl.h"
 
 #include <string>
 
-#include "base/debug/activity_tracker.h"
-#include "base/logging.h"
-#include "base/posix/safe_strerror.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/synchronization_buildflags.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/logging.h"
+#include "brick/posix/safe_strerror.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/synchronization_buildflags.h"
 #include "build/build_config.h"
 
 namespace base {

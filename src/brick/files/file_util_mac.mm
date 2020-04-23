@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_util.h"
+#include "brick/files/file_util.h"
 
 #import <Foundation/Foundation.h>
 #include <copyfile.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/mac/foundation_util.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

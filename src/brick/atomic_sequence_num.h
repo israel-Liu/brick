@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ATOMIC_SEQUENCE_NUM_H_
-#define BASE_ATOMIC_SEQUENCE_NUM_H_
+#ifndef BRICK_ATOMIC_SEQUENCE_NUM_H_
+#define BRICK_ATOMIC_SEQUENCE_NUM_H_
 
 #include <atomic>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 
 namespace base {
 
@@ -30,4 +30,4 @@ class AtomicSequenceNumber {
 
 }  // namespace base
 
-#endif  // BASE_ATOMIC_SEQUENCE_NUM_H_
+#endif  // BRICK_ATOMIC_SEQUENCE_NUM_H_

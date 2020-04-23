@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/single_sample_metrics.h"
+#include "brick/metrics/single_sample_metrics.h"
 
-#include "base/memory/ptr_util.h"
-#include "base/metrics/histogram.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/histogram.h"
 
 namespace base {
 

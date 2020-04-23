@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_ICU_TEST_UTIL_H_
-#define BASE_TEST_ICU_TEST_UTIL_H_
+#ifndef BRICK_TEST_ICU_TEST_UTIL_H_
+#define BRICK_TEST_ICU_TEST_UTIL_H_
 
 #include <string>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace test {
@@ -32,4 +32,4 @@ void InitializeICUForTesting();
 }  // namespace test
 }  // namespace base
 
-#endif  // BASE_TEST_ICU_TEST_UTIL_H_
+#endif  // BRICK_TEST_ICU_TEST_UTIL_H_

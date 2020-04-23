@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/field_trial.h"
+#include "brick/metrics/field_trial.h"
 
 #include <stddef.h>
 
-#include "base/base_switches.h"
-#include "base/build_time.h"
-#include "base/feature_list.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/message_loop/message_loop.h"
-#include "base/metrics/field_trial_param_associator.h"
-#include "base/rand_util.h"
-#include "base/run_loop.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/stringprintf.h"
-#include "base/test/gtest_util.h"
-#include "base/test/mock_entropy_provider.h"
-#include "base/test/scoped_feature_list.h"
-#include "base/test/test_shared_memory_util.h"
+#include "brick/base_switches.h"
+#include "brick/build_time.h"
+#include "brick/feature_list.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/metrics/field_trial_param_associator.h"
+#include "brick/rand_util.h"
+#include "brick/run_loop.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/mock_entropy_provider.h"
+#include "brick/test/scoped_feature_list.h"
+#include "brick/test/test_shared_memory_util.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

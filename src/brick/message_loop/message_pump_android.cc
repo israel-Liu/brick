@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_pump_android.h"
+#include "brick/message_loop/message_pump_android.h"
 
 #include <jni.h>
 
-#include "base/android/jni_android.h"
-#include "base/android/scoped_java_ref.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/run_loop.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/scoped_java_ref.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/run_loop.h"
 #include "jni/SystemMessageHandler_jni.h"
 
 using base::android::JavaParamRef;

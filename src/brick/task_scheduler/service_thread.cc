@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/service_thread.h"
+#include "brick/task_scheduler/service_thread.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/debug/alias.h"
-#include "base/rand_util.h"
-#include "base/stl_util.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/task_scheduler/task_scheduler.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/task_scheduler/task_traits.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/debug/alias.h"
+#include "brick/rand_util.h"
+#include "brick/stl_util.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/task_scheduler/task_scheduler.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/task_scheduler/task_traits.h"
 
 namespace base {
 namespace internal {

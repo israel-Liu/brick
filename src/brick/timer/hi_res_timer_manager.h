@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TIMER_HI_RES_TIMER_MANAGER_H_
-#define BASE_TIMER_HI_RES_TIMER_MANAGER_H_
+#ifndef BRICK_TIMER_HI_RES_TIMER_MANAGER_H_
+#define BRICK_TIMER_HI_RES_TIMER_MANAGER_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/power_monitor/power_observer.h"
-#include "base/timer/timer.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/power_monitor/power_observer.h"
+#include "brick/timer/timer.h"
 #include "build/build_config.h"
 
 namespace base {
 
 // Ensures that the Windows high resolution timer is only used
 // when not running on battery power.
-class BASE_EXPORT HighResolutionTimerManager : public base::PowerObserver {
+class BRICK_EXPORT HighResolutionTimerManager : public base::PowerObserver {
  public:
   HighResolutionTimerManager();
   ~HighResolutionTimerManager() override;
@@ -45,4 +45,4 @@ class BASE_EXPORT HighResolutionTimerManager : public base::PowerObserver {
 
 }  // namespace base
 
-#endif  // BASE_TIMER_HI_RES_TIMER_MANAGER_H_
+#endif  // BRICK_TIMER_HI_RES_TIMER_MANAGER_H_

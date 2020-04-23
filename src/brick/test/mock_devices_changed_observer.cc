@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/mock_devices_changed_observer.h"
+#include "brick/test/mock_devices_changed_observer.h"
 
 namespace base {
 

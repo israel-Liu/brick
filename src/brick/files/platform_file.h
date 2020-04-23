@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_PLATFORM_FILE_H_
-#define BASE_FILES_PLATFORM_FILE_H_
+#ifndef BRICK_FILES_PLATFORM_FILE_H_
+#define BRICK_FILES_PLATFORM_FILE_H_
 
-#include "base/files/scoped_file.h"
+#include "brick/files/scoped_file.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/scoped_handle.h"
-#include "base/win/windows_types.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/windows_types.h"
 #endif
 
 // This file defines platform-independent types for dealing with
@@ -40,4 +40,4 @@ constexpr PlatformFile kInvalidPlatformFile = -1;
 
 }  // namespace
 
-#endif  // BASE_FILES_PLATFORM_FILE_H_
+#endif  // BRICK_FILES_PLATFORM_FILE_H_

@@ -170,7 +170,7 @@ static_library("test_support") {
     "//base:i18n",
   ]
   deps = [
-    "//base/third_party/dynamic_annotations",
+    "//brick/third_party/dynamic_annotations",
     "//testing/gmock",
     "//testing/gtest",
     "//third_party/icu:icuuc",
@@ -320,7 +320,7 @@ shared_library("test_shared_library") {
 static_library("run_all_base_unittests") {
   # Only targets in base should depend on this, targets outside base
   # should depend on run_all_unittests above.
-  visibility = [ "//base/*" ]
+  visibility = [ "//brick/*" ]
   testonly = true
   sources = [
     "run_all_base_unittests.cc",
@@ -381,18 +381,18 @@ if (is_linux) {
 if (is_android) {
   generate_jni("base_unittests_jni_headers") {
     sources = [
-      "android/java/src/org/chromium/base/ContentUriTestUtils.java",
-      "android/java/src/org/chromium/base/JavaHandlerThreadHelpers.java",
-      "android/java/src/org/chromium/base/TestUiThread.java",
+      "android/java/src/org/chromium/brick/ContentUriTestUtils.java",
+      "android/java/src/org/chromium/brick/JavaHandlerThreadHelpers.java",
+      "android/java/src/org/chromium/brick/TestUiThread.java",
     ]
     jni_package = "base"
   }
 
   generate_jni("test_support_jni_headers") {
     sources = [
-      "android/java/src/org/chromium/base/MainReturnCodeResult.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientLauncher.java",
-      "android/javatests/src/org/chromium/base/test/util/UrlUtils.java",
+      "android/java/src/org/chromium/brick/MainReturnCodeResult.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientLauncher.java",
+      "android/javatests/src/org/chromium/brick/test/util/UrlUtils.java",
     ]
     jni_package = "base"
   }
@@ -407,15 +407,15 @@ if (is_android) {
     ]
     srcjar_deps = [ ":test_support_java_aidl" ]
     java_files = [
-      "android/java/src/org/chromium/base/MainReturnCodeResult.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientLauncher.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientService.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientService0.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientService1.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientService2.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientService3.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientService4.java",
-      "android/java/src/org/chromium/base/MultiprocessTestClientServiceDelegate.java",
+      "android/java/src/org/chromium/brick/MainReturnCodeResult.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientLauncher.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientService.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientService0.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientService1.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientService2.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientService3.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientService4.java",
+      "android/java/src/org/chromium/brick/MultiprocessTestClientServiceDelegate.java",
     ]
   }
 
@@ -423,11 +423,11 @@ if (is_android) {
     testonly = true
     import_include = [
       "android/java/src",
-      "//base/android/java/src",
+      "//brick/android/java/src",
     ]
     sources = [
-      "android/java/src/org/chromium/base/ITestCallback.aidl",
-      "android/java/src/org/chromium/base/ITestController.aidl",
+      "android/java/src/org/chromium/brick/ITestCallback.aidl",
+      "android/java/src/org/chromium/brick/ITestController.aidl",
     ]
   }
 }

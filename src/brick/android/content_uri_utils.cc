@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/content_uri_utils.h"
+#include "brick/android/content_uri_utils.h"
 
-#include "base/android/jni_android.h"
-#include "base/android/jni_string.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_string.h"
 #include "jni/ContentUriUtils_jni.h"
 
 using base::android::ConvertUTF8ToJavaString;

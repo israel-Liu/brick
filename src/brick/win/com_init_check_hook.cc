@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/com_init_check_hook.h"
+#include "brick/win/com_init_check_hook.h"
 
 #include <windows.h>
 #include <objbase.h>
 #include <stdint.h>
 #include <string.h>
 
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/lock.h"
-#include "base/win/com_init_util.h"
-#include "base/win/patch_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/lock.h"
+#include "brick/win/com_init_util.h"
+#include "brick/win/patch_util.h"
 
 namespace base {
 namespace win {
@@ -243,7 +243,7 @@ class HookManager {
     // evaluate your threading guarantees and dispatch your work with
     // base::CreateCOMSTATaskRunnerWithTraits().
     //
-    // If you need MTA support, ping //base/task_scheduler/OWNERS.
+    // If you need MTA support, ping //brick/task_scheduler/OWNERS.
     AssertComInitialized(
         "CoCreateInstance calls in Chromium require explicit COM "
         "initialization via base::CreateCOMSTATaskRunnerWithTraits() or "

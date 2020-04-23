@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/com_init_util.h"
+#include "brick/win/com_init_util.h"
 
 #include <windows.h>
 #include <winternl.h>

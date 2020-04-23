@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_DEFERRED_SEQUENCED_TASK_RUNNER_H_
-#define BASE_DEFERRED_SEQUENCED_TASK_RUNNER_H_
+#ifndef BRICK_DEFERRED_SEQUENCED_TASK_RUNNER_H_
+#define BRICK_DEFERRED_SEQUENCED_TASK_RUNNER_H_
 
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequenced_task_runner.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -25,7 +25,7 @@ namespace base {
 // . with an explicit SequencedTaskRunner that the events are flushed to
 // . without a SequencedTaskRunner. In this configuration the
 //   SequencedTaskRunner is supplied in StartWithTaskRunner().
-class BASE_EXPORT DeferredSequencedTaskRunner : public SequencedTaskRunner {
+class BRICK_EXPORT DeferredSequencedTaskRunner : public SequencedTaskRunner {
  public:
   explicit DeferredSequencedTaskRunner(
       scoped_refptr<SequencedTaskRunner> target_runner);
@@ -94,4 +94,4 @@ class BASE_EXPORT DeferredSequencedTaskRunner : public SequencedTaskRunner {
 
 }  // namespace base
 
-#endif  // BASE_DEFERRED_SEQUENCED_TASK_RUNNER_H_
+#endif  // BRICK_DEFERRED_SEQUENCED_TASK_RUNNER_H_

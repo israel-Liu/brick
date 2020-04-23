@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/multiprocess_test.h"
+#include "brick/test/multiprocess_test.h"
 
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 namespace base {

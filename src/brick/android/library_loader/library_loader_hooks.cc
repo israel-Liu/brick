@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/library_loader/library_loader_hooks.h"
+#include "brick/android/library_loader/library_loader_hooks.h"
 
-#include "base/android/jni_string.h"
-#include "base/android/library_loader/anchor_functions_buildflags.h"
-#include "base/android/library_loader/library_load_from_apk_status_codes.h"
-#include "base/android/library_loader/library_prefetcher.h"
-#include "base/at_exit.h"
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/metrics/histogram.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/histogram_macros.h"
+#include "brick/android/jni_string.h"
+#include "brick/android/library_loader/anchor_functions_buildflags.h"
+#include "brick/android/library_loader/library_load_from_apk_status_codes.h"
+#include "brick/android/library_loader/library_prefetcher.h"
+#include "brick/at_exit.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/histogram_macros.h"
 #include "jni/LibraryLoader_jni.h"
 
 namespace base {

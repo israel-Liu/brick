@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_BIND_TEST_UTIL_H_
-#define BASE_TEST_BIND_TEST_UTIL_H_
+#ifndef BRICK_TEST_BIND_TEST_UTIL_H_
+#define BRICK_TEST_BIND_TEST_UTIL_H_
 
-#include "base/bind.h"
+#include "brick/bind.h"
 
 namespace base {
 namespace internal {
@@ -33,4 +33,4 @@ decltype(auto) BindLambdaForTesting(F&& f) {
 
 }  // namespace base
 
-#endif  // BASE_TEST_BIND_TEST_UTIL_H_
+#endif  // BRICK_TEST_BIND_TEST_UTIL_H_

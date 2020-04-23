@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/lazy_instance_helpers.h"
+#include "brick/lazy_instance_helpers.h"
 
-#include "base/at_exit.h"
-#include "base/atomicops.h"
-#include "base/threading/platform_thread.h"
+#include "brick/at_exit.h"
+#include "brick/atomicops.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 namespace internal {

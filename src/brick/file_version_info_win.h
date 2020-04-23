@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILE_VERSION_INFO_WIN_H_
-#define BASE_FILE_VERSION_INFO_WIN_H_
+#ifndef BRICK_FILE_VERSION_INFO_WIN_H_
+#define BRICK_FILE_VERSION_INFO_WIN_H_
 
 #include <windows.h>
 
@@ -13,14 +13,14 @@
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/file_version_info.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/file_version_info.h"
+#include "brick/macros.h"
 
 struct tagVS_FIXEDFILEINFO;
 typedef tagVS_FIXEDFILEINFO VS_FIXEDFILEINFO;
 
-class BASE_EXPORT FileVersionInfoWin : public FileVersionInfo {
+class BRICK_EXPORT FileVersionInfoWin : public FileVersionInfo {
  public:
   ~FileVersionInfoWin() override;
 
@@ -74,4 +74,4 @@ class BASE_EXPORT FileVersionInfoWin : public FileVersionInfo {
   DISALLOW_COPY_AND_ASSIGN(FileVersionInfoWin);
 };
 
-#endif  // BASE_FILE_VERSION_INFO_WIN_H_
+#endif  // BRICK_FILE_VERSION_INFO_WIN_H_

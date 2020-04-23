@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_MOCK_TIME_TASK_RUNNER_H_
-#define BASE_TEST_TEST_MOCK_TIME_TASK_RUNNER_H_
+#ifndef BRICK_TEST_TEST_MOCK_TIME_TASK_RUNNER_H_
+#define BRICK_TEST_TEST_MOCK_TIME_TASK_RUNNER_H_
 
 #include <stddef.h>
 
@@ -11,18 +11,18 @@
 #include <queue>
 #include <vector>
 
-#include "base/callback.h"
-#include "base/callback_helpers.h"
-#include "base/containers/circular_deque.h"
-#include "base/macros.h"
-#include "base/run_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/lock.h"
-#include "base/test/test_pending_task.h"
-#include "base/threading/thread_checker_impl.h"
-#include "base/time/clock.h"
-#include "base/time/tick_clock.h"
-#include "base/time/time.h"
+#include "brick/callback.h"
+#include "brick/callback_helpers.h"
+#include "brick/containers/circular_deque.h"
+#include "brick/macros.h"
+#include "brick/run_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/lock.h"
+#include "brick/test/test_pending_task.h"
+#include "brick/threading/thread_checker_impl.h"
+#include "brick/time/clock.h"
+#include "brick/time/tick_clock.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -290,4 +290,4 @@ class TestMockTimeTaskRunner : public SingleThreadTaskRunner,
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_MOCK_TIME_TASK_RUNNER_H_
+#endif  // BRICK_TEST_TEST_MOCK_TIME_TASK_RUNNER_H_

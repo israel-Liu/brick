@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_LAUNCHER_TEST_RESULT_H_
-#define BASE_TEST_LAUNCHER_TEST_RESULT_H_
+#ifndef BRICK_TEST_LAUNCHER_TEST_RESULT_H_
+#define BRICK_TEST_LAUNCHER_TEST_RESULT_H_
 
 #include <string>
 #include <vector>
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -101,4 +101,4 @@ struct TestResult {
 
 }  // namespace base
 
-#endif  // BASE_TEST_LAUNCHER_TEST_RESULT_H_
+#endif  // BRICK_TEST_LAUNCHER_TEST_RESULT_H_

@@ -4,9 +4,9 @@
 
 #include <string>
 
-#include "base/base64.h"
-#include "base/logging.h"
-#include "base/strings/string_piece.h"
+#include "brick/base64.h"
+#include "brick/logging.h"
+#include "brick/strings/string_piece.h"
 
 // Encode some random data, and then decode it.
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TASK_TRAITS_H_
-#define BASE_TASK_SCHEDULER_TASK_TRAITS_H_
+#ifndef BRICK_TASK_SCHEDULER_TASK_TRAITS_H_
+#define BRICK_TASK_SCHEDULER_TASK_TRAITS_H_
 
 #include <stdint.h>
 
 #include <iosfwd>
 #include <type_traits>
 
-#include "base/base_export.h"
-#include "base/task_scheduler/task_traits_details.h"
+#include "brick/base_export.h"
+#include "brick/task_scheduler/task_traits_details.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -81,7 +81,7 @@ enum class TaskShutdownBehavior {
 // that wait on synchronous file I/O operations: read or write a file from disk,
 // interact with a pipe or a socket, rename or delete a file, enumerate files in
 // a directory, etc. This trait isn't required for the mere use of locks. For
-// tasks that block on base/ synchronization primitives, see the
+// tasks that block on brick/ synchronization primitives, see the
 // WithBaseSyncPrimitives trait.
 struct MayBlock {};
 
@@ -110,11 +110,11 @@ struct MayBlock {};
 // removing usage of methods listed above in the labeled tasks would still
 // result in tasks that may block (per MayBlock()'s definition).
 //
-// In doubt, consult with //base/task_scheduler/OWNERS.
+// In doubt, consult with //brick/task_scheduler/OWNERS.
 struct WithBaseSyncPrimitives {};
 
 // Describes immutable metadata for a single task or a group of tasks.
-class BASE_EXPORT TaskTraits {
+class BRICK_EXPORT TaskTraits {
  private:
   // ValidTrait ensures TaskTraits' constructor only accepts appropriate types.
   struct ValidTrait {
@@ -199,7 +199,7 @@ class BASE_EXPORT TaskTraits {
   // Returns true if tasks with these traits may block.
   constexpr bool may_block() const { return may_block_; }
 
-  // Returns true if tasks with these traits may use base/ sync primitives.
+  // Returns true if tasks with these traits may use brick/ sync primitives.
   constexpr bool with_base_sync_primitives() const {
     return with_base_sync_primitives_;
   }
@@ -230,18 +230,18 @@ class BASE_EXPORT TaskTraits {
 
 // Returns string literals for the enums defined in this file. These methods
 // should only be used for tracing and debugging.
-BASE_EXPORT const char* TaskPriorityToString(TaskPriority task_priority);
-BASE_EXPORT const char* TaskShutdownBehaviorToString(
+BRICK_EXPORT const char* TaskPriorityToString(TaskPriority task_priority);
+BRICK_EXPORT const char* TaskShutdownBehaviorToString(
     TaskShutdownBehavior task_priority);
 
 // Stream operators so that the enums defined in this file can be used in
 // DCHECK and EXPECT statements.
-BASE_EXPORT std::ostream& operator<<(std::ostream& os,
+BRICK_EXPORT std::ostream& operator<<(std::ostream& os,
                                      const TaskPriority& shutdown_behavior);
-BASE_EXPORT std::ostream& operator<<(
+BRICK_EXPORT std::ostream& operator<<(
     std::ostream& os,
     const TaskShutdownBehavior& shutdown_behavior);
 
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TASK_TRAITS_H_
+#endif  // BRICK_TASK_SCHEDULER_TASK_TRAITS_H_

@@ -4,12 +4,12 @@
 
 #include <vector>
 
-#include "base/metrics/histogram.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/sample_vector.h"
-#include "base/metrics/sparse_histogram.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/pickle.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/sample_vector.h"
+#include "brick/metrics/sparse_histogram.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/pickle.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

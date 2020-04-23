@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/scoped_hstring.h"
+#include "brick/win/scoped_hstring.h"
 
 #include <winstring.h>
 
-#include "base/strings/utf_string_conversions.h"
-#include "base/win/core_winrt_util.h"
-#include "base/win/windows_version.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/win/core_winrt_util.h"
+#include "brick/win/windows_version.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

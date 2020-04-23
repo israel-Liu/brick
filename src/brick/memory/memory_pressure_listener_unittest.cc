@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/memory_pressure_listener.h"
+#include "brick/memory/memory_pressure_listener.h"
 
-#include "base/bind.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
+#include "brick/bind.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
 #include "testing/gmock/include/gmock/gmock.h"
 
 namespace base {

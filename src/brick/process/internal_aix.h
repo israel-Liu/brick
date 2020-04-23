@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // This file contains internal routines that are called by other files in
-// base/process/.
+// brick/process/.
 
-#ifndef BASE_PROCESS_INTERNAL_AIX_H_
-#define BASE_PROCESS_INTERNAL_AIX_H_
+#ifndef BRICK_PROCESS_INTERNAL_AIX_H_
+#define BRICK_PROCESS_INTERNAL_AIX_H_
 
 #include <stddef.h>
 #include <stdint.h>
 #include <unistd.h>
 
-#include "base/files/file_path.h"
+#include "brick/files/file_path.h"
 
 namespace base {
 
@@ -81,4 +81,4 @@ size_t ReadProcStatsAndGetFieldAsSizeT(pid_t pid, ProcStatsFields field_num);
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_PROCESS_INTERNAL_AIX_H_
+#endif  // BRICK_PROCESS_INTERNAL_AIX_H_

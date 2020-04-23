@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/message_formatter.h"
+#include "brick/i18n/message_formatter.h"
 
-#include "base/i18n/unicodestring.h"
-#include "base/logging.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/time/time.h"
+#include "brick/i18n/unicodestring.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/time/time.h"
 #include "third_party/icu/source/common/unicode/unistr.h"
 #include "third_party/icu/source/common/unicode/utypes.h"
 #include "third_party/icu/source/i18n/unicode/fmtable.h"

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/scoped_temp_dir.h"
+#include "brick/files/scoped_temp_dir.h"
 
-#include "base/files/file_util.h"
-#include "base/logging.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
 
 namespace base {
 

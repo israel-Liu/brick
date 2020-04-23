@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <errno.h>
 #include <stddef.h>
@@ -12,12 +12,12 @@
 #include <sys/utsname.h>
 #include <unistd.h>
 
-#include "base/files/file_util.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/sys_info_internal.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_util.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/sys_info_internal.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 #if !defined(OS_FUCHSIA)

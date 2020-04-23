@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_PLATFORM_NATIVE_WORKER_POOL_WIN_H
-#define BASE_TASK_SCHEDULER_PLATFORM_NATIVE_WORKER_POOL_WIN_H
+#ifndef BRICK_TASK_SCHEDULER_PLATFORM_NATIVE_WORKER_POOL_WIN_H
+#define BRICK_TASK_SCHEDULER_PLATFORM_NATIVE_WORKER_POOL_WIN_H
 
 #include <windows.h>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/task_scheduler/priority_queue.h"
-#include "base/task_scheduler/scheduler_worker_pool.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/task_scheduler/priority_queue.h"
+#include "brick/task_scheduler/scheduler_worker_pool.h"
 
 namespace base {
 namespace internal {
@@ -27,7 +27,7 @@ namespace internal {
 // https://msdn.microsoft.com/magazine/hh456398.aspx
 // https://msdn.microsoft.com/magazine/hh547107.aspx
 // https://msdn.microsoft.com/magazine/hh580731.aspx
-class BASE_EXPORT PlatformNativeWorkerPoolWin : public SchedulerWorkerPool {
+class BRICK_EXPORT PlatformNativeWorkerPoolWin : public SchedulerWorkerPool {
  public:
   PlatformNativeWorkerPoolWin(TrackedRef<TaskTracker> task_tracker,
                               DelayedTaskManager* delayed_task_manager);
@@ -87,4 +87,4 @@ class BASE_EXPORT PlatformNativeWorkerPoolWin : public SchedulerWorkerPool {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_PLATFORM_NATIVE_WORKER_POOL_WIN_H
+#endif  // BRICK_TASK_SCHEDULER_PLATFORM_NATIVE_WORKER_POOL_WIN_H

@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_MESSAGE_WINDOW_H_
-#define BASE_WIN_MESSAGE_WINDOW_H_
+#ifndef BRICK_WIN_MESSAGE_WINDOW_H_
+#define BRICK_WIN_MESSAGE_WINDOW_H_
 
 #include <windows.h>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/strings/string16.h"
-#include "base/threading/thread_checker.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
+#include "brick/threading/thread_checker.h"
 
 namespace base {
 namespace win {
 
 // Implements a message-only window.
-class BASE_EXPORT MessageWindow {
+class BRICK_EXPORT MessageWindow {
  public:
   // Used to register a process-wide message window class.
   class WindowClass;
@@ -71,4 +71,4 @@ class BASE_EXPORT MessageWindow {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_MESSAGE_WINDOW_H_
+#endif  // BRICK_WIN_MESSAGE_WINDOW_H_

@@ -7,12 +7,12 @@
 // The app will try to discard buffers that aren't deemed essential (individual
 // modules will implement their own policy).
 
-#ifndef BASE_MEMORY_MEMORY_PRESSURE_LISTENER_H_
-#define BASE_MEMORY_MEMORY_PRESSURE_LISTENER_H_
+#ifndef BRICK_MEMORY_MEMORY_PRESSURE_LISTENER_H_
+#define BRICK_MEMORY_MEMORY_PRESSURE_LISTENER_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
 
 namespace base {
 
@@ -43,7 +43,7 @@ namespace base {
 //    // Stop listening.
 //    delete my_listener;
 //
-class BASE_EXPORT MemoryPressureListener {
+class BRICK_EXPORT MemoryPressureListener {
  public:
   // A Java counterpart will be generated for this enum.
   // GENERATED_JAVA_ENUM_PACKAGE: org.chromium.base
@@ -99,4 +99,4 @@ class BASE_EXPORT MemoryPressureListener {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_MEMORY_PRESSURE_LISTENER_H_
+#endif  // BRICK_MEMORY_MEMORY_PRESSURE_LISTENER_H_

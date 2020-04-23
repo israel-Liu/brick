@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/string16.h"
+#include "brick/strings/string16.h"
 
 #if defined(WCHAR_T_IS_UTF16) && !defined(_AIX)
 
@@ -15,7 +15,7 @@
 
 #include <ostream>
 
-#include "base/strings/utf_string_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
 
 namespace base {
 

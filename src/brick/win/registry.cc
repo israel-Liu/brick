@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/registry.h"
+#include "brick/win/registry.h"
 
 #include <shlwapi.h>
 #include <stddef.h>
 #include <algorithm>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/win/windows_version.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/win/windows_version.h"
 
 namespace base {
 namespace win {

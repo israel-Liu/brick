@@ -87,8 +87,8 @@
 //
 // Note: The Stop() function needs a SingleThreadTaskRunner.
 
-#ifndef BASE_TEST_TRACE_EVENT_ANALYZER_H_
-#define BASE_TEST_TRACE_EVENT_ANALYZER_H_
+#ifndef BRICK_TEST_TRACE_EVENT_ANALYZER_H_
+#define BRICK_TEST_TRACE_EVENT_ANALYZER_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -98,9 +98,9 @@
 #include <string>
 #include <vector>
 
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 class Value;
@@ -839,4 +839,4 @@ static inline size_t CountMatches(const TraceEventVector& events,
 
 }  // namespace trace_analyzer
 
-#endif  // BASE_TEST_TRACE_EVENT_ANALYZER_H_
+#endif  // BRICK_TEST_TRACE_EVENT_ANALYZER_H_

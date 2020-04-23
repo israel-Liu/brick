@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_POSIX_GLOBAL_DESCRIPTORS_H_
-#define BASE_POSIX_GLOBAL_DESCRIPTORS_H_
+#ifndef BRICK_POSIX_GLOBAL_DESCRIPTORS_H_
+#define BRICK_POSIX_GLOBAL_DESCRIPTORS_H_
 
 #include "build/build_config.h"
 
@@ -12,9 +12,9 @@
 
 #include <stdint.h>
 
-#include "base/files/memory_mapped_file.h"
-#include "base/files/scoped_file.h"
-#include "base/memory/singleton.h"
+#include "brick/files/memory_mapped_file.h"
+#include "brick/files/scoped_file.h"
+#include "brick/memory/singleton.h"
 
 namespace base {
 
@@ -39,7 +39,7 @@ namespace base {
 // Note that this class is deprecated and passing file descriptor should ideally
 // be done through the command line and using FileDescriptorStore.
 // See https://crbugs.com/detail?id=692619
-class BASE_EXPORT GlobalDescriptors {
+class BRICK_EXPORT GlobalDescriptors {
  public:
   typedef uint32_t Key;
   struct Descriptor {
@@ -95,4 +95,4 @@ class BASE_EXPORT GlobalDescriptors {
 
 }  // namespace base
 
-#endif  // BASE_POSIX_GLOBAL_DESCRIPTORS_H_
+#endif  // BRICK_POSIX_GLOBAL_DESCRIPTORS_H_

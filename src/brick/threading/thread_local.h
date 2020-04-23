@@ -47,11 +47,11 @@
 //     return Singleton<ThreadLocalPointer<MyClass> >::get()->Get();
 //   }
 
-#ifndef BASE_THREADING_THREAD_LOCAL_H_
-#define BASE_THREADING_THREAD_LOCAL_H_
+#ifndef BRICK_THREADING_THREAD_LOCAL_H_
+#define BRICK_THREADING_THREAD_LOCAL_H_
 
-#include "base/macros.h"
-#include "base/threading/thread_local_storage.h"
+#include "brick/macros.h"
+#include "brick/threading/thread_local_storage.h"
 
 namespace base {
 
@@ -96,4 +96,4 @@ class ThreadLocalBoolean {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_LOCAL_H_
+#endif  // BRICK_THREADING_THREAD_LOCAL_H_

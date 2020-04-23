@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILE_VERSION_INFO_MAC_H_
-#define BASE_FILE_VERSION_INFO_MAC_H_
+#ifndef BRICK_FILE_VERSION_INFO_MAC_H_
+#define BRICK_FILE_VERSION_INFO_MAC_H_
 
 #include <CoreFoundation/CoreFoundation.h>
 #include <string>
 
-#include "base/file_version_info.h"
-#include "base/mac/scoped_nsobject.h"
-#include "base/macros.h"
+#include "brick/file_version_info.h"
+#include "brick/mac/scoped_nsobject.h"
+#include "brick/macros.h"
 
 @class NSBundle;
 
@@ -48,4 +48,4 @@ class FileVersionInfoMac : public FileVersionInfo {
   DISALLOW_COPY_AND_ASSIGN(FileVersionInfoMac);
 };
 
-#endif  // BASE_FILE_VERSION_INFO_MAC_H_
+#endif  // BRICK_FILE_VERSION_INFO_MAC_H_

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_simple_task_runner.h"
+#include "brick/test/test_simple_task_runner.h"
 
 #include <utility>
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/threading/thread_task_runner_handle.h"
 
 namespace base {
 

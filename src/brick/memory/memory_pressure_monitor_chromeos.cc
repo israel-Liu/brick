@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/memory_pressure_monitor_chromeos.h"
+#include "brick/memory/memory_pressure_monitor_chromeos.h"
 
 #include <fcntl.h>
 #include <sys/select.h>
 
-#include "base/metrics/histogram_macros.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/process/process_metrics.h"
-#include "base/single_thread_task_runner.h"
-#include "base/sys_info.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/time/time.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/process/process_metrics.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/sys_info.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/time/time.h"
 
 namespace base {
 namespace chromeos {

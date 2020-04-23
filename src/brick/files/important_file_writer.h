@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_IMPORTANT_FILE_WRITER_H_
-#define BASE_FILES_IMPORTANT_FILE_WRITER_H_
+#ifndef BRICK_FILES_IMPORTANT_FILE_WRITER_H_
+#define BRICK_FILES_IMPORTANT_FILE_WRITER_H_
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequence_checker.h"
-#include "base/strings/string_piece.h"
-#include "base/time/time.h"
-#include "base/timer/timer.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequence_checker.h"
+#include "brick/strings/string_piece.h"
+#include "brick/time/time.h"
+#include "brick/timer/timer.h"
 
 namespace base {
 
@@ -35,11 +35,11 @@ class SequencedTaskRunner;
 //
 // Also note that ImportantFileWriter can be *really* slow (cf. File::Flush()
 // for details) and thus please don't block shutdown on ImportantFileWriter.
-class BASE_EXPORT ImportantFileWriter {
+class BRICK_EXPORT ImportantFileWriter {
  public:
   // Used by ScheduleSave to lazily provide the data to be saved. Allows us
   // to also batch data serializations.
-  class BASE_EXPORT DataSerializer {
+  class BRICK_EXPORT DataSerializer {
    public:
     // Should put serialized string in |data| and return true on successful
     // serialization. Will be called on the same thread on which
@@ -159,4 +159,4 @@ class BASE_EXPORT ImportantFileWriter {
 
 }  // namespace base
 
-#endif  // BASE_FILES_IMPORTANT_FILE_WRITER_H_
+#endif  // BRICK_FILES_IMPORTANT_FILE_WRITER_H_

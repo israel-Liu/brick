@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_TIMER_SLACK_H_
-#define BASE_MESSAGE_LOOP_TIMER_SLACK_H_
+#ifndef BRICK_MESSAGE_LOOP_TIMER_SLACK_H_
+#define BRICK_MESSAGE_LOOP_TIMER_SLACK_H_
 
 namespace base {
 
@@ -19,4 +19,4 @@ enum TimerSlack {
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_TIMER_SLACK_H_
+#endif  // BRICK_MESSAGE_LOOP_TIMER_SLACK_H_

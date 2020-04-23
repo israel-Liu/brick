@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/mach_port_broker.h"
+#include "brick/mac/mach_port_broker.h"
 
-#include "base/command_line.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/multiprocess_test.h"
-#include "base/test/test_timeouts.h"
+#include "brick/command_line.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/test/test_timeouts.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"
 

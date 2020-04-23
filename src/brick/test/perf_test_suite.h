@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_PERF_TEST_SUITE_H_
-#define BASE_TEST_PERF_TEST_SUITE_H_
+#ifndef BRICK_TEST_PERF_TEST_SUITE_H_
+#define BRICK_TEST_PERF_TEST_SUITE_H_
 
-#include "base/test/test_suite.h"
+#include "brick/test/test_suite.h"
 
 namespace base {
 
@@ -19,4 +19,4 @@ class PerfTestSuite : public TestSuite {
 
 }  // namespace base
 
-#endif  // BASE_TEST_PERF_TEST_SUITE_H_
+#endif  // BRICK_TEST_PERF_TEST_SUITE_H_

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_THREAD_CHECKER_IMPL_H_
-#define BASE_THREADING_THREAD_CHECKER_IMPL_H_
+#ifndef BRICK_THREADING_THREAD_CHECKER_IMPL_H_
+#define BRICK_THREADING_THREAD_CHECKER_IMPL_H_
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/sequence_token.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/sequence_token.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 
@@ -19,7 +19,7 @@ namespace base {
 //
 // Note: You should almost always use the ThreadChecker class to get the right
 // version for your build configuration.
-class BASE_EXPORT ThreadCheckerImpl {
+class BRICK_EXPORT ThreadCheckerImpl {
  public:
   ThreadCheckerImpl();
   ~ThreadCheckerImpl();
@@ -59,4 +59,4 @@ class BASE_EXPORT ThreadCheckerImpl {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_CHECKER_IMPL_H_
+#endif  // BRICK_THREADING_THREAD_CHECKER_IMPL_H_

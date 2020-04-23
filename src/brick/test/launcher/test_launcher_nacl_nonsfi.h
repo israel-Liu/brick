@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_LAUNCHER_TEST_LAUNCHER_NACL_NONSFI_H_
-#define BASE_TEST_LAUNCHER_TEST_LAUNCHER_NACL_NONSFI_H_
+#ifndef BRICK_TEST_LAUNCHER_TEST_LAUNCHER_NACL_NONSFI_H_
+#define BRICK_TEST_LAUNCHER_TEST_LAUNCHER_NACL_NONSFI_H_
 
 #include <string>
 
@@ -14,4 +14,4 @@ int TestLauncherNonSfiMain(const std::string& test_binary);
 
 }  // namespace base
 
-#endif  // BASE_TEST_LAUNCHER_TEST_LAUNCHER_NACL_NONSFI_H_
+#endif  // BRICK_TEST_LAUNCHER_TEST_LAUNCHER_NACL_NONSFI_H_

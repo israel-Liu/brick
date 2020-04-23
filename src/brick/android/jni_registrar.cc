@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/jni_registrar.h"
+#include "brick/android/jni_registrar.h"
 
-#include "base/logging.h"
-#include "base/android/jni_android.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/logging.h"
+#include "brick/android/jni_android.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 namespace android {

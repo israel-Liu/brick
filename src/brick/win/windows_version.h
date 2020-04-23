@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_WINDOWS_VERSION_H_
-#define BASE_WIN_WINDOWS_VERSION_H_
+#ifndef BRICK_WIN_WINDOWS_VERSION_H_
+#define BRICK_WIN_WINDOWS_VERSION_H_
 
 #include <stddef.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 typedef void* HANDLE;
 
@@ -59,7 +59,7 @@ enum VersionType {
 // A singleton that can be used to query various pieces of information about the
 // OS and process state. Note that this doesn't use the base Singleton class, so
 // it can be used without an AtExitManager.
-class BASE_EXPORT OSInfo {
+class BRICK_EXPORT OSInfo {
  public:
   struct VersionNumber {
     int major;
@@ -141,9 +141,9 @@ class BASE_EXPORT OSInfo {
 
 // Because this is by far the most commonly-requested value from the above
 // singleton, we add a global-scope accessor here as syntactic sugar.
-BASE_EXPORT Version GetVersion();
+BRICK_EXPORT Version GetVersion();
 
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_WINDOWS_VERSION_H_
+#endif  // BRICK_WIN_WINDOWS_VERSION_H_

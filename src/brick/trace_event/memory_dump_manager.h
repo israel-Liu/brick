@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MEMORY_DUMP_MANAGER_H_
-#define BASE_TRACE_EVENT_MEMORY_DUMP_MANAGER_H_
+#ifndef BRICK_TRACE_EVENT_MEMORY_DUMP_MANAGER_H_
+#define BRICK_TRACE_EVENT_MEMORY_DUMP_MANAGER_H_
 
 #include <stdint.h>
 
@@ -12,17 +12,17 @@
 #include <unordered_set>
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/containers/hash_tables.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/singleton.h"
-#include "base/synchronization/lock.h"
-#include "base/trace_event/memory_allocator_dump.h"
-#include "base/trace_event/memory_dump_provider_info.h"
-#include "base/trace_event/memory_dump_request_args.h"
-#include "base/trace_event/process_memory_dump.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/atomicops.h"
+#include "brick/containers/hash_tables.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/singleton.h"
+#include "brick/synchronization/lock.h"
+#include "brick/trace_event/memory_allocator_dump.h"
+#include "brick/trace_event/memory_dump_provider_info.h"
+#include "brick/trace_event/memory_dump_request_args.h"
+#include "brick/trace_event/process_memory_dump.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 
@@ -37,7 +37,7 @@ class MemoryDumpProvider;
 // This is the interface exposed to the rest of the codebase to deal with
 // memory tracing. The main entry point for clients is represented by
 // RequestDumpPoint(). The extension by Un(RegisterDumpProvider).
-class BASE_EXPORT MemoryDumpManager {
+class BRICK_EXPORT MemoryDumpManager {
  public:
   using RequestGlobalDumpFunction =
       RepeatingCallback<void(MemoryDumpType, MemoryDumpLevelOfDetail)>;
@@ -264,4 +264,4 @@ class BASE_EXPORT MemoryDumpManager {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MEMORY_DUMP_MANAGER_H_
+#endif  // BRICK_TRACE_EVENT_MEMORY_DUMP_MANAGER_H_

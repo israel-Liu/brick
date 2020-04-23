@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_BSTR_H_
-#define BASE_WIN_SCOPED_BSTR_H_
+#ifndef BRICK_WIN_SCOPED_BSTR_H_
+#define BRICK_WIN_SCOPED_BSTR_H_
 
 #include <windows.h>
 #include <oleauto.h>
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/strings/string16.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
 
 namespace base {
 namespace win {
 
 // Manages a BSTR string pointer.
 // The class interface is based on unique_ptr.
-class BASE_EXPORT ScopedBstr {
+class BRICK_EXPORT ScopedBstr {
  public:
   ScopedBstr() : bstr_(NULL) {
   }
@@ -96,4 +96,4 @@ class BASE_EXPORT ScopedBstr {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_BSTR_H_
+#endif  // BRICK_WIN_SCOPED_BSTR_H_

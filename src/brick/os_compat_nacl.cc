@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/os_compat_nacl.h"
+#include "brick/os_compat_nacl.h"
 
 #include <stdlib.h>
 #include <time.h>

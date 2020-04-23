@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/bundle_locations.h"
+#include "brick/mac/bundle_locations.h"
 
-#include "base/logging.h"
-#include "base/mac/foundation_util.h"
-#include "base/strings/sys_string_conversions.h"
+#include "brick/logging.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/strings/sys_string_conversions.h"
 
 namespace base {
 namespace mac {

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_REF_COUNTED_DELETE_ON_SEQUENCE_H_
-#define BASE_MEMORY_REF_COUNTED_DELETE_ON_SEQUENCE_H_
+#ifndef BRICK_MEMORY_REF_COUNTED_DELETE_ON_SEQUENCE_H_
+#define BRICK_MEMORY_REF_COUNTED_DELETE_ON_SEQUENCE_H_
 
 #include <utility>
 
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequenced_task_runner.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequenced_task_runner.h"
 
 namespace base {
 
@@ -79,4 +79,4 @@ class RefCountedDeleteOnSequence : public subtle::RefCountedThreadSafeBase {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_REF_COUNTED_DELETE_ON_SEQUENCE_H_
+#endif  // BRICK_MEMORY_REF_COUNTED_DELETE_ON_SEQUENCE_H_

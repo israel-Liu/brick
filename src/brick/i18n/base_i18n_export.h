@@ -2,28 +2,28 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_I18N_BASE_I18N_EXPORT_H_
-#define BASE_I18N_BASE_I18N_EXPORT_H_
+#ifndef BRICK_I18N_BRICK_I18N_EXPORT_H_
+#define BRICK_I18N_BRICK_I18N_EXPORT_H_
 
 #if defined(COMPONENT_BUILD)
 #if defined(WIN32)
 
-#if defined(BASE_I18N_IMPLEMENTATION)
-#define BASE_I18N_EXPORT __declspec(dllexport)
+#if defined(BRICK_I18N_IMPLEMENTATION)
+#define BRICK_I18N_EXPORT __declspec(dllexport)
 #else
-#define BASE_I18N_EXPORT __declspec(dllimport)
-#endif  // defined(BASE_I18N_IMPLEMENTATION)
+#define BRICK_I18N_EXPORT __declspec(dllimport)
+#endif  // defined(BRICK_I18N_IMPLEMENTATION)
 
 #else  // defined(WIN32)
-#if defined(BASE_I18N_IMPLEMENTATION)
-#define BASE_I18N_EXPORT __attribute__((visibility("default")))
+#if defined(BRICK_I18N_IMPLEMENTATION)
+#define BRICK_I18N_EXPORT __attribute__((visibility("default")))
 #else
-#define BASE_I18N_EXPORT
+#define BRICK_I18N_EXPORT
 #endif
 #endif
 
 #else  // defined(COMPONENT_BUILD)
-#define BASE_I18N_EXPORT
+#define BRICK_I18N_EXPORT
 #endif
 
-#endif  // BASE_I18N_BASE_I18N_EXPORT_H_
+#endif  // BRICK_I18N_BRICK_I18N_EXPORT_H_

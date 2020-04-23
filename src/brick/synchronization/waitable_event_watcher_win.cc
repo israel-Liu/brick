@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/waitable_event_watcher.h"
+#include "brick/synchronization/waitable_event_watcher.h"
 
-#include "base/compiler_specific.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/win/object_watcher.h"
+#include "brick/compiler_specific.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/win/object_watcher.h"
 
 #include <windows.h>
 

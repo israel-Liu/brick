@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_AUTHORIZATION_UTIL_H_
-#define BASE_MAC_AUTHORIZATION_UTIL_H_
+#ifndef BRICK_MAC_AUTHORIZATION_UTIL_H_
+#define BRICK_MAC_AUTHORIZATION_UTIL_H_
 
 // AuthorizationExecuteWithPrivileges fork()s and exec()s the tool, but it
 // does not wait() for it.  It also doesn't provide the caller with access to
@@ -28,7 +28,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 namespace mac {
@@ -39,7 +39,7 @@ namespace mac {
 // application will be displayed in a prompt dialog. Note that the system
 // appends its own text to the prompt string. |extraFlags| will be ORed
 // together with the default flags. Returns NULL on failure.
-BASE_EXPORT
+BRICK_EXPORT
 AuthorizationRef GetAuthorizationRightsWithPrompt(
     AuthorizationRights* rights,
     CFStringRef prompt,
@@ -47,7 +47,7 @@ AuthorizationRef GetAuthorizationRightsWithPrompt(
 
 // Obtains an AuthorizationRef (using |GetAuthorizationRightsWithPrompt|) that
 // can be used to run commands as root.
-BASE_EXPORT
+BRICK_EXPORT
 AuthorizationRef AuthorizationCreateToRunAsRoot(CFStringRef prompt);
 
 // Calls straight through to AuthorizationExecuteWithPrivileges.  If that
@@ -55,7 +55,7 @@ AuthorizationRef AuthorizationCreateToRunAsRoot(CFStringRef prompt);
 // pid can't be determined, |pid| will be set to -1.  |pid| must not be NULL.
 // |pipe| may be NULL, but the tool will always be executed with a pipe in
 // order to read the pid from its stdout.
-BASE_EXPORT
+BRICK_EXPORT
 OSStatus ExecuteWithPrivilegesAndGetPID(AuthorizationRef authorization,
                                         const char* tool_path,
                                         AuthorizationFlags options,
@@ -68,7 +68,7 @@ OSStatus ExecuteWithPrivilegesAndGetPID(AuthorizationRef authorization,
 // exit status is placed in |exit_status|, otherwise, -1 is stored.
 // |exit_status| may be NULL and this function will still wait for the process
 // to exit.
-BASE_EXPORT
+BRICK_EXPORT
 OSStatus ExecuteWithPrivilegesAndWait(AuthorizationRef authorization,
                                       const char* tool_path,
                                       AuthorizationFlags options,
@@ -79,4 +79,4 @@ OSStatus ExecuteWithPrivilegesAndWait(AuthorizationRef authorization,
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_AUTHORIZATION_UTIL_H_
+#endif  // BRICK_MAC_AUTHORIZATION_UTIL_H_

@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_LOGGING_WIN_H_
-#define BASE_LOGGING_WIN_H_
+#ifndef BRICK_LOGGING_WIN_H_
+#define BRICK_LOGGING_WIN_H_
 
 #include <stddef.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/win/event_trace_provider.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/win/event_trace_provider.h"
 
 namespace base {
 template <typename Type>
@@ -22,7 +22,7 @@ struct StaticMemorySingletonTraits;
 namespace logging {
 
 // Event ID for the log messages we generate.
-EXTERN_C BASE_EXPORT const GUID kLogEventId;
+EXTERN_C BRICK_EXPORT const GUID kLogEventId;
 
 // Feature enable mask for LogEventProvider.
 enum LogEnableMask {
@@ -53,7 +53,7 @@ enum LogMessageTypes {
 
 // Trace provider class to drive log control and transport
 // with Event Tracing for Windows.
-class BASE_EXPORT LogEventProvider : public base::win::EtwTraceProvider {
+class BRICK_EXPORT LogEventProvider : public base::win::EtwTraceProvider {
  public:
   static LogEventProvider* GetInstance();
 
@@ -81,4 +81,4 @@ class BASE_EXPORT LogEventProvider : public base::win::EtwTraceProvider {
 
 }  // namespace logging
 
-#endif  // BASE_LOGGING_WIN_H_
+#endif  // BRICK_LOGGING_WIN_H_

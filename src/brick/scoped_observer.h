@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SCOPED_OBSERVER_H_
-#define BASE_SCOPED_OBSERVER_H_
+#ifndef BRICK_SCOPED_OBSERVER_H_
+#define BRICK_SCOPED_OBSERVER_H_
 
 #include <stddef.h>
 
 #include <algorithm>
 #include <vector>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/stl_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/stl_util.h"
 
 // ScopedObserver is used to keep track of the set of sources an object has
 // attached itself to as an observer. When ScopedObserver is destroyed it
@@ -60,4 +60,4 @@ class ScopedObserver {
   DISALLOW_COPY_AND_ASSIGN(ScopedObserver);
 };
 
-#endif  // BASE_SCOPED_OBSERVER_H_
+#endif  // BRICK_SCOPED_OBSERVER_H_

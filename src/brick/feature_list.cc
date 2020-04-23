@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/feature_list.h"
+#include "brick/feature_list.h"
 
 #include <stddef.h>
 
 #include <utility>
 #include <vector>
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/field_trial.h"
-#include "base/pickle.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/field_trial.h"
+#include "brick/pickle.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
 
 namespace base {
 
 namespace {
 
 // Pointer to the FeatureList instance singleton that was set via
-// FeatureList::SetInstance(). Does not use base/memory/singleton.h in order to
+// FeatureList::SetInstance(). Does not use brick/memory/singleton.h in order to
 // have more control over initialization timing. Leaky.
 FeatureList* g_feature_list_instance = nullptr;
 
@@ -224,7 +224,7 @@ bool FeatureList::InitializeInstance(const std::string& enable_features,
                                      const std::string& disable_features) {
   // We want to initialize a new instance here to support command-line features
   // in testing better. For example, we initialize a dummy instance in
-  // base/test/test_suite.cc, and override it in content/browser/
+  // brick/test/test_suite.cc, and override it in content/browser/
   // browser_main_loop.cc.
   // On the other hand, we want to avoid re-initialization from command line.
   // For example, we initialize an instance in chrome/browser/

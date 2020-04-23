@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/feature_list.h"
+#include "brick/feature_list.h"
 
 #include <stddef.h>
 
 #include <algorithm>
 #include <utility>
 
-#include "base/format_macros.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/field_trial.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
+#include "brick/format_macros.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/field_trial.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

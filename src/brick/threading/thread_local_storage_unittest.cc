@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_local_storage.h"
+#include "brick/threading/thread_local_storage.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
 #include <process.h>
 #endif
 
-#include "base/macros.h"
-#include "base/no_destructor.h"
-#include "base/threading/simple_thread.h"
+#include "brick/macros.h"
+#include "brick/no_destructor.h"
+#include "brick/threading/simple_thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

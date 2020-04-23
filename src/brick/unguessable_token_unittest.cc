@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/unguessable_token.h"
+#include "brick/unguessable_token.h"
 
 #include <memory>
 #include <sstream>
 #include <type_traits>
 
-#include "base/value_conversions.h"
-#include "base/values.h"
+#include "brick/value_conversions.h"
+#include "brick/values.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

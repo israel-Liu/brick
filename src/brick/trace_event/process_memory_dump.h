@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_PROCESS_MEMORY_DUMP_H_
-#define BASE_TRACE_EVENT_PROCESS_MEMORY_DUMP_H_
+#ifndef BRICK_TRACE_EVENT_PROCESS_MEMORY_DUMP_H_
+#define BRICK_TRACE_EVENT_PROCESS_MEMORY_DUMP_H_
 
 #include <stddef.h>
 
@@ -11,13 +11,13 @@
 #include <unordered_map>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/trace_event/heap_profiler_allocation_context.h"
-#include "base/trace_event/memory_allocator_dump.h"
-#include "base/trace_event/memory_allocator_dump_guid.h"
-#include "base/trace_event/memory_dump_request_args.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/trace_event/heap_profiler_allocation_context.h"
+#include "brick/trace_event/memory_allocator_dump.h"
+#include "brick/trace_event/memory_allocator_dump_guid.h"
+#include "brick/trace_event/memory_dump_request_args.h"
 #include "build/build_config.h"
 
 // Define COUNT_RESIDENT_BYTES_SUPPORTED if platform supports counting of the
@@ -37,9 +37,9 @@ class TracedValue;
 
 // ProcessMemoryDump is as a strongly typed container which holds the dumps
 // produced by the MemoryDumpProvider(s) for a specific process.
-class BASE_EXPORT ProcessMemoryDump {
+class BRICK_EXPORT ProcessMemoryDump {
  public:
-  struct BASE_EXPORT MemoryAllocatorDumpEdge {
+  struct BRICK_EXPORT MemoryAllocatorDumpEdge {
     bool operator==(const MemoryAllocatorDumpEdge&) const;
     bool operator!=(const MemoryAllocatorDumpEdge&) const;
 
@@ -281,4 +281,4 @@ class BASE_EXPORT ProcessMemoryDump {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_PROCESS_MEMORY_DUMP_H_
+#endif  // BRICK_TRACE_EVENT_PROCESS_MEMORY_DUMP_H_

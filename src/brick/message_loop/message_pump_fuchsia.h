@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_FUCHSIA_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_FUCHSIA_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FUCHSIA_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FUCHSIA_H_
 
 #include <lib/async/wait.h>
 
-#include "base/base_export.h"
-#include "base/fuchsia/async_dispatcher.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "base/message_loop/message_pump.h"
-#include "base/message_loop/watchable_io_message_pump_posix.h"
+#include "brick/base_export.h"
+#include "brick/fuchsia/async_dispatcher.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/message_loop/message_pump.h"
+#include "brick/message_loop/watchable_io_message_pump_posix.h"
 
 typedef struct fdio fdio_t;
 
 namespace base {
 
-class BASE_EXPORT MessagePumpFuchsia : public MessagePump,
+class BRICK_EXPORT MessagePumpFuchsia : public MessagePump,
                                        public WatchableIOMessagePumpPosix {
  public:
   // Implemented by callers to receive notifications of handle & fd events.
@@ -154,4 +154,4 @@ class BASE_EXPORT MessagePumpFuchsia : public MessagePump,
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_FUCHSIA_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FUCHSIA_H_

@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_STRINGS_NULLABLE_STRING16_H_
-#define BASE_STRINGS_NULLABLE_STRING16_H_
+#ifndef BRICK_STRINGS_NULLABLE_STRING16_H_
+#define BRICK_STRINGS_NULLABLE_STRING16_H_
 
 #include <iosfwd>
 
-#include "base/base_export.h"
-#include "base/optional.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_util.h"
+#include "brick/base_export.h"
+#include "brick/optional.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_util.h"
 
 namespace base {
 
 // This class is a simple wrapper for string16 which also contains a null
 // state.  This should be used only where the difference between null and
 // empty is meaningful.
-class BASE_EXPORT NullableString16 {
+class BRICK_EXPORT NullableString16 {
  public:
   NullableString16();
   NullableString16(const NullableString16& other);
@@ -47,9 +47,9 @@ inline bool operator!=(const NullableString16& a, const NullableString16& b) {
   return !(a == b);
 }
 
-BASE_EXPORT std::ostream& operator<<(std::ostream& out,
+BRICK_EXPORT std::ostream& operator<<(std::ostream& out,
                                      const NullableString16& value);
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_NULLABLE_STRING16_H_
+#endif  // BRICK_STRINGS_NULLABLE_STRING16_H_

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/platform_thread.h"
+#include "brick/threading/platform_thread.h"
 
 #import <Foundation/Foundation.h>
 #include <mach/mach.h>
@@ -13,11 +13,11 @@
 
 #include <algorithm>
 
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/mac/foundation_util.h"
-#include "base/mac/mach_logging.h"
-#include "base/threading/thread_id_name_manager.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/threading/thread_id_name_manager.h"
 #include "build/build_config.h"
 
 namespace base {

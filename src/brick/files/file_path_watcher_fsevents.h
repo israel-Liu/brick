@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_FILE_PATH_WATCHER_FSEVENTS_H_
-#define BASE_FILES_FILE_PATH_WATCHER_FSEVENTS_H_
+#ifndef BRICK_FILES_FILE_PATH_WATCHER_FSEVENTS_H_
+#define BRICK_FILES_FILE_PATH_WATCHER_FSEVENTS_H_
 
 #include <CoreServices/CoreServices.h>
 #include <stddef.h>
 
 #include <vector>
 
-#include "base/files/file_path.h"
-#include "base/files/file_path_watcher.h"
-#include "base/mac/scoped_dispatch_object.h"
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_path_watcher.h"
+#include "brick/mac/scoped_dispatch_object.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
 
 namespace base {
 
@@ -96,4 +96,4 @@ class FilePathWatcherFSEvents : public FilePathWatcher::PlatformDelegate {
 
 }  // namespace base
 
-#endif  // BASE_FILES_FILE_PATH_WATCHER_FSEVENTS_H_
+#endif  // BRICK_FILES_FILE_PATH_WATCHER_FSEVENTS_H_

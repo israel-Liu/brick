@@ -9,30 +9,30 @@
 
 #include <limits>
 
-#include "base/command_line.h"
-#include "base/debug/alias.h"
-#include "base/debug/stack_trace.h"
-#include "base/files/file_enumerator.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/path_service.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/process/kill.h"
-#include "base/process/launch.h"
-#include "base/process/memory.h"
-#include "base/process/process.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/multiprocess_test.h"
-#include "base/test/scoped_task_environment.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread.h"
+#include "brick/command_line.h"
+#include "brick/debug/alias.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/files/file_enumerator.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/path_service.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/process/kill.h"
+#include "brick/process/launch.h"
+#include "brick/process/memory.h"
+#include "brick/process/process.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/test/scoped_task_environment.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"
@@ -71,7 +71,7 @@
 #include <zircon/process.h>
 #include <zircon/processargs.h>
 #include <zircon/syscalls.h>
-#include "base/base_paths_fuchsia.h"
+#include "brick/base_paths_fuchsia.h"
 #endif
 
 namespace base {
@@ -1026,7 +1026,7 @@ const char kLargeString[] =
 TEST_F(ProcessUtilTest, LaunchProcess) {
   const int no_clone_flags = 0;
   const bool no_clear_environ = false;
-  const char kBaseTest[] = "BASE_TEST";
+  const char kBaseTest[] = "BRICK_TEST";
   const std::vector<std::string> kPrintEnvCommand = {test_helper_path_.value(),
                                                      "-e", kBaseTest};
 

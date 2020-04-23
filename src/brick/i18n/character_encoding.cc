@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/character_encoding.h"
+#include "brick/i18n/character_encoding.h"
 
-#include "base/macros.h"
+#include "brick/macros.h"
 #include "third_party/icu/source/common/unicode/ucnv.h"
 
 namespace base {

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_LAZY_INSTANCE_INTERNAL_H_
-#define BASE_LAZY_INSTANCE_INTERNAL_H_
+#ifndef BRICK_LAZY_INSTANCE_INTERNAL_H_
+#define BRICK_LAZY_INSTANCE_INTERNAL_H_
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/logging.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
 
 // Helper methods used by LazyInstance and a few other base APIs for thread-safe
 // lazy construction.
@@ -22,12 +22,12 @@ constexpr subtle::AtomicWord kLazyInstanceStateCreating = 1;
 // Helper for GetOrCreateLazyPointer(). Checks if instance needs to be created.
 // If so returns true otherwise if another thread has beat us, waits for
 // instance to be created and returns false.
-BASE_EXPORT bool NeedsLazyInstance(subtle::AtomicWord* state);
+BRICK_EXPORT bool NeedsLazyInstance(subtle::AtomicWord* state);
 
 // Helper for GetOrCreateLazyPointer(). After creating an instance, this is
 // called to register the dtor to be called at program exit and to update the
 // atomic state to hold the |new_instance|
-BASE_EXPORT void CompleteLazyInstance(subtle::AtomicWord* state,
+BRICK_EXPORT void CompleteLazyInstance(subtle::AtomicWord* state,
                                       subtle::AtomicWord new_instance,
                                       void (*destructor)(void*),
                                       void* destructor_arg);
@@ -51,7 +51,7 @@ namespace subtle {
 // chrome.dll) because linker is able to fold these for multiple Types but
 // couldn't with the more advanced CreatorFunc template type which in turn
 // improves code locality (and application startup) -- ref.
-// https://chromium-review.googlesource.com/c/chromium/src/+/530984/5/base/lazy_instance.h#140,
+// https://chromium-review.googlesource.com/c/chromium/src/+/530984/5/brick/lazy_instance.h#140,
 // worsened by https://chromium-review.googlesource.com/c/chromium/src/+/868013
 // and caught then as https://crbug.com/804034.
 template <typename Type>
@@ -98,4 +98,4 @@ Type* GetOrCreateLazyPointer(subtle::AtomicWord* state,
 
 }  // namespace base
 
-#endif  // BASE_LAZY_INSTANCE_INTERNAL_H_
+#endif  // BRICK_LAZY_INSTANCE_INTERNAL_H_

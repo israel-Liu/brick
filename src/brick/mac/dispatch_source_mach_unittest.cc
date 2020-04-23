@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/dispatch_source_mach.h"
+#include "brick/mac/dispatch_source_mach.h"
 
 #include <mach/mach.h>
 
 #include <memory>
 
-#include "base/logging.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/test/test_timeouts.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/test/test_timeouts.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

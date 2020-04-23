@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_proxy.h"
+#include "brick/files/file_proxy.h"
 
 #include <utility>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/files/file.h"
-#include "base/files/file_util.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/task_runner.h"
-#include "base/task_runner_util.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/files/file.h"
+#include "brick/files/file_util.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/task_runner.h"
+#include "brick/task_runner_util.h"
 
 namespace {
 

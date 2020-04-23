@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory_handle.h"
+#include "brick/memory/shared_memory_handle.h"
 
 #include <mach/mach_vm.h>
 #include <stddef.h>
 #include <sys/mman.h>
 #include <unistd.h>
 
-#include "base/mac/mac_util.h"
-#include "base/mac/mach_logging.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/unguessable_token.h"
+#include "brick/mac/mac_util.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/unguessable_token.h"
 
 namespace base {
 

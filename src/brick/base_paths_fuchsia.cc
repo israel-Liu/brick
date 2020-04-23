@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/base_paths.h"
+#include "brick/base_paths.h"
 
 #include <stdlib.h>
 
-#include "base/base_paths_fuchsia.h"
-#include "base/command_line.h"
-#include "base/files/file_util.h"
-#include "base/path_service.h"
-#include "base/process/process.h"
+#include "brick/base_paths_fuchsia.h"
+#include "brick/command_line.h"
+#include "brick/files/file_util.h"
+#include "brick/path_service.h"
+#include "brick/process/process.h"
 
 namespace base {
 namespace {

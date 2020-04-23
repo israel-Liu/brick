@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/containers/vector_buffer.h"
+#include "brick/containers/vector_buffer.h"
 
-#include "base/test/copy_only_int.h"
-#include "base/test/move_only_int.h"
+#include "brick/test/copy_only_int.h"
+#include "brick/test/move_only_int.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

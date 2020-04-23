@@ -6,10 +6,10 @@
 
 #include <algorithm>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/utf_offset_string_conversions.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/utf_offset_string_conversions.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {
@@ -224,8 +224,8 @@ TEST(UTFOffsetStringConversionsTest, UnadjustOffsets) {
   }
 }
 
-// MergeSequentialAdjustments is used by net/base/escape.{h,cc} and
-// net/base/net_util.{h,cc}.  The two tests EscapeTest.AdjustOffset and
+// MergeSequentialAdjustments is used by net/brick/escape.{h,cc} and
+// net/brick/net_util.{h,cc}.  The two tests EscapeTest.AdjustOffset and
 // NetUtilTest.FormatUrlWithOffsets test its behavior extensively.  This
 // is simply a short, additional test.
 TEST(UTFOffsetStringConversionsTest, MergeSequentialAdjustments) {

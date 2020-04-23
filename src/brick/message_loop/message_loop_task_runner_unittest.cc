@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_loop_task_runner.h"
+#include "brick/message_loop/message_loop_task_runner.h"
 
 #include <memory>
 
-#include "base/atomic_sequence_num.h"
-#include "base/bind.h"
-#include "base/debug/leak_annotations.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_loop_task_runner.h"
-#include "base/run_loop.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/thread.h"
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/atomic_sequence_num.h"
+#include "brick/bind.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_loop_task_runner.h"
+#include "brick/run_loop.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/thread.h"
+#include "brick/threading/thread_task_runner_handle.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"
 

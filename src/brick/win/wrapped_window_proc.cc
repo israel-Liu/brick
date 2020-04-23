@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/wrapped_window_proc.h"
+#include "brick/win/wrapped_window_proc.h"
 
-#include "base/atomicops.h"
-#include "base/logging.h"
+#include "brick/atomicops.h"
+#include "brick/logging.h"
 
 namespace {
 
@@ -43,7 +43,7 @@ int CallExceptionFilter(EXCEPTION_POINTERS* info) {
                               EXCEPTION_CONTINUE_SEARCH;
 }
 
-BASE_EXPORT void InitializeWindowClass(
+BRICK_EXPORT void InitializeWindowClass(
     const char16* class_name,
     WNDPROC window_proc,
     UINT style,

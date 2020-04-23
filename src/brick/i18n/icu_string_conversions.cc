@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/icu_string_conversions.h"
+#include "brick/i18n/icu_string_conversions.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -10,9 +10,9 @@
 #include <memory>
 #include <vector>
 
-#include "base/logging.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/logging.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "third_party/icu/source/common/unicode/normalizer2.h"
 #include "third_party/icu/source/common/unicode/ucnv.h"
 #include "third_party/icu/source/common/unicode/ucnv_cb.h"

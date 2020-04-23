@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 
 #include <CoreFoundation/CFDate.h>
 #include <CoreFoundation/CFTimeZone.h>
@@ -15,18 +15,18 @@
 #include <sys/types.h>
 #include <time.h>
 
-#include "base/logging.h"
-#include "base/mac/mach_logging.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/macros.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/time/time_override.h"
+#include "brick/logging.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/macros.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/time/time_override.h"
 #include "build/build_config.h"
 
 #if defined(OS_IOS)
 #include <time.h>
-#include "base/ios/ios_util.h"
+#include "brick/ios/ios_util.h"
 #endif
 
 namespace {

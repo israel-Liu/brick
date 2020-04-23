@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/waitable_event_watcher.h"
+#include "brick/synchronization/waitable_event_watcher.h"
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 
 namespace base {
 

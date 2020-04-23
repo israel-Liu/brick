@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_event_argument.h"
+#include "brick/trace_event/trace_event_argument.h"
 
 #include <stdint.h>
 
 #include <utility>
 
-#include "base/bits.h"
-#include "base/containers/circular_deque.h"
-#include "base/json/string_escape.h"
-#include "base/memory/ptr_util.h"
-#include "base/trace_event/trace_event.h"
-#include "base/trace_event/trace_event_impl.h"
-#include "base/trace_event/trace_event_memory_overhead.h"
-#include "base/values.h"
+#include "brick/bits.h"
+#include "brick/containers/circular_deque.h"
+#include "brick/json/string_escape.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event_impl.h"
+#include "brick/trace_event/trace_event_memory_overhead.h"
+#include "brick/values.h"
 
 namespace base {
 namespace trace_event {

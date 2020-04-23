@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ALLOC_H_
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ALLOC_H_
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ALLOC_H_
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ALLOC_H_
 
 // DESCRIPTION
 // PartitionRoot::Alloc() / PartitionRootGeneric::Alloc() and PartitionFree() /
@@ -63,19 +63,19 @@
 #include <limits.h>
 #include <string.h>
 
-#include "base/allocator/partition_allocator/page_allocator.h"
-#include "base/allocator/partition_allocator/partition_alloc_constants.h"
-#include "base/allocator/partition_allocator/partition_bucket.h"
-#include "base/allocator/partition_allocator/partition_cookie.h"
-#include "base/allocator/partition_allocator/partition_page.h"
-#include "base/allocator/partition_allocator/partition_root_base.h"
-#include "base/allocator/partition_allocator/spin_lock.h"
-#include "base/base_export.h"
-#include "base/bits.h"
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/sys_byteorder.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
+#include "brick/allocator/partition_allocator/partition_alloc_constants.h"
+#include "brick/allocator/partition_allocator/partition_bucket.h"
+#include "brick/allocator/partition_allocator/partition_cookie.h"
+#include "brick/allocator/partition_allocator/partition_page.h"
+#include "brick/allocator/partition_allocator/partition_root_base.h"
+#include "brick/allocator/partition_allocator/spin_lock.h"
+#include "brick/base_export.h"
+#include "brick/bits.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/sys_byteorder.h"
 #include "build/build_config.h"
 
 #if defined(MEMORY_TOOL_REPLACES_ALLOCATOR)
@@ -97,7 +97,7 @@ enum PartitionPurgeFlags {
 };
 
 // Never instantiate a PartitionRoot directly, instead use PartitionAlloc.
-struct BASE_EXPORT PartitionRoot : public internal::PartitionRootBase {
+struct BRICK_EXPORT PartitionRoot : public internal::PartitionRootBase {
   PartitionRoot();
   ~PartitionRoot() override;
   // This references the buckets OFF the edge of this struct. All uses of
@@ -124,7 +124,7 @@ struct BASE_EXPORT PartitionRoot : public internal::PartitionRootBase {
 
 // Never instantiate a PartitionRootGeneric directly, instead use
 // PartitionAllocatorGeneric.
-struct BASE_EXPORT PartitionRootGeneric : public internal::PartitionRootBase {
+struct BRICK_EXPORT PartitionRootGeneric : public internal::PartitionRootBase {
   PartitionRootGeneric();
   ~PartitionRootGeneric() override;
   subtle::SpinLock lock;
@@ -193,7 +193,7 @@ struct PartitionBucketMemoryStats {
 
 // Interface that is passed to PartitionDumpStats and
 // PartitionDumpStatsGeneric for using the memory statistics.
-class BASE_EXPORT PartitionStatsDumper {
+class BRICK_EXPORT PartitionStatsDumper {
  public:
   // Called to dump total memory used by partition, once per partition.
   virtual void PartitionDumpTotals(const char* partition_name,
@@ -204,9 +204,9 @@ class BASE_EXPORT PartitionStatsDumper {
                                          const PartitionBucketMemoryStats*) = 0;
 };
 
-BASE_EXPORT void PartitionAllocGlobalInit(void (*oom_handling_function)());
+BRICK_EXPORT void PartitionAllocGlobalInit(void (*oom_handling_function)());
 
-class BASE_EXPORT PartitionAllocHooks {
+class BRICK_EXPORT PartitionAllocHooks {
  public:
   typedef void AllocationHook(void* address, size_t, const char* type_name);
   typedef void FreeHook(void* address);
@@ -359,7 +359,7 @@ ALWAYS_INLINE void PartitionRootGeneric::Free(void* ptr) {
 #endif
 }
 
-BASE_EXPORT void* PartitionReallocGenericFlags(PartitionRootGeneric* root,
+BRICK_EXPORT void* PartitionReallocGenericFlags(PartitionRootGeneric* root,
                                                int flags,
                                                void* ptr,
                                                size_t new_size,
@@ -421,7 +421,7 @@ class SizeSpecificPartitionAllocator {
   internal::PartitionBucket actual_buckets_[kNumBuckets];
 };
 
-class BASE_EXPORT PartitionAllocatorGeneric {
+class BRICK_EXPORT PartitionAllocatorGeneric {
  public:
   PartitionAllocatorGeneric();
   ~PartitionAllocatorGeneric();
@@ -435,4 +435,4 @@ class BASE_EXPORT PartitionAllocatorGeneric {
 
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ALLOC_H_
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_ALLOC_H_

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/post_task_and_reply_impl.h"
+#include "brick/threading/post_task_and_reply_impl.h"
 
 #include <utility>
 
-#include "base/bind.h"
-#include "base/debug/leak_annotations.h"
-#include "base/logging.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequenced_task_runner.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/logging.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 
 namespace base {
 

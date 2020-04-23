@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_worker_stack.h"
+#include "brick/task_scheduler/scheduler_worker_stack.h"
 
 #include <algorithm>
 
-#include "base/logging.h"
-#include "base/stl_util.h"
-#include "base/task_scheduler/scheduler_worker.h"
+#include "brick/logging.h"
+#include "brick/stl_util.h"
+#include "brick/task_scheduler/scheduler_worker.h"
 
 namespace base {
 namespace internal {

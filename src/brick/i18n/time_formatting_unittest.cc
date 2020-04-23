@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/time_formatting.h"
+#include "brick/i18n/time_formatting.h"
 
 #include <memory>
 
-#include "base/i18n/rtl.h"
-#include "base/i18n/unicodestring.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/test/icu_test_util.h"
-#include "base/time/time.h"
+#include "brick/i18n/rtl.h"
+#include "brick/i18n/unicodestring.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/test/icu_test_util.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "third_party/icu/source/common/unicode/uversion.h"
 #include "third_party/icu/source/i18n/unicode/calendar.h"

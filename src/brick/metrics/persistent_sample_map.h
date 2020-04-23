@@ -6,19 +6,19 @@
 // by the SparseHistogram class to store samples in persistent memory which
 // allows it to be shared between processes or live across restarts.
 
-#ifndef BASE_METRICS_PERSISTENT_SAMPLE_MAP_H_
-#define BASE_METRICS_PERSISTENT_SAMPLE_MAP_H_
+#ifndef BRICK_METRICS_PERSISTENT_SAMPLE_MAP_H_
+#define BRICK_METRICS_PERSISTENT_SAMPLE_MAP_H_
 
 #include <stdint.h>
 
 #include <map>
 #include <memory>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/histogram_samples.h"
-#include "base/metrics/persistent_memory_allocator.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/histogram_samples.h"
+#include "brick/metrics/persistent_memory_allocator.h"
 
 namespace base {
 
@@ -27,7 +27,7 @@ class PersistentSampleMapRecords;
 
 // The logic here is similar to that of SampleMap but with different data
 // structures. Changes here likely need to be duplicated there.
-class BASE_EXPORT PersistentSampleMap : public HistogramSamples {
+class BRICK_EXPORT PersistentSampleMap : public HistogramSamples {
  public:
   // Constructs a persistent sample map using a PersistentHistogramAllocator
   // as the data source for persistent records.
@@ -106,4 +106,4 @@ class BASE_EXPORT PersistentSampleMap : public HistogramSamples {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_PERSISTENT_SAMPLE_MAP_H_
+#endif  // BRICK_METRICS_PERSISTENT_SAMPLE_MAP_H_

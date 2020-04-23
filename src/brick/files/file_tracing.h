@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_FILE_TRACING_H_
-#define BASE_FILES_FILE_TRACING_H_
+#ifndef BRICK_FILES_FILE_TRACING_H_
+#define BRICK_FILES_FILE_TRACING_H_
 
 #include <stdint.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 #define FILE_TRACING_PREFIX "File"
 
@@ -24,7 +24,7 @@ namespace base {
 class File;
 class FilePath;
 
-class BASE_EXPORT FileTracing {
+class BRICK_EXPORT FileTracing {
  public:
   // Whether the file tracing category is enabled.
   static bool IsCategoryEnabled();
@@ -92,4 +92,4 @@ class BASE_EXPORT FileTracing {
 
 }  // namespace base
 
-#endif  // BASE_FILES_FILE_TRACING_H_
+#endif  // BRICK_FILES_FILE_TRACING_H_

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/profiler/native_stack_sampler.h"
+#include "brick/profiler/native_stack_sampler.h"
 
 #include <objbase.h>
 #include <windows.h>
@@ -15,19 +15,19 @@
 #include <utility>
 #include <vector>
 
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/profiler/win32_stack_frame_unwinder.h"
-#include "base/stl_util.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/time/time.h"
-#include "base/win/pe_image.h"
-#include "base/win/scoped_handle.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/profiler/win32_stack_frame_unwinder.h"
+#include "brick/stl_util.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/time/time.h"
+#include "brick/win/pe_image.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_listener_ios.h"
+#include "brick/test/test_listener_ios.h"
 
 #import <Foundation/Foundation.h>
 
-#include "base/mac/scoped_nsautorelease_pool.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 // The iOS watchdog timer will kill an app that doesn't spin the main event

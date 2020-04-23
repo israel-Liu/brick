@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_file_util.h"
+#include "brick/test/test_file_util.h"
 
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -16,8 +16,8 @@
 #include <sys/syscall.h>
 #endif
 
-#include "base/files/file_path.h"
-#include "base/files/scoped_file.h"
+#include "brick/files/file_path.h"
+#include "brick/files/scoped_file.h"
 
 namespace base {
 

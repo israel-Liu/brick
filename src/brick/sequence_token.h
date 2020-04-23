@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SEQUENCE_TOKEN_H_
-#define BASE_SEQUENCE_TOKEN_H_
+#ifndef BRICK_SEQUENCE_TOKEN_H_
+#define BRICK_SEQUENCE_TOKEN_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 
 // A token that identifies a series of sequenced tasks (i.e. tasks that run one
 // at a time in posting order).
-class BASE_EXPORT SequenceToken {
+class BRICK_EXPORT SequenceToken {
  public:
   // Instantiates an invalid SequenceToken.
   SequenceToken() = default;
@@ -55,7 +55,7 @@ class BASE_EXPORT SequenceToken {
 // CalledOnValidThread() come from the same task and hence are deterministically
 // single-threaded (vs. calls coming from different sequenced or parallel tasks,
 // which may or may not run on the same thread).
-class BASE_EXPORT TaskToken {
+class BRICK_EXPORT TaskToken {
  public:
   // Instantiates an invalid TaskToken.
   TaskToken() = default;
@@ -93,7 +93,7 @@ class BASE_EXPORT TaskToken {
 };
 
 // Instantiate this in the scope where a single task runs.
-class BASE_EXPORT ScopedSetSequenceTokenForCurrentThread {
+class BRICK_EXPORT ScopedSetSequenceTokenForCurrentThread {
  public:
   // Throughout the lifetime of the constructed object,
   // SequenceToken::GetForCurrentThread() will return |sequence_token| and
@@ -112,4 +112,4 @@ class BASE_EXPORT ScopedSetSequenceTokenForCurrentThread {
 
 }  // namespace base
 
-#endif  // BASE_SEQUENCE_TOKEN_H_
+#endif  // BRICK_SEQUENCE_TOKEN_H_

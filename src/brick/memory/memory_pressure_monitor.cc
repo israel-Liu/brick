@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/memory_pressure_monitor.h"
+#include "brick/memory/memory_pressure_monitor.h"
 
-#include "base/logging.h"
-#include "base/metrics/histogram_macros.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram_macros.h"
 
 namespace base {
 namespace {

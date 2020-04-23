@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_writer.h"
+#include "brick/json/json_writer.h"
 
-#include "base/memory/ptr_util.h"
-#include "base/values.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/values.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

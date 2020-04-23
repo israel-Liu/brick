@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/platform_thread.h"
+#include "brick/threading/platform_thread.h"
 
 #include <errno.h>
 #include <pthread.h>
@@ -15,12 +15,12 @@
 
 #include <memory>
 
-#include "base/debug/activity_tracker.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/threading/platform_thread_internal_posix.h"
-#include "base/threading/thread_id_name_manager.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/threading/platform_thread_internal_posix.h"
+#include "brick/threading/thread_id_name_manager.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 #if defined(OS_LINUX)

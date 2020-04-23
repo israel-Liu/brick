@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYNCHRONIZATION_ATOMIC_FLAG_H_
-#define BASE_SYNCHRONIZATION_ATOMIC_FLAG_H_
+#ifndef BRICK_SYNCHRONIZATION_ATOMIC_FLAG_H_
+#define BRICK_SYNCHRONIZATION_ATOMIC_FLAG_H_
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/sequence_checker.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/sequence_checker.h"
 
 namespace base {
 
 // A flag that can safely be set from one thread and read from other threads.
 //
 // This class IS NOT intended for synchronization between threads.
-class BASE_EXPORT AtomicFlag {
+class BRICK_EXPORT AtomicFlag {
  public:
   AtomicFlag();
   ~AtomicFlag() = default;
@@ -41,4 +41,4 @@ class BASE_EXPORT AtomicFlag {
 
 }  // namespace base
 
-#endif  // BASE_SYNCHRONIZATION_ATOMIC_FLAG_H_
+#endif  // BRICK_SYNCHRONIZATION_ATOMIC_FLAG_H_

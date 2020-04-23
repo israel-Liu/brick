@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_CONFIG_H_
-#define BASE_TRACE_EVENT_TRACE_CONFIG_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_CONFIG_H_
+#define BRICK_TRACE_EVENT_TRACE_CONFIG_H_
 
 #include <stdint.h>
 
@@ -13,12 +13,12 @@
 #include <unordered_set>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/gtest_prod_util.h"
-#include "base/strings/string_piece.h"
-#include "base/trace_event/memory_dump_request_args.h"
-#include "base/trace_event/trace_config_category_filter.h"
-#include "base/values.h"
+#include "brick/base_export.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/strings/string_piece.h"
+#include "brick/trace_event/memory_dump_request_args.h"
+#include "brick/trace_event/trace_config_category_filter.h"
+#include "brick/values.h"
 
 namespace base {
 namespace trace_event {
@@ -43,13 +43,13 @@ enum TraceRecordMode {
   ECHO_TO_CONSOLE,
 };
 
-class BASE_EXPORT TraceConfig {
+class BRICK_EXPORT TraceConfig {
  public:
   using StringList = std::vector<std::string>;
 
   // Specifies the memory dump config for tracing.
   // Used only when "memory-infra" category is enabled.
-  struct BASE_EXPORT MemoryDumpConfig {
+  struct BRICK_EXPORT MemoryDumpConfig {
     MemoryDumpConfig();
     MemoryDumpConfig(const MemoryDumpConfig& other);
     ~MemoryDumpConfig();
@@ -88,7 +88,7 @@ class BASE_EXPORT TraceConfig {
     HeapProfiler heap_profiler_options;
   };
 
-  class BASE_EXPORT EventFilterConfig {
+  class BRICK_EXPORT EventFilterConfig {
    public:
     EventFilterConfig(const std::string& predicate_name);
     EventFilterConfig(const EventFilterConfig& tc);
@@ -286,4 +286,4 @@ class BASE_EXPORT TraceConfig {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_CONFIG_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_CONFIG_H_

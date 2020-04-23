@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_CIRCULAR_DEQUE_H_
-#define BASE_CONTAINERS_CIRCULAR_DEQUE_H_
+#ifndef BRICK_CONTAINERS_CIRCULAR_DEQUE_H_
+#define BRICK_CONTAINERS_CIRCULAR_DEQUE_H_
 
 #include <algorithm>
 #include <cstddef>
@@ -11,10 +11,10 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/containers/vector_buffer.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/template_util.h"
+#include "brick/containers/vector_buffer.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/template_util.h"
 
 // base::circular_deque is similar to std::deque. Unlike std::deque, the
 // storage is provided in a flat circular buffer conceptually similar to a
@@ -34,7 +34,7 @@
 //    two containers, use an algorithm so the expensive iteration is explicit.
 //
 // If you want a similar container with only a queue API, use base::queue in
-// base/containers/queue.h.
+// brick/containers/queue.h.
 //
 // Constructors:
 //   circular_deque();
@@ -1093,7 +1093,7 @@ class circular_deque {
 #endif
 };
 
-// Implementations of base::Erase[If] (see base/stl_util.h).
+// Implementations of base::Erase[If] (see brick/stl_util.h).
 template <class T, class Value>
 void Erase(circular_deque<T>& container, const Value& value) {
   container.erase(std::remove(container.begin(), container.end(), value),
@@ -1108,4 +1108,4 @@ void EraseIf(circular_deque<T>& container, Predicate pred) {
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_CIRCULAR_DEQUE_H_
+#endif  // BRICK_CONTAINERS_CIRCULAR_DEQUE_H_

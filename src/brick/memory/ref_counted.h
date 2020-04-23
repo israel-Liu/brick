@@ -2,27 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_REF_COUNTED_H_
-#define BASE_MEMORY_REF_COUNTED_H_
+#ifndef BRICK_MEMORY_REF_COUNTED_H_
+#define BRICK_MEMORY_REF_COUNTED_H_
 
 #include <stddef.h>
 
 #include <utility>
 
-#include "base/atomic_ref_count.h"
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/scoped_refptr.h"
-#include "base/sequence_checker.h"
-#include "base/threading/thread_collision_warner.h"
+#include "brick/atomic_ref_count.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/scoped_refptr.h"
+#include "brick/sequence_checker.h"
+#include "brick/threading/thread_collision_warner.h"
 #include "build/build_config.h"
 
 namespace base {
 namespace subtle {
 
-class BASE_EXPORT RefCountedBase {
+class BRICK_EXPORT RefCountedBase {
  public:
   bool HasOneRef() const { return ref_count_ == 1; }
 
@@ -143,7 +143,7 @@ class BASE_EXPORT RefCountedBase {
   DISALLOW_COPY_AND_ASSIGN(RefCountedBase);
 };
 
-class BASE_EXPORT RefCountedThreadSafeBase {
+class BRICK_EXPORT RefCountedThreadSafeBase {
  public:
   bool HasOneRef() const;
 
@@ -232,7 +232,7 @@ class BASE_EXPORT RefCountedThreadSafeBase {
 // should properly std::move() the ref to avoid hitting this check).
 // TODO(tzik): Cleanup existing use cases and remove
 // ScopedAllowCrossThreadRefCountAccess.
-class BASE_EXPORT ScopedAllowCrossThreadRefCountAccess final {
+class BRICK_EXPORT ScopedAllowCrossThreadRefCountAccess final {
  public:
 #if DCHECK_IS_ON()
   ScopedAllowCrossThreadRefCountAccess();
@@ -422,4 +422,4 @@ class RefCountedData
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_REF_COUNTED_H_
+#endif  // BRICK_MEMORY_REF_COUNTED_H_

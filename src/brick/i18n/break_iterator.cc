@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/break_iterator.h"
+#include "brick/i18n/break_iterator.h"
 
 #include <stdint.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 #include "third_party/icu/source/common/unicode/ubrk.h"
 #include "third_party/icu/source/common/unicode/uchar.h"
 #include "third_party/icu/source/common/unicode/ustring.h"

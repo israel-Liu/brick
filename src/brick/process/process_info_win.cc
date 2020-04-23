@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_info.h"
+#include "brick/process/process_info.h"
 
 #include <windows.h>
 #include <memory>
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/time/time.h"
-#include "base/win/scoped_handle.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/time/time.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 

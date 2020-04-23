@@ -13,7 +13,7 @@ public class NativeLibraries {
      * - This template is used to generate several distinct, but similar
      *   files used in different contexts:
      *
-     *   o .../gen/templates/org/chromium/base/library_loader/NativeLibraries.java
+     *   o .../gen/templates/org/chromium/brick/library_loader/NativeLibraries.java
      *
      *     This file is used to build base.jar, which is the library
      *     jar used by chromium projects. However, the

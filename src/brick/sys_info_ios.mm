@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <mach/mach.h>
 #include <stddef.h>
@@ -11,12 +11,12 @@
 #include <sys/types.h>
 #import <UIKit/UIKit.h>
 
-#include "base/logging.h"
-#include "base/mac/scoped_mach_port.h"
-#include "base/mac/scoped_nsautorelease_pool.h"
-#include "base/macros.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/sys_string_conversions.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_mach_port.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
+#include "brick/macros.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/sys_string_conversions.h"
 
 namespace base {
 

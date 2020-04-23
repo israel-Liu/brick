@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_OBJECT_WATCHER_H_
-#define BASE_WIN_OBJECT_WATCHER_H_
+#ifndef BRICK_WIN_OBJECT_WATCHER_H_
+#define BRICK_WIN_OBJECT_WATCHER_H_
 
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/weak_ptr.h"
-#include "base/sequenced_task_runner.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/sequenced_task_runner.h"
 
 namespace base {
 namespace win {
@@ -53,9 +53,9 @@ namespace win {
 //
 // NOTE: Except for the constructor, all public methods of this class must be
 // called in sequence, in a scope where SequencedTaskRunnerHandle::IsSet().
-class BASE_EXPORT ObjectWatcher {
+class BRICK_EXPORT ObjectWatcher {
  public:
-  class BASE_EXPORT Delegate {
+  class BRICK_EXPORT Delegate {
    public:
     virtual ~Delegate() {}
     // Called from the sequence that started the watch when a signaled object is
@@ -128,4 +128,4 @@ class BASE_EXPORT ObjectWatcher {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_OBJECT_WATCHER_H_
+#endif  // BRICK_WIN_OBJECT_WATCHER_H_

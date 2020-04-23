@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/nix/mime_util_xdg.h"
+#include "brick/nix/mime_util_xdg.h"
 
-#include "base/files/file_path.h"
-#include "base/lazy_instance.h"
-#include "base/synchronization/lock.h"
-#include "base/third_party/xdg_mime/xdgmime.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_path.h"
+#include "brick/lazy_instance.h"
+#include "brick/synchronization/lock.h"
+#include "brick/third_party/xdg_mime/xdgmime.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 namespace nix {

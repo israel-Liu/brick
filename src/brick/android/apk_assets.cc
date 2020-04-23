@@ -4,12 +4,12 @@
 
 #include <jni.h>
 
-#include "base/android/apk_assets.h"
+#include "brick/android/apk_assets.h"
 
-#include "base/android/jni_array.h"
-#include "base/android/jni_string.h"
-#include "base/android/scoped_java_ref.h"
-#include "base/file_descriptor_store.h"
+#include "brick/android/jni_array.h"
+#include "brick/android/jni_string.h"
+#include "brick/android/scoped_java_ref.h"
+#include "brick/file_descriptor_store.h"
 #include "jni/ApkAssets_jni.h"
 
 namespace base {

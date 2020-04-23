@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_lock.h"
+#include "brick/task_scheduler/scheduler_lock.h"
 
 #include <stdlib.h>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/rand_util.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/gtest_util.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/simple_thread.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/rand_util.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/gtest_util.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/simple_thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

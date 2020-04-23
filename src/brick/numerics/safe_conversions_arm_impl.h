@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_SAFE_CONVERSIONS_ARM_IMPL_H_
-#define BASE_NUMERICS_SAFE_CONVERSIONS_ARM_IMPL_H_
+#ifndef BRICK_NUMERICS_SAFE_CONVERSIONS_ARM_IMPL_H_
+#define BRICK_NUMERICS_SAFE_CONVERSIONS_ARM_IMPL_H_
 
 #include <cassert>
 #include <limits>
 #include <type_traits>
 
-#include "base/numerics/safe_conversions_impl.h"
+#include "brick/numerics/safe_conversions_impl.h"
 
 namespace base {
 namespace internal {
@@ -48,4 +48,4 @@ struct SaturateFastAsmOp {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_NUMERICS_SAFE_CONVERSIONS_ARM_IMPL_H_
+#endif  // BRICK_NUMERICS_SAFE_CONVERSIONS_ARM_IMPL_H_

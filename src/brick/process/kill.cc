@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/kill.h"
+#include "brick/process/kill.h"
 
-#include "base/bind.h"
-#include "base/process/process_iterator.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/process/process_iterator.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/time/time.h"
 
 namespace base {
 

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_TYPEREF_H_
-#define BASE_MAC_SCOPED_TYPEREF_H_
+#ifndef BRICK_MAC_SCOPED_TYPEREF_H_
+#define BRICK_MAC_SCOPED_TYPEREF_H_
 
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/memory/scoped_policy.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/memory/scoped_policy.h"
 
 namespace base {
 
@@ -136,4 +136,4 @@ class ScopedTypeRef {
 
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_TYPEREF_H_
+#endif  // BRICK_MAC_SCOPED_TYPEREF_H_

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/rand_util.h"
+#include "brick/rand_util.h"
 
 #include <limits.h>
 #include <math.h>
@@ -11,8 +11,8 @@
 #include <algorithm>
 #include <limits>
 
-#include "base/logging.h"
-#include "base/strings/string_util.h"
+#include "brick/logging.h"
+#include "brick/strings/string_util.h"
 
 namespace base {
 

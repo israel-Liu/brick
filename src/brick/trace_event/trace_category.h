@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_CATEGORY_H_
-#define BASE_TRACE_EVENT_TRACE_CATEGORY_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_CATEGORY_H_
+#define BRICK_TRACE_EVENT_TRACE_CATEGORY_H_
 
 #include <stdint.h>
 
@@ -106,4 +106,4 @@ struct TraceCategory {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_CATEGORY_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_CATEGORY_H_

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_SHORTCUT_WIN_H_
-#define BASE_TEST_TEST_SHORTCUT_WIN_H_
+#ifndef BRICK_TEST_TEST_SHORTCUT_WIN_H_
+#define BRICK_TEST_TEST_SHORTCUT_WIN_H_
 
-#include "base/files/file_path.h"
-#include "base/win/shortcut.h"
+#include "brick/files/file_path.h"
+#include "brick/win/shortcut.h"
 
 // Windows shortcut functions used only by tests.
 
@@ -27,4 +27,4 @@ void ValidateShortcut(const FilePath& shortcut_path,
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_SHORTCUT_WIN_H_
+#endif  // BRICK_TEST_TEST_SHORTCUT_WIN_H_

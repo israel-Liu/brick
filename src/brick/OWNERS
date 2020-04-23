@@ -29,8 +29,8 @@ per-file bind*=tzik@chromium.org
 per-file callback*=tzik@chromium.org
 
 # For Android-specific changes:
-per-file *android*=file://base/android/OWNERS
-per-file BUILD.gn=file://base/android/OWNERS
+per-file *android*=file://brick/android/OWNERS
+per-file BUILD.gn=file://brick/android/OWNERS
 
 # For Fuchsia-specific changes:
 per-file *_fuchsia*=file://build/fuchsia/OWNERS

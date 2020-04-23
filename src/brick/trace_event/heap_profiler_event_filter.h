@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_HEAP_PROFILER_EVENT_FILTER_H_
-#define BASE_TRACE_EVENT_HEAP_PROFILER_EVENT_FILTER_H_
+#ifndef BRICK_TRACE_EVENT_HEAP_PROFILER_EVENT_FILTER_H_
+#define BRICK_TRACE_EVENT_HEAP_PROFILER_EVENT_FILTER_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/trace_event/trace_event_filter.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/trace_event/trace_event_filter.h"
 
 namespace base {
 namespace trace_event {
@@ -18,7 +18,7 @@ class TraceEvent;
 // thread-local AllocationContextTracker instance as they are seen.
 // This is used to cheaply construct the heap profiler pseudo stack without
 // having to actually record all events.
-class BASE_EXPORT HeapProfilerEventFilter : public TraceEventFilter {
+class BRICK_EXPORT HeapProfilerEventFilter : public TraceEventFilter {
  public:
   static const char kName[];
 
@@ -37,4 +37,4 @@ class BASE_EXPORT HeapProfilerEventFilter : public TraceEventFilter {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_HEAP_PROFILER_EVENT_FILTER_H_
+#endif  // BRICK_TRACE_EVENT_HEAP_PROFILER_EVENT_FILTER_H_

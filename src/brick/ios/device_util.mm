@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/ios/device_util.h"
+#include "brick/ios/device_util.h"
 
 #include <CommonCrypto/CommonDigest.h>
 #import <UIKit/UIKit.h>
@@ -15,11 +15,11 @@
 
 #include <memory>
 
-#include "base/logging.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/sys_string_conversions.h"
+#include "brick/logging.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/sys_string_conversions.h"
 
 namespace {
 

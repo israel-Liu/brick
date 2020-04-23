@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_SAFE_MATH_H_
-#define BASE_NUMERICS_SAFE_MATH_H_
+#ifndef BRICK_NUMERICS_SAFE_MATH_H_
+#define BRICK_NUMERICS_SAFE_MATH_H_
 
-#include "base/numerics/checked_math.h"
-#include "base/numerics/clamped_math.h"
-#include "base/numerics/safe_conversions.h"
+#include "brick/numerics/checked_math.h"
+#include "brick/numerics/clamped_math.h"
+#include "brick/numerics/safe_conversions.h"
 
-#endif  // BASE_NUMERICS_SAFE_MATH_H_
+#endif  // BRICK_NUMERICS_SAFE_MATH_H_

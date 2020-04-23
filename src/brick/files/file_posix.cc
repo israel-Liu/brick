@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file.h"
+#include "brick/files/file.h"
 
 #include <errno.h>
 #include <fcntl.h>
@@ -10,15 +10,15 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "base/logging.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 #if defined(OS_ANDROID)
-#include "base/os_compat_android.h"
+#include "brick/os_compat_android.h"
 #endif
 
 namespace base {

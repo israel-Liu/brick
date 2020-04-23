@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_CATEGORY_REGISTRY_H_
-#define BASE_TRACE_EVENT_CATEGORY_REGISTRY_H_
+#ifndef BRICK_TRACE_EVENT_CATEGORY_REGISTRY_H_
+#define BRICK_TRACE_EVENT_CATEGORY_REGISTRY_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/base_export.h"
-#include "base/logging.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace trace_event {
@@ -24,7 +24,7 @@ class TraceLog;
 // The reason why this is a fully static class with global state is to allow to
 // statically define known categories as global linker-initialized structs,
 // without requiring static initializers.
-class BASE_EXPORT CategoryRegistry {
+class BRICK_EXPORT CategoryRegistry {
  public:
   // Allows for-each iterations over a slice of the categories array.
   class Range {
@@ -90,4 +90,4 @@ class BASE_EXPORT CategoryRegistry {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_CATEGORY_REGISTRY_H_
+#endif  // BRICK_TRACE_EVENT_CATEGORY_REGISTRY_H_

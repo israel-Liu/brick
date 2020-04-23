@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/mock_callback.h"
+#include "brick/test/mock_callback.h"
 
-#include "base/callback.h"
+#include "brick/callback.h"
 #include "testing/gmock/include/gmock/gmock.h"
 
 using testing::InSequence;

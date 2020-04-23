@@ -2,28 +2,28 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/launcher/test_results_tracker.h"
+#include "brick/test/launcher/test_results_tracker.h"
 
 #include <stddef.h>
 
 #include <memory>
 #include <utility>
 
-#include "base/base64.h"
-#include "base/command_line.h"
-#include "base/files/file.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/format_macros.h"
-#include "base/json/json_writer.h"
-#include "base/json/string_escape.h"
-#include "base/logging.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/test/gtest_util.h"
-#include "base/test/launcher/test_launcher.h"
-#include "base/time/time.h"
-#include "base/values.h"
+#include "brick/base64.h"
+#include "brick/command_line.h"
+#include "brick/files/file.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/format_macros.h"
+#include "brick/json/json_writer.h"
+#include "brick/json/string_escape.h"
+#include "brick/logging.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/launcher/test_launcher.h"
+#include "brick/time/time.h"
+#include "brick/values.h"
 
 namespace base {
 

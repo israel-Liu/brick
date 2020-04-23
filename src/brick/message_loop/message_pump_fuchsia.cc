@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_pump_fuchsia.h"
+#include "brick/message_loop/message_pump_fuchsia.h"
 
 #include <fdio/io.h>
 #include <fdio/private.h>
 #include <zircon/status.h>
 #include <zircon/syscalls.h>
 
-#include "base/auto_reset.h"
-#include "base/fuchsia/fuchsia_logging.h"
-#include "base/logging.h"
+#include "brick/auto_reset.h"
+#include "brick/fuchsia/fuchsia_logging.h"
+#include "brick/logging.h"
 
 namespace base {
 

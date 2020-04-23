@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_HANDLE_H_
-#define BASE_WIN_SCOPED_HANDLE_H_
+#ifndef BRICK_WIN_SCOPED_HANDLE_H_
+#define BRICK_WIN_SCOPED_HANDLE_H_
 
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 
-#include "base/base_export.h"
-#include "base/gtest_prod_util.h"
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 // TODO(rvargas): remove this with the rest of the verifier.
 #if defined(COMPILER_MSVC)
 #include <intrin.h>
-#define BASE_WIN_GET_CALLER _ReturnAddress()
+#define BRICK_WIN_GET_CALLER _ReturnAddress()
 #elif defined(COMPILER_GCC)
-#define BASE_WIN_GET_CALLER __builtin_extract_return_addr(\\
+#define BRICK_WIN_GET_CALLER __builtin_extract_return_addr(\\
     __builtin_return_address(0))
 #endif
 
@@ -72,7 +72,7 @@ class GenericScopedHandle {
 
       if (Traits::IsHandleValid(handle)) {
         handle_ = handle;
-        Verifier::StartTracking(handle, this, BASE_WIN_GET_CALLER,
+        Verifier::StartTracking(handle, this, BRICK_WIN_GET_CALLER,
                                 GetProgramCounter());
       }
       ::SetLastError(last_error);
@@ -88,7 +88,7 @@ class GenericScopedHandle {
     Handle temp = handle_;
     handle_ = Traits::NullHandle();
     if (Traits::IsHandleValid(temp)) {
-      Verifier::StopTracking(temp, this, BASE_WIN_GET_CALLER,
+      Verifier::StopTracking(temp, this, BRICK_WIN_GET_CALLER,
                              GetProgramCounter());
     }
     return temp;
@@ -97,7 +97,7 @@ class GenericScopedHandle {
   // Explicitly closes the owned handle.
   void Close() {
     if (Traits::IsHandleValid(handle_)) {
-      Verifier::StopTracking(handle_, this, BASE_WIN_GET_CALLER,
+      Verifier::StopTracking(handle_, this, BRICK_WIN_GET_CALLER,
                              GetProgramCounter());
 
       Traits::CloseHandle(handle_);
@@ -113,7 +113,7 @@ class GenericScopedHandle {
   DISALLOW_COPY_AND_ASSIGN(GenericScopedHandle);
 };
 
-#undef BASE_WIN_GET_CALLER
+#undef BRICK_WIN_GET_CALLER
 
 // The traits class for Win32 handles that can be closed via CloseHandle() API.
 class HandleTraits {
@@ -121,7 +121,7 @@ class HandleTraits {
   typedef HANDLE Handle;
 
   // Closes the handle.
-  static bool BASE_EXPORT CloseHandle(HANDLE handle);
+  static bool BRICK_EXPORT CloseHandle(HANDLE handle);
 
   // Returns true if the handle value is valid.
   static bool IsHandleValid(HANDLE handle) {
@@ -152,7 +152,7 @@ class DummyVerifierTraits {
 };
 
 // Performs actual run-time tracking.
-class BASE_EXPORT VerifierTraits {
+class BRICK_EXPORT VerifierTraits {
  public:
   typedef HANDLE Handle;
 
@@ -170,14 +170,14 @@ typedef GenericScopedHandle<HandleTraits, VerifierTraits> ScopedHandle;
 // This function may be called by the embedder to disable the use of
 // VerifierTraits at runtime. It has no effect if DummyVerifierTraits is used
 // for ScopedHandle.
-BASE_EXPORT void DisableHandleVerifier();
+BRICK_EXPORT void DisableHandleVerifier();
 
 // This should be called whenever the OS is closing a handle, if extended
 // verification of improper handle closing is desired. If |handle| is being
 // tracked by the handle verifier and ScopedHandle is not the one closing it,
 // a CHECK is generated.
-BASE_EXPORT void OnHandleBeingClosed(HANDLE handle);
+BRICK_EXPORT void OnHandleBeingClosed(HANDLE handle);
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_HANDLE_H_
+#endif  // BRICK_WIN_SCOPED_HANDLE_H_

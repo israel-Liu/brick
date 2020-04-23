@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/histogram_base.h"
+#include "brick/metrics/histogram_base.h"
 
 #include <limits.h>
 
@@ -10,20 +10,20 @@
 #include <set>
 #include <utility>
 
-#include "base/json/json_string_value_serializer.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/metrics/histogram.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/metrics/histogram_samples.h"
-#include "base/metrics/sparse_histogram.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/pickle.h"
-#include "base/process/process_handle.h"
-#include "base/rand_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/lock.h"
-#include "base/values.h"
+#include "brick/json/json_string_value_serializer.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/metrics/histogram_samples.h"
+#include "brick/metrics/sparse_histogram.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/pickle.h"
+#include "brick/process/process_handle.h"
+#include "brick/rand_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/lock.h"
+#include "brick/values.h"
 
 namespace base {
 

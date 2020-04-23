@@ -12,11 +12,11 @@
 // We provide a simple one argument spin wait (for 1 second), and a generic
 // spin wait (for longer periods of time).
 
-#ifndef BASE_SYNCHRONIZATION_SPIN_WAIT_H_
-#define BASE_SYNCHRONIZATION_SPIN_WAIT_H_
+#ifndef BRICK_SYNCHRONIZATION_SPIN_WAIT_H_
+#define BRICK_SYNCHRONIZATION_SPIN_WAIT_H_
 
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 
 // Provide a macro that will wait no longer than 1 second for an asynchronous
 // change is the value of an expression.
@@ -47,4 +47,4 @@
     } \
   } while (0)
 
-#endif  // BASE_SYNCHRONIZATION_SPIN_WAIT_H_
+#endif  // BRICK_SYNCHRONIZATION_SPIN_WAIT_H_

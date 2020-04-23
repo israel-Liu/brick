@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PENDING_TASK_H_
-#define BASE_PENDING_TASK_H_
+#ifndef BRICK_PENDING_TASK_H_
+#define BRICK_PENDING_TASK_H_
 
 #include <array>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/containers/queue.h"
-#include "base/location.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/containers/queue.h"
+#include "brick/location.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -22,7 +22,7 @@ enum class Nestable {
 
 // Contains data about a pending task. Stored in TaskQueue and DelayedTaskQueue
 // for use by classes that queue and execute tasks.
-struct BASE_EXPORT PendingTask {
+struct BRICK_EXPORT PendingTask {
   PendingTask(const Location& posted_from,
               OnceClosure task,
               TimeTicks delayed_run_time = TimeTicks(),
@@ -65,4 +65,4 @@ using DelayedTaskQueue = std::priority_queue<base::PendingTask>;
 
 }  // namespace base
 
-#endif  // BASE_PENDING_TASK_H_
+#endif  // BRICK_PENDING_TASK_H_

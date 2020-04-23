@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_AEDESC_H_
-#define BASE_MAC_SCOPED_AEDESC_H_
+#ifndef BRICK_MAC_SCOPED_AEDESC_H_
+#define BRICK_MAC_SCOPED_AEDESC_H_
 
 #import <CoreServices/CoreServices.h>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace mac {
@@ -49,4 +49,4 @@ class ScopedAEDesc {
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_AEDESC_H_
+#endif  // BRICK_MAC_SCOPED_AEDESC_H_

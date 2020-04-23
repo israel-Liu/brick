@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_MOCK_CHROME_APPLICATION_MAC_H_
-#define BASE_TEST_MOCK_CHROME_APPLICATION_MAC_H_
+#ifndef BRICK_TEST_MOCK_CHROME_APPLICATION_MAC_H_
+#define BRICK_TEST_MOCK_CHROME_APPLICATION_MAC_H_
 
 #if defined(__OBJC__)
 
 #import <AppKit/AppKit.h>
 
-#include "base/mac/scoped_sending_event.h"
-#include "base/message_loop/message_pump_mac.h"
+#include "brick/mac/scoped_sending_event.h"
+#include "brick/message_loop/message_pump_mac.h"
 
 // A basic implementation of CrAppProtocol and
 // CrAppControlProtocol. This can be used in tests that need an
@@ -30,4 +30,4 @@ namespace mock_cr_app {
 void RegisterMockCrApp();
 }  // namespace mock_cr_app
 
-#endif  // BASE_TEST_MOCK_CHROME_APPLICATION_MAC_H_
+#endif  // BRICK_TEST_MOCK_CHROME_APPLICATION_MAC_H_

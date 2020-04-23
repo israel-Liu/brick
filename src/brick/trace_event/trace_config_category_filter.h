@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_CONFIG_CATEGORY_FILTER_H_
-#define BASE_TRACE_EVENT_TRACE_CONFIG_CATEGORY_FILTER_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_CONFIG_CATEGORY_FILTER_H_
+#define BRICK_TRACE_EVENT_TRACE_CONFIG_CATEGORY_FILTER_H_
 
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/strings/string_piece.h"
-#include "base/values.h"
+#include "brick/base_export.h"
+#include "brick/strings/string_piece.h"
+#include "brick/values.h"
 
 namespace base {
 namespace trace_event {
 
 // Configuration of categories enabled and disabled in TraceConfig.
-class BASE_EXPORT TraceConfigCategoryFilter {
+class BRICK_EXPORT TraceConfigCategoryFilter {
  public:
   using StringList = std::vector<std::string>;
 
@@ -78,4 +78,4 @@ class BASE_EXPORT TraceConfigCategoryFilter {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_CONFIG_CATEGORY_FILTER_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_CONFIG_CATEGORY_FILTER_H_

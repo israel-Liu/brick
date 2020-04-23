@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_MAC_LOGGING_H_
-#define BASE_MAC_MAC_LOGGING_H_
+#ifndef BRICK_MAC_MAC_LOGGING_H_
+#define BRICK_MAC_MAC_LOGGING_H_
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(OS_IOS)
@@ -30,9 +30,9 @@
 namespace logging {
 
 // Returns a UTF8 description from an OS X Status error.
-BASE_EXPORT std::string DescriptionFromOSStatus(OSStatus err);
+BRICK_EXPORT std::string DescriptionFromOSStatus(OSStatus err);
 
-class BASE_EXPORT OSStatusLogMessage : public logging::LogMessage {
+class BRICK_EXPORT OSStatusLogMessage : public logging::LogMessage {
  public:
   OSStatusLogMessage(const char* file_path,
                      int line,
@@ -95,4 +95,4 @@ class BASE_EXPORT OSStatusLogMessage : public logging::LogMessage {
               DCHECK_IS_ON() && !(condition))     \
       << "Check failed: " #condition << ". "
 
-#endif  // BASE_MAC_MAC_LOGGING_H_
+#endif  // BRICK_MAC_MAC_LOGGING_H_

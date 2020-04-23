@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TEST_UTILS_H_
-#define BASE_TASK_SCHEDULER_TEST_UTILS_H_
+#ifndef BRICK_TASK_SCHEDULER_TEST_UTILS_H_
+#define BRICK_TASK_SCHEDULER_TEST_UTILS_H_
 
-#include "base/memory/ref_counted.h"
-#include "base/task_runner.h"
-#include "base/task_scheduler/scheduler_worker_observer.h"
-#include "base/task_scheduler/sequence.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/task_runner.h"
+#include "brick/task_scheduler/scheduler_worker_observer.h"
+#include "brick/task_scheduler/sequence.h"
 #include "testing/gmock/include/gmock/gmock.h"
 
 namespace base {
@@ -49,4 +49,4 @@ scoped_refptr<TaskRunner> CreateTaskRunnerWithExecutionMode(
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TEST_UTILS_H_
+#endif  // BRICK_TASK_SCHEDULER_TEST_UTILS_H_

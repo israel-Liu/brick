@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/user_metrics.h"
+#include "brick/metrics/user_metrics.h"
 
 #include <stddef.h>
 
 #include <vector>
 
-#include "base/bind.h"
-#include "base/lazy_instance.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/threading/thread_checker.h"
+#include "brick/bind.h"
+#include "brick/lazy_instance.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/threading/thread_checker.h"
 
 namespace base {
 namespace {

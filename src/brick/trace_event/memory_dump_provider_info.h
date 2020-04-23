@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_MEMORY_DUMP_PROVIDER_INFO_H_
-#define BASE_TRACE_EVENT_MEMORY_DUMP_PROVIDER_INFO_H_
+#ifndef BRICK_TRACE_EVENT_MEMORY_DUMP_PROVIDER_INFO_H_
+#define BRICK_TRACE_EVENT_MEMORY_DUMP_PROVIDER_INFO_H_
 
 #include <memory>
 #include <set>
 
-#include "base/base_export.h"
-#include "base/memory/ref_counted.h"
-#include "base/trace_event/memory_dump_provider.h"
+#include "brick/base_export.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/trace_event/memory_dump_provider.h"
 
 namespace base {
 
@@ -42,7 +42,7 @@ namespace trace_event {
 //   MDM::SetupNextMemoryDump() or MDM::InvokeOnMemoryDump(), when the copy
 //   inside ProcessMemoryDumpAsyncState is erase()-d.
 // - The PeakDetector can keep extra refptrs when enabled.
-struct BASE_EXPORT MemoryDumpProviderInfo
+struct BRICK_EXPORT MemoryDumpProviderInfo
     : public RefCountedThreadSafe<MemoryDumpProviderInfo> {
  public:
   // Define a total order based on the |task_runner| affinity, so that MDPs
@@ -105,4 +105,4 @@ struct BASE_EXPORT MemoryDumpProviderInfo
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_MEMORY_DUMP_PROVIDER_INFO_H_
+#endif  // BRICK_TRACE_EVENT_MEMORY_DUMP_PROVIDER_INFO_H_

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_EVENT_ARGUMENT_H_
-#define BASE_TRACE_EVENT_TRACE_EVENT_ARGUMENT_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_EVENT_ARGUMENT_H_
+#define BRICK_TRACE_EVENT_TRACE_EVENT_ARGUMENT_H_
 
 #include <stddef.h>
 
@@ -11,10 +11,10 @@
 #include <string>
 #include <vector>
 
-#include "base/macros.h"
-#include "base/pickle.h"
-#include "base/strings/string_piece.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/macros.h"
+#include "brick/pickle.h"
+#include "brick/strings/string_piece.h"
+#include "brick/trace_event/trace_event_impl.h"
 
 namespace base {
 
@@ -22,7 +22,7 @@ class Value;
 
 namespace trace_event {
 
-class BASE_EXPORT TracedValue : public ConvertableToTraceFormat {
+class BRICK_EXPORT TracedValue : public ConvertableToTraceFormat {
  public:
   TracedValue();
   explicit TracedValue(size_t capacity);
@@ -89,4 +89,4 @@ class BASE_EXPORT TracedValue : public ConvertableToTraceFormat {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_EVENT_ARGUMENT_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_EVENT_ARGUMENT_H_

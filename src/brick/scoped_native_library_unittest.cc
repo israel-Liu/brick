@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/scoped_native_library.h"
+#include "brick/scoped_native_library.h"
 
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_WIN)
-#include "base/files/file_path.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/files/file_path.h"
+#include "brick/strings/utf_string_conversions.h"
 #endif
 
 namespace base {

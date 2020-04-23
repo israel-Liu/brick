@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/memory_usage_estimator.h"
+#include "brick/trace_event/memory_usage_estimator.h"
 
 #include <stdlib.h>
 
-#include "base/memory/ptr_util.h"
-#include "base/strings/string16.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string16.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

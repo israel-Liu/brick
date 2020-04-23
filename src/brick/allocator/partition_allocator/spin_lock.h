@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_SPIN_LOCK_H
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_SPIN_LOCK_H
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_SPIN_LOCK_H
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_SPIN_LOCK_H
 
 #include <atomic>
 #include <memory>
 #include <mutex>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
 
 // Spinlock is a simple spinlock class based on the standard CPU primitive of
 // atomic increment and decrement of an int at a given memory address. These are
@@ -20,7 +20,7 @@
 namespace base {
 namespace subtle {
 
-class BASE_EXPORT SpinLock {
+class BRICK_EXPORT SpinLock {
  public:
   constexpr SpinLock() = default;
   ~SpinLock() = default;
@@ -47,4 +47,4 @@ class BASE_EXPORT SpinLock {
 }  // namespace subtle
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_SPIN_LOCK_H
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_SPIN_LOCK_H

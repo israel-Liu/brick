@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/launch.h"
+#include "brick/process/launch.h"
 
 #include <dirent.h>
 #include <errno.h>
@@ -25,24 +25,24 @@
 #include <memory>
 #include <set>
 
-#include "base/command_line.h"
-#include "base/compiler_specific.h"
-#include "base/debug/debugger.h"
-#include "base/debug/stack_trace.h"
-#include "base/files/dir_reader_posix.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_file.h"
-#include "base/logging.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/process/process.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/time/time.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/command_line.h"
+#include "brick/compiler_specific.h"
+#include "brick/debug/debugger.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/files/dir_reader_posix.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_file.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/process/process.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/time/time.h"
+#include "brick/trace_event/trace_event.h"
 #include "build/build_config.h"
 
 #if defined(OS_LINUX) || defined(OS_AIX)
@@ -62,7 +62,7 @@
 #include <crt_externs.h>
 #include <sys/event.h>
 
-#include "base/feature_list.h"
+#include "brick/feature_list.h"
 #else
 extern char** environ;
 #endif

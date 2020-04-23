@@ -6,15 +6,15 @@
 
 #include <sstream>
 
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
-#include "base/test/scoped_locale.h"
+#include "brick/test/scoped_locale.h"
 #endif
 
 // This macro helps avoid wrapped lines in the test structs.

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/mac/objc_release_properties.h"
-#include "base/stl_util.h"
+#include "brick/mac/objc_release_properties.h"
+#include "brick/stl_util.h"
 
-#import "base/mac/scoped_nsautorelease_pool.h"
+#import "brick/mac/scoped_nsautorelease_pool.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #import <objc/runtime.h>

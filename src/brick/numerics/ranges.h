@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_RANGES_H_
-#define BASE_NUMERICS_RANGES_H_
+#ifndef BRICK_NUMERICS_RANGES_H_
+#define BRICK_NUMERICS_RANGES_H_
 
 #include <algorithm>
 #include <cmath>
@@ -24,4 +24,4 @@ constexpr bool IsApproximatelyEqual(T lhs, T rhs, T tolerance) {
 
 }  // namespace base
 
-#endif  // BASE_NUMERICS_RANGES_H_
+#endif  // BRICK_NUMERICS_RANGES_H_

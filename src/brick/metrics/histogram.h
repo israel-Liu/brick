@@ -49,7 +49,7 @@
 // gigantic range with the addition of very few buckets.
 
 // Usually we use macros to define and use a histogram, which are defined in
-// base/metrics/histogram_macros.h. Note: Callers should include that header
+// brick/metrics/histogram_macros.h. Note: Callers should include that header
 // directly if they only access the histogram APIs through macros.
 //
 // Macros use a pattern involving a function static variable, that is a pointer
@@ -61,8 +61,8 @@
 // and relatively fast, set of counters.  To avoid races at shutdown, the static
 // pointer is NOT deleted, and we leak the histograms at process termination.
 
-#ifndef BASE_METRICS_HISTOGRAM_H_
-#define BASE_METRICS_HISTOGRAM_H_
+#ifndef BRICK_METRICS_HISTOGRAM_H_
+#define BRICK_METRICS_HISTOGRAM_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -72,17 +72,17 @@
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/containers/span.h"
-#include "base/gtest_prod_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/metrics/bucket_ranges.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/histogram_samples.h"
-#include "base/strings/string_piece.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/containers/span.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/metrics/bucket_ranges.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/histogram_samples.h"
+#include "brick/strings/string_piece.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -97,7 +97,7 @@ class PickleIterator;
 class SampleVector;
 class SampleVectorBase;
 
-class BASE_EXPORT Histogram : public HistogramBase {
+class BRICK_EXPORT Histogram : public HistogramBase {
  public:
   // Initialize maximum number of buckets in histograms as 16,384.
   static const uint32_t kBucketCount_MAX;
@@ -180,7 +180,7 @@ class BASE_EXPORT Histogram : public HistogramBase {
   // produce a false-alarm if a race occurred in the reading of the data during
   // a SnapShot process, but should otherwise be false at all times (unless we
   // have memory over-writes, or DRAM failures). Flag definitions are located
-  // under "enum Inconsistency" in base/metrics/histogram_base.h.
+  // under "enum Inconsistency" in brick/metrics/histogram_base.h.
   uint32_t FindCorruption(const HistogramSamples& samples) const override;
 
   //----------------------------------------------------------------------------
@@ -278,7 +278,7 @@ class BASE_EXPORT Histogram : public HistogramBase {
   friend class StatisticsRecorder;  // To allow it to delete duplicates.
   friend class StatisticsRecorderTest;
 
-  friend BASE_EXPORT HistogramBase* DeserializeHistogramInfo(
+  friend BRICK_EXPORT HistogramBase* DeserializeHistogramInfo(
       base::PickleIterator* iter);
   static HistogramBase* DeserializeInfoImpl(base::PickleIterator* iter);
 
@@ -339,7 +339,7 @@ class BASE_EXPORT Histogram : public HistogramBase {
 
 // LinearHistogram is a more traditional histogram, with evenly spaced
 // buckets.
-class BASE_EXPORT LinearHistogram : public Histogram {
+class BRICK_EXPORT LinearHistogram : public Histogram {
  public:
   ~LinearHistogram() override;
 
@@ -434,7 +434,7 @@ class BASE_EXPORT LinearHistogram : public Histogram {
   bool PrintEmptyBucket(uint32_t index) const override;
 
  private:
-  friend BASE_EXPORT HistogramBase* DeserializeHistogramInfo(
+  friend BRICK_EXPORT HistogramBase* DeserializeHistogramInfo(
       base::PickleIterator* iter);
   static HistogramBase* DeserializeInfoImpl(base::PickleIterator* iter);
 
@@ -456,7 +456,7 @@ class BASE_EXPORT LinearHistogram : public Histogram {
 //
 // This is most useful when adding many counts at once via AddCount() that can
 // cause overflows of the 31-bit counters, usually with an enum as the value.
-class BASE_EXPORT ScaledLinearHistogram {
+class BRICK_EXPORT ScaledLinearHistogram {
   using AtomicCount = Histogram::AtomicCount;
   using Sample = Histogram::Sample;
 
@@ -499,7 +499,7 @@ class BASE_EXPORT ScaledLinearHistogram {
 //------------------------------------------------------------------------------
 
 // BooleanHistogram is a histogram for booleans.
-class BASE_EXPORT BooleanHistogram : public LinearHistogram {
+class BRICK_EXPORT BooleanHistogram : public LinearHistogram {
  public:
   static HistogramBase* FactoryGet(const std::string& name, int32_t flags);
 
@@ -531,7 +531,7 @@ class BASE_EXPORT BooleanHistogram : public LinearHistogram {
                    HistogramSamples::Metadata* meta,
                    HistogramSamples::Metadata* logged_meta);
 
-  friend BASE_EXPORT HistogramBase* DeserializeHistogramInfo(
+  friend BRICK_EXPORT HistogramBase* DeserializeHistogramInfo(
       base::PickleIterator* iter);
   static HistogramBase* DeserializeInfoImpl(base::PickleIterator* iter);
 
@@ -541,7 +541,7 @@ class BASE_EXPORT BooleanHistogram : public LinearHistogram {
 //------------------------------------------------------------------------------
 
 // CustomHistogram is a histogram for a set of custom integers.
-class BASE_EXPORT CustomHistogram : public Histogram {
+class BRICK_EXPORT CustomHistogram : public Histogram {
  public:
   // |custom_ranges| contains a vector of limits on ranges. Each limit should be
   // > 0 and < kSampleType_MAX. (Currently 0 is still accepted for backward
@@ -596,7 +596,7 @@ class BASE_EXPORT CustomHistogram : public Histogram {
   double GetBucketSize(Count current, uint32_t i) const override;
 
  private:
-  friend BASE_EXPORT HistogramBase* DeserializeHistogramInfo(
+  friend BRICK_EXPORT HistogramBase* DeserializeHistogramInfo(
       base::PickleIterator* iter);
   static HistogramBase* DeserializeInfoImpl(base::PickleIterator* iter);
 
@@ -607,4 +607,4 @@ class BASE_EXPORT CustomHistogram : public Histogram {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_HISTOGRAM_H_
+#endif  // BRICK_METRICS_HISTOGRAM_H_

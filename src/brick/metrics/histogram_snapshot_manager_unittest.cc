@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/histogram_snapshot_manager.h"
+#include "brick/metrics/histogram_snapshot_manager.h"
 
 #include <string>
 #include <vector>
 
-#include "base/macros.h"
-#include "base/metrics/histogram_delta_serialization.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/metrics/sample_vector.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/stl_util.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_delta_serialization.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/metrics/sample_vector.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/stl_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

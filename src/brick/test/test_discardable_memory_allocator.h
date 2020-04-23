@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_DISCARDABLE_MEMORY_ALLOCATOR_H_
-#define BASE_TEST_TEST_DISCARDABLE_MEMORY_ALLOCATOR_H_
+#ifndef BRICK_TEST_TEST_DISCARDABLE_MEMORY_ALLOCATOR_H_
+#define BRICK_TEST_TEST_DISCARDABLE_MEMORY_ALLOCATOR_H_
 
 #include <stddef.h>
 
-#include "base/macros.h"
-#include "base/memory/discardable_memory_allocator.h"
+#include "brick/macros.h"
+#include "brick/memory/discardable_memory_allocator.h"
 
 namespace base {
 
@@ -29,4 +29,4 @@ class TestDiscardableMemoryAllocator : public DiscardableMemoryAllocator {
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_DISCARDABLE_MEMORY_ALLOCATOR_H_
+#endif  // BRICK_TEST_TEST_DISCARDABLE_MEMORY_ALLOCATOR_H_

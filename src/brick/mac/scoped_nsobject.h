@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_NSOBJECT_H_
-#define BASE_MAC_SCOPED_NSOBJECT_H_
+#ifndef BRICK_MAC_SCOPED_NSOBJECT_H_
+#define BRICK_MAC_SCOPED_NSOBJECT_H_
 
 #include <type_traits>
 
@@ -12,9 +12,9 @@
 // singled out because it is most typically included from other header files.
 #import <Foundation/NSObject.h>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/mac/scoped_typeref.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/mac/scoped_typeref.h"
 
 #if !defined(__has_feature) || !__has_feature(objc_arc)
 @class NSAutoreleasePool;
@@ -51,11 +51,11 @@ namespace base {
 
 namespace internal {
 
-BASE_EXPORT id ScopedNSProtocolTraitsRetain(__unsafe_unretained id obj)
+BRICK_EXPORT id ScopedNSProtocolTraitsRetain(__unsafe_unretained id obj)
     __attribute((ns_returns_not_retained));
-BASE_EXPORT id ScopedNSProtocolTraitsAutoRelease(__unsafe_unretained id obj)
+BRICK_EXPORT id ScopedNSProtocolTraitsAutoRelease(__unsafe_unretained id obj)
     __attribute((ns_returns_not_retained));
-BASE_EXPORT void ScopedNSProtocolTraitsRelease(__unsafe_unretained id obj);
+BRICK_EXPORT void ScopedNSProtocolTraitsRelease(__unsafe_unretained id obj);
 
 // Traits for ScopedTypeRef<>. As this class may be compiled from file with
 // Automatic Reference Counting enable or not all methods have annotation to
@@ -237,4 +237,4 @@ class scoped_nsobject<id> : public scoped_nsprotocol<id> {
 
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_NSOBJECT_H_
+#endif  // BRICK_MAC_SCOPED_NSOBJECT_H_

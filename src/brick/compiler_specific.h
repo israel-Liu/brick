@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_COMPILER_SPECIFIC_H_
-#define BASE_COMPILER_SPECIFIC_H_
+#ifndef BRICK_COMPILER_SPECIFIC_H_
+#define BRICK_COMPILER_SPECIFIC_H_
 
 #include "build/build_config.h"
 
@@ -121,7 +121,7 @@
 // Annotate a function indicating the caller must examine the return value.
 // Use like:
 //   int foo() WARN_UNUSED_RESULT;
-// To explicitly ignore a result, see |ignore_result()| in base/macros.h.
+// To explicitly ignore a result, see |ignore_result()| in brick/macros.h.
 #undef WARN_UNUSED_RESULT
 #if defined(COMPILER_GCC) || defined(__clang__)
 #define WARN_UNUSED_RESULT __attribute__((warn_unused_result))
@@ -228,4 +228,4 @@
 #define FALLTHROUGH
 #endif
 
-#endif  // BASE_COMPILER_SPECIFIC_H_
+#endif  // BRICK_COMPILER_SPECIFIC_H_

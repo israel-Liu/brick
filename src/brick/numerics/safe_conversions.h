@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_SAFE_CONVERSIONS_H_
-#define BASE_NUMERICS_SAFE_CONVERSIONS_H_
+#ifndef BRICK_NUMERICS_SAFE_CONVERSIONS_H_
+#define BRICK_NUMERICS_SAFE_CONVERSIONS_H_
 
 #include <stddef.h>
 
@@ -11,19 +11,19 @@
 #include <ostream>
 #include <type_traits>
 
-#include "base/numerics/safe_conversions_impl.h"
+#include "brick/numerics/safe_conversions_impl.h"
 
 #if !defined(__native_client__) && (defined(__ARMEL__) || defined(__arch64__))
-#include "base/numerics/safe_conversions_arm_impl.h"
-#define BASE_HAS_OPTIMIZED_SAFE_CONVERSIONS (1)
+#include "brick/numerics/safe_conversions_arm_impl.h"
+#define BRICK_HAS_OPTIMIZED_SAFE_CONVERSIONS (1)
 #else
-#define BASE_HAS_OPTIMIZED_SAFE_CONVERSIONS (0)
+#define BRICK_HAS_OPTIMIZED_SAFE_CONVERSIONS (0)
 #endif
 
 namespace base {
 namespace internal {
 
-#if !BASE_HAS_OPTIMIZED_SAFE_CONVERSIONS
+#if !BRICK_HAS_OPTIMIZED_SAFE_CONVERSIONS
 template <typename Dst, typename Src>
 struct SaturateFastAsmOp {
   static const bool is_supported = false;
@@ -32,8 +32,8 @@ struct SaturateFastAsmOp {
     return CheckOnFailure::template HandleFailure<Dst>();
   }
 };
-#endif  // BASE_HAS_OPTIMIZED_SAFE_CONVERSIONS
-#undef BASE_HAS_OPTIMIZED_SAFE_CONVERSIONS
+#endif  // BRICK_HAS_OPTIMIZED_SAFE_CONVERSIONS
+#undef BRICK_HAS_OPTIMIZED_SAFE_CONVERSIONS
 
 // The following special case a few specific integer conversions where we can
 // eke out better performance than range checking.
@@ -105,7 +105,7 @@ constexpr Dst checked_cast(Src value) {
   // This throws a compile-time error on evaluating the constexpr if it can be
   // determined at compile-time as failing, otherwise it will CHECK at runtime.
   using SrcType = typename internal::UnderlyingType<Src>::type;
-  return BASE_NUMERICS_LIKELY((IsValueInRangeForNumericType<Dst>(value)))
+  return BRICK_NUMERICS_LIKELY((IsValueInRangeForNumericType<Dst>(value)))
              ? static_cast<Dst>(static_cast<SrcType>(value))
              : CheckHandler::template HandleFailure<Dst>();
 }
@@ -176,7 +176,7 @@ struct SaturateFastOp<
     Dst saturated = CommonMaxOrMin<Dst, Src>(
         IsMaxInRangeForNumericType<Dst, Src>() ||
         (!IsMinInRangeForNumericType<Dst, Src>() && IsValueNegative(value)));
-    return BASE_NUMERICS_LIKELY(IsValueInRangeForNumericType<Dst>(value))
+    return BRICK_NUMERICS_LIKELY(IsValueInRangeForNumericType<Dst>(value))
                ? static_cast<Dst>(value)
                : saturated;
   }
@@ -306,7 +306,7 @@ std::ostream& operator<<(std::ostream& os, const StrictNumeric<T>& value) {
   return os;
 }
 
-#define BASE_NUMERIC_COMPARISON_OPERATORS(CLASS, NAME, OP)              \
+#define BRICK_NUMERIC_COMPARISON_OPERATORS(CLASS, NAME, OP)              \
   template <typename L, typename R,                                     \
             typename std::enable_if<                                    \
                 internal::Is##CLASS##Op<L, R>::value>::type* = nullptr> \
@@ -315,12 +315,12 @@ std::ostream& operator<<(std::ostream& os, const StrictNumeric<T>& value) {
                        typename UnderlyingType<R>::type>(lhs, rhs);     \
   }
 
-BASE_NUMERIC_COMPARISON_OPERATORS(Strict, IsLess, <);
-BASE_NUMERIC_COMPARISON_OPERATORS(Strict, IsLessOrEqual, <=);
-BASE_NUMERIC_COMPARISON_OPERATORS(Strict, IsGreater, >);
-BASE_NUMERIC_COMPARISON_OPERATORS(Strict, IsGreaterOrEqual, >=);
-BASE_NUMERIC_COMPARISON_OPERATORS(Strict, IsEqual, ==);
-BASE_NUMERIC_COMPARISON_OPERATORS(Strict, IsNotEqual, !=);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Strict, IsLess, <);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Strict, IsLessOrEqual, <=);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Strict, IsGreater, >);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Strict, IsGreaterOrEqual, >=);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Strict, IsEqual, ==);
+BRICK_NUMERIC_COMPARISON_OPERATORS(Strict, IsNotEqual, !=);
 
 };  // namespace internal
 
@@ -341,4 +341,4 @@ using SizeT = StrictNumeric<size_t>;
 
 }  // namespace base
 
-#endif  // BASE_NUMERICS_SAFE_CONVERSIONS_H_
+#endif  // BRICK_NUMERICS_SAFE_CONVERSIONS_H_

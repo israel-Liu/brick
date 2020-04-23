@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/enum_variant.h"
+#include "brick/win/enum_variant.h"
 
-#include "base/win/scoped_com_initializer.h"
+#include "brick/win/scoped_com_initializer.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

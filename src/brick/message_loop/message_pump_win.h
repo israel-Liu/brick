@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_WIN_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_WIN_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_WIN_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_WIN_H_
 
 #include <windows.h>
 
 #include <list>
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/message_loop/message_pump.h"
-#include "base/time/time.h"
-#include "base/win/message_window.h"
-#include "base/win/scoped_handle.h"
+#include "brick/base_export.h"
+#include "brick/message_loop/message_pump.h"
+#include "brick/time/time.h"
+#include "brick/win/message_window.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 
 // MessagePumpWin serves as the base for specialized versions of the MessagePump
 // for Windows. It provides basic functionality like handling of observers and
 // controlling the lifetime of the message pump.
-class BASE_EXPORT MessagePumpWin : public MessagePump {
+class BRICK_EXPORT MessagePumpWin : public MessagePump {
  public:
   MessagePumpWin();
 
@@ -115,7 +115,7 @@ class BASE_EXPORT MessagePumpWin : public MessagePump {
 // an excellent choice.  It is also helpful that the starter messages that are
 // placed in the queue when new task arrive also awakens DoRunLoop.
 //
-class BASE_EXPORT MessagePumpForUI : public MessagePumpWin {
+class BRICK_EXPORT MessagePumpForUI : public MessagePumpWin {
  public:
   MessagePumpForUI();
   ~MessagePumpForUI() override;
@@ -145,9 +145,9 @@ class BASE_EXPORT MessagePumpForUI : public MessagePumpWin {
 // deal with Windows mesagges, and instead has a Run loop based on Completion
 // Ports so it is better suited for IO operations.
 //
-class BASE_EXPORT MessagePumpForIO : public MessagePumpWin {
+class BRICK_EXPORT MessagePumpForIO : public MessagePumpWin {
  public:
-  struct BASE_EXPORT IOContext {
+  struct BRICK_EXPORT IOContext {
     IOContext();
     OVERLAPPED overlapped;
   };
@@ -251,4 +251,4 @@ class BASE_EXPORT MessagePumpForIO : public MessagePumpWin {
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_WIN_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_WIN_H_

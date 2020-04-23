@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sequence_checker_impl.h"
+#include "brick/sequence_checker_impl.h"
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/sequence_token.h"
-#include "base/threading/thread_checker_impl.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/sequence_token.h"
+#include "brick/threading/thread_checker_impl.h"
 
 namespace base {
 

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/fuchsia/services_directory.h"
+#include "brick/fuchsia/services_directory.h"
 
 #include <lib/async/default.h>
 #include <lib/svc/dir.h>
 #include <zircon/process.h>
 #include <zircon/processargs.h>
 
-#include "base/fuchsia/fuchsia_logging.h"
-#include "base/message_loop/message_loop_current.h"
-#include "base/no_destructor.h"
+#include "brick/fuchsia/fuchsia_logging.h"
+#include "brick/message_loop/message_loop_current.h"
+#include "brick/no_destructor.h"
 
 namespace base {
 namespace fuchsia {

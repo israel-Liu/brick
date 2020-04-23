@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_MANAGER_H_
-#define BASE_TASK_SCHEDULER_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_MANAGER_H_
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_MANAGER_H_
+#define BRICK_TASK_SCHEDULER_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_MANAGER_H_
 
 #include <memory>
 #include <string>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/task_scheduler/environment_config.h"
-#include "base/task_scheduler/scheduler_lock.h"
-#include "base/task_scheduler/single_thread_task_runner_thread_mode.h"
-#include "base/task_scheduler/tracked_ref.h"
-#include "base/threading/platform_thread.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/task_scheduler/environment_config.h"
+#include "brick/task_scheduler/scheduler_lock.h"
+#include "brick/task_scheduler/single_thread_task_runner_thread_mode.h"
+#include "brick/task_scheduler/tracked_ref.h"
+#include "brick/threading/platform_thread.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -48,7 +48,7 @@ class SchedulerWorkerDelegate;
 // No threads are created (and hence no tasks can run) before Start() is called.
 //
 // This class is thread-safe.
-class BASE_EXPORT SchedulerSingleThreadTaskRunnerManager final {
+class BRICK_EXPORT SchedulerSingleThreadTaskRunnerManager final {
  public:
   SchedulerSingleThreadTaskRunnerManager(
       TrackedRef<TaskTracker> task_tracker,
@@ -152,4 +152,4 @@ class BASE_EXPORT SchedulerSingleThreadTaskRunnerManager final {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_MANAGER_H_
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_SINGLE_THREAD_TASK_RUNNER_MANAGER_H_

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_MESSAGE_LOOP_H_
-#define BASE_TEST_TEST_MESSAGE_LOOP_H_
+#ifndef BRICK_TEST_TEST_MESSAGE_LOOP_H_
+#define BRICK_TEST_TEST_MESSAGE_LOOP_H_
 
-#include "base/message_loop/message_loop.h"
+#include "brick/message_loop/message_loop.h"
 
 namespace base {
 
@@ -31,4 +31,4 @@ class TestMessageLoop {
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_MESSAGE_LOOP_H_
+#endif  // BRICK_TEST_TEST_MESSAGE_LOOP_H_

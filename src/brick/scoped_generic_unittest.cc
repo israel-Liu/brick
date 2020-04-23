@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/scoped_generic.h"
+#include "brick/scoped_generic.h"
 
 #include <utility>
 #include <vector>

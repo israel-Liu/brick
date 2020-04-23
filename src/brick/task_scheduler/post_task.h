@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_POST_TASK_H_
-#define BASE_TASK_SCHEDULER_POST_TASK_H_
+#ifndef BRICK_TASK_SCHEDULER_POST_TASK_H_
+#define BRICK_TASK_SCHEDULER_POST_TASK_H_
 
 #include <utility>
 
-#include "base/base_export.h"
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/location.h"
-#include "base/memory/ref_counted.h"
-#include "base/post_task_and_reply_with_result_internal.h"
-#include "base/sequenced_task_runner.h"
-#include "base/single_thread_task_runner.h"
-#include "base/task_runner.h"
-#include "base/task_scheduler/single_thread_task_runner_thread_mode.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/location.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/post_task_and_reply_with_result_internal.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/task_runner.h"
+#include "brick/task_scheduler/single_thread_task_runner_thread_mode.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -70,7 +70,7 @@ namespace base {
 
 // Posts |task| to the TaskScheduler. Calling this is equivalent to calling
 // PostTaskWithTraits with plain TaskTraits.
-BASE_EXPORT void PostTask(const Location& from_here, OnceClosure task);
+BRICK_EXPORT void PostTask(const Location& from_here, OnceClosure task);
 
 // Posts |task| to the TaskScheduler. |task| will not run before |delay|
 // expires. Calling this is equivalent to calling PostDelayedTaskWithTraits with
@@ -78,7 +78,7 @@ BASE_EXPORT void PostTask(const Location& from_here, OnceClosure task);
 //
 // Use PostDelayedTaskWithTraits to specify a BACKGROUND priority if the task
 // doesn't have to run as soon as |delay| expires.
-BASE_EXPORT void PostDelayedTask(const Location& from_here,
+BRICK_EXPORT void PostDelayedTask(const Location& from_here,
                                  OnceClosure task,
                                  TimeDelta delay);
 
@@ -87,7 +87,7 @@ BASE_EXPORT void PostDelayedTask(const Location& from_here,
 // |task| completes. Calling this is equivalent to calling
 // PostTaskWithTraitsAndReply with plain TaskTraits. Can only be called when
 // SequencedTaskRunnerHandle::IsSet().
-BASE_EXPORT void PostTaskAndReply(const Location& from_here,
+BRICK_EXPORT void PostTaskAndReply(const Location& from_here,
                                   OnceClosure task,
                                   OnceClosure reply);
 
@@ -119,7 +119,7 @@ void PostTaskAndReplyWithResult(const Location& from_here,
 }
 
 // Posts |task| with specific |traits| to the TaskScheduler.
-BASE_EXPORT void PostTaskWithTraits(const Location& from_here,
+BRICK_EXPORT void PostTaskWithTraits(const Location& from_here,
                                     const TaskTraits& traits,
                                     OnceClosure task);
 
@@ -128,7 +128,7 @@ BASE_EXPORT void PostTaskWithTraits(const Location& from_here,
 //
 // Specify a BACKGROUND priority via |traits| if the task doesn't have to run as
 // soon as |delay| expires.
-BASE_EXPORT void PostDelayedTaskWithTraits(const Location& from_here,
+BRICK_EXPORT void PostDelayedTaskWithTraits(const Location& from_here,
                                            const TaskTraits& traits,
                                            OnceClosure task,
                                            TimeDelta delay);
@@ -137,7 +137,7 @@ BASE_EXPORT void PostDelayedTaskWithTraits(const Location& from_here,
 // the caller's execution context (i.e. same sequence or thread and same
 // TaskTraits if applicable) when |task| completes. Can only be called when
 // SequencedTaskRunnerHandle::IsSet().
-BASE_EXPORT void PostTaskWithTraitsAndReply(const Location& from_here,
+BRICK_EXPORT void PostTaskWithTraitsAndReply(const Location& from_here,
                                             const TaskTraits& traits,
                                             OnceClosure task,
                                             OnceClosure reply);
@@ -178,17 +178,17 @@ void PostTaskWithTraitsAndReplyWithResult(const Location& from_here,
 
 // Returns a TaskRunner whose PostTask invocations result in scheduling tasks
 // using |traits|. Tasks may run in any order and in parallel.
-BASE_EXPORT scoped_refptr<TaskRunner> CreateTaskRunnerWithTraits(
+BRICK_EXPORT scoped_refptr<TaskRunner> CreateTaskRunnerWithTraits(
     const TaskTraits& traits);
 
 // Returns a SequencedTaskRunner whose PostTask invocations result in scheduling
 // tasks using |traits|. Tasks run one at a time in posting order.
-BASE_EXPORT scoped_refptr<SequencedTaskRunner>
+BRICK_EXPORT scoped_refptr<SequencedTaskRunner>
 CreateSequencedTaskRunnerWithTraits(const TaskTraits& traits);
 
 // Returns a SingleThreadTaskRunner whose PostTask invocations result in
 // scheduling tasks using |traits| on a thread determined by |thread_mode|. See
-// base/task_scheduler/single_thread_task_runner_thread_mode.h for |thread_mode|
+// brick/task_scheduler/single_thread_task_runner_thread_mode.h for |thread_mode|
 // details. Tasks run on a single thread in posting order.
 //
 // If all you need is to make sure that tasks don't run concurrently (e.g.
@@ -197,7 +197,7 @@ CreateSequencedTaskRunnerWithTraits(const TaskTraits& traits);
 // affine API (it might be safer to assume thread-affinity when dealing with
 // under-documented third-party APIs, e.g. other OS') or share data across tasks
 // using thread-local storage.
-BASE_EXPORT scoped_refptr<SingleThreadTaskRunner>
+BRICK_EXPORT scoped_refptr<SingleThreadTaskRunner>
 CreateSingleThreadTaskRunnerWithTraits(
     const TaskTraits& traits,
     SingleThreadTaskRunnerThreadMode thread_mode =
@@ -207,14 +207,14 @@ CreateSingleThreadTaskRunnerWithTraits(
 // Returns a SingleThreadTaskRunner whose PostTask invocations result in
 // scheduling tasks using |traits| in a COM Single-Threaded Apartment on a
 // thread determined by |thread_mode|. See
-// base/task_scheduler/single_thread_task_runner_thread_mode.h for |thread_mode|
+// brick/task_scheduler/single_thread_task_runner_thread_mode.h for |thread_mode|
 // details. Tasks run in the same Single-Threaded Apartment in posting order for
 // the returned SingleThreadTaskRunner. There is not necessarily a one-to-one
 // correspondence between SingleThreadTaskRunners and Single-Threaded
 // Apartments. The implementation is free to share apartments or create new
 // apartments as necessary. In either case, care should be taken to make sure
 // COM pointers are not smuggled across apartments.
-BASE_EXPORT scoped_refptr<SingleThreadTaskRunner>
+BRICK_EXPORT scoped_refptr<SingleThreadTaskRunner>
 CreateCOMSTATaskRunnerWithTraits(const TaskTraits& traits,
                                  SingleThreadTaskRunnerThreadMode thread_mode =
                                      SingleThreadTaskRunnerThreadMode::SHARED);
@@ -222,4 +222,4 @@ CreateCOMSTATaskRunnerWithTraits(const TaskTraits& traits,
 
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_POST_TASK_H_
+#endif  // BRICK_TASK_SCHEDULER_POST_TASK_H_

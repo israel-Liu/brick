@@ -4,14 +4,14 @@
 
 #include <stdint.h>
 
-#include "base/environment.h"
-#include "base/files/file_util.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_split.h"
-#include "base/sys_info.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/environment.h"
+#include "brick/files/file_util.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_split.h"
+#include "brick/sys_info.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"

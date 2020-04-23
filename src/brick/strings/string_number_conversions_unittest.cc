@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/string_number_conversions.h"
+#include "brick/strings/string_number_conversions.h"
 
 #include <errno.h>
 #include <limits.h>
@@ -13,11 +13,11 @@
 #include <cmath>
 #include <limits>
 
-#include "base/bit_cast.h"
-#include "base/format_macros.h"
-#include "base/macros.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/bit_cast.h"
+#include "brick/format_macros.h"
+#include "brick/macros.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/syslog_logging.h"
+#include "brick/syslog_logging.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
-#include "base/bind.h"
-#include "base/callback_helpers.h"
-#include "base/debug/stack_trace.h"
+#include "brick/bind.h"
+#include "brick/callback_helpers.h"
+#include "brick/debug/stack_trace.h"
 #elif defined(OS_LINUX)
 // <syslog.h> defines a LOG_WARNING macro that could conflict with
 // base::LOG_WARNING.

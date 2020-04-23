@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_iterator.h"
+#include "brick/process/process_iterator.h"
 
 #include <stddef.h>
 
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/process/internal_linux.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/process/internal_linux.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

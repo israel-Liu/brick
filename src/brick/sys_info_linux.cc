@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <limits>
 
-#include "base/files/file_util.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/process/process_metrics.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/sys_info_internal.h"
+#include "brick/files/file_util.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/process/process_metrics.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/sys_info_internal.h"
 #include "build/build_config.h"
 
 namespace {

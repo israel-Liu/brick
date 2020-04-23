@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_PTR_UTIL_H_
-#define BASE_MEMORY_PTR_UTIL_H_
+#ifndef BRICK_MEMORY_PTR_UTIL_H_
+#define BRICK_MEMORY_PTR_UTIL_H_
 
 #include <memory>
 #include <utility>
@@ -20,4 +20,4 @@ std::unique_ptr<T> WrapUnique(T* ptr) {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_PTR_UTIL_H_
+#endif  // BRICK_MEMORY_PTR_UTIL_H_

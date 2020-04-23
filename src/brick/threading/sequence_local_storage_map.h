@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_SEQUENCE_LOCAL_STORAGE_MAP_H_
-#define BASE_THREADING_SEQUENCE_LOCAL_STORAGE_MAP_H_
+#ifndef BRICK_THREADING_SEQUENCE_LOCAL_STORAGE_MAP_H_
+#define BRICK_THREADING_SEQUENCE_LOCAL_STORAGE_MAP_H_
 
-#include "base/base_export.h"
-#include "base/containers/flat_map.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/containers/flat_map.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace internal {
@@ -21,7 +21,7 @@ namespace internal {
 // The Get() and Set() methods should not be accessed directly.
 // Use SequenceLocalStorageSlot to Get() and Set() values in the current
 // sequence's SequenceLocalStorageMap.
-class BASE_EXPORT SequenceLocalStorageMap {
+class BRICK_EXPORT SequenceLocalStorageMap {
  public:
   SequenceLocalStorageMap();
   ~SequenceLocalStorageMap();
@@ -33,7 +33,7 @@ class BASE_EXPORT SequenceLocalStorageMap {
 
   // Holds a pointer to a value alongside a destructor for this pointer.
   // Calls the destructor on the value upon destruction.
-  class BASE_EXPORT ValueDestructorPair {
+  class BRICK_EXPORT ValueDestructorPair {
    public:
     using DestructorFunc = void(void*);
 
@@ -74,7 +74,7 @@ class BASE_EXPORT SequenceLocalStorageMap {
 // SequenceLocalStorageMap::GetForCurrentThread() will return a reference to the
 // SequenceLocalStorageMap object passed to the constructor. There can be only
 // one ScopedSetSequenceLocalStorageMapForCurrentThread instance per scope.
-class BASE_EXPORT ScopedSetSequenceLocalStorageMapForCurrentThread {
+class BRICK_EXPORT ScopedSetSequenceLocalStorageMapForCurrentThread {
  public:
   ScopedSetSequenceLocalStorageMapForCurrentThread(
       SequenceLocalStorageMap* sequence_local_storage);
@@ -87,4 +87,4 @@ class BASE_EXPORT ScopedSetSequenceLocalStorageMapForCurrentThread {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_THREADING_SEQUENCE_LOCAL_STORAGE_MAP_H_
+#endif  // BRICK_THREADING_SEQUENCE_LOCAL_STORAGE_MAP_H_

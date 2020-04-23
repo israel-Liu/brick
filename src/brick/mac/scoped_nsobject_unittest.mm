@@ -4,8 +4,8 @@
 
 #include <vector>
 
-#include "base/mac/scoped_nsautorelease_pool.h"
-#include "base/mac/scoped_nsobject.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
+#include "brick/mac/scoped_nsobject.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace {

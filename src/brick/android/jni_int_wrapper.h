@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_JNI_INT_WRAPPER_H_
-#define BASE_ANDROID_JNI_INT_WRAPPER_H_
+#ifndef BRICK_ANDROID_JNI_INT_WRAPPER_H_
+#define BRICK_ANDROID_JNI_INT_WRAPPER_H_
 
 // Wrapper used to receive int when calling Java from native.
 // The wrapper disallows automatic conversion of long to int.
@@ -53,4 +53,4 @@ inline jint as_jint(const JniIntWrapper& wrapper) {
 
 #endif  // NDEBUG
 
-#endif  // BASE_ANDROID_JNI_INT_WRAPPER_H_
+#endif  // BRICK_ANDROID_JNI_INT_WRAPPER_H_

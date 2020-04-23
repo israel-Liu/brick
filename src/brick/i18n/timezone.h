@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_I18N_TIMEZONE_H_
-#define BASE_I18N_TIMEZONE_H_
+#ifndef BRICK_I18N_TIMEZONE_H_
+#define BRICK_I18N_TIMEZONE_H_
 
 #include <string>
 
-#include "base/i18n/base_i18n_export.h"
+#include "brick/i18n/base_i18n_export.h"
 
 namespace base {
 
@@ -17,8 +17,8 @@ namespace base {
 // when the timezone is Etc/UTC or Etc/UCT, but will return 'GB" for Etc/GMT
 // because people in the UK tends to select Etc/GMT by mistake instead of
 // Europe/London (British Time).
-BASE_I18N_EXPORT std::string CountryCodeForCurrentTimezone();
+BRICK_I18N_EXPORT std::string CountryCodeForCurrentTimezone();
 
 }  // namespace base
 
-#endif  // BASE_I18N_TIMEZONE_H_
+#endif  // BRICK_I18N_TIMEZONE_H_

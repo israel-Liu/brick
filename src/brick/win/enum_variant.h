@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_ENUM_VARIANT_H_
-#define BASE_WIN_ENUM_VARIANT_H_
+#ifndef BRICK_WIN_ENUM_VARIANT_H_
+#define BRICK_WIN_ENUM_VARIANT_H_
 
 #include <unknwn.h>
 
 #include <memory>
 
-#include "base/win/iunknown_impl.h"
+#include "brick/win/iunknown_impl.h"
 
 namespace base {
 namespace win {
 
 // A simple implementation of IEnumVARIANT.
-class BASE_EXPORT EnumVariant
+class BRICK_EXPORT EnumVariant
   : public IEnumVARIANT,
     public IUnknownImpl {
  public:
@@ -50,4 +50,4 @@ class BASE_EXPORT EnumVariant
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_ENUM_VARIANT_H_
+#endif  // BRICK_WIN_ENUM_VARIANT_H_

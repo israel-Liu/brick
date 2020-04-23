@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/histogram_delta_serialization.h"
+#include "brick/metrics/histogram_delta_serialization.h"
 
-#include "base/logging.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/histogram_snapshot_manager.h"
-#include "base/metrics/statistics_recorder.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/pickle.h"
-#include "base/values.h"
+#include "brick/logging.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/histogram_snapshot_manager.h"
+#include "brick/metrics/statistics_recorder.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/pickle.h"
+#include "brick/values.h"
 
 namespace base {
 

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/memory_dump_provider_info.h"
+#include "brick/trace_event/memory_dump_provider_info.h"
 
 #include <tuple>
 
-#include "base/sequenced_task_runner.h"
+#include "brick/sequenced_task_runner.h"
 
 namespace base {
 namespace trace_event {

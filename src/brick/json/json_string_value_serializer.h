@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_JSON_JSON_STRING_VALUE_SERIALIZER_H_
-#define BASE_JSON_JSON_STRING_VALUE_SERIALIZER_H_
+#ifndef BRICK_JSON_JSON_STRING_VALUE_SERIALIZER_H_
+#define BRICK_JSON_JSON_STRING_VALUE_SERIALIZER_H_
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
-#include "base/values.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
+#include "brick/values.h"
 
-class BASE_EXPORT JSONStringValueSerializer : public base::ValueSerializer {
+class BRICK_EXPORT JSONStringValueSerializer : public base::ValueSerializer {
  public:
   // |json_string| is the string that will be the destination of the
   // serialization.  The caller of the constructor retains ownership of the
@@ -44,7 +44,7 @@ class BASE_EXPORT JSONStringValueSerializer : public base::ValueSerializer {
   DISALLOW_COPY_AND_ASSIGN(JSONStringValueSerializer);
 };
 
-class BASE_EXPORT JSONStringValueDeserializer : public base::ValueDeserializer {
+class BRICK_EXPORT JSONStringValueDeserializer : public base::ValueDeserializer {
  public:
   // This retains a reference to the contents of |json_string|, so the data
   // must outlive the JSONStringValueDeserializer. |options| is a bitmask of
@@ -72,4 +72,4 @@ class BASE_EXPORT JSONStringValueDeserializer : public base::ValueDeserializer {
   DISALLOW_COPY_AND_ASSIGN(JSONStringValueDeserializer);
 };
 
-#endif  // BASE_JSON_JSON_STRING_VALUE_SERIALIZER_H_
+#endif  // BRICK_JSON_JSON_STRING_VALUE_SERIALIZER_H_

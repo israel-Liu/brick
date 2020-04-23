@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/application_status_listener.h"
+#include "brick/android/application_status_listener.h"
 
 #include <jni.h>
 
-#include "base/lazy_instance.h"
-#include "base/observer_list_threadsafe.h"
+#include "brick/lazy_instance.h"
+#include "brick/observer_list_threadsafe.h"
 #include "jni/ApplicationStatus_jni.h"
 
 namespace base {

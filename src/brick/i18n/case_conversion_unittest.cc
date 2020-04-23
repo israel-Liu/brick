@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/case_conversion.h"
-#include "base/i18n/rtl.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/test/icu_test_util.h"
+#include "brick/i18n/case_conversion.h"
+#include "brick/i18n/rtl.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/test/icu_test_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "third_party/icu/source/i18n/unicode/usearch.h"
 

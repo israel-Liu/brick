@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_DISCARDABLE_SHARED_MEMORY_H_
-#define BASE_MEMORY_DISCARDABLE_SHARED_MEMORY_H_
+#ifndef BRICK_MEMORY_DISCARDABLE_SHARED_MEMORY_H_
+#define BRICK_MEMORY_DISCARDABLE_SHARED_MEMORY_H_
 
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/shared_memory_mapping.h"
-#include "base/memory/unsafe_shared_memory_region.h"
-#include "base/threading/thread_collision_warner.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/shared_memory_mapping.h"
+#include "brick/memory/unsafe_shared_memory_region.h"
+#include "brick/threading/thread_collision_warner.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if DCHECK_IS_ON()
@@ -42,7 +42,7 @@ class ProcessMemoryDump;
 //
 // This class is not thread-safe. Clients are responsible for synchronizing
 // access to an instance of this class.
-class BASE_EXPORT DiscardableSharedMemory {
+class BRICK_EXPORT DiscardableSharedMemory {
  public:
   enum LockResult { SUCCESS, PURGED, FAILED };
 
@@ -184,4 +184,4 @@ class BASE_EXPORT DiscardableSharedMemory {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_DISCARDABLE_SHARED_MEMORY_H_
+#endif  // BRICK_MEMORY_DISCARDABLE_SHARED_MEMORY_H_

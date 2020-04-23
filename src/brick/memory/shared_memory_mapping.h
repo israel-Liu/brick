@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_SHARED_MEMORY_MAPPING_H_
-#define BASE_MEMORY_SHARED_MEMORY_MAPPING_H_
+#ifndef BRICK_MEMORY_SHARED_MEMORY_MAPPING_H_
+#define BRICK_MEMORY_SHARED_MEMORY_MAPPING_H_
 
 #include <cstddef>
 
-#include "base/macros.h"
-#include "base/unguessable_token.h"
+#include "brick/macros.h"
+#include "brick/unguessable_token.h"
 
 namespace base {
 
@@ -23,7 +23,7 @@ class PlatformSharedMemoryRegion;
 // Each mapping has an UnguessableToken that identifies the shared memory region
 // it was created from. This is used for memory metrics, to avoid overcounting
 // shared memory.
-class BASE_EXPORT SharedMemoryMapping {
+class BRICK_EXPORT SharedMemoryMapping {
  public:
   // Default constructor initializes an invalid instance.
   SharedMemoryMapping();
@@ -84,7 +84,7 @@ class BASE_EXPORT SharedMemoryMapping {
 // Class modeling a read-only mapping of a shared memory region into the
 // current process' address space. This is created by ReadOnlySharedMemoryRegion
 // instances.
-class BASE_EXPORT ReadOnlySharedMemoryMapping : public SharedMemoryMapping {
+class BRICK_EXPORT ReadOnlySharedMemoryMapping : public SharedMemoryMapping {
  public:
   // Default constructor initializes an invalid instance.
   ReadOnlySharedMemoryMapping();
@@ -110,7 +110,7 @@ class BASE_EXPORT ReadOnlySharedMemoryMapping : public SharedMemoryMapping {
 // Class modeling a writable mapping of a shared memory region into the
 // current process' address space. This is created by *SharedMemoryRegion
 // instances.
-class BASE_EXPORT WritableSharedMemoryMapping : public SharedMemoryMapping {
+class BRICK_EXPORT WritableSharedMemoryMapping : public SharedMemoryMapping {
  public:
   // Default constructor initializes an invalid instance.
   WritableSharedMemoryMapping();
@@ -141,4 +141,4 @@ class BASE_EXPORT WritableSharedMemoryMapping : public SharedMemoryMapping {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_SHARED_MEMORY_MAPPING_H_
+#endif  // BRICK_MEMORY_SHARED_MEMORY_MAPPING_H_

@@ -2,28 +2,28 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/task_tracker.h"
+#include "brick/task_scheduler/task_tracker.h"
 
 #include <limits>
 #include <string>
 #include <vector>
 
-#include "base/base_switches.h"
-#include "base/callback.h"
-#include "base/command_line.h"
-#include "base/json/json_writer.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/sequence_token.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/task_scheduler/scoped_set_task_priority_for_current_thread.h"
-#include "base/threading/sequence_local_storage_map.h"
-#include "base/threading/sequenced_task_runner_handle.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/threading/thread_task_runner_handle.h"
-#include "base/time/time.h"
-#include "base/trace_event/trace_event.h"
-#include "base/values.h"
+#include "brick/base_switches.h"
+#include "brick/callback.h"
+#include "brick/command_line.h"
+#include "brick/json/json_writer.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/sequence_token.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/task_scheduler/scoped_set_task_priority_for_current_thread.h"
+#include "brick/threading/sequence_local_storage_map.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/threading/thread_task_runner_handle.h"
+#include "brick/time/time.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/values.h"
 
 namespace base {
 namespace internal {

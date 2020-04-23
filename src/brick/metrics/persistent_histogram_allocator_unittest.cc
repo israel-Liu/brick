@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/persistent_histogram_allocator.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
 
-#include "base/files/file.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/bucket_ranges.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/metrics/statistics_recorder.h"
+#include "brick/files/file.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/bucket_ranges.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/metrics/statistics_recorder.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

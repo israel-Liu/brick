@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/icu_util.h"
+#include "brick/i18n/icu_util.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
@@ -10,13 +10,13 @@
 
 #include <string>
 
-#include "base/debug/alias.h"
-#include "base/files/file_path.h"
-#include "base/files/memory_mapped_file.h"
-#include "base/logging.h"
-#include "base/path_service.h"
-#include "base/strings/string_util.h"
-#include "base/strings/sys_string_conversions.h"
+#include "brick/debug/alias.h"
+#include "brick/files/file_path.h"
+#include "brick/files/memory_mapped_file.h"
+#include "brick/logging.h"
+#include "brick/path_service.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/sys_string_conversions.h"
 #include "build/build_config.h"
 #include "third_party/icu/source/common/unicode/putil.h"
 #include "third_party/icu/source/common/unicode/udata.h"
@@ -25,20 +25,20 @@
 #endif
 
 #if defined(OS_ANDROID)
-#include "base/android/apk_assets.h"
-#include "base/android/timezone_utils.h"
+#include "brick/android/apk_assets.h"
+#include "brick/android/timezone_utils.h"
 #endif
 
 #if defined(OS_IOS)
-#include "base/ios/ios_util.h"
+#include "brick/ios/ios_util.h"
 #endif
 
 #if defined(OS_MACOSX)
-#include "base/mac/foundation_util.h"
+#include "brick/mac/foundation_util.h"
 #endif
 
 #if defined(OS_FUCHSIA)
-#include "base/base_paths_fuchsia.h"
+#include "brick/base_paths_fuchsia.h"
 #endif
 
 namespace base {

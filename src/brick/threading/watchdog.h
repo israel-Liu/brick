@@ -15,22 +15,22 @@
 // a second thread, and their methods call (Arm() and Disarm()) return very
 // quickly.
 
-#ifndef BASE_THREADING_WATCHDOG_H_
-#define BASE_THREADING_WATCHDOG_H_
+#ifndef BRICK_THREADING_WATCHDOG_H_
+#define BRICK_THREADING_WATCHDOG_H_
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 
 namespace base {
 
-class BASE_EXPORT Watchdog {
+class BRICK_EXPORT Watchdog {
  public:
   // Constructor specifies how long the Watchdog will wait before alarming.
   Watchdog(const TimeDelta& duration,
@@ -93,4 +93,4 @@ class BASE_EXPORT Watchdog {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_WATCHDOG_H_
+#endif  // BRICK_THREADING_WATCHDOG_H_

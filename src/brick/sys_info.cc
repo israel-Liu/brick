@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sys_info.h"
+#include "brick/sys_info.h"
 
 #include <algorithm>
 
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/lazy_instance.h"
-#include "base/sys_info_internal.h"
-#include "base/time/time.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/lazy_instance.h"
+#include "brick/sys_info_internal.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {

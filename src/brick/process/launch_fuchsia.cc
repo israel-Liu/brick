@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/launch.h"
+#include "brick/process/launch.h"
 
 #include <fdio/limits.h>
 #include <fdio/namespace.h>
@@ -13,13 +13,13 @@
 #include <zircon/process.h>
 #include <zircon/processargs.h>
 
-#include "base/command_line.h"
-#include "base/files/file_util.h"
-#include "base/fuchsia/default_job.h"
-#include "base/fuchsia/fuchsia_logging.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/scoped_generic.h"
+#include "brick/command_line.h"
+#include "brick/files/file_util.h"
+#include "brick/fuchsia/default_job.h"
+#include "brick/fuchsia/fuchsia_logging.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/scoped_generic.h"
 
 namespace base {
 

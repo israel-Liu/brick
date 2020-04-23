@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_metrics.h"
+#include "brick/process/process_metrics.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -11,17 +11,17 @@
 #include <string>
 #include <vector>
 
-#include "base/bind.h"
-#include "base/command_line.h"
-#include "base/files/file.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/macros.h"
-#include "base/memory/shared_memory.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/sys_info.h"
-#include "base/test/multiprocess_test.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/command_line.h"
+#include "brick/files/file.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/macros.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/sys_info.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/threading/thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"

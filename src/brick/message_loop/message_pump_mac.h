@@ -27,17 +27,17 @@
 // or NSRunLoop-based MessagePump subclass depending on which thread it is
 // called on.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_MAC_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_MAC_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_MAC_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_MAC_H_
 
-#include "base/message_loop/message_pump.h"
+#include "brick/message_loop/message_pump.h"
 
 
 #include <CoreFoundation/CoreFoundation.h>
 
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "base/message_loop/timer_slack.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/message_loop/timer_slack.h"
 #include "build/build_config.h"
 
 #if defined(__OBJC__)
@@ -78,7 +78,7 @@ class AutoreleasePoolType;
 typedef NSAutoreleasePool AutoreleasePoolType;
 #endif  // !defined(__OBJC__) || __has_feature(objc_arc)
 
-class BASE_EXPORT MessagePumpCFRunLoopBase : public MessagePump {
+class BRICK_EXPORT MessagePumpCFRunLoopBase : public MessagePump {
  public:
   // MessagePump:
   void Run(Delegate* delegate) override;
@@ -253,7 +253,7 @@ class BASE_EXPORT MessagePumpCFRunLoopBase : public MessagePump {
   DISALLOW_COPY_AND_ASSIGN(MessagePumpCFRunLoopBase);
 };
 
-class BASE_EXPORT MessagePumpCFRunLoop : public MessagePumpCFRunLoopBase {
+class BRICK_EXPORT MessagePumpCFRunLoop : public MessagePumpCFRunLoopBase {
  public:
   MessagePumpCFRunLoop();
   ~MessagePumpCFRunLoop() override;
@@ -272,7 +272,7 @@ class BASE_EXPORT MessagePumpCFRunLoop : public MessagePumpCFRunLoopBase {
   DISALLOW_COPY_AND_ASSIGN(MessagePumpCFRunLoop);
 };
 
-class BASE_EXPORT MessagePumpNSRunLoop : public MessagePumpCFRunLoopBase {
+class BRICK_EXPORT MessagePumpNSRunLoop : public MessagePumpCFRunLoopBase {
  public:
   MessagePumpNSRunLoop();
   ~MessagePumpNSRunLoop() override;
@@ -317,7 +317,7 @@ class MessagePumpUIApplication : public MessagePumpCFRunLoopBase {
 
 // While in scope, permits posted tasks to be run in private AppKit run loop
 // modes that would otherwise make the UI unresponsive. E.g., menu fade out.
-class BASE_EXPORT ScopedPumpMessagesInPrivateModes {
+class BRICK_EXPORT ScopedPumpMessagesInPrivateModes {
  public:
   ScopedPumpMessagesInPrivateModes();
   ~ScopedPumpMessagesInPrivateModes();
@@ -366,7 +366,7 @@ class MessagePumpCrApplication : public MessagePumpNSApplication {
 };
 #endif  // !defined(OS_IOS)
 
-class BASE_EXPORT MessagePumpMac {
+class BRICK_EXPORT MessagePumpMac {
  public:
   // If not on the main thread, returns a new instance of
   // MessagePumpNSRunLoop.
@@ -397,8 +397,8 @@ class BASE_EXPORT MessagePumpMac {
 
 // Tasks posted to the message loop are posted under this mode, as well
 // as kCFRunLoopCommonModes.
-extern const CFStringRef BASE_EXPORT kMessageLoopExclusiveRunLoopMode;
+extern const CFStringRef BRICK_EXPORT kMessageLoopExclusiveRunLoopMode;
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_MAC_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_MAC_H_

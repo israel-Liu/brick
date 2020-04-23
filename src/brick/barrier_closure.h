@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_BARRIER_CLOSURE_H_
-#define BASE_BARRIER_CLOSURE_H_
+#ifndef BRICK_BARRIER_CLOSURE_H_
+#define BRICK_BARRIER_CLOSURE_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
 
 namespace base {
 
@@ -20,9 +20,9 @@ namespace base {
 // the thread that calls the final Run() on the returned closures.
 //
 // |done_closure| is also cleared on the final calling thread.
-BASE_EXPORT RepeatingClosure BarrierClosure(int num_closures,
+BRICK_EXPORT RepeatingClosure BarrierClosure(int num_closures,
                                             OnceClosure done_closure);
 
 }  // namespace base
 
-#endif  // BASE_BARRIER_CLOSURE_H_
+#endif  // BRICK_BARRIER_CLOSURE_H_

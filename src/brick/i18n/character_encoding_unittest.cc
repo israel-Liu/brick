@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/character_encoding.h"
+#include "brick/i18n/character_encoding.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_BIND_INTERNAL_H_
-#define BASE_BIND_INTERNAL_H_
+#ifndef BRICK_BIND_INTERNAL_H_
+#define BRICK_BIND_INTERNAL_H_
 
 #include <stddef.h>
 
 #include <type_traits>
 #include <utility>
 
-#include "base/callback_internal.h"
-#include "base/compiler_specific.h"
-#include "base/memory/raw_scoped_refptr_mismatch_checker.h"
-#include "base/memory/weak_ptr.h"
-#include "base/template_util.h"
+#include "brick/callback_internal.h"
+#include "brick/compiler_specific.h"
+#include "brick/memory/raw_scoped_refptr_mismatch_checker.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/template_util.h"
 #include "build/build_config.h"
 
 #if defined(OS_MACOSX) && !HAS_FEATURE(objc_arc)
-#include "base/mac/scoped_block.h"
+#include "brick/mac/scoped_block.h"
 #endif
 
-// See base/callback.h for user documentation.
+// See brick/callback.h for user documentation.
 //
 //
 // CONCEPTS:
@@ -969,4 +969,4 @@ using MakeUnboundRunType =
 
 }  // namespace base
 
-#endif  // BASE_BIND_INTERNAL_H_
+#endif  // BRICK_BIND_INTERNAL_H_

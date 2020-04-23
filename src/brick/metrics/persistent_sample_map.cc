@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/persistent_sample_map.h"
+#include "brick/metrics/persistent_sample_map.h"
 
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/metrics/persistent_histogram_allocator.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/stl_util.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/stl_util.h"
 
 namespace base {
 

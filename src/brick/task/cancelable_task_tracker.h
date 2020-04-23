@@ -13,7 +13,7 @@
 //
 // NOTE:
 //
-// CancelableCallback (base/cancelable_callback.h) and WeakPtr binding are
+// CancelableCallback (brick/cancelable_callback.h) and WeakPtr binding are
 // preferred solutions for canceling a task. However, they don't support
 // cancelation from another sequence. This is sometimes a performance critical
 // requirement. E.g. We need to cancel database lookup task on DB thread when
@@ -33,21 +33,21 @@
 //    the originating sequence.
 //
 // 4. IsCanceledCallback can be run or deleted on any sequence.
-#ifndef BASE_TASK_CANCELABLE_TASK_TRACKER_H_
-#define BASE_TASK_CANCELABLE_TASK_TRACKER_H_
+#ifndef BRICK_TASK_CANCELABLE_TASK_TRACKER_H_
+#define BRICK_TASK_CANCELABLE_TASK_TRACKER_H_
 
 #include <stdint.h>
 
 #include <utility>
 
-#include "base/base_export.h"
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/containers/small_map.h"
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "base/post_task_and_reply_with_result_internal.h"
-#include "base/sequence_checker.h"
+#include "brick/base_export.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/containers/small_map.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/post_task_and_reply_with_result_internal.h"
+#include "brick/sequence_checker.h"
 
 namespace base {
 
@@ -55,7 +55,7 @@ class CancellationFlag;
 class Location;
 class TaskRunner;
 
-class BASE_EXPORT CancelableTaskTracker {
+class BRICK_EXPORT CancelableTaskTracker {
  public:
   // All values except kBadTaskId are valid.
   typedef int64_t TaskId;
@@ -155,4 +155,4 @@ class BASE_EXPORT CancelableTaskTracker {
 
 }  // namespace base
 
-#endif  // BASE_TASK_CANCELABLE_TASK_TRACKER_H_
+#endif  // BRICK_TASK_CANCELABLE_TASK_TRACKER_H_

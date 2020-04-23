@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/watchdog.h"
+#include "brick/threading/watchdog.h"
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/synchronization/spin_wait.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/synchronization/spin_wait.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

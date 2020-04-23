@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/value_conversions.h"
+#include "brick/value_conversions.h"
 
 #include <stdint.h>
 
@@ -10,12 +10,12 @@
 #include <string>
 #include <vector>
 
-#include "base/files/file_path.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/time/time.h"
-#include "base/unguessable_token.h"
-#include "base/values.h"
+#include "brick/files/file_path.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/time/time.h"
+#include "brick/unguessable_token.h"
+#include "brick/values.h"
 
 namespace base {
 namespace {

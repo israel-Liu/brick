@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file.h"
+#include "brick/files/file.h"
 
 #include <stdint.h>
 
 #include <utility>
 
-#include "base/files/file_util.h"
-#include "base/files/memory_mapped_file.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/time/time.h"
+#include "brick/files/file_util.h"
+#include "brick/files/memory_mapped_file.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/simple_thread.h"
+#include "brick/threading/simple_thread.h"
 
-#include "base/logging.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/logging.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/task_scheduler_impl.h"
+#include "brick/task_scheduler/task_scheduler_impl.h"
 
 #include <stddef.h>
 
@@ -10,44 +10,44 @@
 #include <utility>
 #include <vector>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/callback.h"
-#include "base/cfi_buildflags.h"
-#include "base/debug/stack_trace.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/metrics/field_trial.h"
-#include "base/metrics/field_trial_params.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/task_scheduler/environment_config.h"
-#include "base/task_scheduler/scheduler_worker_observer.h"
-#include "base/task_scheduler/scheduler_worker_pool_params.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/task_scheduler/test_task_factory.h"
-#include "base/task_scheduler/test_utils.h"
-#include "base/test/gtest_util.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/sequence_local_storage_slot.h"
-#include "base/threading/simple_thread.h"
-#include "base/threading/thread.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/callback.h"
+#include "brick/cfi_buildflags.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/metrics/field_trial.h"
+#include "brick/metrics/field_trial_params.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/task_scheduler/environment_config.h"
+#include "brick/task_scheduler/scheduler_worker_observer.h"
+#include "brick/task_scheduler/scheduler_worker_pool_params.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/task_scheduler/test_task_factory.h"
+#include "brick/task_scheduler/test_utils.h"
+#include "brick/test/gtest_util.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/sequence_local_storage_slot.h"
+#include "brick/threading/simple_thread.h"
+#include "brick/threading/thread.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_POSIX)
 #include <unistd.h>
 
-#include "base/debug/leak_annotations.h"
-#include "base/files/file_descriptor_watcher_posix.h"
-#include "base/files/file_util.h"
-#include "base/posix/eintr_wrapper.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_util.h"
+#include "brick/posix/eintr_wrapper.h"
 #endif  // defined(OS_POSIX)
 
 #if defined(OS_WIN)
-#include "base/win/com_init_util.h"
+#include "brick/win/com_init_util.h"
 #endif  // defined(OS_WIN)
 
 namespace base {

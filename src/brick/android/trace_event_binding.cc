@@ -6,11 +6,11 @@
 
 #include <set>
 
-#include "base/android/jni_string.h"
-#include "base/lazy_instance.h"
-#include "base/macros.h"
-#include "base/trace_event/trace_event.h"
-#include "base/trace_event/trace_event_impl.h"
+#include "brick/android/jni_string.h"
+#include "brick/lazy_instance.h"
+#include "brick/macros.h"
+#include "brick/trace_event/trace_event.h"
+#include "brick/trace_event/trace_event_impl.h"
 #include "jni/TraceEvent_jni.h"
 
 namespace base {

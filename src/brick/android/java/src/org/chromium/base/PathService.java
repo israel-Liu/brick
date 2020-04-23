@@ -12,7 +12,7 @@ import org.chromium.base.annotations.JNINamespace;
 @JNINamespace("base::android")
 public abstract class PathService {
 
-    // Must match the value of DIR_MODULE in base/base_paths.h!
+    // Must match the value of DIR_MODULE in brick/base_paths.h!
     public static final int DIR_MODULE = 3;
 
     // Prevent instantiation.

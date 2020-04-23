@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/memory_infra_background_whitelist.h"
+#include "brick/trace_event/memory_infra_background_whitelist.h"
 
 #include <ctype.h>
 #include <string.h>
 
 #include <string>
 
-#include "base/strings/string_util.h"
+#include "brick/strings/string_util.h"
 
 namespace base {
 namespace trace_event {
@@ -102,13 +102,13 @@ const char* const kAllocatorDumpNameWhitelist[] = {
     "java_heap",
     "java_heap/allocated_objects",
     "leveldatabase",
-    "leveldatabase/block_cache/browser",
-    "leveldatabase/block_cache/in_memory",
-    "leveldatabase/block_cache/unified",
-    "leveldatabase/block_cache/web",
-    "leveldatabase/db_0x?",
-    "leveldatabase/db_0x?/block_cache",
-    "leveldatabase/memenv_0x?",
+    "leveldatabrick/block_cache/browser",
+    "leveldatabrick/block_cache/in_memory",
+    "leveldatabrick/block_cache/unified",
+    "leveldatabrick/block_cache/web",
+    "leveldatabrick/db_0x?",
+    "leveldatabrick/db_0x?/block_cache",
+    "leveldatabrick/memenv_0x?",
     "malloc",
     "malloc/allocated_objects",
     "malloc/metadata_fragmentation_caches",

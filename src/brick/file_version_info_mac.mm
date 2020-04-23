@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/file_version_info_mac.h"
+#include "brick/file_version_info_mac.h"
 
 #import <Foundation/Foundation.h>
 
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/mac/bundle_locations.h"
-#include "base/mac/foundation_util.h"
-#include "base/strings/sys_string_conversions.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/mac/bundle_locations.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/strings/sys_string_conversions.h"
 #include "build/build_config.h"
 
 FileVersionInfoMac::FileVersionInfoMac(NSBundle *bundle)

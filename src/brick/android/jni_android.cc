@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/jni_android.h"
+#include "brick/android/jni_android.h"
 
 #include <stddef.h>
 #include <sys/prctl.h>
 
 #include <map>
 
-#include "base/android/build_info.h"
-#include "base/android/jni_string.h"
-#include "base/debug/debugging_buildflags.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/threading/thread_local.h"
+#include "brick/android/build_info.h"
+#include "brick/android/jni_string.h"
+#include "brick/debug/debugging_buildflags.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_local.h"
 
 namespace {
 using base::android::GetClass;

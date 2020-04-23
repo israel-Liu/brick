@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TRACKED_REF_H_
-#define BASE_TASK_SCHEDULER_TRACKED_REF_H_
+#ifndef BRICK_TASK_SCHEDULER_TRACKED_REF_H_
+#define BRICK_TASK_SCHEDULER_TRACKED_REF_H_
 
 #include <memory>
 
-#include "base/atomic_ref_count.h"
-#include "base/gtest_prod_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/synchronization/waitable_event.h"
+#include "brick/atomic_ref_count.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/synchronization/waitable_event.h"
 
 namespace base {
 namespace internal {
@@ -168,4 +168,4 @@ class TrackedRefFactory {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TRACKED_REF_H_
+#endif  // BRICK_TASK_SCHEDULER_TRACKED_REF_H_

@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TASK_H_
-#define BASE_TASK_SCHEDULER_TASK_H_
+#ifndef BRICK_TASK_SCHEDULER_TASK_H_
+#define BRICK_TASK_SCHEDULER_TASK_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/pending_task.h"
-#include "base/sequenced_task_runner.h"
-#include "base/single_thread_task_runner.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/pending_task.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/time/time.h"
 
 namespace base {
 namespace internal {
 
 // A task is a unit of work inside the task scheduler. Support for tracing and
 // profiling inherited from PendingTask.
-struct BASE_EXPORT Task : public PendingTask {
+struct BRICK_EXPORT Task : public PendingTask {
   // |posted_from| is the site the task was posted from. |task| is the closure
   // to run. |traits_in| is metadata about the task. |delay| is a delay that
   // must expire before the Task runs. If |delay| is non-zero and the shutdown
@@ -71,4 +71,4 @@ struct BASE_EXPORT Task : public PendingTask {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TASK_H_
+#endif  // BRICK_TASK_SCHEDULER_TASK_H_

@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_STARTUP_INFORMATION_H_
-#define BASE_WIN_STARTUP_INFORMATION_H_
+#ifndef BRICK_WIN_STARTUP_INFORMATION_H_
+#define BRICK_WIN_STARTUP_INFORMATION_H_
 
 #include <windows.h>
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
 
 // Manages the lifetime of additional attributes in STARTUPINFOEX.
-class BASE_EXPORT StartupInformation {
+class BRICK_EXPORT StartupInformation {
  public:
   StartupInformation();
 
@@ -48,4 +48,4 @@ class BASE_EXPORT StartupInformation {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_STARTUP_INFORMATION_H_
+#endif  // BRICK_WIN_STARTUP_INFORMATION_H_

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SEQUENCE_SORT_KEY_H_
-#define BASE_TASK_SCHEDULER_SEQUENCE_SORT_KEY_H_
+#ifndef BRICK_TASK_SCHEDULER_SEQUENCE_SORT_KEY_H_
+#define BRICK_TASK_SCHEDULER_SEQUENCE_SORT_KEY_H_
 
-#include "base/base_export.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/time/time.h"
 
 namespace base {
 namespace internal {
 
 // An immutable but assignable representation of the priority of a Sequence.
-class BASE_EXPORT SequenceSortKey final {
+class BRICK_EXPORT SequenceSortKey final {
  public:
   SequenceSortKey(TaskPriority priority, TimeTicks next_task_sequenced_time);
 
@@ -49,4 +49,4 @@ class BASE_EXPORT SequenceSortKey final {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SEQUENCE_SORT_KEY_H_
+#endif  // BRICK_TASK_SCHEDULER_SEQUENCE_SORT_KEY_H_

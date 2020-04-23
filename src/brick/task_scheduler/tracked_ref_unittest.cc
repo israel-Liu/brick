@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/tracked_ref.h"
+#include "brick/task_scheduler/tracked_ref.h"
 
 #include <memory>
 
-#include "base/bind.h"
-#include "base/macros.h"
-#include "base/synchronization/atomic_flag.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/thread.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/macros.h"
+#include "brick/synchronization/atomic_flag.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/thread.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/stringprintf.h"
+#include "brick/strings/stringprintf.h"
 
 #include <errno.h>
 #include <stddef.h>
 
 #include <vector>
 
-#include "base/macros.h"
-#include "base/scoped_clear_errno.h"
-#include "base/strings/string_util.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/macros.h"
+#include "brick/scoped_clear_errno.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "build/build_config.h"
 
 namespace base {

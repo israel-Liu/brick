@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/category_registry.h"
+#include "brick/trace_event/category_registry.h"
 
 #include <string.h>
 
 #include <type_traits>
 
-#include "base/atomicops.h"
-#include "base/debug/leak_annotations.h"
-#include "base/logging.h"
-#include "base/third_party/dynamic_annotations/dynamic_annotations.h"
-#include "base/trace_event/trace_category.h"
+#include "brick/atomicops.h"
+#include "brick/debug/leak_annotations.h"
+#include "brick/logging.h"
+#include "brick/third_party/dynamic_annotations/dynamic_annotations.h"
+#include "brick/trace_event/trace_category.h"
 
 namespace base {
 namespace trace_event {

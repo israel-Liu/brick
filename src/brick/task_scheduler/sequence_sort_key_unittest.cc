@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/sequence_sort_key.h"
+#include "brick/task_scheduler/sequence_sort_key.h"
 
-#include "base/task_scheduler/task_traits.h"
-#include "base/time/time.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/time/time.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

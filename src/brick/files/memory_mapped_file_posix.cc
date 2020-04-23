@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/memory_mapped_file.h"
+#include "brick/files/memory_mapped_file.h"
 
 #include <fcntl.h>
 #include <stddef.h>
@@ -11,9 +11,9 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "base/logging.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 #if defined(OS_ANDROID)

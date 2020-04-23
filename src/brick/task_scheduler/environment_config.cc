@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/environment_config.h"
+#include "brick/task_scheduler/environment_config.h"
 
-#include "base/synchronization/lock.h"
-#include "base/threading/platform_thread.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/platform_thread.h"
 #include "build/build_config.h"
 
 namespace base {

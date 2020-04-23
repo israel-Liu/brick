@@ -2,27 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread.h"
+#include "brick/threading/thread.h"
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/lazy_instance.h"
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/run_loop.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/third_party/dynamic_annotations/dynamic_annotations.h"
-#include "base/threading/thread_id_name_manager.h"
-#include "base/threading/thread_local.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/lazy_instance.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/run_loop.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/third_party/dynamic_annotations/dynamic_annotations.h"
+#include "brick/threading/thread_id_name_manager.h"
+#include "brick/threading/thread_local.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 #if defined(OS_POSIX) && !defined(OS_NACL)
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 #endif
 
 #if defined(OS_WIN)
-#include "base/win/scoped_com_initializer.h"
+#include "brick/win/scoped_com_initializer.h"
 #endif
 
 namespace base {

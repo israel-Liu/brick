@@ -7,16 +7,16 @@
 #include <memory>
 #include <vector>
 
-#include "base/at_exit.h"
-#include "base/atomic_sequence_num.h"
-#include "base/atomicops.h"
-#include "base/barrier_closure.h"
-#include "base/bind.h"
-#include "base/lazy_instance.h"
-#include "base/sys_info.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/simple_thread.h"
-#include "base/time/time.h"
+#include "brick/at_exit.h"
+#include "brick/atomic_sequence_num.h"
+#include "brick/atomicops.h"
+#include "brick/barrier_closure.h"
+#include "brick/bind.h"
+#include "brick/lazy_instance.h"
+#include "brick/sys_info.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/simple_thread.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_HEAP_PROFILER_H
-#define BASE_TRACE_EVENT_HEAP_PROFILER_H
+#ifndef BRICK_TRACE_EVENT_HEAP_PROFILER_H
+#define BRICK_TRACE_EVENT_HEAP_PROFILER_H
 
-#include "base/compiler_specific.h"
-#include "base/trace_event/heap_profiler_allocation_context_tracker.h"
+#include "brick/compiler_specific.h"
+#include "brick/trace_event/heap_profiler_allocation_context_tracker.h"
 
 // This header file defines the set of macros that are used to track memory
 // usage in the heap profiler. This is in addition to the macros defined in
@@ -92,7 +92,7 @@ class HeapProfilerScopedStackFrame {
   const void* const program_counter_;
 };
 
-class BASE_EXPORT HeapProfilerScopedIgnore {
+class BRICK_EXPORT HeapProfilerScopedIgnore {
  public:
   inline HeapProfilerScopedIgnore() {
     using base::trace_event::AllocationContextTracker;
@@ -116,4 +116,4 @@ class BASE_EXPORT HeapProfilerScopedIgnore {
 
 }  // namespace trace_event_internal
 
-#endif  // BASE_TRACE_EVENT_HEAP_PROFILER_H
+#endif  // BRICK_TRACE_EVENT_HEAP_PROFILER_H

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/icu_test_util.h"
+#include "brick/test/icu_test_util.h"
 
-#include "base/base_switches.h"
-#include "base/command_line.h"
-#include "base/i18n/icu_util.h"
-#include "base/i18n/rtl.h"
+#include "brick/base_switches.h"
+#include "brick/command_line.h"
+#include "brick/i18n/icu_util.h"
+#include "brick/i18n/rtl.h"
 #include "third_party/icu/source/common/unicode/uloc.h"
 
 namespace base {

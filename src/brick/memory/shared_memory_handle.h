@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_SHARED_MEMORY_HANDLE_H_
-#define BASE_MEMORY_SHARED_MEMORY_HANDLE_H_
+#ifndef BRICK_MEMORY_SHARED_MEMORY_HANDLE_H_
+#define BRICK_MEMORY_SHARED_MEMORY_HANDLE_H_
 
 #include <stddef.h>
 
-#include "base/unguessable_token.h"
+#include "brick/unguessable_token.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/process/process_handle.h"
-#include "base/win/windows_types.h"
+#include "brick/process/process_handle.h"
+#include "brick/win/windows_types.h"
 #elif defined(OS_MACOSX) && !defined(OS_IOS)
 #include <mach/mach.h>
-#include "base/base_export.h"
-#include "base/file_descriptor_posix.h"
-#include "base/macros.h"
-#include "base/process/process_handle.h"
+#include "brick/base_export.h"
+#include "brick/file_descriptor_posix.h"
+#include "brick/macros.h"
+#include "brick/process/process_handle.h"
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
 #include <sys/types.h>
-#include "base/file_descriptor_posix.h"
+#include "brick/file_descriptor_posix.h"
 #endif
 
 namespace base {
@@ -32,7 +32,7 @@ namespace base {
 // address space of the current process.
 // TODO(erikchen): This class should have strong ownership semantics to prevent
 // leaks of the underlying OS resource. https://crbug.com/640840.
-class BASE_EXPORT SharedMemoryHandle {
+class BRICK_EXPORT SharedMemoryHandle {
  public:
   // The default constructor returns an invalid SharedMemoryHandle.
   SharedMemoryHandle();
@@ -233,4 +233,4 @@ class BASE_EXPORT SharedMemoryHandle {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_SHARED_MEMORY_HANDLE_H_
+#endif  // BRICK_MEMORY_SHARED_MEMORY_HANDLE_H_

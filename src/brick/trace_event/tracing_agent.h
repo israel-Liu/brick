@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACING_AGENT_H_
-#define BASE_TRACE_EVENT_TRACING_AGENT_H_
+#ifndef BRICK_TRACE_EVENT_TRACING_AGENT_H_
+#define BRICK_TRACE_EVENT_TRACING_AGENT_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/memory/ref_counted_memory.h"
-#include "base/values.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/memory/ref_counted_memory.h"
+#include "brick/values.h"
 
 namespace base {
 
@@ -24,7 +24,7 @@ class TraceConfig;
 // Some existing examples include TracingControllerImpl for Chrome trace events,
 // DebugDaemonClient for CrOs system trace, EtwTracingAgent for Windows system
 // trace and PowerTracingAgent for BattOr power trace.
-class BASE_EXPORT TracingAgent {
+class BRICK_EXPORT TracingAgent {
  public:
   using StartAgentTracingCallback =
       base::OnceCallback<void(const std::string& agent_name, bool success)>;
@@ -93,4 +93,4 @@ class BASE_EXPORT TracingAgent {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACING_AGENT_H_
+#endif  // BRICK_TRACE_EVENT_TRACING_AGENT_H_

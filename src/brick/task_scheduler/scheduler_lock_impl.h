@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_SCHEDULER_LOCK_IMPL_H
-#define BASE_TASK_SCHEDULER_SCHEDULER_LOCK_IMPL_H
+#ifndef BRICK_TASK_SCHEDULER_SCHEDULER_LOCK_IMPL_H
+#define BRICK_TASK_SCHEDULER_SCHEDULER_LOCK_IMPL_H
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/synchronization/lock.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 
@@ -21,7 +21,7 @@ namespace internal {
 // This lock tracks all of the available locks to make sure that any locks are
 // acquired in an expected order.
 // See scheduler_lock.h for details.
-class BASE_EXPORT SchedulerLockImpl {
+class BRICK_EXPORT SchedulerLockImpl {
  public:
   SchedulerLockImpl();
   explicit SchedulerLockImpl(const SchedulerLockImpl* predecessor);
@@ -43,4 +43,4 @@ class BASE_EXPORT SchedulerLockImpl {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_SCHEDULER_LOCK_IMPL_H
+#endif  // BRICK_TASK_SCHEDULER_SCHEDULER_LOCK_IMPL_H

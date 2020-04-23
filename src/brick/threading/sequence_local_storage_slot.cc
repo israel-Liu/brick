@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/sequence_local_storage_slot.h"
+#include "brick/threading/sequence_local_storage_slot.h"
 
 #include <limits>
 
-#include "base/atomic_sequence_num.h"
-#include "base/logging.h"
+#include "brick/atomic_sequence_num.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace internal {

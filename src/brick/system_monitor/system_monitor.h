@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYSTEM_MONITOR_SYSTEM_MONITOR_H_
-#define BASE_SYSTEM_MONITOR_SYSTEM_MONITOR_H_
+#ifndef BRICK_SYSTEM_MONITOR_SYSTEM_MONITOR_H_
+#define BRICK_SYSTEM_MONITOR_SYSTEM_MONITOR_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/observer_list_threadsafe.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/observer_list_threadsafe.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -16,7 +16,7 @@ namespace base {
 // Class for monitoring various system-related subsystems
 // such as power management, network status, etc.
 // TODO(mbelshe):  Add support beyond just power management.
-class BASE_EXPORT SystemMonitor {
+class BRICK_EXPORT SystemMonitor {
  public:
   // Type of devices whose change need to be monitored, such as add/remove.
   enum DeviceType {
@@ -33,7 +33,7 @@ class BASE_EXPORT SystemMonitor {
   // Get the application-wide SystemMonitor (if not present, returns NULL).
   static SystemMonitor* Get();
 
-  class BASE_EXPORT DevicesChangedObserver {
+  class BRICK_EXPORT DevicesChangedObserver {
    public:
     // Notification that the devices connected to the system have changed.
     // This is only implemented on Windows currently.
@@ -72,4 +72,4 @@ class BASE_EXPORT SystemMonitor {
 
 }  // namespace base
 
-#endif  // BASE_SYSTEM_MONITOR_SYSTEM_MONITOR_H_
+#endif  // BRICK_SYSTEM_MONITOR_SYSTEM_MONITOR_H_

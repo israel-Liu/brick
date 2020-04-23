@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/metrics_hashes.h"
+#include "brick/metrics/metrics_hashes.h"
 
-#include "base/logging.h"
-#include "base/md5.h"
-#include "base/sys_byteorder.h"
+#include "brick/logging.h"
+#include "brick/md5.h"
+#include "brick/sys_byteorder.h"
 
 namespace base {
 

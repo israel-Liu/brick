@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/profiler/native_stack_sampler.h"
+#include "brick/profiler/native_stack_sampler.h"
 
 #include <dlfcn.h>
 #include <libkern/OSByteOrder.h>
@@ -22,11 +22,11 @@
 #include <map>
 #include <memory>
 
-#include "base/logging.h"
-#include "base/mac/mach_logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/strings/string_number_conversions.h"
+#include "brick/logging.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/string_number_conversions.h"
 
 extern "C" {
 void _sigtramp(int, int, struct sigset*);

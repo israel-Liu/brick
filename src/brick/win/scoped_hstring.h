@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_HSTRING_H_
-#define BASE_WIN_SCOPED_HSTRING_H_
+#ifndef BRICK_WIN_SCOPED_HSTRING_H_
+#define BRICK_WIN_SCOPED_HSTRING_H_
 
 #include <hstring.h>
 
-#include "base/scoped_generic.h"
-#include "base/strings/string_piece_forward.h"
+#include "brick/scoped_generic.h"
+#include "brick/strings/string_piece_forward.h"
 
 namespace base {
 
@@ -16,7 +16,7 @@ namespace internal {
 
 // Scoped HSTRING class to maintain lifetime of HSTRINGs allocated with
 // WindowsCreateString().
-struct BASE_EXPORT ScopedHStringTraits {
+struct BRICK_EXPORT ScopedHStringTraits {
   static HSTRING InvalidValue() { return nullptr; }
   static void Free(HSTRING hstr);
 };
@@ -51,7 +51,7 @@ namespace win {
 //   HRESULT hr = WindowsCreateString(..., &win_string);
 //   ScopedHString string(win_string);
 //
-class BASE_EXPORT ScopedHString
+class BRICK_EXPORT ScopedHString
     : public ScopedGeneric<HSTRING, base::internal::ScopedHStringTraits> {
  public:
   // Constructs a ScopedHString from an HSTRING, and takes ownership of |hstr|.
@@ -70,4 +70,4 @@ class BASE_EXPORT ScopedHString
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_HSTRING_H_
+#endif  // BRICK_WIN_SCOPED_HSTRING_H_

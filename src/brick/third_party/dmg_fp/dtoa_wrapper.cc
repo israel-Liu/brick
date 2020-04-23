@@ -4,9 +4,9 @@
 //
 // The purpose of this file is to supply the macro definintions necessary
 // to make third_party/dmg_fp/dtoa.cc threadsafe.
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/synchronization/lock.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/synchronization/lock.h"
 
 // We need two locks because they're sometimes grabbed at the same time.
 // A single lock would lead to an attempted recursive grab.
@@ -43,7 +43,7 @@ inline static void FREE_DTOA_LOCK(size_t n) {
   lock->Release();
 }
 
-#include "base/third_party/dmg_fp/dtoa.cc"
+#include "brick/third_party/dmg_fp/dtoa.cc"
 
 #undef Bias  // Avoid windows jumbo build breakage.
 #undef Long  // To avoid breaking jni code in jumbo builds

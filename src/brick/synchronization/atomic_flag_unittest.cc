@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/atomic_flag.h"
+#include "brick/synchronization/atomic_flag.h"
 
-#include "base/bind.h"
-#include "base/logging.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/gtest_util.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread.h"
+#include "brick/bind.h"
+#include "brick/logging.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/gtest_util.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

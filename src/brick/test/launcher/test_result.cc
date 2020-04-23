@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/launcher/test_result.h"
+#include "brick/test/launcher/test_result.h"
 
 #include <stddef.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 

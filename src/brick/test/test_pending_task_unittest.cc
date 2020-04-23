@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_pending_task.h"
+#include "brick/test/test_pending_task.h"
 
-#include "base/bind.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/bind.h"
+#include "brick/trace_event/trace_event.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest-spi.h"
 #include "testing/gtest/include/gtest/gtest.h"

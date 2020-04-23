@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PROCESS_PROCESS_H_
-#define BASE_PROCESS_PROCESS_H_
+#ifndef BRICK_PROCESS_PROCESS_H_
+#define BRICK_PROCESS_PROCESS_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/process/process_handle.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/process/process_handle.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/scoped_handle.h"
+#include "brick/win/scoped_handle.h"
 #endif
 
 #if defined(OS_FUCHSIA)
-#include "base/fuchsia/scoped_zx_handle.h"
+#include "brick/fuchsia/scoped_zx_handle.h"
 #endif
 
 #if defined(OS_MACOSX)
-#include "base/feature_list.h"
-#include "base/process/port_provider_mac.h"
+#include "brick/feature_list.h"
+#include "brick/process/port_provider_mac.h"
 #endif
 
 namespace base {
@@ -43,7 +43,7 @@ extern const Feature kMacAllowBackgroundingProcesses;
 // POSIX: The underlying ProcessHandle is not guaranteed to remain valid after
 // the process dies, and it may be reused by the system, which means that it may
 // end up pointing to the wrong process.
-class BASE_EXPORT Process {
+class BRICK_EXPORT Process {
  public:
   // On Windows, this takes ownership of |handle|. On POSIX, this does not take
   // ownership of |handle|.
@@ -204,10 +204,10 @@ class BASE_EXPORT Process {
 // Exposed for testing.
 // Given the contents of the /proc/<pid>/cgroup file, determine whether the
 // process is backgrounded or not.
-BASE_EXPORT bool IsProcessBackgroundedCGroup(
+BRICK_EXPORT bool IsProcessBackgroundedCGroup(
     const StringPiece& cgroup_contents);
 #endif  // defined(OS_CHROMEOS)
 
 }  // namespace base
 
-#endif  // BASE_PROCESS_PROCESS_H_
+#endif  // BRICK_PROCESS_PROCESS_H_

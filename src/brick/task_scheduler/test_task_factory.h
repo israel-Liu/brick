@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TEST_TASK_FACTORY_H_
-#define BASE_TASK_SCHEDULER_TEST_TASK_FACTORY_H_
+#ifndef BRICK_TASK_SCHEDULER_TEST_TASK_FACTORY_H_
+#define BRICK_TASK_SCHEDULER_TEST_TASK_FACTORY_H_
 
 #include <stddef.h>
 
 #include <unordered_set>
 
-#include "base/callback_forward.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/task_runner.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/task_scheduler/test_utils.h"
-#include "base/threading/thread_checker_impl.h"
+#include "brick/callback_forward.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/task_runner.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/task_scheduler/test_utils.h"
+#include "brick/threading/thread_checker_impl.h"
 
 namespace base {
 namespace internal {
@@ -96,4 +96,4 @@ class TestTaskFactory {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TEST_TASK_FACTORY_H_
+#endif  // BRICK_TASK_SCHEDULER_TEST_TASK_FACTORY_H_

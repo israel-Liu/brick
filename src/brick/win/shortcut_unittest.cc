@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/shortcut.h"
+#include "brick/win/shortcut.h"
 
 #include <stdint.h>
 
 #include <string>
 
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/macros.h"
-#include "base/test/test_file_util.h"
-#include "base/test/test_shortcut_win.h"
-#include "base/win/scoped_com_initializer.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/macros.h"
+#include "brick/test/test_file_util.h"
+#include "brick/test/test_shortcut_win.h"
+#include "brick/win/scoped_com_initializer.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

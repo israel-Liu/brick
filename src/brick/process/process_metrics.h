@@ -5,8 +5,8 @@
 // This file contains routines for gathering resource statistics for processes
 // running on the system.
 
-#ifndef BASE_PROCESS_PROCESS_METRICS_H_
-#define BASE_PROCESS_PROCESS_METRICS_H_
+#ifndef BRICK_PROCESS_PROCESS_METRICS_H_
+#define BRICK_PROCESS_PROCESS_METRICS_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -14,17 +14,17 @@
 #include <memory>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/process/process_handle.h"
-#include "base/time/time.h"
-#include "base/values.h"
+#include "brick/base_export.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/process/process_handle.h"
+#include "brick/time/time.h"
+#include "brick/values.h"
 #include "build/build_config.h"
 
 #if defined(OS_MACOSX)
 #include <mach/mach.h>
-#include "base/process/port_provider_mac.h"
+#include "brick/process/port_provider_mac.h"
 
 #if !defined(OS_IOS)
 #include <mach/mach_vm.h>
@@ -32,8 +32,8 @@
 #endif
 
 #if defined(OS_WIN)
-#include "base/win/scoped_handle.h"
-#include "base/win/windows_types.h"
+#include "brick/win/scoped_handle.h"
+#include "brick/win/windows_types.h"
 #endif
 
 namespace base {
@@ -54,7 +54,7 @@ struct PageFaultCounts {
 #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
 
 // Convert a POSIX timeval to microseconds.
-BASE_EXPORT int64_t TimeValToMicroseconds(const struct timeval& tv);
+BRICK_EXPORT int64_t TimeValToMicroseconds(const struct timeval& tv);
 
 // Provides performance metrics for a specified process (CPU usage and IO
 // counters). Use CreateCurrentProcessMetrics() to get an instance for the
@@ -70,7 +70,7 @@ BASE_EXPORT int64_t TimeValToMicroseconds(const struct timeval& tv);
 //
 // For further documentation on memory, see
 // https://chromium.googlesource.com/chromium/src/+/HEAD/docs/README.md
-class BASE_EXPORT ProcessMetrics {
+class BRICK_EXPORT ProcessMetrics {
  public:
   ~ProcessMetrics();
 
@@ -95,7 +95,7 @@ class BASE_EXPORT ProcessMetrics {
 #if defined(OS_LINUX) || defined(OS_ANDROID)
   // Resident Set Size is a Linux/Android specific memory concept. Do not
   // attempt to extend this to other platforms.
-  BASE_EXPORT size_t GetResidentSetSize() const;
+  BRICK_EXPORT size_t GetResidentSetSize() const;
 #endif
 
 #if defined(OS_CHROMEOS)
@@ -109,7 +109,7 @@ class BASE_EXPORT ProcessMetrics {
     size_t private_dirty_kb;
     size_t swap_kb;
   };
-  BASE_EXPORT TotalsSummary GetTotalsSummary() const;
+  BRICK_EXPORT TotalsSummary GetTotalsSummary() const;
 #endif
 
 #if defined(OS_MACOSX)
@@ -255,23 +255,23 @@ class BASE_EXPORT ProcessMetrics {
 
 // Returns the memory committed by the system in KBytes.
 // Returns 0 if it can't compute the commit charge.
-BASE_EXPORT size_t GetSystemCommitCharge();
+BRICK_EXPORT size_t GetSystemCommitCharge();
 
 // Returns the number of bytes in a memory page. Do not use this to compute
 // the number of pages in a block of memory for calling mincore(). On some
 // platforms, e.g. iOS, mincore() uses a different page size from what is
 // returned by GetPageSize().
-BASE_EXPORT size_t GetPageSize();
+BRICK_EXPORT size_t GetPageSize();
 
 // Returns the maximum number of file descriptors that can be open by a process
 // at once. If the number is unavailable, a conservative best guess is returned.
-BASE_EXPORT size_t GetMaxFds();
+BRICK_EXPORT size_t GetMaxFds();
 
 #if defined(OS_POSIX) && !defined(OS_FUCHSIA)
 // Increases the file descriptor soft limit to |max_descriptors| or the OS hard
 // limit, whichever is lower. If the limit is already higher than
 // |max_descriptors|, then nothing happens.
-BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_descriptors);
+BRICK_EXPORT void IncreaseFdLimitTo(unsigned int max_descriptors);
 #endif  // defined(OS_POSIX) && !defined(OS_FUCHSIA)
 
 #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -286,7 +286,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_descriptors);
 // Linux/Android/Chrome OS. Shmem/slab/gem_objects/gem_size are Chrome OS only.
 // Speculative/file_backed/purgeable are Mac and iOS only.
 // Free is absent on Windows (see "avail_phys" below).
-struct BASE_EXPORT SystemMemoryInfoKB {
+struct BRICK_EXPORT SystemMemoryInfoKB {
   SystemMemoryInfoKB();
   SystemMemoryInfoKB(const SystemMemoryInfoKB& other);
 
@@ -356,7 +356,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
 //
 // Fills in the provided |meminfo| structure. Returns true on success.
 // Exposed for memory debugging widget.
-BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo);
+BRICK_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo);
 
 #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
         // defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
@@ -365,25 +365,25 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo);
 // Parse the data found in /proc/<pid>/stat and return the sum of the
 // CPU-related ticks.  Returns -1 on parse error.
 // Exposed for testing.
-BASE_EXPORT int ParseProcStatCPU(StringPiece input);
+BRICK_EXPORT int ParseProcStatCPU(StringPiece input);
 
 // Get the number of threads of |process| as available in /proc/<pid>/stat.
 // This should be used with care as no synchronization with running threads is
 // done. This is mostly useful to guarantee being single-threaded.
 // Returns 0 on failure.
-BASE_EXPORT int GetNumberOfThreads(ProcessHandle process);
+BRICK_EXPORT int GetNumberOfThreads(ProcessHandle process);
 
 // /proc/self/exe refers to the current executable.
-BASE_EXPORT extern const char kProcSelfExe[];
+BRICK_EXPORT extern const char kProcSelfExe[];
 
 // Parses a string containing the contents of /proc/meminfo
 // returns true on success or false for a parsing error
 // Exposed for testing.
-BASE_EXPORT bool ParseProcMeminfo(StringPiece input,
+BRICK_EXPORT bool ParseProcMeminfo(StringPiece input,
                                   SystemMemoryInfoKB* meminfo);
 
 // Data from /proc/vmstat.
-struct BASE_EXPORT VmStatInfo {
+struct BRICK_EXPORT VmStatInfo {
   // Serializes the platform specific fields to value.
   std::unique_ptr<DictionaryValue> ToValue() const;
 
@@ -394,15 +394,15 @@ struct BASE_EXPORT VmStatInfo {
 
 // Retrieves data from /proc/vmstat about system-wide vm operations.
 // Fills in the provided |vmstat| structure. Returns true on success.
-BASE_EXPORT bool GetVmStatInfo(VmStatInfo* vmstat);
+BRICK_EXPORT bool GetVmStatInfo(VmStatInfo* vmstat);
 
 // Parses a string containing the contents of /proc/vmstat
 // returns true on success or false for a parsing error
 // Exposed for testing.
-BASE_EXPORT bool ParseProcVmstat(StringPiece input, VmStatInfo* vmstat);
+BRICK_EXPORT bool ParseProcVmstat(StringPiece input, VmStatInfo* vmstat);
 
 // Data from /proc/diskstats about system-wide disk I/O.
-struct BASE_EXPORT SystemDiskInfo {
+struct BRICK_EXPORT SystemDiskInfo {
   SystemDiskInfo();
   SystemDiskInfo(const SystemDiskInfo& other);
 
@@ -425,20 +425,20 @@ struct BASE_EXPORT SystemDiskInfo {
 // Checks whether the candidate string is a valid disk name, [hsv]d[a-z]+
 // for a generic disk or mmcblk[0-9]+ for the MMC case.
 // Names of disk partitions (e.g. sda1) are not valid.
-BASE_EXPORT bool IsValidDiskName(StringPiece candidate);
+BRICK_EXPORT bool IsValidDiskName(StringPiece candidate);
 
 // Retrieves data from /proc/diskstats about system-wide disk I/O.
 // Fills in the provided |diskinfo| structure. Returns true on success.
-BASE_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* diskinfo);
+BRICK_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* diskinfo);
 
 // Returns the amount of time spent in user space since boot across all CPUs.
-BASE_EXPORT TimeDelta GetUserCpuTimeSinceBoot();
+BRICK_EXPORT TimeDelta GetUserCpuTimeSinceBoot();
 
 #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
 
 #if defined(OS_CHROMEOS)
 // Data from files in directory /sys/block/zram0 about ZRAM usage.
-struct BASE_EXPORT SwapInfo {
+struct BRICK_EXPORT SwapInfo {
   SwapInfo()
       : num_reads(0),
         num_writes(0),
@@ -461,18 +461,18 @@ struct BASE_EXPORT SwapInfo {
 // This should be used for the new ZRAM sysfs interfaces.
 // Returns true on success or false for a parsing error.
 // Exposed for testing.
-BASE_EXPORT bool ParseZramMmStat(StringPiece mm_stat_data, SwapInfo* swap_info);
+BRICK_EXPORT bool ParseZramMmStat(StringPiece mm_stat_data, SwapInfo* swap_info);
 
 // Parses a string containing the contents of /sys/block/zram0/stat
 // This should be used for the new ZRAM sysfs interfaces.
 // Returns true on success or false for a parsing error.
 // Exposed for testing.
-BASE_EXPORT bool ParseZramStat(StringPiece stat_data, SwapInfo* swap_info);
+BRICK_EXPORT bool ParseZramStat(StringPiece stat_data, SwapInfo* swap_info);
 
 // In ChromeOS, reads files from /sys/block/zram0 that contain ZRAM usage data.
 // Fills in the provided |swap_data| structure.
 // Returns true on success or false for a parsing error.
-BASE_EXPORT bool GetSwapInfo(SwapInfo* swap_info);
+BRICK_EXPORT bool GetSwapInfo(SwapInfo* swap_info);
 #endif  // defined(OS_CHROMEOS)
 
 // Collects and holds performance metrics for system memory and disk.
@@ -520,7 +520,7 @@ enum class MachVMRegionResult {
 // |size| and |info| are output parameters, only valid on Success.
 // |address| is an in-out parameter, than represents both the address to start
 // looking, and the start address of the memory region.
-BASE_EXPORT MachVMRegionResult GetTopInfo(mach_port_t task,
+BRICK_EXPORT MachVMRegionResult GetTopInfo(mach_port_t task,
                                           mach_vm_size_t* size,
                                           mach_vm_address_t* address,
                                           vm_region_top_info_data_t* info);
@@ -531,7 +531,7 @@ BASE_EXPORT MachVMRegionResult GetTopInfo(mach_port_t task,
 // Returns info on the first memory region at or after |address|, including
 // resident memory and share mode.
 // |size| and |info| are output parameters, only valid on Success.
-BASE_EXPORT MachVMRegionResult GetBasicInfo(mach_port_t task,
+BRICK_EXPORT MachVMRegionResult GetBasicInfo(mach_port_t task,
                                             mach_vm_size_t* size,
                                             mach_vm_address_t* address,
                                             vm_region_basic_info_64* info);
@@ -539,4 +539,4 @@ BASE_EXPORT MachVMRegionResult GetBasicInfo(mach_port_t task,
 
 }  // namespace base
 
-#endif  // BASE_PROCESS_PROCESS_METRICS_H_
+#endif  // BRICK_PROCESS_PROCESS_METRICS_H_

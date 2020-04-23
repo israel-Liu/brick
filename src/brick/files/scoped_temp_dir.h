@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILES_SCOPED_TEMP_DIR_H_
-#define BASE_FILES_SCOPED_TEMP_DIR_H_
+#ifndef BRICK_FILES_SCOPED_TEMP_DIR_H_
+#define BRICK_FILES_SCOPED_TEMP_DIR_H_
 
 // An object representing a temporary / scratch directory that should be
 // cleaned up (recursively) when this object goes out of scope.  Since deletion
@@ -17,13 +17,13 @@
 // (CreateUniqueTempDir, CreateUniqueTempDirUnderPath, and Set) must have
 // intervening calls to Delete or Take, or the calls will fail.
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
 
 namespace base {
 
-class BASE_EXPORT ScopedTempDir {
+class BRICK_EXPORT ScopedTempDir {
  public:
   // No directory is owned/created initially.
   ScopedTempDir();
@@ -68,4 +68,4 @@ class BASE_EXPORT ScopedTempDir {
 
 }  // namespace base
 
-#endif  // BASE_FILES_SCOPED_TEMP_DIR_H_
+#endif  // BRICK_FILES_SCOPED_TEMP_DIR_H_

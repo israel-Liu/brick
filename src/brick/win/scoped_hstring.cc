@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/scoped_hstring.h"
+#include "brick/win/scoped_hstring.h"
 
 #include <winstring.h>
 
-#include "base/strings/string_piece.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/utf_string_conversions.h"
 
 namespace base {
 

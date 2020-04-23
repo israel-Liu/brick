@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/sys_string_conversions.h"
+#include "brick/strings/sys_string_conversions.h"
 
 #import <Foundation/Foundation.h>
 #include <stddef.h>
 
 #include <vector>
 
-#include "base/mac/foundation_util.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/strings/string_piece.h"
+#include "brick/mac/foundation_util.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 

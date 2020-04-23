@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_EVENT_FILTER_TEST_UTILS_H_
-#define BASE_TRACE_EVENT_TRACE_EVENT_FILTER_TEST_UTILS_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_EVENT_FILTER_TEST_UTILS_H_
+#define BRICK_TRACE_EVENT_TRACE_EVENT_FILTER_TEST_UTILS_H_
 
 #include <memory>
 #include <string>
 
-#include "base/macros.h"
-#include "base/trace_event/trace_event_filter.h"
+#include "brick/macros.h"
+#include "brick/trace_event/trace_event_filter.h"
 
 namespace base {
 namespace trace_event {
@@ -50,4 +50,4 @@ class TestEventFilter : public TraceEventFilter {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_EVENT_FILTER_TEST_UTILS_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_EVENT_FILTER_TEST_UTILS_H_

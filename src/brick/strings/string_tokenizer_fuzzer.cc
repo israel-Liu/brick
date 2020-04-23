@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "base/strings/string_tokenizer.h"
+#include "brick/strings/string_tokenizer.h"
 
 void GetAllTokens(base::StringTokenizer& t) {
   while (t.GetNext()) {

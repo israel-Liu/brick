@@ -2,31 +2,31 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/field_trial.h"
+#include "brick/metrics/field_trial.h"
 
 #include <algorithm>
 #include <utility>
 
-#include "base/base_switches.h"
-#include "base/build_time.h"
-#include "base/command_line.h"
-#include "base/debug/activity_tracker.h"
-#include "base/logging.h"
-#include "base/metrics/field_trial_param_associator.h"
-#include "base/process/memory.h"
-#include "base/process/process_handle.h"
-#include "base/process/process_info.h"
-#include "base/rand_util.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/unguessable_token.h"
+#include "brick/base_switches.h"
+#include "brick/build_time.h"
+#include "brick/command_line.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/logging.h"
+#include "brick/metrics/field_trial_param_associator.h"
+#include "brick/process/memory.h"
+#include "brick/process/process_handle.h"
+#include "brick/process/process_info.h"
+#include "brick/rand_util.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/unguessable_token.h"
 
 // On POSIX, the fd is shared using the mapping in GlobalDescriptors.
 #if defined(OS_POSIX) && !defined(OS_NACL)
-#include "base/posix/global_descriptors.h"
+#include "brick/posix/global_descriptors.h"
 #endif
 
 namespace base {

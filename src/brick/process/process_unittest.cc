@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process.h"
+#include "brick/process/process.h"
 
 #include <utility>
 
-#include "base/at_exit.h"
-#include "base/process/kill.h"
-#include "base/test/multiprocess_test.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread_local.h"
+#include "brick/at_exit.h"
+#include "brick/process/kill.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread_local.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"

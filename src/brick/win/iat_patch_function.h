@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_IAT_PATCH_FUNCTION_H_
-#define BASE_WIN_IAT_PATCH_FUNCTION_H_
+#ifndef BRICK_WIN_IAT_PATCH_FUNCTION_H_
+#define BRICK_WIN_IAT_PATCH_FUNCTION_H_
 
 #include <windows.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace win {
@@ -20,7 +20,7 @@ namespace win {
 // This is the case when, for example, we want to intercept
 // CertDuplicateCertificateContext function (exported from crypt32.dll) called
 // by wininet.dll.
-class BASE_EXPORT IATPatchFunction {
+class BRICK_EXPORT IATPatchFunction {
  public:
   IATPatchFunction();
   ~IATPatchFunction();
@@ -78,4 +78,4 @@ class BASE_EXPORT IATPatchFunction {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_IAT_PATCH_FUNCTION_H_
+#endif  // BRICK_WIN_IAT_PATCH_FUNCTION_H_

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_LAUNCH_DATA_H_
-#define BASE_MAC_SCOPED_LAUNCH_DATA_H_
+#ifndef BRICK_MAC_SCOPED_LAUNCH_DATA_H_
+#define BRICK_MAC_SCOPED_LAUNCH_DATA_H_
 
 #include <launch.h>
 
-#include "base/scoped_generic.h"
+#include "brick/scoped_generic.h"
 
 namespace base {
 namespace mac {
@@ -28,4 +28,4 @@ using ScopedLaunchData =
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_LAUNCH_DATA_H_
+#endif  // BRICK_MAC_SCOPED_LAUNCH_DATA_H_

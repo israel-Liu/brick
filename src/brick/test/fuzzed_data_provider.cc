@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/fuzzed_data_provider.h"
+#include "brick/test/fuzzed_data_provider.h"
 
 #include <algorithm>
 #include <limits>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 

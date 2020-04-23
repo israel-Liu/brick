@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_PRIORITY_QUEUE_H_
-#define BASE_TASK_SCHEDULER_PRIORITY_QUEUE_H_
+#ifndef BRICK_TASK_SCHEDULER_PRIORITY_QUEUE_H_
+#define BRICK_TASK_SCHEDULER_PRIORITY_QUEUE_H_
 
 #include <memory>
 #include <queue>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/task_scheduler/scheduler_lock.h"
-#include "base/task_scheduler/sequence.h"
-#include "base/task_scheduler/sequence_sort_key.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/task_scheduler/scheduler_lock.h"
+#include "brick/task_scheduler/sequence.h"
+#include "brick/task_scheduler/sequence_sort_key.h"
 
 namespace base {
 namespace internal {
 
 // A PriorityQueue holds Sequences of Tasks. This class is thread-safe.
-class BASE_EXPORT PriorityQueue {
+class BRICK_EXPORT PriorityQueue {
  public:
   // A Transaction can perform multiple operations atomically on a
   // PriorityQueue. While a Transaction is alive, it is guaranteed that nothing
@@ -31,7 +31,7 @@ class BASE_EXPORT PriorityQueue {
   // priority. If the Peek and the Pop are done through the same Transaction, it
   // is guaranteed that the PriorityQueue hasn't changed between the 2
   // operations.
-  class BASE_EXPORT Transaction {
+  class BRICK_EXPORT Transaction {
    public:
     ~Transaction();
 
@@ -101,4 +101,4 @@ class BASE_EXPORT PriorityQueue {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_PRIORITY_QUEUE_H_
+#endif  // BRICK_TASK_SCHEDULER_PRIORITY_QUEUE_H_

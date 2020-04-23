@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/discardable_shared_memory.h"
+#include "brick/memory/discardable_shared_memory.h"
 
 #include <stdint.h>
 
 #include <algorithm>
 
-#include "base/atomicops.h"
-#include "base/bits.h"
-#include "base/logging.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/numerics/safe_math.h"
-#include "base/process/process_metrics.h"
-#include "base/trace_event/memory_allocator_dump.h"
-#include "base/trace_event/process_memory_dump.h"
+#include "brick/atomicops.h"
+#include "brick/bits.h"
+#include "brick/logging.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/process/process_metrics.h"
+#include "brick/trace_event/memory_allocator_dump.h"
+#include "brick/trace_event/process_memory_dump.h"
 #include "build/build_config.h"
 
 #if defined(OS_POSIX) && !defined(OS_NACL)
@@ -29,7 +29,7 @@
 
 #if defined(OS_WIN)
 #include <windows.h>
-#include "base/win/windows_version.h"
+#include "brick/win/windows_version.h"
 #endif
 
 namespace base {

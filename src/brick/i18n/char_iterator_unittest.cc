@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/char_iterator.h"
+#include "brick/i18n/char_iterator.h"
 
-#include "base/strings/utf_string_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

@@ -6,9 +6,9 @@
 // we don't risk implicitly demand loading it by accessing a symbol.
 
 #if defined(WIN32)
-#define BASE_PROFILER_TEST_SUPPORT_LIBRARY_EXPORT __declspec(dllexport)
+#define BRICK_PROFILER_TEST_SUPPORT_LIBRARY_EXPORT __declspec(dllexport)
 #else  // defined(WIN32)
-#define BASE_PROFILER_TEST_SUPPORT_LIBRARY_EXPORT __attribute__((visibility("default")))
+#define BRICK_PROFILER_TEST_SUPPORT_LIBRARY_EXPORT __attribute__((visibility("default")))
 #endif
 
 namespace base {
@@ -16,7 +16,7 @@ namespace base {
 // Must be defined in an extern "C" block so we can look up the unmangled name.
 extern "C" {
 
-BASE_PROFILER_TEST_SUPPORT_LIBRARY_EXPORT void InvokeCallbackFunction(
+BRICK_PROFILER_TEST_SUPPORT_LIBRARY_EXPORT void InvokeCallbackFunction(
     void (*function)(void*),
     void* arg) {
   function(arg);

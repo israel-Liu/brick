@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SCHEDULER_TASK_SCHEDULER_H_
-#define BASE_TASK_SCHEDULER_TASK_SCHEDULER_H_
+#ifndef BRICK_TASK_SCHEDULER_TASK_SCHEDULER_H_
+#define BRICK_TASK_SCHEDULER_TASK_SCHEDULER_H_
 
 #include <memory>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/gtest_prod_util.h"
-#include "base/memory/ref_counted.h"
-#include "base/sequenced_task_runner.h"
-#include "base/single_thread_task_runner.h"
-#include "base/strings/string_piece.h"
-#include "base/task_runner.h"
-#include "base/task_scheduler/scheduler_worker_pool_params.h"
-#include "base/task_scheduler/single_thread_task_runner_thread_mode.h"
-#include "base/task_scheduler/task_traits.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/sequenced_task_runner.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/strings/string_piece.h"
+#include "brick/task_runner.h"
+#include "brick/task_scheduler/scheduler_worker_pool_params.h"
+#include "brick/task_scheduler/single_thread_task_runner_thread_mode.h"
+#include "brick/task_scheduler/task_traits.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace gin {
@@ -46,12 +46,12 @@ class SchedulerWorkerObserver;
 //
 // The instance methods of this class are thread-safe.
 //
-// Note: All base/task_scheduler users should go through post_task.h instead of
+// Note: All brick/task_scheduler users should go through post_task.h instead of
 // TaskScheduler except for the one callsite per process which manages the
 // process's instance.
-class BASE_EXPORT TaskScheduler {
+class BRICK_EXPORT TaskScheduler {
  public:
-  struct BASE_EXPORT InitParams {
+  struct BRICK_EXPORT InitParams {
     enum class SharedWorkerPoolEnvironment {
       // Use the default environment (no environment).
       DEFAULT,
@@ -222,7 +222,7 @@ class BASE_EXPORT TaskScheduler {
   //   }
   // instead make sure to SetInstance() early in one determinstic place in the
   // process' initialization phase.
-  // In doubt, consult with //base/task_scheduler/OWNERS.
+  // In doubt, consult with //brick/task_scheduler/OWNERS.
   static TaskScheduler* GetInstance();
 
  private:
@@ -245,4 +245,4 @@ class BASE_EXPORT TaskScheduler {
 
 }  // namespace base
 
-#endif  // BASE_TASK_SCHEDULER_TASK_SCHEDULER_H_
+#endif  // BRICK_TASK_SCHEDULER_TASK_SCHEDULER_H_

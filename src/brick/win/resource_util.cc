@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/logging.h"
-#include "base/win/resource_util.h"
+#include "brick/logging.h"
+#include "brick/win/resource_util.h"
 
 namespace base {
 namespace win {

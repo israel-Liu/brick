@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/message_loop/message_loop_current.h"
+#include "brick/message_loop/message_loop_current.h"
 
-#include "base/bind.h"
-#include "base/message_loop/message_loop.h"
-#include "base/message_loop/message_pump_for_io.h"
-#include "base/message_loop/message_pump_for_ui.h"
-#include "base/no_destructor.h"
-#include "base/threading/thread_local.h"
+#include "brick/bind.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/message_loop/message_pump_for_io.h"
+#include "brick/message_loop/message_pump_for_ui.h"
+#include "brick/no_destructor.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 

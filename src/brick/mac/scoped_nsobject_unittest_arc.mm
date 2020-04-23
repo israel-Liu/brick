@@ -6,8 +6,8 @@
 
 #import <CoreFoundation/CoreFoundation.h>
 
-#include "base/logging.h"
-#import "base/mac/scoped_nsobject.h"
+#include "brick/logging.h"
+#import "brick/mac/scoped_nsobject.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if !defined(__has_feature) || !__has_feature(objc_arc)

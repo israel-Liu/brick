@@ -8,20 +8,20 @@
 //
 // The implementation detects errors on the first possible byte.
 
-#ifndef BASE_I18N_STREAMING_UTF8_VALIDATOR_H_
-#define BASE_I18N_STREAMING_UTF8_VALIDATOR_H_
+#ifndef BRICK_I18N_STREAMING_UTF8_VALIDATOR_H_
+#define BRICK_I18N_STREAMING_UTF8_VALIDATOR_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <string>
 
-#include "base/i18n/base_i18n_export.h"
-#include "base/macros.h"
+#include "brick/i18n/base_i18n_export.h"
+#include "brick/macros.h"
 
 namespace base {
 
-class BASE_I18N_EXPORT StreamingUtf8Validator {
+class BRICK_I18N_EXPORT StreamingUtf8Validator {
  public:
   // The validator exposes 3 states. It starts in state VALID_ENDPOINT. As it
   // processes characters it alternates between VALID_ENDPOINT and
@@ -63,4 +63,4 @@ class BASE_I18N_EXPORT StreamingUtf8Validator {
 
 }  // namespace base
 
-#endif  // BASE_I18N_STREAMING_UTF8_VALIDATOR_H_
+#endif  // BRICK_I18N_STREAMING_UTF8_VALIDATOR_H_

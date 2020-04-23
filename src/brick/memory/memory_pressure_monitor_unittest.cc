@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/memory_pressure_monitor.h"
+#include "brick/memory/memory_pressure_monitor.h"
 
-#include "base/macros.h"
-#include "base/memory/memory_pressure_listener.h"
-#include "base/test/metrics/histogram_tester.h"
+#include "brick/macros.h"
+#include "brick/memory/memory_pressure_listener.h"
+#include "brick/test/metrics/histogram_tester.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

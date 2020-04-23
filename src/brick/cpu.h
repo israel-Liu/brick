@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CPU_H_
-#define BASE_CPU_H_
+#ifndef BRICK_CPU_H_
+#define BRICK_CPU_H_
 
 #include <string>
 
-#include "base/base_export.h"
+#include "brick/base_export.h"
 
 namespace base {
 
 // Query information about the processor.
-class BASE_EXPORT CPU final {
+class BRICK_EXPORT CPU final {
  public:
   CPU();
 
@@ -85,4 +85,4 @@ class BASE_EXPORT CPU final {
 
 }  // namespace base
 
-#endif  // BASE_CPU_H_
+#endif  // BRICK_CPU_H_

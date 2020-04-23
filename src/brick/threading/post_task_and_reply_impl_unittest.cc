@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/post_task_and_reply_impl.h"
+#include "brick/threading/post_task_and_reply_impl.h"
 
 #include <utility>
 
-#include "base/auto_reset.h"
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/test/test_mock_time_task_runner.h"
+#include "brick/auto_reset.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/test/test_mock_time_task_runner.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

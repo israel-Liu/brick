@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_FILE_VERSION_INFO_H_
-#define BASE_FILE_VERSION_INFO_H_
+#ifndef BRICK_FILE_VERSION_INFO_H_
+#define BRICK_FILE_VERSION_INFO_H_
 
 #include <string>
 
 #include "build/build_config.h"
-#include "base/base_export.h"
-#include "base/strings/string16.h"
+#include "brick/base_export.h"
+#include "brick/strings/string16.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
@@ -29,7 +29,7 @@ class FilePath;
 // version returns values from the Info.plist as appropriate. TODO(avi): make
 // this a less-obvious Windows-ism.
 
-class BASE_EXPORT FileVersionInfo {
+class BRICK_EXPORT FileVersionInfo {
  public:
   virtual ~FileVersionInfo() {}
 #if defined(OS_WIN) || defined(OS_MACOSX)
@@ -70,4 +70,4 @@ class BASE_EXPORT FileVersionInfo {
   virtual bool is_official_build() = 0;
 };
 
-#endif  // BASE_FILE_VERSION_INFO_H_
+#endif  // BRICK_FILE_VERSION_INFO_H_

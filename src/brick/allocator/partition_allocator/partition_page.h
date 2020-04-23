@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_PAGE_H_
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_PAGE_H_
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_PAGE_H_
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_PAGE_H_
 
-#include "base/allocator/partition_allocator/partition_alloc_constants.h"
-#include "base/allocator/partition_allocator/partition_bucket.h"
-#include "base/allocator/partition_allocator/partition_cookie.h"
-#include "base/allocator/partition_allocator/partition_freelist_entry.h"
+#include "brick/allocator/partition_allocator/partition_alloc_constants.h"
+#include "brick/allocator/partition_allocator/partition_bucket.h"
+#include "brick/allocator/partition_allocator/partition_cookie.h"
+#include "brick/allocator/partition_allocator/partition_freelist_entry.h"
 
 namespace base {
 namespace internal {
@@ -58,7 +58,7 @@ struct PartitionPage {
   // Public API
 
   // Note the matching Alloc() functions are in PartitionPage.
-  BASE_EXPORT NOINLINE void FreeSlowPath();
+  BRICK_EXPORT NOINLINE void FreeSlowPath();
   ALWAYS_INLINE void Free(void* ptr);
 
   void Decommit(PartitionRootBase* root);
@@ -83,7 +83,7 @@ struct PartitionPage {
   ALWAYS_INLINE void Reset();
 
   // TODO(ajwong): Can this be made private?  https://crbug.com/787153
-  BASE_EXPORT static PartitionPage* get_sentinel_page();
+  BRICK_EXPORT static PartitionPage* get_sentinel_page();
 
   // Page State accessors.
   // Note that it's only valid to call these functions on pages found on one of
@@ -285,4 +285,4 @@ ALWAYS_INLINE void PartitionPage::Reset() {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_PAGE_H_
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_PARTITION_PAGE_H_

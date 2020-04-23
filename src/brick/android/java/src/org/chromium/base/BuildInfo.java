@@ -62,7 +62,7 @@ public class BuildInfo {
                 String.valueOf(buildInfo.hostVersionCode), buildInfo.hostPackageLabel,
                 buildInfo.packageName, String.valueOf(buildInfo.versionCode), buildInfo.versionName,
                 buildInfo.androidBuildFingerprint, buildInfo.gmsVersionCode,
-                buildInfo.installerPackageName, buildInfo.abiString, BuildConfig.FIREBASE_APP_ID,
+                buildInfo.installerPackageName, buildInfo.abiString, BuildConfig.FIREBRICK_APP_ID,
                 buildInfo.customThemes, buildInfo.resourcesVersion, buildInfo.extractedFileSuffix,
                 isAtLeastP() ? "1" : "0",
         };

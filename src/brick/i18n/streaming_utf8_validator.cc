@@ -6,10 +6,10 @@
 // character-at-a-time processing, whereas byte-at-a-time processing is easier
 // with streaming input.
 
-#include "base/i18n/streaming_utf8_validator.h"
+#include "brick/i18n/streaming_utf8_validator.h"
 
-#include "base/i18n/utf8_validator_tables.h"
-#include "base/logging.h"
+#include "brick/i18n/utf8_validator_tables.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace {

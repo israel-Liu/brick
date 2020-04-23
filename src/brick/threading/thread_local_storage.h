@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_THREADING_THREAD_LOCAL_STORAGE_H_
-#define BASE_THREADING_THREAD_LOCAL_STORAGE_H_
+#ifndef BRICK_THREADING_THREAD_LOCAL_STORAGE_H_
+#define BRICK_THREADING_THREAD_LOCAL_STORAGE_H_
 
 #include <stdint.h>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/win/windows_types.h"
+#include "brick/win/windows_types.h"
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
 #include <pthread.h>
 #endif
@@ -40,7 +40,7 @@ class ThreadLocalStorageTestInternal;
 // * ThreadLocalBoolean (from thread_local.h) for booleans.
 // * ThreadLocalPointer (from thread_local.h) for pointers.
 // * ThreadLocalStorage::StaticSlot/Slot for more direct control of the slot.
-class BASE_EXPORT PlatformThreadLocalStorage {
+class BRICK_EXPORT PlatformThreadLocalStorage {
  public:
 
 #if defined(OS_WIN)
@@ -100,7 +100,7 @@ class BASE_EXPORT PlatformThreadLocalStorage {
 
 // Wrapper for thread local storage.  This class doesn't do much except provide
 // an API for portability.
-class BASE_EXPORT ThreadLocalStorage {
+class BRICK_EXPORT ThreadLocalStorage {
  public:
   // Prototype for the TLS destructor function, which can be optionally used to
   // cleanup thread local storage on thread exit.  'value' is the data that is
@@ -116,7 +116,7 @@ class BASE_EXPORT ThreadLocalStorage {
   //       &MyDestructorFunc);
   //   return *important_content_tls;
   // }
-  class BASE_EXPORT Slot final {
+  class BRICK_EXPORT Slot final {
    public:
     // |destructor| is a pointer to a function to perform per-thread cleanup of
     // this object.  If set to nullptr, no cleanup is done for this TLS slot.
@@ -164,4 +164,4 @@ class BASE_EXPORT ThreadLocalStorage {
 
 }  // namespace base
 
-#endif  // BASE_THREADING_THREAD_LOCAL_STORAGE_H_
+#endif  // BRICK_THREADING_THREAD_LOCAL_STORAGE_H_

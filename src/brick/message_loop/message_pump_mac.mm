@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "base/message_loop/message_pump_mac.h"
+#import "brick/message_loop/message_pump_mac.h"
 
 #import <Foundation/Foundation.h>
 
 #include <limits>
 #include <memory>
 
-#include "base/auto_reset.h"
-#include "base/logging.h"
-#include "base/mac/call_with_eh_frame.h"
-#include "base/mac/scoped_cftyperef.h"
-#include "base/macros.h"
-#include "base/message_loop/timer_slack.h"
-#include "base/run_loop.h"
-#include "base/time/time.h"
+#include "brick/auto_reset.h"
+#include "brick/logging.h"
+#include "brick/mac/call_with_eh_frame.h"
+#include "brick/mac/scoped_cftyperef.h"
+#include "brick/macros.h"
+#include "brick/message_loop/timer_slack.h"
+#include "brick/run_loop.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 #if !defined(OS_IOS)

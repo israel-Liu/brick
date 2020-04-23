@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_checker_impl.h"
+#include "brick/threading/thread_checker_impl.h"
 
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/threading/thread_task_runner_handle.h"
 
 namespace base {
 

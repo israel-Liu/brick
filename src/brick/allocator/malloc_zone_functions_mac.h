@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_MALLOC_ZONE_FUNCTIONS_MAC_H_
-#define BASE_ALLOCATOR_MALLOC_ZONE_FUNCTIONS_MAC_H_
+#ifndef BRICK_ALLOCATOR_MALLOC_ZONE_FUNCTIONS_MAC_H_
+#define BRICK_ALLOCATOR_MALLOC_ZONE_FUNCTIONS_MAC_H_
 
 #include <malloc/malloc.h>
 #include <stddef.h>
 
-#include "base/base_export.h"
-#include "base/logging.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
 #include "third_party/apple_apsl/malloc.h"
 
 namespace base {
@@ -53,10 +53,10 @@ struct MallocZoneFunctions {
   const ChromeMallocZone* context;
 };
 
-BASE_EXPORT void StoreZoneFunctions(const ChromeMallocZone* zone,
+BRICK_EXPORT void StoreZoneFunctions(const ChromeMallocZone* zone,
                                     MallocZoneFunctions* functions);
 static constexpr int kMaxZoneCount = 30;
-BASE_EXPORT extern MallocZoneFunctions g_malloc_zones[kMaxZoneCount];
+BRICK_EXPORT extern MallocZoneFunctions g_malloc_zones[kMaxZoneCount];
 
 // The array g_malloc_zones stores all information about malloc zones before
 // they are shimmed. This information needs to be accessed during dispatch back
@@ -80,14 +80,14 @@ BASE_EXPORT extern MallocZoneFunctions g_malloc_zones[kMaxZoneCount];
 // default allocator is stored as the first MallocZoneFunctions.
 //
 // Returns whether the zone was successfully stored.
-BASE_EXPORT bool StoreMallocZone(ChromeMallocZone* zone);
-BASE_EXPORT bool IsMallocZoneAlreadyStored(ChromeMallocZone* zone);
-BASE_EXPORT bool DoesMallocZoneNeedReplacing(
+BRICK_EXPORT bool StoreMallocZone(ChromeMallocZone* zone);
+BRICK_EXPORT bool IsMallocZoneAlreadyStored(ChromeMallocZone* zone);
+BRICK_EXPORT bool DoesMallocZoneNeedReplacing(
     ChromeMallocZone* zone,
     const MallocZoneFunctions* functions);
 
-BASE_EXPORT int GetMallocZoneCountForTesting();
-BASE_EXPORT void ClearAllMallocZonesForTesting();
+BRICK_EXPORT int GetMallocZoneCountForTesting();
+BRICK_EXPORT void ClearAllMallocZonesForTesting();
 
 inline MallocZoneFunctions& GetFunctionsForZone(void* zone) {
   for (unsigned int i = 0; i < kMaxZoneCount; ++i) {
@@ -100,4 +100,4 @@ inline MallocZoneFunctions& GetFunctionsForZone(void* zone) {
 }  // namespace allocator
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_MALLOC_ZONE_FUNCTIONS_MAC_H_
+#endif  // BRICK_ALLOCATOR_MALLOC_ZONE_FUNCTIONS_MAC_H_

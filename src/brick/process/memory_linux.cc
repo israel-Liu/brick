@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/memory.h"
+#include "brick/process/memory.h"
 
 #include <stddef.h>
 
 #include <new>
 
-#include "base/allocator/allocator_shim.h"
-#include "base/allocator/buildflags.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/process/internal_linux.h"
-#include "base/strings/string_number_conversions.h"
+#include "brick/allocator/allocator_shim.h"
+#include "brick/allocator/buildflags.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/process/internal_linux.h"
+#include "brick/strings/string_number_conversions.h"
 #include "build/build_config.h"
 
 #if defined(USE_TCMALLOC)

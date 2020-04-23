@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/malloc_zone_functions_mac.h"
+#include "brick/allocator/malloc_zone_functions_mac.h"
 
-#include "base/atomicops.h"
-#include "base/synchronization/lock.h"
+#include "brick/atomicops.h"
+#include "brick/synchronization/lock.h"
 
 namespace base {
 namespace allocator {

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/at_exit.h"
+#include "brick/at_exit.h"
 
 #include <stddef.h>
 #include <ostream>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/callback.h"
-#include "base/logging.h"
+#include "brick/bind.h"
+#include "brick/callback.h"
+#include "brick/logging.h"
 
 namespace base {
 

@@ -5,7 +5,7 @@
 // This is a "No Compile Test" suite.
 // https://dev.chromium.org/developers/testing/no-compile-tests
 
-#include "base/thread_annotations.h"
+#include "brick/thread_annotations.h"
 
 namespace {
 

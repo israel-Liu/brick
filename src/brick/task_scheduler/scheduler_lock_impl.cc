@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_lock_impl.h"
+#include "brick/task_scheduler/scheduler_lock_impl.h"
 
 #include <algorithm>
 #include <unordered_map>
 #include <vector>
 
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread_local_storage.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread_local_storage.h"
 
 namespace base {
 namespace internal {

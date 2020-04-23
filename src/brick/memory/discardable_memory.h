@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_DISCARDABLE_MEMORY_H_
-#define BASE_MEMORY_DISCARDABLE_MEMORY_H_
+#ifndef BRICK_MEMORY_DISCARDABLE_MEMORY_H_
+#define BRICK_MEMORY_DISCARDABLE_MEMORY_H_
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
 
 namespace base {
 
@@ -41,7 +41,7 @@ class ProcessMemoryDump;
 //     responsibility of users of discardable memory to ensure there are no
 //     races.
 //
-class BASE_EXPORT DiscardableMemory {
+class BRICK_EXPORT DiscardableMemory {
  public:
   DiscardableMemory();
   virtual ~DiscardableMemory();
@@ -75,4 +75,4 @@ class BASE_EXPORT DiscardableMemory {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_DISCARDABLE_MEMORY_H_
+#endif  // BRICK_MEMORY_DISCARDABLE_MEMORY_H_

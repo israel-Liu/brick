@@ -8,13 +8,13 @@
 #include <limits>
 #include <vector>
 
-#include "base/debug/activity_tracker.h"
-#include "base/logging.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/scoped_blocking_call.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/logging.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/scoped_blocking_call.h"
+#include "brick/threading/thread_restrictions.h"
 
 // -----------------------------------------------------------------------------
 // A WaitableEvent on POSIX is implemented as a wait-list. Currently we don't

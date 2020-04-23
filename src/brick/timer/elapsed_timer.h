@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TIMER_ELAPSED_TIMER_H_
-#define BASE_TIMER_ELAPSED_TIMER_H_
+#ifndef BRICK_TIMER_ELAPSED_TIMER_H_
+#define BRICK_TIMER_ELAPSED_TIMER_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/time/time.h"
 
 namespace base {
 
 // A simple wrapper around TimeTicks::Now().
-class BASE_EXPORT ElapsedTimer {
+class BRICK_EXPORT ElapsedTimer {
  public:
   ElapsedTimer();
   ElapsedTimer(ElapsedTimer&& other);
@@ -30,4 +30,4 @@ class BASE_EXPORT ElapsedTimer {
 
 }  // namespace base
 
-#endif  // BASE_TIMER_ELAPSED_TIMER_H_
+#endif  // BRICK_TIMER_ELAPSED_TIMER_H_

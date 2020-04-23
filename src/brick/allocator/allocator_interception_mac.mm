@@ -15,7 +15,7 @@
 // only reason to intercept these calls is to re-label OOM crashes with slightly
 // more details.
 
-#include "base/allocator/allocator_interception_mac.h"
+#include "brick/allocator/allocator_interception_mac.h"
 
 #include <CoreFoundation/CoreFoundation.h>
 #import <Foundation/Foundation.h>
@@ -27,15 +27,15 @@
 
 #include <new>
 
-#include "base/allocator/buildflags.h"
-#include "base/allocator/malloc_zone_functions_mac.h"
-#include "base/bind.h"
-#include "base/logging.h"
-#include "base/mac/mac_util.h"
-#include "base/mac/mach_logging.h"
-#include "base/process/memory.h"
-#include "base/scoped_clear_errno.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/allocator/buildflags.h"
+#include "brick/allocator/malloc_zone_functions_mac.h"
+#include "brick/bind.h"
+#include "brick/logging.h"
+#include "brick/mac/mac_util.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/process/memory.h"
+#include "brick/scoped_clear_errno.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 #include "build/build_config.h"
 #include "third_party/apple_apsl/CFBase.h"
 

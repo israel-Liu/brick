@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 
 #include <unistd.h>
 
 #include <memory>
 
-#include "base/bind.h"
-#include "base/files/file_util.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/message_loop/message_loop.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/run_loop.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread.h"
-#include "base/threading/thread_checker_impl.h"
+#include "brick/bind.h"
+#include "brick/files/file_util.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/run_loop.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread.h"
+#include "brick/threading/thread_checker_impl.h"
 #include "build/build_config.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"

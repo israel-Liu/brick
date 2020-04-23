@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scoped_set_task_priority_for_current_thread.h"
+#include "brick/task_scheduler/scoped_set_task_priority_for_current_thread.h"
 
-#include "base/task_scheduler/task_traits.h"
+#include "brick/task_scheduler/task_traits.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

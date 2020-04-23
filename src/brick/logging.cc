@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 #include <limits.h>
 #include <stdint.h>
 
-#include "base/macros.h"
+#include "brick/macros.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -84,27 +84,27 @@ typedef pthread_mutex_t* MutexHandle;
 #include <string>
 #include <utility>
 
-#include "base/base_switches.h"
-#include "base/callback.h"
-#include "base/command_line.h"
-#include "base/containers/stack.h"
-#include "base/debug/activity_tracker.h"
-#include "base/debug/alias.h"
-#include "base/debug/debugger.h"
-#include "base/debug/stack_trace.h"
-#include "base/lazy_instance.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/sys_string_conversions.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/synchronization/lock_impl.h"
-#include "base/threading/platform_thread.h"
-#include "base/vlog.h"
+#include "brick/base_switches.h"
+#include "brick/callback.h"
+#include "brick/command_line.h"
+#include "brick/containers/stack.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/debug/alias.h"
+#include "brick/debug/debugger.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/lazy_instance.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/sys_string_conversions.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/synchronization/lock_impl.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/vlog.h"
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
-#include "base/posix/safe_strerror.h"
+#include "brick/posix/safe_strerror.h"
 #endif
 
 namespace logging {
@@ -388,7 +388,7 @@ void CloseLogFileUnlocked() {
 // In DCHECK-enabled Chrome builds, allow the meaning of LOG_DCHECK to be
 // determined at run-time. We default it to INFO, to avoid it triggering
 // crashes before the run-time has explicitly chosen the behaviour.
-BASE_EXPORT logging::LogSeverity LOG_DCHECK = LOG_INFO;
+BRICK_EXPORT logging::LogSeverity LOG_DCHECK = LOG_INFO;
 #endif  // DCHECK_IS_CONFIGURABLE
 
 // This is never instantiated, it's just used for EAT_STREAM_PARAMETERS to have
@@ -934,7 +934,7 @@ SystemErrorCode GetLastSystemErrorCode() {
 #endif
 }
 
-BASE_EXPORT std::string SystemErrorCodeToString(SystemErrorCode error_code) {
+BRICK_EXPORT std::string SystemErrorCodeToString(SystemErrorCode error_code) {
 #if defined(OS_WIN)
   const int kErrorMessageBufferSize = 256;
   char msgbuf[kErrorMessageBufferSize];
@@ -1042,7 +1042,7 @@ std::wstring GetLogFileFullPath() {
 }
 #endif
 
-BASE_EXPORT void LogErrorNotReached(const char* file, int line) {
+BRICK_EXPORT void LogErrorNotReached(const char* file, int line) {
   LogMessage(file, line, LOG_ERROR).stream()
       << "NOTREACHED() hit.";
 }

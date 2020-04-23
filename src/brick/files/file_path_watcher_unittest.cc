@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_path_watcher.h"
+#include "brick/files/file_path_watcher.h"
 
 #if defined(OS_WIN)
 #include <windows.h>
@@ -13,32 +13,32 @@
 
 #include <set>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/compiler_specific.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/location.h"
-#include "base/macros.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/single_thread_task_runner.h"
-#include "base/stl_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/test/test_file_util.h"
-#include "base/test/test_timeouts.h"
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/compiler_specific.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/location.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/stl_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/test/test_file_util.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/thread_task_runner_handle.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 #if defined(OS_ANDROID)
-#include "base/android/path_utils.h"
+#include "brick/android/path_utils.h"
 #endif  // defined(OS_ANDROID)
 
 #if defined(OS_POSIX)
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 #endif  // defined(OS_POSIX)
 
 namespace base {

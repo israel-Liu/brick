@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_SCOPED_COMMAND_LINE_H_
-#define BASE_TEST_SCOPED_COMMAND_LINE_H_
+#ifndef BRICK_TEST_SCOPED_COMMAND_LINE_H_
+#define BRICK_TEST_SCOPED_COMMAND_LINE_H_
 
-#include "base/command_line.h"
+#include "brick/command_line.h"
 
 namespace base {
 namespace test {
@@ -31,4 +31,4 @@ class ScopedCommandLine final {
 }  // namespace test
 }  // namespace base
 
-#endif  // BASE_TEST_SCOPED_COMMAND_LINE_H_
+#endif  // BRICK_TEST_SCOPED_COMMAND_LINE_H_

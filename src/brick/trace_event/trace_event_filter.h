@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_TRACE_EVENT_FILTER_H_
-#define BASE_TRACE_EVENT_TRACE_EVENT_FILTER_H_
+#ifndef BRICK_TRACE_EVENT_TRACE_EVENT_FILTER_H_
+#define BRICK_TRACE_EVENT_TRACE_EVENT_FILTER_H_
 
 #include <memory>
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace trace_event {
@@ -27,7 +27,7 @@ class TraceEvent;
 // More importantly, filters must be thread-safe. The FilterTraceEvent and
 // EndEvent methods can be called concurrently as trace macros are hit on
 // different threads.
-class BASE_EXPORT TraceEventFilter {
+class BRICK_EXPORT TraceEventFilter {
  public:
   TraceEventFilter();
   virtual ~TraceEventFilter();
@@ -48,4 +48,4 @@ class BASE_EXPORT TraceEventFilter {
 }  // namespace trace_event
 }  // namespace base
 
-#endif  // BASE_TRACE_EVENT_TRACE_EVENT_FILTER_H_
+#endif  // BRICK_TRACE_EVENT_TRACE_EVENT_FILTER_H_

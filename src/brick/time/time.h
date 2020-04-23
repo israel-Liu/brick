@@ -29,7 +29,7 @@
 //
 // Definitions of operator<< are provided to make these types work with
 // DCHECK_EQ() and other log macros. For human-readable formatting, see
-// "base/i18n/time_formatting.h".
+// "brick/i18n/time_formatting.h".
 //
 // So many choices!  Which time class should you use?  Examples:
 //
@@ -48,8 +48,8 @@
 //   ThreadTicks: Benchmarking how long the current thread has been doing actual
 //                work.
 
-#ifndef BASE_TIME_TIME_H_
-#define BASE_TIME_TIME_H_
+#ifndef BRICK_TIME_TIME_H_
+#define BRICK_TIME_TIME_H_
 
 #include <stdint.h>
 #include <time.h>
@@ -57,10 +57,10 @@
 #include <iosfwd>
 #include <limits>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/logging.h"
-#include "base/numerics/safe_math.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/logging.h"
+#include "brick/numerics/safe_math.h"
 #include "build/build_config.h"
 
 #if defined(OS_FUCHSIA)
@@ -83,8 +83,8 @@
 #endif
 
 #if defined(OS_WIN)
-#include "base/gtest_prod_util.h"
-#include "base/win/windows_types.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/win/windows_types.h"
 #endif
 
 namespace base {
@@ -99,14 +99,14 @@ namespace time_internal {
 
 // Add or subtract |value| from a TimeDelta. The int64_t argument and return
 // value are in terms of a microsecond timebase.
-BASE_EXPORT int64_t SaturatedAdd(TimeDelta delta, int64_t value);
-BASE_EXPORT int64_t SaturatedSub(TimeDelta delta, int64_t value);
+BRICK_EXPORT int64_t SaturatedAdd(TimeDelta delta, int64_t value);
+BRICK_EXPORT int64_t SaturatedSub(TimeDelta delta, int64_t value);
 
 }  // namespace time_internal
 
 // TimeDelta ------------------------------------------------------------------
 
-class BASE_EXPORT TimeDelta {
+class BRICK_EXPORT TimeDelta {
  public:
   constexpr TimeDelta() : delta_(0) {}
 
@@ -314,7 +314,7 @@ TimeDelta operator*(T a, TimeDelta td) {
 }
 
 // For logging use only.
-BASE_EXPORT std::ostream& operator<<(std::ostream& os, TimeDelta time_delta);
+BRICK_EXPORT std::ostream& operator<<(std::ostream& os, TimeDelta time_delta);
 
 // Do not reference the time_internal::TimeBase template class directly.  Please
 // use one of the time subclasses instead, and only reference the public
@@ -449,7 +449,7 @@ inline TimeClass operator+(TimeDelta delta, TimeClass t) {
 
 // Represents a wall clock time in UTC. Values are not guaranteed to be
 // monotonically non-decreasing and are subject to large amounts of skew.
-class BASE_EXPORT Time : public time_internal::TimeBase<Time> {
+class BRICK_EXPORT Time : public time_internal::TimeBase<Time> {
  public:
   // Offset of UNIX epoch (1970-01-01 00:00:00 UTC) from Windows FILETIME epoch
   // (1601-01-01 00:00:00 UTC), in microseconds. This value is derived from the
@@ -496,7 +496,7 @@ class BASE_EXPORT Time : public time_internal::TimeBase<Time> {
   // Represents an exploded time that can be formatted nicely. This is kind of
   // like the Win32 SYSTEMTIME structure or the Unix "struct tm" with a few
   // additions and changes to prevent errors.
-  struct BASE_EXPORT Exploded {
+  struct BRICK_EXPORT Exploded {
     int year;          // Four digit year "2007"
     int month;         // 1-based month (values 1 = January, etc.)
     int day_of_week;   // 0-based day of week (0 = Sunday, etc.)
@@ -803,12 +803,12 @@ constexpr TimeDelta TimeDelta::FromProduct(int64_t value,
 }
 
 // For logging use only.
-BASE_EXPORT std::ostream& operator<<(std::ostream& os, Time time);
+BRICK_EXPORT std::ostream& operator<<(std::ostream& os, Time time);
 
 // TimeTicks ------------------------------------------------------------------
 
 // Represents monotonically non-decreasing clock time.
-class BASE_EXPORT TimeTicks : public time_internal::TimeBase<TimeTicks> {
+class BRICK_EXPORT TimeTicks : public time_internal::TimeBase<TimeTicks> {
  public:
   // The underlying clock used to generate new TimeTicks.
   enum class Clock {
@@ -913,13 +913,13 @@ class BASE_EXPORT TimeTicks : public time_internal::TimeBase<TimeTicks> {
 };
 
 // For logging use only.
-BASE_EXPORT std::ostream& operator<<(std::ostream& os, TimeTicks time_ticks);
+BRICK_EXPORT std::ostream& operator<<(std::ostream& os, TimeTicks time_ticks);
 
 // ThreadTicks ----------------------------------------------------------------
 
 // Represents a clock, specific to a particular thread, than runs only while the
 // thread is running.
-class BASE_EXPORT ThreadTicks : public time_internal::TimeBase<ThreadTicks> {
+class BRICK_EXPORT ThreadTicks : public time_internal::TimeBase<ThreadTicks> {
  public:
   ThreadTicks() : TimeBase(0) {
   }
@@ -994,8 +994,8 @@ class BASE_EXPORT ThreadTicks : public time_internal::TimeBase<ThreadTicks> {
 };
 
 // For logging use only.
-BASE_EXPORT std::ostream& operator<<(std::ostream& os, ThreadTicks time_ticks);
+BRICK_EXPORT std::ostream& operator<<(std::ostream& os, ThreadTicks time_ticks);
 
 }  // namespace base
 
-#endif  // BASE_TIME_TIME_H_
+#endif  // BRICK_TIME_TIME_H_

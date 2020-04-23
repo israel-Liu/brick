@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PROFILER_STACK_SAMPLING_PROFILER_H_
-#define BASE_PROFILER_STACK_SAMPLING_PROFILER_H_
+#ifndef BRICK_PROFILER_STACK_SAMPLING_PROFILER_H_
+#define BRICK_PROFILER_STACK_SAMPLING_PROFILER_H_
 
 #include <stddef.h>
 
@@ -11,15 +11,15 @@
 #include <string>
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/files/file_path.h"
-#include "base/macros.h"
-#include "base/strings/string16.h"
-#include "base/synchronization/waitable_event.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/files/file_path.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
+#include "brick/synchronization/waitable_event.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -62,10 +62,10 @@ class NativeStackSamplerTestDelegate;
 // burst as specified in SamplingParams and contains a set of Samples and
 // Modules. One Sample corresponds to a single recorded stack, and the Modules
 // record those modules associated with the recorded stack frames.
-class BASE_EXPORT StackSamplingProfiler {
+class BRICK_EXPORT StackSamplingProfiler {
  public:
   // Module represents the module (DLL or exe) corresponding to a stack frame.
-  struct BASE_EXPORT Module {
+  struct BRICK_EXPORT Module {
     Module();
     Module(uintptr_t base_address,
            const std::string& id,
@@ -89,7 +89,7 @@ class BASE_EXPORT StackSamplingProfiler {
   };
 
   // Frame represents an individual sampled stack frame with module information.
-  struct BASE_EXPORT Frame {
+  struct BRICK_EXPORT Frame {
     // Identifies an unknown module.
     static const size_t kUnknownModuleIndex = static_cast<size_t>(-1);
 
@@ -108,7 +108,7 @@ class BASE_EXPORT StackSamplingProfiler {
   };
 
   // Sample represents a set of stack frames with some extra information.
-  struct BASE_EXPORT Sample {
+  struct BRICK_EXPORT Sample {
     Sample();
     Sample(const Sample& sample);
     ~Sample();
@@ -130,7 +130,7 @@ class BASE_EXPORT StackSamplingProfiler {
   };
 
   // CallStackProfile represents a set of samples.
-  struct BASE_EXPORT CallStackProfile {
+  struct BRICK_EXPORT CallStackProfile {
     CallStackProfile();
     CallStackProfile(CallStackProfile&& other);
     ~CallStackProfile();
@@ -159,7 +159,7 @@ class BASE_EXPORT StackSamplingProfiler {
   using CallStackProfiles = std::vector<CallStackProfile>;
 
   // Represents parameters that configure the sampling.
-  struct BASE_EXPORT SamplingParams {
+  struct BRICK_EXPORT SamplingParams {
     // Time to delay before first samples are taken.
     TimeDelta initial_delay = TimeDelta::FromMilliseconds(0);
 
@@ -182,7 +182,7 @@ class BASE_EXPORT StackSamplingProfiler {
   // sampling thread, a singleton used by all StackSamplingProfiler objects.
   // These methods can only be called by the same thread that started the
   // sampling.
-  class BASE_EXPORT TestAPI {
+  class BRICK_EXPORT TestAPI {
    public:
     // Resets the internal state to that of a fresh start. This is necessary
     // so that tests don't inherit state from previous tests.
@@ -308,19 +308,19 @@ class BASE_EXPORT StackSamplingProfiler {
 
 // These operators permit types to be compared and used in a map of Samples, as
 // done in tests and by the metrics provider code.
-BASE_EXPORT bool operator==(const StackSamplingProfiler::Module& a,
+BRICK_EXPORT bool operator==(const StackSamplingProfiler::Module& a,
                             const StackSamplingProfiler::Module& b);
-BASE_EXPORT bool operator==(const StackSamplingProfiler::Sample& a,
+BRICK_EXPORT bool operator==(const StackSamplingProfiler::Sample& a,
                             const StackSamplingProfiler::Sample& b);
-BASE_EXPORT bool operator!=(const StackSamplingProfiler::Sample& a,
+BRICK_EXPORT bool operator!=(const StackSamplingProfiler::Sample& a,
                             const StackSamplingProfiler::Sample& b);
-BASE_EXPORT bool operator<(const StackSamplingProfiler::Sample& a,
+BRICK_EXPORT bool operator<(const StackSamplingProfiler::Sample& a,
                            const StackSamplingProfiler::Sample& b);
-BASE_EXPORT bool operator==(const StackSamplingProfiler::Frame& a,
+BRICK_EXPORT bool operator==(const StackSamplingProfiler::Frame& a,
                             const StackSamplingProfiler::Frame& b);
-BASE_EXPORT bool operator<(const StackSamplingProfiler::Frame& a,
+BRICK_EXPORT bool operator<(const StackSamplingProfiler::Frame& a,
                            const StackSamplingProfiler::Frame& b);
 
 }  // namespace base
 
-#endif  // BASE_PROFILER_STACK_SAMPLING_PROFILER_H_
+#endif  // BRICK_PROFILER_STACK_SAMPLING_PROFILER_H_

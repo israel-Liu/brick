@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_enumerator.h"
+#include "brick/files/file_enumerator.h"
 
 #include <shlwapi.h>
 #include <stdint.h>
 #include <string.h>
 
-#include "base/logging.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 

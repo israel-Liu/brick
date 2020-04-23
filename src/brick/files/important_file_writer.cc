@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/important_file_writer.h"
+#include "brick/files/important_file_writer.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -10,24 +10,24 @@
 #include <string>
 #include <utility>
 
-#include "base/bind.h"
-#include "base/callback_helpers.h"
-#include "base/critical_closure.h"
-#include "base/debug/alias.h"
-#include "base/files/file.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/metrics/histogram_functions.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_util.h"
-#include "base/task_runner.h"
-#include "base/task_runner_util.h"
-#include "base/threading/thread.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/callback_helpers.h"
+#include "brick/critical_closure.h"
+#include "brick/debug/alias.h"
+#include "brick/files/file.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/metrics/histogram_functions.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_util.h"
+#include "brick/task_runner.h"
+#include "brick/task_runner_util.h"
+#include "brick/threading/thread.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {

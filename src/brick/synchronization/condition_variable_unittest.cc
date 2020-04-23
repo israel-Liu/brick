@@ -4,7 +4,7 @@
 
 // Multi-threaded tests of ConditionVariable class.
 
-#include "base/synchronization/condition_variable.h"
+#include "brick/synchronization/condition_variable.h"
 
 #include <time.h>
 
@@ -12,16 +12,16 @@
 #include <memory>
 #include <vector>
 
-#include "base/bind.h"
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/lock.h"
-#include "base/synchronization/spin_wait.h"
-#include "base/threading/platform_thread.h"
-#include "base/threading/thread.h"
-#include "base/threading/thread_collision_warner.h"
-#include "base/time/time.h"
+#include "brick/bind.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/lock.h"
+#include "brick/synchronization/spin_wait.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/threading/thread.h"
+#include "brick/threading/thread_collision_warner.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/platform_test.h"

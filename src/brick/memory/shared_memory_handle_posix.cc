@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/shared_memory_handle.h"
+#include "brick/memory/shared_memory_handle.h"
 
 #include <unistd.h>
 
-#include "base/logging.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/unguessable_token.h"
+#include "brick/logging.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/unguessable_token.h"
 
 namespace base {
 

@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/sequence_checker.h"
+#include "brick/sequence_checker.h"
 
 #include <stddef.h>
 
 #include <memory>
 #include <string>
 
-#include "base/bind.h"
-#include "base/bind_helpers.h"
-#include "base/callback_forward.h"
-#include "base/macros.h"
-#include "base/sequence_token.h"
-#include "base/single_thread_task_runner.h"
-#include "base/test/gtest_util.h"
-#include "base/threading/simple_thread.h"
+#include "brick/bind.h"
+#include "brick/bind_helpers.h"
+#include "brick/callback_forward.h"
+#include "brick/macros.h"
+#include "brick/sequence_token.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/test/gtest_util.h"
+#include "brick/threading/simple_thread.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

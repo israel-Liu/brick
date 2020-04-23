@@ -24,16 +24,16 @@
 // and ideally a leaf dependency. Singletons get problematic when they attempt
 // to do too much in their destructor or have circular dependencies.
 
-#ifndef BASE_MEMORY_SINGLETON_H_
-#define BASE_MEMORY_SINGLETON_H_
+#ifndef BRICK_MEMORY_SINGLETON_H_
+#define BRICK_MEMORY_SINGLETON_H_
 
-#include "base/at_exit.h"
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/lazy_instance_helpers.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/at_exit.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/lazy_instance_helpers.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/threading/thread_restrictions.h"
 
 namespace base {
 
@@ -162,13 +162,13 @@ subtle::Atomic32 StaticMemorySingletonTraits<Type>::dead_ = 0;
 //   };
 //
 // In your source file:
-//  #include "base/memory/singleton.h"
+//  #include "brick/memory/singleton.h"
 //  FooClass* FooClass::GetInstance() {
 //    return base::Singleton<FooClass>::get();
 //  }
 //
 // Or for leaky singletons:
-//  #include "base/memory/singleton.h"
+//  #include "brick/memory/singleton.h"
 //  FooClass* FooClass::GetInstance() {
 //    return base::Singleton<
 //        FooClass, base::LeakySingletonTraits<FooClass>>::get();
@@ -259,4 +259,4 @@ subtle::AtomicWord Singleton<Type, Traits, DifferentiatingType>::instance_ = 0;
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_SINGLETON_H_
+#endif  // BRICK_MEMORY_SINGLETON_H_

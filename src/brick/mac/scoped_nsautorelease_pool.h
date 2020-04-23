@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_NSAUTORELEASE_POOL_H_
-#define BASE_MAC_SCOPED_NSAUTORELEASE_POOL_H_
+#ifndef BRICK_MAC_SCOPED_NSAUTORELEASE_POOL_H_
+#define BRICK_MAC_SCOPED_NSAUTORELEASE_POOL_H_
 
-#include "base/base_export.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
 
 #if defined(__OBJC__)
 @class NSAutoreleasePool;
@@ -22,7 +22,7 @@ namespace mac {
 // be maintained in ordinary C++ code without bringing in any direct Objective-C
 // dependency.
 
-class BASE_EXPORT ScopedNSAutoreleasePool {
+class BRICK_EXPORT ScopedNSAutoreleasePool {
  public:
   ScopedNSAutoreleasePool();
   ~ScopedNSAutoreleasePool();
@@ -42,4 +42,4 @@ class BASE_EXPORT ScopedNSAutoreleasePool {
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_NSAUTORELEASE_POOL_H_
+#endif  // BRICK_MAC_SCOPED_NSAUTORELEASE_POOL_H_

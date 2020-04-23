@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_PICKLE_H_
-#define BASE_PICKLE_H_
+#ifndef BRICK_PICKLE_H_
+#define BRICK_PICKLE_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include <string>
 
-#include "base/base_export.h"
-#include "base/compiler_specific.h"
-#include "base/gtest_prod_util.h"
-#include "base/logging.h"
-#include "base/memory/ref_counted.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/compiler_specific.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/logging.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
 
 #if defined(OS_POSIX)
-#include "base/files/file.h"
+#include "brick/files/file.h"
 #endif
 
 namespace base {
@@ -28,7 +28,7 @@ class Pickle;
 
 // PickleIterator reads data from a Pickle. The Pickle object must remain valid
 // while the PickleIterator object is in use.
-class BASE_EXPORT PickleIterator {
+class BRICK_EXPORT PickleIterator {
  public:
   PickleIterator() : payload_(NULL), read_index_(0), end_index_(0) {}
   explicit PickleIterator(const Pickle& pickle);
@@ -125,13 +125,13 @@ class BASE_EXPORT PickleIterator {
 // space is controlled by the header_size parameter passed to the Pickle
 // constructor.
 //
-class BASE_EXPORT Pickle {
+class BRICK_EXPORT Pickle {
  public:
   // Auxiliary data attached to a Pickle. Pickle must be subclassed along with
   // this interface in order to provide a concrete implementation of support
   // for attachments. The base Pickle implementation does not accept
   // attachments.
-  class BASE_EXPORT Attachment : public RefCountedThreadSafe<Attachment> {
+  class BRICK_EXPORT Attachment : public RefCountedThreadSafe<Attachment> {
    public:
     Attachment();
 
@@ -320,7 +320,7 @@ class BASE_EXPORT Pickle {
   size_t write_offset_;
 
   // Just like WriteBytes, but with a compile-time size, for performance.
-  template<size_t length> void BASE_EXPORT WriteBytesStatic(const void* data);
+  template<size_t length> void BRICK_EXPORT WriteBytesStatic(const void* data);
 
   // Writes a POD by copying its bytes.
   template <typename T> bool WritePOD(const T& data) {
@@ -342,4 +342,4 @@ class BASE_EXPORT Pickle {
 
 }  // namespace base
 
-#endif  // BASE_PICKLE_H_
+#endif  // BRICK_PICKLE_H_

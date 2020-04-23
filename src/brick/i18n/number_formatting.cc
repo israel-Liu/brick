@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/number_formatting.h"
+#include "brick/i18n/number_formatting.h"
 
 #include <stddef.h>
 
 #include <memory>
 
-#include "base/format_macros.h"
-#include "base/i18n/message_formatter.h"
-#include "base/i18n/unicodestring.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversions.h"
+#include "brick/format_macros.h"
+#include "brick/i18n/message_formatter.h"
+#include "brick/i18n/unicodestring.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversions.h"
 #include "third_party/icu/source/common/unicode/ustring.h"
 #include "third_party/icu/source/i18n/unicode/numfmt.h"
 

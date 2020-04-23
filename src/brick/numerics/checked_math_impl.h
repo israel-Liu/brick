@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_CHECKED_MATH_IMPL_H_
-#define BASE_NUMERICS_CHECKED_MATH_IMPL_H_
+#ifndef BRICK_NUMERICS_CHECKED_MATH_IMPL_H_
+#define BRICK_NUMERICS_CHECKED_MATH_IMPL_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -14,8 +14,8 @@
 #include <limits>
 #include <type_traits>
 
-#include "base/numerics/safe_conversions.h"
-#include "base/numerics/safe_math_shared_impl.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/numerics/safe_math_shared_impl.h"
 
 namespace base {
 namespace internal {
@@ -62,7 +62,7 @@ struct CheckedAddOp<T,
                                   FastPromotion>::type;
     // Fail if either operand is out of range for the promoted type.
     // TODO(jschuh): This could be made to work for a broader range of values.
-    if (BASE_NUMERICS_UNLIKELY(!IsValueInRangeForNumericType<Promotion>(x) ||
+    if (BRICK_NUMERICS_UNLIKELY(!IsValueInRangeForNumericType<Promotion>(x) ||
                                !IsValueInRangeForNumericType<Promotion>(y))) {
       return false;
     }
@@ -122,7 +122,7 @@ struct CheckedSubOp<T,
                                   FastPromotion>::type;
     // Fail if either operand is out of range for the promoted type.
     // TODO(jschuh): This could be made to work for a broader range of values.
-    if (BASE_NUMERICS_UNLIKELY(!IsValueInRangeForNumericType<Promotion>(x) ||
+    if (BRICK_NUMERICS_UNLIKELY(!IsValueInRangeForNumericType<Promotion>(x) ||
                                !IsValueInRangeForNumericType<Promotion>(y))) {
       return false;
     }
@@ -177,7 +177,7 @@ struct CheckedMulOp<T,
 
     using Promotion = typename FastIntegerArithmeticPromotion<T, U>::type;
     // Verify the destination type can hold the result (always true for 0).
-    if (BASE_NUMERICS_UNLIKELY((!IsValueInRangeForNumericType<Promotion>(x) ||
+    if (BRICK_NUMERICS_UNLIKELY((!IsValueInRangeForNumericType<Promotion>(x) ||
                                 !IsValueInRangeForNumericType<Promotion>(y)) &&
                                x && y)) {
       return false;
@@ -212,13 +212,13 @@ struct CheckedDivOp<T,
   using result_type = typename MaxExponentPromotion<T, U>::type;
   template <typename V>
   static constexpr bool Do(T x, U y, V* result) {
-    if (BASE_NUMERICS_UNLIKELY(!y))
+    if (BRICK_NUMERICS_UNLIKELY(!y))
       return false;
 
     // The overflow check can be compiled away if we don't have the exact
     // combination of types needed to trigger this case.
     using Promotion = typename BigEnoughPromotion<T, U>::type;
-    if (BASE_NUMERICS_UNLIKELY(
+    if (BRICK_NUMERICS_UNLIKELY(
             (std::is_signed<T>::value && std::is_signed<U>::value &&
              IsTypeInRangeForNumericType<T, Promotion>::value &&
              static_cast<Promotion>(x) ==
@@ -228,7 +228,7 @@ struct CheckedDivOp<T,
     }
 
     // This branch always compiles away if the above branch wasn't removed.
-    if (BASE_NUMERICS_UNLIKELY((!IsValueInRangeForNumericType<Promotion>(x) ||
+    if (BRICK_NUMERICS_UNLIKELY((!IsValueInRangeForNumericType<Promotion>(x) ||
                                 !IsValueInRangeForNumericType<Promotion>(y)) &&
                                x)) {
       return false;
@@ -252,7 +252,7 @@ struct CheckedModOp<T,
   template <typename V>
   static constexpr bool Do(T x, U y, V* result) {
     using Promotion = typename BigEnoughPromotion<T, U>::type;
-    if (BASE_NUMERICS_LIKELY(y)) {
+    if (BRICK_NUMERICS_LIKELY(y)) {
       Promotion presult = static_cast<Promotion>(x) % static_cast<Promotion>(y);
       *result = static_cast<Promotion>(presult);
       return IsValueInRangeForNumericType<V>(presult);
@@ -276,7 +276,7 @@ struct CheckedLshOp<T,
   template <typename V>
   static constexpr bool Do(T x, U shift, V* result) {
     // Disallow negative numbers and verify the shift is in bounds.
-    if (BASE_NUMERICS_LIKELY(!IsValueNegative(x) &&
+    if (BRICK_NUMERICS_LIKELY(!IsValueNegative(x) &&
                              as_unsigned(shift) <
                                  as_unsigned(std::numeric_limits<T>::digits))) {
       // Shift as unsigned to avoid undefined behavior.
@@ -306,7 +306,7 @@ struct CheckedRshOp<T,
   template <typename V>
   static bool Do(T x, U shift, V* result) {
     // Use the type conversion push negative values out of range.
-    if (BASE_NUMERICS_LIKELY(as_unsigned(shift) <
+    if (BRICK_NUMERICS_LIKELY(as_unsigned(shift) <
                              IntegerBitsPlusSign<T>::value)) {
       T tmp = x >> shift;
       *result = static_cast<V>(tmp);
@@ -417,7 +417,7 @@ struct CheckedMinOp<
 
 // This is just boilerplate that wraps the standard floating point arithmetic.
 // A macro isn't the nicest solution, but it beats rewriting these repeatedly.
-#define BASE_FLOAT_ARITHMETIC_OPS(NAME, OP)                              \
+#define BRICK_FLOAT_ARITHMETIC_OPS(NAME, OP)                              \
   template <typename T, typename U>                                      \
   struct Checked##NAME##Op<                                              \
       T, U,                                                              \
@@ -433,12 +433,12 @@ struct CheckedMinOp<
     }                                                                    \
   };
 
-BASE_FLOAT_ARITHMETIC_OPS(Add, +)
-BASE_FLOAT_ARITHMETIC_OPS(Sub, -)
-BASE_FLOAT_ARITHMETIC_OPS(Mul, *)
-BASE_FLOAT_ARITHMETIC_OPS(Div, /)
+BRICK_FLOAT_ARITHMETIC_OPS(Add, +)
+BRICK_FLOAT_ARITHMETIC_OPS(Sub, -)
+BRICK_FLOAT_ARITHMETIC_OPS(Mul, *)
+BRICK_FLOAT_ARITHMETIC_OPS(Div, /)
 
-#undef BASE_FLOAT_ARITHMETIC_OPS
+#undef BRICK_FLOAT_ARITHMETIC_OPS
 
 // Floats carry around their validity state with them, but integers do not. So,
 // we wrap the underlying value in a specialization in order to hide that detail
@@ -564,4 +564,4 @@ class CheckedNumericState<T, NUMERIC_FLOATING> {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_NUMERICS_CHECKED_MATH_IMPL_H_
+#endif  // BRICK_NUMERICS_CHECKED_MATH_IMPL_H_

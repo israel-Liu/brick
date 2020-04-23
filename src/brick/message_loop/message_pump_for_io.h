@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_FOR_IO_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_FOR_IO_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FOR_IO_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FOR_IO_H_
 
 // This header is a forwarding header to coalesce the various platform specific
 // types representing MessagePumpForIO.
@@ -11,15 +11,15 @@
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/message_loop/message_pump_win.h"
+#include "brick/message_loop/message_pump_win.h"
 #elif defined(OS_IOS)
-#include "base/message_loop/message_pump_io_ios.h"
+#include "brick/message_loop/message_pump_io_ios.h"
 #elif defined(OS_NACL_SFI)
-#include "base/message_loop/message_pump_default.h"
+#include "brick/message_loop/message_pump_default.h"
 #elif defined(OS_FUCHSIA)
-#include "base/message_loop/message_pump_fuchsia.h"
+#include "brick/message_loop/message_pump_fuchsia.h"
 #elif defined(OS_POSIX)
-#include "base/message_loop/message_pump_libevent.h"
+#include "brick/message_loop/message_pump_libevent.h"
 #endif
 
 namespace base {
@@ -41,4 +41,4 @@ using MessagePumpForIO = MessagePumpLibevent;
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_FOR_IO_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FOR_IO_H_

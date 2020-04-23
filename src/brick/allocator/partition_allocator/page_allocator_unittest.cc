@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/partition_allocator/page_allocator.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
 
 #include <stdlib.h>
 #include <string.h>
 
-#include "base/allocator/partition_allocator/address_space_randomization.h"
+#include "brick/allocator/partition_allocator/address_space_randomization.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/time/time.h"
+#include "brick/time/time.h"
 
 #include <stdint.h>
 #include <sys/time.h>
@@ -14,14 +14,14 @@
 
 #include <limits>
 
-#include "base/numerics/safe_math.h"
-#include "base/synchronization/lock.h"
+#include "brick/numerics/safe_math.h"
+#include "brick/synchronization/lock.h"
 #include "build/build_config.h"
 
 #if defined(OS_ANDROID)
-#include "base/os_compat_android.h"
+#include "brick/os_compat_android.h"
 #elif defined(OS_NACL)
-#include "base/os_compat_nacl.h"
+#include "brick/os_compat_nacl.h"
 #endif
 
 #if defined(OS_MACOSX)

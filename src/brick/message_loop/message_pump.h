@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_H_
 
-#include "base/base_export.h"
-#include "base/message_loop/timer_slack.h"
-#include "base/sequence_checker.h"
+#include "brick/base_export.h"
+#include "brick/message_loop/timer_slack.h"
+#include "brick/sequence_checker.h"
 
 namespace base {
 
 class TimeTicks;
 
-class BASE_EXPORT MessagePump {
+class BRICK_EXPORT MessagePump {
  public:
   // Please see the comments above the Run method for an illustration of how
   // these delegate methods are used.
-  class BASE_EXPORT Delegate {
+  class BRICK_EXPORT Delegate {
    public:
     virtual ~Delegate() = default;
 
@@ -128,4 +128,4 @@ class BASE_EXPORT MessagePump {
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_H_

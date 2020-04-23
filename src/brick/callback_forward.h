@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CALLBACK_FORWARD_H_
-#define BASE_CALLBACK_FORWARD_H_
+#ifndef BRICK_CALLBACK_FORWARD_H_
+#define BRICK_CALLBACK_FORWARD_H_
 
 namespace base {
 
@@ -24,4 +24,4 @@ using Closure = Callback<void()>;
 
 }  // namespace base
 
-#endif  // BASE_CALLBACK_FORWARD_H_
+#endif  // BRICK_CALLBACK_FORWARD_H_

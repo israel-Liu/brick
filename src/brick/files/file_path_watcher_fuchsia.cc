@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/files/file_path_watcher.h"
+#include "brick/files/file_path_watcher.h"
 
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/threading/sequenced_task_runner_handle.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
 
 namespace base {
 

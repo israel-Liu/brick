@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/auto_open_close_event.h"
+#include "brick/trace_event/auto_open_close_event.h"
 
-#include "base/macros.h"
-#include "base/time/time.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/macros.h"
+#include "brick/time/time.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 namespace trace_event {

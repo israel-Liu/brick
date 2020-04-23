@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/process_handle.h"
+#include "brick/process/process_handle.h"
 
 #include <zircon/process.h>
 #include <zircon/status.h>
 #include <zircon/syscalls.h>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 

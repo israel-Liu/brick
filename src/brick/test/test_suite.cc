@@ -2,68 +2,68 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_suite.h"
+#include "brick/test/test_suite.h"
 
 #include <signal.h>
 
 #include <memory>
 
-#include "base/at_exit.h"
-#include "base/base_paths.h"
-#include "base/base_switches.h"
-#include "base/bind.h"
-#include "base/command_line.h"
-#include "base/debug/debugger.h"
-#include "base/debug/profiler.h"
-#include "base/debug/stack_trace.h"
-#include "base/feature_list.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/i18n/icu_util.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
-#include "base/path_service.h"
-#include "base/process/launch.h"
-#include "base/process/memory.h"
-#include "base/test/gtest_xml_unittest_result_printer.h"
-#include "base/test/gtest_xml_util.h"
-#include "base/test/icu_test_util.h"
-#include "base/test/launcher/unit_test_launcher.h"
-#include "base/test/multiprocess_test.h"
-#include "base/test/test_switches.h"
-#include "base/test/test_timeouts.h"
-#include "base/time/time.h"
+#include "brick/at_exit.h"
+#include "brick/base_paths.h"
+#include "brick/base_switches.h"
+#include "brick/bind.h"
+#include "brick/command_line.h"
+#include "brick/debug/debugger.h"
+#include "brick/debug/profiler.h"
+#include "brick/debug/stack_trace.h"
+#include "brick/feature_list.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/i18n/icu_util.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/path_service.h"
+#include "brick/process/launch.h"
+#include "brick/process/memory.h"
+#include "brick/test/gtest_xml_unittest_result_printer.h"
+#include "brick/test/gtest_xml_util.h"
+#include "brick/test/icu_test_util.h"
+#include "brick/test/launcher/unit_test_launcher.h"
+#include "brick/test/multiprocess_test.h"
+#include "brick/test/test_switches.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 #include "testing/multiprocess_func_list.h"
 
 #if defined(OS_MACOSX)
-#include "base/mac/scoped_nsautorelease_pool.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
 #if defined(OS_IOS)
-#include "base/test/test_listener_ios.h"
+#include "brick/test/test_listener_ios.h"
 #endif  // OS_IOS
 #endif  // OS_MACOSX
 
 #if !defined(OS_WIN)
-#include "base/i18n/rtl.h"
+#include "brick/i18n/rtl.h"
 #if !defined(OS_IOS)
-#include "base/strings/string_util.h"
+#include "brick/strings/string_util.h"
 #include "third_party/icu/source/common/unicode/uloc.h"
 #endif
 #endif
 
 #if defined(OS_ANDROID)
-#include "base/test/test_support_android.h"
+#include "brick/test/test_support_android.h"
 #endif
 
 #if defined(OS_IOS)
-#include "base/test/test_support_ios.h"
+#include "brick/test/test_support_ios.h"
 #endif
 
 #if defined(OS_LINUX)
-#include "base/test/fontconfig_util_linux.h"
+#include "brick/test/fontconfig_util_linux.h"
 #endif
 
 namespace base {

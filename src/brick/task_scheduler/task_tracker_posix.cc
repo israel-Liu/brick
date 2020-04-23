@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/task_tracker_posix.h"
+#include "brick/task_scheduler/task_tracker_posix.h"
 
 #include <utility>
 
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 
 namespace base {
 namespace internal {

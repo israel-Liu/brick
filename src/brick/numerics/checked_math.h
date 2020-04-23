@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_NUMERICS_CHECKED_MATH_H_
-#define BASE_NUMERICS_CHECKED_MATH_H_
+#ifndef BRICK_NUMERICS_CHECKED_MATH_H_
+#define BRICK_NUMERICS_CHECKED_MATH_H_
 
 #include <stddef.h>
 
 #include <limits>
 #include <type_traits>
 
-#include "base/numerics/checked_math_impl.h"
+#include "brick/numerics/checked_math_impl.h"
 
 namespace base {
 namespace internal {
@@ -68,7 +68,7 @@ class CheckedNumeric {
 #endif
   constexpr bool
   AssignIfValid(Dst* result) const {
-    return BASE_NUMERICS_LIKELY(IsValid<Dst>())
+    return BRICK_NUMERICS_LIKELY(IsValid<Dst>())
                ? ((*result = static_cast<Dst>(state_.value())), true)
                : false;
   }
@@ -83,7 +83,7 @@ class CheckedNumeric {
   // the underlying value, and it is not available through other means.
   template <typename Dst = T, class CheckHandler = CheckOnFailure>
   constexpr StrictNumeric<Dst> ValueOrDie() const {
-    return BASE_NUMERICS_LIKELY(IsValid<Dst>())
+    return BRICK_NUMERICS_LIKELY(IsValid<Dst>())
                ? static_cast<Dst>(state_.value())
                : CheckHandler::template HandleFailure<Dst>();
   }
@@ -96,7 +96,7 @@ class CheckedNumeric {
   // if the supplied default_value is not within range of the destination type.
   template <typename Dst = T, typename Src>
   constexpr StrictNumeric<Dst> ValueOrDefault(const Src default_value) const {
-    return BASE_NUMERICS_LIKELY(IsValid<Dst>())
+    return BRICK_NUMERICS_LIKELY(IsValid<Dst>())
                ? static_cast<Dst>(state_.value())
                : checked_cast<Dst>(default_value);
   }
@@ -336,18 +336,18 @@ CheckMathOp(const L lhs, const R rhs, const Args... args) {
   return CheckMathOp<M>(CheckMathOp<M>(lhs, rhs), args...);
 }
 
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Add, +, +=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Sub, -, -=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Mul, *, *=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Div, /, /=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Mod, %, %=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Lsh, <<, <<=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Rsh, >>, >>=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, And, &, &=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Or, |, |=)
-BASE_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Xor, ^, ^=)
-BASE_NUMERIC_ARITHMETIC_VARIADIC(Checked, Check, Max)
-BASE_NUMERIC_ARITHMETIC_VARIADIC(Checked, Check, Min)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Add, +, +=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Sub, -, -=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Mul, *, *=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Div, /, /=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Mod, %, %=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Lsh, <<, <<=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Rsh, >>, >>=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, And, &, &=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Or, |, |=)
+BRICK_NUMERIC_ARITHMETIC_OPERATORS(Checked, Check, Xor, ^, ^=)
+BRICK_NUMERIC_ARITHMETIC_VARIADIC(Checked, Check, Max)
+BRICK_NUMERIC_ARITHMETIC_VARIADIC(Checked, Check, Min)
 
 // These are some extra StrictNumeric operators to support simple pointer
 // arithmetic with our result types. Since wrapping on a pointer is always
@@ -390,4 +390,4 @@ using internal::CheckXor;
 
 }  // namespace base
 
-#endif  // BASE_NUMERICS_CHECKED_MATH_H_
+#endif  // BRICK_NUMERICS_CHECKED_MATH_H_

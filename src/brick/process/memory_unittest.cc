@@ -4,18 +4,18 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-#include "base/process/memory.h"
+#include "brick/process/memory.h"
 
 #include <stddef.h>
 
 #include <limits>
 
-#include "base/allocator/allocator_check.h"
-#include "base/allocator/buildflags.h"
-#include "base/compiler_specific.h"
-#include "base/debug/alias.h"
-#include "base/memory/aligned_memory.h"
-#include "base/strings/stringprintf.h"
+#include "brick/allocator/allocator_check.h"
+#include "brick/allocator/buildflags.h"
+#include "brick/compiler_specific.h"
+#include "brick/debug/alias.h"
+#include "brick/memory/aligned_memory.h"
+#include "brick/strings/stringprintf.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
@@ -27,13 +27,13 @@
 #endif
 #if defined(OS_MACOSX)
 #include <malloc/malloc.h>
-#include "base/allocator/allocator_interception_mac.h"
-#include "base/allocator/allocator_shim.h"
-#include "base/process/memory_unittest_mac.h"
+#include "brick/allocator/allocator_interception_mac.h"
+#include "brick/allocator/allocator_shim.h"
+#include "brick/process/memory_unittest_mac.h"
 #endif
 #if defined(OS_LINUX)
 #include <malloc.h>
-#include "base/test/malloc_wrapper.h"
+#include "brick/test/malloc_wrapper.h"
 #endif
 
 #if defined(OS_WIN)

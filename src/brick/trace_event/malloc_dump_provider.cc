@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/malloc_dump_provider.h"
+#include "brick/trace_event/malloc_dump_provider.h"
 
 #include <stddef.h>
 
 #include <unordered_map>
 
-#include "base/allocator/allocator_extension.h"
-#include "base/allocator/buildflags.h"
-#include "base/debug/profiler.h"
-#include "base/trace_event/process_memory_dump.h"
-#include "base/trace_event/trace_event_argument.h"
+#include "brick/allocator/allocator_extension.h"
+#include "brick/allocator/buildflags.h"
+#include "brick/debug/profiler.h"
+#include "brick/trace_event/process_memory_dump.h"
+#include "brick/trace_event/trace_event_argument.h"
 #include "build/build_config.h"
 
 #if defined(OS_MACOSX)

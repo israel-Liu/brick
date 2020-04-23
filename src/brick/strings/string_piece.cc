@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 // Copied from strings/stringpiece.cc with modifications
 
-#include "base/strings/string_piece.h"
+#include "brick/strings/string_piece.h"
 
 #include <limits.h>
 
 #include <algorithm>
 #include <ostream>
 
-#include "base/logging.h"
+#include "brick/logging.h"
 
 namespace base {
 namespace {
@@ -254,7 +254,7 @@ size_t find_first_not_of(const StringPiece& self,
 }
 
 // 16-bit brute-force version.
-BASE_EXPORT size_t find_first_not_of(const StringPiece16& self,
+BRICK_EXPORT size_t find_first_not_of(const StringPiece16& self,
                                      const StringPiece16& s,
                                      size_t pos) {
   if (self.size() == 0)

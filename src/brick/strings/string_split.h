@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_STRINGS_STRING_SPLIT_H_
-#define BASE_STRINGS_STRING_SPLIT_H_
+#ifndef BRICK_STRINGS_STRING_SPLIT_H_
+#define BRICK_STRINGS_STRING_SPLIT_H_
 
 #include <string>
 #include <utility>
 #include <vector>
 
-#include "base/base_export.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
+#include "brick/base_export.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 
@@ -43,12 +43,12 @@ enum SplitResult {
 //
 //   std::vector<std::string> tokens = base::SplitString(
 //       input, ",;", base::KEEP_WHITESPACE, base::SPLIT_WANT_ALL);
-BASE_EXPORT std::vector<std::string> SplitString(
+BRICK_EXPORT std::vector<std::string> SplitString(
     StringPiece input,
     StringPiece separators,
     WhitespaceHandling whitespace,
     SplitResult result_type);
-BASE_EXPORT std::vector<string16> SplitString(
+BRICK_EXPORT std::vector<string16> SplitString(
     StringPiece16 input,
     StringPiece16 separators,
     WhitespaceHandling whitespace,
@@ -66,12 +66,12 @@ BASE_EXPORT std::vector<string16> SplitString(
 //                               base::KEEP_WHITESPACE,
 //                               base::SPLIT_WANT_NONEMPTY)) {
 //     ...
-BASE_EXPORT std::vector<StringPiece> SplitStringPiece(
+BRICK_EXPORT std::vector<StringPiece> SplitStringPiece(
     StringPiece input,
     StringPiece separators,
     WhitespaceHandling whitespace,
     SplitResult result_type);
-BASE_EXPORT std::vector<StringPiece16> SplitStringPiece(
+BRICK_EXPORT std::vector<StringPiece16> SplitStringPiece(
     StringPiece16 input,
     StringPiece16 separators,
     WhitespaceHandling whitespace,
@@ -83,19 +83,19 @@ using StringPairs = std::vector<std::pair<std::string, std::string>>;
 // removes whitespace leading each key and trailing each value. Returns true
 // only if each pair has a non-empty key and value. |key_value_pairs| will
 // include ("","") pairs for entries without |key_value_delimiter|.
-BASE_EXPORT bool SplitStringIntoKeyValuePairs(StringPiece input,
+BRICK_EXPORT bool SplitStringIntoKeyValuePairs(StringPiece input,
                                               char key_value_delimiter,
                                               char key_value_pair_delimiter,
                                               StringPairs* key_value_pairs);
 
 // Similar to SplitString, but use a substring delimiter instead of a list of
 // characters that are all possible delimiters.
-BASE_EXPORT std::vector<string16> SplitStringUsingSubstr(
+BRICK_EXPORT std::vector<string16> SplitStringUsingSubstr(
     StringPiece16 input,
     StringPiece16 delimiter,
     WhitespaceHandling whitespace,
     SplitResult result_type);
-BASE_EXPORT std::vector<std::string> SplitStringUsingSubstr(
+BRICK_EXPORT std::vector<std::string> SplitStringUsingSubstr(
     StringPiece input,
     StringPiece delimiter,
     WhitespaceHandling whitespace,
@@ -113,12 +113,12 @@ BASE_EXPORT std::vector<std::string> SplitStringUsingSubstr(
 //                                     base::KEEP_WHITESPACE,
 //                                     base::SPLIT_WANT_NONEMPTY)) {
 //     ...
-BASE_EXPORT std::vector<StringPiece16> SplitStringPieceUsingSubstr(
+BRICK_EXPORT std::vector<StringPiece16> SplitStringPieceUsingSubstr(
     StringPiece16 input,
     StringPiece16 delimiter,
     WhitespaceHandling whitespace,
     SplitResult result_type);
-BASE_EXPORT std::vector<StringPiece> SplitStringPieceUsingSubstr(
+BRICK_EXPORT std::vector<StringPiece> SplitStringPieceUsingSubstr(
     StringPiece input,
     StringPiece delimiter,
     WhitespaceHandling whitespace,
@@ -126,4 +126,4 @@ BASE_EXPORT std::vector<StringPiece> SplitStringPieceUsingSubstr(
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_STRING_SPLIT_H_
+#endif  // BRICK_STRINGS_STRING_SPLIT_H_

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/memory/platform_shared_memory_region.h"
+#include "brick/memory/platform_shared_memory_region.h"
 
 #include <sys/mman.h>
 
-#include "base/memory/shared_memory_tracker.h"
-#include "base/posix/eintr_wrapper.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/posix/eintr_wrapper.h"
 #include "third_party/ashmem/ashmem.h"
 
 namespace base {

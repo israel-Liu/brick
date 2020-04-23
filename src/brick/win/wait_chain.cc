@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/wait_chain.h"
+#include "brick/win/wait_chain.h"
 
 #include <memory>
 
-#include "base/logging.h"
-#include "base/strings/stringprintf.h"
+#include "brick/logging.h"
+#include "brick/strings/stringprintf.h"
 
 namespace base {
 namespace win {

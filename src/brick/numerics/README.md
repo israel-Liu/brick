@@ -1,4 +1,4 @@
-# `base/numerics`
+# `brick/numerics`
 
 This directory contains a dependency-free, header-only library of templates
 providing well-defined semantics for safely and performantly handling a variety

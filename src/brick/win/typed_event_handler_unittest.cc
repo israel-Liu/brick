@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/win/typed_event_handler.h"
+#include "brick/win/typed_event_handler.h"
 
 #include <windows.foundation.h>
 
-#include "base/test/bind_test_util.h"
+#include "brick/test/bind_test_util.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

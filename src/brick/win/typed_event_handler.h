@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_TYPED_EVENT_HANDLER_H_
-#define BASE_WIN_TYPED_EVENT_HANDLER_H_
+#ifndef BRICK_WIN_TYPED_EVENT_HANDLER_H_
+#define BRICK_WIN_TYPED_EVENT_HANDLER_H_
 
 #include <windows.foundation.collections.h>
 #include <wrl/implements.h>
 
 #include <utility>
 
-#include "base/callback.h"
+#include "brick/callback.h"
 
 namespace base {
 namespace win {
@@ -46,4 +46,4 @@ class TypedEventHandler
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_TYPED_EVENT_HANDLER_H_
+#endif  // BRICK_WIN_TYPED_EVENT_HANDLER_H_

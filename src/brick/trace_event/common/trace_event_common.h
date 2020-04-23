@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TRACE_EVENT_COMMON_TRACE_EVENT_COMMON_H_
-#define BASE_TRACE_EVENT_COMMON_TRACE_EVENT_COMMON_H_
+#ifndef BRICK_TRACE_EVENT_COMMON_TRACE_EVENT_COMMON_H_
+#define BRICK_TRACE_EVENT_COMMON_TRACE_EVENT_COMMON_H_
 
 // This header file defines the set of trace_event macros without specifying
 // how the events actually get collected and stored. If you need to expose trace
@@ -13,7 +13,7 @@
 // through to a shared trace event collector.
 
 // IMPORTANT: To avoid conflicts, if you need to modify this file for a library,
-// land your change in base/ first, and then copy-and-paste it.
+// land your change in brick/ first, and then copy-and-paste it.
 
 // Trace events are for tracking application performance and resource usage.
 // Macros are provided to track:
@@ -1111,4 +1111,4 @@
 #define TRACE_EVENT_SCOPE_NAME_PROCESS ('p')
 #define TRACE_EVENT_SCOPE_NAME_THREAD ('t')
 
-#endif  // BASE_TRACE_EVENT_COMMON_TRACE_EVENT_COMMON_H_
+#endif  // BRICK_TRACE_EVENT_COMMON_TRACE_EVENT_COMMON_H_

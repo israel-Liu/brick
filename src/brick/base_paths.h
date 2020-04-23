@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_BASE_PATHS_H_
-#define BASE_BASE_PATHS_H_
+#ifndef BRICK_BRICK_PATHS_H_
+#define BRICK_BRICK_PATHS_H_
 
 // This file declares path keys for the base module.  These can be used with
 // the PathService to access various special directories and files.
@@ -11,15 +11,15 @@
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/base_paths_win.h"
+#include "brick/base_paths_win.h"
 #elif defined(OS_MACOSX)
-#include "base/base_paths_mac.h"
+#include "brick/base_paths_mac.h"
 #elif defined(OS_ANDROID)
-#include "base/base_paths_android.h"
+#include "brick/base_paths_android.h"
 #endif
 
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
-#include "base/base_paths_posix.h"
+#include "brick/base_paths_posix.h"
 #endif
 
 namespace base {
@@ -52,4 +52,4 @@ enum BasePathKey {
 
 }  // namespace base
 
-#endif  // BASE_BASE_PATHS_H_
+#endif  // BRICK_BRICK_PATHS_H_

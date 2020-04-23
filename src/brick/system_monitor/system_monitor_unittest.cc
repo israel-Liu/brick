@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/system_monitor/system_monitor.h"
+#include "brick/system_monitor/system_monitor.h"
 
-#include "base/macros.h"
-#include "base/message_loop/message_loop.h"
-#include "base/run_loop.h"
-#include "base/test/mock_devices_changed_observer.h"
+#include "brick/macros.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/run_loop.h"
+#include "brick/test/mock_devices_changed_observer.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

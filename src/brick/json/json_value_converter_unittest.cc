@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_value_converter.h"
+#include "brick/json/json_value_converter.h"
 
 #include <memory>
 #include <string>
 #include <vector>
 
-#include "base/json/json_reader.h"
-#include "base/strings/string_piece.h"
-#include "base/values.h"
+#include "brick/json/json_reader.h"
+#include "brick/strings/string_piece.h"
+#include "brick/values.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

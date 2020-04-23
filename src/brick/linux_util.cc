@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/linux_util.h"
+#include "brick/linux_util.h"
 
 #include <dirent.h>
 #include <errno.h>
@@ -16,15 +16,15 @@
 #include <memory>
 #include <vector>
 
-#include "base/command_line.h"
-#include "base/files/file_util.h"
-#include "base/memory/singleton.h"
-#include "base/process/launch.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_tokenizer.h"
-#include "base/strings/string_util.h"
-#include "base/synchronization/lock.h"
+#include "brick/command_line.h"
+#include "brick/files/file_util.h"
+#include "brick/memory/singleton.h"
+#include "brick/process/launch.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_tokenizer.h"
+#include "brick/strings/string_util.h"
+#include "brick/synchronization/lock.h"
 #include "build/build_config.h"
 
 namespace {

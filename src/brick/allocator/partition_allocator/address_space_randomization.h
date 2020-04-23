@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ALLOCATOR_PARTITION_ALLOCATOR_ADDRESS_SPACE_RANDOMIZATION
-#define BASE_ALLOCATOR_PARTITION_ALLOCATOR_ADDRESS_SPACE_RANDOMIZATION
+#ifndef BRICK_ALLOCATOR_PARTITION_ALLOCATOR_ADDRESS_SPACE_RANDOMIZATION
+#define BRICK_ALLOCATOR_PARTITION_ALLOCATOR_ADDRESS_SPACE_RANDOMIZATION
 
-#include "base/allocator/partition_allocator/page_allocator.h"
-#include "base/base_export.h"
+#include "brick/allocator/partition_allocator/page_allocator.h"
+#include "brick/base_export.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -14,11 +14,11 @@ namespace base {
 // Sets the seed for the random number generator used by GetRandomPageBase in
 // order to generate a predictable sequence of addresses. May be called multiple
 // times.
-BASE_EXPORT void SetRandomPageBaseSeed(int64_t seed);
+BRICK_EXPORT void SetRandomPageBaseSeed(int64_t seed);
 
 // Calculates a random preferred mapping address. In calculating an address, we
 // balance good ASLR against not fragmenting the address space too badly.
-BASE_EXPORT void* GetRandomPageBase();
+BRICK_EXPORT void* GetRandomPageBase();
 
 namespace internal {
 
@@ -203,4 +203,4 @@ constexpr uintptr_t AslrMask(uintptr_t bits) {
 
 }  // namespace base
 
-#endif  // BASE_ALLOCATOR_PARTITION_ALLOCATOR_ADDRESS_SPACE_RANDOMIZATION
+#endif  // BRICK_ALLOCATOR_PARTITION_ALLOCATOR_ADDRESS_SPACE_RANDOMIZATION

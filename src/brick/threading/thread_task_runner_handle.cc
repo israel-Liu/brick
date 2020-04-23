@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/threading/thread_task_runner_handle.h"
+#include "brick/threading/thread_task_runner_handle.h"
 
 #include <utility>
 
-#include "base/bind.h"
-#include "base/lazy_instance.h"
-#include "base/logging.h"
-#include "base/memory/ptr_util.h"
-#include "base/run_loop.h"
-#include "base/threading/sequenced_task_runner_handle.h"
-#include "base/threading/thread_local.h"
+#include "brick/bind.h"
+#include "brick/lazy_instance.h"
+#include "brick/logging.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/run_loop.h"
+#include "brick/threading/sequenced_task_runner_handle.h"
+#include "brick/threading/thread_local.h"
 
 namespace base {
 

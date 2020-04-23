@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/strings/sys_string_conversions.h"
+#include "brick/strings/sys_string_conversions.h"
 
 #include <windows.h>
 #include <stdint.h>
 
-#include "base/strings/string_piece.h"
+#include "brick/strings/string_piece.h"
 
 namespace base {
 

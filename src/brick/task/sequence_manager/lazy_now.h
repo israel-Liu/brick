@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SEQUENCE_MANAGER_LAZY_NOW_H_
-#define BASE_TASK_SEQUENCE_MANAGER_LAZY_NOW_H_
+#ifndef BRICK_TASK_SEQUENCE_MANAGER_LAZY_NOW_H_
+#define BRICK_TASK_SEQUENCE_MANAGER_LAZY_NOW_H_
 
-#include "base/base_export.h"
-#include "base/optional.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/optional.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -18,7 +18,7 @@ namespace sequence_manager {
 // Now() is somewhat expensive so it makes sense not to call Now() unless we
 // really need to and to avoid subsequent calls if already called once.
 // LazyNow objects are expected to be short-living to represent accurate time.
-class BASE_EXPORT LazyNow {
+class BRICK_EXPORT LazyNow {
  public:
   explicit LazyNow(TimeTicks now);
   explicit LazyNow(const TickClock* tick_clock);
@@ -38,4 +38,4 @@ class BASE_EXPORT LazyNow {
 }  // namespace sequence_manager
 }  // namespace base
 
-#endif  // BASE_TASK_SEQUENCE_MANAGER_LAZY_NOW_H_
+#endif  // BRICK_TASK_SEQUENCE_MANAGER_LAZY_NOW_H_

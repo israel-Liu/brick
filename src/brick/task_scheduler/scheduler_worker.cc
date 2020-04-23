@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/task_scheduler/scheduler_worker.h"
+#include "brick/task_scheduler/scheduler_worker.h"
 
 #include <stddef.h>
 
 #include <utility>
 
-#include "base/compiler_specific.h"
-#include "base/debug/alias.h"
-#include "base/logging.h"
-#include "base/task_scheduler/environment_config.h"
-#include "base/task_scheduler/scheduler_worker_observer.h"
-#include "base/task_scheduler/task_tracker.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/compiler_specific.h"
+#include "brick/debug/alias.h"
+#include "brick/logging.h"
+#include "brick/task_scheduler/environment_config.h"
+#include "brick/task_scheduler/scheduler_worker_observer.h"
+#include "brick/task_scheduler/task_tracker.h"
+#include "brick/trace_event/trace_event.h"
 
 #if defined(OS_MACOSX)
-#include "base/mac/scoped_nsautorelease_pool.h"
+#include "brick/mac/scoped_nsautorelease_pool.h"
 #elif defined(OS_WIN)
-#include "base/win/com_init_check_hook.h"
-#include "base/win/scoped_com_initializer.h"
+#include "brick/win/com_init_check_hook.h"
+#include "brick/win/scoped_com_initializer.h"
 #endif
 
 namespace base {

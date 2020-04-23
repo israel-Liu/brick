@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/launch.h"
+#include "brick/process/launch.h"
 
-#include "base/command_line.h"
-#include "base/files/file_path.h"
+#include "brick/command_line.h"
+#include "brick/files/file_path.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

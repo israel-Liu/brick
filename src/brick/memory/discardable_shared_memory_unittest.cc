@@ -5,12 +5,12 @@
 #include <fcntl.h>
 #include <stdint.h>
 
-#include "base/files/scoped_file.h"
-#include "base/memory/discardable_shared_memory.h"
-#include "base/memory/shared_memory_tracker.h"
-#include "base/process/process_metrics.h"
-#include "base/trace_event/memory_allocator_dump.h"
-#include "base/trace_event/process_memory_dump.h"
+#include "brick/files/scoped_file.h"
+#include "brick/memory/discardable_shared_memory.h"
+#include "brick/memory/shared_memory_tracker.h"
+#include "brick/process/process_metrics.h"
+#include "brick/trace_event/memory_allocator_dump.h"
+#include "brick/trace_event/process_memory_dump.h"
 #include "build/build_config.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_VECTOR_BUFFERS_H_
-#define BASE_CONTAINERS_VECTOR_BUFFERS_H_
+#ifndef BRICK_CONTAINERS_VECTOR_BUFFERS_H_
+#define BRICK_CONTAINERS_VECTOR_BUFFERS_H_
 
 #include <stdlib.h>
 #include <string.h>
@@ -11,13 +11,13 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace internal {
 
-// Internal implementation detail of base/containers.
+// Internal implementation detail of brick/containers.
 //
 // Implements a vector-like buffer that holds a certain capacity of T. Unlike
 // std::vector, VectorBuffer never constructs or destructs its arguments, and
@@ -160,4 +160,4 @@ class VectorBuffer {
 }  // namespace internal
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_VECTOR_BUFFERS_H_
+#endif  // BRICK_CONTAINERS_VECTOR_BUFFERS_H_

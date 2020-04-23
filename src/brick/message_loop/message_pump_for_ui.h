@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MESSAGE_LOOP_MESSAGE_PUMP_FOR_UI_H_
-#define BASE_MESSAGE_LOOP_MESSAGE_PUMP_FOR_UI_H_
+#ifndef BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FOR_UI_H_
+#define BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FOR_UI_H_
 
 // This header is a forwarding header to coalesce the various platform specific
 // implementations of MessagePumpForUI.
@@ -11,19 +11,19 @@
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
-#include "base/message_loop/message_pump_win.h"
+#include "brick/message_loop/message_pump_win.h"
 #elif defined(OS_ANDROID)
-#include "base/message_loop/message_pump_android.h"
+#include "brick/message_loop/message_pump_android.h"
 #elif defined(OS_MACOSX)
-#include "base/message_loop/message_pump.h"
+#include "brick/message_loop/message_pump.h"
 #elif defined(OS_NACL) || defined(OS_AIX)
 // No MessagePumpForUI, see below.
 #elif defined(USE_GLIB)
-#include "base/message_loop/message_pump_glib.h"
+#include "brick/message_loop/message_pump_glib.h"
 #elif defined(OS_LINUX) || defined(OS_BSD)
-#include "base/message_loop/message_pump_libevent.h"
+#include "brick/message_loop/message_pump_libevent.h"
 #elif defined(OS_FUCHSIA)
-#include "base/message_loop/message_pump_fuchsia.h"
+#include "brick/message_loop/message_pump_fuchsia.h"
 #endif
 
 namespace base {
@@ -54,4 +54,4 @@ using MessagePumpForUI = MessagePumpFuchsia;
 
 }  // namespace base
 
-#endif  // BASE_MESSAGE_LOOP_MESSAGE_PUMP_FOR_UI_H_
+#endif  // BRICK_MESSAGE_LOOP_MESSAGE_PUMP_FOR_UI_H_

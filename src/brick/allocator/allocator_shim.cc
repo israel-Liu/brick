@@ -2,29 +2,29 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/allocator/allocator_shim.h"
+#include "brick/allocator/allocator_shim.h"
 
 #include <errno.h>
 
 #include <new>
 
-#include "base/atomicops.h"
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/process/process_metrics.h"
-#include "base/threading/platform_thread.h"
+#include "brick/atomicops.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/process/process_metrics.h"
+#include "brick/threading/platform_thread.h"
 #include "build/build_config.h"
 
 #if !defined(OS_WIN)
 #include <unistd.h>
 #else
-#include "base/allocator/winheap_stubs_win.h"
+#include "brick/allocator/winheap_stubs_win.h"
 #endif
 
 #if defined(OS_MACOSX)
 #include <malloc/malloc.h>
 
-#include "base/allocator/allocator_interception_mac.h"
+#include "brick/allocator/allocator_interception_mac.h"
 #endif
 
 // No calls to malloc / new in this file. They would would cause re-entrancy of
@@ -282,28 +282,28 @@ ALWAYS_INLINE void ShimFreeDefiniteSize(void* ptr, size_t size, void* context) {
 // Cpp symbols (new / delete) should always be routed through the shim layer
 // except on Windows and macOS where the malloc intercept is deep enough that it
 // also catches the cpp calls.
-#include "base/allocator/allocator_shim_override_cpp_symbols.h"
+#include "brick/allocator/allocator_shim_override_cpp_symbols.h"
 #endif
 
 #if defined(OS_ANDROID)
 // Android does not support symbol interposition. The way malloc symbols are
 // intercepted on Android is by using link-time -wrap flags.
-#include "base/allocator/allocator_shim_override_linker_wrapped_symbols.h"
+#include "brick/allocator/allocator_shim_override_linker_wrapped_symbols.h"
 #elif defined(OS_WIN)
 // On Windows we use plain link-time overriding of the CRT symbols.
-#include "base/allocator/allocator_shim_override_ucrt_symbols_win.h"
+#include "brick/allocator/allocator_shim_override_ucrt_symbols_win.h"
 #elif defined(OS_MACOSX)
-#include "base/allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.h"
-#include "base/allocator/allocator_shim_override_mac_symbols.h"
+#include "brick/allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.h"
+#include "brick/allocator/allocator_shim_override_mac_symbols.h"
 #else
-#include "base/allocator/allocator_shim_override_libc_symbols.h"
+#include "brick/allocator/allocator_shim_override_libc_symbols.h"
 #endif
 
 // In the case of tcmalloc we also want to plumb into the glibc hooks
 // to avoid that allocations made in glibc itself (e.g., strdup()) get
 // accidentally performed on the glibc heap instead of the tcmalloc one.
 #if defined(USE_TCMALLOC)
-#include "base/allocator/allocator_shim_override_glibc_weak_symbols.h"
+#include "brick/allocator/allocator_shim_override_glibc_weak_symbols.h"
 #endif
 
 #if defined(OS_MACOSX)

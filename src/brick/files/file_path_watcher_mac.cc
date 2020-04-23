@@ -4,14 +4,14 @@
 
 #include <memory>
 
-#include "base/files/file_path_watcher.h"
-#include "base/files/file_path_watcher_kqueue.h"
-#include "base/macros.h"
-#include "base/memory/ptr_util.h"
+#include "brick/files/file_path_watcher.h"
+#include "brick/files/file_path_watcher_kqueue.h"
+#include "brick/macros.h"
+#include "brick/memory/ptr_util.h"
 #include "build/build_config.h"
 
 #if !defined(OS_IOS)
-#include "base/files/file_path_watcher_fsevents.h"
+#include "brick/files/file_path_watcher_fsevents.h"
 #endif
 
 namespace base {

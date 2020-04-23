@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/test/test_file_util.h"
+#include "brick/test/test_file_util.h"
 
-#include "base/test/test_timeouts.h"
-#include "base/threading/platform_thread.h"
+#include "brick/test/test_timeouts.h"
+#include "brick/threading/platform_thread.h"
 
 namespace base {
 

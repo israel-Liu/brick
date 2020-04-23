@@ -51,8 +51,8 @@
 
 //------------------------------------------------------------------------------
 
-#ifndef BASE_METRICS_FIELD_TRIAL_H_
-#define BASE_METRICS_FIELD_TRIAL_H_
+#ifndef BRICK_METRICS_FIELD_TRIAL_H_
+#define BRICK_METRICS_FIELD_TRIAL_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -63,30 +63,30 @@
 #include <string>
 #include <vector>
 
-#include "base/atomicops.h"
-#include "base/base_export.h"
-#include "base/command_line.h"
-#include "base/feature_list.h"
-#include "base/files/file.h"
-#include "base/gtest_prod_util.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/memory/shared_memory.h"
-#include "base/memory/shared_memory_handle.h"
-#include "base/metrics/persistent_memory_allocator.h"
-#include "base/observer_list_threadsafe.h"
-#include "base/pickle.h"
-#include "base/process/launch.h"
-#include "base/strings/string_piece.h"
-#include "base/synchronization/lock.h"
-#include "base/time/time.h"
+#include "brick/atomicops.h"
+#include "brick/base_export.h"
+#include "brick/command_line.h"
+#include "brick/feature_list.h"
+#include "brick/files/file.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/memory/shared_memory_handle.h"
+#include "brick/metrics/persistent_memory_allocator.h"
+#include "brick/observer_list_threadsafe.h"
+#include "brick/pickle.h"
+#include "brick/process/launch.h"
+#include "brick/strings/string_piece.h"
+#include "brick/synchronization/lock.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {
 
 class FieldTrialList;
 
-class BASE_EXPORT FieldTrial : public RefCounted<FieldTrial> {
+class BRICK_EXPORT FieldTrial : public RefCounted<FieldTrial> {
  public:
   typedef int Probability;  // Probability type for being selected in a trial.
 
@@ -106,7 +106,7 @@ class BASE_EXPORT FieldTrial : public RefCounted<FieldTrial> {
 
   // EntropyProvider is an interface for providing entropy for one-time
   // randomized (persistent) field trials.
-  class BASE_EXPORT EntropyProvider {
+  class BRICK_EXPORT EntropyProvider {
    public:
     virtual ~EntropyProvider();
 
@@ -129,7 +129,7 @@ class BASE_EXPORT FieldTrial : public RefCounted<FieldTrial> {
   // active. String members are pointers to the underlying strings owned by the
   // FieldTrial object. Does not use StringPiece to avoid conversions back to
   // std::string.
-  struct BASE_EXPORT State {
+  struct BRICK_EXPORT State {
     const std::string* trial_name = nullptr;
     const std::string* group_name = nullptr;
     bool activated = false;
@@ -142,7 +142,7 @@ class BASE_EXPORT FieldTrial : public RefCounted<FieldTrial> {
   // We create one FieldTrialEntry per field trial in shared memory, via
   // AddToAllocatorWhileLocked. The FieldTrialEntry is followed by a
   // base::Pickle object that we unpickle and read from.
-  struct BASE_EXPORT FieldTrialEntry {
+  struct BRICK_EXPORT FieldTrialEntry {
     // SHA1(FieldTrialEntry): Increment this if structure changes!
     static constexpr uint32_t kPersistentTypeId = 0xABA17E13 + 2;
 
@@ -390,7 +390,7 @@ class BASE_EXPORT FieldTrial : public RefCounted<FieldTrial> {
 // been registered, which includes evaluating its state based on its probaility.
 // Only one instance of this class exists and outside of testing, will live for
 // the entire life time of the process.
-class BASE_EXPORT FieldTrialList {
+class BRICK_EXPORT FieldTrialList {
  public:
   typedef SharedPersistentMemoryAllocator FieldTrialAllocator;
 
@@ -403,7 +403,7 @@ class BASE_EXPORT FieldTrialList {
   static int kNoExpirationYear;
 
   // Observer is notified when a FieldTrial's group is selected.
-  class BASE_EXPORT Observer {
+  class BRICK_EXPORT Observer {
    public:
     // Notify observers when FieldTrials's group is selected.
     virtual void OnFieldTrialGroupFinalized(const std::string& trial_name,
@@ -565,7 +565,7 @@ class BASE_EXPORT FieldTrialList {
   // Windows, we expect the |cmd_line| switch for |field_trial_handle_switch| to
   // contain the shared memory handle that contains the field trial allocator.
   // We need the |field_trial_handle_switch| and |fd_key| arguments to be passed
-  // in since base/ can't depend on content/.
+  // in since brick/ can't depend on content/.
   static void CreateTrialsFromCommandLine(const base::CommandLine& cmd_line,
                                           const char* field_trial_handle_switch,
                                           int fd_key);
@@ -596,7 +596,7 @@ class BASE_EXPORT FieldTrialList {
   // Adds a switch to the command line containing the field trial state as a
   // string (if not using shared memory to share field trial state), or the
   // shared memory handle + length.
-  // Needs the |field_trial_handle_switch| argument to be passed in since base/
+  // Needs the |field_trial_handle_switch| argument to be passed in since brick/
   // can't depend on content/.
   static void CopyFieldTrialStateToFlags(const char* field_trial_handle_switch,
                                          const char* enable_features_switch,
@@ -799,4 +799,4 @@ class BASE_EXPORT FieldTrialList {
 
 }  // namespace base
 
-#endif  // BASE_METRICS_FIELD_TRIAL_H_
+#endif  // BRICK_METRICS_FIELD_TRIAL_H_

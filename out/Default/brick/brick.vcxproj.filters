@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="test">
-      <UniqueIdentifier>{5750e361-fb43-4514-8571-0c10be05d4c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="base">
-      <UniqueIdentifier>{affdd9f2-5978-49b6-8709-85a3955eb63f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="base\threads">
-      <UniqueIdentifier>{434b7d6a-f307-43d8-9de4-30f286b83f44}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="base\win">
-      <UniqueIdentifier>{8e730954-8bf2-4dc1-874c-9f4708b06545}</UniqueIdentifier>
+    <Filter Include="strings">
+      <UniqueIdentifier>{ccc068c3-3a98-4f2e-99ab-e63fe76670b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\test\main.cpp">
-      <Filter>test</Filter>
+    <ClCompile Include="..\..\..\src\brick\strings\string_piece.cc">
+      <Filter>strings</Filter>
     </ClCompile>
-    <ClCompile Include="..\base\threads\mutex.cpp">
-      <Filter>base\threads</Filter>
+    <ClCompile Include="..\..\..\src\brick\strings\string_piece_unittest.cc">
+      <Filter>strings</Filter>
     </ClCompile>
-    <ClCompile Include="..\test\mutex_unittest.cpp">
-      <Filter>test</Filter>
+    <ClCompile Include="..\..\..\src\brick\strings\string_split.cc">
+      <Filter>strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\brick\strings\string_split_unittest.cc">
+      <Filter>strings</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\base\macros.h">
-      <Filter>base</Filter>
+    <ClInclude Include="..\..\..\src\brick\strings\string_piece.h">
+      <Filter>strings</Filter>
     </ClInclude>
-    <ClInclude Include="..\base\threads\mutex.h">
-      <Filter>base\threads</Filter>
+    <ClInclude Include="..\..\..\src\brick\strings\string_piece_forward.h">
+      <Filter>strings</Filter>
     </ClInclude>
-    <ClInclude Include="..\base\win\windows_types.h">
-      <Filter>base\win</Filter>
+    <ClInclude Include="..\..\..\src\brick\strings\string_split.h">
+      <Filter>strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\brick\strings\char_traits.h">
+      <Filter>strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\brick\strings\string16.h">
+      <Filter>strings</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

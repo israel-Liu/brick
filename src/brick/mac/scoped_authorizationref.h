@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MAC_SCOPED_AUTHORIZATIONREF_H_
-#define BASE_MAC_SCOPED_AUTHORIZATIONREF_H_
+#ifndef BRICK_MAC_SCOPED_AUTHORIZATIONREF_H_
+#define BRICK_MAC_SCOPED_AUTHORIZATIONREF_H_
 
 #include <Security/Authorization.h>
 
-#include "base/compiler_specific.h"
-#include "base/macros.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
 
 // ScopedAuthorizationRef maintains ownership of an AuthorizationRef.  It is
 // patterned after the unique_ptr interface.
@@ -79,4 +79,4 @@ class ScopedAuthorizationRef {
 }  // namespace mac
 }  // namespace base
 
-#endif  // BASE_MAC_SCOPED_AUTHORIZATIONREF_H_
+#endif  // BRICK_MAC_SCOPED_AUTHORIZATIONREF_H_

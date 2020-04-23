@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/statistics_recorder.h"
+#include "brick/metrics/statistics_recorder.h"
 
 #include <stddef.h>
 
@@ -10,16 +10,16 @@
 #include <utility>
 #include <vector>
 
-#include "base/bind.h"
-#include "base/json/json_reader.h"
-#include "base/logging.h"
-#include "base/memory/weak_ptr.h"
-#include "base/metrics/histogram_base.h"
-#include "base/metrics/histogram_macros.h"
-#include "base/metrics/persistent_histogram_allocator.h"
-#include "base/metrics/record_histogram_checker.h"
-#include "base/metrics/sparse_histogram.h"
-#include "base/values.h"
+#include "brick/bind.h"
+#include "brick/json/json_reader.h"
+#include "brick/logging.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/metrics/histogram_base.h"
+#include "brick/metrics/histogram_macros.h"
+#include "brick/metrics/persistent_histogram_allocator.h"
+#include "brick/metrics/record_histogram_checker.h"
+#include "brick/metrics/sparse_histogram.h"
+#include "brick/values.h"
 #include "testing/gmock/include/gmock/gmock.h"
 #include "testing/gtest/include/gtest/gtest.h"
 

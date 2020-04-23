@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/synchronization/waitable_event.h"
+#include "brick/synchronization/waitable_event.h"
 
 #include <dispatch/dispatch.h>
 #include <mach/mach.h>
 #include <sys/event.h>
 
-#include "base/debug/activity_tracker.h"
-#include "base/files/scoped_file.h"
-#include "base/mac/dispatch_source_mach.h"
-#include "base/mac/mac_util.h"
-#include "base/mac/mach_logging.h"
-#include "base/mac/scoped_dispatch_object.h"
-#include "base/posix/eintr_wrapper.h"
-#include "base/threading/scoped_blocking_call.h"
-#include "base/threading/thread_restrictions.h"
+#include "brick/debug/activity_tracker.h"
+#include "brick/files/scoped_file.h"
+#include "brick/mac/dispatch_source_mach.h"
+#include "brick/mac/mac_util.h"
+#include "brick/mac/mach_logging.h"
+#include "brick/mac/scoped_dispatch_object.h"
+#include "brick/posix/eintr_wrapper.h"
+#include "brick/threading/scoped_blocking_call.h"
+#include "brick/threading/thread_restrictions.h"
 #include "build/build_config.h"
 
 namespace base {

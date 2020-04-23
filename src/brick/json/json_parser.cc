@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/json/json_parser.h"
+#include "brick/json/json_parser.h"
 
 #include <cmath>
 #include <utility>
 #include <vector>
 
-#include "base/logging.h"
-#include "base/macros.h"
-#include "base/numerics/safe_conversions.h"
-#include "base/strings/string_number_conversions.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversion_utils.h"
-#include "base/strings/utf_string_conversions.h"
-#include "base/third_party/icu/icu_utf.h"
-#include "base/values.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
+#include "brick/numerics/safe_conversions.h"
+#include "brick/strings/string_number_conversions.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversion_utils.h"
+#include "brick/strings/utf_string_conversions.h"
+#include "brick/third_party/icu/icu_utf.h"
+#include "brick/values.h"
 
 namespace base {
 namespace internal {

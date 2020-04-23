@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/file_version_info_win.h"
+#include "brick/file_version_info_win.h"
 
 #include <windows.h>
 #include <stddef.h>
 
-#include "base/files/file_path.h"
-#include "base/logging.h"
-#include "base/threading/thread_restrictions.h"
-#include "base/win/resource_util.h"
+#include "brick/files/file_path.h"
+#include "brick/logging.h"
+#include "brick/threading/thread_restrictions.h"
+#include "brick/win/resource_util.h"
 
 using base::FilePath;
 

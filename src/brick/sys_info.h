@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_SYS_INFO_H_
-#define BASE_SYS_INFO_H_
+#ifndef BRICK_SYS_INFO_H_
+#define BRICK_SYS_INFO_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -11,10 +11,10 @@
 #include <map>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/files/file_path.h"
-#include "base/gtest_prod_util.h"
-#include "base/time/time.h"
+#include "brick/base_export.h"
+#include "brick/files/file_path.h"
+#include "brick/gtest_prod_util.h"
+#include "brick/time/time.h"
 #include "build/build_config.h"
 
 namespace base {
@@ -25,7 +25,7 @@ FORWARD_DECLARE_TEST(SystemMetricsTest, ParseMeminfo);
 
 struct SystemMemoryInfoKB;
 
-class BASE_EXPORT SysInfo {
+class BRICK_EXPORT SysInfo {
  public:
   // Return the number of logical processors/cores on the current machine.
   static int NumberOfProcessors();
@@ -84,8 +84,8 @@ class BASE_EXPORT SysInfo {
   // DON'T USE THIS ON THE MAC OR WINDOWS to determine the current OS release
   // for OS version-specific feature checks and workarounds. If you must use
   // an OS version check instead of a feature check, use the base::mac::IsOS*
-  // family from base/mac/mac_util.h, or base::win::GetVersion from
-  // base/win/windows_version.h.
+  // family from brick/mac/mac_util.h, or base::win::GetVersion from
+  // brick/win/windows_version.h.
   static void OperatingSystemVersionNumbers(int32_t* major_version,
                                             int32_t* minor_version,
                                             int32_t* bugfix_version);
@@ -96,7 +96,7 @@ class BASE_EXPORT SysInfo {
   //      whereas a x86-64 kernel on the same CPU will return "x86_64"
   static std::string OperatingSystemArchitecture();
 
-  // Avoid using this. Use base/cpu.h to get information about the CPU instead.
+  // Avoid using this. Use brick/cpu.h to get information about the CPU instead.
   // http://crbug.com/148884
   // Returns the CPU model name of the system. If it can not be figured out,
   // an empty string is returned.
@@ -182,4 +182,4 @@ class BASE_EXPORT SysInfo {
 
 }  // namespace base
 
-#endif  // BASE_SYS_INFO_H_
+#endif  // BRICK_SYS_INFO_H_

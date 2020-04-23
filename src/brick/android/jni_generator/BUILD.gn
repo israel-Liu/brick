@@ -2,7 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-import("//base/android/jni_generator/jni_exception_list.gni")
+import("//brick/android/jni_generator/jni_exception_list.gni")
 import("//build/config/android/rules.gni")
 import("//testing/test.gni")
 

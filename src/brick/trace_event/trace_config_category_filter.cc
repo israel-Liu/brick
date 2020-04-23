@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/trace_config_category_filter.h"
+#include "brick/trace_event/trace_config_category_filter.h"
 
-#include "base/memory/ptr_util.h"
-#include "base/strings/pattern.h"
-#include "base/strings/string_split.h"
-#include "base/strings/string_tokenizer.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/trace_event/trace_event.h"
+#include "brick/memory/ptr_util.h"
+#include "brick/strings/pattern.h"
+#include "brick/strings/string_split.h"
+#include "brick/strings/string_tokenizer.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/trace_event/trace_event.h"
 
 namespace base {
 namespace trace_event {

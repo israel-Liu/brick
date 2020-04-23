@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/guid.h"
+#include "brick/guid.h"
 
 #include <stddef.h>
 #include <stdint.h>
 
-#include "base/rand_util.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
+#include "brick/rand_util.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
 
 namespace base {
 
@@ -43,7 +43,7 @@ bool IsValidGUIDInternal(const base::StringPiece& guid, bool strict) {
 std::string GenerateGUID() {
   uint64_t sixteen_bytes[2];
   // Use base::RandBytes instead of crypto::RandBytes, because crypto calls the
-  // base version directly, and to prevent the dependency from base/ to crypto/.
+  // base version directly, and to prevent the dependency from brick/ to crypto/.
   base::RandBytes(&sixteen_bytes, sizeof(sixteen_bytes));
 
   // Set the GUID to version 4 as described in RFC 4122, section 4.4.

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/i18n/streaming_utf8_validator.h"
+#include "brick/i18n/streaming_utf8_validator.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -11,32 +11,32 @@
 
 #include <string>
 
-#include "base/macros.h"
-#include "base/strings/string_piece.h"
+#include "brick/macros.h"
+#include "brick/strings/string_piece.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
-// Define BASE_I18N_UTF8_VALIDATOR_THOROUGH_TEST to verify that this class
+// Define BRICK_I18N_UTF8_VALIDATOR_THOROUGH_TEST to verify that this class
 // accepts exactly the same set of 4-byte strings as ICU-based validation. This
 // tests every possible 4-byte string, so it is too slow to run routinely on
 // low-powered machines.
 //
-// #define BASE_I18N_UTF8_VALIDATOR_THOROUGH_TEST
+// #define BRICK_I18N_UTF8_VALIDATOR_THOROUGH_TEST
 
-#ifdef BASE_I18N_UTF8_VALIDATOR_THOROUGH_TEST
+#ifdef BRICK_I18N_UTF8_VALIDATOR_THOROUGH_TEST
 
-#include "base/bind.h"
-#include "base/location.h"
-#include "base/logging.h"
-#include "base/memory/ref_counted.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#include "base/strings/utf_string_conversion_utils.h"
-#include "base/synchronization/lock.h"
-#include "base/task_scheduler/post_task.h"
-#include "base/task_scheduler/task_scheduler.h"
+#include "brick/bind.h"
+#include "brick/location.h"
+#include "brick/logging.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/strings/string_util.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/strings/utf_string_conversion_utils.h"
+#include "brick/synchronization/lock.h"
+#include "brick/task_scheduler/post_task.h"
+#include "brick/task_scheduler/task_scheduler.h"
 #include "third_party/icu/source/common/unicode/utf8.h"
 
-#endif  // BASE_I18N_UTF8_VALIDATOR_THOROUGH_TEST
+#endif  // BRICK_I18N_UTF8_VALIDATOR_THOROUGH_TEST
 
 namespace base {
 namespace {
@@ -48,7 +48,7 @@ const StreamingUtf8Validator::State VALID_MIDPOINT =
     StreamingUtf8Validator::VALID_MIDPOINT;
 const StreamingUtf8Validator::State INVALID = StreamingUtf8Validator::INVALID;
 
-#ifdef BASE_I18N_UTF8_VALIDATOR_THOROUGH_TEST
+#ifdef BRICK_I18N_UTF8_VALIDATOR_THOROUGH_TEST
 
 const uint32_t kThoroughTestChunkSize = 1 << 24;
 
@@ -130,10 +130,10 @@ TEST_F(StreamingUtf8ValidatorThoroughTest, TestEverything) {
   base::TaskScheduler::SetInstance(nullptr);
 }
 
-#endif  // BASE_I18N_UTF8_VALIDATOR_THOROUGH_TEST
+#endif  // BRICK_I18N_UTF8_VALIDATOR_THOROUGH_TEST
 
 // These valid and invalid UTF-8 sequences are based on the tests from
-// base/strings/string_util_unittest.cc
+// brick/strings/string_util_unittest.cc
 
 // All of the strings in |valid| must represent a single codepoint, because
 // partial sequences are constructed by taking non-empty prefixes of these

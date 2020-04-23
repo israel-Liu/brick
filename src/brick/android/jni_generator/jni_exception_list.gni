@@ -5,9 +5,9 @@
 import("//device/vr/buildflags/buildflags.gni")
 
 jni_exception_files = [
-  "//base/android/java/src/org/chromium/base/library_loader/LegacyLinker.java",
-  "//base/android/java/src/org/chromium/base/library_loader/Linker.java",
-  "//base/android/java/src/org/chromium/base/library_loader/ModernLinker.java",
+  "//brick/android/java/src/org/chromium/brick/library_loader/LegacyLinker.java",
+  "//brick/android/java/src/org/chromium/brick/library_loader/Linker.java",
+  "//brick/android/java/src/org/chromium/brick/library_loader/ModernLinker.java",
 ]
 
 # Exclude it from JNI registration if VR is not enabled.

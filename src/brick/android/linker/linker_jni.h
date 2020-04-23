@@ -10,11 +10,11 @@
 // section of libcontentshell.so (or equivalent) between the browser and
 // renderer process.
 
-// This source code *cannot* depend on anything from base/ or the C++
+// This source code *cannot* depend on anything from brick/ or the C++
 // STL, to keep the final library small, and avoid ugly dependency issues.
 
-#ifndef BASE_ANDROID_LINKER_LINKER_JNI_H_
-#define BASE_ANDROID_LINKER_LINKER_JNI_H_
+#ifndef BRICK_ANDROID_LINKER_LINKER_JNI_H_
+#define BRICK_ANDROID_LINKER_LINKER_JNI_H_
 
 #include <android/log.h>
 #include <jni.h>
@@ -24,8 +24,8 @@
 #include "build/build_config.h"
 
 // Set this to 1 to enable debug traces to the Android log.
-// Note that LOG() from "base/logging.h" cannot be used, since it is
-// in base/ which hasn't been loaded yet.
+// Note that LOG() from "brick/logging.h" cannot be used, since it is
+// in brick/ which hasn't been loaded yet.
 #define DEBUG 0
 
 #define TAG "cr_ChromiumAndroidLinker"
@@ -159,7 +159,7 @@ struct LibInfo_class {
   bool Init(JNIEnv* env) {
     jclass clazz;
     if (!InitClassReference(
-             env, "org/chromium/base/library_loader/Linker$LibInfo", &clazz)) {
+             env, "org/chromium/brick/library_loader/Linker$LibInfo", &clazz)) {
       return false;
     }
 
@@ -216,4 +216,4 @@ extern LibInfo_class s_lib_info_fields;
 
 }  // namespace chromium_android_linker
 
-#endif  // BASE_ANDROID_LINKER_LINKER_JNI_H_
+#endif  // BRICK_ANDROID_LINKER_LINKER_JNI_H_

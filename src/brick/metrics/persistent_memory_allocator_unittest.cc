@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/persistent_memory_allocator.h"
+#include "brick/metrics/persistent_memory_allocator.h"
 
 #include <memory>
 
-#include "base/files/file.h"
-#include "base/files/file_util.h"
-#include "base/files/memory_mapped_file.h"
-#include "base/files/scoped_temp_dir.h"
-#include "base/memory/shared_memory.h"
-#include "base/metrics/histogram.h"
-#include "base/rand_util.h"
-#include "base/strings/safe_sprintf.h"
-#include "base/strings/stringprintf.h"
-#include "base/synchronization/condition_variable.h"
-#include "base/synchronization/lock.h"
-#include "base/threading/simple_thread.h"
+#include "brick/files/file.h"
+#include "brick/files/file_util.h"
+#include "brick/files/memory_mapped_file.h"
+#include "brick/files/scoped_temp_dir.h"
+#include "brick/memory/shared_memory.h"
+#include "brick/metrics/histogram.h"
+#include "brick/rand_util.h"
+#include "brick/strings/safe_sprintf.h"
+#include "brick/strings/stringprintf.h"
+#include "brick/synchronization/condition_variable.h"
+#include "brick/synchronization/lock.h"
+#include "brick/threading/simple_thread.h"
 #include "testing/gmock/include/gmock/gmock.h"
 
 namespace base {
@@ -392,7 +392,7 @@ class CounterThread : public SimpleThread {
       // are possible, check the condition in a while loop to make
       // sure that the wake up condition is met when this thread
       // returns from the Wait().
-      // See usage comments in src/base/synchronization/condition_variable.h.
+      // See usage comments in src/brick/synchronization/condition_variable.h.
       while (!*wake_up_) {
         condition_->Wait();
         condition_->Signal();

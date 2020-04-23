@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TEST_TEST_IO_THREAD_H_
-#define BASE_TEST_TEST_IO_THREAD_H_
+#ifndef BRICK_TEST_TEST_IO_THREAD_H_
+#define BRICK_TEST_TEST_IO_THREAD_H_
 
-#include "base/callback_forward.h"
-#include "base/compiler_specific.h"
-#include "base/macros.h"
-#include "base/memory/ref_counted.h"
-#include "base/task_runner.h"
-#include "base/threading/thread.h"
-#include "base/time/time.h"
+#include "brick/callback_forward.h"
+#include "brick/compiler_specific.h"
+#include "brick/macros.h"
+#include "brick/memory/ref_counted.h"
+#include "brick/task_runner.h"
+#include "brick/threading/thread.h"
+#include "brick/time/time.h"
 
 namespace base {
 
@@ -57,4 +57,4 @@ class TestIOThread {
 
 }  // namespace base
 
-#endif  // BASE_TEST_TEST_IO_THREAD_H_
+#endif  // BRICK_TEST_TEST_IO_THREAD_H_

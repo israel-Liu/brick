@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_I18N_MESSAGE_FORMATTER_H_
-#define BASE_I18N_MESSAGE_FORMATTER_H_
+#ifndef BRICK_I18N_MESSAGE_FORMATTER_H_
+#define BRICK_I18N_MESSAGE_FORMATTER_H_
 
 #include <stdint.h>
 
 #include <memory>
 #include <string>
 
-#include "base/i18n/base_i18n_export.h"
-#include "base/macros.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece.h"
+#include "brick/i18n/base_i18n_export.h"
+#include "brick/macros.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece.h"
 #include "third_party/icu/source/common/unicode/uversion.h"
 
 U_NAMESPACE_BEGIN
@@ -30,7 +30,7 @@ class MessageFormatter;
 
 namespace internal {
 
-class BASE_I18N_EXPORT MessageArg {
+class BRICK_I18N_EXPORT MessageArg {
  public:
   MessageArg(const char* s);
   MessageArg(StringPiece s);
@@ -88,7 +88,7 @@ class BASE_I18N_EXPORT MessageArg {
 //         other{Rated <ph name="RATING">{0, number,0.0}<ex>3.2</ex></ph>
 //               by # users.}}
 
-class BASE_I18N_EXPORT MessageFormatter {
+class BRICK_I18N_EXPORT MessageFormatter {
  public:
   static string16 FormatWithNamedArgs(
       StringPiece16 msg,
@@ -125,4 +125,4 @@ class BASE_I18N_EXPORT MessageFormatter {
 }  // namespace i18n
 }  // namespace base
 
-#endif  // BASE_I18N_MESSAGE_FORMATTER_H_
+#endif  // BRICK_I18N_MESSAGE_FORMATTER_H_

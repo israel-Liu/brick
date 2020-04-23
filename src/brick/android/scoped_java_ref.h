@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_ANDROID_SCOPED_JAVA_REF_H_
-#define BASE_ANDROID_SCOPED_JAVA_REF_H_
+#ifndef BRICK_ANDROID_SCOPED_JAVA_REF_H_
+#define BRICK_ANDROID_SCOPED_JAVA_REF_H_
 
 #include <jni.h>
 #include <stddef.h>
@@ -11,9 +11,9 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/macros.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace android {
@@ -21,7 +21,7 @@ namespace android {
 // Creates a new local reference frame, in which at least a given number of
 // local references can be created. Note that local references already created
 // in previous local frames are still valid in the current local frame.
-class BASE_EXPORT ScopedJavaLocalFrame {
+class BRICK_EXPORT ScopedJavaLocalFrame {
  public:
   explicit ScopedJavaLocalFrame(JNIEnv* env);
   ScopedJavaLocalFrame(JNIEnv* env, int capacity);
@@ -42,7 +42,7 @@ template<typename T> class JavaRef;
 // other JavaRef<> template types. This allows you to e.g. pass
 // ScopedJavaLocalRef<jstring> into a function taking const JavaRef<jobject>&
 template<>
-class BASE_EXPORT JavaRef<jobject> {
+class BRICK_EXPORT JavaRef<jobject> {
  public:
   // Initializes a null reference. Don't add anything else here; it's inlined.
   constexpr JavaRef() : obj_(nullptr) {}
@@ -282,4 +282,4 @@ class ScopedJavaGlobalRef : public JavaRef<T> {
 }  // namespace android
 }  // namespace base
 
-#endif  // BASE_ANDROID_SCOPED_JAVA_REF_H_
+#endif  // BRICK_ANDROID_SCOPED_JAVA_REF_H_

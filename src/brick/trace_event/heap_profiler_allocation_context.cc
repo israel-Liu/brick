@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/trace_event/heap_profiler_allocation_context.h"
+#include "brick/trace_event/heap_profiler_allocation_context.h"
 
 #include <cstring>
 
-#include "base/hash.h"
-#include "base/macros.h"
+#include "brick/hash.h"
+#include "brick/macros.h"
 
 namespace base {
 namespace trace_event {

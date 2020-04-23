@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_MEMORY_MEMORY_PRESSURE_MONITOR_H_
-#define BASE_MEMORY_MEMORY_PRESSURE_MONITOR_H_
+#ifndef BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_H_
+#define BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_H_
 
-#include "base/base_export.h"
-#include "base/callback.h"
-#include "base/macros.h"
-#include "base/memory/memory_pressure_listener.h"
+#include "brick/base_export.h"
+#include "brick/callback.h"
+#include "brick/macros.h"
+#include "brick/memory/memory_pressure_listener.h"
 
 namespace base {
 
@@ -21,7 +21,7 @@ namespace base {
 // pushes memory state change notifications to the static function
 // base::MemoryPressureListener::NotifyMemoryPressure. This is turn notifies
 // all MemoryPressureListener instances via a callback.
-class BASE_EXPORT MemoryPressureMonitor {
+class BRICK_EXPORT MemoryPressureMonitor {
  public:
   using MemoryPressureLevel = base::MemoryPressureListener::MemoryPressureLevel;
   using DispatchCallback = base::Callback<void(MemoryPressureLevel level)>;
@@ -50,4 +50,4 @@ class BASE_EXPORT MemoryPressureMonitor {
 
 }  // namespace base
 
-#endif  // BASE_MEMORY_MEMORY_PRESSURE_MONITOR_H_
+#endif  // BRICK_MEMORY_MEMORY_PRESSURE_MONITOR_H_

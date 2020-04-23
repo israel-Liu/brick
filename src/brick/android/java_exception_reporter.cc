@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/android/java_exception_reporter.h"
+#include "brick/android/java_exception_reporter.h"
 
-#include "base/android/build_info.h"
-#include "base/android/jni_android.h"
-#include "base/android/jni_string.h"
-#include "base/debug/dump_without_crashing.h"
+#include "brick/android/build_info.h"
+#include "brick/android/jni_android.h"
+#include "brick/android/jni_string.h"
+#include "brick/debug/dump_without_crashing.h"
 #include "jni/JavaExceptionReporter_jni.h"
 
 using base::android::JavaParamRef;

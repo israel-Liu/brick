@@ -19,19 +19,19 @@
 // generates slightly smaller code.  For more discussion, Googlers can see
 // the thread go/stringpiecebyvalue on c-users.
 
-#ifndef BASE_STRINGS_STRING_PIECE_H_
-#define BASE_STRINGS_STRING_PIECE_H_
+#ifndef BRICK_STRINGS_STRING_PIECE_H_
+#define BRICK_STRINGS_STRING_PIECE_H_
 
 #include <stddef.h>
 
 #include <iosfwd>
 #include <string>
 
-#include "base/base_export.h"
-#include "base/logging.h"
-#include "base/strings/char_traits.h"
-#include "base/strings/string16.h"
-#include "base/strings/string_piece_forward.h"
+#include "brick/base_export.h"
+#include "brick/logging.h"
+#include "brick/strings/char_traits.h"
+#include "brick/strings/string16.h"
+#include "brick/strings/string_piece_forward.h"
 
 namespace base {
 
@@ -46,105 +46,105 @@ namespace base {
 // template internal to the .cc file.
 namespace internal {
 
-BASE_EXPORT void CopyToString(const StringPiece& self, std::string* target);
-BASE_EXPORT void CopyToString(const StringPiece16& self, string16* target);
+BRICK_EXPORT void CopyToString(const StringPiece& self, std::string* target);
+BRICK_EXPORT void CopyToString(const StringPiece16& self, string16* target);
 
-BASE_EXPORT void AppendToString(const StringPiece& self, std::string* target);
-BASE_EXPORT void AppendToString(const StringPiece16& self, string16* target);
+BRICK_EXPORT void AppendToString(const StringPiece& self, std::string* target);
+BRICK_EXPORT void AppendToString(const StringPiece16& self, string16* target);
 
-BASE_EXPORT size_t copy(const StringPiece& self,
+BRICK_EXPORT size_t copy(const StringPiece& self,
                         char* buf,
                         size_t n,
                         size_t pos);
-BASE_EXPORT size_t copy(const StringPiece16& self,
+BRICK_EXPORT size_t copy(const StringPiece16& self,
                         char16* buf,
                         size_t n,
                         size_t pos);
 
-BASE_EXPORT size_t find(const StringPiece& self,
+BRICK_EXPORT size_t find(const StringPiece& self,
                         const StringPiece& s,
                         size_t pos);
-BASE_EXPORT size_t find(const StringPiece16& self,
+BRICK_EXPORT size_t find(const StringPiece16& self,
                         const StringPiece16& s,
                         size_t pos);
-BASE_EXPORT size_t find(const StringPiece& self,
+BRICK_EXPORT size_t find(const StringPiece& self,
                         char c,
                         size_t pos);
-BASE_EXPORT size_t find(const StringPiece16& self,
+BRICK_EXPORT size_t find(const StringPiece16& self,
                         char16 c,
                         size_t pos);
 
-BASE_EXPORT size_t rfind(const StringPiece& self,
+BRICK_EXPORT size_t rfind(const StringPiece& self,
                          const StringPiece& s,
                          size_t pos);
-BASE_EXPORT size_t rfind(const StringPiece16& self,
+BRICK_EXPORT size_t rfind(const StringPiece16& self,
                          const StringPiece16& s,
                          size_t pos);
-BASE_EXPORT size_t rfind(const StringPiece& self,
+BRICK_EXPORT size_t rfind(const StringPiece& self,
                          char c,
                          size_t pos);
-BASE_EXPORT size_t rfind(const StringPiece16& self,
+BRICK_EXPORT size_t rfind(const StringPiece16& self,
                          char16 c,
                          size_t pos);
 
-BASE_EXPORT size_t find_first_of(const StringPiece& self,
+BRICK_EXPORT size_t find_first_of(const StringPiece& self,
                                  const StringPiece& s,
                                  size_t pos);
-BASE_EXPORT size_t find_first_of(const StringPiece16& self,
+BRICK_EXPORT size_t find_first_of(const StringPiece16& self,
                                  const StringPiece16& s,
                                  size_t pos);
 
-BASE_EXPORT size_t find_first_not_of(const StringPiece& self,
+BRICK_EXPORT size_t find_first_not_of(const StringPiece& self,
                                      const StringPiece& s,
                                      size_t pos);
-BASE_EXPORT size_t find_first_not_of(const StringPiece16& self,
+BRICK_EXPORT size_t find_first_not_of(const StringPiece16& self,
                                      const StringPiece16& s,
                                      size_t pos);
-BASE_EXPORT size_t find_first_not_of(const StringPiece& self,
+BRICK_EXPORT size_t find_first_not_of(const StringPiece& self,
                                      char c,
                                      size_t pos);
-BASE_EXPORT size_t find_first_not_of(const StringPiece16& self,
+BRICK_EXPORT size_t find_first_not_of(const StringPiece16& self,
                                      char16 c,
                                      size_t pos);
 
-BASE_EXPORT size_t find_last_of(const StringPiece& self,
+BRICK_EXPORT size_t find_last_of(const StringPiece& self,
                                 const StringPiece& s,
                                 size_t pos);
-BASE_EXPORT size_t find_last_of(const StringPiece16& self,
+BRICK_EXPORT size_t find_last_of(const StringPiece16& self,
                                 const StringPiece16& s,
                                 size_t pos);
-BASE_EXPORT size_t find_last_of(const StringPiece& self,
+BRICK_EXPORT size_t find_last_of(const StringPiece& self,
                                 char c,
                                 size_t pos);
-BASE_EXPORT size_t find_last_of(const StringPiece16& self,
+BRICK_EXPORT size_t find_last_of(const StringPiece16& self,
                                 char16 c,
                                 size_t pos);
 
-BASE_EXPORT size_t find_last_not_of(const StringPiece& self,
+BRICK_EXPORT size_t find_last_not_of(const StringPiece& self,
                                     const StringPiece& s,
                                     size_t pos);
-BASE_EXPORT size_t find_last_not_of(const StringPiece16& self,
+BRICK_EXPORT size_t find_last_not_of(const StringPiece16& self,
                                     const StringPiece16& s,
                                     size_t pos);
-BASE_EXPORT size_t find_last_not_of(const StringPiece16& self,
+BRICK_EXPORT size_t find_last_not_of(const StringPiece16& self,
                                     char16 c,
                                     size_t pos);
-BASE_EXPORT size_t find_last_not_of(const StringPiece& self,
+BRICK_EXPORT size_t find_last_not_of(const StringPiece& self,
                                     char c,
                                     size_t pos);
 
-BASE_EXPORT StringPiece substr(const StringPiece& self,
+BRICK_EXPORT StringPiece substr(const StringPiece& self,
                                size_t pos,
                                size_t n);
-BASE_EXPORT StringPiece16 substr(const StringPiece16& self,
+BRICK_EXPORT StringPiece16 substr(const StringPiece16& self,
                                  size_t pos,
                                  size_t n);
 
 #if DCHECK_IS_ON()
 // Asserts that begin <= end to catch some errors with iterator usage.
-BASE_EXPORT void AssertIteratorsInOrder(std::string::const_iterator begin,
+BRICK_EXPORT void AssertIteratorsInOrder(std::string::const_iterator begin,
                                         std::string::const_iterator end);
-BASE_EXPORT void AssertIteratorsInOrder(string16::const_iterator begin,
+BRICK_EXPORT void AssertIteratorsInOrder(string16::const_iterator begin,
                                         string16::const_iterator end);
 #endif
 
@@ -382,13 +382,13 @@ BasicStringPiece<STRING_TYPE>::npos =
 
 // MSVC doesn't like complex extern templates and DLLs.
 #if !defined(COMPILER_MSVC)
-extern template class BASE_EXPORT BasicStringPiece<std::string>;
-extern template class BASE_EXPORT BasicStringPiece<string16>;
+extern template class BRICK_EXPORT BasicStringPiece<std::string>;
+extern template class BRICK_EXPORT BasicStringPiece<string16>;
 #endif
 
 // StingPiece operators --------------------------------------------------------
 
-BASE_EXPORT bool operator==(const StringPiece& x, const StringPiece& y);
+BRICK_EXPORT bool operator==(const StringPiece& x, const StringPiece& y);
 
 inline bool operator!=(const StringPiece& x, const StringPiece& y) {
   return !(x == y);
@@ -444,7 +444,7 @@ inline bool operator>=(const StringPiece16& x, const StringPiece16& y) {
   return !(x < y);
 }
 
-BASE_EXPORT std::ostream& operator<<(std::ostream& o,
+BRICK_EXPORT std::ostream& operator<<(std::ostream& o,
                                      const StringPiece& piece);
 
 // Hashing ---------------------------------------------------------------------
@@ -452,7 +452,7 @@ BASE_EXPORT std::ostream& operator<<(std::ostream& o,
 // We provide appropriate hash functions so StringPiece and StringPiece16 can
 // be used as keys in hash sets and maps.
 
-// This hash function is copied from base/strings/string16.h. We don't use the
+// This hash function is copied from brick/strings/string16.h. We don't use the
 // ones already defined for string and string16 directly because it would
 // require the string constructors to be called, which we don't want.
 #define HASH_STRING_PIECE(StringPieceType, string_piece)         \
@@ -480,4 +480,4 @@ struct WStringPieceHash {
 
 }  // namespace base
 
-#endif  // BASE_STRINGS_STRING_PIECE_H_
+#endif  // BRICK_STRINGS_STRING_PIECE_H_

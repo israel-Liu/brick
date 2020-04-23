@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_WIN_SCOPED_PROCESS_INFORMATION_H_
-#define BASE_WIN_SCOPED_PROCESS_INFORMATION_H_
+#ifndef BRICK_WIN_SCOPED_PROCESS_INFORMATION_H_
+#define BRICK_WIN_SCOPED_PROCESS_INFORMATION_H_
 
 #include <windows.h>
 
-#include "base/base_export.h"
-#include "base/macros.h"
-#include "base/win/scoped_handle.h"
+#include "brick/base_export.h"
+#include "brick/macros.h"
+#include "brick/win/scoped_handle.h"
 
 namespace base {
 namespace win {
 
 // Manages the closing of process and thread handles from PROCESS_INFORMATION
 // structures. Allows clients to take ownership of either handle independently.
-class BASE_EXPORT ScopedProcessInformation {
+class BRICK_EXPORT ScopedProcessInformation {
  public:
   ScopedProcessInformation();
   explicit ScopedProcessInformation(const PROCESS_INFORMATION& process_info);
@@ -80,4 +80,4 @@ class BASE_EXPORT ScopedProcessInformation {
 }  // namespace win
 }  // namespace base
 
-#endif  // BASE_WIN_SCOPED_PROCESS_INFORMATION_H_
+#endif  // BRICK_WIN_SCOPED_PROCESS_INFORMATION_H_

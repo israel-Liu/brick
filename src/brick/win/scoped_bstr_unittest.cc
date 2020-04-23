@@ -4,8 +4,8 @@
 
 #include <stddef.h>
 
-#include "base/macros.h"
-#include "base/win/scoped_bstr.h"
+#include "brick/macros.h"
+#include "brick/win/scoped_bstr.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
 namespace base {

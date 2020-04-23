@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_CONTAINERS_SPAN_H_
-#define BASE_CONTAINERS_SPAN_H_
+#ifndef BRICK_CONTAINERS_SPAN_H_
+#define BRICK_CONTAINERS_SPAN_H_
 
 #include <stddef.h>
 
@@ -13,8 +13,8 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/logging.h"
-#include "base/stl_util.h"
+#include "brick/logging.h"
+#include "brick/stl_util.h"
 
 namespace base {
 
@@ -450,4 +450,4 @@ constexpr span<T, X> make_span(const span<T, X>& span) noexcept {
 
 }  // namespace base
 
-#endif  // BASE_CONTAINERS_SPAN_H_
+#endif  // BRICK_CONTAINERS_SPAN_H_

@@ -7,24 +7,24 @@
 
 #include <string>
 
-#include "base/command_line.h"
-#include "base/files/file_path.h"
-#include "base/files/file_util.h"
-#include "base/message_loop/message_loop.h"
-#include "base/path_service.h"
-#include "base/process/launch.h"
-#include "base/strings/string_piece.h"
-#include "base/strings/string_tokenizer.h"
-#include "base/strings/string_util.h"
-#include "base/sys_info.h"
-#include "base/test/launcher/test_launcher.h"
-#include "base/test/launcher/unit_test_launcher.h"
-#include "base/test/test_switches.h"
-#include "base/test/test_timeouts.h"
+#include "brick/command_line.h"
+#include "brick/files/file_path.h"
+#include "brick/files/file_util.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/path_service.h"
+#include "brick/process/launch.h"
+#include "brick/strings/string_piece.h"
+#include "brick/strings/string_tokenizer.h"
+#include "brick/strings/string_util.h"
+#include "brick/sys_info.h"
+#include "brick/test/launcher/test_launcher.h"
+#include "brick/test/launcher/unit_test_launcher.h"
+#include "brick/test/test_switches.h"
+#include "brick/test/test_timeouts.h"
 #include "build/build_config.h"
 
 #if defined(OS_POSIX)
-#include "base/files/file_descriptor_watcher_posix.h"
+#include "brick/files/file_descriptor_watcher_posix.h"
 #endif
 
 namespace base {

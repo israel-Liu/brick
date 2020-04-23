@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef BASE_TASK_SEQUENCE_MANAGER_TASK_QUEUE_H_
-#define BASE_TASK_SEQUENCE_MANAGER_TASK_QUEUE_H_
+#ifndef BRICK_TASK_SEQUENCE_MANAGER_TASK_QUEUE_H_
+#define BRICK_TASK_SEQUENCE_MANAGER_TASK_QUEUE_H_
 
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "base/message_loop/message_loop.h"
-#include "base/optional.h"
-#include "base/single_thread_task_runner.h"
-#include "base/synchronization/lock.h"
-#include "base/task/sequence_manager/moveable_auto_lock.h"
-#include "base/threading/platform_thread.h"
-#include "base/time/time.h"
+#include "brick/macros.h"
+#include "brick/memory/weak_ptr.h"
+#include "brick/message_loop/message_loop.h"
+#include "brick/optional.h"
+#include "brick/single_thread_task_runner.h"
+#include "brick/synchronization/lock.h"
+#include "brick/task/sequence_manager/moveable_auto_lock.h"
+#include "brick/threading/platform_thread.h"
+#include "brick/time/time.h"
 
 // Currently the implementation is located in Blink because scheduler/base move
 // is in progress https://crbug.com/783309.
 // TODO(kraynov): Remove this hack ASAP.
 #ifndef HACKDEF_INCLUDED_FROM_BLINK
 // Need PLATFORM_EXPORT macro.
-#error Use third_party/blink/renderer/platform/scheduler/base/task_queue_forward.h.
+#error Use third_party/blink/renderer/platform/scheduler/brick/task_queue_forward.h.
 #endif
 
 namespace base {
@@ -317,4 +317,4 @@ class PLATFORM_EXPORT TaskQueue : public SingleThreadTaskRunner {
 }  // namespace sequence_manager
 }  // namespace base
 
-#endif  // BASE_TASK_SEQUENCE_MANAGER_TASK_QUEUE_H_
+#endif  // BRICK_TASK_SEQUENCE_MANAGER_TASK_QUEUE_H_

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/process/memory_unittest_mac.h"
+#include "brick/process/memory_unittest_mac.h"
 #include "build/build_config.h"
 
 #import <Foundation/Foundation.h>
