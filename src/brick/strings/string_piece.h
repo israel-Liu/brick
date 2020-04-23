@@ -28,9 +28,8 @@
 #include <string>
 
 #include "brick/base_export.h"
-#include "brick/logging.h"
+//#include "brick/logging.h"
 #include "brick/strings/char_traits.h"
-#include "brick/strings/string16.h"
 #include "brick/strings/string_piece_forward.h"
 
 namespace base {
@@ -47,87 +46,48 @@ namespace base {
 namespace internal {
 
 BRICK_EXPORT void CopyToString(const StringPiece& self, std::string* target);
-BRICK_EXPORT void CopyToString(const StringPiece16& self, string16* target);
 
 BRICK_EXPORT void AppendToString(const StringPiece& self, std::string* target);
-BRICK_EXPORT void AppendToString(const StringPiece16& self, string16* target);
 
 BRICK_EXPORT size_t copy(const StringPiece& self,
                         char* buf,
-                        size_t n,
-                        size_t pos);
-BRICK_EXPORT size_t copy(const StringPiece16& self,
-                        char16* buf,
                         size_t n,
                         size_t pos);
 
 BRICK_EXPORT size_t find(const StringPiece& self,
                         const StringPiece& s,
                         size_t pos);
-BRICK_EXPORT size_t find(const StringPiece16& self,
-                        const StringPiece16& s,
-                        size_t pos);
 BRICK_EXPORT size_t find(const StringPiece& self,
                         char c,
-                        size_t pos);
-BRICK_EXPORT size_t find(const StringPiece16& self,
-                        char16 c,
                         size_t pos);
 
 BRICK_EXPORT size_t rfind(const StringPiece& self,
                          const StringPiece& s,
                          size_t pos);
-BRICK_EXPORT size_t rfind(const StringPiece16& self,
-                         const StringPiece16& s,
-                         size_t pos);
 BRICK_EXPORT size_t rfind(const StringPiece& self,
                          char c,
-                         size_t pos);
-BRICK_EXPORT size_t rfind(const StringPiece16& self,
-                         char16 c,
                          size_t pos);
 
 BRICK_EXPORT size_t find_first_of(const StringPiece& self,
                                  const StringPiece& s,
                                  size_t pos);
-BRICK_EXPORT size_t find_first_of(const StringPiece16& self,
-                                 const StringPiece16& s,
-                                 size_t pos);
 
 BRICK_EXPORT size_t find_first_not_of(const StringPiece& self,
                                      const StringPiece& s,
                                      size_t pos);
-BRICK_EXPORT size_t find_first_not_of(const StringPiece16& self,
-                                     const StringPiece16& s,
-                                     size_t pos);
 BRICK_EXPORT size_t find_first_not_of(const StringPiece& self,
                                      char c,
-                                     size_t pos);
-BRICK_EXPORT size_t find_first_not_of(const StringPiece16& self,
-                                     char16 c,
                                      size_t pos);
 
 BRICK_EXPORT size_t find_last_of(const StringPiece& self,
                                 const StringPiece& s,
                                 size_t pos);
-BRICK_EXPORT size_t find_last_of(const StringPiece16& self,
-                                const StringPiece16& s,
-                                size_t pos);
 BRICK_EXPORT size_t find_last_of(const StringPiece& self,
                                 char c,
-                                size_t pos);
-BRICK_EXPORT size_t find_last_of(const StringPiece16& self,
-                                char16 c,
                                 size_t pos);
 
 BRICK_EXPORT size_t find_last_not_of(const StringPiece& self,
                                     const StringPiece& s,
-                                    size_t pos);
-BRICK_EXPORT size_t find_last_not_of(const StringPiece16& self,
-                                    const StringPiece16& s,
-                                    size_t pos);
-BRICK_EXPORT size_t find_last_not_of(const StringPiece16& self,
-                                    char16 c,
                                     size_t pos);
 BRICK_EXPORT size_t find_last_not_of(const StringPiece& self,
                                     char c,
@@ -136,16 +96,11 @@ BRICK_EXPORT size_t find_last_not_of(const StringPiece& self,
 BRICK_EXPORT StringPiece substr(const StringPiece& self,
                                size_t pos,
                                size_t n);
-BRICK_EXPORT StringPiece16 substr(const StringPiece16& self,
-                                 size_t pos,
-                                 size_t n);
 
 #if DCHECK_IS_ON()
 // Asserts that begin <= end to catch some errors with iterator usage.
 BRICK_EXPORT void AssertIteratorsInOrder(std::string::const_iterator begin,
                                         std::string::const_iterator end);
-BRICK_EXPORT void AssertIteratorsInOrder(string16::const_iterator begin,
-                                        string16::const_iterator end);
 #endif
 
 }  // namespace internal
@@ -383,7 +338,6 @@ BasicStringPiece<STRING_TYPE>::npos =
 // MSVC doesn't like complex extern templates and DLLs.
 #if !defined(COMPILER_MSVC)
 extern template class BRICK_EXPORT BasicStringPiece<std::string>;
-extern template class BRICK_EXPORT BasicStringPiece<string16>;
 #endif
 
 // StingPiece operators --------------------------------------------------------
@@ -412,38 +366,6 @@ inline bool operator>=(const StringPiece& x, const StringPiece& y) {
   return !(x < y);
 }
 
-// StringPiece16 operators -----------------------------------------------------
-
-inline bool operator==(const StringPiece16& x, const StringPiece16& y) {
-  if (x.size() != y.size())
-    return false;
-
-  return CharTraits<StringPiece16::value_type>::compare(x.data(), y.data(),
-                                                        x.size()) == 0;
-}
-
-inline bool operator!=(const StringPiece16& x, const StringPiece16& y) {
-  return !(x == y);
-}
-
-inline bool operator<(const StringPiece16& x, const StringPiece16& y) {
-  const int r = CharTraits<StringPiece16::value_type>::compare(
-      x.data(), y.data(), (x.size() < y.size() ? x.size() : y.size()));
-  return ((r < 0) || ((r == 0) && (x.size() < y.size())));
-}
-
-inline bool operator>(const StringPiece16& x, const StringPiece16& y) {
-  return y < x;
-}
-
-inline bool operator<=(const StringPiece16& x, const StringPiece16& y) {
-  return !(x > y);
-}
-
-inline bool operator>=(const StringPiece16& x, const StringPiece16& y) {
-  return !(x < y);
-}
-
 BRICK_EXPORT std::ostream& operator<<(std::ostream& o,
                                      const StringPiece& piece);
 
@@ -465,11 +387,6 @@ BRICK_EXPORT std::ostream& operator<<(std::ostream& o,
 struct StringPieceHash {
   std::size_t operator()(const StringPiece& sp) const {
     HASH_STRING_PIECE(StringPiece, sp);
-  }
-};
-struct StringPiece16Hash {
-  std::size_t operator()(const StringPiece16& sp16) const {
-    HASH_STRING_PIECE(StringPiece16, sp16);
   }
 };
 struct WStringPieceHash {

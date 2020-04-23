@@ -1,22 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
     <Filter Include="strings">
-      <UniqueIdentifier>{ccc068c3-3a98-4f2e-99ab-e63fe76670b5}</UniqueIdentifier>
+      <UniqueIdentifier>{de24e170-e137-4f9d-8750-b57fcba5d475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="build">
+      <UniqueIdentifier>{ab9c3aa6-4fc0-454c-a7a4-aeee01cebc7d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\brick\strings\string_piece.cc">
       <Filter>strings</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\brick\strings\string_piece_unittest.cc">
-      <Filter>strings</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\brick\strings\string_split.cc">
       <Filter>strings</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\brick\strings\string_split_unittest.cc">
-      <Filter>strings</Filter>
+    <ClCompile Include="..\..\..\src\brick\logging.cc">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -29,11 +41,14 @@
     <ClInclude Include="..\..\..\src\brick\strings\string_split.h">
       <Filter>strings</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\brick\strings\char_traits.h">
-      <Filter>strings</Filter>
+    <ClInclude Include="..\..\..\src\brick\base_export.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\brick\strings\string16.h">
-      <Filter>strings</Filter>
+    <ClInclude Include="..\..\..\src\brick\logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\build\build_config.h">
+      <Filter>build</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

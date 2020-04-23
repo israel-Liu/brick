@@ -10,7 +10,6 @@
 #include <vector>
 
 #include "brick/base_export.h"
-#include "brick/strings/string16.h"
 #include "brick/strings/string_piece.h"
 
 namespace base {
@@ -48,11 +47,6 @@ BRICK_EXPORT std::vector<std::string> SplitString(
     StringPiece separators,
     WhitespaceHandling whitespace,
     SplitResult result_type);
-BRICK_EXPORT std::vector<string16> SplitString(
-    StringPiece16 input,
-    StringPiece16 separators,
-    WhitespaceHandling whitespace,
-    SplitResult result_type);
 
 // Like SplitString above except it returns a vector of StringPieces which
 // reference the original buffer without copying. Although you have to be
@@ -71,11 +65,6 @@ BRICK_EXPORT std::vector<StringPiece> SplitStringPiece(
     StringPiece separators,
     WhitespaceHandling whitespace,
     SplitResult result_type);
-BRICK_EXPORT std::vector<StringPiece16> SplitStringPiece(
-    StringPiece16 input,
-    StringPiece16 separators,
-    WhitespaceHandling whitespace,
-    SplitResult result_type);
 
 using StringPairs = std::vector<std::pair<std::string, std::string>>;
 
@@ -90,11 +79,6 @@ BRICK_EXPORT bool SplitStringIntoKeyValuePairs(StringPiece input,
 
 // Similar to SplitString, but use a substring delimiter instead of a list of
 // characters that are all possible delimiters.
-BRICK_EXPORT std::vector<string16> SplitStringUsingSubstr(
-    StringPiece16 input,
-    StringPiece16 delimiter,
-    WhitespaceHandling whitespace,
-    SplitResult result_type);
 BRICK_EXPORT std::vector<std::string> SplitStringUsingSubstr(
     StringPiece input,
     StringPiece delimiter,
@@ -113,11 +97,6 @@ BRICK_EXPORT std::vector<std::string> SplitStringUsingSubstr(
 //                                     base::KEEP_WHITESPACE,
 //                                     base::SPLIT_WANT_NONEMPTY)) {
 //     ...
-BRICK_EXPORT std::vector<StringPiece16> SplitStringPieceUsingSubstr(
-    StringPiece16 input,
-    StringPiece16 delimiter,
-    WhitespaceHandling whitespace,
-    SplitResult result_type);
 BRICK_EXPORT std::vector<StringPiece> SplitStringPieceUsingSubstr(
     StringPiece input,
     StringPiece delimiter,

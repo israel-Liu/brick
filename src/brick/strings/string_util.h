@@ -18,7 +18,6 @@
 
 #include "brick/base_export.h"
 #include "brick/compiler_specific.h"
-#include "brick/strings/string16.h"
 #include "brick/strings/string_piece.h"  // For implicit conversions.
 #include "build/build_config.h"
 
@@ -91,26 +90,18 @@ BRICK_EXPORT bool IsWprintfFormatPortable(const wchar_t* format);
 inline char ToLowerASCII(char c) {
   return (c >= 'A' && c <= 'Z') ? (c + ('a' - 'A')) : c;
 }
-inline char16 ToLowerASCII(char16 c) {
-  return (c >= 'A' && c <= 'Z') ? (c + ('a' - 'A')) : c;
-}
 
 // ASCII-specific toupper.  The standard library's toupper is locale sensitive,
 // so we don't want to use it here.
 inline char ToUpperASCII(char c) {
   return (c >= 'a' && c <= 'z') ? (c + ('A' - 'a')) : c;
 }
-inline char16 ToUpperASCII(char16 c) {
-  return (c >= 'a' && c <= 'z') ? (c + ('A' - 'a')) : c;
-}
 
 // Converts the given string to it's ASCII-lowercase equivalent.
 BRICK_EXPORT std::string ToLowerASCII(StringPiece str);
-BRICK_EXPORT string16 ToLowerASCII(StringPiece16 str);
 
 // Converts the given string to it's ASCII-uppercase equivalent.
 BRICK_EXPORT std::string ToUpperASCII(StringPiece str);
-BRICK_EXPORT string16 ToUpperASCII(StringPiece16 str);
 
 // Functor for case-insensitive ASCII comparisons for STL algorithms like
 // std::search.
@@ -135,13 +126,11 @@ template<typename Char> struct CaseInsensitiveCompareASCII {
 // full Unicode support, use base::i18n::ToLower or base::i18h::FoldCase
 // and then just call the normal string operators on the result.
 BRICK_EXPORT int CompareCaseInsensitiveASCII(StringPiece a, StringPiece b);
-BRICK_EXPORT int CompareCaseInsensitiveASCII(StringPiece16 a, StringPiece16 b);
 
 // Equality for ASCII case-insensitive comparisons. For full Unicode support,
 // use base::i18n::ToLower or base::i18h::FoldCase and then compare with either
 // == or !=.
 BRICK_EXPORT bool EqualsCaseInsensitiveASCII(StringPiece a, StringPiece b);
-BRICK_EXPORT bool EqualsCaseInsensitiveASCII(StringPiece16 a, StringPiece16 b);
 
 // These threadsafe functions return references to globally unique empty
 // strings.
@@ -157,15 +146,12 @@ BRICK_EXPORT bool EqualsCaseInsensitiveASCII(StringPiece16 a, StringPiece16 b);
 // These should not be used as initializers, function arguments, or return
 // values for functions which return by value or outparam.
 BRICK_EXPORT const std::string& EmptyString();
-BRICK_EXPORT const string16& EmptyString16();
 
 // Contains the set of characters representing whitespace in the corresponding
 // encoding. Null-terminated. The ASCII versions are the whitespaces as defined
 // by HTML5, and don't include control characters.
 BRICK_EXPORT extern const wchar_t kWhitespaceWide[];  // Includes Unicode.
-BRICK_EXPORT extern const char16 kWhitespaceUTF16[];  // Includes Unicode.
 BRICK_EXPORT extern const char kWhitespaceASCII[];
-BRICK_EXPORT extern const char16 kWhitespaceASCIIAs16[];  // No unicode.
 
 // Null-terminated string representing the UTF-8 byte order mark.
 BRICK_EXPORT extern const char kUtf8ByteOrderMark[];
@@ -173,9 +159,6 @@ BRICK_EXPORT extern const char kUtf8ByteOrderMark[];
 // Removes characters in |remove_chars| from anywhere in |input|.  Returns true
 // if any characters were removed.  |remove_chars| must be null-terminated.
 // NOTE: Safe to use the same variable for both |input| and |output|.
-BRICK_EXPORT bool RemoveChars(const string16& input,
-                             StringPiece16 remove_chars,
-                             string16* output);
 BRICK_EXPORT bool RemoveChars(const std::string& input,
                              StringPiece remove_chars,
                              std::string* output);
@@ -185,10 +168,6 @@ BRICK_EXPORT bool RemoveChars(const std::string& input,
 // the |replace_with| string.  Returns true if any characters were replaced.
 // |replace_chars| must be null-terminated.
 // NOTE: Safe to use the same variable for both |input| and |output|.
-BRICK_EXPORT bool ReplaceChars(const string16& input,
-                              StringPiece16 replace_chars,
-                              const string16& replace_with,
-                              string16* output);
 BRICK_EXPORT bool ReplaceChars(const std::string& input,
                               StringPiece replace_chars,
                               const std::string& replace_with,
@@ -207,18 +186,12 @@ enum TrimPositions {
 //
 // It is safe to use the same variable for both |input| and |output| (this is
 // the normal usage to trim in-place).
-BRICK_EXPORT bool TrimString(const string16& input,
-                            StringPiece16 trim_chars,
-                            string16* output);
 BRICK_EXPORT bool TrimString(const std::string& input,
                             StringPiece trim_chars,
                             std::string* output);
 
 // StringPiece versions of the above. The returned pieces refer to the original
 // buffer.
-BRICK_EXPORT StringPiece16 TrimString(StringPiece16 input,
-                                     StringPiece16 trim_chars,
-                                     TrimPositions positions);
 BRICK_EXPORT StringPiece TrimString(StringPiece input,
                                    StringPiece trim_chars,
                                    TrimPositions positions);
@@ -236,11 +209,6 @@ BRICK_EXPORT void TruncateUTF8ToByteSize(const std::string& input,
 //
 // The std::string versions return where whitespace was found.
 // NOTE: Safe to use the same variable for both input and output.
-BRICK_EXPORT TrimPositions TrimWhitespace(const string16& input,
-                                         TrimPositions positions,
-                                         string16* output);
-BRICK_EXPORT StringPiece16 TrimWhitespace(StringPiece16 input,
-                                         TrimPositions positions);
 BRICK_EXPORT TrimPositions TrimWhitespaceASCII(const std::string& input,
                                               TrimPositions positions,
                                               std::string* output);
@@ -255,9 +223,6 @@ BRICK_EXPORT StringPiece TrimWhitespaceASCII(StringPiece input,
 // (2) If |trim_sequences_with_line_breaks| is true, any other whitespace
 //     sequences containing a CR or LF are trimmed.
 // (3) All other whitespace sequences are converted to single spaces.
-BRICK_EXPORT string16 CollapseWhitespace(
-    const string16& text,
-    bool trim_sequences_with_line_breaks);
 BRICK_EXPORT std::string CollapseWhitespaceASCII(
     const std::string& text,
     bool trim_sequences_with_line_breaks);
@@ -265,8 +230,6 @@ BRICK_EXPORT std::string CollapseWhitespaceASCII(
 // Returns true if |input| is empty or contains only characters found in
 // |characters|.
 BRICK_EXPORT bool ContainsOnlyChars(StringPiece input, StringPiece characters);
-BRICK_EXPORT bool ContainsOnlyChars(StringPiece16 input,
-                                   StringPiece16 characters);
 
 // Returns true if the specified string matches the criteria. How can a wide
 // string be 8-bit or UTF8? It contains only characters that are < 256 (in the
@@ -284,7 +247,6 @@ BRICK_EXPORT bool ContainsOnlyChars(StringPiece16 input,
 // if it is not the case.
 BRICK_EXPORT bool IsStringUTF8(StringPiece str);
 BRICK_EXPORT bool IsStringASCII(StringPiece str);
-BRICK_EXPORT bool IsStringASCII(StringPiece16 str);
 #if defined(WCHAR_T_IS_UTF32)
 BRICK_EXPORT bool IsStringASCII(WStringPiece str);
 #endif
@@ -293,13 +255,6 @@ BRICK_EXPORT bool IsStringASCII(WStringPiece str);
 // previously-lower-cased ASCII string (typically a constant).
 BRICK_EXPORT bool LowerCaseEqualsASCII(StringPiece str,
                                       StringPiece lowecase_ascii);
-BRICK_EXPORT bool LowerCaseEqualsASCII(StringPiece16 str,
-                                      StringPiece lowecase_ascii);
-
-// Performs a case-sensitive string compare of the given 16-bit string against
-// the given 8-bit ASCII string (typically a constant). The behavior is
-// undefined if the |ascii| string is not ASCII.
-BRICK_EXPORT bool EqualsASCII(StringPiece16 str, StringPiece ascii);
 
 // Indicates case sensitivity of comparisons. Only ASCII case insensitivity
 // is supported. Full Unicode case-insensitive conversions would need to go in
@@ -317,14 +272,8 @@ enum class CompareCase {
 BRICK_EXPORT bool StartsWith(StringPiece str,
                             StringPiece search_for,
                             CompareCase case_sensitivity);
-BRICK_EXPORT bool StartsWith(StringPiece16 str,
-                            StringPiece16 search_for,
-                            CompareCase case_sensitivity);
 BRICK_EXPORT bool EndsWith(StringPiece str,
                           StringPiece search_for,
-                          CompareCase case_sensitivity);
-BRICK_EXPORT bool EndsWith(StringPiece16 str,
-                          StringPiece16 search_for,
                           CompareCase case_sensitivity);
 
 // Determines the type of ASCII character, independent of locale (the C
@@ -367,19 +316,8 @@ BRICK_EXPORT char HexDigitToInt(wchar_t c);
 // Returns true if it's a Unicode whitespace character.
 BRICK_EXPORT bool IsUnicodeWhitespace(wchar_t c);
 
-// Return a byte string in human-readable format with a unit suffix. Not
-// appropriate for use in any UI; use of FormatBytes and friends in ui/base is
-// highly recommended instead. TODO(avi): Figure out how to get callers to use
-// FormatBytes instead; remove this.
-BRICK_EXPORT string16 FormatBytesUnlocalized(int64_t bytes);
-
 // Starting at |start_offset| (usually 0), replace the first instance of
 // |find_this| with |replace_with|.
-BRICK_EXPORT void ReplaceFirstSubstringAfterOffset(
-    base::string16* str,
-    size_t start_offset,
-    StringPiece16 find_this,
-    StringPiece16 replace_with);
 BRICK_EXPORT void ReplaceFirstSubstringAfterOffset(
     std::string* str,
     size_t start_offset,
@@ -392,11 +330,6 @@ BRICK_EXPORT void ReplaceFirstSubstringAfterOffset(
 // This does entire substrings; use std::replace in <algorithm> for single
 // characters, for example:
 //   std::replace(str.begin(), str.end(), 'a', 'b');
-BRICK_EXPORT void ReplaceSubstringsAfterOffset(
-    string16* str,
-    size_t start_offset,
-    StringPiece16 find_this,
-    StringPiece16 replace_with);
 BRICK_EXPORT void ReplaceSubstringsAfterOffset(
     std::string* str,
     size_t start_offset,
@@ -424,7 +357,6 @@ BRICK_EXPORT void ReplaceSubstringsAfterOffset(
 // than str.c_str() will get back a string of whatever size |str| had on entry
 // to this function (probably 0).
 BRICK_EXPORT char* WriteInto(std::string* str, size_t length_with_null);
-BRICK_EXPORT char16* WriteInto(string16* str, size_t length_with_null);
 
 // Does the opposite of SplitString()/SplitStringPiece(). Joins a vector or list
 // of strings into a single string, inserting |separator| (which may be empty)
@@ -439,38 +371,23 @@ BRICK_EXPORT char16* WriteInto(string16* str, size_t length_with_null);
 // Use StrCat (in brick/strings/strcat.h) if you don't need a separator.
 BRICK_EXPORT std::string JoinString(const std::vector<std::string>& parts,
                                    StringPiece separator);
-BRICK_EXPORT string16 JoinString(const std::vector<string16>& parts,
-                                StringPiece16 separator);
 BRICK_EXPORT std::string JoinString(const std::vector<StringPiece>& parts,
                                    StringPiece separator);
-BRICK_EXPORT string16 JoinString(const std::vector<StringPiece16>& parts,
-                                StringPiece16 separator);
 // Explicit initializer_list overloads are required to break ambiguity when used
 // with a literal initializer list (otherwise the compiler would not be able to
 // decide between the string and StringPiece overloads).
 BRICK_EXPORT std::string JoinString(std::initializer_list<StringPiece> parts,
                                    StringPiece separator);
-BRICK_EXPORT string16 JoinString(std::initializer_list<StringPiece16> parts,
-                                StringPiece16 separator);
 
 // Replace $1-$2-$3..$9 in the format string with values from |subst|.
 // Additionally, any number of consecutive '$' characters is replaced by that
 // number less one. Eg $$->$, $$$->$$, etc. The offsets parameter here can be
 // NULL. This only allows you to use up to nine replacements.
-BRICK_EXPORT string16 ReplaceStringPlaceholders(
-    const string16& format_string,
-    const std::vector<string16>& subst,
-    std::vector<size_t>* offsets);
 
 BRICK_EXPORT std::string ReplaceStringPlaceholders(
     StringPiece format_string,
     const std::vector<std::string>& subst,
     std::vector<size_t>* offsets);
-
-// Single-string shortcut for ReplaceStringHolders. |offset| may be NULL.
-BRICK_EXPORT string16 ReplaceStringPlaceholders(const string16& format_string,
-                                               const string16& a,
-                                               size_t* offset);
 
 }  // namespace base
 
