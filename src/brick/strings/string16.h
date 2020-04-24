@@ -34,7 +34,7 @@
 #include <string>
 
 #include "brick/base_export.h"
-#include "build_config.h"
+#include "build/build_config.h"
 
 #if defined(WCHAR_T_IS_UTF16)
 
